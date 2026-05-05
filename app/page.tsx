@@ -514,7 +514,7 @@ export default function Home() {
         <img
           src="/assets/divisor_estrella3.svg"
           alt="divider"
-          className="absolute inset-0 w-full h-full object-cover scale-y-110"
+          className="absolute inset-0 w-full h-full object-cover scale-y-125"
         />
       </section>
 
