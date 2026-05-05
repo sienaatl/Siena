@@ -48,13 +48,13 @@ export default function NewsletterForm() {
             <div className="relative z-10 flex flex-col items-center gap-4 md:gap-5 w-full max-w-[600px]">
 
                 <h2
-                    className="text-[#f5efdd] text-[72px] md:text-[85px] leading-[1.1] whitespace-nowrap"
+                    className="text-[#f5efdd] text-[62px] md:text-[85px] leading-[1.1] whitespace-nowrap"
                     style={{ fontFamily: "'Palmore-Light', serif" }}
                 >
                     Join our newsletter
                 </h2>
 
-                <p className="text-[#f5efdd]/80 text-lg md:text-[34px] leading-[1.6]">
+                <p className="text-[#f5efdd]/80 text-lg md:text-lg leading-[1.6]">
                     Be the first to know about events, menus, and specials
                 </p>
 

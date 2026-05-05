@@ -64,71 +64,80 @@ export default function EventsSlider() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="relative w-full px-4 md:px-12">
-      <button
-        onClick={scrollPrev}
-        aria-label="Previous"
-        className="hidden md:flex absolute cursor-pointer left-1 md:left-0 top-1/2 -translate-y-1/2 z-10 bg-[#030302] text-[#f5efdd] w-9 h-9 md:w-11 md:h-11 items-center justify-center text-xl md:text-2xl hover:bg-[#deae21] hover:text-[#030302] hover:scale-110 transition-all duration-300 shadow-md"
-      >
-        ‹
-      </button>
+    <div className="relative w-full px-4 md:px-0">
+      {/* Wrapper que contiene cards (max 1280) y flechas relativas a este */}
+      <div className="relative w-full max-w-[1280px] mx-auto">
 
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-3">
-          {events.map((event, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: 0.7,
-                delay: i * 0.15,
-                ease: "easeOut",
-              }}
-              className="bg-[#030302] overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-500 basis-full md:basis-[calc((100%-24px)/3)] shrink-0 grow-0 min-w-0"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img
-                  src={`/assets/pic${i + 1}.webp`}
-                  alt={event.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              <div className="p-5 md:p-6 flex flex-col gap-3 flex-1">
-                <div className="flex items-center gap-3">
-                  <span className="text-[#deae21] text-[13px] tracking-widest">/ {event.number}</span>
-                  <div className="h-[1px] flex-1 bg-[#deae21]/30" />
+        {/* Flecha izquierda - sobresale fuera del 1280 */}
+        <button
+          onClick={scrollPrev}
+          aria-label="Previous"
+          className="hidden md:flex absolute cursor-pointer -left-16 top-1/2 -translate-y-1/2 z-10 bg-[#030302] text-[#f5efdd] w-11 h-11 items-center justify-center text-2xl hover:bg-[#deae21] hover:text-[#030302] hover:scale-110 transition-all duration-300 shadow-md"
+        >
+          ‹
+        </button>
+
+        {/* Embla carousel con cards */}
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-3">
+            {events.map((event, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.7,
+                  delay: i * 0.15,
+                  ease: "easeOut",
+                }}
+                className="bg-[#030302] overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-500 basis-full md:basis-[calc((100%-24px)/3)] shrink-0 grow-0 min-w-0"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={`/assets/pic${i + 1}.webp`}
+                    alt={event.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
-                <h3
-                  className="text-[#f5efdd] text-[32px] md:text-[42px] font-semibold leading-tight"
-                  style={{ fontFamily: "'Palmore-Light', serif" }}
-                >
-                  {event.title}
-                </h3>
-                <div className="w-8 h-[2px] bg-[#deae21]" />
-                <p className="text-[#f5efdd]/80 text-[15px] md:text-[16px] leading-[1.7]">
-                  {event.description}
-                </p>
-                <div className="mt-auto pt-3 flex flex-col gap-1">
-                  {event.ideal.map((item, j) => (
-                    <span key={j} className="text-[#f5efdd]/80 text-[14px]">— {item}</span>
-                  ))}
+                <div className="p-5 md:p-6 flex flex-col gap-3 flex-1">
+                  <div className="flex items-center gap-3">
+                    <span className="text-[#deae21] text-[13px] tracking-widest">/ {event.number}</span>
+                    <div className="h-[1px] flex-1 bg-[#deae21]/30" />
+                  </div>
+                  <h3
+                    className="text-[#f5efdd] text-[32px] md:text-[42px] font-semibold leading-tight"
+                    style={{ fontFamily: "'Palmore-Light', serif" }}
+                  >
+                    {event.title}
+                  </h3>
+                  <div className="w-8 h-[2px] bg-[#deae21]" />
+                  <p className="text-[#f5efdd]/80 text-[15px] md:text-[16px] leading-[1.7]">
+                    {event.description}
+                  </p>
+                  <div className="mt-auto pt-3 flex flex-col gap-1">
+                    {event.ideal.map((item, j) => (
+                      <span key={j} className="text-[#f5efdd]/80 text-[14px]">— {item}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
+
+        {/* Flecha derecha - sobresale fuera del 1280 */}
+        <button
+          onClick={scrollNext}
+          aria-label="Next"
+          className="hidden md:flex absolute cursor-pointer -right-16 top-1/2 -translate-y-1/2 z-10 bg-[#030302] text-[#f5efdd] w-11 h-11 items-center justify-center text-2xl hover:bg-[#deae21] hover:text-[#030302] hover:scale-110 transition-all duration-300 shadow-md"
+        >
+          ›
+        </button>
+
       </div>
 
-      <button
-        onClick={scrollNext}
-        aria-label="Next"
-        className="hidden md:flex absolute cursor-pointer right-1 md:right-0 top-1/2 -translate-y-1/2 z-10 bg-[#030302] text-[#f5efdd] w-9 h-9 md:w-11 md:h-11 items-center justify-center text-xl md:text-2xl hover:bg-[#deae21] hover:text-[#030302] hover:scale-110 transition-all duration-300 shadow-md"
-      >
-        ›
-      </button>
-
+      {/* Dots */}
       <div className="flex justify-center gap-2 mt-6 md:mt-8">
         {scrollSnaps.map((_, i) => (
           <button
