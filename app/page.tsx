@@ -368,11 +368,11 @@ export default function Home() {
 
       </section>
 
-      <section className="relative w-full h-[58px]">
+      <section className="relative w-full h-[58px] overflow-hidden">
         <img
           src="/assets/divisor_beige.svg"
           alt="divider"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-y-110"
         />
       </section>
 
@@ -621,11 +621,11 @@ export default function Home() {
         </div >
       </section >
 
-      <section className="relative w-full h-[28px]">
+      <section className="relative w-full h-[28px] overflow-hidden bg-[#58021f]">
         <img
           src="/assets/divisor_estrella3.svg"
           alt="divider"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-y-125"
         />
       </section>
 
