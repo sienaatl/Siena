@@ -510,11 +510,11 @@ export default function Home() {
 
       </section>
 
-      <section className="relative w-full h-[28px]">
+      <section className="relative w-full h-[28px] overflow-hidden">
         <img
           src="/assets/divisor_estrella3.svg"
           alt="divider"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-y-110"
         />
       </section>
 
@@ -523,6 +523,7 @@ export default function Home() {
         className="relative w-full py-12 md:py-20 overflow-hidden flex items-center justify-center"
         style={{ backgroundImage: "url('/assets/fondo_rojizo.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
       >
+
         {/* Card */}
         <div
           className="relative w-full max-w-[1000px] mx-4 md:mx-6 overflow-hidden p-6 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10"
@@ -605,7 +606,6 @@ export default function Home() {
 
           </div>
 
-          {/* Mapa */}
           {/* Mapa */}
           <div className="flex-1 overflow-hidden shadow-lg relative z-10 w-full min-h-[240px] md:min-h-[420px]">
             <iframe
