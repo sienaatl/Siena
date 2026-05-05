@@ -74,7 +74,7 @@ export default function EventsSlider() {
 
   return (
     <div className="relative w-full px-4 md:px-0">
-      <div className="relative w-full max-w-[1280px] mx-auto">
+      <div className="relative w-full max-w-[1180px] mx-auto">
 
         <button
           onClick={scrollPrev}

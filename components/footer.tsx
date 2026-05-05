@@ -18,7 +18,7 @@ export default function Footer() {
                 />
             </div>
 
-            <div className="w-full max-w-[1280px] mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between gap-[40px] lg:gap-[60px] py-[40px] lg:py-[80px] px-6 lg:px-0">
+            <div className="w-full max-w-[1180px] mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between gap-[40px] lg:gap-[60px] py-[40px] lg:py-[80px] px-6 lg:px-0">
 
                 {/* Izquierda - Logo + info */}
                 <div className="flex flex-col gap-4 max-w-[580px] items-center lg:items-start text-center lg:text-left">
@@ -52,7 +52,7 @@ export default function Footer() {
                     {/* Botón mejorado */}
                     <a
                         href="/order-online"
-                        className="relative bg-[#f5efdd] text-[#58021f] px-[24px] py-[12px] h-[46px] font-semibold text-[18px] lg:text-[20px] leading-[20px] flex items-center gap-2 w-fit overflow-hidden group mt-3 uppercase"
+                        className="relative bg-[#f5efdd] text-[#58021f] px-[24px] py-[12px] h-[46px] font-semibold text-[18px] lg:text-lg leading-[20px] flex items-center gap-2 w-fit overflow-hidden group mt-3 uppercase"
                     >
                         <span className="absolute inset-0 bg-[#ddae21] translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
                         <span className="relative z-10">Order Online</span>
@@ -86,7 +86,7 @@ export default function Footer() {
                             <Link
                                 key={label}
                                 href={href}
-                                className="text-[#f5efdd] text-[16px] leading-[21px] uppercase hover:text-[#ddae21] hover:translate-x-1 transition-all duration-200 inline-block"
+                                className="text-[#f5efdd] text-[16px] leading-[21px] uppercase whitespace-nowrap hover:text-[#ddae21] hover:translate-x-1 transition-all duration-200 inline-block"
                             >
                                 {label}
                             </Link>
@@ -113,7 +113,7 @@ export default function Footer() {
                             <Link
                                 key={label}
                                 href={href}
-                                className="text-[#f5efdd] text-[16px] leading-[21px] uppercase hover:text-[#ddae21] hover:translate-x-1 transition-all duration-200 inline-block"
+                                className="text-[#f5efdd] text-[16px] leading-[21px] uppercase whitespace-nowrap hover:text-[#ddae21] hover:translate-x-1 transition-all duration-200 inline-block"
                             >
                                 {label}
                             </Link>
@@ -228,13 +228,13 @@ export default function Footer() {
             </div>
 
             {/* Línea divisora dorada antes del bottom */}
-            <div className="w-full max-w-[1280px] mx-auto px-6 lg:px-0">
+            <div className="w-full max-w-[1180px] mx-auto px-6 lg:px-0">
                 <div className="h-px bg-gradient-to-r from-transparent via-[#ddae21]/40 to-transparent"></div>
             </div>
 
             {/* Bottom bar */}
             <div className="w-full bg-white py-4 px-6">
-                <div className="w-full max-w-[1280px] mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-3 lg:gap-0">
+                <div className="w-full max-w-[1180px] mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-3 lg:gap-0">
 
                     {/* Powered by */}
                     <div className="flex items-center gap-2">

@@ -32,15 +32,15 @@ export default function Home() {
           <img
             src="/assets/logo_hero.webp"
             alt="Logo"
-            className="w-[280px] md:w-[470px] mb-5 hero-fadein"
+            className="w-[280px] md:w-[400px] mb-5 hero-fadein"
           />
 
           <div className="flex gap-4 hero-fadein">
             <a
               href="/order-online"
-              className="group bg-[#f5efdd] text-[#58021f] px-[20px] py-[10px] justify-center font-semibold text-[18px] md:text-[20px] flex items-center gap-2 border border-[#58021f] hover:bg-[#58021f] hover:text-[#f5efdd] transition"
+              className="group bg-[#f5efdd] text-[#58021f] px-4 md:px-9 py-2 justify-center font-semibold text-[14px] md:text-[20px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-[#58021f] hover:bg-[#58021f] hover:text-[#f5efdd] transition"
             >
-              Order Online
+              ORDER ONLINE
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
                   d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
@@ -52,7 +52,7 @@ export default function Home() {
         </div>
 
         {/* Barra inferior — ubicación e Instagram */}
-        <div className="w-full max-w-[1280px] absolute bottom-0 left-1/2 -translate-x-1/2 z-10 py-4 px-4 hidden md:flex items-center justify-between">
+        <div className="w-full max-w-[1180px] absolute bottom-0 left-1/2 -translate-x-1/2 z-10 py-4 hidden md:flex items-center justify-between">
           {/* Ubicación */}
           <a
             href="https://maps.app.goo.gl/qAEv8rdegv8rYr1c8"
@@ -156,7 +156,7 @@ export default function Home() {
           backgroundPosition: "center"
         }}
       >
-        <div className="w-full max-w-[1280px] mx-auto py-12 md:py-20 px-4">
+        <div className="w-full max-w-[1180px] mx-auto py-12 md:py-20 px-4">
           <div className="flex flex-col items-center text-center">
 
             {/* Icono arriba centrado */}
@@ -200,7 +200,7 @@ export default function Home() {
             </div>
 
             <motion.p
-              className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1280px] mt-12 md:mt-25"
+              className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -212,13 +212,13 @@ export default function Home() {
               href="https://www.toasttab.com/invoice/lead?rx=399f3374-7dde-4df3-9c3a-c49fed50b565&ot=675642f1-f873-4b8f-afcd-cca9b93a185c"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative z-10 group bg-[#58021f] text-[#f5efdd] px-[28px] mt-[30px] py-[10px] font-semibold text-[20px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
+              className="relative z-10 group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-semibold text-[14px] md:text-[20px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.65, ease: "easeOut" }}
             >
-              About Us
+              ABOUT US
 
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -255,7 +255,7 @@ export default function Home() {
         style={{ backgroundColor: "#f5efdd" }}
       >
 
-        <div className="w-full max-w-[1280px] mx-auto px-4 mt-[80px]">
+        <div className="w-full max-w-[1180px] mx-auto px-4 mt-[80px]">
           <div className="flex flex-col items-center text-center">
 
             <motion.img
@@ -301,7 +301,7 @@ export default function Home() {
             </div>
 
             <motion.p
-              className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1280px] mt-12 md:mt-25"
+              className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -315,13 +315,13 @@ export default function Home() {
               href="https://www.toasttab.com/invoice/lead?rx=399f3374-7dde-4df3-9c3a-c49fed50b565&ot=675642f1-f873-4b8f-afcd-cca9b93a185c"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative z-10 group bg-[#58021f] text-[#f5efdd] px-[28px] mt-[30px] py-[10px] font-semibold text-[20px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
+              className="relative z-10 group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-semibold text-[14px] md:text-[20px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.65, ease: "easeOut" }}
             >
-              Full Menu
+              FULL MENU
 
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -341,7 +341,7 @@ export default function Home() {
         </div>
 
         <div className="absolute inset-0 " />
-        <div className="w-full max-w-[1280px] mx-auto mt-10 mb-[80px] px-4 md:px-0">
+        <div className="w-full max-w-[1180px] mx-auto mt-10 mb-[80px] px-4 md:px-0">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:[grid-template-rows:280px_280px]">
 
             {/* Card grande izquierda - Dinner */}
@@ -360,7 +360,7 @@ export default function Home() {
                 <div className="flex flex-col justify-end h-full p-4 md:p-6">
                   <div className="flex items-end justify-between gap-3">
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-white text-[28px] md:text-[42px] font-semibold leading-tight">DINNER</h3>
+                      <h3 className="text-white text-[28px] md:text-[32px] font-semibold leading-tight">DINNER</h3>
                       <p className="text-white/80 text-[14px] md:text-[18px] mt-1">
                         Chef-crafted Mediterranean plates
                       </p>
@@ -391,7 +391,7 @@ export default function Home() {
                 <div className="flex flex-col justify-end h-full p-4 md:p-6">
                   <div className="flex items-end justify-between gap-3">
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-white text-[28px] md:text-[42px] font-semibold leading-tight">BRUNCH</h3>
+                      <h3 className="text-white text-[28px] md:text-[32px] font-semibold leading-tight">BRUNCH</h3>
                       <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Weekend mornings done right</p>
                     </div>
                     <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
@@ -420,7 +420,7 @@ export default function Home() {
                 <div className="flex flex-col justify-end h-full p-4 md:p-6">
                   <div className="flex items-end justify-between gap-3">
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-white text-[28px] md:text-[42px] font-semibold leading-tight md:whitespace-nowrap">HAPPY HOUR</h3>
+                      <h3 className="text-white text-[28px] md:text-[32px] font-semibold leading-tight md:whitespace-nowrap">HAPPY HOUR</h3>
                       <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Deals and drinks from 4 to 7pm</p>
                     </div>
                     <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
@@ -449,7 +449,7 @@ export default function Home() {
                 <div className="flex flex-col justify-end h-full p-4 md:p-6">
                   <div className="flex items-end justify-between gap-3">
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-white text-[28px] md:text-[42px] font-semibold leading-tight">BEVERAGES</h3>
+                      <h3 className="text-white text-[28px] md:text-[32px] font-semibold leading-tight">BEVERAGES</h3>
                       <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Cocktails, wines and craft drinks</p>
                     </div>
                     <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
@@ -482,7 +482,7 @@ export default function Home() {
         style={{ backgroundImage: "url('/assets/fondo_menu.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
       >
 
-        <div className="w-full max-w-[1280px] mx-auto px-4">
+        <div className="w-full max-w-[1180px] mx-auto px-4">
           <div className="flex flex-col items-center text-center pb-[30px]">
 
             {/* Icono arriba centrado */}
@@ -533,7 +533,7 @@ export default function Home() {
             </div>
 
             <motion.p
-              className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1280px] mt-12 md:mt-25"
+              className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -546,13 +546,13 @@ export default function Home() {
               href="https://www.toasttab.com/invoice/lead?rx=399f3374-7dde-4df3-9c3a-c49fed50b565&ot=675642f1-f873-4b8f-afcd-cca9b93a185c"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-[#58021f] text-[#f5efdd] px-[28px] mt-[30px] py-[10px] font-semibold text-[20px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
+              className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-semibold text-[14px] md:text-[20px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.65, ease: "easeOut" }}
             >
-              Book an Event
+              BOOK AN EVENT
 
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
@@ -561,14 +561,13 @@ export default function Home() {
                 />
               </svg>
             </motion.a>
-
           </div>
 
         </div>
 
 
         {/* Slider */}
-        <div className="w-full max-w-[1280px] mx-auto">
+        <div className="w-full max-w-[1180px] mx-auto">
           <EventsSlider />
         </div>
 
@@ -589,7 +588,7 @@ export default function Home() {
         style={{ backgroundImage: "url('/assets/fondo_testimonials.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
       >
 
-        <div className="w-full max-w-[1280px] mx-auto px-4">
+        <div className="w-full max-w-[1180px] mx-auto px-4">
           <div className="flex flex-col items-center text-center pb-[30px]">
 
             {/* Icono arriba centrado */}
@@ -721,13 +720,15 @@ export default function Home() {
             </div>
 
             {/* Botón */}
+
+
             <a
               href="https://maps.app.goo.gl/qAEv8rdegv8rYr1c8"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-[#58021f] text-[#f5efdd] px-6 py-3 font-semibold text-[16px] flex items-center gap-2 w-fit border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition mt-1 md:mt-2"
+              className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 py-2 font-semibold text-[14px] md:text-[20px] leading-[20px] md:leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition mt-1 md:mt-2"
             >
-              Open In Map
+              OPEN IN MAP
 
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
                 <path

@@ -34,7 +34,7 @@ export default function VideosSection() {
     }, [emblaApi, onSelect]);
 
     return (
-        <div className="relative z-10 w-full max-w-[1280px] mx-auto pt-5 pb-20">
+        <div className="relative z-10 w-full max-w-[1180px] mx-auto pt-5 pb-20">
             <div className="hidden md:grid grid-cols-3 gap-3 items-center">
                 {videos.map((video, i) => (
                     <div key={i} className={`overflow-hidden shadow-xl ${video.aspect} ${video.marginTop}`}>

@@ -42,7 +42,7 @@ export default function Header() {
                 ? "bg-[#F5EFDD] shadow-sm"
                 : "backdrop-blur-md border-white/10"
                 }`}>
-                <div className="max-w-[1280px] mx-auto h-full flex items-center justify-between px-4 md:px-0 md:py-6 relative">
+                <div className="max-w-[1180px] mx-auto h-full flex items-center justify-between px-4 md:px-0 md:py-6 relative">
 
                     <Link href="/" className="block">
                         <div className="w-[70px] h-[40px] md:w-[90px] md:h-[50px]">
@@ -101,8 +101,8 @@ export default function Header() {
                     {/* Right side */}
                     <div className="flex items-center gap-2 md:gap-4">
                         <Link href="/order_online">
-                            <button className="cursor-pointer px-4 md:px-9 py-2 font-semibold text-[14px] md:text-[20px] leading-[20px] md:leading-[24px] border transition bg-[#58021F] text-[#F5EFDD] border-transparent hover:bg-[#F5EFDD] hover:text-[#59021F] hover:border-[#59021F]">
-                                Order Online
+                            <button className="cursor-pointer px-4 md:px-9 py-2 font-semibold text-[14px] md:text-lg leading-[20px] md:leading-[24px] border transition bg-[#58021F] text-[#F5EFDD] border-transparent hover:bg-[#F5EFDD] hover:text-[#59021F] hover:border-[#59021F]">
+                                ORDER ONLINE
                             </button>
                         </Link>
 
