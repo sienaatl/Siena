@@ -510,7 +510,7 @@ export default function Home() {
 
       </section>
 
-      <section className="relative w-full h-[28px] overflow-hidden">
+      <section className="relative w-full h-[28px] overflow-hidden bg-[#58021f]">
         <img
           src="/assets/divisor_estrella3.svg"
           alt="divider"
