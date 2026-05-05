@@ -572,7 +572,7 @@ export default function Home() {
             <motion.img
               src="/assets/icono_testimonios.svg"
               alt="icono1"
-              className="w-[60px] md:w-[172px]"
+              className="w-[130px] md:w-[172px]"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -616,7 +616,7 @@ export default function Home() {
         <TestimonialsSlider />
 
       </section>
-      
+
       <section className="relative w-full h-[28px] overflow-hidden bg-[#58021f]">
         <img
           src="/assets/divisor_estrella3.svg"

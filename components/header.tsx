@@ -199,18 +199,7 @@ export default function Header() {
                                 <span className="text-center">{link.label}</span>
                             </Link>
                         );
-                    })}
-
-                    {/* Instagram dentro del menú móvil */}
-                    <a
-                        href="https://www.instagram.com/sienaatl/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setMenuOpen(false)}
-                        className="flex items-center justify-center px-4 py-4 font-medium text-[18px] text-gray-800 hover:bg-[#59021F]/15 hover:text-[#59021F] transition-colors duration-200"
-                    >
-                        <span className="text-center">Instagram</span>
-                    </a>
+                    })}             
                 </nav>
             </aside>
         </>
