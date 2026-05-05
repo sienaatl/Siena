@@ -55,7 +55,7 @@ export default function Header() {
                     </Link>
 
                     {/* Nav Desktop */}
-                    <nav className="hidden md:flex items-center gap-4 font-medium text-[18px] absolute left-1/2 -translate-x-1/2">
+                    <nav className="hidden md:flex items-center gap-4 text-[16px] font-semibold uppercase absolute left-1/2 -translate-x-1/2">
                         <Link href="/" className={`px-3 flex justify-center relative ${scrolled ? (pathname === "/" ? "text-black after:w-full" : "text-gray-700") : "text-[#F5EFDD]"
                             } after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full`}>
                             Home
@@ -86,13 +86,13 @@ export default function Header() {
 
                             <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-[280px] bg-[#F5EFDD] l shadow-xl p-4 flex flex-col gap-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                 <Link href="/contact-us" className="flex items-center justify-center gap-4 p-3 hover:bg-[#59021F] hover:text-[#F5EFDD] transition text-gray-700">
-                                    <span className="font-medium text-center">Gallery</span>
+                                    <span className="text-[16px] font-semibold uppercase text-center">Gallery</span>
                                 </Link>
                                 <Link href="/careers" className="flex items-center justify-center gap-4 p-3 hover:bg-[#59021F] hover:text-[#F5EFDD] transition text-gray-700">
-                                    <span className="font-medium text-center">Careers</span>
+                                    <span className="text-[16px] font-semibold uppercase text-center">Careers</span>
                                 </Link>
                                 <Link href="/about" className="flex items-center justify-center gap-4 p-3 hover:bg-[#59021F] hover:text-[#F5EFDD] transition text-gray-700">
-                                    <span className="font-medium text-center">Contact Us</span>
+                                    <span className="text-[16px] font-semibold uppercase text-center">Contact Us</span>
                                 </Link>
                             </div>
                         </div>
@@ -191,7 +191,7 @@ export default function Header() {
                                 key={link.href}
                                 href={link.href}
                                 onClick={() => setMenuOpen(false)}
-                                className={`flex items-center justify-center px-4 py-4 font-medium text-[18px] transition-colors duration-200 ${isActive
+                                className={`flex items-center justify-center px-4 py-4 text-[16px] font-semibold uppercase transition-colors duration-200 ${isActive
                                     ? "bg-[#59021F]/15 text-[#59021F]"
                                     : "text-gray-800 hover:bg-[#59021F]/15 hover:text-[#59021F]"
                                     }`}
@@ -199,7 +199,7 @@ export default function Header() {
                                 <span className="text-center">{link.label}</span>
                             </Link>
                         );
-                    })}             
+                    })}
                 </nav>
             </aside>
         </>
