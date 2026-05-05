@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import { motion } from "motion/react";
 
 export default function EventsSlider() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -75,8 +76,16 @@ export default function EventsSlider() {
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex gap-3">
           {events.map((event, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.7,
+                delay: i * 0.15,
+                ease: "easeOut",
+              }}
               className="bg-[#030302] overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-500 basis-full md:basis-[calc((100%-24px)/3)] shrink-0 grow-0 min-w-0"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -107,7 +116,7 @@ export default function EventsSlider() {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -3,6 +3,7 @@ import EventsSlider from "@/components/EventsSlider";
 import TestimonialsSlider from "@/components/TestimonialsSlider";
 import SliderAbout from "@/components/SliderAbout";
 import VideosSection from "@/components/VideosSection";
+import { motion } from "motion/react";
 
 const slides = [
   "/assets/slider_about1.webp",
@@ -145,6 +146,7 @@ export default function Home() {
 
       </section>
 
+
       {/* ABOUT US */}
       <section
         className="relative w-full overflow-hidden"
@@ -156,37 +158,57 @@ export default function Home() {
       >
         <div className="w-full max-w-[1280px] mx-auto py-12 md:py-20 px-4">
           <div className="flex flex-col items-center text-center">
+
             {/* Icono arriba centrado */}
-            <img
+            <motion.img
               src="/assets/icono_about1.svg"
               alt="icono1"
               className="w-[60px] md:w-[75px]"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
             />
 
             <div className="relative inline-block">
               {/* Título */}
-              <h2
+              <motion.h2
                 className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-tight uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
               >
                 A Taste of the Mediterranean
-              </h2>
+              </motion.h2>
 
               {/* Reimagined superpuesto */}
-              <span
+              <motion.span
                 className="absolute left-1/2 top-[105%] md:top-[115%] -translate-x-1/2 -translate-y-1/2 text-[#deae21] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: `2px 2px 0 #f5efdd, -2px -2px 0 #f5efdd, 2px -2px 0 #f5efdd, -2px 2px 0 #f5efdd`
                 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
               >
                 reimagined
-              </span>
+              </motion.span>
             </div>
 
-            <p className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1280px] mt-12 md:mt-25">
+            <motion.p
+              className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1280px] mt-12 md:mt-25"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+            >
               At Siena, every detail is guided by a creative vision rooted in Mediterranean warmth and Italian soul.
-            </p>
+            </motion.p>
+
           </div>
         </div>
 
@@ -202,6 +224,8 @@ export default function Home() {
         />
       </section>
 
+
+
       <section
         className="relative w-full overflow-hidden"
         style={{ backgroundColor: "#f5efdd" }}
@@ -210,22 +234,31 @@ export default function Home() {
         <div className="w-full max-w-[1280px] mx-auto px-4 mt-[80px]">
           <div className="flex flex-col items-center text-center">
 
-            <img
+            <motion.img
               src="/assets/icon_menu.svg"
               alt="Menu icon"
               className="w-[60px] md:w-[75px]"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
             />
 
             <div className="relative inline-block">
-              <h2
+              <motion.h2
                 className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-tight uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
               >
                 Enjoy the Flavors
-              </h2>
+              </motion.h2>
 
-              <span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap" style={{
+              <motion.span
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+                style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: `
             2px 2px 0 #f5efdd,
@@ -234,20 +267,35 @@ export default function Home() {
             -2px 2px 0 #f5efdd
           `,
                 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
               >
                 inspired
-              </span>
+              </motion.span>
             </div>
 
-            <p className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1280px] mt-12 md:mt-25">           From handcrafted pasta to fresh Mediterranean plates. <br className="hidden md:block" />
+            <motion.p
+              className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1280px] mt-12 md:mt-25"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+            >
+              From handcrafted pasta to fresh Mediterranean plates. <br className="hidden md:block" />
               Every dish tells a story worth savoring.
-            </p>
-            <a
+            </motion.p>
 
+            <motion.a
               href="https://www.toasttab.com/invoice/lead?rx=399f3374-7dde-4df3-9c3a-c49fed50b565&ot=675642f1-f873-4b8f-afcd-cca9b93a185c"
               target="_blank"
               rel="noopener noreferrer"
               className="relative z-10 group bg-[#58021f] text-[#f5efdd] px-[28px] mt-[30px] py-[10px] font-semibold text-[20px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.65, ease: "easeOut" }}
             >
               Full Menu
 
@@ -263,7 +311,7 @@ export default function Home() {
                   className="fill-[#f5efdd] group-hover:fill-[#f5efdd] transition-colors duration-300"
                 />
               </svg>
-            </a>
+            </motion.a>
 
           </div>
         </div>
@@ -273,16 +321,23 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:[grid-template-rows:280px_280px]">
 
             {/* Card grande izquierda - Dinner */}
-            <a href="/menu/dinner" className="group relative overflow-hidden shadow-lg md:row-span-2 h-[220px] md:h-auto">
+            <motion.a
+              href="/menu/dinner"
+              className="group relative overflow-hidden shadow-lg md:row-span-2 h-[220px] md:h-auto"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.7, delay: 0, ease: "easeOut" }}
+            >
               <img src="/assets/menu1.webp" alt="Dinner" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
 
               <div className="absolute inset-4 border border-[#deae21]">
-                <div className="flex flex-col justify-end h-full p-6">
-                  <div className="flex items-end justify-between">
-                    <div>
-                      <h3 className="text-white text-[42px] font-semibold">DINNER</h3>
-                      <p className="text-white/80 text-[18px] mt-1">
+                <div className="flex flex-col justify-end h-full p-4 md:p-6">
+                  <div className="flex items-end justify-between gap-3">
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-white text-[28px] md:text-[42px] font-semibold leading-tight">DINNER</h3>
+                      <p className="text-white/80 text-[14px] md:text-[18px] mt-1">
                         Chef-crafted Mediterranean plates
                       </p>
                     </div>
@@ -294,19 +349,26 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </a>
+            </motion.a>
 
             {/* Card top centro - Brunch */}
-            <a href="/menu/brunch" className="group relative overflow-hidden shadow-lg h-[220px] md:h-auto">
+            <motion.a
+              href="/menu/brunch"
+              className="group relative overflow-hidden shadow-lg h-[220px] md:h-auto"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+            >
               <img src="/assets/about1.webp" alt="Brunch" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
 
               <div className="absolute inset-4 border border-[#deae21]">
-                <div className="flex flex-col justify-end h-full p-6">
-                  <div className="flex items-end justify-between">
-                    <div>
-                      <h3 className="text-white text-[42px] font-semibold">BRUNCH</h3>
-                      <p className="text-white/80 text-[18px] mt-1">Weekend mornings done right</p>
+                <div className="flex flex-col justify-end h-full p-4 md:p-6">
+                  <div className="flex items-end justify-between gap-3">
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-white text-[28px] md:text-[42px] font-semibold leading-tight">BRUNCH</h3>
+                      <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Weekend mornings done right</p>
                     </div>
                     <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none">
@@ -316,19 +378,26 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </a>
+            </motion.a>
 
             {/* Card top derecha - Happy Hour */}
-            <a href="/menu/happy-hour" className="group relative overflow-hidden shadow-lg h-[220px] md:h-auto">
+            <motion.a
+              href="/menu/happy-hour"
+              className="group relative overflow-hidden shadow-lg h-[220px] md:h-auto"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+            >
               <img src="/assets/about3.webp" alt="Happy Hour" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
 
               <div className="absolute inset-4 border border-[#deae21]">
-                <div className="flex flex-col justify-end h-full p-6">
-                  <div className="flex items-end justify-between">
-                    <div>
-                      <h3 className="text-white text-[42px] font-semibold whitespace-nowrap">HAPPY HOUR</h3>
-                      <p className="text-white/80 text-[18px] mt-1">Deals and drinks from 4 to 7pm</p>
+                <div className="flex flex-col justify-end h-full p-4 md:p-6">
+                  <div className="flex items-end justify-between gap-3">
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-white text-[28px] md:text-[42px] font-semibold leading-tight md:whitespace-nowrap">HAPPY HOUR</h3>
+                      <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Deals and drinks from 4 to 7pm</p>
                     </div>
                     <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none">
@@ -338,19 +407,26 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </a>
+            </motion.a>
 
             {/* Card ancha abajo - Beverages */}
-            <a href="/menu/beverages" className="group relative overflow-hidden shadow-lg md:col-span-2 h-[220px] md:h-auto">
+            <motion.a
+              href="/menu/beverages"
+              className="group relative overflow-hidden shadow-lg md:col-span-2 h-[220px] md:h-auto"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
+            >
               <img src="/assets/menu4.webp" alt="Beverages" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
 
               <div className="absolute inset-4 border border-[#deae21]">
-                <div className="flex flex-col justify-end h-full p-6">
-                  <div className="flex items-end justify-between">
-                    <div>
-                      <h3 className="text-white text-[42px] font-semibold">BEVERAGES</h3>
-                      <p className="text-white/80 text-[18px] mt-1">Cocktails, wines and craft drinks</p>
+                <div className="flex flex-col justify-end h-full p-4 md:p-6">
+                  <div className="flex items-end justify-between gap-3">
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-white text-[28px] md:text-[42px] font-semibold leading-tight">BEVERAGES</h3>
+                      <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Cocktails, wines and craft drinks</p>
                     </div>
                     <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none">
@@ -360,7 +436,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </a>
+            </motion.a>
+
 
           </div>
         </div>
@@ -385,24 +462,32 @@ export default function Home() {
           <div className="flex flex-col items-center text-center pb-[30px]">
 
             {/* Icono arriba centrado */}
-            <img
+            <motion.img
               src="/assets/icon6.svg"
               alt="icono1"
               className="w-[60px] md:w-[75px]"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
             />
 
             <div className="relative inline-block">
 
               {/* Título */}
-              <h2
+              <motion.h2
                 className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-tight uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
               >
                 Something Special
-              </h2>
+              </motion.h2>
 
-              {/* Reimagined superpuesto correctamente */}
-              <span
+              {/* "every day" superpuesto */}
+              <motion.span
                 className="absolute left-1/2 top-[115%] -translate-x-1/2 -translate-y-1/2 w-full max-w-[900px] text-[#deae21] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
@@ -413,22 +498,35 @@ export default function Home() {
             -2px 2px 0 #f5efdd
           `,
                 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
               >
                 every day
-              </span>
+              </motion.span>
 
             </div>
 
-            <p className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1280px] mt-12 md:mt-25">
+            <motion.p
+              className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1280px] mt-12 md:mt-25"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+            >
               Designed for celebration, connection, and unforgettable meals.
+            </motion.p>
 
-            </p>
-
-            <a
+            <motion.a
               href="https://www.toasttab.com/invoice/lead?rx=399f3374-7dde-4df3-9c3a-c49fed50b565&ot=675642f1-f873-4b8f-afcd-cca9b93a185c"
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-[#58021f] text-[#f5efdd] px-[28px] mt-[30px] py-[10px] font-semibold text-[20px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.65, ease: "easeOut" }}
             >
               Book an Event
 
@@ -438,7 +536,7 @@ export default function Home() {
                   className="fill-[#f5efdd] group-hover:fill-[#f5efdd] transition-colors duration-300"
                 />
               </svg>
-            </a>
+            </motion.a>
 
           </div>
 
@@ -471,34 +569,44 @@ export default function Home() {
           <div className="flex flex-col items-center text-center pb-[30px]">
 
             {/* Icono arriba centrado */}
-            <img
+            <motion.img
               src="/assets/icono_testimonios.svg"
               alt="icono1"
               className="w-[60px] md:w-[172px]"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
             />
 
             <div className="relative inline-block mb-[30px]">
 
               {/* Título */}
-              <h2
+              <motion.h2
                 className="text-[#f5efdd] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-tight uppercase mb-[10px]"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
               >
                 From the food to the atmosphere, <br></br>
-              </h2>
+              </motion.h2>
 
-              <span
-                className="text-[#deae21] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-tight "
+              <motion.span
+                className="text-[#deae21] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-tight inline-block"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive"
                 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
               >
                 unforgettable
-              </span>
+              </motion.span>
 
             </div>
-
-
 
           </div>
 
@@ -508,7 +616,7 @@ export default function Home() {
         <TestimonialsSlider />
 
       </section>
-
+      
       <section className="relative w-full h-[28px] overflow-hidden bg-[#58021f]">
         <img
           src="/assets/divisor_estrella3.svg"
