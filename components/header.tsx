@@ -38,14 +38,17 @@ export default function Header() {
 
     return (
         <>
-            <header className={`w-full h-[72px] md:h-[92px] fixed top-0 z-50 transition-all duration-300 ${scrolled
-                ? "bg-[#F5EFDD] shadow-sm"
-                : "backdrop-blur-md border-white/10"
+            <header className={`w-full fixed top-0 z-50 transition-all duration-300 ${scrolled
+                ? "h-[60px] md:h-[60px] bg-[#F5EFDD] shadow-sm"
+                : "h-[72px] md:h-[80px] backdrop-blur-md border-white/10"
                 }`}>
-                <div className="max-w-[1180px] mx-auto h-full flex items-center justify-between px-4 md:px-0 md:py-6 relative">
+                <div className="max-w-[1180px] mx-auto h-full flex items-center justify-between px-4 md:px-0 relative">
 
                     <Link href="/" className="block">
-                        <div className="w-[70px] h-[40px] md:w-[90px] md:h-[50px]">
+                        <div className={`transition-all duration-300 ${scrolled
+                            ? "w-[70px] h-[36px] md:w-[80px] md:h-[40px]"
+                            : "w-[70px] h-[40px] md:w-[90px] md:h-[50px]"
+                            }`}>
                             <img
                                 src={scrolled ? "/assets/logo_siena.svg" : "/assets/logo_beige.png"}
                                 alt="logo"
@@ -55,7 +58,7 @@ export default function Header() {
                     </Link>
 
                     {/* Nav Desktop */}
-                    <nav className="hidden md:flex items-center gap-4 text-[16px] font-semibold uppercase absolute left-1/2 -translate-x-1/2">
+                    <nav className="hidden md:flex items-center gap-4 text-[15px] font-normal uppercase tracking-wide absolute left-1/2 -translate-x-1/2">
                         <Link href="/" className={`px-3 flex justify-center relative ${scrolled ? (pathname === "/" ? "text-black after:w-full" : "text-gray-700") : "text-[#F5EFDD]"
                             } after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full`}>
                             Home
@@ -80,19 +83,19 @@ export default function Header() {
                                 <img
                                     src="/assets/Arrow_Down.svg"
                                     alt="arrow"
-                                    className={`w-[16px] h-[16px] transition-all duration-300 ${!scrolled ? "brightness-0 invert" : ""}`}
+                                    className={`w-[15px] h-[15px] transition-all duration-300 ${!scrolled ? "brightness-0 invert" : ""}`}
                                 />
                             </div>
 
                             <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-[280px] bg-[#F5EFDD] l shadow-xl p-4 flex flex-col gap-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                 <Link href="/contact-us" className="flex items-center justify-center gap-4 p-3 hover:bg-[#59021F] hover:text-[#F5EFDD] transition text-gray-700">
-                                    <span className="text-[16px] font-semibold uppercase text-center">Gallery</span>
+                                    <span className="text-[15px] font-normal uppercase tracking-wide text-center">Gallery</span>
                                 </Link>
                                 <Link href="/careers" className="flex items-center justify-center gap-4 p-3 hover:bg-[#59021F] hover:text-[#F5EFDD] transition text-gray-700">
-                                    <span className="text-[16px] font-semibold uppercase text-center">Careers</span>
+                                    <span className="text-[15px] font-normal uppercase tracking-wide text-center">Careers</span>
                                 </Link>
                                 <Link href="/about" className="flex items-center justify-center gap-4 p-3 hover:bg-[#59021F] hover:text-[#F5EFDD] transition text-gray-700">
-                                    <span className="text-[16px] font-semibold uppercase text-center">Contact Us</span>
+                                    <span className="text-[15px] font-normal uppercase tracking-wide text-center">Contact Us</span>
                                 </Link>
                             </div>
                         </div>
@@ -101,7 +104,7 @@ export default function Header() {
                     {/* Right side */}
                     <div className="flex items-center gap-2 md:gap-4">
                         <Link href="/order_online">
-                            <button className="cursor-pointer px-4 md:px-9 py-2 font-semibold text-[14px] md:text-lg leading-[20px] md:leading-[24px] border transition bg-[#58021F] text-[#F5EFDD] border-transparent hover:bg-[#F5EFDD] hover:text-[#59021F] hover:border-[#59021F]">
+                            <button className="cursor-pointer px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] tracking-wide border transition bg-[#58021F] text-[#F5EFDD] border-transparent hover:bg-[#F5EFDD] hover:text-[#59021F] hover:border-[#59021F]">
                                 ORDER ONLINE
                             </button>
                         </Link>
@@ -191,7 +194,7 @@ export default function Header() {
                                 key={link.href}
                                 href={link.href}
                                 onClick={() => setMenuOpen(false)}
-                                className={`flex items-center justify-center px-4 py-4 text-[16px] font-semibold uppercase transition-colors duration-200 ${isActive
+                                className={`flex items-center justify-center px-4 py-4 text-[15px] font-semibold uppercase tracking-wide transition-colors duration-200 ${isActive
                                     ? "bg-[#59021F]/15 text-[#59021F]"
                                     : "text-gray-800 hover:bg-[#59021F]/15 hover:text-[#59021F]"
                                     }`}

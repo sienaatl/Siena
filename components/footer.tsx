@@ -27,7 +27,7 @@ export default function Footer() {
                         <img src="/assets/logofooter.webp" alt="Siena" className="relative w-[200px] lg:w-[261px] mb-[10px] lg:mb-[20px]" />
                     </div>
 
-                    <p className="text-white text-[22px] lg:text-[28px] leading-[110%] lg:leading-[100%] font-bold mt-2">
+                    <p className="text-white text-[22px] lg:text-[28px] leading-[110%] lg:leading-[100%] font-semibold mt-2">
                         Your taste of Siena, anytime.
                     </p>
                     <p className="text-white/80 text-[15px] lg:text-[16px] leading-[22px] lg:leading-[24px] max-w-[540px]">
@@ -52,7 +52,7 @@ export default function Footer() {
                     {/* Botón mejorado */}
                     <a
                         href="/order-online"
-                        className="relative bg-[#f5efdd] text-[#58021f] px-[24px] py-[12px] h-[46px] font-semibold text-[18px] lg:text-lg leading-[20px] flex items-center gap-2 w-fit overflow-hidden group mt-3 uppercase"
+                        className="relative bg-[#f5efdd] text-[#58021f] px-[24px] py-[12px] h-[46px] font-normal text-[18px] lg:text-[15px] leading-[20px] flex items-center gap-2 w-fit overflow-hidden group mt-3 uppercase"
                     >
                         <span className="absolute inset-0 bg-[#ddae21] translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
                         <span className="relative z-10">Order Online</span>
