@@ -12,6 +12,15 @@ export default function EventsSlider() {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  // Detectar si es desktop (md: en Tailwind = 768px)
+  useEffect(() => {
+    const checkDesktop = () => setIsDesktop(window.innerWidth >= 768);
+    checkDesktop();
+    window.addEventListener("resize", checkDesktop);
+    return () => window.removeEventListener("resize", checkDesktop);
+  }, []);
 
   const events = [
     {
@@ -65,10 +74,8 @@ export default function EventsSlider() {
 
   return (
     <div className="relative w-full px-4 md:px-0">
-      {/* Wrapper que contiene cards (max 1280) y flechas relativas a este */}
       <div className="relative w-full max-w-[1280px] mx-auto">
 
-        {/* Flecha izquierda - sobresale fuera del 1280 */}
         <button
           onClick={scrollPrev}
           aria-label="Previous"
@@ -77,14 +84,13 @@ export default function EventsSlider() {
           ‹
         </button>
 
-        {/* Embla carousel con cards */}
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex gap-3">
             {events.map((event, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={isDesktop ? { opacity: 0, y: 60 } : false}
+                whileInView={isDesktop ? { opacity: 1, y: 0 } : undefined}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{
                   duration: 0.7,
@@ -126,7 +132,6 @@ export default function EventsSlider() {
           </div>
         </div>
 
-        {/* Flecha derecha - sobresale fuera del 1280 */}
         <button
           onClick={scrollNext}
           aria-label="Next"
@@ -137,7 +142,6 @@ export default function EventsSlider() {
 
       </div>
 
-      {/* Dots */}
       <div className="flex justify-center gap-2 mt-6 md:mt-8">
         {scrollSnaps.map((_, i) => (
           <button
