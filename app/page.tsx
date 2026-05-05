@@ -194,14 +194,13 @@ export default function Home() {
       </section>
 
 
-      <section
-        className="relative w-full h-[58px] bg-repeat-x"
-        style={{
-          backgroundImage: "url('/assets/divisor_beige.svg')",
-          backgroundSize: "auto 100%",
-          backgroundPosition: "center",
-        }}
-      />
+      <section className="relative w-full h-[40px] md:h-[58px] overflow-hidden bg-[#f4eedd]">
+        <img
+          src="/assets/divisor_beige.svg"
+          alt="divider"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </section>
 
       <section
         className="relative w-full overflow-hidden"
@@ -368,11 +367,11 @@ export default function Home() {
 
       </section>
 
-      <section className="relative w-full h-[58px] overflow-hidden">
+      <section className="relative w-full h-[40px] md:h-[58px] overflow-hidden bg-[#f4eedd]">
         <img
           src="/assets/divisor_beige.svg"
           alt="divider"
-          className="absolute inset-0 w-full h-full object-cover scale-y-110"
+          className="absolute inset-0 w-full h-full object-cover"
         />
       </section>
 
