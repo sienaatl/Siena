@@ -112,8 +112,8 @@ export default function EventsSlider() {
                     <div className="h-[1px] flex-1 bg-[#deae21]/30" />
                   </div>
                   <h3
-                    className="text-[#f5efdd] text-[32px] md:text-[42px] font-semibold leading-tight"
-                    style={{ fontFamily: "'Palmore-Light', serif" }}
+                    className="text-[#f5efdd] text-[32px] md:text-[42px] leading-tight"
+                    style={{ fontFamily: "'Palmore-Light', serif", fontWeight: 300 }}
                   >
                     {event.title}
                   </h3>
