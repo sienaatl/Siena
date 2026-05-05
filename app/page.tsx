@@ -377,7 +377,7 @@ export default function Home() {
 
       {/* EVENTS */}
       <section
-        className="relative w-full pt-[80px] pb-[80px] overflow-hidden"
+        className="relative w-full pt-[80px] pb-[80px] overflow-hidden mt-[-5px]"
         style={{ backgroundImage: "url('/assets/fondo_menu.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
       >
 
