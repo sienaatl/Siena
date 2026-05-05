@@ -86,7 +86,7 @@ export default function NewsletterForm() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="bg-[#58021f] text-[#f5efdd] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[20px] leading-[20px] md:leading-[24px] border border-transparent hover:bg-[#030302] hover:border-[#f5efdd] transition disabled:opacity-60 whitespace-nowrap w-full md:w-auto"
+                                className="bg-[#58021f] text-[#f5efdd] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] border border-transparent hover:bg-[#030302] hover:border-[#f5efdd] transition disabled:opacity-60 whitespace-nowrap w-full md:w-auto"
                             >
                                 {isSubmitting ? "Subscribing..." : "SUBSCRIBE"}
                             </button>
