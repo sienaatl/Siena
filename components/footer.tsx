@@ -86,7 +86,7 @@ export default function Footer() {
                             <Link
                                 key={label}
                                 href={href}
-                                className="text-[#f5efdd] text-[16px] leading-[21px] uppercase whitespace-nowrap hover:text-[#ddae21] hover:translate-x-1 transition-all duration-200 inline-block"
+                                className="text-[#f5efdd] text-[15px] leading-[21px] uppercase whitespace-nowrap hover:text-[#ddae21] hover:translate-x-1 transition-all duration-200 inline-block"
                             >
                                 {label}
                             </Link>
@@ -113,7 +113,7 @@ export default function Footer() {
                             <Link
                                 key={label}
                                 href={href}
-                                className="text-[#f5efdd] text-[16px] leading-[21px] uppercase whitespace-nowrap hover:text-[#ddae21] hover:translate-x-1 transition-all duration-200 inline-block"
+                                className="text-[#f5efdd] text-[15px] leading-[21px] uppercase whitespace-nowrap hover:text-[#ddae21] hover:translate-x-1 transition-all duration-200 inline-block"
                             >
                                 {label}
                             </Link>
@@ -199,7 +199,7 @@ export default function Footer() {
                             </p>
                             <div className="w-8 h-[2px] bg-[#ddae21] mt-2 mx-auto lg:mx-0"></div>
                         </div>
-                        <a href="tel:4044883399" className="flex items-center gap-2 text-[#f5efdd] text-[16px] uppercase hover:text-[#ddae21] transition group">
+                        <a href="tel:4044883399" className="flex items-center gap-2 text-[#f5efdd] text-[15px] uppercase hover:text-[#ddae21] transition group">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
                                 <path d="M20 15.5C18.8 15.5 17.5 15.3 16.4 14.9C16.3 14.9 16.2 14.9 16.1 14.9C15.8 14.9 15.6 15 15.4 15.2L13.2 17.4C10.4 15.9 8 13.6 6.6 10.8L8.8 8.6C9.1 8.3 9.2 7.9 9 7.6C8.7 6.5 8.5 5.2 8.5 4C8.5 3.5 8 3 7.5 3H4C3.5 3 3 3.5 3 4C3 13.4 10.6 21 20 21C20.5 21 21 20.5 21 20V16.5C21 16 20.5 15.5 20 15.5Z" className="fill-current" />
                             </svg>
