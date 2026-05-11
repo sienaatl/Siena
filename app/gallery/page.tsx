@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
 
 const TOTAL = 29;
 const images = Array.from({ length: TOTAL }, (_, i) => `/assets/gallery${i + 1}.webp`);
@@ -36,15 +37,21 @@ export default function Gallery() {
     <main>
       {/* HERO */}
       <section className="relative w-full h-[400px] md:h-[45vh] overflow-hidden">
-        <motion.img
-          src="/assets/Siena_20.03.26-A-02.webp"
-          alt="Gallery"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          fetchPriority="high"
+        <motion.div
+          className="absolute inset-0"
           initial={{ scale: 1.08 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.4, ease: "easeOut" }}
-        />
+        >
+          <Image
+            src="/assets/Siena_20.03.26-A-02.webp"
+            alt="Gallery"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-14 md:pt-16">
           <motion.div

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { motion } from "motion/react";
 
 const TOAST_URL =
@@ -10,12 +11,13 @@ export default function AboutUs() {
 
       {/* HERO */}
       <section className="relative w-full h-[400px] md:h-[45vh] overflow-hidden">
-        <img
+        <Image
           src="/assets/Siena_20.03.26-A-03.webp"
           alt="About Siena"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          fetchPriority="high"
-          decoding="async"
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-14 md:pt-16">

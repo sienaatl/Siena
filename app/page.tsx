@@ -21,6 +21,7 @@ export default function Home() {
           loop
           muted
           playsInline
+          poster="/assets/hero_home.webp"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/assets/hero_video.mp4" type="video/mp4" />

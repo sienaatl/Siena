@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion } from "motion/react";
+import Image from "next/image";
 import { supabase, supabaseClientId } from "@/lib/supabase";
 
 /* ─── Types ─────────────────────────────────────────────── */
@@ -301,15 +302,21 @@ function MenuContent() {
     <main className="bg-[#f5efdd]">
       {/* HERO */}
       <section className="relative w-full h-[400px] md:h-[45vh] overflow-hidden">
-        <motion.img
-          src="/assets/Siena_20.03.26-PS-NarissaChickenLolipapas.webp"
-          alt="Menu at Siena"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+        <motion.div
+          className="absolute inset-0"
           initial={{ scale: 1.08 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.4, ease: "easeOut" }}
-          fetchPriority="high"
-        />
+        >
+          <Image
+            src="/assets/Siena_20.03.26-PS-NarissaChickenLolipapas.webp"
+            alt="Menu at Siena"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-10 md:pt-12">
           <motion.div
