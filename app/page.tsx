@@ -95,7 +95,7 @@ export default function Home() {
               <path d="M8.67699 0H21.2437C26.031 0 29.9206 3.88968 29.9206 8.67699V21.2437C29.9206 23.5449 29.0065 25.752 27.3792 27.3792C25.752 29.0065 23.5449 29.9206 21.2437 29.9206H8.67699C3.88968 29.9206 0 26.031 0 21.2437V8.67699C0 6.37571 0.91418 4.16868 2.54143 2.54143C4.16868 0.91418 6.37571 0 8.67699 0ZM8.37778 2.99206C6.9494 2.99206 5.57952 3.55949 4.5695 4.5695C3.55949 5.57952 2.99206 6.9494 2.99206 8.37778V21.5429C2.99206 24.52 5.40067 26.9286 8.37778 26.9286H21.5429C22.9712 26.9286 24.3411 26.3612 25.3511 25.3511C26.3612 24.3411 26.9286 22.9712 26.9286 21.5429V8.37778C26.9286 5.40067 24.52 2.99206 21.5429 2.99206H8.37778ZM22.8145 5.23611C23.3105 5.23611 23.7861 5.43313 24.1368 5.78383C24.4875 6.13453 24.6845 6.61019 24.6845 7.10615C24.6845 7.60212 24.4875 8.07777 24.1368 8.42847C23.7861 8.77917 23.3105 8.97619 22.8145 8.97619C22.3185 8.97619 21.8429 8.77917 21.4922 8.42847C21.1415 8.07777 20.9444 7.60212 20.9444 7.10615C20.9444 6.61019 21.1415 6.13453 21.4922 5.78383C21.8429 5.43313 22.3185 5.23611 22.8145 5.23611ZM14.9603 7.48016C16.9442 7.48016 18.8468 8.26825 20.2496 9.67105C21.6524 11.0738 22.4405 12.9765 22.4405 14.9603C22.4405 16.9442 21.6524 18.8468 20.2496 20.2496C18.8468 21.6524 16.9442 22.4405 14.9603 22.4405C12.9765 22.4405 11.0738 21.6524 9.67105 20.2496C8.26825 18.8468 7.48016 16.9442 7.48016 14.9603C7.48016 12.9765 8.26825 11.0738 9.67105 9.67105C11.0738 8.26825 12.9765 7.48016 14.9603 7.48016ZM14.9603 10.4722C13.77 10.4722 12.6284 10.9451 11.7868 11.7868C10.9451 12.6284 10.4722 13.77 10.4722 14.9603C10.4722 16.1506 10.9451 17.2922 11.7868 18.1339C12.6284 18.9756 13.77 19.4484 14.9603 19.4484C16.1506 19.4484 17.2922 18.9756 18.1339 18.1339C18.9756 17.2922 19.4484 16.1506 19.4484 14.9603C19.4484 13.77 18.9756 12.6284 18.1339 11.7868C17.2922 10.9451 16.1506 10.4722 14.9603 10.4722Z" />
             </svg>
 
-            @sienarestaurant
+            @sienaatl
           </a>
 
         </div>
@@ -117,7 +117,7 @@ export default function Home() {
   `}</style>
 
         <div className="marquee-track">
-          {[...Array(2)].map((_, repeat) => (
+          {[...Array(4)].map((_, repeat) => (
             <div key={repeat} className="flex items-center">
 
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">
@@ -168,6 +168,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
+              animate={{ y: [0, -7, 0] }}
             />
 
             <div className="relative inline-block">
@@ -266,6 +267,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
+              animate={{ y: [0, -7, 0] }}
             />
 
             <div className="relative inline-block">
@@ -346,12 +348,13 @@ export default function Home() {
 
             {/* Card grande izquierda - Dinner */}
             <motion.a
-              href="/menu/dinner"
+              href="/menu?tab=main-menu"
               className="group relative overflow-hidden shadow-lg md:row-span-2 h-[220px] md:h-auto"
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.7, delay: 0, ease: "easeOut" }}
+              whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
               <img src="/assets/menu1.webp" alt="Dinner" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
@@ -377,12 +380,13 @@ export default function Home() {
 
             {/* Card top centro - Brunch */}
             <motion.a
-              href="/menu/brunch"
+              href="/menu?tab=weekend-brunch"
               className="group relative overflow-hidden shadow-lg h-[220px] md:h-auto"
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+              whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
               <img src="/assets/about1.webp" alt="Brunch" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
@@ -406,12 +410,13 @@ export default function Home() {
 
             {/* Card top derecha - Happy Hour */}
             <motion.a
-              href="/menu/happy-hour"
+              href="/menu?tab=happy-hour"
               className="group relative overflow-hidden shadow-lg h-[220px] md:h-auto"
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+              whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
               <img src="/assets/about3.webp" alt="Happy Hour" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
@@ -435,12 +440,13 @@ export default function Home() {
 
             {/* Card ancha abajo - Beverages */}
             <motion.a
-              href="/menu/beverages"
+              href="/menu?tab=libations"
               className="group relative overflow-hidden shadow-lg md:col-span-2 h-[220px] md:h-auto"
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
+              whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
               <img src="/assets/menu4.webp" alt="Beverages" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
@@ -494,6 +500,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
+              animate={{ y: [0, -7, 0] }}
             />
 
             <div className="relative inline-block">
@@ -581,6 +588,127 @@ export default function Home() {
         />
       </section>
 
+      {/* SOCIAL MEDIA */}
+      <section className="w-full py-[80px] px-4 overflow-hidden" style={{ backgroundColor: "#f5efdd" }}>
+        <div className="w-full max-w-[1180px] mx-auto">
+          <div className="flex flex-col items-center text-center mb-[60px] md:mb-[80px]">
+            <motion.img
+              src="/assets/icono_123.svg"
+              alt=""
+              className="w-[60px] md:w-[75px] mb-2"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            />
+            <div className="relative inline-block">
+              <motion.h2
+                className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-tight uppercase"
+                style={{ fontFamily: "'Palmore-Light', serif" }}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+              >
+                Follow Us
+              </motion.h2>
+              <motion.span
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+                style={{
+                  fontFamily: "'AguafinaScript-Regular', cursive",
+                  textShadow: "2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd",
+                }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
+              >
+                on social
+              </motion.span>
+            </div>
+            <motion.p
+              className="text-[#030302]/70 text-lg md:text-xl leading-[140%] max-w-[560px] mt-12 md:mt-24"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+            >
+              Stay connected with Siena. Follow along for daily specials, events, and behind-the-scenes moments.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            {[
+              {
+                platform: "Instagram",
+                handle: "@sienaatl",
+                href: "https://www.instagram.com/sienaatl/",
+                img: "/assets/gallery11.webp",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <path d="M7.6 2H16.4C19.4 2 22 4.6 22 7.6V16.4C22 17.9 21.4 19.3 20.3 20.3C19.2 21.4 17.8 22 16.4 22H7.6C4.6 22 2 19.4 2 16.4V7.6C2 6.2 2.6 4.8 3.7 3.7C4.8 2.6 6.2 2 7.6 2ZM7.4 4C6.5 4 5.7 4.4 5.1 5.1C4.4 5.7 4 6.5 4 7.4V16.6C4 18.5 5.5 20 7.4 20H16.6C17.5 20 18.3 19.6 18.9 18.9C19.6 18.3 20 17.5 20 16.6V7.4C20 5.5 18.5 4 16.6 4H7.4ZM17.3 5.5C17.6 5.5 17.9 5.6 18.1 5.9C18.4 6.1 18.5 6.4 18.5 6.8C18.5 7.1 18.4 7.4 18.1 7.6C17.9 7.9 17.6 8 17.3 8C16.9 8 16.6 7.9 16.4 7.6C16.1 7.4 16 7.1 16 6.8C16 6.4 16.1 6.1 16.4 5.9C16.6 5.6 16.9 5.5 17.3 5.5ZM12 7C13.3 7 14.5 7.5 15.5 8.5C16.5 9.4 17 10.7 17 12C17 13.3 16.5 14.6 15.5 15.5C14.6 16.5 13.3 17 12 17C10.7 17 9.4 16.5 8.5 15.5C7.5 14.6 7 13.3 7 12C7 10.7 7.5 9.4 8.5 8.5C9.4 7.5 10.7 7 12 7ZM12 9C11.2 9 10.4 9.3 9.9 9.9C9.3 10.4 9 11.2 9 12C9 12.8 9.3 13.6 9.9 14.1C10.4 14.7 11.2 15 12 15C12.8 15 13.6 14.7 14.1 14.1C14.7 13.6 15 12.8 15 12C15 11.2 14.7 10.4 14.1 9.9C13.6 9.3 12.8 9 12 9Z" fill="currentColor" />
+                  </svg>
+                ),
+              },
+              {
+                platform: "Facebook",
+                handle: "Siena ATL",
+                href: "https://www.facebook.com/sienaatl/",
+                img: "/assets/gallery16.webp",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <path d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 16.84 5.44 20.87 10 21.8V15H8V12H10V9.5C10 7.57 11.57 6 13.5 6H16V9H14C13.45 9 13 9.45 13 10V12H16V15H13V21.95C18.05 21.45 22 17.19 22 12Z" fill="currentColor" />
+                  </svg>
+                ),
+              },
+              {
+                platform: "TikTok",
+                handle: "@sienaatl",
+                href: "https://www.tiktok.com/@sienaatl",
+                img: "/assets/gallery21.webp",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <path d="M16.5 2C16.8 4.1 18.4 5.7 20.5 6V9C18.9 8.95 17.4 8.45 16 7.6V14.5C16 18.1 13.1 21 9.5 21C5.9 21 3 18.1 3 14.5C3 10.9 5.9 8 9.5 8C10 8 10.5 8.05 11 8.15V11.2C10.5 11.05 10 11 9.5 11C7.6 11 6 12.6 6 14.5C6 16.4 7.6 18 9.5 18C11.4 18 13 16.4 13 14.5V2H16.5Z" fill="currentColor" />
+                  </svg>
+                ),
+              },
+            ].map(({ platform, handle, href, img, icon }, i) => (
+              <motion.a
+                key={platform}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden"
+                style={{ aspectRatio: "3/4" }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
+                whileHover={{ y: -8, transition: { duration: 0.22 } }}
+              >
+                <img
+                  src={img}
+                  alt={platform}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10" />
+                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+                  <span className="text-[#deae21] mb-3 group-hover:scale-110 transition-transform duration-300 w-fit">{icon}</span>
+                  <span className="text-[#deae21] text-[10px] tracking-[0.4em] uppercase mb-1">{platform}</span>
+                  <span className="text-[#f5efdd] text-[26px] md:text-[30px] leading-none mb-4" style={{ fontFamily: "'Palmore-Light', serif" }}>{handle}</span>
+                  <div className="flex items-center gap-2 text-[#f5efdd]/60 group-hover:text-[#deae21] text-[12px] tracking-[0.25em] uppercase transition-colors duration-300">
+                    <span>Follow</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20" fill="none">
+                      <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="currentColor" />
+                    </svg>
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* TESTIMONIALS */}
       <section
@@ -712,10 +840,16 @@ export default function Home() {
             <div className="flex flex-col gap-0.5 md:gap-1">
               <span className="text-[#58021f] font-bold text-[16px] md:text-[18px]">Opening Hours</span>
               <p className="text-[#2b0a0a] text-[16px] md:text-[18px]">
-                <span className="font-semibold">Monday to Saturday</span> 5 pm to 10 pm
+                <span className="font-semibold">Monday</span>: Closed
               </p>
               <p className="text-[#2b0a0a] text-[16px] md:text-[18px]">
-                <span className="font-semibold">Sunday</span> 5 pm to 9 pm
+                <span className="font-semibold">Tuesday – Thursday</span>: 4:00 PM – 10:00 PM
+              </p>
+              <p className="text-[#2b0a0a] text-[16px] md:text-[18px]">
+                <span className="font-semibold">Friday – Saturday</span>: 4:00 PM – 12:00 AM
+              </p>
+              <p className="text-[#2b0a0a] text-[16px] md:text-[18px]">
+                <span className="font-semibold">Sunday</span>: 4:00 PM – 10:00 PM
               </p>
             </div>
 

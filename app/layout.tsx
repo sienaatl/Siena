@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function RootLayout({
   children,
@@ -13,6 +14,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );

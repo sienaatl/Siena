@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import NewsletterForm from "../components/newsletterform";
 
 
 export default function Footer() {
+    const pathname = usePathname();
 
     return (
 
@@ -80,17 +82,20 @@ export default function Footer() {
                         {[
                             { label: "Home", href: "/" },
                             { label: "Menu", href: "/menu" },
-                            { label: "Happenings", href: "/happenings" },
-                            { label: "Private Events", href: "/private-events" },
-                        ].map(({ label, href }) => (
-                            <Link
-                                key={label}
-                                href={href}
-                                className="text-[#f5efdd] text-[15px] leading-[21px] uppercase whitespace-nowrap hover:text-[#ddae21] hover:translate-x-1 transition-all duration-200 inline-block"
-                            >
-                                {label}
-                            </Link>
-                        ))}
+                            { label: "Events", href: "/events" },
+                            { label: "Gift Card", href: "/gift-card" },
+                        ].map(({ label, href }) => {
+                            const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
+                            return (
+                                <Link
+                                    key={label}
+                                    href={href}
+                                    className={`text-[15px] leading-[21px] uppercase whitespace-nowrap hover:text-[#ddae21] hover:translate-x-1 transition-all duration-200 inline-block ${isActive ? "text-[#ddae21] border-b border-[#ddae21]" : "text-[#f5efdd]"}`}
+                                >
+                                    {label}
+                                </Link>
+                            );
+                        })}
                     </div>
 
                     {/* Columna More */}
@@ -106,18 +111,23 @@ export default function Footer() {
                             <div className="w-8 h-[2px] bg-[#ddae21] mt-2"></div>
                         </div>
                         {[
-                            { label: "Gallery", href: "/contact-us" },
+                            { label: "Reservations", href: "/reservations" },
+                            { label: "About Us", href: "/about-us" },
+                            { label: "Gallery", href: "/gallery" },
                             { label: "Careers", href: "/careers" },
-                            { label: "Contact Us", href: "/happenings" },
-                        ].map(({ label, href }) => (
-                            <Link
-                                key={label}
-                                href={href}
-                                className="text-[#f5efdd] text-[15px] leading-[21px] uppercase whitespace-nowrap hover:text-[#ddae21] hover:translate-x-1 transition-all duration-200 inline-block"
-                            >
-                                {label}
-                            </Link>
-                        ))}
+                            { label: "Contact Us", href: "/contact-us" },
+                        ].map(({ label, href }) => {
+                            const isActive = pathname === href;
+                            return (
+                                <Link
+                                    key={label}
+                                    href={href}
+                                    className={`text-[15px] leading-[21px] uppercase whitespace-nowrap hover:text-[#ddae21] hover:translate-x-1 transition-all duration-200 inline-block ${isActive ? "text-[#ddae21] border-b border-[#ddae21]" : "text-[#f5efdd]"}`}
+                                >
+                                    {label}
+                                </Link>
+                            );
+                        })}
                     </div>
                 </div>
 
@@ -138,7 +148,7 @@ export default function Footer() {
                         </div>
                         <div className="flex items-center gap-3">
                             <a
-                                href="https://www.instagram.com"
+                                href="https://www.instagram.com/sienaatl/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Instagram"
@@ -158,7 +168,7 @@ export default function Footer() {
                                 </svg>
                             </a>
                             <a
-                                href="https://www.facebook.com"
+                                href="https://www.facebook.com/sienaatl/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Facebook"
@@ -172,7 +182,7 @@ export default function Footer() {
                                 </svg>
                             </a>
                             <a
-                                href="https://www.tiktok.com"
+                                href="https://www.tiktok.com/@sienaatl"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="TikTok"
@@ -219,8 +229,10 @@ export default function Footer() {
                             <div className="w-8 h-[2px] bg-[#ddae21] mt-2 mx-auto lg:mx-0"></div>
                         </div>
                         <div className="text-[#f5efdd] text-[15px] leading-[22px] space-y-0.5 uppercase">
-                            <p><span className="text-white/60">Mon - Sat</span> 11AM - 10PM</p>
-                            <p><span className="text-white/60">Sunday</span> 11AM - 9PM</p>
+                            <p className="whitespace-nowrap"><span className="text-white/60">Monday</span> Closed</p>
+                            <p className="whitespace-nowrap"><span className="text-white/60">Tue – Thu</span> 4:00 PM – 10:00 PM</p>
+                            <p className="whitespace-nowrap"><span className="text-white/60">Fri – Sat</span> 4:00 PM – 12:00 AM</p>
+                            <p className="whitespace-nowrap"><span className="text-white/60">Sunday</span> 4:00 PM – 10:00 PM</p>
                         </div>
                     </div>
                 </div>

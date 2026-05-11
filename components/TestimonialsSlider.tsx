@@ -20,7 +20,7 @@ export default function TestimonialsSlider() {
     },
     {
       name: "Susan Keenan",
-      text: "Wow! This restaurant is awesome. Great ambience! Jay the bartender was great — gave us samples of the wine so we could pick which we wanted.",
+      text: "Wow! This restaurant is awesome. Great ambience! Jay the bartender was great, gave us samples of the wine so we could pick which we wanted.",
       url: "https://maps.app.goo.gl/cP27Hk54pmAR6vMd8",
     },
     {
