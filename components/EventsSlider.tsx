@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion } from "motion/react";
@@ -100,12 +101,12 @@ export default function EventsSlider() {
                 className="bg-[#f5efdd] overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-500 basis-full md:basis-[calc((100%-24px)/3)] shrink-0 grow-0 min-w-0"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
+                  <Image
                     src={`/assets/pic${i + 1}.webp`}
                     alt={event.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 767px) 100vw, 390px"
+                    className="object-cover hover:scale-105 transition-transform duration-700"
                   />
                 </div>
                 <div className="p-5 md:p-6 flex flex-col gap-3 flex-1">

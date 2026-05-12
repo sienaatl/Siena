@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Remove-Item -Recurse -Force \"c:\\\\Users\\\\vin_z\\\\Desktop\\\\Vincenzo\\\\Resto Experience\\\\Squad C\\\\siena\\\\.next\" -Confirm:$false)"
+    ]
+  }
+}

@@ -38,7 +38,7 @@ export default function VideosSection() {
             <div className="hidden md:grid grid-cols-3 gap-3 items-center">
                 {videos.map((video, i) => (
                     <div key={i} className={`overflow-hidden shadow-xl ${video.aspect} ${video.marginTop}`}>
-                        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+                        <video autoPlay loop muted playsInline preload="none" className="w-full h-full object-cover">
                             <source src={video.src} type="video/mp4" />
                         </video>
                     </div>
@@ -55,7 +55,7 @@ export default function VideosSection() {
                                 className="basis-full shrink-0 grow-0 min-w-0"
                             >
                                 <div className="overflow-hidden shadow-xl aspect-[4/5]">
-                                    <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+                                    <video autoPlay loop muted playsInline preload="none" className="w-full h-full object-cover">
                                         <source src={video.src} type="video/mp4" />
                                     </video>
                                 </div>

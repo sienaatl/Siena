@@ -1,9 +1,11 @@
 "use client";
-import EventsSlider from "@/components/EventsSlider";
-import TestimonialsSlider from "@/components/TestimonialsSlider";
-import SliderAbout from "@/components/SliderAbout";
-import VideosSection from "@/components/VideosSection";
+import Image from "next/image";
+import dynamic from "next/dynamic";
 import { motion } from "motion/react";
+
+const EventsSlider = dynamic(() => import("@/components/EventsSlider"), { ssr: false });
+const TestimonialsSlider = dynamic(() => import("@/components/TestimonialsSlider"), { ssr: false });
+const VideosSection = dynamic(() => import("@/components/VideosSection"), { ssr: false });
 
 const slides = [
   "/assets/slider_about1.webp",
@@ -16,12 +18,21 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative w-full h-[85vh] md:h-screen overflow-hidden">
+        <Image
+          src="/assets/hero_home.webp"
+          alt=""
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="object-cover"
+        />
         <video
           autoPlay
           loop
           muted
           playsInline
-          poster="/assets/hero_home.webp"
+          preload="none"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/assets/hero_video.mp4" type="video/mp4" />
@@ -33,6 +44,8 @@ export default function Home() {
           <img
             src="/assets/logo_hero.webp"
             alt="Logo"
+            width={746}
+            height={440}
             className="w-[280px] md:w-[400px] mb-5 hero-fadein"
           />
 
@@ -357,7 +370,7 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0, ease: "easeOut" }}
               whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
-              <img src="/assets/menu1.webp" alt="Dinner" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <Image src="/assets/menu1.webp" alt="Dinner" fill sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
 
               <div className="absolute inset-4 border border-[#deae21]">
@@ -389,7 +402,7 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
               whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
-              <img src="/assets/about1.webp" alt="Brunch" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <Image src="/assets/about1.webp" alt="Brunch" fill sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
 
               <div className="absolute inset-4 border border-[#deae21]">
@@ -419,7 +432,7 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
               whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
-              <img src="/assets/about3.webp" alt="Happy Hour" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <Image src="/assets/about3.webp" alt="Happy Hour" fill sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
 
               <div className="absolute inset-4 border border-[#deae21]">
@@ -449,7 +462,7 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
               whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
-              <img src="/assets/menu4.webp" alt="Beverages" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <Image src="/assets/menu4.webp" alt="Beverages" fill sizes="(max-width: 767px) 100vw, 66vw" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
 
               <div className="absolute inset-4 border border-[#deae21]">
@@ -687,11 +700,13 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
                 whileHover={{ y: -8, transition: { duration: 0.22 } }}
               >
-                <img
+                <Image
                   src={img}
                   alt={platform}
+                  fill
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 767px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10" />
                 <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
