@@ -15,7 +15,7 @@ export default function Reservations() {
           transition={{ duration: 1.4, ease: "easeOut" }}
         >
           <Image
-            src="/assets/Siena_20.03.26-P-02.webp"
+            src="/assets/gallery16.webp"
             alt="Reservations at Siena"
             fill
             priority
@@ -23,17 +23,17 @@ export default function Reservations() {
             className="object-cover object-[50%_30%]"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(3,3,2,0.6)_0%,rgba(3,3,2,0.28)_45%,rgba(3,3,2,0.72)_100%)]" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-14 md:pt-16">
           <motion.div
-            className="flex items-center gap-3 mb-4"
+            className="flex items-center gap-4 mb-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
+            <div className="w-12 md:w-24 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
             <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
           </motion.div>
           <motion.h1
             className="text-[#f5efdd] text-[52px] md:text-[82px] lg:text-[104px] leading-none tracking-tight uppercase"
@@ -45,14 +45,14 @@ export default function Reservations() {
             RESERVATIONS
           </motion.h1>
           <motion.div
-            className="flex items-center gap-3 mt-2"
+            className="flex items-center gap-4 mt-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
+            <div className="w-12 md:w-24 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
             <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
           </motion.div>
         </div>
       </section>

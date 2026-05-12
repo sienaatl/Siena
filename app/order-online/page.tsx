@@ -25,16 +25,22 @@ const steps = [
 
 const categories = [
   {
-    image: "/assets/hero8.webp",
-    label: "Starters & Mezze",
+    image: "/assets/menu1.webp",
+    label: "Dinner",
+    sub: "Chef-crafted Mediterranean plates",
+    tab: "main-menu",
   },
   {
-    image: "/assets/hero12.webp",
-    label: "Mains",
+    image: "/assets/about1.webp",
+    label: "Brunch",
+    sub: "Weekend mornings done right",
+    tab: "weekend-brunch",
   },
   {
-    image: "/assets/hero10.webp",
-    label: "Desserts & Drinks",
+    image: "/assets/menu4.webp",
+    label: "Beverages",
+    sub: "Cocktails, wines and craft drinks",
+    tab: "libations",
   },
 ];
 
@@ -47,14 +53,6 @@ const ArrowRight = () => (
   </svg>
 );
 
-const ArrowRightDark = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-      fill="#030302"
-    />
-  </svg>
-);
 
 export default function OrderOnline() {
   return (
@@ -308,9 +306,7 @@ export default function OrderOnline() {
             {categories.map((cat, i) => (
               <motion.a
                 key={i}
-                href={TOAST_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/menu?tab=${cat.tab}`}
                 className="group relative block overflow-hidden cursor-pointer"
                 initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -328,22 +324,31 @@ export default function OrderOnline() {
                 {/* Default overlay */}
                 <div className="absolute inset-0 bg-black/25 transition-opacity duration-300 group-hover:opacity-0" />
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-[#58021f]/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center p-6">
-                  <span
-                    className="text-[#f5efdd] text-[34px] md:text-[44px] leading-tight uppercase tracking-tight text-center"
-                    style={{ fontFamily: "'Palmore-Light', serif" }}
-                  >
-                    {cat.label}
-                  </span>
+                <div className="absolute inset-0 bg-[#58021f]/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-5">
+                  <div className="flex items-end justify-between gap-3 w-full">
+                    <div className="min-w-0 flex-1">
+                      <h3
+                        className="text-[#f5efdd] text-[26px] md:text-[30px] leading-tight uppercase tracking-tight"
+                        style={{ fontFamily: "'Palmore-Light', serif" }}
+                      >
+                        {cat.label}
+                      </h3>
+                      <p className="text-[#f5efdd]/80 text-[13px] md:text-[15px] mt-1">{cat.sub}</p>
+                    </div>
+                    <div className="w-9 h-9 border border-[#f5efdd]/60 flex items-center justify-center flex-shrink-0">
+                      <ArrowRight />
+                    </div>
+                  </div>
                 </div>
                 {/* Always-visible label at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 p-5 group-hover:opacity-0 transition-opacity duration-300">
-                  <span
+                  <h3
                     className="text-[#f5efdd] text-[24px] md:text-[28px] leading-tight uppercase tracking-tight drop-shadow-lg"
                     style={{ fontFamily: "'Palmore-Light', serif" }}
                   >
                     {cat.label}
-                  </span>
+                  </h3>
+                  <p className="text-[#f5efdd]/75 text-[13px] md:text-[14px] mt-0.5 drop-shadow-lg">{cat.sub}</p>
                 </div>
               </motion.a>
             ))}

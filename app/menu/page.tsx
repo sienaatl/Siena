@@ -14,6 +14,7 @@ interface MenuItem {
 }
 
 interface SubSection {
+  id: string;
   title: string;
   subtitle?: string;
   items: MenuItem[];
@@ -93,9 +94,9 @@ function MenuItemCard({ item }: { item: MenuItem }) {
 }
 
 /* ─── SubSectionBlock ────────────────────────────────────── */
-function SubSectionBlock({ title, subtitle, items }: SubSection) {
+function SubSectionBlock({ id, title, subtitle, items }: SubSection) {
   return (
-    <div className="w-full py-[40px] md:py-[60px]">
+    <div id={id} className="w-full py-[40px] md:py-[60px]">
       <div className="flex flex-col items-center text-center mb-[30px] md:mb-[40px] px-4">
         <div className="relative inline-flex flex-col items-center">
           <img
@@ -214,6 +215,7 @@ function MenuContent() {
       const tabData: TabData[] = sortedMenus.map((menu) => {
         const menuCats = (categories ?? []).filter((c) => c.menu_id === menu.id) as CategoryRow[];
         const subsections: SubSection[] = menuCats.map((cat) => ({
+          id: slugify(cat.name),
           title: cat.name,
           subtitle: cat.description || undefined,
           items: (itemsByCatId.get(cat.id) ?? []).map((item) => ({
@@ -284,7 +286,13 @@ function MenuContent() {
       if (section) {
         const offset = headerHeight + 80;
         window.scrollTo({ top: section.getBoundingClientRect().top + window.scrollY - offset, behavior: "smooth" });
-        setActiveTab(tab);
+        const isTab = tabs.some((t) => t.id === tab);
+        if (isTab) {
+          setActiveTab(tab);
+        } else {
+          const parentTab = tabs.find((t) => t.subsections.some((s) => s.id === tab));
+          if (parentTab) setActiveTab(parentTab.id);
+        }
       }
     }, 300);
     return () => clearTimeout(timer);
