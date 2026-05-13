@@ -39,7 +39,7 @@ export default function AboutUs() {
             <div className="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[58px] md:text-[78px] lg:text-[98px] leading-none tracking-tight uppercase"
+            className="text-[#f5efdd] text-[58px] md:text-[78px] lg:text-[98px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ export default function AboutUs() {
           <div className="flex flex-col items-center text-center mb-[70px] md:mb-[90px]">
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-tight uppercase"
+                className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -196,7 +196,7 @@ export default function AboutUs() {
           <div className="flex flex-col items-center text-center mb-[70px] md:mb-[90px]">
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#f5efdd] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-tight uppercase"
+                className="text-[#f5efdd] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -304,7 +304,7 @@ export default function AboutUs() {
               {/* Section title */}
               <div className="relative inline-block mb-[60px] md:mb-[72px]">
                 <motion.h2
-                  className="text-[#58021f] text-[60px] md:text-[75px] lg:text-[90px] leading-[0.9] tracking-tight uppercase"
+                  className="text-[#58021f] text-[60px] md:text-[75px] lg:text-[90px] leading-[0.9] tracking-[0.06em] uppercase"
                   style={{ fontFamily: "'Palmore-Light', serif" }}
                   initial={{ opacity: 0, y: 60 }}
                   whileInView={{ opacity: 1, y: 0 }}

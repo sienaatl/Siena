@@ -57,7 +57,7 @@ export default function Events() {
             <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[62px] md:text-[82px] lg:text-[104px] leading-none tracking-tight uppercase"
+            className="text-[#f5efdd] text-[62px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -122,7 +122,7 @@ export default function Events() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-tight uppercase"
+                className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -200,7 +200,7 @@ export default function Events() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#f5efdd] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-tight uppercase"
+                className="text-[#f5efdd] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -294,7 +294,7 @@ export default function Events() {
             >
               <img src="/assets/icon6.svg" alt="" className="w-[55px] md:w-[65px]" />
               <h2
-                className="text-[#58021f] text-[44px] md:text-[56px] leading-none tracking-tight uppercase"
+                className="text-[#58021f] text-[44px] md:text-[56px] leading-none tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
               >
                 What We Offer

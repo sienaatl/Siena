@@ -57,7 +57,7 @@ export default function GiftCard() {
             <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[54px] md:text-[74px] lg:text-[92px] leading-none tracking-tight uppercase"
+            className="text-[#f5efdd] text-[54px] md:text-[74px] lg:text-[92px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -120,7 +120,7 @@ export default function GiftCard() {
                 transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
               />
               <h2
-                className="text-[#58021f] text-[58px] md:text-[72px] lg:text-[88px] leading-none tracking-tight uppercase mb-2"
+                className="text-[#58021f] text-[58px] md:text-[72px] lg:text-[88px] leading-none tracking-[0.06em] uppercase mb-2"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
               >
                 Share the
@@ -203,7 +203,7 @@ export default function GiftCard() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#f5efdd] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-tight uppercase"
+                className="text-[#f5efdd] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -261,7 +261,7 @@ export default function GiftCard() {
           <div className="flex flex-col items-center text-center mb-14">
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#58021f] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-tight uppercase"
+                className="text-[#58021f] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}

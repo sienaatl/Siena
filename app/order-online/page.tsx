@@ -80,7 +80,7 @@ export default function OrderOnline() {
             <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[50px] md:text-[70px] lg:text-[88px] leading-none tracking-tight uppercase"
+            className="text-[#f5efdd] text-[50px] md:text-[70px] lg:text-[88px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -146,7 +146,7 @@ export default function OrderOnline() {
 
           <div className="relative inline-block mb-16 md:mb-20">
             <motion.h2
-              className="text-[#58021f] text-[58px] md:text-[78px] lg:text-[92px] leading-[0.9] tracking-tight uppercase"
+              className="text-[#58021f] text-[58px] md:text-[78px] lg:text-[92px] leading-[0.9] tracking-[0.06em] uppercase"
               style={{ fontFamily: "'Palmore-Light', serif" }}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -216,7 +216,7 @@ export default function OrderOnline() {
 
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#f5efdd] text-[58px] md:text-[78px] lg:text-[92px] leading-[0.9] tracking-tight uppercase"
+                className="text-[#f5efdd] text-[58px] md:text-[78px] lg:text-[92px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -276,7 +276,7 @@ export default function OrderOnline() {
           <div className="flex flex-col items-center text-center mb-16 md:mb-20">
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#58021f] text-[58px] md:text-[78px] lg:text-[92px] leading-[0.9] tracking-tight uppercase"
+                className="text-[#58021f] text-[58px] md:text-[78px] lg:text-[92px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -328,7 +328,7 @@ export default function OrderOnline() {
                   <div className="flex items-end justify-between gap-3 w-full">
                     <div className="min-w-0 flex-1">
                       <h3
-                        className="text-[#f5efdd] text-[26px] md:text-[30px] leading-tight uppercase tracking-tight"
+                        className="text-[#f5efdd] text-[26px] md:text-[30px] leading-tight uppercase tracking-[0.06em]"
                         style={{ fontFamily: "'Palmore-Light', serif" }}
                       >
                         {cat.label}
@@ -343,7 +343,7 @@ export default function OrderOnline() {
                 {/* Always-visible label at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 p-5 group-hover:opacity-0 transition-opacity duration-300">
                   <h3
-                    className="text-[#f5efdd] text-[24px] md:text-[28px] leading-tight uppercase tracking-tight drop-shadow-lg"
+                    className="text-[#f5efdd] text-[24px] md:text-[28px] leading-tight uppercase tracking-[0.06em] drop-shadow-lg"
                     style={{ fontFamily: "'Palmore-Light', serif" }}
                   >
                     {cat.label}

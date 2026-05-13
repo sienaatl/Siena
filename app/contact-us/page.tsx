@@ -154,7 +154,7 @@ export default function ContactUs() {
             <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[54px] md:text-[72px] lg:text-[90px] leading-none tracking-tight uppercase"
+            className="text-[#f5efdd] text-[54px] md:text-[72px] lg:text-[90px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -214,7 +214,7 @@ export default function ContactUs() {
 
           <div className="relative inline-block mb-4">
             <motion.h2
-              className="text-[#58021f] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-tight uppercase"
+              className="text-[#58021f] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
               style={{ fontFamily: "'Palmore-Light', serif" }}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
