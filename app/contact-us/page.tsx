@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "motion/react";
+import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
 
 const phoneRegex = /^(\+?1[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/;
 
@@ -102,6 +104,9 @@ function Field({
 }
 
 export default function ContactUs() {
+  const [info, setInfo] = useState<RestaurantInfo>(RESTAURANT_FALLBACK);
+  useEffect(() => { getRestaurantInfo().then(setInfo); }, []);
+
   const {
     register,
     handleSubmit,
@@ -372,28 +377,29 @@ export default function ContactUs() {
 
       {/* FIND US */}
       <section
-        className="relative w-full py-12 md:py-20 overflow-hidden flex items-center justify-center"
+        className="relative w-full py-12 md:py-20 overflow-hidden"
         style={{
           backgroundImage: "url('/assets/fondo_rojizo.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
+        <div className="w-full max-w-[1180px] mx-auto px-4 md:px-0">
         <motion.div
-          className="relative w-full max-w-[1000px] mx-4 md:mx-6 overflow-hidden p-6 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10"
+          className="relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-stretch gap-8 md:gap-12"
           style={{
             backgroundImage: "url('/assets/fondo_findus.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          transition={{ duration: 0.38, ease: "easeOut" }}
         >
           <div className="absolute inset-3 border border-[#58021f]/20 pointer-events-none" />
 
-          <div className="flex-1 flex flex-col gap-3 md:gap-5 relative z-10 w-full">
+          <div className="flex-1 flex flex-col gap-4 md:gap-5 relative z-10 w-full">
             <img src="/assets/icono_findus.svg" alt="" className="w-[55px] md:w-[68px] h-auto" />
             <h2
               className="text-[#58021f] text-[52px] md:text-[72px] font-bold tracking-wide leading-none"
@@ -402,52 +408,50 @@ export default function ContactUs() {
               FIND US
             </h2>
 
-            <div className="flex flex-col gap-0.5 md:gap-1">
-              <span className="text-[#58021f] font-bold text-[16px] md:text-[18px]">Location</span>
-              <a
-                href="https://maps.app.goo.gl/qAEv8rdegv8rYr1c8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-2 text-[#2b0a0a] text-[16px] md:text-[18px] leading-[1.5] hover:text-[#58021f] transition"
+            <a
+              href={info.maps_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-2 text-[#2b0a0a] text-[16px] md:text-[18px] leading-[1.5] hover:text-[#030302] transition"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-0.5 flex-shrink-0">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                  className="fill-[#58021f] group-hover:fill-[#030302] transition-colors duration-300" />
+              </svg>
+              {info.address}
+            </a>
+
+            <a
+              href={`tel:${info.phone.replace(/\D/g, '')}`}
+              className="group flex items-center gap-2 text-[#2b0a0a] text-[16px] md:text-[18px] hover:text-[#030302] transition"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                  className="fill-[#58021f] group-hover:fill-[#030302] transition-colors duration-300" />
+              </svg>
+              {info.phone}
+            </a>
+
+            <div className="flex flex-col gap-2 mt-2">
+              <p
+                className="text-[#58021f] text-[30px] md:text-[38px] tracking-wide uppercase leading-none"
+                style={{ fontFamily: "'Palmore-Light', serif" }}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-0.5 flex-shrink-0">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#58021f" />
-                </svg>
-                124 Devore Rd, Alpharetta, GA 30009
-              </a>
-            </div>
-
-            <div className="flex flex-col gap-0.5 md:gap-1">
-              <span className="text-[#58021f] font-bold text-[16px] md:text-[18px]">Phone</span>
-              <a href="tel:4044883399" className="text-[#2b0a0a] text-[16px] md:text-[18px] hover:text-[#58021f] transition flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="#58021f" />
-                </svg>
-                404-488-3399
-              </a>
-            </div>
-
-            <div className="flex flex-col gap-0.5 md:gap-1">
-              <span className="text-[#58021f] font-bold text-[16px] md:text-[18px]">Opening Hours</span>
-              <p className="text-[#2b0a0a] text-[16px] md:text-[18px]">
-                <span className="font-semibold">Monday</span>: Closed
+                Opening Hours
               </p>
-              <p className="text-[#2b0a0a] text-[16px] md:text-[18px]">
-                <span className="font-semibold">Tuesday – Thursday</span>: 4:00 PM – 10:00 PM
-              </p>
-              <p className="text-[#2b0a0a] text-[16px] md:text-[18px]">
-                <span className="font-semibold">Friday – Saturday</span>: 4:00 PM – 12:00 AM
-              </p>
-              <p className="text-[#2b0a0a] text-[16px] md:text-[18px]">
-                <span className="font-semibold">Sunday</span>: 4:00 PM – 10:00 PM
-              </p>
+              <div className="w-8 h-[2px] bg-[#58021f]/30 mb-1" />
+              {info.hours.map(({ label, value }) => (
+                <p key={label} className="text-[#2b0a0a] text-[16px] md:text-[18px]">
+                  <span className="font-semibold">{label}</span>: {value}
+                </p>
+              ))}
             </div>
 
             <a
-              href="https://maps.app.goo.gl/qAEv8rdegv8rYr1c8"
+              href={info.maps_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-[#030302] transition mt-1"
+              className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-[#030302] transition mt-1 md:mt-2"
             >
               OPEN IN MAP
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
@@ -467,6 +471,7 @@ export default function ContactUs() {
             />
           </div>
         </motion.div>
+        </div>
       </section>
 
       <section className="relative w-full h-[28px] overflow-hidden bg-[#58021f]">

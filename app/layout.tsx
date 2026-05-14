@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import ScrollToTop from "../components/ScrollToTop";
+import { getRestaurantInfo } from "@/lib/restaurant";
 
 export const viewport: Viewport = {
   themeColor: "#58021f",
@@ -64,59 +65,48 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Restaurant",
-  name: "Siena Restaurant",
-  description:
-    "Upscale Mediterranean dining in Alpharetta, Georgia. Chef-driven shared plates, craft cocktails, and an unforgettable atmosphere.",
-  url: "https://siena-q6nc.vercel.app",
-  image: "https://siena-q6nc.vercel.app/assets/Siena_20.03.26-A-02.webp",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "124 Devore Rd",
-    addressLocality: "Alpharetta",
-    addressRegion: "GA",
-    postalCode: "30009",
-    addressCountry: "US",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 34.0754,
-    longitude: -84.2941,
-  },
-  servesCuisine: "Mediterranean",
-  priceRange: "$$$",
-  currenciesAccepted: "USD",
-  paymentAccepted: "Cash, Credit Card",
-  sameAs: [
-    "https://www.instagram.com/sienaatl/",
-    "https://www.facebook.com/sienaatl/",
-    "https://www.tiktok.com/@sienaatl",
-  ],
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Sunday"],
-      opens: "16:00",
-      closes: "22:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Friday", "Saturday"],
-      opens: "16:00",
-      closes: "00:00",
-    },
-  ],
-  hasMenu: "https://siena-q6nc.vercel.app/menu",
-  acceptsReservations: "True",
-};
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const info = await getRestaurantInfo();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    name: "Siena Restaurant",
+    description:
+      "Upscale Mediterranean dining in Alpharetta, Georgia. Chef-driven shared plates, craft cocktails, and an unforgettable atmosphere.",
+    url: "https://siena-q6nc.vercel.app",
+    image: "https://siena-q6nc.vercel.app/assets/Siena_20.03.26-A-02.webp",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: info.address.split(",")[0]?.trim() ?? "124 Devore Rd",
+      addressLocality: "Alpharetta",
+      addressRegion: "GA",
+      postalCode: "30009",
+      addressCountry: "US",
+    },
+    telephone: info.phone,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 34.0754,
+      longitude: -84.2941,
+    },
+    servesCuisine: "Mediterranean",
+    priceRange: "$$$",
+    currenciesAccepted: "USD",
+    paymentAccepted: "Cash, Credit Card",
+    sameAs: [
+      "https://www.instagram.com/sienaatl/",
+      "https://www.facebook.com/sienaatl/",
+      "https://www.tiktok.com/@sienaatl",
+    ],
+    hasMenu: "https://siena-q6nc.vercel.app/menu",
+    acceptsReservations: "True",
+  };
+
   return (
     <html lang="en">
       <head>

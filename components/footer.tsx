@@ -1,11 +1,15 @@
 "use client";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import NewsletterForm from "../components/newsletterform";
+import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
 
 
 export default function Footer() {
     const pathname = usePathname();
+    const [info, setInfo] = useState<RestaurantInfo>(RESTAURANT_FALLBACK);
+    useEffect(() => { getRestaurantInfo().then(setInfo); }, []);
 
     return (
 
@@ -47,7 +51,7 @@ export default function Footer() {
                             <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5S14.5 7.62 14.5 9S13.38 11.5 12 11.5Z" className="fill-current" />
                         </svg>
                         <span className="border-b border-transparent group-hover:border-[#ddae21] transition-colors">
-                            124 Devore Rd, Alpharetta, GA 30009
+                            {info.address}
                         </span>
                     </a>
 
@@ -209,11 +213,11 @@ export default function Footer() {
                             </p>
                             <div className="w-8 h-[2px] bg-[#ddae21] mt-2 mx-auto lg:mx-0"></div>
                         </div>
-                        <a href="tel:4044883399" className="flex items-center gap-2 text-[#f5efdd] text-[15px] uppercase hover:text-[#ddae21] transition group">
+                        <a href={`tel:${info.phone.replace(/\D/g, '')}`} className="flex items-center gap-2 text-[#f5efdd] text-[15px] uppercase hover:text-[#ddae21] transition group">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
                                 <path d="M20 15.5C18.8 15.5 17.5 15.3 16.4 14.9C16.3 14.9 16.2 14.9 16.1 14.9C15.8 14.9 15.6 15 15.4 15.2L13.2 17.4C10.4 15.9 8 13.6 6.6 10.8L8.8 8.6C9.1 8.3 9.2 7.9 9 7.6C8.7 6.5 8.5 5.2 8.5 4C8.5 3.5 8 3 7.5 3H4C3.5 3 3 3.5 3 4C3 13.4 10.6 21 20 21C20.5 21 21 20.5 21 20V16.5C21 16 20.5 15.5 20 15.5Z" className="fill-current" />
                             </svg>
-                            404-488-3399
+                            {info.phone}
                         </a>
                     </div>
 
@@ -229,10 +233,11 @@ export default function Footer() {
                             <div className="w-8 h-[2px] bg-[#ddae21] mt-2 mx-auto lg:mx-0"></div>
                         </div>
                         <div className="text-[#f5efdd] text-[15px] leading-[22px] space-y-0.5 uppercase">
-                            <p className="whitespace-nowrap"><span className="text-white/60">Monday</span> Closed</p>
-                            <p className="whitespace-nowrap"><span className="text-white/60">Tue – Thu</span> 4:00 PM – 10:00 PM</p>
-                            <p className="whitespace-nowrap"><span className="text-white/60">Fri – Sat</span> 4:00 PM – 12:00 AM</p>
-                            <p className="whitespace-nowrap"><span className="text-white/60">Sunday</span> 4:00 PM – 10:00 PM</p>
+                            {info.hours.map(({ label, value }) => (
+                                <p key={label} className="whitespace-nowrap">
+                                    <span className="text-white/60">{label}</span> {value}
+                                </p>
+                            ))}
                         </div>
                     </div>
                 </div>

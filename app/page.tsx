@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
+import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
 
 const EventsSlider = dynamic(() => import("@/components/EventsSlider"), { ssr: false });
 const TestimonialsSlider = dynamic(() => import("@/components/TestimonialsSlider"), { ssr: false });
@@ -13,6 +15,9 @@ const slides = [
 ];
 
 export default function Home() {
+  const [info, setInfo] = useState<RestaurantInfo>(RESTAURANT_FALLBACK);
+  useEffect(() => { getRestaurantInfo().then(setInfo); }, []);
+
   return (
     <main>
 
@@ -90,7 +95,7 @@ export default function Home() {
               <circle cx="12" cy="10" r="3" />
             </svg>
 
-            <span>124 Devore Rd, Alpharetta, GA 30009</span>
+            <span>{info.address}</span>
           </a>
 
           {/* Instagram */}
@@ -170,7 +175,7 @@ export default function Home() {
           backgroundPosition: "center"
         }}
       >
-        <div className="w-full max-w-[1180px] mx-auto py-12 md:py-20 px-4">
+        <div className="w-full max-w-[900px] mx-auto py-12 md:py-20 px-4">
           <div className="flex flex-col items-center text-center">
 
             {/* Icono arriba centrado */}
@@ -178,10 +183,10 @@ export default function Home() {
               src="/assets/icono_123.svg"
               alt="icono1"
               className="w-[60px] md:w-[75px]"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
+              transition={{ duration: 0.3, delay: 0, ease: "easeOut" }}
               animate={{ y: [0, -7, 0] }}
             />
 
@@ -190,10 +195,10 @@ export default function Home() {
               <motion.h2
                 className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
-                initial={{ opacity: 0, y: 60 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+                transition={{ duration: 0.38, delay: 0.08, ease: "easeOut" }}
               >
                 A Taste of the Mediterranean
               </motion.h2>
@@ -205,10 +210,10 @@ export default function Home() {
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: `2px 2px 0 #f5efdd, -2px -2px 0 #f5efdd, 2px -2px 0 #f5efdd, -2px 2px 0 #f5efdd`
                 }}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
+                transition={{ duration: 0.38, delay: 0.16, ease: "easeOut" }}
               >
                 reimagined
               </motion.span>
@@ -216,10 +221,10 @@ export default function Home() {
 
             <motion.p
               className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+              transition={{ duration: 0.38, delay: 0.24, ease: "easeOut" }}
             >
               At Siena, every detail is guided by a creative vision rooted in Mediterranean warmth and Italian soul. <br></br> A place where flavors, atmosphere, and hospitality come together to create a truly memorable experience.
             </motion.p>
@@ -228,10 +233,10 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="relative z-10 group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.65, ease: "easeOut" }}
+              transition={{ duration: 0.35, delay: 0.28, ease: "easeOut" }}
             >
               ABOUT US
 
@@ -277,10 +282,10 @@ export default function Home() {
               src="/assets/icon_menu.svg"
               alt="Menu icon"
               className="w-[60px] md:w-[75px]"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
+              transition={{ duration: 0.3, delay: 0, ease: "easeOut" }}
               animate={{ y: [0, -7, 0] }}
             />
 
@@ -288,10 +293,10 @@ export default function Home() {
               <motion.h2
                 className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
-                initial={{ opacity: 0, y: 60 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+                transition={{ duration: 0.38, delay: 0.08, ease: "easeOut" }}
               >
                 Enjoy the Flavors
               </motion.h2>
@@ -307,10 +312,10 @@ export default function Home() {
             -2px 2px 0 #f5efdd
           `,
                 }}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
+                transition={{ duration: 0.38, delay: 0.16, ease: "easeOut" }}
               >
                 inspired
               </motion.span>
@@ -318,10 +323,10 @@ export default function Home() {
 
             <motion.p
               className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+              transition={{ duration: 0.38, delay: 0.24, ease: "easeOut" }}
             >
               From handcrafted pasta to fresh Mediterranean plates. <br className="hidden md:block" />
               Every dish tells a story worth savoring.
@@ -332,10 +337,10 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="relative z-10 group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.65, ease: "easeOut" }}
+              transition={{ duration: 0.35, delay: 0.28, ease: "easeOut" }}
             >
               FULL MENU
 
@@ -364,10 +369,10 @@ export default function Home() {
             <motion.a
               href="/menu?tab=main-menu"
               className="group relative overflow-hidden shadow-lg md:row-span-2 h-[220px] md:h-auto"
-              initial={{ opacity: 0, y: 60 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.7, delay: 0, ease: "easeOut" }}
+              transition={{ duration: 0.38, delay: 0, ease: "easeOut" }}
               whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
               <Image src="/assets/menu1.webp" alt="Dinner" fill sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -396,10 +401,10 @@ export default function Home() {
             <motion.a
               href="/menu?tab=weekend-brunch"
               className="group relative overflow-hidden shadow-lg h-[220px] md:h-auto"
-              initial={{ opacity: 0, y: 60 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+              transition={{ duration: 0.38, delay: 0.08, ease: "easeOut" }}
               whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
               <Image src="/assets/about1.webp" alt="Brunch" fill sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -426,10 +431,10 @@ export default function Home() {
             <motion.a
               href="/menu?tab=happy-hour"
               className="group relative overflow-hidden shadow-lg h-[220px] md:h-auto"
-              initial={{ opacity: 0, y: 60 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.38, delay: 0.12, ease: "easeOut" }}
               whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
               <Image src="/assets/about3.webp" alt="Happy Hour" fill sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -456,10 +461,10 @@ export default function Home() {
             <motion.a
               href="/menu?tab=libations"
               className="group relative overflow-hidden shadow-lg md:col-span-2 h-[220px] md:h-auto"
-              initial={{ opacity: 0, y: 60 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
+              transition={{ duration: 0.38, delay: 0.18, ease: "easeOut" }}
               whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
               <Image src="/assets/menu4.webp" alt="Beverages" fill sizes="(max-width: 767px) 100vw, 66vw" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -510,10 +515,10 @@ export default function Home() {
               src="/assets/icon6.svg"
               alt="icono1"
               className="w-[60px] md:w-[75px]"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
+              transition={{ duration: 0.3, delay: 0, ease: "easeOut" }}
               animate={{ y: [0, -7, 0] }}
             />
 
@@ -523,10 +528,10 @@ export default function Home() {
               <motion.h2
                 className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
-                initial={{ opacity: 0, y: 60 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+                transition={{ duration: 0.38, delay: 0.08, ease: "easeOut" }}
               >
                 Something Special
               </motion.h2>
@@ -543,10 +548,10 @@ export default function Home() {
             -2px 2px 0 #f5efdd
           `,
                 }}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
+                transition={{ duration: 0.38, delay: 0.16, ease: "easeOut" }}
               >
                 every day
               </motion.span>
@@ -555,10 +560,10 @@ export default function Home() {
 
             <motion.p
               className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+              transition={{ duration: 0.38, delay: 0.24, ease: "easeOut" }}
             >
               Designed for celebration, connection, and unforgettable meals.
             </motion.p>
@@ -568,10 +573,10 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.65, ease: "easeOut" }}
+              transition={{ duration: 0.35, delay: 0.28, ease: "easeOut" }}
             >
               BOOK AN EVENT
 
@@ -610,19 +615,19 @@ export default function Home() {
               src="/assets/icono_123.svg"
               alt=""
               className="w-[60px] md:w-[75px] mb-2"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
             />
             <div className="relative inline-block">
               <motion.h2
                 className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
-                initial={{ opacity: 0, y: 60 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+                transition={{ duration: 0.38, delay: 0.08, ease: "easeOut" }}
               >
                 Follow Us
               </motion.h2>
@@ -632,20 +637,20 @@ export default function Home() {
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: "2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd",
                 }}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
+                transition={{ duration: 0.38, delay: 0.16, ease: "easeOut" }}
               >
                 on social
               </motion.span>
             </div>
             <motion.p
               className="text-[#030302]/70 text-lg md:text-xl leading-[140%] max-w-[560px] mt-12 md:mt-24"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+              transition={{ duration: 0.38, delay: 0.24, ease: "easeOut" }}
             >
               Stay connected with Siena. Follow along for daily specials, events, and behind-the-scenes moments.
             </motion.p>
@@ -694,10 +699,10 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="group relative overflow-hidden"
                 style={{ aspectRatio: "3/4" }}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
+                transition={{ duration: 0.3, delay: i * 0.06, ease: "easeOut" }}
                 whileHover={{ y: -8, transition: { duration: 0.22 } }}
               >
                 <Image
@@ -740,10 +745,10 @@ export default function Home() {
               src="/assets/icono_testimonios.svg"
               alt="icono1"
               className="w-[130px] md:w-[172px]"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
+              transition={{ duration: 0.3, delay: 0, ease: "easeOut" }}
             />
 
             <div className="relative inline-block mb-[30px]">
@@ -752,10 +757,10 @@ export default function Home() {
               <motion.h2
                 className="text-[#f5efdd] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase mb-[10px]"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
-                initial={{ opacity: 0, y: 60 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+                transition={{ duration: 0.38, delay: 0.08, ease: "easeOut" }}
               >
                 From the food to the atmosphere, <br></br>
               </motion.h2>
@@ -765,10 +770,10 @@ export default function Home() {
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive"
                 }}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
+                transition={{ duration: 0.38, delay: 0.16, ease: "easeOut" }}
               >
                 unforgettable
               </motion.span>
@@ -796,35 +801,29 @@ export default function Home() {
 
       {/* FIND US */}
       <section
-        className="relative w-full py-12 md:py-20 overflow-hidden flex items-center justify-center"
+        className="relative w-full py-12 md:py-20 overflow-hidden"
         style={{ backgroundImage: "url('/assets/fondo_rojizo.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
       >
+        <div className="w-full max-w-[1180px] mx-auto px-4 md:px-0">
+          <div
+            className="relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-stretch gap-8 md:gap-12"
+            style={{ backgroundImage: "url('/assets/fondo_findus.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
+          >
+            <div className="absolute inset-3 border border-[#58021f]/20 pointer-events-none" />
 
-        {/* Card */}
-        <div
-          className="relative w-full max-w-[1000px] mx-4 md:mx-6 overflow-hidden p-6 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10"
-          style={{ backgroundImage: "url('/assets/fondo_findus.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
-        >
-          {/* Borde decorativo */}
-          <div className="absolute inset-3 border border-[#58021f]/20 pointer-events-none" />
+            {/* Columna izquierda */}
+            <div className="flex-1 flex flex-col gap-4 md:gap-5 relative z-10 w-full">
+              <img src="/assets/icono_findus.svg" alt="Find Us" className="w-[55px] md:w-[68px] h-auto" />
 
-          {/* Columna izquierda */}
-          <div className="flex-1 flex flex-col gap-3 md:gap-5 relative z-10 w-full">
+              <h2
+                className="text-[#58021f] text-[52px] md:text-[72px] font-bold tracking-wide leading-none"
+                style={{ fontFamily: "'Palmore-Light', serif" }}
+              >
+                FIND US
+              </h2>
 
-            <img src="/assets/icono_findus.svg" alt="Find Us" className="w-[55px] md:w-[68px] h-auto" />
-
-            <h2
-              className="text-[#58021f] text-[52px] md:text-[72px] font-bold tracking-wide leading-none"
-              style={{ fontFamily: "'Palmore-Light', serif" }}
-            >
-              FIND US
-            </h2>
-
-            {/* Location */}
-            <div className="flex flex-col gap-0.5 md:gap-1">
-              <span className="text-[#58021f] font-bold text-[16px] md:text-[18px]">Location</span>
               <a
-                href="https://maps.app.goo.gl/qAEv8rdegv8rYr1c8"
+                href={info.maps_url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-start gap-2 text-[#2b0a0a] text-[16px] md:text-[18px] leading-[1.5] hover:text-[#030302] transition"
@@ -833,77 +832,65 @@ export default function Home() {
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
                     className="fill-[#58021f] group-hover:fill-[#030302] transition-colors duration-300" />
                 </svg>
-                124 Devore Rd, Alpharetta, GA 30009
+                {info.address}
               </a>
-            </div>
 
-            {/* Phone */}
-            <div className="flex flex-col gap-0.5 md:gap-1">
-              <span className="text-[#58021f] font-bold text-[16px] md:text-[18px]">Phone</span>
               <a
-                href="tel:4044883399"
+                href={`tel:${info.phone.replace(/\D/g, '')}`}
                 className="group flex items-center gap-2 text-[#2b0a0a] text-[16px] md:text-[18px] hover:text-[#030302] transition"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
                     className="fill-[#58021f] group-hover:fill-[#030302] transition-colors duration-300" />
                 </svg>
-                404-488-3399
+                {info.phone}
+              </a>
+
+              <div className="flex flex-col gap-2 mt-2">
+                <p
+                  className="text-[#58021f] text-[30px] md:text-[38px] tracking-wide uppercase leading-none"
+                  style={{ fontFamily: "'Palmore-Light', serif" }}
+                >
+                  Opening Hours
+                </p>
+                <div className="w-8 h-[2px] bg-[#58021f]/30 mb-1" />
+                {info.hours.map(({ label, value }) => (
+                  <p key={label} className="text-[#2b0a0a] text-[16px] md:text-[18px]">
+                    <span className="font-semibold">{label}</span>: {value}
+                  </p>
+                ))}
+              </div>
+
+              <a
+                href={info.maps_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition mt-1 md:mt-2"
+              >
+                OPEN IN MAP
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
+                    className="fill-[#f5efdd] group-hover:fill-[#f5efdd] transition-colors duration-300"
+                  />
+                </svg>
               </a>
             </div>
 
-            {/* Opening Hours */}
-            <div className="flex flex-col gap-0.5 md:gap-1">
-              <span className="text-[#58021f] font-bold text-[16px] md:text-[18px]">Opening Hours</span>
-              <p className="text-[#2b0a0a] text-[16px] md:text-[18px]">
-                <span className="font-semibold">Monday</span>: Closed
-              </p>
-              <p className="text-[#2b0a0a] text-[16px] md:text-[18px]">
-                <span className="font-semibold">Tuesday – Thursday</span>: 4:00 PM – 10:00 PM
-              </p>
-              <p className="text-[#2b0a0a] text-[16px] md:text-[18px]">
-                <span className="font-semibold">Friday – Saturday</span>: 4:00 PM – 12:00 AM
-              </p>
-              <p className="text-[#2b0a0a] text-[16px] md:text-[18px]">
-                <span className="font-semibold">Sunday</span>: 4:00 PM – 10:00 PM
-              </p>
+            {/* Mapa */}
+            <div className="flex-1 overflow-hidden shadow-lg relative z-10 w-full min-h-[260px] md:min-h-0 md:h-auto self-stretch">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.051868613463!2d-84.2991249!3d34.06818459999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f575f4dbde006b%3A0x8a505a045593f782!2sSiena%20Restaurant!5e0!3m2!1ses-419!2scr!4v1777903381535!5m2!1ses-419!2scr"
+                className="w-full h-full absolute inset-0"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
-
-            {/* Botón */}
-
-
-            <a
-              href="https://maps.app.goo.gl/qAEv8rdegv8rYr1c8"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition mt-1 md:mt-2"
-            >
-              OPEN IN MAP
-
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
-                <path
-                  d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-                  className="fill-[#f5efdd] group-hover:fill-[#f5efdd] transition-colors duration-300"
-                />
-              </svg>
-            </a>
-
           </div>
-
-          {/* Mapa */}
-          <div className="flex-1 overflow-hidden shadow-lg relative z-10 w-full min-h-[240px] md:min-h-[420px]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.051868613463!2d-84.2991249!3d34.06818459999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f575f4dbde006b%3A0x8a505a045593f782!2sSiena%20Restaurant!5e0!3m2!1ses-419!2scr!4v1777903381535!5m2!1ses-419!2scr"
-              className="w-full h-full absolute inset-0"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-
-        </div >
-      </section >
+        </div>
+      </section>
 
       <section className="relative w-full h-[28px] overflow-hidden bg-[#58021f]">
         <img

@@ -90,12 +90,12 @@ export default function EventsSlider() {
             {events.map((event, i) => (
               <motion.div
                 key={i}
-                initial={isDesktop ? { opacity: 0, y: 60 } : false}
+                initial={isDesktop ? { opacity: 0, y: 30 } : false}
                 whileInView={isDesktop ? { opacity: 1, y: 0 } : undefined}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{
-                  duration: 0.7,
-                  delay: i * 0.15,
+                  duration: 0.38,
+                  delay: i * 0.08,
                   ease: "easeOut",
                 }}
                 className="bg-[#f5efdd] overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-500 basis-full md:basis-[calc((100%-24px)/3)] shrink-0 grow-0 min-w-0"
