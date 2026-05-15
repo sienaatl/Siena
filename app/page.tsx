@@ -21,8 +21,11 @@ export default function Home() {
   return (
     <main>
 
+      {/* HERO + BANNER wrapper = 100vh en mobile */}
+      <div className="flex flex-col h-screen md:h-auto md:block">
+
       {/* HERO */}
-      <section className="relative w-full h-[85vh] md:h-screen overflow-hidden">
+      <section className="relative w-full flex-1 md:h-screen overflow-hidden">
         <Image
           src="/assets/hero_home.webp"
           alt=""
@@ -157,6 +160,8 @@ export default function Home() {
 
       </section>
 
+      </div>{/* fin hero+banner 100vh */}
+
 
       {/* ABOUT US */}
       <section
@@ -218,7 +223,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.38, delay: 0.24, ease: "easeOut" }}
             >
-              At Siena, every detail is guided by a creative vision rooted in Mediterranean warmth and Italian soul. <br></br> A place where flavors, atmosphere, and hospitality come together to create a truly memorable experience.
+              At Siena, every detail is guided by a creative vision rooted in Mediterranean warmth and Italian soul. A place where flavors, atmosphere, and hospitality come together to create a truly memorable experience.
             </motion.p>
             <motion.a
               href="https://www.toasttab.com/invoice/lead?rx=399f3374-7dde-4df3-9c3a-c49fed50b565&ot=675642f1-f873-4b8f-afcd-cca9b93a185c"

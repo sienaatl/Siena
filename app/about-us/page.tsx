@@ -92,99 +92,90 @@ export default function AboutUs() {
 
       {/* OUR STORY */}
       <section className="relative w-full overflow-hidden" style={{ backgroundColor: "#f5efdd" }}>
-        <div className="w-full max-w-[1180px] mx-auto px-4 py-[80px] md:py-[100px]">
+        <div className="w-full max-w-[600px] mx-auto px-4 py-[80px] md:py-[100px] flex flex-col items-center text-center">
 
           {/* Icon */}
-          <div className="flex flex-col items-center text-center mb-1">
-            <motion.img
-              src="/assets/icon_aboutus.svg"
-              alt="Our Story"
-              className="w-[80px] md:w-[95px]"
-              animate={{ y: [0, -6, 0] }}
-              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-            />
-          </div>
+          <motion.img
+            src="/assets/icon_aboutus.svg"
+            alt="Our Story"
+            className="w-[80px] md:w-[95px] mb-4"
+            animate={{ y: [0, -6, 0] }}
+            transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+          />
 
           {/* Section title */}
-          <div className="flex flex-col items-center text-center mb-[70px] md:mb-[90px]">
-            <div className="relative inline-block">
-              <motion.h2
-                className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
-                style={{ fontFamily: "'Palmore-Light', serif" }}
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-              >
-                Our Story
-              </motion.h2>
-              <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
-                style={{
-                  fontFamily: "'AguafinaScript-Regular', cursive",
-                  textShadow:
-                    "2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd",
-                }}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
-              >
-                the beginning
-              </motion.span>
-            </div>
+          <div className="relative inline-block mb-[60px] md:mb-[80px]">
+            <motion.h2
+              className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+              style={{ fontFamily: "'Palmore-Light', serif" }}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+            >
+              Our Story
+            </motion.h2>
+            <motion.span
+              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+              style={{
+                fontFamily: "'AguafinaScript-Regular', cursive",
+                textShadow: "2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd",
+              }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
+            >
+              the beginning
+            </motion.span>
           </div>
 
-          {/* Two-column content */}
-          <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-center">
+          {/* Text */}
+          <motion.div
+            className="flex flex-col gap-5"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <p className="text-[#030302]/80 text-[16px] md:text-[18px] leading-[1.8]">
+              Siena was born from a passion for the sun-drenched flavors of the Mediterranean, a cuisine
+              built on honest ingredients, bold character, and the timeless tradition of gathering around
+              a beautiful table. Located in the heart of Alpharetta, Georgia, we bring the essence of
+              coastal Mediterranean dining to the American South.
+            </p>
+            <p className="text-[#030302]/70 text-[16px] md:text-[18px] leading-[1.8]">
+              Our name, Siena, draws inspiration from the warmth of the Tuscan city, with its rich terracotta
+              tones, the golden afternoon light, and a culture that has always treated food as an art form
+              and a reason to gather. We carry that spirit into every plate we craft, every glass we pour,
+              and every table we set.
+            </p>
+            <p className="text-[#030302]/70 text-[16px] md:text-[18px] leading-[1.8]">
+              From wood-fired flavors to hand-selected wines and seasonal ingredients sourced with care,
+              every detail at Siena is a love letter to the Mediterranean way of life: vibrant, generous,
+              and deeply alive.
+            </p>
+          </motion.div>
 
-            {/* Left: text */}
-            <motion.div
-              className="flex-1"
-              initial={{ opacity: 0, x: -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <p className="text-[#030302]/80 text-[16px] md:text-[18px] leading-[1.8] mb-6">
-                Siena was born from a passion for the sun-drenched flavors of the Mediterranean, a cuisine
-                built on honest ingredients, bold character, and the timeless tradition of gathering around
-                a beautiful table. Located in the heart of Alpharetta, Georgia, we bring the essence of
-                coastal Mediterranean dining to the American South.
-              </p>
-              <p className="text-[#030302]/70 text-[16px] md:text-[18px] leading-[1.8] mb-6">
-                Our name, Siena, draws inspiration from the warmth of the Tuscan city, with its rich terracotta
-                tones, the golden afternoon light, and a culture that has always treated food as an art form
-                and a reason to gather. We carry that spirit into every plate we craft, every glass we pour,
-                and every table we set.
-              </p>
-              <p className="text-[#030302]/70 text-[16px] md:text-[18px] leading-[1.8]">
-                From wood-fired flavors to hand-selected wines and seasonal ingredients sourced with care,
-                every detail at Siena is a love letter to the Mediterranean way of life: vibrant, generous,
-                and deeply alive.
-              </p>
-            </motion.div>
+          {/* Image */}
+          <motion.div
+            className="group w-full mt-12 relative overflow-hidden shadow-lg"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+          >
+            <img
+              src="/assets/hero5.webp"
+              alt="Siena Restaurant interior"
+              className="w-full h-[340px] md:h-[420px] object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500 pointer-events-none" />
+            <div className="absolute inset-4 border border-[#deae21] pointer-events-none" />
+          </motion.div>
 
-            {/* Right: image */}
-            <motion.div
-              className="group flex-1 w-full relative overflow-hidden shadow-lg"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.9, ease: "easeOut" }}
-            >
-              <img
-                src="/assets/hero5.webp"
-                alt="Siena Restaurant interior"
-                className="w-full h-[340px] md:h-[480px] object-cover transition-transform duration-700 group-hover:scale-110"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500 pointer-events-none" />
-              <div className="absolute inset-4 border border-[#deae21] pointer-events-none" />
-            </motion.div>
-
-          </div>
         </div>
       </section>
 
@@ -329,14 +320,12 @@ export default function AboutUs() {
               </div>
 
               <p className="text-[#030302]/80 text-[16px] md:text-[18px] leading-[1.8] mb-5">
-                Step inside and feel the warmth of a dining room designed to transport you, with rich textures,
-                soft candlelight, and Mediterranean accents that evoke the timeless beauty of the Old World
-                reimagined in the heart of Alpharetta.
+                Step inside and feel the warmth of rich textures, soft candlelight, and Mediterranean accents
+                that evoke the timeless beauty of the Old World — reimagined in the heart of Alpharetta.
               </p>
               <p className="text-[#030302]/70 text-[16px] md:text-[18px] leading-[1.8] mb-8">
-                Whether you&apos;re celebrating a special occasion, planning the perfect date night, or simply
-                treating yourself to an exceptional meal, our space sets the stage for memories that linger
-                long after the last bite. Every corner is an invitation to slow down and savor the moment.
+                Every corner is an invitation to slow down and savor the moment — whether it&apos;s a special
+                occasion, a date night, or simply a meal worth remembering.
               </p>
 
               <a

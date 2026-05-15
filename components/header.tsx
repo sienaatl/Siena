@@ -123,12 +123,20 @@ export default function Header() {
                             href="https://www.instagram.com/sienaatl/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hidden md:flex group p-2 cursor-pointer items-center justify-center transition-colors duration-300 border border-[#58021F] bg-transparent hover:bg-[#58021F]"
+                            className={`hidden md:flex group p-2 cursor-pointer items-center justify-center transition-colors duration-300 border bg-transparent ${
+                                scrolled
+                                    ? "border-[#58021F] hover:bg-[#58021F]"
+                                    : "border-[#f4eedd] hover:bg-[#f4eedd]"
+                            }`}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" className="w-[24px] h-[24px]" fill="none">
                                 <path
                                     d="M8.67699 0H21.2437C26.031 0 29.9206 3.88968 29.9206 8.67699V21.2437C29.9206 23.5449 29.0065 25.752 27.3792 27.3792C25.752 29.0065 23.5449 29.9206 21.2437 29.9206H8.67699C3.88968 29.9206 0 26.031 0 21.2437V8.67699C0 6.37571 0.91418 4.16868 2.54143 2.54143C4.16868 0.91418 6.37571 0 8.67699 0ZM8.37778 2.99206C6.9494 2.99206 5.57952 3.55949 4.5695 4.5695C3.55949 5.57952 2.99206 6.9494 2.99206 8.37778V21.5429C2.99206 24.52 5.40067 26.9286 8.37778 26.9286H21.5429C22.9712 26.9286 24.3411 26.3612 25.3511 25.3511C26.3612 24.3411 26.9286 22.9712 26.9286 21.5429V8.37778C26.9286 5.40067 24.52 2.99206 21.5429 2.99206H8.37778ZM22.8145 5.23611C23.3105 5.23611 23.7861 5.43313 24.1368 5.78383C24.4875 6.13453 24.6845 6.61019 24.6845 7.10615C24.6845 7.60212 24.4875 8.07777 24.1368 8.42847C23.7861 8.77917 23.3105 8.97619 22.8145 8.97619C22.3185 8.97619 21.8429 8.77917 21.4922 8.42847C21.1415 8.07777 20.9444 7.60212 20.9444 7.10615C20.9444 6.61019 21.1415 6.13453 21.4922 5.78383C21.8429 5.43313 22.3185 5.23611 22.8145 5.23611ZM14.9603 7.48016C16.9442 7.48016 18.8468 8.26825 20.2496 9.67105C21.6524 11.0738 22.4405 12.9765 22.4405 14.9603C22.4405 16.9442 21.6524 18.8468 20.2496 20.2496C18.8468 21.6524 16.9442 22.4405 14.9603 22.4405C12.9765 22.4405 11.0738 21.6524 9.67105 20.2496C8.26825 18.8468 7.48016 16.9442 7.48016 14.9603C7.48016 12.9765 8.26825 11.0738 9.67105 9.67105C11.0738 8.26825 12.9765 7.48016 14.9603 7.48016ZM14.9603 10.4722C13.77 10.4722 12.6284 10.9451 11.7868 11.7868C10.9451 12.6284 10.4722 13.77 10.4722 14.9603C10.4722 16.1506 10.9451 17.2922 11.7868 18.1339C12.6284 18.9756 13.77 19.4484 14.9603 19.4484C16.1506 19.4484 17.2922 18.9756 18.1339 18.1339C18.9756 17.2922 19.4484 16.1506 19.4484 14.9603C19.4484 13.77 18.9756 12.6284 18.1339 11.7868C17.2922 10.9451 16.1506 10.4722 14.9603 10.4722Z"
-                                    className="fill-[#58021F] group-hover:fill-[#F5EFDD] transition-colors duration-300"
+                                    className={`transition-colors duration-300 ${
+                                        scrolled
+                                            ? "fill-[#58021F] group-hover:fill-[#F5EFDD]"
+                                            : "fill-[#f4eedd] group-hover:fill-[#58021F]"
+                                    }`}
                                 />
                             </svg>
                         </a>
@@ -137,12 +145,14 @@ export default function Header() {
                         <button
                             onClick={() => setMenuOpen(true)}
                             aria-label="Open menu"
-                            className="md:hidden flex items-center justify-center w-[42px] h-[42px] border border-[#59021F] bg-transparent cursor-pointer transition-colors duration-300"
+                            className={`md:hidden flex items-center justify-center w-[42px] self-stretch border bg-transparent cursor-pointer transition-colors duration-300 ${
+                                scrolled ? "border-[#59021F]" : "border-[#f4eedd]"
+                            }`}
                         >
                             <div className="relative w-[20px] h-[16px] flex flex-col justify-between">
-                                <span className="block h-[2px] w-full bg-[#59021F]"></span>
-                                <span className="block h-[2px] w-full bg-[#59021F]"></span>
-                                <span className="block h-[2px] w-full bg-[#59021F]"></span>
+                                <span className={`block h-[2px] w-full transition-colors duration-300 ${scrolled ? "bg-[#59021F]" : "bg-[#f4eedd]"}`}></span>
+                                <span className={`block h-[2px] w-full transition-colors duration-300 ${scrolled ? "bg-[#59021F]" : "bg-[#f4eedd]"}`}></span>
+                                <span className={`block h-[2px] w-full transition-colors duration-300 ${scrolled ? "bg-[#59021F]" : "bg-[#f4eedd]"}`}></span>
                             </div>
                         </button>
                     </div>

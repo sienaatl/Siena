@@ -98,15 +98,15 @@ function SubSectionBlock({ id, title, subtitle, items }: SubSection) {
   return (
     <div id={id} className="w-full py-[40px] md:py-[60px]">
       <div className="flex flex-col items-center text-center mb-[30px] md:mb-[40px] px-4">
-        <div className="relative inline-flex flex-col items-center">
+        <div className="inline-flex flex-col items-center">
           <img
             src="/assets/icono_123.svg"
             alt=""
             aria-hidden="true"
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[90%] w-[80px] h-auto pointer-events-none z-0 opacity-15"
+            className="w-[80px] h-auto pointer-events-none opacity-15 mb-4"
           />
           <h3
-            className="relative z-10 text-[44px] md:text-[60px] leading-tight uppercase text-[#58021f]"
+            className="text-[44px] md:text-[60px] leading-tight uppercase text-[#58021f]"
             style={{ fontFamily: "'Palmore-Light', serif" }}
           >
             {title}
@@ -384,12 +384,12 @@ function MenuContent() {
       {/* STICKY TABS */}
       {tabs.length > 0 && (
         <div
-          className="sticky z-40 transition-all duration-300 bg-[#f5efdd]"
+          className="sticky z-40 transition-all duration-300 bg-[#f5efdd] border-b border-[#030302]/10 shadow-sm"
           style={{ top: `${headerHeight}px` }}
         >
-          <div className="max-w-[1180px] mx-auto">
+          <div className="max-w-[1180px] mx-auto px-6 md:px-10">
             <div ref={tabsContainerRef} className="overflow-x-auto scrollbar-hide">
-              <div className="flex items-center gap-6 md:gap-10 px-6 md:px-10 pt-4 pb-0 whitespace-nowrap justify-start md:justify-center">
+              <div className="flex items-center gap-2 md:gap-3 py-3 whitespace-nowrap justify-start md:justify-center">
                 {tabs.map((tab) => {
                   const isActive = activeTab === tab.id;
                   return (
@@ -397,22 +397,16 @@ function MenuContent() {
                       key={tab.id}
                       data-tab-id={tab.id}
                       onClick={() => handleTabClick(tab.id)}
-                      className={`relative text-[13px] md:text-[16px] tracking-[0.12em] uppercase cursor-pointer pb-3 md:pb-4 transition-colors duration-200 ${
-                        isActive ? "text-[#59021e] font-semibold" : "text-[#030203] font-normal hover:text-[#030203]"
+                      className={`px-4 md:px-5 py-[7px] text-[11px] md:text-[12px] tracking-[0.14em] uppercase cursor-pointer transition-all duration-200 border font-medium ${
+                        isActive
+                          ? "bg-[#58021F] text-[#f5efdd] border-[#58021F]"
+                          : "bg-transparent text-[#030302]/55 border-[#030302]/20 hover:border-[#58021F]/50 hover:text-[#58021F]"
                       }`}
                     >
-                      <span className="relative inline-block">
-                        {tab.label}
-                        {isActive && (
-                          <span className="absolute left-0 right-0 -bottom-[2px] h-[2px] bg-[#59021e]" />
-                        )}
-                      </span>
+                      {tab.label}
                     </button>
                   );
                 })}
-              </div>
-              <div className="px-6 md:px-10">
-                <div className="h-px bg-[#030302]/15" />
               </div>
             </div>
           </div>
@@ -420,7 +414,7 @@ function MenuContent() {
       )}
 
       {/* MENU SECTIONS */}
-      <div className="max-w-[1180px] mx-auto pb-16 px-4 md:px-8 pt-8">
+      <div className="max-w-[1180px] mx-auto pb-16 pt-8">
         {loading && (
           <div className="flex items-center justify-center py-24">
             <div className="flex flex-col items-center gap-4">
@@ -433,7 +427,7 @@ function MenuContent() {
           <div className="text-center py-16 text-[#030302]/50 italic text-sm">{menuError}</div>
         )}
         {!loading && !menuError && (
-          <div className="bg-white shadow-[0_8px_40px_rgba(0,0,0,0.10)] rounded-sm overflow-hidden">
+          <div className="bg-transparent md:bg-white md:shadow-[0_8px_40px_rgba(0,0,0,0.10)] md:rounded-sm overflow-hidden">
             {tabs.map((tab) => (
               <section
                 key={tab.id}
@@ -441,7 +435,7 @@ function MenuContent() {
                 className="w-full scroll-mt-[180px] md:scroll-mt-[200px] border-b border-[#e8dfc8] last:border-b-0"
               >
                 {/* Tab section header */}
-                <div className="w-full py-[50px] md:py-[70px] flex flex-col items-center text-center px-4 bg-white">
+                <div className="w-full py-[50px] md:py-[70px] flex flex-col items-center text-center px-4 bg-transparent md:bg-white">
                   <motion.img
                     src="/assets/icon_menus.svg"
                     alt=""
