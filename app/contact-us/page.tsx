@@ -347,7 +347,7 @@ export default function ContactUs() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 py-3 font-normal text-[14px] md:text-[15px] self-center flex items-center gap-2 hover:bg-[#030302] transition disabled:opacity-60 mt-2 cursor-pointer"
+                    className="group bg-[#58021f] text-[#f5efdd] w-full px-4 py-3 font-normal text-[14px] md:text-[15px] flex items-center justify-center gap-2 hover:bg-[#030302] transition disabled:opacity-60 mt-2 cursor-pointer"
                   >
                     {isSubmitting ? (
                       <>

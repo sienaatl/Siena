@@ -1,5 +1,3 @@
-import { supabase, supabaseClientId } from './supabase';
-
 export type HourEntry = { label: string; value: string };
 
 export type RestaurantInfo = {
@@ -22,25 +20,5 @@ export const RESTAURANT_FALLBACK: RestaurantInfo = {
 };
 
 export async function getRestaurantInfo(): Promise<RestaurantInfo> {
-  try {
-    const { data, error } = await supabase
-      .from('restaurant_info')
-      .select('address, phone, maps_url, hours')
-      .eq('client_id', supabaseClientId)
-      .single();
-
-    if (error || !data) return RESTAURANT_FALLBACK;
-
-    return {
-      address: data.address ?? RESTAURANT_FALLBACK.address,
-      phone: data.phone ?? RESTAURANT_FALLBACK.phone,
-      maps_url: data.maps_url ?? RESTAURANT_FALLBACK.maps_url,
-      hours:
-        Array.isArray(data.hours) && data.hours.length > 0
-          ? data.hours
-          : RESTAURANT_FALLBACK.hours,
-    };
-  } catch {
-    return RESTAURANT_FALLBACK;
-  }
+  return RESTAURANT_FALLBACK;
 }
