@@ -51,11 +51,39 @@ export async function POST(req: NextRequest) {
       });
     }
 
+    const prevWorkText =
+      previousWork
+        ? (JSON.parse(previousWork) as { employer: string; role: string; duration: string }[])
+            .map((e) => `  - ${e.employer} | ${e.role} | ${e.duration}`)
+            .join("\n")
+        : "";
+
+    const textBody = [
+      `SIENA RESTAURANT — Job Application`,
+      ``,
+      `Name:         ${firstName} ${lastName}`,
+      `Email:        ${email}`,
+      `Phone:        ${phone}`,
+      `Residence:    ${residence}`,
+      `Position:     ${position}`,
+      `Availability: ${availability}`,
+      ``,
+      `Experience:`,
+      experience,
+      prevWorkText ? `\nPrevious Work:\n${prevWorkText}` : null,
+      coverLetter ? `\nCover Letter:\n${coverLetter}` : null,
+      resumeFile && resumeFile.size > 0 ? `\nResume: ${resumeFile.name} (attached)` : null,
+      ``,
+      `---`,
+      `Sent via sienaatl.com`,
+    ].filter((l) => l !== null).join("\n");
+
     await transporter.sendMail({
       from: process.env.SMTP_USER,
       to: process.env.SMTP_TO,
       replyTo: email,
-      subject: `[Job Application] ${position} — ${firstName} ${lastName}`,
+      subject: `Job Application: ${position} — ${firstName} ${lastName}`,
+      text: textBody,
       attachments,
       html: `
         <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#333;">

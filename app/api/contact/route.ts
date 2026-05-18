@@ -20,11 +20,27 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
+    const textBody = [
+      `SIENA RESTAURANT — Contact Form`,
+      ``,
+      `Name:    ${firstName} ${lastName}`,
+      `Email:   ${email}`,
+      phone ? `Phone:   ${phone}` : null,
+      `Subject: ${subject}`,
+      ``,
+      `Message:`,
+      message,
+      ``,
+      `---`,
+      `Sent via sienaatl.com`,
+    ].filter((l) => l !== null).join("\n");
+
     await transporter.sendMail({
       from: process.env.SMTP_USER,
       to: process.env.SMTP_TO,
       replyTo: email,
-      subject: `[Contact Us] ${subject} — ${firstName} ${lastName}`,
+      subject: `Contact: ${subject} — ${firstName} ${lastName}`,
+      text: textBody,
       html: `
         <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#333;">
           <div style="background:#58021f;padding:24px 32px;">
