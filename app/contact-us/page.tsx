@@ -7,7 +7,7 @@ import { z } from "zod";
 import { motion } from "motion/react";
 import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
 
-const phoneRegex = /^(\+?1[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/;
+const phoneRegex = /^\+?[\d\s\-(). ]{7,20}$/;
 
 const schema = z
   .object({
@@ -129,8 +129,13 @@ export default function ContactUs() {
   const messageLength = watch("message")?.length ?? 0;
   const selectedSubject = watch("subject");
 
-  const onSubmit = async (_data: FormData) => {
-    await new Promise((r) => setTimeout(r, 900));
+  const onSubmit = async (data: FormData) => {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) throw new Error("Failed to send");
     reset();
   };
 
@@ -462,6 +467,7 @@ export default function ContactUs() {
 
           <div className="flex-1 overflow-hidden shadow-lg relative z-10 w-full min-h-[240px] md:min-h-[420px]">
             <iframe
+              title="Siena Restaurant location on Google Maps"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.051868613463!2d-84.2991249!3d34.06818459999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f575f4dbde006b%3A0x8a505a045593f782!2sSiena%20Restaurant!5e0!3m2!1ses-419!2scr!4v1777903381535!5m2!1ses-419!2scr"
               className="w-full h-full absolute inset-0"
               style={{ border: 0 }}

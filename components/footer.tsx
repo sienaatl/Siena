@@ -57,11 +57,11 @@ export default function Footer() {
 
                     {/* Botón mejorado */}
                     <a
-                        href="/order-online"
+                        href="/reservations"
                         className="relative bg-[#f5efdd] text-[#58021f] px-[24px] py-[12px] h-[46px] font-normal text-[18px] lg:text-[15px] leading-[20px] flex items-center gap-2 w-fit overflow-hidden group mt-3 uppercase"
                     >
                         <span className="absolute inset-0 bg-[#ddae21] translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-                        <span className="relative z-10">Order Online</span>
+                        <span className="relative z-10">Reservations</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className="relative z-10 group-hover:translate-x-1 transition-transform duration-300">
                             <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#58021f" />
                         </svg>
@@ -115,7 +115,6 @@ export default function Footer() {
                             <div className="w-8 h-[2px] bg-[#ddae21] mt-2"></div>
                         </div>
                         {[
-                            { label: "Reservations", href: "/reservations" },
                             { label: "About Us", href: "/about-us" },
                             { label: "Gallery", href: "/gallery" },
                             { label: "Careers", href: "/careers" },

@@ -65,15 +65,16 @@ export default function VideosSection() {
                 </div>
 
                 {/* Dots */}
-                <div className="flex justify-center gap-2 mt-6">
+                <div className="flex justify-center mt-6">
                     {scrollSnaps.map((_, i) => (
                         <button
                             key={i}
                             onClick={() => scrollTo(i)}
                             aria-label={`Go to video ${i + 1}`}
-                            className={`h-2.5 transition-all duration-300 border border-[#030302] ${i === selectedIndex ? "bg-[#030302] w-6" : "bg-[#030302]/30 w-2.5 hover:bg-[#030302]/60"
-                                }`}
-                        />
+                            className="flex items-center justify-center w-[44px] h-[44px] cursor-pointer"
+                        >
+                            <span className={`h-2.5 transition-all duration-300 border border-[#030302] ${i === selectedIndex ? "bg-[#030302] w-6" : "bg-[#030302]/30 w-2.5 hover:bg-[#030302]/60"}`} />
+                        </button>
                     ))}
                 </div>
             </div>

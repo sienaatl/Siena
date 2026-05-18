@@ -95,7 +95,7 @@ export default function TestimonialsSlider() {
             <p className="text-[#2b0a0a] text-[16px] leading-[1.8] flex-1">
               {t.text}
             </p>
-            <span className="text-[#deae21] text-[15px] font-semibold">{t.name}</span>
+            <span className="text-[#58021f] text-[15px] font-semibold">{t.name}</span>
           </a>
         ))}
       </div>

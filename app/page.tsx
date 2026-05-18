@@ -59,10 +59,10 @@ export default function Home() {
 
           <div className="flex gap-4 hero-fadein">
             <a
-              href="/order-online"
+              href="/reservations"
               className="group bg-[#f5efdd] text-[#58021f] px-4 md:px-9 py-2 justify-center font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-[#58021f] hover:bg-[#58021f] hover:text-[#f5efdd] transition"
             >
-              ORDER ONLINE
+              RESERVATIONS
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
                   d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
@@ -659,7 +659,7 @@ export default function Home() {
                 platform: "Instagram",
                 handle: "@sienaatl",
                 href: "https://www.instagram.com/sienaatl/",
-                img: "/assets/gallery11.webp",
+                img: "/assets/gallery11_original.webp",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                     <path d="M7.6 2H16.4C19.4 2 22 4.6 22 7.6V16.4C22 17.9 21.4 19.3 20.3 20.3C19.2 21.4 17.8 22 16.4 22H7.6C4.6 22 2 19.4 2 16.4V7.6C2 6.2 2.6 4.8 3.7 3.7C4.8 2.6 6.2 2 7.6 2ZM7.4 4C6.5 4 5.7 4.4 5.1 5.1C4.4 5.7 4 6.5 4 7.4V16.6C4 18.5 5.5 20 7.4 20H16.6C17.5 20 18.3 19.6 18.9 18.9C19.6 18.3 20 17.5 20 16.6V7.4C20 5.5 18.5 4 16.6 4H7.4ZM17.3 5.5C17.6 5.5 17.9 5.6 18.1 5.9C18.4 6.1 18.5 6.4 18.5 6.8C18.5 7.1 18.4 7.4 18.1 7.6C17.9 7.9 17.6 8 17.3 8C16.9 8 16.6 7.9 16.4 7.6C16.1 7.4 16 7.1 16 6.8C16 6.4 16.1 6.1 16.4 5.9C16.6 5.6 16.9 5.5 17.3 5.5ZM12 7C13.3 7 14.5 7.5 15.5 8.5C16.5 9.4 17 10.7 17 12C17 13.3 16.5 14.6 15.5 15.5C14.6 16.5 13.3 17 12 17C10.7 17 9.4 16.5 8.5 15.5C7.5 14.6 7 13.3 7 12C7 10.7 7.5 9.4 8.5 8.5C9.4 7.5 10.7 7 12 7ZM12 9C11.2 9 10.4 9.3 9.9 9.9C9.3 10.4 9 11.2 9 12C9 12.8 9.3 13.6 9.9 14.1C10.4 14.7 11.2 15 12 15C12.8 15 13.6 14.7 14.1 14.1C14.7 13.6 15 12.8 15 12C15 11.2 14.7 10.4 14.1 9.9C13.6 9.3 12.8 9 12 9Z" fill="currentColor" />
@@ -670,7 +670,7 @@ export default function Home() {
                 platform: "Facebook",
                 handle: "Siena ATL",
                 href: "https://www.facebook.com/sienaatl/",
-                img: "/assets/gallery16.webp",
+                img: "/assets/gallery16_original.webp",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                     <path d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 16.84 5.44 20.87 10 21.8V15H8V12H10V9.5C10 7.57 11.57 6 13.5 6H16V9H14C13.45 9 13 9.45 13 10V12H16V15H13V21.95C18.05 21.45 22 17.19 22 12Z" fill="currentColor" />
@@ -681,7 +681,7 @@ export default function Home() {
                 platform: "TikTok",
                 handle: "@sienaatl",
                 href: "https://www.tiktok.com/@sienaatl",
-                img: "/assets/gallery21.webp",
+                img: "/assets/gallery21_original.webp",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                     <path d="M16.5 2C16.8 4.1 18.4 5.7 20.5 6V9C18.9 8.95 17.4 8.45 16 7.6V14.5C16 18.1 13.1 21 9.5 21C5.9 21 3 18.1 3 14.5C3 10.9 5.9 8 9.5 8C10 8 10.5 8.05 11 8.15V11.2C10.5 11.05 10 11 9.5 11C7.6 11 6 12.6 6 14.5C6 16.4 7.6 18 9.5 18C11.4 18 13 16.4 13 14.5V2H16.5Z" fill="currentColor" />
@@ -877,6 +877,7 @@ export default function Home() {
             {/* Mapa */}
             <div className="flex-1 overflow-hidden shadow-lg relative z-10 w-full min-h-[260px] md:min-h-0 md:h-auto self-stretch">
               <iframe
+                title="Siena Restaurant location on Google Maps"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.051868613463!2d-84.2991249!3d34.06818459999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f575f4dbde006b%3A0x8a505a045593f782!2sSiena%20Restaurant!5e0!3m2!1ses-419!2scr!4v1777903381535!5m2!1ses-419!2scr"
                 className="w-full h-full absolute inset-0"
                 style={{ border: 0 }}

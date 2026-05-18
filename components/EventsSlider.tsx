@@ -111,7 +111,7 @@ export default function EventsSlider() {
                 </div>
                 <div className="p-5 md:p-6 flex flex-col gap-3 flex-1">
                   <div className="flex items-center gap-3">
-                    <span className="text-[#deae21] text-[13px] tracking-widest">/ {event.number}</span>
+                    <span className="text-[#58021f] text-[13px] tracking-widest">/ {event.number}</span>
                     <div className="h-[1px] flex-1 bg-[#deae21]/30" />
                   </div>
                   <h3
@@ -145,15 +145,16 @@ export default function EventsSlider() {
 
       </div>
 
-      <div className="flex justify-center gap-2 mt-6 md:mt-8">
+      <div className="flex justify-center mt-6 md:mt-8">
         {scrollSnaps.map((_, i) => (
           <button
             key={i}
             onClick={() => scrollTo(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className={`h-2.5 transition-all duration-300 border border-[#58021f] ${i === selectedIndex ? "bg-[#58021f] w-6" : "bg-[#58021f]/30 w-2.5 hover:bg-[#58021f]/60"
-              }`}
-          />
+            className="flex items-center justify-center w-[44px] h-[44px] cursor-pointer"
+          >
+            <span className={`h-2.5 transition-all duration-300 border border-[#58021f] ${i === selectedIndex ? "bg-[#58021f] w-6" : "bg-[#58021f]/30 w-2.5 hover:bg-[#58021f]/60"}`} />
+          </button>
         ))}
       </div>
     </div>

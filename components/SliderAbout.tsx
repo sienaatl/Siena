@@ -38,15 +38,16 @@ export default function SliderAbout() {
           ‹
         </button>
 
-        <div className="flex gap-2">
+        <div className="flex">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`cursor-pointer w-2.5 h-2.5 transition-all ${
-                i === current ? "bg-[#58021f] scale-125" : "bg-[#58021f]/30"
-              }`}
-            />
+              aria-label={`Go to slide ${i + 1}`}
+              className="flex items-center justify-center w-[44px] h-[44px] cursor-pointer"
+            >
+              <span className={`w-2.5 h-2.5 transition-all ${i === current ? "bg-[#58021f] scale-125" : "bg-[#58021f]/30"}`} />
+            </button>
           ))}
         </div>
 

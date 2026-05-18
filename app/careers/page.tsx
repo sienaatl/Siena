@@ -189,8 +189,22 @@ export default function Careers() {
     );
   };
 
-  const onSubmit = async (_data: FormData) => {
-    await new Promise((r) => setTimeout(r, 900));
+  const onSubmit = async (data: FormData) => {
+    const fd = new globalThis.FormData();
+    fd.append("firstName", data.firstName);
+    fd.append("lastName", data.lastName);
+    fd.append("email", data.email);
+    fd.append("phone", data.phone);
+    fd.append("residence", data.residence);
+    fd.append("position", data.position);
+    fd.append("availability", data.availability.join(", "));
+    fd.append("experience", data.experience);
+    fd.append("previousWork", JSON.stringify(data.previousWork ?? []));
+    fd.append("coverLetter", data.coverLetter ?? "");
+    if (data.resume?.[0]) fd.append("resume", data.resume[0]);
+
+    const res = await fetch("/api/careers", { method: "POST", body: fd });
+    if (!res.ok) throw new Error("Failed to send");
     reset();
   };
 

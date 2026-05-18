@@ -73,9 +73,9 @@ export default function Header() {
                             } after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full`}>
                             Events
                         </Link>
-                        <Link href="/reservations" className={`px-3 whitespace-nowrap flex justify-center relative ${scrolled ? (pathname === "/reservations" ? "text-black after:w-full" : "text-gray-700") : "text-[#F5EFDD]"
+                        <Link href="/gift-card" className={`px-3 whitespace-nowrap flex justify-center relative ${scrolled ? (pathname === "/gift-card" ? "text-black after:w-full" : "text-gray-700") : "text-[#F5EFDD]"
                             } after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full`}>
-                            Reservations
+                            Gift Card
                         </Link>
   
 
@@ -100,9 +100,6 @@ export default function Header() {
                                 <Link href="/careers" className="flex items-center justify-center gap-4 p-3 hover:bg-[#59021F] hover:text-[#F5EFDD] transition text-gray-700">
                                     <span className="text-[15px] font-normal uppercase tracking-wide text-center">Careers</span>
                                 </Link>
-                                <Link href="/gift-card" className="flex items-center justify-center gap-4 p-3 hover:bg-[#59021F] hover:text-[#F5EFDD] transition text-gray-700">
-                                    <span className="text-[15px] font-normal uppercase tracking-wide text-center">Gift Card</span>
-                                </Link>
                                 <Link href="/contact-us" className="flex items-center justify-center gap-4 p-3 hover:bg-[#59021F] hover:text-[#F5EFDD] transition text-gray-700">
                                     <span className="text-[15px] font-normal uppercase tracking-wide text-center">Contact Us</span>
                                 </Link>
@@ -112,9 +109,9 @@ export default function Header() {
 
                     {/* Right side */}
                     <div className="flex items-center gap-2 md:gap-4">
-                        <Link href="/order-online">
+                        <Link href="/reservations">
                             <button className="cursor-pointer px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] tracking-wide border transition bg-[#58021F] text-[#F5EFDD] border-transparent hover:bg-[#F5EFDD] hover:text-[#59021F] hover:border-[#59021F]">
-                                ORDER ONLINE
+                                RESERVATIONS
                             </button>
                         </Link>
 
