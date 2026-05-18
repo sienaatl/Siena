@@ -27,8 +27,12 @@ export default function NewsletterForm() {
     });
 
     const onSubmit = async (data: NewsletterForm) => {
-        console.log("Newsletter signup:", data);
-        await new Promise((r) => setTimeout(r, 800));
+        const res = await fetch("/api/newsletter", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        });
+        if (!res.ok) throw new Error("Failed to subscribe");
         setSubmitted(true);
         reset();
     };
