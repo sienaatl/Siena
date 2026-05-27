@@ -1,6 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+async function verifyRecaptcha(token: string): Promise<boolean> {
+  const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
+  });
+  const data = await res.json();
+  return data.success === true && data.score >= 0.5;
+}
+
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT),
@@ -26,6 +36,11 @@ export async function POST(req: NextRequest) {
     const previousWork = formData.get("previousWork") as string;
     const coverLetter = formData.get("coverLetter") as string;
     const resumeFile = formData.get("resume") as File | null;
+    const recaptchaToken = formData.get("recaptchaToken") as string | null;
+
+    if (!recaptchaToken || !(await verifyRecaptcha(recaptchaToken))) {
+      return NextResponse.json({ error: "reCAPTCHA verification failed" }, { status: 400 });
+    }
 
     if (!firstName || !lastName || !email || !phone || !position) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });

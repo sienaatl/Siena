@@ -1,9 +1,19 @@
 "use client";
 import Image from "next/image";
+import { useEffect } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion, AnimatePresence } from "motion/react";
+
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (cb: () => void) => void;
+      execute: (siteKey: string, opts: { action: string }) => Promise<string>;
+    };
+  }
+}
 
 const workEntrySchema = z.object({
   employer: z.string().min(2, "Employer name is required"),
@@ -169,6 +179,15 @@ export default function Careers() {
     mode: "onTouched",
   });
 
+  useEffect(() => {
+    const id = "recaptcha-script";
+    if (document.getElementById(id)) return;
+    const s = document.createElement("script");
+    s.id = id;
+    s.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+    document.head.appendChild(s);
+  }, []);
+
   const { fields: workFields, append: appendWork, remove: removeWork } = useFieldArray({
     control,
     name: "previousWork",
@@ -190,6 +209,16 @@ export default function Careers() {
   };
 
   const onSubmit = async (data: FormData) => {
+    const recaptchaToken = await new Promise<string>((resolve) => {
+      window.grecaptcha.ready(async () => {
+        const token = await window.grecaptcha.execute(
+          process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+          { action: "careers" }
+        );
+        resolve(token);
+      });
+    });
+
     const fd = new globalThis.FormData();
     fd.append("firstName", data.firstName);
     fd.append("lastName", data.lastName);
@@ -201,6 +230,7 @@ export default function Careers() {
     fd.append("experience", data.experience);
     fd.append("previousWork", JSON.stringify(data.previousWork ?? []));
     fd.append("coverLetter", data.coverLetter ?? "");
+    fd.append("recaptchaToken", recaptchaToken);
     if (data.resume?.[0]) fd.append("resume", data.resume[0]);
 
     const res = await fetch("/api/careers", { method: "POST", body: fd });

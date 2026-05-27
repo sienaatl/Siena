@@ -7,6 +7,15 @@ import { z } from "zod";
 import { motion } from "motion/react";
 import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
 
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (cb: () => void) => void;
+      execute: (siteKey: string, opts: { action: string }) => Promise<string>;
+    };
+  }
+}
+
 const phoneRegex = /^\+?[\d\s\-(). ]{7,20}$/;
 
 const schema = z
@@ -107,6 +116,15 @@ export default function ContactUs() {
   const [info, setInfo] = useState<RestaurantInfo>(RESTAURANT_FALLBACK);
   useEffect(() => { getRestaurantInfo().then(setInfo); }, []);
 
+  useEffect(() => {
+    const id = "recaptcha-script";
+    if (document.getElementById(id)) return;
+    const s = document.createElement("script");
+    s.id = id;
+    s.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+    document.head.appendChild(s);
+  }, []);
+
   const {
     register,
     handleSubmit,
@@ -130,10 +148,20 @@ export default function ContactUs() {
   const selectedSubject = watch("subject");
 
   const onSubmit = async (data: FormData) => {
+    const recaptchaToken = await new Promise<string>((resolve) => {
+      window.grecaptcha.ready(async () => {
+        const token = await window.grecaptcha.execute(
+          process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+          { action: "contact" }
+        );
+        resolve(token);
+      });
+    });
+
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ...data, recaptchaToken }),
     });
     if (!res.ok) throw new Error("Failed to send");
     reset();
