@@ -326,7 +326,7 @@ export default function Home() {
               transition={{ duration: 0.38, delay: 0.24, ease: "easeOut" }}
             >
               From handcrafted pasta to fresh Mediterranean plates. <br className="hidden md:block" />
-              Every dish tells a story worth savoring.
+              Every dish tells a story worth savoring .
             </motion.p>
 
             <motion.a
