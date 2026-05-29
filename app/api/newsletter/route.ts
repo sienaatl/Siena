@@ -1,17 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT),
-  secure: true,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
-
 export async function POST(req: NextRequest) {
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT),
+    secure: true,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+
   try {
     const body = await req.json();
     const { email } = body;
@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     }
 
     await transporter.sendMail({
-      from: process.env.SMTP_USER,
+      from: `"Siena Restaurant" <${process.env.SMTP_USER}>`,
       to: process.env.SMTP_TO,
       replyTo: email,
       subject: `Newsletter Signup — ${email}`,
