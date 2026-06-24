@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion } from "motion/react";
-import { supabase, supabaseClientId } from "@/lib/supabase";
+import siteData from "@/lib/site-data.json";
 
 type EventItem = {
   id: string;
@@ -14,48 +14,7 @@ type EventItem = {
   sort_order: number;
 };
 
-const FALLBACK_EVENTS: EventItem[] = [
-  {
-    id: "1",
-    title: "Private Dinners",
-    description: "An intimate dinner with warm lighting, thoughtful service, and a menu curated just for your table.",
-    image_url: null,
-    ideal: ["Birthday dinners", "Anniversaries", "Small group celebrations"],
-    sort_order: 0,
-  },
-  {
-    id: "2",
-    title: "Corporate & Events",
-    description: "A refined setting for professional gatherings: seamless service, chef-driven menus, and an atmosphere that impresses.",
-    image_url: null,
-    ideal: ["Team dinners", "Client entertaining", "Company celebrations"],
-    sort_order: 1,
-  },
-  {
-    id: "3",
-    title: "Cocktail Receptions",
-    description: "Golden-hour cocktails, small plates designed for mingling, and a vibrant atmosphere that encourages connection.",
-    image_url: null,
-    ideal: ["Networking events", "Brand gatherings", "Engagement parties"],
-    sort_order: 2,
-  },
-  {
-    id: "4",
-    title: "Celebrations & Milestones",
-    description: "From graduations to rehearsal dinners, Siena offers flexible spaces and menus that feel celebratory without being overdone.",
-    image_url: null,
-    ideal: ["Rehearsal dinners", "Graduation celebrations", "Family milestones"],
-    sort_order: 3,
-  },
-  {
-    id: "5",
-    title: "Customized Experiences",
-    description: "Every event thoughtfully tailored: menus, pacing, and flow crafted so your gathering feels effortless, elevated, and entirely your own.",
-    image_url: null,
-    ideal: ["Bespoke menus", "Custom pacing", "Your vision, our execution"],
-    sort_order: 4,
-  },
-];
+const EVENTS = siteData.events as EventItem[];
 
 export default function EventsSlider() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -67,49 +26,13 @@ export default function EventsSlider() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
   const [isDesktop, setIsDesktop] = useState(false);
-  const [events, setEvents] = useState<EventItem[]>(FALLBACK_EVENTS);
+  const [events] = useState<EventItem[]>(EVENTS);
 
   useEffect(() => {
     const checkDesktop = () => setIsDesktop(window.innerWidth >= 768);
     checkDesktop();
     window.addEventListener("resize", checkDesktop);
     return () => window.removeEventListener("resize", checkDesktop);
-  }, []);
-
-  useEffect(() => {
-    supabase
-      .from("location_events")
-      .select("id, title, description, banner_url, tags, sort_order")
-      .eq("restaurant_id", supabaseClientId)
-      .eq("status", "published")
-      .order("sort_order")
-      .then(({ data, error }) => {
-        if (error || !data || data.length === 0) return;
-        setEvents(
-          data.map((row) => {
-            const rawDesc = row.description ?? "";
-            let description = rawDesc;
-            let ideal: string[] =
-              Array.isArray(row.tags) && row.tags.length > 0 ? row.tags : [];
-
-            // Parse "description text. - item1 - item2" format when tags are empty
-            if (ideal.length === 0 && rawDesc.includes(" - ")) {
-              const parts = rawDesc.split(" - ");
-              description = parts[0].trim();
-              ideal = parts.slice(1).map((s: string) => s.trim()).filter(Boolean);
-            }
-
-            return {
-              id: row.id,
-              title: row.title,
-              description,
-              image_url: row.banner_url ?? null,
-              ideal,
-              sort_order: row.sort_order ?? 0,
-            };
-          })
-        );
-      });
   }, []);
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
@@ -123,10 +46,13 @@ export default function EventsSlider() {
 
   useEffect(() => {
     if (!emblaApi) return;
-    setScrollSnaps(emblaApi.scrollSnapList());
+    const frame = requestAnimationFrame(() => {
+      setScrollSnaps(emblaApi.scrollSnapList());
+      onSelect();
+    });
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
-    onSelect();
+    return () => cancelAnimationFrame(frame);
   }, [emblaApi, onSelect]);
 
   return (

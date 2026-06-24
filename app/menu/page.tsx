@@ -3,7 +3,7 @@ import { useState, useEffect, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion } from "motion/react";
 import Image from "next/image";
-import { supabase, supabaseClientId } from "@/lib/supabase";
+import siteData from "@/lib/site-data.json";
 
 /* ─── Types ─────────────────────────────────────────────── */
 interface MenuItem {
@@ -26,36 +26,6 @@ interface TabData {
   subsections: SubSection[];
 }
 
-type MenuRow = { id: string; name: string; sort_order: number };
-type CategoryRow = { id: string; menu_id: string; name: string; description: string | null; sort_order: number };
-type ItemRow = {
-  id: string;
-  category_id: string;
-  name: string;
-  description: string | null;
-  base_price: number | null;
-  base_price_max: number | null;
-  base_is_price_range: boolean | null;
-  image_url: string | null;
-  sort_order: number;
-  price_variants: { name: string; price: string | number }[] | null;
-};
-
-/* ─── Helpers ────────────────────────────────────────────── */
-function formatPrice(item: ItemRow): string {
-  if (item.price_variants && item.price_variants.length > 0) {
-    return item.price_variants.map((v) => `${v.name}  ${v.price}`).join("\n");
-  }
-  if (item.base_price === null || item.base_price === 0) return "";
-  if (item.base_is_price_range && item.base_price_max !== null) {
-    return `${item.base_price} – ${item.base_price_max}`;
-  }
-  return String(item.base_price);
-}
-
-function slugify(name: string) {
-  return name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
-}
 
 /* ─── MenuItemCard ───────────────────────────────────────── */
 function MenuItemCard({ item }: { item: MenuItem }) {
@@ -144,100 +114,12 @@ function SubSectionBlock({ id, title, subtitle, items }: SubSection) {
 /* ─── MenuContent ────────────────────────────────────────── */
 function MenuContent() {
   const searchParams = useSearchParams();
-  const [tabs, setTabs] = useState<TabData[]>([]);
-  const [activeTab, setActiveTab] = useState<string>("");
+  const [tabs] = useState<TabData[]>(siteData.menuTabs as TabData[]);
+  const [activeTab, setActiveTab] = useState<string>(tabs[0]?.id ?? "");
   const [headerHeight, setHeaderHeight] = useState(80);
-  const [menuError, setMenuError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
+  const loading = false;
+  const menuError: string | null = null;
   const tabsContainerRef = useRef<HTMLDivElement>(null);
-
-  /* ── Fetch data from Supabase ── */
-  useEffect(() => {
-    let isMounted = true;
-
-    async function loadMenu() {
-      const { data: menus, error: menusError } = await supabase
-        .from("menus")
-        .select("id, name, sort_order")
-        .eq("restaurant_id", supabaseClientId)
-        .eq("is_active", true)
-        .order("sort_order", { ascending: true });
-
-      if (menusError || !menus?.length) {
-        if (isMounted) { setMenuError("Menu unavailable"); setLoading(false); }
-        return;
-      }
-
-      const menuIds = menus.map((m) => m.id);
-
-      const { data: categories, error: catError } = await supabase
-        .from("menu_categories")
-        .select("id, menu_id, name, description, sort_order")
-        .in("menu_id", menuIds)
-        .order("sort_order", { ascending: true });
-
-      if (catError) {
-        if (isMounted) { setMenuError("Menu unavailable"); setLoading(false); }
-        return;
-      }
-
-      const categoryIds = (categories ?? []).map((c) => c.id);
-
-      const { data: items, error: itemsError } = await supabase
-        .from("menu_items")
-        .select("id, category_id, name, description, base_price, base_price_max, base_is_price_range, image_url, sort_order, price_variants")
-        .in("category_id", categoryIds)
-        .eq("is_active", true)
-        .order("sort_order", { ascending: true });
-
-      if (itemsError) {
-        if (isMounted) { setMenuError("Menu unavailable"); setLoading(false); }
-        return;
-      }
-
-      const itemsByCatId = new Map<string, ItemRow[]>();
-      for (const item of (items ?? []) as ItemRow[]) {
-        const group = itemsByCatId.get(item.category_id) ?? [];
-        group.push(item);
-        itemsByCatId.set(item.category_id, group);
-      }
-
-      const tabOrder = ["main menu", "weekend brunch"];
-      const sortedMenus = [...(menus as MenuRow[])].sort((a, b) => {
-        const ai = tabOrder.indexOf(a.name.toLowerCase());
-        const bi = tabOrder.indexOf(b.name.toLowerCase());
-        if (ai !== -1 && bi !== -1) return ai - bi;
-        if (ai !== -1) return -1;
-        if (bi !== -1) return 1;
-        return a.sort_order - b.sort_order;
-      });
-
-      const tabData: TabData[] = sortedMenus.map((menu) => {
-        const menuCats = (categories ?? []).filter((c) => c.menu_id === menu.id) as CategoryRow[];
-        const subsections: SubSection[] = menuCats.map((cat) => ({
-          id: slugify(cat.name),
-          title: cat.name,
-          subtitle: cat.description || undefined,
-          items: (itemsByCatId.get(cat.id) ?? []).map((item) => ({
-            image: item.image_url || "",
-            name: item.name,
-            description: item.description || "",
-            price: formatPrice(item),
-          })),
-        }));
-        return { id: slugify(menu.name), label: menu.name, subsections };
-      });
-
-      if (isMounted) {
-        setTabs(tabData);
-        setActiveTab(tabData[0]?.id ?? "");
-        setLoading(false);
-      }
-    }
-
-    loadMenu();
-    return () => { isMounted = false; };
-  }, []);
 
   /* ── Header shrink on scroll ── */
   useEffect(() => {
