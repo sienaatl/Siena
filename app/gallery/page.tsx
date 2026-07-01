@@ -3,8 +3,15 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 
-const TOTAL = 29;
-const images = Array.from({ length: TOTAL }, (_, i) => `/assets/gallery${i + 1}.webp`);
+const images: string[] = [];
+
+for (let i = 1; i <= 43; i++) {
+  if (i !== 24) {
+    images.push(`/assets/gallery${i}.webp`);
+  }
+}
+
+const TOTAL = images.length;
 
 export default function Gallery() {
   const [lightbox, setLightbox] = useState<number | null>(null);

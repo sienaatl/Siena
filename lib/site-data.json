@@ -39,18 +39,18 @@
       "subsections": [
         {
           "id": "start",
-          "title": "Start",
+          "title": "ANTIPASTI",
           "subtitle": "shareables + small plates",
           "image": null,
           "items": [
             {
               "id": "16c38c95-5652-43fe-94ff-318fdf8aa529",
               "image": "",
-              "name": "Truffle Manchego Fries",
-              "description": "crispy fries tossed with aged manchego, black truffle oil, slow roasted garlic confit, and fresh herbs",
-              "price": "13",
+              "name": "Hummus della Casa",
+              "description": "Creamy chickpea purée blended with tahini, lemon juice, garlic, and parsley, finished with crispy chickpeas and edible flowers",
+              "price": "11",
               "rawPrice": {
-                "base_price": 13,
+                "base_price": 11,
                 "base_price_max": null,
                 "base_is_price_range": false,
                 "price_variants": null
@@ -66,11 +66,11 @@
             {
               "id": "c0f80dee-cc67-4223-8d47-58cd1682cd5f",
               "image": "",
-              "name": "Midnight Lamb Skewers",
-              "description": "fire kissed spiced ground lamb skewers with preserved lemon tahini aioli, cilantro mojo, pickled vegetables, and warm pita",
-              "price": "22",
+              "name": "Baba Ghanoush della Casa",
+              "description": "Fire-roasted eggplant blended with tahini, garlic, lemon juice, parsley, and Mediterranean spices",
+              "price": "11",
               "rawPrice": {
-                "base_price": 22,
+                "base_price": 11,
                 "base_price_max": null,
                 "base_is_price_range": false,
                 "price_variants": null
@@ -86,8 +86,28 @@
             {
               "id": "9642146f-02a4-421e-b192-729f147ceb92",
               "image": "",
-              "name": "Siena Caesar Lace",
-              "description": "baby romaine with garlic herb crumbs, grana, and house caesar dressing",
+              "name": "Moussaka Fredda",
+              "description": "Fried eggplant, roasted bell peppers, and slow-simmered tomato sauce served chilled Mediterranean style",
+              "price": "12",
+              "rawPrice": {
+                "base_price": 12,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+
+            {
+              "id": "160e4fde-49a8-4aff-9fb0-f48d9de0d8b4",
+              "name": "Lavender Whipped Feta",
+              "description": "Whipped feta, cream cheese, and yogurt infused with honey and lavender, finished with edible flowers and served with char-grilled focaccia",
               "price": "13",
               "rawPrice": {
                 "base_price": 13,
@@ -104,50 +124,9 @@
               "currency": "ARS"
             },
             {
-              "id": "16c7183a-e6ae-47f1-bcdb-33252ce6666d",
-              "image": "/assets/menu/16c7183a-e6ae-47f1-bcdb-33252ce6666d.webp",
-              "name": "Charred Cauliflower Royale",
-              "description": "flame roasted with red pepper mousse, pomegranate jewels, toasted pine nuts, and parsley oil finished with red pepper chimichurri",
-              "price": "16",
-              "rawPrice": {
-                "base_price": 16,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "160e4fde-49a8-4aff-9fb0-f48d9de0d8b4",
-              "image": "/assets/menu/160e4fde-49a8-4aff-9fb0-f48d9de0d8b4.webp",
-              "name": "Whipped Feta and Burnt Honey",
-              "description": "creamy and silky smooth, drizzled with chili infused burnt honey and bright lemon zest, served with warm grilled focaccia and herb oil",
-              "price": "14",
-              "rawPrice": {
-                "base_price": 14,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
               "id": "e72b5a41-605f-4332-80d6-a6001f5f3df5",
-              "image": "/assets/menu/e72b5a41-605f-4332-80d6-a6001f5f3df5.webp",
-              "name": "Beef Meatballs",
-              "description": "hand rolled in a basil spiked marinara, finished with parmesan dust",
+              "name": "Calamari Fritti Siena",
+              "description": "Tender calamari rings and tentacles marinated in our signature batter, lightly fried until golden, then finished in roasted garlic butter with mixed pickled peppers. Served with sweet chili aioli, charred lemon, fresh parsley, and edible flowers.",
               "price": "17",
               "rawPrice": {
                 "base_price": 17,
@@ -165,109 +144,8 @@
             },
             {
               "id": "d4c1ecc9-de93-4629-8e4b-765ea159f010",
-              "image": "/assets/menu/d4c1ecc9-de93-4629-8e4b-765ea159f010.webp",
-              "name": "Shrimp Francese Arancini",
-              "description": "golden arancini filled with shrimp in a red pepper coulis",
-              "price": "18",
-              "rawPrice": {
-                "base_price": 18,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "8eef3ab2-6b55-42e6-b57c-946332ba8f56",
-              "image": "/assets/menu/8eef3ab2-6b55-42e6-b57c-946332ba8f56.webp",
-              "name": "Harissa Chicken Lollipop",
-              "description": "frenched and lacquered in sweet and spicy harissa, paired with a refreshing mint and cucumber yogurt",
-              "price": "16",
-              "rawPrice": {
-                "base_price": 16,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "46b0df4f-96a1-438b-8176-ad748120bbf4",
-              "image": "/assets/menu/46b0df4f-96a1-438b-8176-ad748120bbf4.webp",
-              "name": "Crispy Halloumi and Grilled Grapes Bruschetta",
-              "description": "golden seared halloumi atop chard grapes, pistachio crumble, and a honey thyme glaze on toast points",
-              "price": "13",
-              "rawPrice": {
-                "base_price": 13,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "504d672b-e838-47cc-abfc-eb60e5c0a8df",
-              "image": "/assets/menu/504d672b-e838-47cc-abfc-eb60e5c0a8df.webp",
-              "name": "Siena Hummus",
-              "description": "velvety chickpea hummus enriched with black garlic and tahini, finished with paprika butter and served with warm pita",
-              "price": "13",
-              "rawPrice": {
-                "base_price": 13,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "19424379-b07b-4b24-8494-37776e2491bd",
-              "image": "/assets/menu/19424379-b07b-4b24-8494-37776e2491bd.webp",
-              "name": "Octopus Al Ajillo",
-              "description": "char grilled in chili garlic oil, layered over smoked romesco and potato, finished with a crisp fennel salad",
-              "price": "24",
-              "rawPrice": {
-                "base_price": 24,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "e7823099-1635-4075-919b-4fd5e1e342d5",
-              "image": "/assets/menu/e7823099-1635-4075-919b-4fd5e1e342d5.webp",
-              "name": "The Bowl",
-              "description": "a wholesome blend of couscous and farro, tossed with sun dried tomato, cucumber, walnuts, and pickled shallots, finished with citrus oil and micro herbs",
+              "name": "Cavolfiore Croccante",
+              "description": "House-battered crispy cauliflower served with sweet chili aioli",
               "price": "14",
               "rawPrice": {
                 "base_price": 14,
@@ -284,10 +162,78 @@
               "currency": "ARS"
             },
             {
-              "id": "bfc15587-92db-49b9-8de7-1c766fcbf1c1",
-              "image": "/assets/menu/bfc15587-92db-49b9-8de7-1c766fcbf1c1.webp",
-              "name": "Sweet Potato Falafel Cake",
-              "description": "crisp and aromatic of sweet potato and chickpeas, served with charred lemon aioli, baby greens, and pickled onions",
+              "id": "8eef3ab2-6b55-42e6-b57c-946332ba8f56",
+              "name": "Polpo alla Griglia",
+              "description": "Slow-braised octopus finished over an open flame, served over potato purée with romesco sauce, charred lemon, and seasonal greens",
+              "price": "26",
+              "rawPrice": {
+                "base_price": 26,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            }
+            
+          ]
+        },
+
+        {
+          "id": "start",
+          "title": "INSALATE",
+          "image": null,
+          "items": [
+            {
+              "id": "16c38c95-5652-43fe-94ff-318fdf8aa529",
+              "image": "",
+              "name": "Caesar Classico",
+              "description": "Romaine, house Caesar dressing, pita chips, shaved Parmesan, and anchovies",
+              "price": "14",
+              "rawPrice": {
+                "base_price": 14,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "c0f80dee-cc67-4223-8d47-58cd1682cd5f",
+              "image": "",
+              "name": "Watermelon & Feta Salad",
+              "description": "Arugula, watermelon, feta, pistachios, Mediterranean dressing, and balsamic glaze",
+              "price": "15",
+              "rawPrice": {
+                "base_price": 15,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "9642146f-02a4-421e-b192-729f147ceb92",
+              "image": "",
+              "name": "Mediterranean Garden Salad",
+              "description": "Spring mix, cucumbers, cherry tomatoes, red onions, Kalamata olives, radish, feta crumbles, and house Mediterranean dressing",
               "price": "15",
               "rawPrice": {
                 "base_price": 15,
@@ -303,22 +249,75 @@
               "item_type": "food",
               "currency": "ARS"
             }
+            
           ]
         },
+
+
+       {
+          "id": "start",
+          "title": "PASTE",
+          "image": null,
+          "items": [
+            {
+              "id": "16c38c95-5652-43fe-94ff-318fdf8aa529",
+              "image": "",
+              "name": "Bucatini al Pepe Nero",
+              "description": "House-made bucatini cooked al dente in a Pecorino Romano cream sauce with white wine, garlic, shallots, burrata, basil, and cracked black pepper. Served with char-grilled focaccia",
+              "price": "25",
+              "rawPrice": {
+                "base_price": 25,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "c0f80dee-cc67-4223-8d47-58cd1682cd5f",
+              "image": "",
+              "name": "Rigatoni alla Vodka",
+              "description": "House-made rigatoni cooked al dente in a velvety vodka tomato cream sauce with shallots, garlic, burrata, shaved Parmesan, and fresh basil. Served with char-grilled focaccia",
+              "price": "15",
+              "rawPrice": {
+                "base_price": 15,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            }
+            
+          ]
+        },
+
+
         {
           "id": "savour",
-          "title": "Savour",
+          "title": "ENTRÉES",
           "subtitle": "large plates + mains",
           "image": null,
           "items": [
             {
               "id": "79ae7f7e-4bbb-488b-ae9d-c4e9d2f2722b",
               "image": "",
-              "name": "Hen of the Woods",
-              "description": "Fresh pappardelle tossed in a parmesan alfredo cream with wild mushrooms, rosemary, finished with black truffle essence.",
-              "price": "24",
+              "name": "Chicken Tawook",
+              "description": "48-hour yogurt-marinated chicken grilled over an open flame. Served with basmati rice pilaf with vermicelli, chili aioli, and vine-ripened tomatoes",
+              "price": "28",
               "rawPrice": {
-                "base_price": 24,
+                "base_price": 28,
                 "base_price_max": null,
                 "base_is_price_range": false,
                 "price_variants": null
@@ -334,68 +333,8 @@
             {
               "id": "6e05a690-1892-4c68-b26c-8bfd6476a17b",
               "image": "",
-              "name": "Lamb Chops",
-              "description": "Glazed with honey and lavender, brushed with pomegranate molasses, accompanied by rosemary couscous.",
-              "price": "39",
-              "rawPrice": {
-                "base_price": 39,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "a1404b82-f552-4ee8-b8a0-92e3227bf3a9",
-              "image": "",
-              "name": "Moroccan Market Chicken",
-              "description": "Charred citrus marinated chicken thighs braised in tomato olive stew with apricot and onions, served with cilantro rice.",
-              "price": "32",
-              "rawPrice": {
-                "base_price": 32,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "f5922307-7068-43ab-88a6-63fb3d481774",
-              "image": "",
-              "name": "Baked Salmon",
-              "description": "Roasted heirloom potatoes and farro, blistered asparagus, shaved fennel slaw, and radish, dressed in preserved lemon sumac vinaigrette and herb oil.",
-              "price": "34",
-              "rawPrice": {
-                "base_price": 34,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "fc7bbd10-f664-44fc-8299-fbf74336acf2",
-              "image": "/assets/menu/fc7bbd10-f664-44fc-8299-fbf74336acf2.webp",
-              "name": "Golden Oxtail",
-              "description": "Slow braised, cooked for eight hours, folded into gemelli with peppers and caramelized onions in a scented cream sauce, finished with fresh gremolata.",
+              "name": "Filet Mignon Kabo",
+              "description": "48-hour marinated filet mignon grilled over an open flame. Served with basmati rice pilaf with vermicelli, tahini aioli, and vine-ripened tomatoes",
               "price": "38",
               "rawPrice": {
                 "base_price": 38,
@@ -412,13 +351,71 @@
               "currency": "ARS"
             },
             {
-              "id": "9575f9d1-3fa6-42a2-99d5-c0ba3879d7c5",
-              "image": "/assets/menu/9575f9d1-3fa6-42a2-99d5-c0ba3879d7c5.webp",
-              "name": "The Flame Steak",
-              "description": "Fire grilled, served with crispy fingerlings, caramelized onions, and sautéed spinach, with red chimichurri.",
-              "price": "36",
+              "id": "a1404b82-f552-4ee8-b8a0-92e3227bf3a9",
+              "image": "",
+              "name": "Lamb Chops",
+              "description": "3 Pieces of 32oz organic grass-fed lamb chops marinated for 48 hours and grilled over an open flame. Served with basmati rice pilaf with vermicelli and tahini aioli",
+              "price": "42",
               "rawPrice": {
-                "base_price": 36,
+                "base_price": 42,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "f5922307-7068-43ab-88a6-63fb3d481774",
+              "image": "",
+              "name": "Braised Lamb Shank",
+              "description": "Slow-braised for four hours with vegetables and Pharaoh's Secret seasoning. Served over creamy potato purée with glazed carrots and crispy onions",
+              "price": "37",
+              "rawPrice": {
+                "base_price": 37,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "fc7bbd10-f664-44fc-8299-fbf74336acf2",
+              "name": "Salmon Limone",
+              "description": "Pan-seared salmon with lemon butter, shallots, garlic, mushrooms, and capers over broccolini",
+              "price": "32",
+              "rawPrice": {
+                "base_price": 32,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "9575f9d1-3fa6-42a2-99d5-c0ba3879d7c5",
+              "name": "Mediterranean Branzino",
+              "description": "Mediterranean-marinated branzino fillet served over roasted red pepper sauce with seasonal potatoes and market greens",
+              "price": "34",
+              "rawPrice": {
+                "base_price": 34,
                 "base_price_max": null,
                 "base_is_price_range": false,
                 "price_variants": null
@@ -433,17 +430,283 @@
             }
           ]
         },
+
+
         {
-          "id": "finish",
-          "title": "Finish",
+          "id": "savour",
+          "title": "SIDES",
+          "image": null,
+          "items": [
+            {
+              "id": "79ae7f7e-4bbb-488b-ae9d-c4e9d2f2722b",
+              "image": "",
+              "name": "Pilaf Rice with Vermicelli",
+              "price": "7",
+              "rawPrice": {
+                "base_price": 7,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "6e05a690-1892-4c68-b26c-8bfd6476a17b",
+              "image": "",
+              "name": "Seasonal Roasted Potatoes",
+              "price": "8",
+              "rawPrice": {
+                "base_price": 8,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "a1404b82-f552-4ee8-b8a0-92e3227bf3a9",
+              "image": "",
+              "name": "Broccolini",
+              "price": "8",
+              "rawPrice": {
+                "base_price": 8,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "f5922307-7068-43ab-88a6-63fb3d481774",
+              "image": "",
+              "name": "House Fries",
+              "price": "7",
+              "rawPrice": {
+                "base_price": 7,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "fc7bbd10-f664-44fc-8299-fbf74336acf2",
+              "name": "Warm Pita",
+              "price": "4",
+              "rawPrice": {
+                "base_price": 4,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            }
+            
+          ]
+        },
+
+
+     {
+          "id": "savour",
+          "title": "ADD PROTEIN TO ANY SALAD OR PASTA",
+          "image": null,
+          "items": [
+            {
+              "id": "79ae7f7e-4bbb-488b-ae9d-c4e9d2f2722b",
+              "image": "",
+              "name": "Grilled Chicken",
+              "price": "8",
+              "rawPrice": {
+                "base_price": 8,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "6e05a690-1892-4c68-b26c-8bfd6476a17b",
+              "image": "",
+              "name": "Grilled Shrimp",
+              "price": "10",
+              "rawPrice": {
+                "base_price": 10,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "a1404b82-f552-4ee8-b8a0-92e3227bf3a9",
+              "image": "",
+              "name": "Grilled Salmon",
+              "price": "12",
+              "rawPrice": {
+                "base_price": 12,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "f5922307-7068-43ab-88a6-63fb3d481774",
+              "image": "",
+              "name": "Grilled Steak",
+              "price": "14",
+              "rawPrice": {
+                "base_price": 14,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            }
+            
+          ]
+        },
+
+
+
+        {
+          "id": "dolci",
+          "title": "Dolci",
           "subtitle": "sweet treats",
           "image": null,
           "items": [
             {
               "id": "368b4262-877f-49fc-bb2a-14e61ddd7ab6",
               "image": "",
-              "name": "Chocolate Tahini Mousse Cake",
-              "description": "Creamy tahini dark chocolate mousse layered over sesame chiffon and draped in rich ganache, finished with whipped cream and date jam.",
+              "name": "Pistachio Baklava Cheesecake",
+              "description": "Creamy cheesecake topped with pistachio knafeh butter, traditional baklava, and crushed pistachios",
+              "price": "13",
+              "rawPrice": {
+                "base_price": 13,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "b2ddad22-c11b-4b56-837e-497c4eef68c1",
+              "image": "",
+              "name": "Tiramisu della Casa",
+              "description": "Espresso-soaked ladyfingers layered with mascarpone cream and finished with cocoa powder.",
+              
+              "price": "13",
+              "rawPrice": {
+                "base_price": 13,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            }
+        
+          ]
+        },
+
+
+
+      {
+          "id": "dolci",
+          "title": "BAMBINI",
+          "image": null,
+          "items": [
+            {
+              "id": "368b4262-877f-49fc-bb2a-14e61ddd7ab6",
+              "image": "",
+              "name": "Chicken Nuggets & Fries",
+              "description": "Hand-breaded chicken breast nuggets served with house fries",
+              "price": "13",
+              "rawPrice": {
+                "base_price": 13,
+                "base_price_max": null,
+                "base_is_price_range": false,
+                "price_variants": null
+              },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "b2ddad22-c11b-4b56-837e-497c4eef68c1",
+              "image": "",
+              "name": "Kids Rigatoni",
+              "description": "Rigatoni with butter and Parmesan or tomato sauce",
+              
               "price": "12",
               "rawPrice": {
                 "base_price": 12,
@@ -462,11 +725,12 @@
             {
               "id": "b2ddad22-c11b-4b56-837e-497c4eef68c1",
               "image": "",
-              "name": "Baklava Cheesecake Bites",
-              "description": "Flaky filo wrapped around creamy cheesecake, glazed with honey and topped with walnut crumble and a whisper of sugar floss.",
-              "price": "16",
+              "name": "Kids Bucatini Alfredo",
+              "description": "Rigatoni with butter and Parmesan or tomato sauce",
+              
+              "price": "13",
               "rawPrice": {
-                "base_price": 16,
+                "base_price": 13,
                 "base_price_max": null,
                 "base_is_price_range": false,
                 "price_variants": null
@@ -479,99 +743,13 @@
               "item_type": "food",
               "currency": "ARS"
             },
+
             {
-              "id": "def91abf-4094-4e52-83ee-b5d45dd6e53a",
+              "id": "b2ddad22-c11b-4b56-837e-497c4eef68c1",
               "image": "",
-              "name": "Saffron Crème Brûlée",
-              "description": "Delicately perfumed with saffron, brûléed to a golden shell and served with macerated berries and mint.",
-              "price": "12",
-              "rawPrice": {
-                "base_price": 12,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            }
-          ]
-        },
-        {
-          "id": "kids",
-          "title": "Kids",
-          "subtitle": "for the little sienas",
-          "image": null,
-          "items": [
-            {
-              "id": "1b138fdc-5333-4661-a465-e789fdbe4e25",
-              "image": "",
-              "name": "Siena Cheese Pizza",
-              "description": "Warm pita pizza with mixed cheeses, tomato sauce, and garlic butter — served with fries.",
-              "price": "17",
-              "rawPrice": {
-                "base_price": 17,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "0df1ac4d-96f8-4ec0-abcf-6b6766798a15",
-              "image": "",
-              "name": "Fried Chicken Lollipop",
-              "description": "Served with golden fries.",
-              "price": "18",
-              "rawPrice": {
-                "base_price": 18,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "dff73e37-be4b-4b13-8638-8262c822a776",
-              "image": "/assets/menu/dff73e37-be4b-4b13-8638-8262c822a776.webp",
-              "name": "Spaghetti & Meatballs",
-              "description": "Classic spaghetti with beef meatballs, oregano, grana, and house tomato sauce.",
-              "price": "20",
-              "rawPrice": {
-                "base_price": 20,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "c0ac45ce-2c97-45ba-b3a3-95958647dd93",
-              "image": "/assets/menu/c0ac45ce-2c97-45ba-b3a3-95958647dd93.webp",
-              "name": "Buttered Gemelli",
-              "description": "Gemelli pasta tossed in butter — soft, simple, comforting.",
+              "name": "Kids Filet Mignon Kabo",
+              "description": "Grilled filet mignon with rice pilaf or fries",
+              
               "price": "16",
               "rawPrice": {
                 "base_price": 16,
@@ -587,10 +765,12 @@
               "item_type": "food",
               "currency": "ARS"
             }
+            
           ]
         }
       ]
     },
+
     {
       "id": "weekend-brunch",
       "label": "Weekend Brunch",
@@ -4331,7 +4511,7 @@
       {
         "id": "7703c562-c1f0-488a-a84e-02cad8c4869e",
         "menu_id": "53d97739-ece5-4915-9425-a60075abe783",
-        "name": "Finish",
+        "name": "Dolci",
         "description": "sweet treats",
         "image_url": null,
         "sort_order": 0,
@@ -4804,9 +4984,9 @@
       {
         "id": "368b4262-877f-49fc-bb2a-14e61ddd7ab6",
         "category_id": "7703c562-c1f0-488a-a84e-02cad8c4869e",
-        "name": "Chocolate Tahini Mousse Cake",
-        "description": "Creamy tahini dark chocolate mousse layered over sesame chiffon and draped in rich ganache, finished with whipped cream and date jam.",
-        "base_price": 12,
+        "name": "Pistachio Baklava Cheesecake ",
+        "description": "Creamy cheesecake topped with pistachio knafeh butter, finished with traditional baklava and crushed pistachios.",
+        "base_price": 13,
         "image_url": null,
         "is_active": true,
         "sort_order": 0,
@@ -5110,9 +5290,10 @@
       {
         "id": "b2ddad22-c11b-4b56-837e-497c4eef68c1",
         "category_id": "7703c562-c1f0-488a-a84e-02cad8c4869e",
-        "name": "Baklava Cheesecake Bites",
-        "description": "Flaky filo wrapped around creamy cheesecake, glazed with honey and topped with walnut crumble and a whisper of sugar floss.",
-        "base_price": 16,
+        "name": "Crème Brûlée al Cannolo ",
+        "description": "Silky vanilla bean crème brûlée finished with a caramelized sugar crust, topped with mascarpone cream, cannoli shell pieces, pistachios, and mini chocolate chips.",
+        "price": "14",
+        "base_price": 14,
         "image_url": null,
         "is_active": true,
         "sort_order": 0,

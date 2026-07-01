@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { useState, useEffect } from "react";
+const MotionLink = motion(Link);
 import { motion } from "motion/react";
 import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
 
@@ -225,31 +227,30 @@ export default function Home() {
             >
               At Siena, every detail is guided by a creative vision rooted in Mediterranean warmth and Italian soul. A place where flavors, atmosphere, and hospitality come together to create a truly memorable experience.
             </motion.p>
-            <motion.a
-              href="https://www.toasttab.com/invoice/lead?rx=399f3374-7dde-4df3-9c3a-c49fed50b565&ot=675642f1-f873-4b8f-afcd-cca9b93a185c"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative z-10 group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.35, delay: 0.28, ease: "easeOut" }}
-            >
-              ABOUT US
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <path
-                  d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-                  className="fill-[#f5efdd] group-hover:fill-[#f5efdd] transition-colors duration-300"
-                />
-              </svg>
-            </motion.a>
+          <MotionLink
+          href="/about-us"
+          className="relative z-10 group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.35, delay: 0.28, ease: "easeOut" }}
+        >
+          <span>ABOUT US</span>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+          >
+            <path
+              d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
+              className="fill-[#f5efdd] group-hover:fill-[#f5efdd] transition-colors duration-300"
+            />
+          </svg>
+        </MotionLink>
           </div>
         </div>
 
@@ -329,31 +330,29 @@ export default function Home() {
               Every dish tells a story worth savoring .
             </motion.p>
 
-            <motion.a
-              href="https://www.toasttab.com/invoice/lead?rx=399f3374-7dde-4df3-9c3a-c49fed50b565&ot=675642f1-f873-4b8f-afcd-cca9b93a185c"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative z-10 group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.35, delay: 0.28, ease: "easeOut" }}
-            >
-              FULL MENU
+                  <MotionLink
+          href="/menu"
+          className="relative z-10 group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.35, delay: 0.28, ease: "easeOut" }}
+        >
+          <span>FULL MENU</span>
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <path
-                  d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-                  className="fill-[#f5efdd] group-hover:fill-[#f5efdd] transition-colors duration-300"
-                />
-              </svg>
-            </motion.a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+          >
+            <path
+              d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
+              className="fill-[#f5efdd] group-hover:fill-[#f5efdd] transition-colors duration-300"
+            />
+          </svg>
+        </MotionLink>
 
           </div>
         </div>
