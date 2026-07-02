@@ -284,9 +284,9 @@
               "image": "",
               "name": "Rigatoni alla Vodka",
               "description": "House-made rigatoni cooked al dente in a velvety vodka tomato cream sauce with shallots, garlic, burrata, shaved Parmesan, and fresh basil. Served with char-grilled focaccia",
-              "price": "15",
+              "price": "25",
               "rawPrice": {
-                "base_price": 15,
+                "base_price": 25,
                 "base_price_max": null,
                 "base_is_price_range": false,
                 "price_variants": null
@@ -747,12 +747,12 @@
             {
               "id": "b2ddad22-c11b-4b56-837e-497c4eef68c1",
               "image": "",
-              "name": "Kids Filet Mignon Kabo",
-              "description": "Grilled filet mignon with rice pilaf or fries",
+              "name": "Kids Chicken Kabob",
+              "description": "Tender 48-hour yogurt-marinated grilled chicken kabob served with basmati rice pilaf or house fries",
               
-              "price": "16",
+              "price": "15",
               "rawPrice": {
-                "base_price": 16,
+                "base_price": 15,
                 "base_price_max": null,
                 "base_is_price_range": false,
                 "price_variants": null
