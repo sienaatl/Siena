@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "../components/header";
+import { GoogleTagManager } from "@next/third-parties/google";
 import Footer from "../components/footer";
 import ScrollToTop from "../components/ScrollToTop";
 import { getRestaurantInfo } from "@/lib/restaurant";
@@ -116,6 +117,7 @@ export default async function RootLayout({
         />
       </head>
       <body>
+        <GoogleTagManager gtmId="GTM-N593KQGJ" />
         <Header />
         {children}
         <Footer />
