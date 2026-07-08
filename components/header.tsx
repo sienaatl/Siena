@@ -28,7 +28,7 @@ export default function Header() {
 
     const mobileLinks = [
         { href: "/", label: "Home" },
-        { href: "/menu", label: "Menu" },
+        { href: "/menus", label: "Menu" },
         { href: "/events", label: "Events" },
         { href: "/reservations", label: "Reservations" },
         { href: "/gift-card", label: "Gift Card" },
@@ -65,7 +65,7 @@ export default function Header() {
                             } after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full`}>
                             Home
                         </Link>
-                        <Link href="/menu" className={`px-3 flex justify-center relative ${scrolled ? (pathname === "/menu" ? "text-black after:w-full" : "text-gray-700") : "text-[#F5EFDD]"
+                        <Link href="/menus" className={`px-3 flex justify-center relative ${scrolled ? (pathname === "/menus" ? "text-black after:w-full" : "text-gray-700") : "text-[#F5EFDD]"
                             } after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full`}>
                             Menu
                         </Link>

@@ -331,7 +331,7 @@ export default function Home() {
             </motion.p>
 
                   <MotionLink
-          href="/menu"
+          href="/menus"
           className="relative z-10 group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -363,7 +363,7 @@ export default function Home() {
 
             {/* Card grande izquierda - Dinner */}
             <motion.a
-              href="/menu?tab=main-menu"
+              href="/menus?tab=main-menu"
               className="group relative overflow-hidden shadow-lg md:row-span-2 h-[220px] md:h-auto"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -395,7 +395,7 @@ export default function Home() {
 
             {/* Card top centro - Brunch */}
             <motion.a
-              href="/menu?tab=weekend-brunch"
+              href="/menus?tab=weekend-brunch"
               className="group relative overflow-hidden shadow-lg h-[220px] md:h-auto"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -425,7 +425,7 @@ export default function Home() {
 
             {/* Card top derecha - Happy Hour */}
             <motion.a
-              href="/menu?tab=happy-hour"
+              href="/menus?tab=happy-hour"
               className="group relative overflow-hidden shadow-lg h-[220px] md:h-auto"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -455,7 +455,7 @@ export default function Home() {
 
             {/* Card ancha abajo - Beverages */}
             <motion.a
-              href="/menu?tab=libations"
+              href="/menus?tab=libations"
               className="group relative overflow-hidden shadow-lg md:col-span-2 h-[220px] md:h-auto"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

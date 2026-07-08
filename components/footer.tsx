@@ -85,7 +85,7 @@ export default function Footer() {
                         </div>
                         {[
                             { label: "Home", href: "/" },
-                            { label: "Menu", href: "/menu" },
+                            { label: "Menu", href: "/menus" },
                             { label: "Events", href: "/events" },
                             { label: "Gift Card", href: "/gift-card" },
                         ].map(({ label, href }) => {
