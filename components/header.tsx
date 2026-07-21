@@ -35,6 +35,7 @@ export default function Header() {
         { href: "/about-us", label: "About Us" },
         { href: "/gallery", label: "Gallery" },
         { href: "/careers", label: "Careers" },
+        { href: "/blogs", label: "Blogs" },
         { href: "/contact-us", label: "Contact Us" },
     ];
 
@@ -99,6 +100,9 @@ export default function Header() {
                                 </Link>
                                 <Link href="/careers" className="flex items-center justify-center gap-4 p-3 hover:bg-[#59021F] hover:text-[#F5EFDD] transition text-gray-700">
                                     <span className="text-[15px] font-normal uppercase tracking-wide text-center">Careers</span>
+                                </Link>
+                                <Link href="/blogs" className="flex items-center justify-center gap-4 p-3 hover:bg-[#59021F] hover:text-[#F5EFDD] transition text-gray-700">
+                                    <span className="text-[15px] font-normal uppercase tracking-wide text-center">Blogs</span>
                                 </Link>
                                 <Link href="/contact-us" className="flex items-center justify-center gap-4 p-3 hover:bg-[#59021F] hover:text-[#F5EFDD] transition text-gray-700">
                                     <span className="text-[15px] font-normal uppercase tracking-wide text-center">Contact Us</span>

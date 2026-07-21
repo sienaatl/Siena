@@ -1,17 +1,28 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Menu",
+  title: "Siena Restaurant Alpharetta Menu | Mediterranean Dinner Menu",
   description:
-    "Explore Siena's full menu — chef-crafted Mediterranean plates, weekend brunch, happy hour, craft cocktails, wines, and spirits. Located in Alpharetta, Georgia.",
+    "View the Siena Restaurant Alpharetta Menu offering Mediterranean-inspired tapas, chef-driven entrées & curated flavors for a memorable dinner.",
   openGraph: {
-    title: "Menu | Siena Restaurant",
+    title: "Siena Restaurant Alpharetta Menu | Mediterranean Dinner Menu",
     description:
-      "Chef-crafted Mediterranean dishes, brunch, happy hour, cocktails and wines at Siena in Alpharetta, GA.",
-    url: "https://siena-q6nc.vercel.app/menu",
+      "View the Siena Restaurant Alpharetta Menu offering Mediterranean-inspired tapas, chef-driven entrées & curated flavors for a memorable dinner.",
+    url: "https://sienaatl.com/menus",
     images: [{ url: "/assets/Siena_20.03.26-PS-NarissaChickenLolipapas.webp", alt: "Siena menu dishes" }],
   },
-  alternates: { canonical: "https://siena-q6nc.vercel.app/menu" },
+
+  keywords: [
+    "Siena Restaurant Alpharetta Menu",
+    "Best Menu for Mediterranean Food",
+    "Alpharetta Restaurants Menu",
+    "Best Mediterranean Restaurants Menu",
+    "Mediterranean Tapas Dishes",
+    "Mediterranean Dinner Menu",
+  ],
+
+
+  alternates: { canonical: "https://sienaatl.com/menus" },
 };
 
 export default function MenuLayout({ children }: { children: React.ReactNode }) {

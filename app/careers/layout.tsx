@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Careers",
+  title: "Careers at Siena | Restaurant Jobs in Alpharetta GA",
   description:
-    "Join the Siena Restaurant team in Alpharetta, GA. We're looking for passionate individuals in front-of-house, kitchen, and bar roles. Apply today.",
+    "Join the Siena team in Alpharetta. Explore restaurant career opportunities in hospitality, culinary, and guest services. Apply today.",
   openGraph: {
-    title: "Careers | Siena Restaurant",
+    title: "Careers at Siena | Restaurant Jobs in Alpharetta GA",
     description:
-      "Join the Siena team — we're hiring passionate people for front-of-house, kitchen, and bar roles in Alpharetta, GA.",
-    url: "https://siena-q6nc.vercel.app/careers",
+      "Join the Siena team in Alpharetta. Explore restaurant career opportunities in hospitality, culinary, and guest services. Apply today.",
+    url: "https://sienaatl.com/careers",
     images: [{ url: "/assets/Siena_20.03.26-P-01.webp", alt: "Siena Restaurant team" }],
   },
-  alternates: { canonical: "https://siena-q6nc.vercel.app/careers" },
+  alternates: { canonical: "https://sienaatl.com/careers" },
 };
 
 export default function CareersLayout({ children }: { children: React.ReactNode }) {

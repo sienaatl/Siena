@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     title: "Order Online | Siena Restaurant",
     description:
       "Order Mediterranean dishes from Siena Restaurant online — starters, mains, desserts, and drinks in Alpharetta, GA.",
-    url: "https://siena-q6nc.vercel.app/order-online",
+    url: "https://sienaatl.com/order-online",
     images: [{ url: "/assets/Siena_20.03.26-PS-GoldenOxtail.webp", alt: "Siena Restaurant food" }],
   },
-  alternates: { canonical: "https://siena-q6nc.vercel.app/order-online" },
+  alternates: { canonical: "https://sienaatl.com/order-online" },
 };
 
 export default function OrderOnlineLayout({ children }: { children: React.ReactNode }) {

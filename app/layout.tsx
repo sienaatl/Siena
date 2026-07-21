@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "../components/header";
-import { GoogleTagManager } from "@next/third-parties/google";
 import Footer from "../components/footer";
 import ScrollToTop from "../components/ScrollToTop";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { getRestaurantInfo } from "@/lib/restaurant";
 
 export const viewport: Viewport = {
@@ -13,56 +13,68 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://siena-q6nc.vercel.app"),
+  metadataBase: new URL("https://sienaatl.com"),
+
   title: {
-    default: "Siena Restaurant — Mediterranean Dining in Alpharetta, GA",
+    default: "Siena Restaurant | Best Mediterranean Italian Restaurant",
     template: "%s | Siena Restaurant",
   },
+
   description:
-    "Siena is an upscale Mediterranean restaurant in Alpharetta, Georgia. Chef-driven shared plates, craft cocktails, and an unforgettable atmosphere. Open Tuesday–Sunday.",
+    "Visit Siena Restaurant, the Best Mediterranean Italian Restaurant offering authentic Mediterranean & Italian flavors, seasonal menus & warm dining.",
+
   keywords: [
     "Siena Restaurant",
-    "Mediterranean restaurant Alpharetta",
-    "restaurant Alpharetta GA",
-    "Mediterranean dining Georgia",
-    "craft cocktails Alpharetta",
-    "Mediterranean food Atlanta",
-    "upscale dining Alpharetta",
-    "date night restaurant Alpharetta",
+    "Italian Restaurant Alpharetta",
+    "Mediterranean Restaurant Alpharetta",
+    "Mediterranean Italian Restaurant",
+    "Best Italian Restaurant Alpharetta",
+    "Restaurants in Alpharetta GA",
+    "Mediterranean Food Alpharetta",
+    "Fine Dining Restaurant Alpharetta",
   ],
+
   authors: [{ name: "Siena Restaurant" }],
   creator: "Siena Restaurant",
+
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://siena-q6nc.vercel.app",
+    url: "https://sienaatl.com",
     siteName: "Siena Restaurant",
-    title: "Siena Restaurant — Mediterranean Dining in Alpharetta, GA",
+    title: "Siena Restaurant | Best Mediterranean Italian Restaurant",
     description:
-      "Chef-driven Mediterranean plates, craft cocktails, and an unforgettable atmosphere in the heart of Alpharetta, Georgia.",
+      "Chef-driven Mediterranean plates, handcrafted cocktails, and an unforgettable dining experience in Alpharetta, Georgia.",
     images: [
       {
         url: "/assets/Siena_20.03.26-A-02.webp",
         width: 1200,
         height: 630,
-        alt: "Siena Restaurant interior",
+        alt: "Siena Restaurant",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Siena Restaurant — Mediterranean Dining in Alpharetta, GA",
+    title: "Siena Restaurant | Best Mediterranean Italian Restaurant",
     description:
-      "Chef-driven Mediterranean plates, craft cocktails, and an unforgettable atmosphere in Alpharetta, GA.",
+      "Chef-driven Mediterranean plates, handcrafted cocktails, and an unforgettable dining experience in Alpharetta, Georgia.",
     images: ["/assets/Siena_20.03.26-A-02.webp"],
   },
+
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
   },
+
   alternates: {
-    canonical: "https://siena-q6nc.vercel.app",
+    canonical: "https://sienaatl.com",
   },
 };
 
@@ -76,36 +88,64 @@ export default async function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
-    name: "Siena Restaurant",
-    description:
-      "Upscale Mediterranean dining in Alpharetta, Georgia. Chef-driven shared plates, craft cocktails, and an unforgettable atmosphere.",
-    url: "https://siena-q6nc.vercel.app",
-    image: "https://siena-q6nc.vercel.app/assets/Siena_20.03.26-A-02.webp",
+    name: "Siena",
+    image: "https://sienaatl.com/assets/logo_beige.png",
+    "@id": "https://sienaatl.com/#restaurant",
+    url: "https://sienaatl.com/",
+    telephone: info.phone || "+1 (404) 777-5124",
+    priceRange: "$$",
+
+    menu: "https://sienaatl.com/menus",
+    hasMenu: "https://sienaatl.com/menus",
+
+    servesCuisine: ["Italian", "Mediterranean"],
+
+    acceptsReservations: true,
+
     address: {
       "@type": "PostalAddress",
-      streetAddress: info.address.split(",")[0]?.trim() ?? "124 Devore Rd",
+      streetAddress: "124 Devore Rd",
       addressLocality: "Alpharetta",
       addressRegion: "GA",
       postalCode: "30009",
       addressCountry: "US",
     },
-    telephone: info.phone,
+
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 34.0754,
-      longitude: -84.2941,
+      latitude: 34.0681987,
+      longitude: -84.2991968,
     },
-    servesCuisine: "Mediterranean",
-    priceRange: "$$$",
+
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Tuesday", "Wednesday", "Thursday"],
+        opens: "16:00",
+        closes: "22:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Friday", "Saturday"],
+        opens: "16:00",
+        closes: "00:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Sunday",
+        opens: "16:00",
+        closes: "22:00",
+      },
+    ],
+
     currenciesAccepted: "USD",
     paymentAccepted: "Cash, Credit Card",
+
     sameAs: [
-      "https://www.instagram.com/sienaatl/",
       "https://www.facebook.com/sienaatl/",
+      "https://www.instagram.com/sienaatl/",
       "https://www.tiktok.com/@sienaatl",
     ],
-    hasMenu: "https://siena-q6nc.vercel.app/menu",
-    acceptsReservations: "True",
   };
 
   return (
@@ -113,14 +153,21 @@ export default async function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
         />
       </head>
+
       <body>
         <GoogleTagManager gtmId="GTM-N593KQGJ" />
+
         <Header />
+
         {children}
+
         <Footer />
+
         <ScrollToTop />
       </body>
     </html>

@@ -1,17 +1,28 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Reservations",
+  title: "Italian Restaurant Reservations Alpharetta | Reserve Table now",
   description:
-    "Reserve your table at Siena Restaurant in Alpharetta, GA. Whether it's a weeknight dinner or a special occasion, we look forward to welcoming you.",
+    "Book your Italian Restaurant Reservations Alpharetta at Siena today. Reserve a table online & enjoy authentic Italian cuisine, handcrafted dishes",
   openGraph: {
-    title: "Reservations | Siena Restaurant",
+    title: "Italian Restaurant Reservations Alpharetta | Reserve Table now",
     description:
-      "Book your table at Siena — Mediterranean dining in Alpharetta, Georgia. Reserve now for weeknight dinners or special occasions.",
-    url: "https://siena-q6nc.vercel.app/reservations",
+      "Book your Italian Restaurant Reservations Alpharetta at Siena today. Reserve a table online & enjoy authentic Italian cuisine, handcrafted dishes",
+    url: "https://sienaatl.com/reservations",
     images: [{ url: "/assets/Siena_20.03.26-P-02.webp", alt: "Dining at Siena Restaurant" }],
   },
-  alternates: { canonical: "https://siena-q6nc.vercel.app/reservations" },
+
+    keywords: [
+    "Italian Restaurant Reservations Alpharetta",
+    "Book Restaurant Reservation Alpharetta",
+    "Reserve Table Italian Restaurant",
+    "Alpharetta Restaurants with Reservations",
+    "Romantic Restaurant Alpharetta GA",
+    "Restaurant Reservation near Alpharetta",
+  ],
+
+
+  alternates: { canonical: "https://sienaatl.com/reservations" },
 };
 
 export default function ReservationsLayout({ children }: { children: React.ReactNode }) {

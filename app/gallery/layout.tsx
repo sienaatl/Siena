@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Gallery",
+  title: "Siena Gallery | Mediterranean Restaurant Photos Alpharetta",
   description:
-    "Take a visual tour of Siena Restaurant — our stunning interior, bar, plated dishes, and memorable moments from Alpharetta's premier Mediterranean dining destination.",
+    "Explore Siena's gallery featuring chef-crafted dishes, elegant interiors, private events, and memorable Mediterranean dining in Alpharetta.",
   openGraph: {
-    title: "Gallery | Siena Restaurant",
+    title: "Siena Gallery | Mediterranean Restaurant Photos Alpharetta",
     description:
-      "A visual journey through Siena Restaurant — interior, bar, dishes, and unforgettable moments in Alpharetta, GA.",
-    url: "https://siena-q6nc.vercel.app/gallery",
+      "Explore Siena's gallery featuring chef-crafted dishes, elegant interiors, private events, and memorable Mediterranean dining in Alpharetta.",
+    url: "https://sienaatl.com/gallery",
     images: [{ url: "/assets/Siena_20.03.26-A-02.webp", alt: "Siena Restaurant gallery" }],
   },
-  alternates: { canonical: "https://siena-q6nc.vercel.app/gallery" },
+  alternates: { canonical: "https://sienaatl.com/gallery" },
 };
 
 export default function GalleryLayout({ children }: { children: React.ReactNode }) {
