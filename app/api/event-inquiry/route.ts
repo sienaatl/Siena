@@ -129,7 +129,7 @@ export async function POST(req: NextRequest) {
     const subject = `Event Inquiry: ${firstName} ${lastName}${guestCount ? ` — ${guestCount} guests` : ""}`;
 
     // No mail credentials locally: print the email so the form can be tested without secrets.
-    if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+    if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
       console.log(
         `\n[event-inquiry] No SMTP credentials found — email NOT sent.\n` +
           `To:      ${to}\nSubject: ${subject}\n\n${textBody}\n`
@@ -137,12 +137,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: true, delivered: false });
     }
 
+    // Use the configured mail server, as app/api/careers and app/api/newsletter do.
+    // app/api/contact hardcodes smtp.gmail.com and ignores SMTP_HOST — that looks like a
+    // bug in that route, not something to copy.
+    const port = Number(process.env.SMTP_PORT) || 465;
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
+      host: process.env.SMTP_HOST,
+      port,
+      secure: process.env.SMTP_SECURE ? process.env.SMTP_SECURE === "true" : port === 465,
       auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
     });
+    console.log(`[event-inquiry] sending via ${process.env.SMTP_HOST}:${port}`);
 
     await transporter.sendMail({
       from: `"Siena Restaurant" <${process.env.SMTP_USER}>`,
