@@ -2,8 +2,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 
-const TOAST_URL =
-  "https://www.toasttab.com/invoice/lead?rx=399f3374-7dde-4df3-9c3a-c49fed50b565&ot=675642f1-f873-4b8f-afcd-cca9b93a185c";
+const EVENT_INQUIRY_URL = "/event-inquiry";
 
 const steps = [
   {
@@ -183,9 +182,7 @@ export default function OrderOnline() {
           </motion.p>
 
           <motion.a
-            href={TOAST_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={EVENT_INQUIRY_URL}
             className="group bg-[#58021f] text-[#f5efdd] px-10 py-4 text-[15px] font-normal flex items-center gap-3 hover:bg-[#030302] transition"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
