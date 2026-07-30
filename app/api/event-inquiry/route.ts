@@ -11,7 +11,13 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
     body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
   });
   const data = await res.json();
-  return data.success === true && data.score >= 0.5;
+  const ok = data.success === true && data.score >= 0.5;
+  if (!ok) {
+    console.warn(
+      `[event-inquiry] reCAPTCHA rejected — success=${data.success} score=${data.score} codes=${JSON.stringify(data["error-codes"] ?? [])}`
+    );
+  }
+  return ok;
 }
 
 type Row = { label: string; value?: string };
@@ -36,12 +42,17 @@ export async function POST(req: NextRequest) {
       recaptchaToken,
     } = body;
 
-    // reCAPTCHA is enforced in production. Skipped locally where no key is configured.
-    const recaptchaConfigured = Boolean(process.env.RECAPTCHA_SECRET_KEY);
-    if (process.env.NODE_ENV === "production" || recaptchaConfigured) {
+    // reCAPTCHA is enforced on production only. The site key is registered for
+    // sienaatl.com, so Google always rejects tokens issued on a *.vercel.app preview
+    // host. Preview and local still run the check, but only log the outcome —
+    // otherwise the form could never be tested anywhere before going live.
+    const isProduction = process.env.VERCEL_ENV === "production";
+    if (isProduction) {
       if (!recaptchaToken || !(await verifyRecaptcha(recaptchaToken))) {
         return NextResponse.json({ error: "reCAPTCHA verification failed" }, { status: 400 });
       }
+    } else if (recaptchaToken && process.env.RECAPTCHA_SECRET_KEY) {
+      await verifyRecaptcha(recaptchaToken);
     }
 
     if (!firstName || !lastName || !email || !phone) {
