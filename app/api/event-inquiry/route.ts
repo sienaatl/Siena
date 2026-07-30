@@ -46,14 +46,20 @@ export async function POST(req: NextRequest) {
     // sienaatl.com, so Google always rejects tokens issued on a *.vercel.app preview
     // host. Preview and local still run the check, but only log the outcome —
     // otherwise the form could never be tested anywhere before going live.
-    const isProduction = process.env.VERCEL_ENV === "production";
-    if (isProduction) {
+    // Fail safe: only skip enforcement when Vercel explicitly says this is a preview or
+    // development deployment. If VERCEL_ENV is missing for any reason, the check still runs.
+    const vercelEnv = process.env.VERCEL_ENV;
+    const isPreview = vercelEnv === "preview" || vercelEnv === "development";
+    const enforceRecaptcha = !isPreview && Boolean(process.env.RECAPTCHA_SECRET_KEY);
+
+    if (enforceRecaptcha) {
       if (!recaptchaToken || !(await verifyRecaptcha(recaptchaToken))) {
         return NextResponse.json({ error: "reCAPTCHA verification failed" }, { status: 400 });
       }
     } else if (recaptchaToken && process.env.RECAPTCHA_SECRET_KEY) {
       await verifyRecaptcha(recaptchaToken);
     }
+    console.log(`[event-inquiry] VERCEL_ENV=${vercelEnv ?? "(unset)"} recaptchaEnforced=${enforceRecaptcha}`);
 
     if (!firstName || !lastName || !email || !phone) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
