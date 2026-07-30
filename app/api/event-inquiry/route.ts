@@ -40,6 +40,7 @@ export async function POST(req: NextRequest) {
       occasion,
       notes,
       howHeard,
+      howHeardOther,
       recaptchaToken,
     } = body;
 
@@ -78,7 +79,8 @@ export async function POST(req: NextRequest) {
       { label: "Event space", value: eventSpace },
       { label: "Guest count", value: guestCount ? String(guestCount) : undefined },
       { label: "Occasion", value: occasion },
-      { label: "Heard about us via", value: howHeard },
+      // "Other (Please specify)" is only useful with what they typed next to it.
+      { label: "Heard about us via", value: howHeardOther ? `Other — ${howHeardOther}` : howHeard },
     ];
     const filled = rows.filter((r) => r.value);
 

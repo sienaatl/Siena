@@ -50,6 +50,7 @@ const schema = z
     occasion: z.string().max(100, "Occasion is too long").optional().or(z.literal("")),
     notes: z.string().max(1000, "Notes cannot exceed 1000 characters").optional().or(z.literal("")),
     howHeard: z.string().max(60, "Please pick one of the options").optional().or(z.literal("")),
+    howHeardOther: z.string().max(100, "Please keep this under 100 characters").optional().or(z.literal("")),
   })
   .superRefine((data, ctx) => {
     if (data.endDate && data.date && data.endDate < data.date) {
@@ -62,6 +63,13 @@ const schema = z
         path: ["date"],
       });
     }
+    if (data.howHeard === HOW_HEARD_OTHER && !data.howHeardOther?.trim()) {
+      ctx.addIssue({
+        code: "custom",
+        message: "Please tell us where you heard about us",
+        path: ["howHeardOther"],
+      });
+    }
   });
 
 type FormData = z.infer<typeof schema>;
@@ -69,16 +77,28 @@ type FormData = z.infer<typeof schema>;
 const inputClass =
   "w-full border border-[#58021f]/20 px-4 py-[11px] text-[14px] text-[#333] placeholder-[#bbb] focus:outline-none focus:border-[#58021f] focus:ring-1 focus:ring-[#58021f]/20 bg-white/80 transition";
 
+const HOW_HEARD_OTHER = "Other (Please specify)";
+
 const HOW_HEARD_OPTIONS = [
-  "Google search",
   "Instagram",
   "Facebook",
   "TikTok",
-  "Recommended by a friend",
-  "I've eaten here before",
+  "Google Search",
+  "Google Maps",
+  "Yelp",
   "OpenTable",
-  "Walked or drove past",
-  "Other",
+  "Friend or Family",
+  "Word of Mouth",
+  "Walked By / Saw the Restaurant",
+  "Hotel Concierge",
+  "Local Event",
+  "Community Group",
+  "Influencer / Content Creator",
+  "Online Advertisement",
+  "Email Newsletter",
+  "Repeat Guest",
+  "Corporate Event / Private Event",
+  HOW_HEARD_OTHER,
 ];
 
 // 10:00 AM through 11:30 PM in half hours.
@@ -167,11 +187,13 @@ export default function EventInquiry() {
       occasion: "",
       notes: "",
       howHeard: "",
+      howHeardOther: "",
     },
     mode: "onTouched",
   });
 
   const notesLength = watch("notes")?.length ?? 0;
+  const howHeard = watch("howHeard");
   const today = new Date().toISOString().split("T")[0];
 
   const onSubmit = async (data: FormData) => {
@@ -414,6 +436,16 @@ export default function EventInquiry() {
                     ))}
                   </select>
                 </Field>
+
+                {howHeard === HOW_HEARD_OTHER && (
+                  <Field label="Please specify" required error={errors.howHeardOther?.message}>
+                    <input
+                      {...register("howHeardOther")}
+                      placeholder="Where did you hear about us?"
+                      className={inputClass}
+                    />
+                  </Field>
+                )}
 
                 {sendError && (
                   <p className="text-[13px] text-[#58021f] border border-[#58021f]/30 bg-[#58021f]/5 px-4 py-3">
