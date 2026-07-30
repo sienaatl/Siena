@@ -565,9 +565,7 @@ export default function Home() {
             </motion.p>
 
             <motion.a
-              href="https://www.toasttab.com/invoice/lead?rx=399f3374-7dde-4df3-9c3a-c49fed50b565&ot=675642f1-f873-4b8f-afcd-cca9b93a185c"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/event-inquiry"
               className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}

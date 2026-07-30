@@ -2,8 +2,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 
-const TOAST_URL =
-  "https://www.toasttab.com/invoice/lead?rx=399f3374-7dde-4df3-9c3a-c49fed50b565&ot=675642f1-f873-4b8f-afcd-cca9b93a185c";
+const EVENT_INQUIRY_URL = "/event-inquiry";
 
 export default function AboutUs() {
   return (
@@ -329,9 +328,7 @@ export default function AboutUs() {
               </p>
 
               <a
-                href={TOAST_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={EVENT_INQUIRY_URL}
                 className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] inline-flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:border-[#030302] transition"
               >
                 RESERVE A TABLE
