@@ -39,6 +39,7 @@ export async function POST(req: NextRequest) {
       guestCount,
       occasion,
       notes,
+      howHeard,
       recaptchaToken,
     } = body;
 
@@ -77,6 +78,7 @@ export async function POST(req: NextRequest) {
       { label: "Event space", value: eventSpace },
       { label: "Guest count", value: guestCount ? String(guestCount) : undefined },
       { label: "Occasion", value: occasion },
+      { label: "Heard about us via", value: howHeard },
     ];
     const filled = rows.filter((r) => r.value);
 

@@ -49,6 +49,7 @@ const schema = z
       .or(z.literal("")),
     occasion: z.string().max(100, "Occasion is too long").optional().or(z.literal("")),
     notes: z.string().max(1000, "Notes cannot exceed 1000 characters").optional().or(z.literal("")),
+    howHeard: z.string().max(60, "Please pick one of the options").optional().or(z.literal("")),
   })
   .superRefine((data, ctx) => {
     if (data.endDate && data.date && data.endDate < data.date) {
@@ -67,6 +68,18 @@ type FormData = z.infer<typeof schema>;
 
 const inputClass =
   "w-full border border-[#58021f]/20 px-4 py-[11px] text-[14px] text-[#333] placeholder-[#bbb] focus:outline-none focus:border-[#58021f] focus:ring-1 focus:ring-[#58021f]/20 bg-white/80 transition";
+
+const HOW_HEARD_OPTIONS = [
+  "Google search",
+  "Instagram",
+  "Facebook",
+  "TikTok",
+  "Recommended by a friend",
+  "I've eaten here before",
+  "OpenTable",
+  "Walked or drove past",
+  "Other",
+];
 
 // 10:00 AM through 11:30 PM in half hours.
 const TIME_OPTIONS = Array.from({ length: 28 }, (_, i) => {
@@ -153,6 +166,7 @@ export default function EventInquiry() {
       guestCount: "",
       occasion: "",
       notes: "",
+      howHeard: "",
     },
     mode: "onTouched",
   });
@@ -390,6 +404,15 @@ export default function EventInquiry() {
                     className={`${inputClass} resize-none`}
                   />
                   <p className="text-[11px] text-[#999] text-right">{notesLength}/1000</p>
+                </Field>
+
+                <Field label="How did you hear about us?" error={errors.howHeard?.message}>
+                  <select {...register("howHeard")} className={inputClass}>
+                    <option value="">Select one</option>
+                    {HOW_HEARD_OPTIONS.map((o) => (
+                      <option key={o} value={o}>{o}</option>
+                    ))}
+                  </select>
                 </Field>
 
                 {sendError && (
