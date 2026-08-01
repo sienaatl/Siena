@@ -10,9 +10,21 @@ const BOOKING_API = "https://reservations.sienaatl.com/api/book";
 
 const phoneRegex = /^\+?[\d\s\-(). ]{7,20}$/;
 
+// Local calendar day, not UTC — new Date().toISOString() would roll over early for US timezones.
+function todayISO() {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
 const schema = z.object({
   partySize: z.string().min(1, "Please select a party size"),
-  date: z.string().min(1, "Please pick a date"),
+  date: z
+    .string()
+    .min(1, "Please pick a date")
+    .refine((v) => v >= todayISO(), "Please choose today or a future date"),
   time: z.string().min(1, "Please pick a time"),
   fullName: z
     .string()
@@ -142,7 +154,7 @@ export default function Reservations() {
   const [confirmation, setConfirmation] = useState<BookingResponse | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const today = new Date().toISOString().split("T")[0];
+  const today = todayISO();
 
   const {
     register,
@@ -435,7 +447,20 @@ export default function Reservations() {
                           </div>
                         </Field>
                         <Field label="Date" required error={errors.date?.message}>
-                          <input {...register("date")} type="date" min={today} className={inputClass} />
+                          <input
+                            {...register("date", {
+                              onChange: (e) => {
+                                // Safari's date wheel (macOS + iOS) doesn't clamp to `min` the way
+                                // Chrome/Firefox do, so a past date can slip through the picker UI.
+                                if (e.target.value && e.target.value < today) {
+                                  e.target.value = today;
+                                }
+                              },
+                            })}
+                            type="date"
+                            min={today}
+                            className={inputClass}
+                          />
                         </Field>
                         <Field label="Time" required error={errors.time?.message}>
                           <div className="relative">
