@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
@@ -156,6 +156,11 @@ export default function Reservations() {
 
   const today = todayISO();
 
+  // Holds the actual <input type="date"> DOM node so we can imperatively
+  // (re)set `min` after mount/hydration, and enforce it again on blur.
+  // See comments below for why this is needed on top of the JSX `min` attr.
+  const dateInputRef = useRef<HTMLInputElement | null>(null);
+
   const {
     register,
     handleSubmit,
@@ -177,6 +182,26 @@ export default function Reservations() {
     },
     mode: "onTouched",
   });
+
+  // react-hook-form's own ref from register("date") — captured once so we can
+  // call it manually alongside our own ref (see mergedDateRef below).
+  const { ref: rhfDateRef, ...dateField } = register("date");
+
+  function mergedDateRef(el: HTMLInputElement | null) {
+    dateInputRef.current = el;
+    rhfDateRef(el);
+  }
+
+  useEffect(() => {
+    // Re-assert `min` from the client's own clock right after mount.
+    // Fixes the case where SSR/hydration computed `today` a moment earlier
+    // (or in a different TZ context) than the value WebKit's native date
+    // picker actually reads on first paint. iOS Safari can cache that
+    // initial `min` and not re-read a later React-patched attribute.
+    if (dateInputRef.current) {
+      dateInputRef.current.min = todayISO();
+    }
+  }, []);
 
   const onSubmit = async (data: FormData) => {
     setSubmitError(null);
@@ -449,21 +474,38 @@ export default function Reservations() {
                         </Field>
                         <Field label="Date" required error={errors.date?.message}>
                           <input
-                            {...register("date")}
+                            {...dateField}
+                            ref={mergedDateRef}
                             type="date"
                             min={today}
                             className={inputClass}
                             onChange={(e) => {
-                              // iOS/macOS Safari's date wheel doesn't clamp to `min` the way
-                              // Chrome/Firefox do, so a past date can slip through the picker UI.
-                              // Overriding onChange and driving the field via setValue (instead of
-                              // relying on register()'s own onChange, which reads the raw picked
-                              // value before any correction can run) guarantees the clamp actually
-                              // lands in form state, not just visually on the input.
+                              // iOS/macOS Safari's date wheel/grid doesn't reliably clamp to
+                              // `min` the way Chrome/Firefox do, so a past date can slip through
+                              // the picker UI. Overriding onChange and driving the field via
+                              // setValue (instead of relying on register()'s own onChange, which
+                              // reads the raw picked value before any correction can run)
+                              // guarantees the clamp actually lands in form state, not just
+                              // visually on the input. We recompute "today" fresh here rather
+                              // than reusing the outer `today` closure, in case the form has been
+                              // open across a midnight rollover.
                               const picked = e.target.value;
-                              const clamped = picked && picked < today ? today : picked;
+                              const t = todayISO();
+                              const clamped = picked && picked < t ? t : picked;
                               if (clamped !== picked) e.target.value = clamped;
                               setValue("date", clamped, { shouldValidate: true, shouldDirty: true, shouldTouch: true });
+                            }}
+                            onBlur={(e) => {
+                              // Backstop for the known WebKit bug where a disabled/past cell in
+                              // the native calendar grid is still tappable on some iOS versions
+                              // and can commit a value without a clean onChange firing first.
+                              dateField.onBlur(e);
+                              const val = e.target.value;
+                              const t = todayISO();
+                              if (val && val < t) {
+                                e.target.value = t;
+                                setValue("date", t, { shouldValidate: true, shouldDirty: true, shouldTouch: true });
+                              }
                             }}
                           />
                         </Field>
