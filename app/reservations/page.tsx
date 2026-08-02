@@ -159,6 +159,7 @@ export default function Reservations() {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -448,18 +449,22 @@ export default function Reservations() {
                         </Field>
                         <Field label="Date" required error={errors.date?.message}>
                           <input
-                            {...register("date", {
-                              onChange: (e) => {
-                                // Safari's date wheel (macOS + iOS) doesn't clamp to `min` the way
-                                // Chrome/Firefox do, so a past date can slip through the picker UI.
-                                if (e.target.value && e.target.value < today) {
-                                  e.target.value = today;
-                                }
-                              },
-                            })}
+                            {...register("date")}
                             type="date"
                             min={today}
                             className={inputClass}
+                            onChange={(e) => {
+                              // iOS/macOS Safari's date wheel doesn't clamp to `min` the way
+                              // Chrome/Firefox do, so a past date can slip through the picker UI.
+                              // Overriding onChange and driving the field via setValue (instead of
+                              // relying on register()'s own onChange, which reads the raw picked
+                              // value before any correction can run) guarantees the clamp actually
+                              // lands in form state, not just visually on the input.
+                              const picked = e.target.value;
+                              const clamped = picked && picked < today ? today : picked;
+                              if (clamped !== picked) e.target.value = clamped;
+                              setValue("date", clamped, { shouldValidate: true, shouldDirty: true, shouldTouch: true });
+                            }}
                           />
                         </Field>
                         <Field label="Time" required error={errors.time?.message}>
