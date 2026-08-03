@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -19,12 +20,43 @@ function todayISO() {
   return `${y}-${m}-${day}`;
 }
 
+// Parses "YYYY-MM-DD" as a local date (not UTC) so day-of-week checks match
+// the calendar day the user actually picked, regardless of timezone.
+function isMonday(dateStr: string) {
+  if (!dateStr) return false;
+  const [y, m, d] = dateStr.split("-").map(Number);
+  return new Date(y, m - 1, d).getDay() === 1;
+}
+
+// Siena is closed Mondays — bump a Monday pick forward to Tuesday instead of
+// leaving the field on a day we can't seat.
+function skipMonday(dateStr: string) {
+  if (!dateStr || !isMonday(dateStr)) return dateStr;
+  const [y, m, d] = dateStr.split("-").map(Number);
+  const next = new Date(y, m - 1, d);
+  next.setDate(next.getDate() + 1);
+  const yy = next.getFullYear();
+  const mm = String(next.getMonth() + 1).padStart(2, "0");
+  const dd = String(next.getDate()).padStart(2, "0");
+  return `${yy}-${mm}-${dd}`;
+}
+
+// Single source of truth for "is this a bookable date" — used by every event
+// handler below so the past-date clamp and the Monday skip can never drift
+// out of sync between onChange, onBlur, and the raw DOM listener.
+function sanitizeDate(value: string) {
+  const t = todayISO();
+  const pastClamped = value && value < t ? t : value;
+  return skipMonday(pastClamped);
+}
+
 const schema = z.object({
   partySize: z.string().min(1, "Please select a party size"),
   date: z
     .string()
     .min(1, "Please pick a date")
-    .refine((v) => v >= todayISO(), "Please choose today or a future date"),
+    .refine((v) => v >= todayISO(), "Please choose today or a future date")
+    .refine((v) => !isMonday(v), "Siena is closed on Mondays — please choose another day"),
   time: z.string().min(1, "Please pick a time"),
   fullName: z
     .string()
@@ -193,15 +225,37 @@ export default function Reservations() {
   }
 
   useEffect(() => {
+    const el = dateInputRef.current;
+    if (!el) return;
+
     // Re-assert `min` from the client's own clock right after mount.
     // Fixes the case where SSR/hydration computed `today` a moment earlier
     // (or in a different TZ context) than the value WebKit's native date
     // picker actually reads on first paint. iOS Safari can cache that
     // initial `min` and not re-read a later React-patched attribute.
-    if (dateInputRef.current) {
-      dateInputRef.current.min = todayISO();
-    }
-  }, []);
+    el.min = todayISO();
+
+    // Belt-and-braces: bind directly to the DOM node with native
+    // addEventListener, bypassing React's synthetic event system entirely.
+    // The JSX onChange/onBlur below cover every browser we've tested, but
+    // this guarantees the same correction still fires even on an engine
+    // where a native <input type="date"> widget (iOS wheel picker, macOS
+    // Safari's grid, Android's calendar/spinner, etc.) dispatches its value
+    // in a way React's event delegation doesn't pick up as expected.
+    const enforce = () => {
+      const sanitized = sanitizeDate(el.value);
+      if (sanitized !== el.value) {
+        el.value = sanitized;
+        setValue("date", sanitized, { shouldValidate: true, shouldDirty: true, shouldTouch: true });
+      }
+    };
+    el.addEventListener("change", enforce);
+    el.addEventListener("blur", enforce);
+    return () => {
+      el.removeEventListener("change", enforce);
+      el.removeEventListener("blur", enforce);
+    };
+  }, [setValue]);
 
   const onSubmit = async (data: FormData) => {
     setSubmitError(null);
@@ -472,7 +526,12 @@ export default function Reservations() {
                             <SelectChevron />
                           </div>
                         </Field>
-                        <Field label="Date" required error={errors.date?.message}>
+                        <Field
+                          label="Date"
+                          required
+                          error={errors.date?.message}
+                          hint="Siena is closed on Mondays."
+                        >
                           <input
                             {...dateField}
                             ref={mergedDateRef}
@@ -481,19 +540,16 @@ export default function Reservations() {
                             className={inputClass}
                             onChange={(e) => {
                               // iOS/macOS Safari's date wheel/grid doesn't reliably clamp to
-                              // `min` the way Chrome/Firefox do, so a past date can slip through
-                              // the picker UI. Overriding onChange and driving the field via
-                              // setValue (instead of relying on register()'s own onChange, which
-                              // reads the raw picked value before any correction can run)
-                              // guarantees the clamp actually lands in form state, not just
-                              // visually on the input. We recompute "today" fresh here rather
-                              // than reusing the outer `today` closure, in case the form has been
-                              // open across a midnight rollover.
+                              // `min` the way Chrome/Firefox do, and none of them can grey out a
+                              // single weekday — so both the past-date clamp and the Monday skip
+                              // are enforced here in JS. Driving the field via setValue (instead
+                              // of relying on register()'s own onChange, which reads the raw
+                              // picked value before any correction can run) guarantees the fix
+                              // actually lands in form state, not just visually on the input.
                               const picked = e.target.value;
-                              const t = todayISO();
-                              const clamped = picked && picked < t ? t : picked;
-                              if (clamped !== picked) e.target.value = clamped;
-                              setValue("date", clamped, { shouldValidate: true, shouldDirty: true, shouldTouch: true });
+                              const finalValue = sanitizeDate(picked);
+                              if (finalValue !== picked) e.target.value = finalValue;
+                              setValue("date", finalValue, { shouldValidate: true, shouldDirty: true, shouldTouch: true });
                             }}
                             onBlur={(e) => {
                               // Backstop for the known WebKit bug where a disabled/past cell in
@@ -501,10 +557,10 @@ export default function Reservations() {
                               // and can commit a value without a clean onChange firing first.
                               dateField.onBlur(e);
                               const val = e.target.value;
-                              const t = todayISO();
-                              if (val && val < t) {
-                                e.target.value = t;
-                                setValue("date", t, { shouldValidate: true, shouldDirty: true, shouldTouch: true });
+                              const finalValue = sanitizeDate(val);
+                              if (finalValue !== val) {
+                                e.target.value = finalValue;
+                                setValue("date", finalValue, { shouldValidate: true, shouldDirty: true, shouldTouch: true });
                               }
                             }}
                           />
@@ -523,8 +579,13 @@ export default function Reservations() {
                           </div>
                         </Field>
                       </div>
-                      <p className="text-[11px] text-[#999] mt-2">
-                        Party of 11 or more? Please call us directly to arrange your reservation.
+                      <p className="text-[11px] text-[#999] mt-2 leading-relaxed">
+                        <span className="block font-semibold text-[#777]">Party of 11 or more?</span>
+                        Please call us directly to arrange your reservation, or complete our{" "}
+                        <Link href="/event-inquiry" className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
+                          Private &amp; Group Dining Inquiry Form
+                        </Link>
+                        , and a member of our team will be happy to assist you.
                       </p>
                     </div>
 
