@@ -6,48 +6,52 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { DayPicker, type DayButtonProps } from "react-day-picker";
 
 const BOOKING_API = "https://reservations.sienaatl.com/api/book";
 
 const phoneRegex = /^\+?[\d\s\-(). ]{7,20}$/;
 
-// Local calendar day, not UTC — new Date().toISOString() would roll over early for US timezones.
-function todayISO() {
-  const d = new Date();
+// "YYYY-MM-DD" <-> local Date, deliberately not going through UTC/ISO
+// conversion (new Date().toISOString() rolls over a day early for anyone
+// west of UTC, e.g. showing tomorrow as "today" in the evening).
+function dateToISO(d: Date) {
   const y = d.getFullYear();
   const m = String(d.getMonth() + 1).padStart(2, "0");
   const day = String(d.getDate()).padStart(2, "0");
   return `${y}-${m}-${day}`;
 }
 
+function parseLocalDate(dateStr: string) {
+  const [y, m, d] = dateStr.split("-").map(Number);
+  return new Date(y, m - 1, d);
+}
+
+function todayISO() {
+  return dateToISO(new Date());
+}
+
+function startOfToday() {
+  const d = new Date();
+  d.setHours(0, 0, 0, 0);
+  return d;
+}
+
 // Parses "YYYY-MM-DD" as a local date (not UTC) so day-of-week checks match
 // the calendar day the user actually picked, regardless of timezone.
 function isMonday(dateStr: string) {
   if (!dateStr) return false;
-  const [y, m, d] = dateStr.split("-").map(Number);
-  return new Date(y, m - 1, d).getDay() === 1;
+  return parseLocalDate(dateStr).getDay() === 1;
 }
 
-// Siena is closed Mondays — bump a Monday pick forward to Tuesday instead of
-// leaving the field on a day we can't seat.
-function skipMonday(dateStr: string) {
-  if (!dateStr || !isMonday(dateStr)) return dateStr;
-  const [y, m, d] = dateStr.split("-").map(Number);
-  const next = new Date(y, m - 1, d);
-  next.setDate(next.getDate() + 1);
-  const yy = next.getFullYear();
-  const mm = String(next.getMonth() + 1).padStart(2, "0");
-  const dd = String(next.getDate()).padStart(2, "0");
-  return `${yy}-${mm}-${dd}`;
-}
-
-// Single source of truth for "is this a bookable date" — used by every event
-// handler below so the past-date clamp and the Monday skip can never drift
-// out of sync between onChange, onBlur, and the raw DOM listener.
-function sanitizeDate(value: string) {
-  const t = todayISO();
-  const pastClamped = value && value < t ? t : value;
-  return skipMonday(pastClamped);
+function formatDisplayDate(dateStr: string) {
+  if (!dateStr) return "";
+  return parseLocalDate(dateStr).toLocaleDateString("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
 }
 
 const schema = z.object({
@@ -133,6 +137,31 @@ function SelectChevron() {
   );
 }
 
+// Custom day-cell renderer so disabled dates (past days, Mondays) are
+// genuinely unclickable in the calendar UI itself, styled to match Siena's
+// palette — rather than relying on a native <input type="date">'s `min`
+// attribute, which Safari (macOS and iOS) doesn't consistently enforce.
+function CalendarDayButton({ day, modifiers, className, ...buttonProps }: DayButtonProps) {
+  const { selected, disabled, today, outside } = modifiers;
+  return (
+    <button
+      {...buttonProps}
+      disabled={disabled}
+      className={[
+        "w-9 h-9 mx-auto flex items-center justify-center text-[13px] rounded-full transition",
+        disabled
+          ? "text-[#777] line-through cursor-not-allowed"
+          : "text-[#222] cursor-pointer hover:bg-[#58021f]/10",
+        selected ? "bg-[#58021f] text-[#f5efdd] hover:bg-[#58021f]" : "",
+        today && !selected && !disabled ? "font-bold text-[#58021f] ring-1 ring-inset ring-[#58021f]/40" : "",
+        outside && !disabled ? "text-[#ccc]" : "",
+      ]
+        .filter(Boolean)
+        .join(" ")}
+    />
+  );
+}
+
 function StepHeader({ num, title, desc }: { num: string; title: string; desc: string }) {
   return (
     <div className="flex items-start gap-4 mb-6">
@@ -185,18 +214,15 @@ function Field({
 export default function Reservations() {
   const [confirmation, setConfirmation] = useState<BookingResponse | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [datePickerOpen, setDatePickerOpen] = useState(false);
 
-  const today = todayISO();
-
-  // Holds the actual <input type="date"> DOM node so we can imperatively
-  // (re)set `min` after mount/hydration, and enforce it again on blur.
-  // See comments below for why this is needed on top of the JSX `min` attr.
-  const dateInputRef = useRef<HTMLInputElement | null>(null);
+  const dateFieldRef = useRef<HTMLDivElement | null>(null);
 
   const {
     register,
     handleSubmit,
     setValue,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -215,47 +241,26 @@ export default function Reservations() {
     mode: "onTouched",
   });
 
-  // react-hook-form's own ref from register("date") — captured once so we can
-  // call it manually alongside our own ref (see mergedDateRef below).
-  const { ref: rhfDateRef, ...dateField } = register("date");
+  const selectedDate = watch("date");
 
-  function mergedDateRef(el: HTMLInputElement | null) {
-    dateInputRef.current = el;
-    rhfDateRef(el);
-  }
-
+  // Close the calendar popover on an outside click or Escape.
   useEffect(() => {
-    const el = dateInputRef.current;
-    if (!el) return;
-
-    // Re-assert `min` from the client's own clock right after mount.
-    // Fixes the case where SSR/hydration computed `today` a moment earlier
-    // (or in a different TZ context) than the value WebKit's native date
-    // picker actually reads on first paint. iOS Safari can cache that
-    // initial `min` and not re-read a later React-patched attribute.
-    el.min = todayISO();
-
-    // Belt-and-braces: bind directly to the DOM node with native
-    // addEventListener, bypassing React's synthetic event system entirely.
-    // The JSX onChange/onBlur below cover every browser we've tested, but
-    // this guarantees the same correction still fires even on an engine
-    // where a native <input type="date"> widget (iOS wheel picker, macOS
-    // Safari's grid, Android's calendar/spinner, etc.) dispatches its value
-    // in a way React's event delegation doesn't pick up as expected.
-    const enforce = () => {
-      const sanitized = sanitizeDate(el.value);
-      if (sanitized !== el.value) {
-        el.value = sanitized;
-        setValue("date", sanitized, { shouldValidate: true, shouldDirty: true, shouldTouch: true });
+    if (!datePickerOpen) return;
+    function handlePointerDown(e: MouseEvent) {
+      if (dateFieldRef.current && !dateFieldRef.current.contains(e.target as Node)) {
+        setDatePickerOpen(false);
       }
-    };
-    el.addEventListener("change", enforce);
-    el.addEventListener("blur", enforce);
+    }
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setDatePickerOpen(false);
+    }
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
     return () => {
-      el.removeEventListener("change", enforce);
-      el.removeEventListener("blur", enforce);
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [setValue]);
+  }, [datePickerOpen]);
 
   const onSubmit = async (data: FormData) => {
     setSubmitError(null);
@@ -532,38 +537,66 @@ export default function Reservations() {
                           error={errors.date?.message}
                           hint="Siena is closed on Mondays."
                         >
-                          <input
-                            {...dateField}
-                            ref={mergedDateRef}
-                            type="date"
-                            min={today}
-                            className={inputClass}
-                            onChange={(e) => {
-                              // iOS/macOS Safari's date wheel/grid doesn't reliably clamp to
-                              // `min` the way Chrome/Firefox do, and none of them can grey out a
-                              // single weekday — so both the past-date clamp and the Monday skip
-                              // are enforced here in JS. Driving the field via setValue (instead
-                              // of relying on register()'s own onChange, which reads the raw
-                              // picked value before any correction can run) guarantees the fix
-                              // actually lands in form state, not just visually on the input.
-                              const picked = e.target.value;
-                              const finalValue = sanitizeDate(picked);
-                              if (finalValue !== picked) e.target.value = finalValue;
-                              setValue("date", finalValue, { shouldValidate: true, shouldDirty: true, shouldTouch: true });
-                            }}
-                            onBlur={(e) => {
-                              // Backstop for the known WebKit bug where a disabled/past cell in
-                              // the native calendar grid is still tappable on some iOS versions
-                              // and can commit a value without a clean onChange firing first.
-                              dateField.onBlur(e);
-                              const val = e.target.value;
-                              const finalValue = sanitizeDate(val);
-                              if (finalValue !== val) {
-                                e.target.value = finalValue;
-                                setValue("date", finalValue, { shouldValidate: true, shouldDirty: true, shouldTouch: true });
-                              }
-                            }}
-                          />
+                          <div className="relative" ref={dateFieldRef}>
+                            <input type="hidden" {...register("date")} />
+                            <button
+                              type="button"
+                              onClick={() => setDatePickerOpen((o) => !o)}
+                              className={`${inputClass} flex items-center justify-between text-left cursor-pointer`}
+                            >
+                              <span className={selectedDate ? "text-[#333]" : "text-[#bbb]"}>
+                                {selectedDate ? formatDisplayDate(selectedDate) : "Select a date"}
+                              </span>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#58021f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <path d="M16 2v4M8 2v4M3 10h18" />
+                              </svg>
+                            </button>
+
+                            {datePickerOpen && (
+                              <div className="absolute z-30 mt-2 bg-white border border-[#58021f]/15 shadow-xl p-3">
+                                <DayPicker
+                                  mode="single"
+                                  selected={selectedDate ? parseLocalDate(selectedDate) : undefined}
+                                  defaultMonth={selectedDate ? parseLocalDate(selectedDate) : new Date()}
+                                  // The calendar's own disabled matchers are the actual fix here —
+                                  // past days and Mondays are unclickable in the grid itself, not
+                                  // just corrected after the fact the way a native <input
+                                  // type="date"> would need to be.
+                                  disabled={[{ before: startOfToday() }, { dayOfWeek: [1] }]}
+                                  onSelect={(d) => {
+                                    if (!d) return;
+                                    setValue("date", dateToISO(d), { shouldValidate: true, shouldDirty: true, shouldTouch: true });
+                                    setDatePickerOpen(false);
+                                  }}
+                                  components={{ DayButton: CalendarDayButton }}
+                                  // "around" puts the prev/next buttons as normal in-flow
+                                  // siblings of the caption (flex-wrapped below), instead of the
+                                  // default single <nav> absolutely positioned over the caption —
+                                  // that overlap was swallowing clicks on the next-month button.
+                                  navLayout="around"
+                                  classNames={{
+                                    months: "flex flex-col",
+                                    month: "flex flex-wrap items-center gap-y-1",
+                                    month_caption: "flex-1 flex justify-center items-center h-9 text-[14px] font-semibold text-[#222] order-2",
+                                    button_previous: "order-1 p-1.5 hover:bg-[#58021f]/10 rounded-full transition cursor-pointer flex-shrink-0",
+                                    button_next: "order-3 p-1.5 hover:bg-[#58021f]/10 rounded-full transition cursor-pointer flex-shrink-0",
+                                    chevron: "fill-[#58021f] w-4 h-4",
+                                    month_grid: "w-full basis-full border-collapse mt-1 order-4",
+                                    weekdays: "flex",
+                                    weekday: "text-[11px] font-semibold text-[#999] uppercase w-9 h-9 flex items-center justify-center",
+                                    week: "flex w-full mt-1",
+                                    // Fixed width/height so empty cells for days outside the
+                                    // month (before the 1st, after the last) still reserve their
+                                    // column's space in the flex row — without this they collapse
+                                    // to zero width and every later cell shifts left, breaking the
+                                    // Sun-Sat alignment with the weekday header.
+                                    day: "w-9 h-9 p-0 flex items-center justify-center flex-shrink-0",
+                                  }}
+                                />
+                              </div>
+                            )}
+                          </div>
                         </Field>
                         <Field label="Time" required error={errors.time?.message}>
                           <div className="relative">
