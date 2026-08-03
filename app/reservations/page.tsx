@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,8 +7,32 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { DayPicker, type DayButtonProps } from "react-day-picker";
+import {
+  fetchHours,
+  getClosedWeekdays,
+  getWeekdaySchedule,
+  getTimeSlotsForDay,
+  FALLBACK_CLOSED_WEEKDAYS,
+  FALLBACK_WEEKDAY_SCHEDULE,
+  type WeekdaySchedule,
+} from "@/lib/hours";
 
 const BOOKING_API = "https://reservations.sienaatl.com/api/book";
+
+// Re-check which weekdays are closed on this interval, same as the footer's
+// hours poll, so the calendar reflects changes made on the reservations
+// backend without needing a page reload.
+const HOURS_POLL_INTERVAL_MS = 5 * 60 * 1000;
+
+const WEEKDAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+function formatClosedDaysHint(closedWeekdays: number[]): string {
+  if (closedWeekdays.length === 0) return "";
+  const names = [...closedWeekdays].sort((a, b) => a - b).map((d) => `${WEEKDAY_NAMES[d]}s`);
+  if (names.length === 1) return `Siena is closed on ${names[0]}.`;
+  if (names.length === 2) return `Siena is closed on ${names[0]} and ${names[1]}.`;
+  return `Siena is closed on ${names.slice(0, -1).join(", ")}, and ${names[names.length - 1]}.`;
+}
 
 const phoneRegex = /^\+?[\d\s\-(). ]{7,20}$/;
 
@@ -37,13 +61,6 @@ function startOfToday() {
   return d;
 }
 
-// Parses "YYYY-MM-DD" as a local date (not UTC) so day-of-week checks match
-// the calendar day the user actually picked, regardless of timezone.
-function isMonday(dateStr: string) {
-  if (!dateStr) return false;
-  return parseLocalDate(dateStr).getDay() === 1;
-}
-
 function formatDisplayDate(dateStr: string) {
   if (!dateStr) return "";
   return parseLocalDate(dateStr).toLocaleDateString("en-US", {
@@ -56,11 +73,14 @@ function formatDisplayDate(dateStr: string) {
 
 const schema = z.object({
   partySize: z.string().min(1, "Please select a party size"),
+  // Which weekdays are closed comes from the live hours API and can change,
+  // so that check lives in the calendar's `disabled` matcher (dynamic,
+  // API-driven) rather than here in a static schema — the calendar already
+  // makes those dates unselectable, this is just the past-date backstop.
   date: z
     .string()
     .min(1, "Please pick a date")
-    .refine((v) => v >= todayISO(), "Please choose today or a future date")
-    .refine((v) => !isMonday(v), "Siena is closed on Mondays — please choose another day"),
+    .refine((v) => v >= todayISO(), "Please choose today or a future date"),
   time: z.string().min(1, "Please pick a time"),
   fullName: z
     .string()
@@ -80,15 +100,6 @@ const inputClass =
   "w-full border border-[#58021f]/20 px-4 py-[11px] text-[14px] text-[#333] placeholder-[#bbb] focus:outline-none focus:border-[#58021f] focus:ring-1 focus:ring-[#58021f]/20 bg-white transition";
 
 const PARTY_SIZES = Array.from({ length: 10 }, (_, i) => i + 1);
-
-// 4:00 PM through 10:30 PM in half-hour steps — Siena's dinner service window.
-const TIME_OPTIONS = Array.from({ length: 14 }, (_, i) => {
-  const mins = 16 * 60 + i * 30;
-  const h24 = Math.floor(mins / 60);
-  const m = mins % 60;
-  const h12 = h24 % 12 === 0 ? 12 : h24 % 12;
-  return `${h12}:${String(m).padStart(2, "0")} ${h24 < 12 ? "AM" : "PM"}`;
-});
 
 const OCCASIONS = ["None", "Birthday", "Anniversary", "Date Night", "Business Meal", "Celebration", "Other"];
 
@@ -137,7 +148,7 @@ function SelectChevron() {
   );
 }
 
-// Custom day-cell renderer so disabled dates (past days, Mondays) are
+// Custom day-cell renderer so disabled dates (past days, days the restaurant is closed) are
 // genuinely unclickable in the calendar UI itself, styled to match Siena's
 // palette — rather than relying on a native <input type="date">'s `min`
 // attribute, which Safari (macOS and iOS) doesn't consistently enforce.
@@ -215,8 +226,39 @@ export default function Reservations() {
   const [confirmation, setConfirmation] = useState<BookingResponse | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [datePickerOpen, setDatePickerOpen] = useState(false);
+  const [closedWeekdays, setClosedWeekdays] = useState<number[]>(FALLBACK_CLOSED_WEEKDAYS);
+  const [weekdaySchedule, setWeekdaySchedule] = useState<WeekdaySchedule>(FALLBACK_WEEKDAY_SCHEDULE);
 
   const dateFieldRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    // One fetch feeds both the calendar's closed-day list and the time
+    // dropdown's per-day slots, instead of hitting the API twice.
+    const loadHours = () => {
+      fetchHours()
+        .then((entries) => {
+          if (cancelled) return;
+          setClosedWeekdays(getClosedWeekdays(entries));
+          setWeekdaySchedule(getWeekdaySchedule(entries));
+        })
+        .catch(() => {
+          // API unreachable — fall back to the known schedule rather than
+          // leaving the calendar/time picker with no restriction at all.
+          if (cancelled) return;
+          setClosedWeekdays(FALLBACK_CLOSED_WEEKDAYS);
+          setWeekdaySchedule(FALLBACK_WEEKDAY_SCHEDULE);
+        });
+    };
+
+    loadHours();
+    const interval = setInterval(loadHours, HOURS_POLL_INTERVAL_MS);
+    return () => {
+      cancelled = true;
+      clearInterval(interval);
+    };
+  }, []);
 
   const {
     register,
@@ -242,6 +284,26 @@ export default function Reservations() {
   });
 
   const selectedDate = watch("date");
+  const selectedTime = watch("time");
+
+  // Which half-hour slots are offered depends on the selected date's actual
+  // weekday hours (e.g. Fri/Sat run later than Tue-Thu), so it's recomputed
+  // whenever the date or the fetched schedule changes.
+  const timeOptions = useMemo(() => {
+    if (!selectedDate) return [];
+    const weekday = parseLocalDate(selectedDate).getDay();
+    return getTimeSlotsForDay(weekdaySchedule[weekday]);
+  }, [selectedDate, weekdaySchedule]);
+
+  // If the date changes to a day whose hours no longer include the
+  // previously picked time (e.g. switching from a Friday 11pm slot to a
+  // Tuesday, which closes at 10pm), clear it instead of silently submitting
+  // a time that was never actually offered for that day.
+  useEffect(() => {
+    if (selectedTime && !timeOptions.includes(selectedTime)) {
+      setValue("time", "", { shouldValidate: true, shouldDirty: true });
+    }
+  }, [timeOptions, selectedTime, setValue]);
 
   // Close the calendar popover on an outside click or Escape.
   useEffect(() => {
@@ -535,7 +597,7 @@ export default function Reservations() {
                           label="Date"
                           required
                           error={errors.date?.message}
-                          hint="Siena is closed on Mondays."
+                          hint={formatClosedDaysHint(closedWeekdays)}
                         >
                           <div className="relative" ref={dateFieldRef}>
                             <input type="hidden" {...register("date")} />
@@ -560,10 +622,11 @@ export default function Reservations() {
                                   selected={selectedDate ? parseLocalDate(selectedDate) : undefined}
                                   defaultMonth={selectedDate ? parseLocalDate(selectedDate) : new Date()}
                                   // The calendar's own disabled matchers are the actual fix here —
-                                  // past days and Mondays are unclickable in the grid itself, not
-                                  // just corrected after the fact the way a native <input
-                                  // type="date"> would need to be.
-                                  disabled={[{ before: startOfToday() }, { dayOfWeek: [1] }]}
+                                  // past days and closed weekdays (from the live hours API, with
+                                  // Monday as a fallback if that API is unreachable) are unclickable
+                                  // in the grid itself, not just corrected after the fact the way a
+                                  // native <input type="date"> would need to be.
+                                  disabled={[{ before: startOfToday() }, { dayOfWeek: closedWeekdays }]}
                                   onSelect={(d) => {
                                     if (!d) return;
                                     setValue("date", dateToISO(d), { shouldValidate: true, shouldDirty: true, shouldTouch: true });
@@ -600,9 +663,13 @@ export default function Reservations() {
                         </Field>
                         <Field label="Time" required error={errors.time?.message}>
                           <div className="relative">
-                            <select {...register("time")} className={`${inputClass} appearance-none cursor-pointer pr-9`}>
-                              <option value="">Select one</option>
-                              {TIME_OPTIONS.map((t) => (
+                            <select
+                              {...register("time")}
+                              disabled={!selectedDate}
+                              className={`${inputClass} appearance-none cursor-pointer pr-9 disabled:cursor-not-allowed disabled:opacity-60`}
+                            >
+                              <option value="">{selectedDate ? "Select one" : "Select a date first"}</option>
+                              {timeOptions.map((t) => (
                                 <option key={t} value={t}>
                                   {t}
                                 </option>
@@ -612,7 +679,7 @@ export default function Reservations() {
                           </div>
                         </Field>
                       </div>
-                      <p className="text-[11px] text-[#999] mt-2 leading-relaxed">
+                      <p className="text-[11.67px] text-[#999] mt-2 leading-relaxed">
                         <span className="block font-semibold text-[#777]">Party of 11 or more?</span>
                         Please call us directly to arrange your reservation, or complete our{" "}
                         <Link href="/event-inquiry" className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
