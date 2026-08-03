@@ -4,12 +4,43 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import NewsletterForm from "../components/newsletterform";
 import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
+import { fetchGroupedHours, FALLBACK_HOURS, type GroupedHourEntry } from "@/lib/hours";
 
+// Re-fetch the live hours on this interval so the footer picks up changes
+// made on the reservations backend without needing a page reload.
+const HOURS_POLL_INTERVAL_MS = 5 * 60 * 1000;
 
 export default function Footer() {
     const pathname = usePathname();
     const [info, setInfo] = useState<RestaurantInfo>(RESTAURANT_FALLBACK);
     useEffect(() => { getRestaurantInfo().then(setInfo); }, []);
+
+    const [hours, setHours] = useState<GroupedHourEntry[] | null>(null);
+
+    useEffect(() => {
+        let cancelled = false;
+
+        const loadHours = () => {
+            fetchGroupedHours()
+                .then((grouped) => {
+                    if (cancelled) return;
+                    setHours(grouped);
+                })
+                .catch(() => {
+                    // API unreachable — show the standard hours as a
+                    // last-resort placeholder rather than leaving this blank.
+                    if (cancelled) return;
+                    setHours(FALLBACK_HOURS);
+                });
+        };
+
+        loadHours();
+        const interval = setInterval(loadHours, HOURS_POLL_INTERVAL_MS);
+        return () => {
+            cancelled = true;
+            clearInterval(interval);
+        };
+    }, []);
 
     return (
 
@@ -232,7 +263,10 @@ export default function Footer() {
                             <div className="w-8 h-[2px] bg-[#ddae21] mt-2 mx-auto lg:mx-0"></div>
                         </div>
                         <div className="text-[#f5efdd] text-[15px] leading-[22px] space-y-0.5 uppercase">
-                            {info.hours.map(({ label, value }) => (
+                            {hours === null && (
+                                <p className="whitespace-nowrap text-white/60">Loading hours…</p>
+                            )}
+                            {hours?.map(({ label, value }) => (
                                 <p key={label} className="whitespace-nowrap">
                                     <span className="text-white/60">{label}</span> {value}
                                 </p>
