@@ -15,6 +15,11 @@ type Props = {
   }>;
 };
 
+// The posts in blog-data are the complete set. Without this, Next generates a page
+// on demand for any slug it is given and answers 200, so deleted and mistyped blog
+// URLs looked alive to Google and stayed indexed.
+export const dynamicParams = false;
+
 // Static Routes
 export async function generateStaticParams() {
   return blogs.map((blog) => ({
