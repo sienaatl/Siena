@@ -190,8 +190,9 @@ export default function Home() {
             />
 
             <div className="relative inline-block">
-              {/* Título */}
-              <motion.h2
+              {/* Título — the page's h1. Names the cuisine and the city, and still
+                  reads as a phrase with the "reimagined" script sitting under it. */}
+              <motion.h1
                 className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
@@ -199,8 +200,8 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.38, delay: 0.08, ease: "easeOut" }}
               >
-                A Taste of the Mediterranean
-              </motion.h2>
+                A Taste of the Mediterranean in Alpharetta
+              </motion.h1>
 
               {/* Reimagined superpuesto */}
               <motion.span
