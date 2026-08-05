@@ -88,8 +88,10 @@ export default async function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
-    name: "Siena",
-    image: "https://sienaatl.com/assets/logo_beige.png",
+    name: "Siena Restaurant & Bar",
+    // image should be a photo of the place, not the logo — the logo has its own field.
+    image: "https://sienaatl.com/assets/Siena_20.03.26-A-02.webp",
+    logo: "https://sienaatl.com/assets/logo_beige.png",
     "@id": "https://sienaatl.com/#restaurant",
     url: "https://sienaatl.com/",
     telephone: info.phone || "+1 (404) 777-5124",
@@ -128,7 +130,9 @@ export default async function RootLayout({
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Friday", "Saturday"],
         opens: "16:00",
-        closes: "00:00",
+        // 23:59 rather than 00:00 — midnight as a closing time is ambiguous and
+        // can be read as closing the moment the day starts.
+        closes: "23:59",
       },
       {
         "@type": "OpeningHoursSpecification",
@@ -145,6 +149,7 @@ export default async function RootLayout({
       "https://www.facebook.com/sienaatl/",
       "https://www.instagram.com/sienaatl/",
       "https://www.tiktok.com/@sienaatl",
+      "https://www.threads.net/@sienaatl",
     ],
   };
 
