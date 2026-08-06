@@ -92,7 +92,7 @@ export default async function RootLayout({
     image: "https://sienaatl.com/assets/logo_beige.png",
     "@id": "https://sienaatl.com/#restaurant",
     url: "https://sienaatl.com/",
-    telephone: info.phone || "+1 (404) 777-5124",
+    telephone: info.phone || "+1 (404) 999-7303",
     priceRange: "$$",
 
     menu: "https://sienaatl.com/menus",
