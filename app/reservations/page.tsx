@@ -99,7 +99,7 @@ type FormData = z.infer<typeof schema>;
 const inputClass =
   "w-full border border-[#58021f]/20 px-4 py-[11px] text-[14px] text-[#333] placeholder-[#bbb] focus:outline-none focus:border-[#58021f] focus:ring-1 focus:ring-[#58021f]/20 bg-white transition";
 
-const PARTY_SIZES = Array.from({ length: 13 }, (_, i) => i + 1);
+const PARTY_SIZES = Array.from({ length: 14 }, (_, i) => i + 1);
 
 const OCCASIONS = ["None", "Birthday", "Anniversary", "Date Night", "Business Meal", "Celebration", "Other"];
 
