@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Siena Restaurant",
+  title: "Privacy Notice | Siena Restaurant",
   description:
     "Learn how Siena Restaurant collects, uses, and protects your personal information across reservations, events, careers, and newsletter forms.",
   openGraph: {
-    title: "Privacy Policy | Siena Restaurant",
+    title: "Privacy Notice | Siena Restaurant",
     description:
       "Learn how Siena Restaurant collects, uses, and protects your personal information across reservations, events, careers, and newsletter forms.",
     url: "https://sienaatl.com/privacy-policy",

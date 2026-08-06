@@ -284,7 +284,7 @@ export default function Footer() {
             <div className="w-full py-6 px-6">
                 <div className="w-full max-w-[1180px] mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-[13px] text-[#f5efdd]/70 uppercase tracking-wide">
                     <Link href="/privacy-policy" className="hover:text-[#ddae21] transition">
-                        Privacy Policy
+                        Privacy Notice
                     </Link>
                     <span className="hidden sm:inline text-[#f5efdd]/30">|</span>
                     <Link href="/terms-of-service" className="hover:text-[#ddae21] transition">
