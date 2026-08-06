@@ -99,7 +99,7 @@ type FormData = z.infer<typeof schema>;
 const inputClass =
   "w-full border border-[#58021f]/20 px-4 py-[11px] text-[14px] text-[#333] placeholder-[#bbb] focus:outline-none focus:border-[#58021f] focus:ring-1 focus:ring-[#58021f]/20 bg-white transition";
 
-const PARTY_SIZES = Array.from({ length: 10 }, (_, i) => i + 1);
+const PARTY_SIZES = Array.from({ length: 13 }, (_, i) => i + 1);
 
 const OCCASIONS = ["None", "Birthday", "Anniversary", "Date Night", "Business Meal", "Celebration", "Other"];
 
@@ -680,7 +680,7 @@ export default function Reservations() {
                         </Field>
                       </div>
                       <p className="text-[11.67px] text-[#999] mt-2 leading-relaxed">
-                        <span className="block font-semibold text-[#777]">Party of 11 or more?</span>
+                        <span className="block font-semibold text-[#777]">Party of 14 or more?</span>
                         Please call us directly to arrange your reservation, or complete our{" "}
                         <Link href="/event-inquiry" className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
                           Private &amp; Group Dining Inquiry Form
