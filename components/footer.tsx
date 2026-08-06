@@ -277,40 +277,6 @@ export default function Footer() {
 
             </div>
 
-            {/* Línea divisora dorada antes del bottom */}
-            <div className="w-full max-w-[1180px] mx-auto px-6 lg:px-0">
-                <div className="h-px bg-gradient-to-r from-transparent via-[#ddae21]/40 to-transparent"></div>
-            </div>
-
-            {/* Bottom bar */}
-            <div className="w-full bg-white py-4 px-6">
-                <div className="w-full max-w-[1180px] mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-3 lg:gap-0">
-
-                    {/* Powered by */}
-                    <div className="flex items-center gap-2">
-                        <a href="https://restoexp.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition">
-                            <img src="/assets/restoexplogo.webp" alt="Resto Experience" className="h-auto w-[240px] lg:w-[307px]" />
-                        </a>
-                    </div>
-
-                    {/* Right */}
-                    <div className="flex flex-col lg:flex-row items-center gap-1 lg:gap-4 text-[13px] lg:text-[14px] leading-[20px] lg:leading-[30px] text-[#5c5c5c] text-center">
-                        <span>Restaurant Marketing, Content & Web Design</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="2" height="40" viewBox="0 0 2 40" fill="none" className="hidden lg:block">
-                            <rect width="2" height="40" fill="url(#paint0_radial_2448_639)" />
-                            <defs>
-                                <radialGradient id="paint0_radial_2448_639" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1 20) rotate(90) scale(20 1)">
-                                    <stop stopColor="#7C7C7C" stopOpacity="0.486275" />
-                                    <stop offset="1" stopColor="#7C7C7C" stopOpacity="0" />
-                                </radialGradient>
-                            </defs>
-                        </svg>
-                        <span>2026</span>
-                    </div>
-
-                </div>
-            </div>
-
         </footer>
 
     );
