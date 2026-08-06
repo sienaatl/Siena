@@ -277,6 +277,22 @@ export default function Footer() {
 
             </div>
 
+            {/* Legal links */}
+            <div className="w-full max-w-[1180px] mx-auto px-6 lg:px-0">
+                <div className="h-px bg-gradient-to-r from-transparent via-[#ddae21]/40 to-transparent"></div>
+            </div>
+            <div className="w-full py-6 px-6">
+                <div className="w-full max-w-[1180px] mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-[13px] text-[#f5efdd]/70 uppercase tracking-wide">
+                    <Link href="/privacy-policy" className="hover:text-[#ddae21] transition">
+                        Privacy Policy
+                    </Link>
+                    <span className="hidden sm:inline text-[#f5efdd]/30">|</span>
+                    <Link href="/terms-of-service" className="hover:text-[#ddae21] transition">
+                        Terms of Service
+                    </Link>
+                </div>
+            </div>
+
         </footer>
 
     );
