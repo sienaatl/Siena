@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Siena Restaurant",
+  title: "Terms & Conditions | Siena Restaurant",
   description:
-    "Read the terms of service governing your use of sienaatl.com, including reservations, online ordering, gift cards, and job applications.",
+    "Read the terms and conditions governing your use of the Siena Restaurant website and related online services.",
   openGraph: {
-    title: "Terms of Service | Siena Restaurant",
+    title: "Terms & Conditions | Siena Restaurant",
     description:
-      "Read the terms of service governing your use of sienaatl.com, including reservations, online ordering, gift cards, and job applications.",
+      "Read the terms and conditions governing your use of the Siena Restaurant website and related online services.",
     url: "https://sienaatl.com/terms-of-service",
   },
   alternates: { canonical: "https://sienaatl.com/terms-of-service" },
