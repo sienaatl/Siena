@@ -1,4 +1,4 @@
-import { getRestaurantInfo } from "@/lib/restaurant";
+import Link from "next/link";
 
 function Heading({ children }: { children: React.ReactNode }) {
   return (
@@ -15,19 +15,7 @@ function Paragraph({ children }: { children: React.ReactNode }) {
   return <p className="text-[#030302]/80 text-[15px] md:text-[16px] leading-[1.8] mb-4">{children}</p>;
 }
 
-function List({ items }: { items: React.ReactNode[] }) {
-  return (
-    <ul className="list-disc pl-6 space-y-2 text-[#030302]/80 text-[15px] md:text-[16px] leading-[1.8] mb-4">
-      {items.map((item, i) => (
-        <li key={i}>{item}</li>
-      ))}
-    </ul>
-  );
-}
-
-export default async function TermsOfService() {
-  const info = await getRestaurantInfo();
-
+export default function TermsOfService() {
   return (
     <main>
       {/* HEADER */}
@@ -37,7 +25,7 @@ export default async function TermsOfService() {
             className="text-[#58021f] text-[44px] md:text-[64px] leading-none tracking-[0.04em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
           >
-            Terms of Service
+            Terms &amp; Conditions
           </h1>
           <div className="w-10 h-[2px] bg-[#deae21] mx-auto mt-5" />
           <p className="text-[#030302]/60 text-[14px] mt-5">Last updated: August 2026</p>
@@ -48,108 +36,185 @@ export default async function TermsOfService() {
       <section className="w-full px-4 pb-[100px]" style={{ backgroundColor: "#f5efdd" }}>
         <div className="w-full max-w-[820px] mx-auto">
           <Paragraph>
-            These Terms of Service (&quot;Terms&quot;) govern your use of sienaatl.com (the &quot;Site&quot;),
-            operated by Siena Restaurant (&quot;Siena,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;).
-            By visiting the Site or submitting any of its forms, you agree to these Terms. If you do not agree,
-            please do not use the Site.
+            Agreement to Siena Restaurant Website Terms of Use. These Terms &amp; Conditions (&quot;Terms&quot;)
+            apply to the Siena Restaurant website at sienaatl.com and Siena-controlled pages, features, forms, and
+            online services linked from it (collectively, the &quot;Site&quot;). By using the Site, you acknowledge
+            that you have read and agree to these Terms.
           </Paragraph>
 
-          <Heading>Use of This Website</Heading>
+          <Heading>1. Access &amp; Use</Heading>
           <Paragraph>
-            You may browse the Site and use its forms to make reservations, submit inquiries, subscribe to our
-            newsletter, or apply for a job with us. You agree to provide accurate information and not to misuse the
-            Site, including attempting to interfere with its normal operation or submitting fraudulent or malicious
-            content through any form.
+            Siena may update, modify, add to, or remove portions of these Terms from time to time. Your continued
+            use of the Site after changes become effective constitutes acceptance of the revised Terms.
+          </Paragraph>
+          <Paragraph>
+            Subject to these Terms, Siena grants you a personal, limited, non-exclusive and non-transferable right
+            to access and use the Site for lawful personal purposes.
+          </Paragraph>
+          <Paragraph>
+            You may not interfere with the Site&apos;s operation, attempt unauthorized access, introduce viruses or
+            malicious code, overload Siena&apos;s systems, impersonate another person or entity, or use the Site for
+            unlawful, fraudulent, abusive, or rights-infringing activity.
           </Paragraph>
 
-          <Heading>Reservations</Heading>
-          <List
-            items={[
-              "Reservations submitted through the Site are processed by our reservations partner at reservations.sienaatl.com and are subject to table availability.",
-              "A submitted reservation is held for a limited time (currently 15 minutes) and is not guaranteed until you receive a confirmation.",
-              "Special requests noted on a reservation (seating, accessibility, allergies, etc.) are accommodated on a best-effort basis and are not guaranteed.",
-              "For parties of 14 or more, please contact us directly or use our Private & Group Dining Inquiry Form; these requests are not booked automatically.",
-              "We reserve the right to cancel or modify a reservation in cases of unavailability, unforeseen circumstances, or suspected misuse of the booking system.",
-            ]}
-          />
-
-          <Heading>Online Ordering &amp; Gift Cards</Heading>
+          <Heading>2. Site Content &amp; Intellectual Property</Heading>
           <Paragraph>
-            Our &quot;Order Online&quot; and &quot;Gift Card&quot; links direct you to Toast, a third-party
-            platform that processes food orders and gift card purchases on our behalf. Purchases made through Toast
-            are subject to Toast&apos;s own terms and privacy policy, and Siena is not responsible for the
-            availability, performance, or security of that third-party platform.
+            The Site may contain text, photographs, menus, graphics, logos, trademarks, artwork, videos, designs,
+            layouts, software and other materials (&quot;Content&quot;). Siena&apos;s Content is owned by or
+            licensed to Siena and may be protected by copyright, trademark and other intellectual-property laws.
+          </Paragraph>
+          <Paragraph>
+            Except where Siena expressly makes materials available for personal downloading or sharing, Site Content
+            may not be reproduced, republished, modified, distributed, commercially exploited, or used to create
+            derivative works without appropriate permission.
+          </Paragraph>
+          <Paragraph>
+            Menus, pricing, availability, hours, promotions, photographs and other information displayed on the Site
+            may change without notice.
           </Paragraph>
 
-          <Heading>Job Applications</Heading>
+          <Heading>3. Guest Submissions &amp; Feedback</Heading>
           <Paragraph>
-            Submitting an application through our careers form does not guarantee an interview or offer of
-            employment. Information you provide, including any resume file, is used solely to evaluate your
-            application and will be handled in accordance with our{" "}
-            <a href="/privacy-policy" className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
-              Privacy Policy
-            </a>
+            We welcome guest comments and feedback. Unless Siena expressly agrees otherwise in writing, unsolicited
+            ideas, concepts, recipes, designs, proposals, photographs or other materials submitted to Siena should
+            not be considered confidential or proprietary.
+          </Paragraph>
+          <Paragraph>
+            By submitting content to Siena, you represent that you have the right to provide it and that doing so
+            does not violate another person&apos;s rights. Siena may use general feedback to improve its restaurant,
+            services, events and guest experience, subject to applicable law and our{" "}
+            <Link href="/privacy-policy" className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
+              Privacy Notice
+            </Link>
             .
           </Paragraph>
 
-          <Heading>Newsletter &amp; Communications</Heading>
+          <Heading>4. Email &amp; SMS Communications</Heading>
           <Paragraph>
-            By subscribing to our newsletter or opting in on the reservation form, you consent to receive email or
-            text communications from us. You may unsubscribe from the newsletter at any time via the link in any
-            email, and opt out of marketing text messages by replying STOP. Message and data rates may apply to
-            text messages.
+            Siena may communicate with guests through the Site, email, telephone and SMS/text messaging. If you
+            voluntarily opt in to promotional text messages, message frequency may vary and message and data rates
+            may apply. Consent to marketing messages is not a condition of purchase.
+          </Paragraph>
+          <Paragraph>
+            You may opt out of Siena promotional text messages by replying STOP. Transactional communications
+            related to a reservation, event inquiry, waitlist, order or other requested service may still be sent
+            when permitted by law.
           </Paragraph>
 
-          <Heading>Intellectual Property</Heading>
+          <Heading>5. Reservations, Gift Cards, Events &amp; Other Services</Heading>
           <Paragraph>
-            All content on the Site — including text, photography, menus, logos, and design — is owned by Siena
-            Restaurant or its licensors and is protected by applicable intellectual property laws. You may not
-            reproduce, distribute, or use this content for commercial purposes without our prior written consent.
+            Additional terms may apply to reservations, private dining, group events, gift cards, promotions,
+            contests, online ordering or other products and services available through or linked from the Site.
+            Those additional terms become part of these Terms for the applicable transaction or service.
+          </Paragraph>
+          <Paragraph>
+            Submitting a reservation or event request does not guarantee availability or acceptance. Reservations
+            and events are confirmed only when Siena or the applicable reservation provider confirms them. Pricing,
+            menus, minimums, deposits, cancellation terms and availability may vary and are subject to the specific
+            agreement or confirmation associated with the service.
           </Paragraph>
 
-          <Heading>Third-Party Links</Heading>
+          <Heading>6. Third-Party Websites &amp; Applications</Heading>
           <Paragraph>
-            The Site links to third-party services, including Toast, Google Maps, and social media platforms
-            (Instagram, Facebook, TikTok). We do not control and are not responsible for the content, policies, or
-            practices of these third-party sites.
+            The Site may link to or use third-party services for reservations, maps, payment processing, gift cards,
+            social media, delivery, marketing or other functions. Siena does not control those third-party websites
+            or applications, and your use of them may be governed by separate terms and privacy policies.
+          </Paragraph>
+          <Paragraph>
+            A link to a third-party service does not necessarily constitute Siena&apos;s endorsement of that service.
+            To the extent permitted by law, Siena is not responsible for third-party content, availability, security
+            practices or independent acts and omissions.
           </Paragraph>
 
-          <Heading>Disclaimer of Warranties</Heading>
+          <Heading>7. Forms, Careers &amp; Private Dining Inquiries</Heading>
           <Paragraph>
-            The Site is provided &quot;as is&quot; and &quot;as available,&quot; without warranties of any kind,
-            whether express or implied. We do not guarantee that the Site will be uninterrupted, error-free, or
-            that reservation availability displayed will always be accurate.
+            The Site may provide contact forms, employment applications, private dining forms, event materials,
+            menus or other downloadable documents. Submission of a form does not create a contract, guarantee
+            employment, reserve a date, guarantee pricing, or require Siena to accept a request.
+          </Paragraph>
+          <Paragraph>
+            Event details, menus, pricing and availability remain subject to confirmation by Siena and may change
+            before a final agreement is executed.
           </Paragraph>
 
-          <Heading>Limitation of Liability</Heading>
+          <Heading>8. Privacy</Heading>
           <Paragraph>
-            To the fullest extent permitted by law, Siena Restaurant shall not be liable for any indirect,
-            incidental, or consequential damages arising from your use of the Site or reliance on information
-            provided through it, including delays or errors originating from third-party services we rely on.
+            Your use of the Site is also subject to Siena&apos;s{" "}
+            <Link href="/privacy-policy" className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
+              Privacy Notice
+            </Link>
+            . Please review the Privacy Notice to understand how Siena may collect, use and disclose personal
+            information.
+          </Paragraph>
+          <Paragraph>
+            No internet transmission or electronic storage method can be guaranteed to be completely secure. Please
+            use appropriate care when sending information online.
           </Paragraph>
 
-          <Heading>Changes to These Terms</Heading>
+          <Heading>9. Disclaimers &amp; Limitation of Liability</Heading>
           <Paragraph>
-            We may update these Terms from time to time. Changes take effect when posted on this page, and the
-            &quot;Last updated&quot; date above will reflect the most recent revision. Continued use of the Site
-            after changes are posted constitutes acceptance of the revised Terms.
+            To the fullest extent permitted by applicable law, the Site and its Content are provided on an
+            &quot;as is&quot; and &quot;as available&quot; basis. Siena does not guarantee that the Site will always
+            be uninterrupted, error-free, secure, current or free of harmful components.
+          </Paragraph>
+          <Paragraph>
+            Siena may suspend, modify or discontinue any portion of the Site and may update restaurant information,
+            menus, prices, hours, services, promotions or features without prior notice.
+          </Paragraph>
+          <Paragraph>
+            To the fullest extent permitted by law, Siena and its owners, affiliates, employees, agents and service
+            providers will not be liable for indirect, incidental, special, exemplary, punitive or consequential
+            damages arising from or related to your use of, or inability to use, the Site.
+          </Paragraph>
+          <Paragraph>
+            Nothing in these Terms excludes or limits liability where such exclusion or limitation is prohibited by
+            applicable law.
           </Paragraph>
 
-          <Heading>Governing Law</Heading>
-          <Paragraph>These Terms are governed by the laws of the State of Georgia, without regard to its conflict of law principles.</Paragraph>
-
-          <Heading>Contact Us</Heading>
+          <Heading>10. Indemnification</Heading>
           <Paragraph>
-            If you have questions about these Terms, contact us at{" "}
-            <a href={`mailto:${info.email}`} className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
-              {info.email}
-            </a>
-            , by phone at{" "}
-            <a href={`tel:${info.phone.replace(/\D/g, "")}`} className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
-              {info.phone}
-            </a>
-            , or by mail at {info.address}.
+            To the extent permitted by law, you agree to indemnify and hold harmless Siena, its owners, affiliates,
+            officers, employees and agents from third-party claims, losses, liabilities and reasonable expenses
+            arising from your unlawful misuse of the Site, your violation of these Terms, or your infringement of
+            another person&apos;s rights.
           </Paragraph>
+
+          <Heading>11. General Terms</Heading>
+          <Paragraph>
+            If any provision of these Terms is determined to be invalid or unenforceable, the remaining provisions
+            will remain in effect to the fullest extent permitted by law. Siena&apos;s failure to enforce a
+            provision does not constitute a waiver of that provision or any other right.
+          </Paragraph>
+          <Paragraph>
+            These Terms, together with Siena policies and any service-specific terms incorporated by reference,
+            constitute the agreement governing your use of the Site.
+          </Paragraph>
+          <Paragraph>
+            These Terms are governed by the laws of the State of Georgia, without regard to conflict-of-law
+            principles. Any venue or jurisdiction provision is subject to applicable law.
+          </Paragraph>
+
+          <Heading>12. Contact Siena</Heading>
+          <Paragraph>
+            Questions about these Terms may be directed to Siena Restaurant through our website or restaurant contact
+            information:
+          </Paragraph>
+          <div className="text-[#030302]/80 text-[15px] md:text-[16px] leading-[1.8] mb-4">
+            <p>Siena Restaurant</p>
+            <p>124 Devore Rd</p>
+            <p>Alpharetta, GA 30009</p>
+            <p>
+              Phone:{" "}
+              <a href="tel:4047775124" className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
+                (404) 777-5124
+              </a>
+            </p>
+            <p>
+              <Link href="/contact-us" className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
+                Contact Siena online
+              </Link>
+            </p>
+          </div>
         </div>
       </section>
     </main>
