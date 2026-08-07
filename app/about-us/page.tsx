@@ -369,7 +369,7 @@ export default function AboutUs() {
       </section>
 
       {/* DIVISOR STRIPE */}
-      <section className="relative w-full h-[28px] overflow-hidden bg-[#1b312e]">
+      <section className="relative w-full h-[28px] overflow-hidden bg-[#030302]">
         <img
           src="/assets/divisor_estrella3.svg"
           alt="divider"

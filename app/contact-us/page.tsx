@@ -441,30 +441,25 @@ export default function ContactUs() {
       <section
         className="relative w-full py-12 md:py-20 overflow-hidden"
         style={{
-          backgroundImage: "url('/assets/fondo_rojizo.webp')",
+          backgroundImage: "url('/assets/contact_bg.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
         <div className="w-full max-w-[1180px] mx-auto px-4 md:px-0">
         <motion.div
-          className="relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-stretch gap-8 md:gap-12"
-          style={{
-            backgroundImage: "url('/assets/fondo_findus.webp')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          className="relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-stretch gap-8 md:gap-12 bg-[#1e3833]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.38, ease: "easeOut" }}
         >
-          <div className="absolute inset-3 border border-[#1b312e]/20 pointer-events-none" />
+          <div className="absolute inset-3 border border-[#e0b265]/20 pointer-events-none" />
 
           <div className="flex-1 flex flex-col gap-4 md:gap-5 relative z-10 w-full">
             <img src="/assets/icono_findus.svg" alt="" className="w-[55px] md:w-[68px] h-auto" />
             <h2
-              className="text-[#1b312e] text-[52px] md:text-[72px] font-bold tracking-wide leading-none"
+              className="text-[#e0b265] text-[52px] md:text-[72px] font-bold tracking-wide leading-none"
               style={{ fontFamily: "'Palmore-Light', serif" }}
             >
               FIND US
@@ -474,36 +469,36 @@ export default function ContactUs() {
               href={info.maps_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-start gap-2 text-[#2b0a0a] text-[16px] md:text-[18px] leading-[1.5] hover:text-[#030302] transition"
+              className="group flex items-start gap-2 text-white/85 text-[16px] md:text-[18px] leading-[1.5] hover:text-[#e0b265] transition"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-0.5 flex-shrink-0">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                  className="fill-[#1b312e] group-hover:fill-[#030302] transition-colors duration-300" />
+                  className="fill-[#e0b265] group-hover:fill-white transition-colors duration-300" />
               </svg>
               {info.address}
             </a>
 
             <a
               href={`tel:${info.phone.replace(/\D/g, '')}`}
-              className="group flex items-center gap-2 text-[#2b0a0a] text-[16px] md:text-[18px] hover:text-[#030302] transition"
+              className="group flex items-center gap-2 text-white/85 text-[16px] md:text-[18px] hover:text-[#e0b265] transition"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
-                  className="fill-[#1b312e] group-hover:fill-[#030302] transition-colors duration-300" />
+                  className="fill-[#e0b265] group-hover:fill-white transition-colors duration-300" />
               </svg>
               {info.phone}
             </a>
 
             <div className="flex flex-col gap-2 mt-2">
               <p
-                className="text-[#1b312e] text-[30px] md:text-[38px] tracking-wide uppercase leading-none"
+                className="text-white text-[30px] md:text-[38px] tracking-wide uppercase leading-none"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
               >
                 Opening Hours
               </p>
-              <div className="w-8 h-[2px] bg-[#1b312e]/30 mb-1" />
+              <div className="w-8 h-[2px] bg-[#e0b265]/40 mb-1" />
               {info.hours.map(({ label, value }) => (
-                <p key={label} className="text-[#2b0a0a] text-[16px] md:text-[18px]">
+                <p key={label} className="text-white/80 text-[16px] md:text-[18px]">
                   <span className="font-semibold">{label}</span>: {value}
                 </p>
               ))}
@@ -513,7 +508,7 @@ export default function ContactUs() {
               href={info.maps_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-[#1b312e] hover:text-[#e0b265] transition mt-1 md:mt-2"
+              className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition mt-1 md:mt-2"
             >
               OPEN IN MAP
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
@@ -537,7 +532,7 @@ export default function ContactUs() {
         </div>
       </section>
 
-      <section className="relative w-full h-[28px] overflow-hidden bg-[#1b312e]">
+      <section className="relative w-full h-[28px] overflow-hidden bg-[#030302]">
         <img src="/assets/divisor_estrella3.svg" alt="" className="absolute inset-0 w-full h-full object-cover scale-y-125" />
       </section>
     </main>

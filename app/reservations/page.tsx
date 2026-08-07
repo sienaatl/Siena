@@ -176,7 +176,7 @@ function CalendarDayButton({ day, modifiers, className, ...buttonProps }: DayBut
 function StepHeader({ num, title, desc }: { num: string; title: string; desc: string }) {
   return (
     <div className="flex items-start gap-4 mb-6">
-      <span className="w-8 h-8 rounded-full bg-[#1b312e] text-white flex items-center justify-center text-[14px] font-semibold flex-shrink-0">
+      <span className="w-8 h-8 rounded-full bg-[#e0b265] text-[#1b312e] flex items-center justify-center text-[14px] font-semibold flex-shrink-0">
         {num}
       </span>
       <div>
@@ -432,7 +432,7 @@ export default function Reservations() {
       </section>
 
       {/* BOOKING SECTION */}
-      <section className="w-full py-[80px] px-4" style={{ backgroundImage: "url('/assets/fondo_findus.webp')", backgroundSize: "cover", backgroundPosition: "center" }}>
+      <section className="w-full py-[80px] px-4" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[1180px] mx-auto">
 
           {/* Section header */}
@@ -448,7 +448,7 @@ export default function Reservations() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#1b312e] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-white text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -472,7 +472,7 @@ export default function Reservations() {
               </motion.span>
             </div>
             <motion.p
-              className="text-[#030302]/80 text-lg md:text-xl leading-[140%] max-w-[600px] mt-12 md:mt-24"
+              className="text-white/80 text-lg md:text-xl leading-[140%] max-w-[600px] mt-12 md:mt-24"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -490,7 +490,7 @@ export default function Reservations() {
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="bg-white shadow-2xl px-6 md:px-10 py-10 text-left">
+            <div className="bg-white shadow-2xl border-t-4 border-[#e0b265] px-6 md:px-10 py-10 text-left">
               <AnimatePresence mode="wait">
                 {confirmation ? (
                   <motion.div

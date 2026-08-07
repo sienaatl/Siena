@@ -349,7 +349,7 @@ export default function GiftCard() {
       </section>
 
       {/* CTA BAND */}
-      <section className="relative w-full h-[28px] overflow-hidden bg-[#1b312e]">
+      <section className="relative w-full h-[28px] overflow-hidden bg-[#030302]">
         <img src="/assets/divisor_estrella3.svg" alt="" className="absolute inset-0 w-full h-full object-cover scale-y-125" />
       </section>
 

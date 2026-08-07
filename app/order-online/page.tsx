@@ -354,7 +354,7 @@ export default function OrderOnline() {
       </section>
 
       {/* ─── DIVIDER ─── */}
-      <section className="relative w-full h-[28px] overflow-hidden" style={{ backgroundColor: "#1b312e" }}>
+      <section className="relative w-full h-[28px] overflow-hidden" style={{ backgroundColor: "#030302" }}>
         <img
           src="/assets/divisor_estrella3.svg"
           alt=""
