@@ -277,7 +277,7 @@ export default function Reservations() {
       phone: "",
       occasion: "",
       notes: "",
-      smsOptIn: true,
+      smsOptIn: false,
       marketingOptIn: false,
     },
     mode: "onTouched",
@@ -716,26 +716,6 @@ export default function Reservations() {
                             <SelectChevron />
                           </div>
                         </Field>
-                        <label className="flex items-start gap-3 cursor-pointer select-none pt-1">
-                          <input
-                            {...register("marketingOptIn")}
-                            type="checkbox"
-                            className="w-4 h-4 mt-0.5 accent-[#58021f] cursor-pointer flex-shrink-0"
-                          />
-                          <span className="text-[13px] text-[#555] leading-snug">
-                            Send me Siena offers and event updates by text. Consent is optional and not required to reserve. Reply STOP to opt out.
-                          </span>
-                        </label>
-                        <label className="flex items-start gap-3 cursor-pointer select-none pt-1">
-                          <input
-                            {...register("smsOptIn")}
-                            type="checkbox"
-                            className="w-4 h-4 mt-0.5 accent-[#58021f] cursor-pointer flex-shrink-0"
-                          />
-                          <span className="text-[13px] text-[#555] leading-snug">
-                            Send transactional reservation confirmations and reminders by text message. Message and data rates may apply.
-                          </span>
-                        </label>
                       </div>
 
                       <div className="mt-4">
@@ -747,6 +727,56 @@ export default function Reservations() {
                             className={`${inputClass} resize-none`}
                           />
                         </Field>
+                      </div>
+
+                      <div className="mt-7 border-t border-[#58021f]/15 pt-6">
+                        <h4 className="text-[#58021f] text-[22px] md:text-[24px] leading-tight mb-5">
+                          Reservation Form Consent
+                        </h4>
+                        <div className="grid grid-cols-1 gap-5">
+                          <label className="flex items-start gap-3 cursor-pointer select-none">
+                            <input
+                              {...register("smsOptIn")}
+                              type="checkbox"
+                              className="w-4 h-4 mt-1 accent-[#58021f] cursor-pointer flex-shrink-0"
+                            />
+                            <span className="text-[13px] text-[#333] leading-[1.65]">
+                              I agree to receive SMS messages from Siena Restaurant regarding my reservation,
+                              including confirmations, modifications, cancellations, reminders, waitlist updates, and
+                              table-ready notifications. Message frequency varies. Message and data rates may apply.
+                              Reply STOP to opt out or HELP for help. Consent is not a condition of purchase. See our{" "}
+                              <Link href="/privacy-policy" className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
+                                Privacy Notice
+                              </Link>{" "}
+                              and{" "}
+                              <Link href="/terms-of-service" className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
+                                Terms &amp; Conditions
+                              </Link>
+                              .
+                            </span>
+                          </label>
+                          <label className="flex items-start gap-3 cursor-pointer select-none">
+                            <input
+                              {...register("marketingOptIn")}
+                              type="checkbox"
+                              className="w-4 h-4 mt-1 accent-[#58021f] cursor-pointer flex-shrink-0"
+                            />
+                            <span className="text-[13px] text-[#333] leading-[1.65]">
+                              I agree to receive recurring promotional SMS messages from Siena Restaurant about
+                              events, offers, specials, and restaurant updates. Message frequency varies. Message and
+                              data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition
+                              of purchase. See our{" "}
+                              <Link href="/privacy-policy" className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
+                                Privacy Notice
+                              </Link>{" "}
+                              and{" "}
+                              <Link href="/terms-of-service" className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
+                                Terms &amp; Conditions
+                              </Link>
+                              .
+                            </span>
+                          </label>
+                        </div>
                       </div>
                     </div>
 

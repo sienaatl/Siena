@@ -51,176 +51,101 @@ export default async function PrivacyNotice() {
           <Heading>About This Notice</Heading>
           <Paragraph>
             This Privacy Notice applies to personal information collected through Siena Restaurant&apos;s website,
-            reservation and event inquiry experiences, newsletter sign-ups, guest communications, and in-person
-            interactions with our restaurant. Third-party services you choose to use may have their own privacy
-            policies.
+            reservation and event inquiry experiences, newsletter sign-ups, guest communications, SMS messaging, and
+            in-person interactions with our restaurant.
           </Paragraph>
 
-          <Heading>1. Scope of This Notice</Heading>
-          <Paragraph>
-            This Privacy Notice describes the privacy practices of Siena Restaurant in connection with our website
-            and related guest services. When we use the terms &quot;Siena,&quot; &quot;we,&quot; &quot;us,&quot; or
-            &quot;our,&quot; we mean the Siena Restaurant business responsible for the personal information described
-            in this notice.
-          </Paragraph>
-          <Paragraph>
-            Our website may link to third-party websites or services, including reservation, payment, social media,
-            mapping, delivery, gift card, or marketing providers. Their privacy practices are governed by their own
-            policies.
-          </Paragraph>
-
-          <Heading>2. Information We Collect</Heading>
+          <Heading>1. Information We Collect</Heading>
           <Paragraph>Depending on how you interact with Siena, we may collect:</Paragraph>
           <List
             items={[
-              <>
-                <strong>Contact information</strong>, such as your name, email address, phone number, and mailing
-                address when provided.
-              </>,
-              <>
-                <strong>Reservation and dining information</strong>, such as party size, reservation date and time,
-                dining preferences, special requests, celebration details, and guest notes.
-              </>,
-              <>
-                <strong>Event inquiry information</strong>, such as requested dates, group size, event type, menu
-                preferences, and other details you provide to our events team.
-              </>,
-              <>
-                <strong>Transaction information</strong>, such as purchase, gift card, or payment-related details
-                processed by our payment and commerce providers. Siena may not directly store full payment card
-                numbers.
-              </>,
-              <>
-                <strong>Communications</strong>, including messages, feedback, reviews, survey responses, and
-                customer-service interactions.
-              </>,
-              <>
-                <strong>Website and device information</strong>, such as IP address, browser type, device
-                identifiers, pages viewed, referring pages, approximate location, and interaction data collected
-                through cookies and similar technologies.
-              </>,
-              <>
-                <strong>Marketing preferences</strong>, including whether you have subscribed to emails or opted
-                into text messages where offered.
-              </>,
+              "Contact information such as your name, email address, and phone number.",
+              "Reservation and dining information, including party size, date, time, preferences, and special requests.",
+              "Event inquiry information.",
+              "Communications and customer-service interactions.",
+              "Website and device information collected through cookies and similar technologies.",
+              "Marketing and messaging preferences, including SMS opt-in status and consent records.",
             ]}
           />
 
-          <Heading>3. How We Use Information</Heading>
-          <Paragraph>We may use personal information to:</Paragraph>
+          <Heading>2. How We Use Information</Heading>
           <List
             items={[
-              "Process, confirm, modify, and manage reservations and event inquiries.",
-              "Provide guest service and respond to questions, requests, comments, or complaints.",
-              "Send transactional messages, including reservation confirmations, updates, cancellations, and service-related communications.",
-              "Send marketing communications when permitted and consistent with your preferences.",
-              "Personalize guest experiences and remember preferences where appropriate.",
-              "Operate, maintain, secure, and improve our website and business.",
-              "Measure website performance, understand engagement, and improve advertising and promotions.",
-              "Detect fraud, misuse, security incidents, or other potentially unlawful activity.",
-              "Comply with legal obligations and enforce our agreements and policies.",
+              "Process, confirm, modify, and manage reservations.",
+              "Send reservation confirmations, reminders, modifications, cancellations, waitlist, and table-ready notifications.",
+              "Respond to guest questions and requests.",
+              "Send promotional messages only when the guest has expressly opted in.",
+              "Operate, secure, and improve our website and business.",
             ]}
           />
 
-          <Heading>4. Cookies, Analytics &amp; Tracking Technologies</Heading>
+          <Heading>3. SMS Messaging Privacy</Heading>
           <Paragraph>
-            Siena and service providers acting on our behalf may use cookies, pixels, analytics tools, and similar
-            technologies to help the website function, remember preferences, understand website traffic, measure
-            performance, and support marketing.
+            If you provide your mobile phone number and expressly opt in to receive text messages from Siena
+            Restaurant, we may use your number to send reservation confirmations, reservation reminders, reservation
+            modifications, cancellation notifications, waitlist or table-ready notifications, event-related
+            communications, customer-service messages, and promotional messages you have specifically agreed to
+            receive.
           </Paragraph>
           <Paragraph>
-            You can generally control cookies through your browser settings. Blocking certain cookies may affect
-            some website features. Where required by law, additional consent or opt-out tools may be presented.
-          </Paragraph>
-
-          <Heading>5. How We Share Information</Heading>
-          <Paragraph>
-            We may disclose personal information to service providers and business partners that help us operate
-            Siena, such as providers for reservations, website hosting, email and SMS communications, analytics,
-            payment processing, gift cards, event management, security, and marketing.
+            Message frequency varies. Message and data rates may apply. You may opt out at any time by replying STOP
+            to any Siena text message. Reply HELP for assistance. SMS consent is not a condition of purchasing goods
+            or services.
           </Paragraph>
           <Paragraph>
-            We may also disclose information when reasonably necessary to comply with law, respond to lawful
-            requests, protect the rights and safety of Siena, our guests, or others, investigate fraud or security
-            incidents, or complete a merger, financing, sale, reorganization, or similar business transaction.
+            Mobile phone numbers, SMS opt-in data, and SMS consent will not be sold, rented, shared, or disclosed to
+            third parties or affiliates for their marketing or promotional purposes.
           </Paragraph>
           <Paragraph>
-            We do not intend to sell personal information for money. Some advertising or analytics activities may
-            be treated as a &quot;sale,&quot; &quot;sharing,&quot; or &quot;targeted advertising&quot; under certain
-            U.S. state privacy laws, depending on the technologies Siena uses.
+            We may share limited information with service providers that process messages on Siena&apos;s behalf only as
+            necessary to provide the messaging service and subject to appropriate contractual restrictions.
           </Paragraph>
 
-          <Heading>6. Your Choices</Heading>
+          <Heading>4. How We Share Information</Heading>
+          <Paragraph>
+            We may disclose personal information to service providers that help us operate Siena, such as providers
+            for reservations, website hosting, communications, analytics, payments, gift cards, security, and event
+            management. We may also disclose information when required by law or necessary to protect Siena, our
+            guests, or others.
+          </Paragraph>
+
+          <Heading>5. Your Choices</Heading>
           <List
             items={[
               <>
-                <strong>Email Marketing</strong> — You may unsubscribe from promotional emails using the
-                unsubscribe link included in the message.
+                <strong>Email marketing:</strong> use the unsubscribe link in any promotional email.
               </>,
               <>
-                <strong>Text Messages</strong> — If Siena offers text messaging, you may opt out by replying STOP to
-                a Siena promotional text.
+                <strong>Text messages:</strong> reply STOP to opt out and HELP for assistance.
               </>,
               <>
-                <strong>Cookies</strong> — You may adjust browser settings or use any privacy controls presented on
-                our website.
+                <strong>Cookies:</strong> adjust your browser settings or available website controls.
               </>,
               <>
-                <strong>Corrections</strong> — You may contact us to request that inaccurate information you
-                provided be corrected.
+                <strong>Corrections:</strong> contact us to request correction of inaccurate information.
               </>,
             ]}
           />
+
+          <Heading>6. Data Retention</Heading>
           <Paragraph>
-            Even if you opt out of marketing, we may continue sending non-promotional communications relating to
-            reservations, transactions, safety, or other services you request.
+            We retain personal information only as long as reasonably necessary for the purposes described in this
+            notice, including maintaining appropriate consent and business records.
           </Paragraph>
 
-          <Heading>7. State-Specific Privacy Rights</Heading>
-          <Paragraph>
-            Depending on where you live and subject to applicable law, you may have rights regarding your personal
-            information, which can include the right to request access, correction, deletion, portability, or
-            additional information about how personal information is used or disclosed. You may also have the right
-            to opt out of certain targeted advertising, sales, or sharing of personal information.
-          </Paragraph>
-          <Paragraph>
-            We may need to verify your identity before fulfilling a request. Authorized agents may submit requests
-            where permitted by law, subject to appropriate verification.
-          </Paragraph>
-
-          <Heading>8. Data Retention</Heading>
-          <Paragraph>
-            We retain personal information for as long as reasonably necessary for the purposes described in this
-            notice, including to provide services, maintain appropriate business and transaction records, comply
-            with legal obligations, resolve disputes, enforce agreements, and protect Siena and our guests.
-          </Paragraph>
-
-          <Heading>9. How We Protect Information</Heading>
+          <Heading>7. Security</Heading>
           <Paragraph>
             We use reasonable administrative, technical, and physical safeguards designed to protect personal
-            information. However, no internet transmission, electronic storage method, or security system can be
-            guaranteed to be completely secure.
+            information. No method of transmission or storage can be guaranteed completely secure.
           </Paragraph>
 
-          <Heading>10. Children&apos;s Privacy</Heading>
+          <Heading>8. Changes to This Notice</Heading>
           <Paragraph>
-            Our website and services are intended for a general audience and are not directed to children under 13.
-            We do not knowingly collect personal information online from children under 13 without appropriate
-            authorization.
+            We may update this Privacy Notice from time to time. When we do, we will revise the updated date at the
+            top of this page.
           </Paragraph>
 
-          <Heading>11. Changes to This Notice</Heading>
-          <Paragraph>
-            We may update this Privacy Notice from time to time. When we do, we will revise the &quot;Updated&quot;
-            date at the top of this page. Material changes may be communicated through additional notices when
-            appropriate.
-          </Paragraph>
-
-          <Heading>12. Contact Us</Heading>
-          <Paragraph>
-            If you have a question about this Privacy Notice or would like to submit a privacy-related request,
-            please contact Siena through our website or at the restaurant:
-          </Paragraph>
+          <Heading>9. Contact Us</Heading>
           <div className="text-[#030302]/80 text-[15px] md:text-[16px] leading-[1.8] mb-4">
             <p>Siena Restaurant</p>
             <p>{info.address}</p>
