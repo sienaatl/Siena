@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "motion/react";
+import Link from "next/link";
 import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
 
 declare global {
@@ -44,6 +45,7 @@ const schema = z
       .string()
       .min(15, "Message must be at least 15 characters")
       .max(1000, "Message cannot exceed 1000 characters"),
+    marketingOptIn: z.boolean().optional(),
   })
   .superRefine((data, ctx) => {
     if (data.subject === "Private Events" && data.message.length < 40) {
@@ -140,6 +142,7 @@ export default function ContactUs() {
       phone: "",
       subject: "",
       message: "",
+      marketingOptIn: false,
     },
     mode: "onTouched",
   });
@@ -376,6 +379,32 @@ export default function ContactUs() {
                       </span>
                     </div>
                   </Field>
+
+                  <div className="mt-1 border-t border-[#58021f]/15 pt-5">
+                    <h4 className="text-[#58021f] text-[22px] md:text-[24px] leading-tight mb-5">
+                      Contact Form Consent
+                    </h4>
+                    <label className="flex items-start gap-3 cursor-pointer select-none">
+                      <input
+                        {...register("marketingOptIn")}
+                        type="checkbox"
+                        className="w-4 h-4 mt-1 accent-[#58021f] cursor-pointer flex-shrink-0"
+                      />
+                      <span className="text-[13px] text-[#333] leading-[1.65]">
+                        I agree to receive recurring promotional SMS messages from Siena Restaurant about events,
+                        offers, specials, and restaurant updates. Message frequency varies. Message and data rates may
+                        apply. Reply STOP to opt out or HELP for help. Consent is not a condition of purchase. See our{" "}
+                        <Link href="/privacy-policy" className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
+                          Privacy Notice
+                        </Link>{" "}
+                        and{" "}
+                        <Link href="/terms-of-service" className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
+                          Terms &amp; Conditions
+                        </Link>
+                        .
+                      </span>
+                    </label>
+                  </div>
 
                   <button
                     type="submit"
