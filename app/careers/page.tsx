@@ -361,7 +361,7 @@ export default function Careers() {
             {benefits.map((b, i) => (
               <motion.div
                 key={i}
-                className="bg-[#030302] p-8 flex flex-col gap-4 cursor-default"
+                className="bg-[#1e3833] border border-[#e0b265]/20 p-8 flex flex-col gap-4 cursor-default"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -388,7 +388,7 @@ export default function Careers() {
       {/* APPLICATION FORM */}
       <section
         className="relative w-full py-[80px] overflow-hidden"
-        style={{ backgroundImage: "url('/assets/fondo_findus.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
+        style={{ backgroundImage: "url('/assets/dark-green-wall-backdrop-grunge-background-texture.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="w-full max-w-[1180px] mx-auto px-4">
           <div className="flex flex-col items-center text-center mb-10">
@@ -403,7 +403,7 @@ export default function Careers() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#1b312e] text-[55px] md:text-[75px] lg:text-[90px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-white text-[55px] md:text-[75px] lg:text-[90px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
