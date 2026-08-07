@@ -17,17 +17,17 @@ export default function ThankYou() {
     <main>
       <section
         className="relative w-full min-h-[80vh] flex items-center justify-center py-[100px] px-4"
-        style={{ backgroundColor: "#f5efdd" }}
+        style={{ backgroundColor: "#1b312e" }}
       >
         <div className="w-full max-w-[620px] mx-auto flex flex-col items-center text-center">
           <motion.div
-            className="w-16 h-16 bg-[#58021f] flex items-center justify-center mb-8"
+            className="w-16 h-16 bg-[#e0b265] flex items-center justify-center mb-8"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 300, delay: 0.1 }}
           >
             <svg width="30" height="30" viewBox="0 0 48 48" fill="none">
-              <path d="M12 24L21 33L36 16" stroke="#f4eedd" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M12 24L21 33L36 16" stroke="#1b312e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </motion.div>
 
@@ -37,13 +37,13 @@ export default function ThankYou() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]" />
           </motion.div>
 
           <motion.h1
-            className="text-[#58021f] text-[52px] md:text-[72px] leading-[0.9] tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[52px] md:text-[72px] leading-[0.9] tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export default function ThankYou() {
           </motion.h1>
 
           <motion.p
-            className="text-[#030302]/70 text-[16px] md:text-[17px] leading-[1.75] max-w-[480px] mt-8"
+            className="text-white/70 text-[16px] md:text-[17px] leading-[1.75] max-w-[480px] mt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
@@ -63,13 +63,13 @@ export default function ThankYou() {
           </motion.p>
 
           <motion.p
-            className="text-[#030302]/70 text-[15px] leading-[1.75] mt-5"
+            className="text-white/70 text-[15px] leading-[1.75] mt-5"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.55 }}
           >
             Need us sooner? Call{" "}
-            <a href={`tel:${EVENTS_PHONE.replace(/\D/g, "")}`} className="text-[#58021f] underline underline-offset-4">
+            <a href={`tel:${EVENTS_PHONE.replace(/\D/g, "")}`} className="text-[#e0b265] underline underline-offset-4">
               {EVENTS_PHONE}
             </a>
             .
@@ -83,20 +83,20 @@ export default function ThankYou() {
           >
             <Link
               href="/menus"
-              className="bg-[#58021f] text-[#f5efdd] text-[13px] tracking-[0.25em] uppercase px-10 py-4 transition hover:bg-[#430118]"
+              className="bg-[#e0b265] text-[#1b312e] text-[13px] tracking-[0.25em] uppercase px-10 py-4 transition hover:bg-white hover:text-[#1b312e]"
             >
               View the Menus
             </Link>
             <Link
               href="/"
-              className="border border-[#58021f] text-[#58021f] text-[13px] tracking-[0.25em] uppercase px-10 py-4 transition hover:bg-[#58021f] hover:text-[#f5efdd]"
+              className="border border-[#e0b265] text-[#e0b265] text-[13px] tracking-[0.25em] uppercase px-10 py-4 transition hover:bg-[#e0b265] hover:text-[#1b312e]"
             >
               Back to Home
             </Link>
           </motion.div>
 
           <motion.p
-            className="text-[14px] text-[#030302]/50 mt-12"
+            className="text-[14px] text-white/50 mt-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}

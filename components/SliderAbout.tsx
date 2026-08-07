@@ -33,7 +33,7 @@ export default function SliderAbout() {
       <div className="flex items-center gap-4">
         <button
           onClick={prev}
-          className="cursor-pointer bg-[#58021f] text-[#f5efdd] w-9 h-9 flex items-center justify-center text-xl hover:bg-[#3a0114] transition"
+          className="cursor-pointer bg-[#e0b265] text-[#1b312e] w-9 h-9 flex items-center justify-center text-xl hover:bg-[#1b312e] hover:text-[#e0b265] transition"
         >
           ‹
         </button>
@@ -46,14 +46,14 @@ export default function SliderAbout() {
               aria-label={`Go to slide ${i + 1}`}
               className="flex items-center justify-center w-[44px] h-[44px] cursor-pointer"
             >
-              <span className={`w-2.5 h-2.5 transition-all ${i === current ? "bg-[#58021f] scale-125" : "bg-[#58021f]/30"}`} />
+              <span className={`w-2.5 h-2.5 transition-all ${i === current ? "bg-[#e0b265] scale-125" : "bg-[#e0b265]/30"}`} />
             </button>
           ))}
         </div>
 
         <button
           onClick={next}
-          className="cursor-pointer bg-[#58021f] text-[#f5efdd] w-9 h-9 flex items-center justify-center text-xl hover:bg-[#3a0114] transition"
+          className="cursor-pointer bg-[#e0b265] text-[#1b312e] w-9 h-9 flex items-center justify-center text-xl hover:bg-[#1b312e] hover:text-[#e0b265] transition"
         >
           ›
         </button>

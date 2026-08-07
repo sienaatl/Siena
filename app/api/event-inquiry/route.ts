@@ -99,9 +99,9 @@ export async function POST(req: NextRequest) {
         (r) =>
           `<tr><td style="padding:8px 0;font-size:13px;color:#999;width:140px;vertical-align:top;">${r.label}</td><td style="padding:8px 0;font-size:15px;">${
             r.label === "Email"
-              ? `<a href="mailto:${r.value}" style="color:#58021f;">${r.value}</a>`
+              ? `<a href="mailto:${r.value}" style="color:#1b312e;">${r.value}</a>`
               : r.label === "Phone"
-                ? `<a href="tel:${String(r.value).replace(/\D/g, "")}" style="color:#58021f;">${r.value}</a>`
+                ? `<a href="tel:${String(r.value).replace(/\D/g, "")}" style="color:#1b312e;">${r.value}</a>`
                 : r.value
           }</td></tr>`
       )
@@ -109,9 +109,9 @@ export async function POST(req: NextRequest) {
 
     const html = `
       <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#333;">
-        <div style="background:#58021f;padding:24px 32px;">
-          <h1 style="color:#f5efdd;margin:0;font-size:22px;font-weight:400;letter-spacing:2px;">SIENA RESTAURANT</h1>
-          <p style="color:#deae21;margin:4px 0 0;font-size:13px;letter-spacing:1px;">New Event Inquiry</p>
+        <div style="background:#1b312e;padding:24px 32px;">
+          <h1 style="color:#e0b265;margin:0;font-size:22px;font-weight:400;letter-spacing:2px;">SIENA RESTAURANT</h1>
+          <p style="color:#e0b265;margin:4px 0 0;font-size:13px;letter-spacing:1px;">New Event Inquiry</p>
         </div>
         <div style="padding:32px;background:#fff;border:1px solid #eee;">
           <table style="width:100%;border-collapse:collapse;">${htmlRows}</table>

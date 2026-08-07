@@ -24,6 +24,7 @@ interface TabData {
   id: string;
   label: string;
   subsections: SubSection[];
+  footnote?: string;
 }
 
 
@@ -32,7 +33,7 @@ function MenuItemCard({ item }: { item: MenuItem }) {
   const hasImage = !!item.image;
 
   return (
-    <div className="bg-white shadow-sm border border-[#e8dfc8] py-6 px-5 flex flex-col items-center justify-center text-center gap-3">
+    <div className="bg-white/8 backdrop-blur-md shadow-sm border border-[#e0b265]/25 hover:border-[#e0b265]/60 hover:bg-white/12 transition-colors duration-300 py-6 px-5 flex flex-col items-center justify-center text-center gap-3">
       {hasImage && (
         <div className="w-full aspect-square overflow-hidden">
           <img
@@ -44,18 +45,18 @@ function MenuItemCard({ item }: { item: MenuItem }) {
         </div>
       )}
       <h4
-        className="text-[26px] md:text-[32px] leading-tight uppercase text-[#58021f]"
-        style={{ fontFamily: "'Palmore-Light', serif" }}
+        className="text-[19px] md:text-[22px] leading-tight uppercase text-[#e0b265]"
+        style={{ fontFamily: "'Palmore-Light', serif", fontOpticalSizing: "none", fontVariationSettings: "'opsz' 28" }}
       >
         {item.name}
       </h4>
       {item.description && (
-        <p className="text-[13px] md:text-[14px] leading-[1.6] text-[#030302]/65 whitespace-pre-line">
+        <p className="text-[13px] md:text-[14px] leading-[1.6] text-white/70 whitespace-pre-line">
           {item.description}
         </p>
       )}
       {item.price && (
-        <p className="text-[14px] md:text-[15px] font-semibold text-[#030302]/80 whitespace-pre-line mt-auto pt-1">
+        <p className="text-[14px] md:text-[15px] font-semibold text-[#e0b265] whitespace-pre-line mt-auto pt-1">
           {item.price}
         </p>
       )}
@@ -73,24 +74,24 @@ function SubSectionBlock({ id, title, subtitle, items }: SubSection) {
             src="/assets/icono_123.svg"
             alt=""
             aria-hidden="true"
-            className="w-[80px] h-auto pointer-events-none opacity-15 mb-4"
+            className="w-[80px] h-auto pointer-events-none opacity-40 mb-4"
           />
           <h3
-            className="text-[44px] md:text-[60px] leading-tight uppercase text-[#58021f]"
+            className="text-[42px] md:text-[57px] leading-tight uppercase text-[#e0b265]"
             style={{ fontFamily: "'Palmore-Light', serif" }}
           >
             {title}
           </h3>
         </div>
         {subtitle && (
-          <p className="text-[14px] md:text-[16px] text-[#030302]/60 mt-2 uppercase tracking-widest">
+          <p className="text-[14px] md:text-[16px] text-white/60 mt-2 uppercase tracking-widest">
             {subtitle}
           </p>
         )}
         <div className="flex items-center gap-3 mt-3">
-          <div className="w-12 md:w-20 h-px bg-gradient-to-r from-transparent to-[#deae21]/60" />
-          <span className="text-[#deae21] text-[10px] tracking-[0.4em]">✦</span>
-          <div className="w-12 md:w-20 h-px bg-gradient-to-l from-transparent to-[#deae21]/60" />
+          <div className="w-12 md:w-20 h-px bg-gradient-to-r from-transparent to-[#e0b265]/60" />
+          <span className="text-[#e0b265] text-[10px] tracking-[0.4em]">✦</span>
+          <div className="w-12 md:w-20 h-px bg-gradient-to-l from-transparent to-[#e0b265]/60" />
         </div>
       </div>
 
@@ -103,7 +104,7 @@ function SubSectionBlock({ id, title, subtitle, items }: SubSection) {
           </div>
         </div>
       ) : (
-        <div className="text-center text-[#030302]/40 italic px-4 text-sm">
+        <div className="text-center text-white/40 italic px-4 text-sm">
           Coming soon…
         </div>
       )}
@@ -189,7 +190,7 @@ function MenuContent() {
   };
 
   return (
-    <main className="bg-[#f5efdd]">
+    <main className="bg-[#1b312e]">
       {/* HERO */}
       <section className="relative w-full h-[400px] md:h-[45vh] overflow-hidden">
         <motion.div
@@ -215,12 +216,12 @@ function MenuContent() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[52px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[52px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -234,9 +235,9 @@ function MenuContent() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
         </div>
       </section>
@@ -266,7 +267,7 @@ function MenuContent() {
       {/* STICKY TABS */}
       {tabs.length > 0 && (
         <div
-          className="sticky z-40 transition-all duration-300 bg-[#f5efdd] border-b border-[#030302]/10 shadow-sm"
+          className="sticky z-40 transition-all duration-300 bg-[#1b312e] border-b border-white/10 shadow-sm"
           style={{ top: `${headerHeight}px` }}
         >
           <div className="max-w-[1180px] mx-auto px-6 md:px-10">
@@ -281,8 +282,8 @@ function MenuContent() {
                       onClick={() => handleTabClick(tab.id)}
                       className={`px-4 md:px-5 py-[7px] text-[11px] md:text-[12px] tracking-[0.14em] uppercase cursor-pointer transition-all duration-200 border font-medium ${
                         isActive
-                          ? "bg-[#58021F] text-[#f5efdd] border-[#58021F]"
-                          : "bg-transparent text-[#030302]/55 border-[#030302]/20 hover:border-[#58021F]/50 hover:text-[#58021F]"
+                          ? "bg-[#e0b265] text-[#1b312e] border-[#e0b265]"
+                          : "bg-transparent text-white/55 border-white/20 hover:border-[#e0b265]/50 hover:text-[#e0b265]"
                       }`}
                     >
                       {tab.label}
@@ -300,24 +301,24 @@ function MenuContent() {
         {loading && (
           <div className="flex items-center justify-center py-24">
             <div className="flex flex-col items-center gap-4">
-              <div className="w-8 h-8 border-2 border-[#deae21] border-t-transparent rounded-full animate-spin" />
-              <p className="text-[#030302]/50 text-sm tracking-widest uppercase">Loading menu…</p>
+              <div className="w-8 h-8 border-2 border-[#e0b265] border-t-transparent rounded-full animate-spin" />
+              <p className="text-white/50 text-sm tracking-widest uppercase">Loading menu…</p>
             </div>
           </div>
         )}
         {menuError && (
-          <div className="text-center py-16 text-[#030302]/50 italic text-sm">{menuError}</div>
+          <div className="text-center py-16 text-white/50 italic text-sm">{menuError}</div>
         )}
         {!loading && !menuError && (
-          <div className="bg-transparent md:bg-white md:shadow-[0_8px_40px_rgba(0,0,0,0.10)] md:rounded-sm overflow-hidden">
+          <div className="bg-transparent overflow-hidden">
             {tabs.map((tab) => (
               <section
                 key={tab.id}
                 id={tab.id}
-                className="w-full scroll-mt-[180px] md:scroll-mt-[200px] border-b border-[#e8dfc8] last:border-b-0"
+                className="w-full scroll-mt-[180px] md:scroll-mt-[200px] border-b border-white/10 last:border-b-0"
               >
                 {/* Tab section header */}
-                <div className="w-full py-[50px] md:py-[70px] flex flex-col items-center text-center px-4 bg-transparent md:bg-white">
+                <div className="w-full py-[50px] md:py-[70px] flex flex-col items-center text-center px-4 bg-transparent">
                   <motion.img
                     src="/assets/icon_menus.svg"
                     alt=""
@@ -329,7 +330,7 @@ function MenuContent() {
                   />
                   <div className="relative inline-block">
                     <motion.h2
-                      className="text-[#58021f] text-[52px] md:text-[72px] lg:text-[88px] leading-[0.9] tracking-[0.06em] uppercase"
+                      className="text-[#e0b265] text-[52px] md:text-[72px] lg:text-[88px] leading-[0.9] tracking-[0.06em] uppercase"
                       style={{ fontFamily: "'Palmore-Light', serif" }}
                       initial={{ opacity: 0, y: 40 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -339,10 +340,10 @@ function MenuContent() {
                       {tab.label}
                     </motion.h2>
                     <motion.span
-                      className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[24px] md:text-[50px] lg:text-[68px] leading-none whitespace-nowrap"
+                      className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[5%] md:-translate-y-[10%] text-[#e0b265] text-[24px] md:text-[50px] lg:text-[68px] leading-none whitespace-nowrap"
                       style={{
                         fontFamily: "'AguafinaScript-Regular', cursive",
-                        textShadow: "2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd",
+                        textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e",
                       }}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -358,6 +359,16 @@ function MenuContent() {
                 {tab.subsections.map((sub, i) => (
                   <SubSectionBlock key={i} {...sub} />
                 ))}
+
+                {tab.footnote && (
+                  <div className="px-4 pb-[50px] md:pb-[70px] text-center">
+                    {tab.footnote.split("\n").map((line, i) => (
+                      <p key={i} className="text-white/50 text-[13px] italic leading-relaxed">
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                )}
               </section>
             ))}
           </div>

@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "PowerShell(Remove-Item -Recurse -Force \"c:\\\\Users\\\\vin_z\\\\Desktop\\\\Vincenzo\\\\Resto Experience\\\\Squad C\\\\siena\\\\.next\" -Confirm:$false)",
-      "Bash(curl -s -o \"C:\\\\Users\\\\maira\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\e--Siena\\\\7e05be90-7117-422e-bb57-e6bfbb5c8ad6\\\\scratchpad\\\\home.html\" -w \"%{http_code}\\\\n\" http://localhost:3000/ --max-time 10)"
+      "Bash(curl -s -o \"C:\\\\Users\\\\maira\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\e--Siena\\\\7e05be90-7117-422e-bb57-e6bfbb5c8ad6\\\\scratchpad\\\\home.html\" -w \"%{http_code}\\\\n\" http://localhost:3000/ --max-time 10)",
+      "Bash(grep -n \"030302\\\\]/\\\\|f4eedd\" e:/Siena/app/page.tsx)",
+      "Bash(grep -n \"f5efdd\\\\|030302\\\\]/\\\\|text-\\\\[#1b312e\\\\]\" e:/Siena/app/about-us/page.tsx)",
+      "Bash(npx tsc *)",
+      "Bash(npx next *)",
+      "Bash(python3 -)",
+      "Bash(node -e \"const d=require\\('./lib/site-data.json'\\); const hh=d.menuTabs.find\\(t=>t.id==='happy-hour'\\); console.log\\(JSON.stringify\\(hh.subsections.map\\(s=>\\({id:s.id,title:s.title,items:s.items.map\\(i=>i.name+' \\\\$'+i.price\\)}\\)\\), null, 2\\)\\);\")"
     ]
   }
 }

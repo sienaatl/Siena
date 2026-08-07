@@ -52,18 +52,18 @@ export default function NewsletterForm() {
             <div className="relative z-10 flex flex-col items-center gap-4 md:gap-5 w-full max-w-[600px]">
 
                 <h2
-                    className="text-[#f5efdd] text-[62px] md:text-[85px] leading-[1.1] whitespace-nowrap"
+                    className="text-[#e0b265] text-[62px] md:text-[85px] leading-[1.1] whitespace-nowrap"
                     style={{ fontFamily: "'Palmore-Light', serif" }}
                 >
                     Join our newsletter
                 </h2>
 
-                <p className="text-[#f5efdd]/80 text-lg md:text-lg leading-[1.6]">
+                <p className="text-white/80 text-lg md:text-lg leading-[1.6]">
                     Be the first to know about events, menus, and specials
                 </p>
 
                 {submitted ? (
-                    <div className="bg-[#f5efdd]/10 border border-[#deae21] px-8 py-5 text-[#f5efdd] text-[16px]">
+                    <div className="bg-white/10 border border-[#e0b265] px-8 py-5 text-white text-[16px]">
                         ✓ You're on the list! We'll be in touch soon.
                     </div>
                 ) : (
@@ -77,8 +77,8 @@ export default function NewsletterForm() {
                                     {...register("email")}
                                     type="email"
                                     placeholder="example@mail.com"
-                                    className={`w-full bg-[#f5efdd]/10 border ${errors.email ? "border-red-400" : "border-[#f5efdd]/30"
-                                        } text-[#f5efdd] placeholder-[#f5efdd]/50 px-5 py-3 text-[16px] outline-none focus:border-[#deae21] transition`}
+                                    className={`w-full bg-white/10 border ${errors.email ? "border-red-400" : "border-white/30"
+                                        } text-white placeholder-white/50 px-5 py-3 text-[16px] outline-none focus:border-[#e0b265] transition`}
                                 />
                                 {errors.email && (
                                     <span className="text-red-400 text-[13px] text-left pl-1">
@@ -90,7 +90,7 @@ export default function NewsletterForm() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="bg-[#58021f] text-[#f5efdd] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] border border-transparent hover:bg-[#030302] hover:border-[#f5efdd] transition disabled:opacity-60 whitespace-nowrap w-full md:w-auto"
+                                className="bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] border border-transparent hover:bg-[#1b312e] hover:text-[#e0b265] hover:border-[#e0b265] transition disabled:opacity-60 whitespace-nowrap w-full md:w-auto"
                             >
                                 {isSubmitting ? "Subscribing..." : "SUBSCRIBE"}
                             </button>
