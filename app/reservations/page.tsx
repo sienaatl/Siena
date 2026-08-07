@@ -588,7 +588,7 @@ export default function Reservations() {
                           <div className="relative">
                             <select {...register("partySize")} className={`${inputClass} appearance-none cursor-pointer pr-9`}>
                               {PARTY_SIZES.map((n) => (
-                                <option key={n} value={n}>
+                                <option key={n} value={n} style={{ backgroundColor: "#152C29", color: "#fff" }}>
                                   {n} {n === 1 ? "guest" : "guests"}
                                 </option>
                               ))}
@@ -671,9 +671,9 @@ export default function Reservations() {
                               disabled={!selectedDate}
                               className={`${inputClass} appearance-none cursor-pointer pr-9 disabled:cursor-not-allowed disabled:opacity-60`}
                             >
-                              <option value="">{selectedDate ? "Select one" : "Select a date first"}</option>
+                              <option value="" style={{ backgroundColor: "#152C29", color: "#fff" }}>{selectedDate ? "Select one" : "Select a date first"}</option>
                               {timeOptions.map((t) => (
-                                <option key={t} value={t}>
+                                <option key={t} value={t} style={{ backgroundColor: "#152C29", color: "#fff" }}>
                                   {t}
                                 </option>
                               ))}
@@ -711,7 +711,7 @@ export default function Reservations() {
                           <div className="relative">
                             <select {...register("occasion")} className={`${inputClass} appearance-none cursor-pointer pr-9`}>
                               {OCCASIONS.map((o) => (
-                                <option key={o} value={o}>
+                                <option key={o} value={o} style={{ backgroundColor: "#152C29", color: "#fff" }}>
                                   {o}
                                 </option>
                               ))}

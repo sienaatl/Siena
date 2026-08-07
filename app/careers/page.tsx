@@ -496,9 +496,9 @@ export default function Careers() {
                   {/* Position */}
                   <Field label="Applying For" required error={errors.position?.message}>
                     <select {...register("position")} className={`${inputClass} appearance-none cursor-pointer`}>
-                      <option value="">Select a position</option>
+                      <option value="" style={{ backgroundColor: "#152C29", color: "#fff" }}>Select a position</option>
                       {positions.map((p) => (
-                        <option key={p} value={p}>{p}</option>
+                        <option key={p} value={p} style={{ backgroundColor: "#152C29", color: "#fff" }}>{p}</option>
                       ))}
                     </select>
                   </Field>

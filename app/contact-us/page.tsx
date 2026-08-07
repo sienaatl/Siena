@@ -354,9 +354,9 @@ export default function ContactUs() {
 
                   <Field label="Subject" required error={errors.subject?.message}>
                     <select {...register("subject")} className={`${inputClass} appearance-none cursor-pointer`}>
-                      <option value="">Select a topic</option>
+                      <option value="" style={{ backgroundColor: "#152C29", color: "#fff" }}>Select a topic</option>
                       {subjects.map((s) => (
-                        <option key={s} value={s}>{s}</option>
+                        <option key={s} value={s} style={{ backgroundColor: "#152C29", color: "#fff" }}>{s}</option>
                       ))}
                     </select>
                   </Field>

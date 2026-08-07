@@ -383,17 +383,17 @@ export default function EventInquiry() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <Field label="Start Time" error={errors.startTime?.message}>
                     <select {...register("startTime")} className={inputClass}>
-                      <option value="">Select one</option>
+                      <option value="" style={{ backgroundColor: "#152C29", color: "#fff" }}>Select one</option>
                       {TIME_OPTIONS.map((t) => (
-                        <option key={t} value={t}>{t}</option>
+                        <option key={t} value={t} style={{ backgroundColor: "#152C29", color: "#fff" }}>{t}</option>
                       ))}
                     </select>
                   </Field>
                   <Field label="End Time" error={errors.endTime?.message}>
                     <select {...register("endTime")} className={inputClass}>
-                      <option value="">Select one</option>
+                      <option value="" style={{ backgroundColor: "#152C29", color: "#fff" }}>Select one</option>
                       {TIME_OPTIONS.map((t) => (
-                        <option key={t} value={t}>{t}</option>
+                        <option key={t} value={t} style={{ backgroundColor: "#152C29", color: "#fff" }}>{t}</option>
                       ))}
                     </select>
                   </Field>
@@ -433,9 +433,9 @@ export default function EventInquiry() {
 
                 <Field label="How did you hear about us?" error={errors.howHeard?.message}>
                   <select {...register("howHeard")} className={inputClass}>
-                    <option value="">Select one</option>
+                    <option value="" style={{ backgroundColor: "#152C29", color: "#fff" }}>Select one</option>
                     {HOW_HEARD_OPTIONS.map((o) => (
-                      <option key={o} value={o}>{o}</option>
+                      <option key={o} value={o} style={{ backgroundColor: "#152C29", color: "#fff" }}>{o}</option>
                     ))}
                   </select>
                 </Field>
