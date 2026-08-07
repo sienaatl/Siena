@@ -104,7 +104,7 @@ export default function Events() {
       <section
         className="relative w-full pt-[80px] pb-[80px] overflow-hidden"
         style={{
-          backgroundImage: "url('/assets/fondo_menu.webp')",
+          backgroundImage: "url('/assets/update_homepage_something_esp.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -122,7 +122,7 @@ export default function Events() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#1b312e] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-white text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -146,7 +146,7 @@ export default function Events() {
               </motion.span>
             </div>
             <motion.p
-              className="text-[#030302]/80 text-lg md:text-xl leading-[140%] max-w-[780px] mt-12 md:mt-24"
+              className="text-white/80 text-lg md:text-xl leading-[140%] max-w-[780px] mt-12 md:mt-24"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -157,7 +157,7 @@ export default function Events() {
             </motion.p>
             <motion.a
               href="/event-inquiry"
-              className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#1b312e] hover:text-[#e0b265] transition"
+              className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[24px] flex items-center gap-2 border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}

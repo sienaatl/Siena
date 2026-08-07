@@ -44,10 +44,14 @@ export default function Footer() {
 
     return (
 
-        <footer className="font-sans w-full bg-[url('/assets/fondomenu.webp')] bg-cover bg-center bg-no-repeat">
-            <NewsletterForm />
+        <footer className="relative font-sans w-full bg-[url('/assets/book-table-bg.jpg')] bg-cover bg-center bg-no-repeat">
+            <div className="absolute inset-0 bg-[#1b312e]/85 pointer-events-none" />
 
-            <div className="relative w-full h-[58px]">
+            <div className="relative z-10">
+                <NewsletterForm />
+            </div>
+
+            <div className="relative z-10 w-full h-[58px]">
                 <img
                     src="/assets/divisor_negro.svg"
                     alt="divider"
@@ -55,7 +59,7 @@ export default function Footer() {
                 />
             </div>
 
-            <div className="w-full max-w-[1180px] mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between gap-[40px] lg:gap-[60px] py-[40px] lg:py-[80px] px-6 lg:px-0">
+            <div className="relative z-10 w-full max-w-[1180px] mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between gap-[40px] lg:gap-[60px] py-[40px] lg:py-[80px] px-6 lg:px-0">
 
                 {/* Izquierda - Logo + info */}
                 <div className="flex flex-col gap-4 max-w-[580px] items-center lg:items-start text-center lg:text-left">
@@ -278,10 +282,10 @@ export default function Footer() {
             </div>
 
             {/* Legal links */}
-            <div className="w-full max-w-[1180px] mx-auto px-6 lg:px-0">
+            <div className="relative z-10 w-full max-w-[1180px] mx-auto px-6 lg:px-0">
                 <div className="h-px bg-gradient-to-r from-transparent via-[#e0b265]/40 to-transparent"></div>
             </div>
-            <div className="w-full py-6 px-6">
+            <div className="relative z-10 w-full py-6 px-6">
                 <div className="w-full max-w-[1180px] mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-[13px] text-white/70 uppercase tracking-wide">
                     <Link href="/privacy-policy" className="hover:text-[#e0b265] transition">
                         Privacy Notice

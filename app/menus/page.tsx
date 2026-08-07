@@ -32,7 +32,7 @@ function MenuItemCard({ item }: { item: MenuItem }) {
   const hasImage = !!item.image;
 
   return (
-    <div className="bg-white shadow-sm border border-[#e8dfc8] py-6 px-5 flex flex-col items-center justify-center text-center gap-3">
+    <div className="bg-white/8 backdrop-blur-md shadow-sm border border-[#e0b265]/25 hover:border-[#e0b265]/60 hover:bg-white/12 transition-colors duration-300 py-6 px-5 flex flex-col items-center justify-center text-center gap-3">
       {hasImage && (
         <div className="w-full aspect-square overflow-hidden">
           <img
@@ -44,18 +44,18 @@ function MenuItemCard({ item }: { item: MenuItem }) {
         </div>
       )}
       <h4
-        className="text-[26px] md:text-[32px] leading-tight uppercase text-[#1b312e]"
+        className="text-[26px] md:text-[32px] leading-tight uppercase text-[#e0b265]"
         style={{ fontFamily: "'Palmore-Light', serif" }}
       >
         {item.name}
       </h4>
       {item.description && (
-        <p className="text-[13px] md:text-[14px] leading-[1.6] text-[#030302]/65 whitespace-pre-line">
+        <p className="text-[13px] md:text-[14px] leading-[1.6] text-white/70 whitespace-pre-line">
           {item.description}
         </p>
       )}
       {item.price && (
-        <p className="text-[14px] md:text-[15px] font-semibold text-[#030302]/80 whitespace-pre-line mt-auto pt-1">
+        <p className="text-[14px] md:text-[15px] font-semibold text-[#e0b265] whitespace-pre-line mt-auto pt-1">
           {item.price}
         </p>
       )}
@@ -73,17 +73,17 @@ function SubSectionBlock({ id, title, subtitle, items }: SubSection) {
             src="/assets/icono_123.svg"
             alt=""
             aria-hidden="true"
-            className="w-[80px] h-auto pointer-events-none opacity-15 mb-4"
+            className="w-[80px] h-auto pointer-events-none opacity-40 mb-4"
           />
           <h3
-            className="text-[44px] md:text-[60px] leading-tight uppercase text-[#e0b265] md:text-[#1b312e]"
+            className="text-[44px] md:text-[60px] leading-tight uppercase text-[#e0b265]"
             style={{ fontFamily: "'Palmore-Light', serif" }}
           >
             {title}
           </h3>
         </div>
         {subtitle && (
-          <p className="text-[14px] md:text-[16px] text-white/60 md:text-[#030302]/60 mt-2 uppercase tracking-widest">
+          <p className="text-[14px] md:text-[16px] text-white/60 mt-2 uppercase tracking-widest">
             {subtitle}
           </p>
         )}
@@ -103,7 +103,7 @@ function SubSectionBlock({ id, title, subtitle, items }: SubSection) {
           </div>
         </div>
       ) : (
-        <div className="text-center text-white/40 md:text-[#030302]/40 italic px-4 text-sm">
+        <div className="text-center text-white/40 italic px-4 text-sm">
           Coming soon…
         </div>
       )}
@@ -309,15 +309,15 @@ function MenuContent() {
           <div className="text-center py-16 text-white/50 italic text-sm">{menuError}</div>
         )}
         {!loading && !menuError && (
-          <div className="bg-transparent md:bg-white md:shadow-[0_8px_40px_rgba(0,0,0,0.10)] md:rounded-sm overflow-hidden">
+          <div className="bg-transparent overflow-hidden">
             {tabs.map((tab) => (
               <section
                 key={tab.id}
                 id={tab.id}
-                className="w-full scroll-mt-[180px] md:scroll-mt-[200px] border-b border-[#e8dfc8] last:border-b-0"
+                className="w-full scroll-mt-[180px] md:scroll-mt-[200px] border-b border-white/10 last:border-b-0"
               >
                 {/* Tab section header */}
-                <div className="w-full py-[50px] md:py-[70px] flex flex-col items-center text-center px-4 bg-transparent md:bg-white">
+                <div className="w-full py-[50px] md:py-[70px] flex flex-col items-center text-center px-4 bg-transparent">
                   <motion.img
                     src="/assets/icon_menus.svg"
                     alt=""
@@ -329,7 +329,7 @@ function MenuContent() {
                   />
                   <div className="relative inline-block">
                     <motion.h2
-                      className="text-[#e0b265] md:text-[#1b312e] text-[52px] md:text-[72px] lg:text-[88px] leading-[0.9] tracking-[0.06em] uppercase"
+                      className="text-[#e0b265] text-[52px] md:text-[72px] lg:text-[88px] leading-[0.9] tracking-[0.06em] uppercase"
                       style={{ fontFamily: "'Palmore-Light', serif" }}
                       initial={{ opacity: 0, y: 40 }}
                       whileInView={{ opacity: 1, y: 0 }}

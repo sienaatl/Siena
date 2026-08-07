@@ -80,7 +80,7 @@ export default function EventsSlider() {
                   delay: i * 0.08,
                   ease: "easeOut",
                 }}
-                className="bg-white overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-500 basis-full md:basis-[calc((100%-24px)/3)] shrink-0 grow-0 min-w-0"
+                className="bg-[#1e3833] border border-white/10 overflow-hidden flex flex-col hover:border-[#e0b265]/50 hover:shadow-2xl transition-all duration-500 basis-full md:basis-[calc((100%-24px)/3)] shrink-0 grow-0 min-w-0"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
@@ -93,23 +93,23 @@ export default function EventsSlider() {
                 </div>
                 <div className="p-5 md:p-6 flex flex-col gap-3 flex-1">
                   <div className="flex items-center gap-3">
-                    <span className="text-[#1b312e] text-[13px] tracking-widest">/ {String(i + 1).padStart(2, "0")}</span>
+                    <span className="text-[#e0b265] text-[13px] tracking-widest">/ {String(i + 1).padStart(2, "0")}</span>
                     <div className="h-[1px] flex-1 bg-[#e0b265]/30" />
                   </div>
                   <h3
-                    className="text-[#1b312e] text-[32px] md:text-[42px] leading-tight"
+                    className="text-[#e0b265] text-[32px] md:text-[42px] leading-tight"
                     style={{ fontFamily: "'Palmore-Light', serif", fontWeight: 300 }}
                   >
                     {event.title}
                   </h3>
                   <div className="w-8 h-[2px] bg-[#e0b265]" />
-                  <p className="text-[#030302]/75 text-[15px] md:text-[16px] leading-[1.7]">
+                  <p className="text-white/75 text-[15px] md:text-[16px] leading-[1.7]">
                     {event.description}
                   </p>
                   {event.ideal.length > 0 && (
                     <div className="mt-auto pt-3 flex flex-col gap-1">
                       {event.ideal.map((item, j) => (
-                        <span key={j} className="text-[#030302]/70 text-[14px] flex items-center gap-2">
+                        <span key={j} className="text-white/70 text-[14px] flex items-center gap-2">
                           <span className="w-1 h-1 rounded-full bg-[#e0b265] flex-shrink-0 inline-block" />
                           {item}
                         </span>
