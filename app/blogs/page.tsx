@@ -81,9 +81,10 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <h1 className="text-3xl font-semi-bold mb-12 text-center mt-16 text-white">
+      {/* A section label, not the page title — the hero above already carries the h1. */}
+      <h2 className="text-3xl font-semi-bold mb-12 text-center mt-16 text-white">
         Blog Items
-      </h1>
+      </h2>
 
       <div className="flex justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

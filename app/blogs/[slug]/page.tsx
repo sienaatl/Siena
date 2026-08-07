@@ -3,11 +3,22 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Metadata } from "next";
 
+// The canonical host. Every other page in the app resolves to the bare domain via
+// metadataBase in app/layout.tsx — these blog URLs were the only ones still on www,
+// which told Google the site lived at two different addresses.
+const SITE_URL = "https://sienaatl.com";
+const LOGO_URL = `${SITE_URL}/assets/logo_beige.png`;
+
 type Props = {
   params: Promise<{
     slug: string;
   }>;
 };
+
+// The posts in blog-data are the complete set. Without this, Next generates a page
+// on demand for any slug it is given and answers 200, so deleted and mistyped blog
+// URLs looked alive to Google and stayed indexed.
+export const dynamicParams = false;
 
 // Static Routes
 export async function generateStaticParams() {
@@ -30,7 +41,7 @@ export async function generateMetadata({
     };
   }
 
-  const url = `https://www.sienaatl.com/blogs/${blog.slug}`;
+  const url = `${SITE_URL}/blogs/${blog.slug}`;
 
   return {
     title: blog.seo.title,
@@ -83,7 +94,7 @@ export default async function BlogDetails({ params }: Props) {
     // Article heading (visitor sees this)
     headline: blog.title,
 
-    image: [`https://www.sienaatl.com${blog.image}`],
+    image: [`${SITE_URL}${blog.image}`],
 
     // SEO description
     description: blog.seo.description,
@@ -102,13 +113,13 @@ export default async function BlogDetails({ params }: Props) {
       name: "Siena Restaurant",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.sienaatl.com/logo.png",
+        url: LOGO_URL,
       },
     },
 
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://www.sienaatl.com/blogs/${blog.slug}`,
+      "@id": `${SITE_URL}/blogs/${blog.slug}`,
     },
   };
 
