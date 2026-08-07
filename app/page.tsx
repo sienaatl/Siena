@@ -204,10 +204,10 @@ export default function Home() {
 
               {/* Reimagined superpuesto */}
               <motion.span
-                className="absolute left-1/2 top-[105%] md:top-[115%] -translate-x-1/2 -translate-y-1/2 text-[#e0b265] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
+                className="absolute left-1/2 top-[100%] md:top-[105%] -translate-x-1/2 -translate-y-[12%] text-[#e0b265] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
-                  textShadow: `2px 2px 0 #f5efdd, -2px -2px 0 #f5efdd, 2px -2px 0 #f5efdd, -2px 2px 0 #f5efdd`
+                  textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e"
                 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -534,15 +534,10 @@ export default function Home() {
 
               {/* "every day" superpuesto */}
               <motion.span
-                className="absolute left-1/2 top-[115%] -translate-x-1/2 -translate-y-1/2 w-full max-w-[900px] text-[#e0b265] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
+                className="absolute left-1/2 top-[105%] -translate-x-1/2 -translate-y-[12%] w-full max-w-[900px] text-[#e0b265] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
-                  textShadow: `
-            2px 2px 0 #f5efdd,
-            -2px -2px 0 #f5efdd,
-            2px -2px 0 #f5efdd,
-            -2px 2px 0 #f5efdd
-          `,
+                  textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e",
                 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -800,7 +795,8 @@ export default function Home() {
       >
         <div className="w-full max-w-[1180px] mx-auto px-4 md:px-0">
           <div
-            className="relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-stretch gap-8 md:gap-12 bg-[#1e3833]"
+            className="relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-stretch gap-8 md:gap-12"
+            style={{ backgroundColor: "#1e3833", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
           >
             <div className="absolute inset-3 border border-[#e0b265]/20 pointer-events-none" />
 

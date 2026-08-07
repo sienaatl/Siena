@@ -132,10 +132,10 @@ export default function Events() {
                 Host Your Event
               </motion.h2>
               <motion.span
-                className="absolute left-1/2 top-[115%] -translate-x-1/2 -translate-y-1/2 w-full text-[#e0b265] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
+                className="absolute left-1/2 top-[105%] -translate-x-1/2 -translate-y-[12%] w-full text-[#e0b265] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
-                  textShadow: `2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd`,
+                  textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e",
                 }}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}

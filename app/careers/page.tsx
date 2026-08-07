@@ -89,7 +89,7 @@ const schema = z
 type FormData = z.infer<typeof schema>;
 
 const inputClass =
-  "w-full border border-[#1b312e]/20 px-4 py-[11px] text-[14px] text-[#333] placeholder-[#bbb] focus:outline-none focus:border-[#1b312e] focus:ring-1 focus:ring-[#1b312e]/20 bg-white transition";
+  "w-full border border-white/15 px-4 py-[11px] text-[14px] text-white placeholder-white/40 focus:outline-none focus:border-[#e0b265] focus:ring-1 focus:ring-[#e0b265]/30 bg-white/5 transition";
 
 const positions = [
   "Server / Food Runner",
@@ -132,19 +132,19 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-[12px] font-semibold text-[#222] tracking-wider uppercase">
-        {label} {required && <span className="text-[#1b312e]">*</span>}
+      <label className="text-[12px] font-semibold text-white/80 tracking-wider uppercase">
+        {label} {required && <span className="text-[#e0b265]">*</span>}
       </label>
       {children}
-      {hint && !error && <p className="text-[11px] text-[#999] mt-0.5">{hint}</p>}
+      {hint && !error && <p className="text-[11px] text-white/50 mt-0.5">{hint}</p>}
       {error && (
         <motion.p
-          className="text-[12px] text-[#1b312e] mt-0.5 flex items-center gap-1"
+          className="text-[12px] text-[#e0b265] mt-0.5 flex items-center gap-1"
           initial={{ opacity: 0, y: -4 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <span className="w-3 h-3 flex items-center justify-center border border-[#1b312e] text-[9px] flex-shrink-0">!</span>
+          <span className="w-3 h-3 flex items-center justify-center border border-[#e0b265] text-[9px] flex-shrink-0">!</span>
           {error}
         </motion.p>
       )}
@@ -413,10 +413,10 @@ export default function Careers() {
                 Apply Now
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[55px] lg:text-[78px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-[95%] md:top-[100%] -translate-x-1/2 -translate-y-[5%] text-[#e0b265] text-[28px] md:text-[55px] lg:text-[78px] leading-none whitespace-nowrap"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
-                  textShadow: `2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd`,
+                  textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e",
                 }}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -429,7 +429,8 @@ export default function Careers() {
           </div>
 
           <motion.div
-            className="bg-white/96 shadow-2xl w-full max-w-[740px] mx-auto px-6 md:px-10 py-10 mt-16 md:mt-20"
+            className="shadow-2xl border border-[#e0b265]/50 w-full max-w-[740px] mx-auto px-6 md:px-10 py-10 mt-16 md:mt-20"
+            style={{ backgroundColor: "#152C29", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.05 }}
@@ -446,19 +447,19 @@ export default function Careers() {
                   transition={{ duration: 0.4 }}
                 >
                   <motion.div
-                    className="w-14 h-14 bg-[#1b312e] flex items-center justify-center"
+                    className="w-14 h-14 bg-[#e0b265] flex items-center justify-center"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 300, delay: 0.1 }}
                   >
                     <svg width="26" height="26" viewBox="0 0 48 48" fill="none">
-                      <path d="M12 24L21 33L36 16" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M12 24L21 33L36 16" stroke="#1b312e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </motion.div>
-                  <h3 className="text-[28px] text-[#1b312e]" style={{ fontFamily: "'Palmore-Light', serif" }}>
+                  <h3 className="text-[28px] text-white" style={{ fontFamily: "'Palmore-Light', serif" }}>
                     Application Sent!
                   </h3>
-                  <p className="text-[14px] text-[#666] leading-relaxed max-w-[380px]">
+                  <p className="text-[14px] text-white/70 leading-relaxed max-w-[380px]">
                     Thank you for your interest in joining the Siena team. We&apos;ll review your application and be in touch soon.
                   </p>
                 </motion.div>
@@ -514,8 +515,8 @@ export default function Careers() {
                             onClick={() => toggleDay(day)}
                             className={`px-4 py-2 text-[13px] font-semibold tracking-wide border transition cursor-pointer ${
                               active
-                                ? "bg-[#1b312e] text-white border-[#1b312e]"
-                                : "bg-white text-[#555] border-[#1b312e]/20 hover:border-[#1b312e]"
+                                ? "bg-[#e0b265] text-[#1b312e] border-[#e0b265]"
+                                : "bg-white/5 text-white/70 border-white/20 hover:border-[#e0b265]"
                             }`}
                           >
                             {day}
@@ -542,13 +543,13 @@ export default function Careers() {
                   {/* Previous Work — field array */}
                   <div className="flex flex-col gap-3">
                     <div className="flex items-center justify-between">
-                      <label className="text-[12px] font-semibold text-[#222] tracking-wider uppercase">
-                        Previous Experience <span className="text-[#999] normal-case font-normal">(optional)</span>
+                      <label className="text-[12px] font-semibold text-white/80 tracking-wider uppercase">
+                        Previous Experience <span className="text-white/50 normal-case font-normal">(optional)</span>
                       </label>
                       <button
                         type="button"
                         onClick={() => appendWork({ employer: "", role: "", duration: "" })}
-                        className="text-[12px] text-[#1b312e] border border-[#1b312e]/30 px-3 py-1 hover:bg-[#1b312e] hover:text-white transition flex items-center gap-1 cursor-pointer"
+                        className="text-[12px] text-[#e0b265] border border-[#e0b265]/30 px-3 py-1 hover:bg-[#e0b265] hover:text-[#1b312e] transition flex items-center gap-1 cursor-pointer"
                       >
                         <span className="text-[16px] leading-none">+</span> Add Entry
                       </button>
@@ -558,7 +559,7 @@ export default function Careers() {
                       {workFields.map((field, i) => (
                         <motion.div
                           key={field.id}
-                          className="border border-[#1b312e]/15 p-4 bg-[#fdf9f2] flex flex-col gap-3 relative"
+                          className="border border-white/15 p-4 bg-white/5 flex flex-col gap-3 relative"
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
@@ -567,7 +568,7 @@ export default function Careers() {
                           <button
                             type="button"
                             onClick={() => removeWork(i)}
-                            className="absolute top-3 right-3 text-[#aaa] hover:text-[#1b312e] transition text-[18px] leading-none cursor-pointer"
+                            className="absolute top-3 right-3 text-white/50 hover:text-[#e0b265] transition text-[18px] leading-none cursor-pointer"
                           >
                             ×
                           </button>
@@ -600,7 +601,7 @@ export default function Careers() {
                         rows={4}
                         className={`${inputClass} resize-none`}
                       />
-                      <span className={`absolute bottom-2 right-3 text-[11px] ${coverLetterLength > 950 ? "text-[#1b312e]" : "text-[#ccc]"}`}>
+                      <span className={`absolute bottom-2 right-3 text-[11px] ${coverLetterLength > 950 ? "text-[#e0b265]" : "text-white/40"}`}>
                         {coverLetterLength}/1000
                       </span>
                     </div>
@@ -608,12 +609,12 @@ export default function Careers() {
 
                   {/* Resume Upload */}
                   <Field label="Resume" error={errors.resume?.message as string}>
-                    <label className="flex flex-col items-center justify-center gap-2 border border-dashed border-[#1b312e]/30 px-4 py-6 cursor-pointer hover:border-[#1b312e] transition text-center group">
+                    <label className="flex flex-col items-center justify-center gap-2 border border-dashed border-white/25 px-4 py-6 cursor-pointer hover:border-[#e0b265] transition text-center group">
                       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="group-hover:scale-110 transition-transform">
-                        <path d="M12 16V8M12 8L9 11M12 8L15 11" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M3 15V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V15" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" />
+                        <path d="M12 16V8M12 8L9 11M12 8L15 11" stroke="#e0b265" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M3 15V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V15" stroke="#e0b265" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
-                      <span className="text-[13px] text-[#aaa]">
+                      <span className="text-[13px] text-white/60">
                         {fileName ? fileName : "Click or drag your resume here (PDF or Word, max 5MB)"}
                       </span>
                       <input {...register("resume")} type="file" accept=".pdf,.doc,.docx" className="hidden" />

@@ -45,8 +45,8 @@ function MenuItemCard({ item }: { item: MenuItem }) {
         </div>
       )}
       <h4
-        className="text-[26px] md:text-[32px] leading-tight uppercase text-[#e0b265]"
-        style={{ fontFamily: "'Palmore-Light', serif" }}
+        className="text-[19px] md:text-[22px] leading-tight uppercase text-[#e0b265]"
+        style={{ fontFamily: "'Palmore-Light', serif", fontOpticalSizing: "none", fontVariationSettings: "'opsz' 28" }}
       >
         {item.name}
       </h4>
@@ -77,7 +77,7 @@ function SubSectionBlock({ id, title, subtitle, items }: SubSection) {
             className="w-[80px] h-auto pointer-events-none opacity-40 mb-4"
           />
           <h3
-            className="text-[44px] md:text-[60px] leading-tight uppercase text-[#e0b265]"
+            className="text-[42px] md:text-[57px] leading-tight uppercase text-[#e0b265]"
             style={{ fontFamily: "'Palmore-Light', serif" }}
           >
             {title}
@@ -340,10 +340,10 @@ function MenuContent() {
                       {tab.label}
                     </motion.h2>
                     <motion.span
-                      className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[24px] md:text-[50px] lg:text-[68px] leading-none whitespace-nowrap"
+                      className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[5%] md:-translate-y-[10%] text-[#e0b265] text-[24px] md:text-[50px] lg:text-[68px] leading-none whitespace-nowrap"
                       style={{
                         fontFamily: "'AguafinaScript-Regular', cursive",
-                        textShadow: "2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd",
+                        textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e",
                       }}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}

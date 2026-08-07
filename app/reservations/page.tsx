@@ -97,7 +97,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 const inputClass =
-  "w-full border border-[#1b312e]/20 px-4 py-[11px] text-[14px] text-[#333] placeholder-[#bbb] focus:outline-none focus:border-[#1b312e] focus:ring-1 focus:ring-[#1b312e]/20 bg-white transition";
+  "w-full border border-white/15 px-4 py-[11px] text-[14px] text-white placeholder-white/40 focus:outline-none focus:border-[#e0b265] focus:ring-1 focus:ring-[#e0b265]/30 bg-white/5 transition";
 
 const PARTY_SIZES = Array.from({ length: 14 }, (_, i) => i + 1);
 
@@ -137,7 +137,7 @@ function SelectChevron() {
       height="14"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#1b312e"
+      stroke="#e0b265"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -180,8 +180,8 @@ function StepHeader({ num, title, desc }: { num: string; title: string; desc: st
         {num}
       </span>
       <div>
-        <h3 className="text-[19px] md:text-[20px] font-semibold text-[#222] leading-tight">{title}</h3>
-        <p className="text-[13px] text-[#888] mt-0.5">{desc}</p>
+        <h3 className="text-[19px] md:text-[20px] font-semibold text-white leading-tight">{title}</h3>
+        <p className="text-[13px] text-white/60 mt-0.5">{desc}</p>
       </div>
     </div>
   );
@@ -202,19 +202,19 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-[12px] font-semibold text-[#222] tracking-wider uppercase">
-        {label} {required && <span className="text-[#1b312e]">*</span>}
+      <label className="text-[12px] font-semibold text-white/80 tracking-wider uppercase">
+        {label} {required && <span className="text-[#e0b265]">*</span>}
       </label>
       {children}
-      {hint && !error && <p className="text-[11px] text-[#999] mt-0.5">{hint}</p>}
+      {hint && !error && <p className="text-[11px] text-white/50 mt-0.5">{hint}</p>}
       {error && (
         <motion.p
-          className="text-[12px] text-[#1b312e] mt-0.5 flex items-center gap-1"
+          className="text-[12px] text-[#e0b265] mt-0.5 flex items-center gap-1"
           initial={{ opacity: 0, y: -4 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <span className="w-3 h-3 flex items-center justify-center border border-[#1b312e] text-[9px] flex-shrink-0">!</span>
+          <span className="w-3 h-3 flex items-center justify-center border border-[#e0b265] text-[9px] flex-shrink-0">!</span>
           {error}
         </motion.p>
       )}
@@ -458,10 +458,10 @@ export default function Reservations() {
                 Book a Table
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-[95%] md:top-[100%] -translate-x-1/2 -translate-y-[5%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
-                  textShadow: "2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd",
+                  textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e",
                 }}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -490,7 +490,10 @@ export default function Reservations() {
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="bg-white shadow-2xl border-t-4 border-[#e0b265] px-6 md:px-10 py-10 text-left">
+            <div
+              className="shadow-2xl border border-[#e0b265]/50 px-6 md:px-10 py-10 text-left"
+              style={{ backgroundColor: "#152C29", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
+            >
               <AnimatePresence mode="wait">
                 {confirmation ? (
                   <motion.div
@@ -513,47 +516,47 @@ export default function Reservations() {
                     </motion.div>
 
                     <div className="flex flex-col items-center gap-2">
-                      <span className="text-[12px] font-semibold tracking-[0.2em] uppercase text-[#1b312e]">
+                      <span className="text-[12px] font-semibold tracking-[0.2em] uppercase text-[#e0b265]">
                         Reservation Confirmed
                       </span>
                       <h3
-                        className="text-[26px] md:text-[30px] text-[#030302] leading-tight"
+                        className="text-[26px] md:text-[30px] text-white leading-tight"
                         style={{ fontFamily: "'Palmore-Light', serif" }}
                       >
                         We look forward to serving you.
                       </h3>
                     </div>
 
-                    <div className="w-full border border-[#1b312e]/15 text-left">
+                    <div className="w-full border border-white/15 text-left">
                       <div className="grid grid-cols-2">
-                        <div className="p-4 border-r border-b border-[#1b312e]/15">
-                          <p className="text-[11px] uppercase tracking-wide text-[#999]">Name</p>
-                          <p className="text-[15px] font-semibold text-[#222] mt-1">
+                        <div className="p-4 border-r border-b border-white/15">
+                          <p className="text-[11px] uppercase tracking-wide text-white/50">Name</p>
+                          <p className="text-[15px] font-semibold text-white mt-1">
                             {confirmation.reservation.guest_name}
                           </p>
                         </div>
-                        <div className="p-4 border-b border-[#1b312e]/15">
-                          <p className="text-[11px] uppercase tracking-wide text-[#999]">Date &amp; Time</p>
-                          <p className="text-[15px] font-semibold text-[#222] mt-1">
+                        <div className="p-4 border-b border-white/15">
+                          <p className="text-[11px] uppercase tracking-wide text-white/50">Date &amp; Time</p>
+                          <p className="text-[15px] font-semibold text-white mt-1">
                             {confirmation.reservation.reservation_at.replace("T", " ")}
                           </p>
                         </div>
-                        <div className="p-4 border-r border-[#1b312e]/15">
-                          <p className="text-[11px] uppercase tracking-wide text-[#999]">Party</p>
-                          <p className="text-[15px] font-semibold text-[#222] mt-1">
+                        <div className="p-4 border-r border-white/15">
+                          <p className="text-[11px] uppercase tracking-wide text-white/50">Party</p>
+                          <p className="text-[15px] font-semibold text-white mt-1">
                             {confirmation.reservation.party_size}{" "}
                             {confirmation.reservation.party_size === 1 ? "guest" : "guests"}
                           </p>
                         </div>
                         <div className="p-4">
-                          <p className="text-[11px] uppercase tracking-wide text-[#999]">Confirmation</p>
-                          <p className="text-[15px] font-semibold text-[#222] mt-1">{confirmation.reservation.id}</p>
+                          <p className="text-[11px] uppercase tracking-wide text-white/50">Confirmation</p>
+                          <p className="text-[15px] font-semibold text-white mt-1">{confirmation.reservation.id}</p>
                         </div>
                       </div>
                     </div>
 
                     {confirmation.email_sent && (
-                      <div className="w-full bg-[#f5efdd] border border-[#e0b265]/30 px-5 py-4 text-[13px] text-[#5c4a1f] leading-relaxed">
+                      <div className="w-full bg-white/5 border border-[#e0b265]/30 px-5 py-4 text-[13px] text-white/80 leading-relaxed">
                         A confirmation email with your private modification link has been sent to{" "}
                         <span className="font-semibold">{confirmation.reservation.email}</span>.
                       </div>
@@ -606,10 +609,10 @@ export default function Reservations() {
                               onClick={() => setDatePickerOpen((o) => !o)}
                               className={`${inputClass} flex items-center justify-between text-left cursor-pointer`}
                             >
-                              <span className={selectedDate ? "text-[#333]" : "text-[#bbb]"}>
+                              <span className={selectedDate ? "text-white" : "text-white/40"}>
                                 {selectedDate ? formatDisplayDate(selectedDate) : "Select a date"}
                               </span>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1b312e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e0b265" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
                                 <rect x="3" y="4" width="18" height="18" rx="2" />
                                 <path d="M16 2v4M8 2v4M3 10h18" />
                               </svg>
@@ -679,17 +682,17 @@ export default function Reservations() {
                           </div>
                         </Field>
                       </div>
-                      <p className="text-[11.67px] text-[#999] mt-2 leading-relaxed">
-                        <span className="block font-semibold text-[#777]">Party of 14 or more?</span>
+                      <p className="text-[11.67px] text-white/50 mt-2 leading-relaxed">
+                        <span className="block font-semibold text-white/70">Party of 14 or more?</span>
                         Please call us directly to arrange your reservation, or complete our{" "}
-                        <Link href="/event-inquiry" className="text-[#1b312e] underline underline-offset-2 hover:text-[#e0b265]">
+                        <Link href="/event-inquiry" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
                           Private &amp; Group Dining Inquiry Form
                         </Link>
                         , and a member of our team will be happy to assist you.
                       </p>
                     </div>
 
-                    <div className="h-px bg-[#1b312e]/10" />
+                    <div className="h-px bg-white/10" />
 
                     {/* STEP 2 */}
                     <div>
@@ -729,8 +732,8 @@ export default function Reservations() {
                         </Field>
                       </div>
 
-                      <div className="mt-7 border-t border-[#1b312e]/15 pt-6">
-                        <h4 className="text-[#1b312e] text-[22px] md:text-[24px] leading-tight mb-5">
+                      <div className="mt-7 border-t border-white/15 pt-6">
+                        <h4 className="text-[#e0b265] text-[22px] md:text-[24px] leading-tight mb-5">
                           Reservation Form Consent
                         </h4>
                         <div className="grid grid-cols-1 gap-5">
@@ -738,18 +741,18 @@ export default function Reservations() {
                             <input
                               {...register("smsOptIn")}
                               type="checkbox"
-                              className="w-4 h-4 mt-1 accent-[#1b312e] cursor-pointer flex-shrink-0"
+                              className="w-4 h-4 mt-1 accent-[#e0b265] cursor-pointer flex-shrink-0"
                             />
-                            <span className="text-[13px] text-[#333] leading-[1.65]">
+                            <span className="text-[13px] text-white/70 leading-[1.65]">
                               I agree to receive SMS messages from Siena Restaurant regarding my reservation,
                               including confirmations, modifications, cancellations, reminders, waitlist updates, and
                               table-ready notifications. Message frequency varies. Message and data rates may apply.
                               Reply STOP to opt out or HELP for help. Consent is not a condition of purchase. See our{" "}
-                              <Link href="/privacy-policy" className="text-[#1b312e] underline underline-offset-2 hover:text-[#e0b265]">
+                              <Link href="/privacy-policy" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
                                 Privacy Notice
                               </Link>{" "}
                               and{" "}
-                              <Link href="/terms-of-service" className="text-[#1b312e] underline underline-offset-2 hover:text-[#e0b265]">
+                              <Link href="/terms-of-service" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
                                 Terms &amp; Conditions
                               </Link>
                               .
@@ -759,18 +762,18 @@ export default function Reservations() {
                             <input
                               {...register("marketingOptIn")}
                               type="checkbox"
-                              className="w-4 h-4 mt-1 accent-[#1b312e] cursor-pointer flex-shrink-0"
+                              className="w-4 h-4 mt-1 accent-[#e0b265] cursor-pointer flex-shrink-0"
                             />
-                            <span className="text-[13px] text-[#333] leading-[1.65]">
+                            <span className="text-[13px] text-white/70 leading-[1.65]">
                               I agree to receive recurring promotional SMS messages from Siena Restaurant about
                               events, offers, specials, and restaurant updates. Message frequency varies. Message and
                               data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition
                               of purchase. See our{" "}
-                              <Link href="/privacy-policy" className="text-[#1b312e] underline underline-offset-2 hover:text-[#e0b265]">
+                              <Link href="/privacy-policy" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
                                 Privacy Notice
                               </Link>{" "}
                               and{" "}
-                              <Link href="/terms-of-service" className="text-[#1b312e] underline underline-offset-2 hover:text-[#e0b265]">
+                              <Link href="/terms-of-service" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
                                 Terms &amp; Conditions
                               </Link>
                               .
@@ -781,7 +784,7 @@ export default function Reservations() {
                     </div>
 
                     {submitError && (
-                      <p className="text-[13px] text-[#1b312e] border border-[#1b312e]/30 bg-[#1b312e]/5 px-4 py-3">
+                      <p className="text-[13px] text-[#e0b265] border border-[#e0b265]/30 bg-[#e0b265]/10 px-4 py-3">
                         {submitError}
                       </p>
                     )}
@@ -794,7 +797,7 @@ export default function Reservations() {
                       {isSubmitting ? "Sending..." : "Complete Reservation"}
                     </button>
 
-                    <p className="text-[12px] text-[#999] text-center leading-relaxed">
+                    <p className="text-[12px] text-white/50 text-center leading-relaxed">
                       Reservations are held for 15 minutes. Seating requests are not guaranteed.
                     </p>
                   </motion.form>

@@ -67,7 +67,7 @@ const schema = z
 type FormData = z.infer<typeof schema>;
 
 const inputClass =
-  "w-full border border-[#1b312e]/20 px-4 py-[11px] text-[14px] text-[#333] placeholder-[#bbb] focus:outline-none focus:border-[#1b312e] focus:ring-1 focus:ring-[#1b312e]/20 bg-white/80 transition";
+  "w-full border border-white/15 px-4 py-[11px] text-[14px] text-white placeholder-white/40 focus:outline-none focus:border-[#e0b265] focus:ring-1 focus:ring-[#e0b265]/30 bg-white/5 transition";
 
 const subjects = [
   "General Inquiry",
@@ -94,19 +94,19 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-[12px] font-semibold text-[#222] tracking-wider uppercase">
-        {label} {required && <span className="text-[#1b312e]">*</span>}
+      <label className="text-[12px] font-semibold text-white/80 tracking-wider uppercase">
+        {label} {required && <span className="text-[#e0b265]">*</span>}
       </label>
       {children}
-      {hint && !error && <p className="text-[11px] text-[#999] mt-0.5">{hint}</p>}
+      {hint && !error && <p className="text-[11px] text-white/50 mt-0.5">{hint}</p>}
       {error && (
         <motion.p
-          className="text-[12px] text-[#1b312e] mt-0.5 flex items-center gap-1"
+          className="text-[12px] text-[#e0b265] mt-0.5 flex items-center gap-1"
           initial={{ opacity: 0, y: -4 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <span className="w-3 h-3 flex items-center justify-center border border-[#1b312e] text-[9px] flex-shrink-0">!</span>
+          <span className="w-3 h-3 flex items-center justify-center border border-[#e0b265] text-[9px] flex-shrink-0">!</span>
           {error}
         </motion.p>
       )}
@@ -297,7 +297,10 @@ export default function ContactUs() {
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
           >
-            <div className="bg-white shadow-2xl px-6 md:px-10 py-10 text-left">
+            <div
+              className="shadow-2xl border border-[#e0b265]/50 px-6 md:px-10 py-10 text-left"
+              style={{ backgroundColor: "#152C29", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
+            >
               {isSubmitSuccessful ? (
                 <motion.div
                   className="flex flex-col items-center text-center gap-5 py-14"
@@ -306,22 +309,22 @@ export default function ContactUs() {
                   transition={{ duration: 0.4 }}
                 >
                   <motion.div
-                    className="w-14 h-14 bg-[#1b312e] flex items-center justify-center"
+                    className="w-14 h-14 bg-[#e0b265] flex items-center justify-center"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 300, delay: 0.1 }}
                   >
                     <svg width="26" height="26" viewBox="0 0 48 48" fill="none">
-                      <path d="M12 24L21 33L36 16" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M12 24L21 33L36 16" stroke="#1b312e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </motion.div>
                   <h3
-                    className="text-[30px] text-[#1b312e]"
+                    className="text-[30px] text-white"
                     style={{ fontFamily: "'Palmore-Light', serif" }}
                   >
                     Message Sent!
                   </h3>
-                  <p className="text-[14px] text-[#666] leading-relaxed max-w-[380px]">
+                  <p className="text-[14px] text-white/70 leading-relaxed max-w-[380px]">
                     Thank you for reaching out. Our team will get back to you within 24 hours.
                   </p>
                 </motion.div>
@@ -372,7 +375,7 @@ export default function ContactUs() {
                       />
                       <span
                         className={`absolute bottom-2 right-3 text-[11px] ${
-                          messageLength > 950 ? "text-[#1b312e]" : "text-[#ccc]"
+                          messageLength > 950 ? "text-[#e0b265]" : "text-white/40"
                         }`}
                       >
                         {messageLength}/1000
@@ -380,25 +383,25 @@ export default function ContactUs() {
                     </div>
                   </Field>
 
-                  <div className="mt-1 border-t border-[#1b312e]/15 pt-5">
-                    <h4 className="text-[#1b312e] text-[22px] md:text-[24px] leading-tight mb-5">
+                  <div className="mt-1 border-t border-white/15 pt-5">
+                    <h4 className="text-[#e0b265] text-[22px] md:text-[24px] leading-tight mb-5">
                       Contact Form Consent
                     </h4>
                     <label className="flex items-start gap-3 cursor-pointer select-none">
                       <input
                         {...register("marketingOptIn")}
                         type="checkbox"
-                        className="w-4 h-4 mt-1 accent-[#1b312e] cursor-pointer flex-shrink-0"
+                        className="w-4 h-4 mt-1 accent-[#e0b265] cursor-pointer flex-shrink-0"
                       />
-                      <span className="text-[13px] text-[#333] leading-[1.65]">
+                      <span className="text-[13px] text-white/70 leading-[1.65]">
                         I agree to receive recurring promotional SMS messages from Siena Restaurant about events,
                         offers, specials, and restaurant updates. Message frequency varies. Message and data rates may
                         apply. Reply STOP to opt out or HELP for help. Consent is not a condition of purchase. See our{" "}
-                        <Link href="/privacy-policy" className="text-[#1b312e] underline underline-offset-2 hover:text-[#e0b265]">
+                        <Link href="/privacy-policy" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
                           Privacy Notice
                         </Link>{" "}
                         and{" "}
-                        <Link href="/terms-of-service" className="text-[#1b312e] underline underline-offset-2 hover:text-[#e0b265]">
+                        <Link href="/terms-of-service" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
                           Terms &amp; Conditions
                         </Link>
                         .
@@ -441,14 +444,15 @@ export default function ContactUs() {
       <section
         className="relative w-full py-12 md:py-20 overflow-hidden"
         style={{
-          backgroundImage: "url('/assets/contact_bg.png')",
+          backgroundImage: "url('/assets/dark-green-wall-backdrop-grunge-background-texture.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
         <div className="w-full max-w-[1180px] mx-auto px-4 md:px-0">
         <motion.div
-          className="relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-stretch gap-8 md:gap-12 bg-[#1e3833]"
+          className="relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-stretch gap-8 md:gap-12"
+          style={{ backgroundColor: "#1e3833", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}

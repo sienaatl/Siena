@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'Spline Sans';
-  src: url('/fonts/SplineSans-VariableFont_wght.ttf') format('truetype');
+  src: url('/fonts/Urbanist-Variable.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -10,15 +10,15 @@
 
 @font-face {
   font-family: 'Palmore-Light';
-  src: url('/fonts/Palmore-Light.otf') format('opentype');
-  font-weight: normal;
+  src: url('/fonts/Fraunces-Variable.woff2') format('woff2');
+  font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'AguafinaScript-Regular';
-  src: url('/fonts/AguafinaScript-Regular.ttf') format('truetype');
+  src: url('/fonts/HerrVonMuellerhoff-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
