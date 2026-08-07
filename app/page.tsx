@@ -62,13 +62,13 @@ export default function Home() {
           <div className="flex gap-4 hero-fadein">
             <a
               href="/reservations"
-              className="group bg-[#f5efdd] text-[#e0b265] px-4 md:px-9 py-2 justify-center font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-[#e0b265] hover:bg-[#1b312e] hover:text-white transition"
+              className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 justify-center font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-[#e0b265] hover:bg-[#1b312e] hover:text-white transition"
             >
               RESERVATIONS
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
                   d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-                  className="fill-[#e0b265] group-hover:fill-white transition-colors duration-300"
+                  className="fill-[#1b312e] group-hover:fill-white transition-colors duration-300"
                 />
               </svg>
             </a>
@@ -169,7 +169,7 @@ export default function Home() {
       <section
         className="relative w-full overflow-hidden"
         style={{
-          backgroundImage: "url('/assets/fondo_findus.webp')",
+          backgroundImage: "url('/assets/update_home_image_section_aboutUs.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}
@@ -192,7 +192,7 @@ export default function Home() {
             <div className="relative inline-block">
               {/* Título */}
               <motion.h2
-                className="text-[#1b312e] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-white text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -219,7 +219,7 @@ export default function Home() {
             </div>
 
             <motion.p
-              className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
+              className="text-white/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -230,7 +230,7 @@ export default function Home() {
 
           <MotionLink
           href="/about-us"
-          className="relative z-10 group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#1b312e] hover:text-[#e0b265] hover:border-[#1b312e] transition"
+          className="relative z-10 group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -247,7 +247,7 @@ export default function Home() {
           >
             <path
               d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-              className="fill-[#1b312e] group-hover:fill-[#e0b265] transition-colors duration-300"
+              className="fill-[#1b312e] transition-colors duration-300"
             />
           </svg>
         </MotionLink>
