@@ -33,12 +33,12 @@ export default function AboutUs() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-12 md:w-24 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-12 md:w-24 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[58px] md:text-[78px] lg:text-[98px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[58px] md:text-[78px] lg:text-[98px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -52,9 +52,9 @@ export default function AboutUs() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="w-12 md:w-24 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-12 md:w-24 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
         </div>
       </section>
@@ -90,7 +90,7 @@ export default function AboutUs() {
       </section>
 
       {/* OUR STORY */}
-      <section className="relative w-full overflow-hidden" style={{ backgroundColor: "#f5efdd" }}>
+      <section className="relative w-full overflow-hidden" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[600px] mx-auto px-4 py-[80px] md:py-[100px] flex flex-col items-center text-center">
 
           {/* Icon */}
@@ -105,7 +105,7 @@ export default function AboutUs() {
           {/* Section title */}
           <div className="relative inline-block mb-[60px] md:mb-[80px]">
             <motion.h2
-              className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+              className="text-[#e0b265] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
               style={{ fontFamily: "'Palmore-Light', serif" }}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -115,10 +115,10 @@ export default function AboutUs() {
               Our Story
             </motion.h2>
             <motion.span
-              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
               style={{
                 fontFamily: "'AguafinaScript-Regular', cursive",
-                textShadow: "2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd",
+                textShadow: "2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e",
               }}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -137,19 +137,19 @@ export default function AboutUs() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <p className="text-[#030302]/80 text-[16px] md:text-[18px] leading-[1.8]">
+            <p className="text-white/80 text-[16px] md:text-[18px] leading-[1.8]">
               Siena was born from a passion for the sun-drenched flavors of the Mediterranean, a cuisine
               built on honest ingredients, bold character, and the timeless tradition of gathering around
               a beautiful table. Located in the heart of Alpharetta, Georgia, we bring the essence of
               coastal Mediterranean dining to the American South.
             </p>
-            <p className="text-[#030302]/70 text-[16px] md:text-[18px] leading-[1.8]">
+            <p className="text-white/70 text-[16px] md:text-[18px] leading-[1.8]">
               Our name, Siena, draws inspiration from the warmth of the Tuscan city, with its rich terracotta
               tones, the golden afternoon light, and a culture that has always treated food as an art form
               and a reason to gather. We carry that spirit into every plate we craft, every glass we pour,
               and every table we set.
             </p>
-            <p className="text-[#030302]/70 text-[16px] md:text-[18px] leading-[1.8]">
+            <p className="text-white/70 text-[16px] md:text-[18px] leading-[1.8]">
               From wood-fired flavors to hand-selected wines and seasonal ingredients sourced with care,
               every detail at Siena is a love letter to the Mediterranean way of life: vibrant, generous,
               and deeply alive.
@@ -172,7 +172,7 @@ export default function AboutUs() {
               decoding="async"
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500 pointer-events-none" />
-            <div className="absolute inset-4 border border-[#deae21] pointer-events-none" />
+            <div className="absolute inset-4 border border-[#e0b265] pointer-events-none" />
           </motion.div>
 
         </div>
@@ -186,7 +186,7 @@ export default function AboutUs() {
           <div className="flex flex-col items-center text-center mb-[70px] md:mb-[90px]">
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#f5efdd] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -196,7 +196,7 @@ export default function AboutUs() {
                 Our Philosophy
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow:
@@ -241,9 +241,9 @@ export default function AboutUs() {
                 transition={{ duration: 0.7, delay: i * 0.15, ease: "easeOut" }}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
               >
-                <span className="text-[#deae21] text-[32px] leading-none select-none">✦</span>
+                <span className="text-[#e0b265] text-[32px] leading-none select-none">✦</span>
                 <h3
-                  className="text-[#f5efdd] text-[22px] md:text-[24px] leading-tight tracking-wide uppercase"
+                  className="text-[#e0b265] text-[22px] md:text-[24px] leading-tight tracking-wide uppercase"
                   style={{ fontFamily: "'Palmore-Light', serif" }}
                 >
                   {card.title}
@@ -259,7 +259,7 @@ export default function AboutUs() {
       </section>
 
       {/* THE SPACE */}
-      <section className="relative w-full overflow-hidden" style={{ backgroundColor: "#f5efdd" }}>
+      <section className="relative w-full overflow-hidden" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[1180px] mx-auto px-4 py-[80px] md:py-[100px]">
 
           <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-center">
@@ -280,7 +280,7 @@ export default function AboutUs() {
                 decoding="async"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500 pointer-events-none" />
-              <div className="absolute inset-4 border border-[#deae21] pointer-events-none" />
+              <div className="absolute inset-4 border border-[#e0b265] pointer-events-none" />
             </motion.div>
 
             {/* Right: text */}
@@ -294,7 +294,7 @@ export default function AboutUs() {
               {/* Section title */}
               <div className="relative inline-block mb-[60px] md:mb-[72px]">
                 <motion.h2
-                  className="text-[#58021f] text-[60px] md:text-[75px] lg:text-[90px] leading-[0.9] tracking-[0.06em] uppercase"
+                  className="text-[#e0b265] text-[60px] md:text-[75px] lg:text-[90px] leading-[0.9] tracking-[0.06em] uppercase"
                   style={{ fontFamily: "'Palmore-Light', serif" }}
                   initial={{ opacity: 0, y: 60 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -304,10 +304,10 @@ export default function AboutUs() {
                   The Space
                 </motion.h2>
                 <motion.span
-                  className="pointer-events-none absolute left-0 top-full -translate-y-[15%] md:-translate-y-[30%] text-[#deae21] text-[28px] md:text-[50px] lg:text-[68px] leading-none whitespace-nowrap"
+                  className="pointer-events-none absolute left-0 top-full -translate-y-[15%] md:-translate-y-[30%] text-[#e0b265] text-[28px] md:text-[50px] lg:text-[68px] leading-none whitespace-nowrap"
                   style={{
                     fontFamily: "'AguafinaScript-Regular', cursive",
-                    textShadow: "2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd",
+                    textShadow: "2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e",
                   }}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -318,24 +318,24 @@ export default function AboutUs() {
                 </motion.span>
               </div>
 
-              <p className="text-[#030302]/80 text-[16px] md:text-[18px] leading-[1.8] mb-5">
+              <p className="text-white/80 text-[16px] md:text-[18px] leading-[1.8] mb-5">
                 Step inside and feel the warmth of rich textures, soft candlelight, and Mediterranean accents
                 that evoke the timeless beauty of the Old World — reimagined in the heart of Alpharetta.
               </p>
-              <p className="text-[#030302]/70 text-[16px] md:text-[18px] leading-[1.8] mb-8">
+              <p className="text-white/70 text-[16px] md:text-[18px] leading-[1.8] mb-8">
                 Every corner is an invitation to slow down and savor the moment — whether it&apos;s a special
                 occasion, a date night, or simply a meal worth remembering.
               </p>
 
               <a
                 href={EVENT_INQUIRY_URL}
-                className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] inline-flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:border-[#030302] transition"
+                className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] inline-flex items-center gap-2 border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition"
               >
                 RESERVE A TABLE
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
                   <path
                     d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-                    className="fill-[#f5efdd] group-hover:fill-[#f5efdd] transition-colors duration-300"
+                    className="fill-[#1b312e] transition-colors duration-300"
                   />
                 </svg>
               </a>
@@ -369,7 +369,7 @@ export default function AboutUs() {
       </section>
 
       {/* DIVISOR STRIPE */}
-      <section className="relative w-full h-[28px] overflow-hidden bg-[#58021f]">
+      <section className="relative w-full h-[28px] overflow-hidden bg-[#1b312e]">
         <img
           src="/assets/divisor_estrella3.svg"
           alt="divider"

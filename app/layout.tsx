@@ -7,7 +7,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { getRestaurantInfo } from "@/lib/restaurant";
 
 export const viewport: Viewport = {
-  themeColor: "#58021f",
+  themeColor: "#1B312E",
   width: "device-width",
   initialScale: 1,
 };

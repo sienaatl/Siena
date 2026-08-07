@@ -44,7 +44,7 @@ function MenuItemCard({ item }: { item: MenuItem }) {
         </div>
       )}
       <h4
-        className="text-[26px] md:text-[32px] leading-tight uppercase text-[#58021f]"
+        className="text-[26px] md:text-[32px] leading-tight uppercase text-[#1b312e]"
         style={{ fontFamily: "'Palmore-Light', serif" }}
       >
         {item.name}
@@ -76,21 +76,21 @@ function SubSectionBlock({ id, title, subtitle, items }: SubSection) {
             className="w-[80px] h-auto pointer-events-none opacity-15 mb-4"
           />
           <h3
-            className="text-[44px] md:text-[60px] leading-tight uppercase text-[#58021f]"
+            className="text-[44px] md:text-[60px] leading-tight uppercase text-[#e0b265] md:text-[#1b312e]"
             style={{ fontFamily: "'Palmore-Light', serif" }}
           >
             {title}
           </h3>
         </div>
         {subtitle && (
-          <p className="text-[14px] md:text-[16px] text-[#030302]/60 mt-2 uppercase tracking-widest">
+          <p className="text-[14px] md:text-[16px] text-white/60 md:text-[#030302]/60 mt-2 uppercase tracking-widest">
             {subtitle}
           </p>
         )}
         <div className="flex items-center gap-3 mt-3">
-          <div className="w-12 md:w-20 h-px bg-gradient-to-r from-transparent to-[#deae21]/60" />
-          <span className="text-[#deae21] text-[10px] tracking-[0.4em]">✦</span>
-          <div className="w-12 md:w-20 h-px bg-gradient-to-l from-transparent to-[#deae21]/60" />
+          <div className="w-12 md:w-20 h-px bg-gradient-to-r from-transparent to-[#e0b265]/60" />
+          <span className="text-[#e0b265] text-[10px] tracking-[0.4em]">✦</span>
+          <div className="w-12 md:w-20 h-px bg-gradient-to-l from-transparent to-[#e0b265]/60" />
         </div>
       </div>
 
@@ -103,7 +103,7 @@ function SubSectionBlock({ id, title, subtitle, items }: SubSection) {
           </div>
         </div>
       ) : (
-        <div className="text-center text-[#030302]/40 italic px-4 text-sm">
+        <div className="text-center text-white/40 md:text-[#030302]/40 italic px-4 text-sm">
           Coming soon…
         </div>
       )}
@@ -189,7 +189,7 @@ function MenuContent() {
   };
 
   return (
-    <main className="bg-[#f5efdd]">
+    <main className="bg-[#1b312e]">
       {/* HERO */}
       <section className="relative w-full h-[400px] md:h-[45vh] overflow-hidden">
         <motion.div
@@ -215,12 +215,12 @@ function MenuContent() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[52px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[52px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -234,9 +234,9 @@ function MenuContent() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
         </div>
       </section>
@@ -266,7 +266,7 @@ function MenuContent() {
       {/* STICKY TABS */}
       {tabs.length > 0 && (
         <div
-          className="sticky z-40 transition-all duration-300 bg-[#f5efdd] border-b border-[#030302]/10 shadow-sm"
+          className="sticky z-40 transition-all duration-300 bg-[#1b312e] border-b border-white/10 shadow-sm"
           style={{ top: `${headerHeight}px` }}
         >
           <div className="max-w-[1180px] mx-auto px-6 md:px-10">
@@ -281,8 +281,8 @@ function MenuContent() {
                       onClick={() => handleTabClick(tab.id)}
                       className={`px-4 md:px-5 py-[7px] text-[11px] md:text-[12px] tracking-[0.14em] uppercase cursor-pointer transition-all duration-200 border font-medium ${
                         isActive
-                          ? "bg-[#58021F] text-[#f5efdd] border-[#58021F]"
-                          : "bg-transparent text-[#030302]/55 border-[#030302]/20 hover:border-[#58021F]/50 hover:text-[#58021F]"
+                          ? "bg-[#e0b265] text-[#1b312e] border-[#e0b265]"
+                          : "bg-transparent text-white/55 border-white/20 hover:border-[#e0b265]/50 hover:text-[#e0b265]"
                       }`}
                     >
                       {tab.label}
@@ -300,13 +300,13 @@ function MenuContent() {
         {loading && (
           <div className="flex items-center justify-center py-24">
             <div className="flex flex-col items-center gap-4">
-              <div className="w-8 h-8 border-2 border-[#deae21] border-t-transparent rounded-full animate-spin" />
-              <p className="text-[#030302]/50 text-sm tracking-widest uppercase">Loading menu…</p>
+              <div className="w-8 h-8 border-2 border-[#e0b265] border-t-transparent rounded-full animate-spin" />
+              <p className="text-white/50 text-sm tracking-widest uppercase">Loading menu…</p>
             </div>
           </div>
         )}
         {menuError && (
-          <div className="text-center py-16 text-[#030302]/50 italic text-sm">{menuError}</div>
+          <div className="text-center py-16 text-white/50 italic text-sm">{menuError}</div>
         )}
         {!loading && !menuError && (
           <div className="bg-transparent md:bg-white md:shadow-[0_8px_40px_rgba(0,0,0,0.10)] md:rounded-sm overflow-hidden">
@@ -329,7 +329,7 @@ function MenuContent() {
                   />
                   <div className="relative inline-block">
                     <motion.h2
-                      className="text-[#58021f] text-[52px] md:text-[72px] lg:text-[88px] leading-[0.9] tracking-[0.06em] uppercase"
+                      className="text-[#e0b265] md:text-[#1b312e] text-[52px] md:text-[72px] lg:text-[88px] leading-[0.9] tracking-[0.06em] uppercase"
                       style={{ fontFamily: "'Palmore-Light', serif" }}
                       initial={{ opacity: 0, y: 40 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -339,7 +339,7 @@ function MenuContent() {
                       {tab.label}
                     </motion.h2>
                     <motion.span
-                      className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[24px] md:text-[50px] lg:text-[68px] leading-none whitespace-nowrap"
+                      className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[24px] md:text-[50px] lg:text-[68px] leading-none whitespace-nowrap"
                       style={{
                         fontFamily: "'AguafinaScript-Regular', cursive",
                         textShadow: "2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd",

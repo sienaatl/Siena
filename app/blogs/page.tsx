@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function BlogPage() {
   return (
-    <main className="container mx-auto px-5 py-16">
+    <main className="container mx-auto px-5 py-16 bg-[#1b312e]">
       {/* HERO */}
       <section className="relative w-full h-[400px] md:h-[45vh] overflow-hidden -mt-16">
         <motion.div
@@ -33,12 +33,12 @@ export default function BlogPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[62px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[62px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -52,9 +52,9 @@ export default function BlogPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
         </div>
       </section>
@@ -81,7 +81,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <h1 className="text-3xl font-semi-bold mb-12 text-center mt-16">
+      <h1 className="text-3xl font-semi-bold mb-12 text-center mt-16 text-white">
         Blog Items
       </h1>
 

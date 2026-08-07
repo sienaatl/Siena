@@ -4,7 +4,7 @@ import { getRestaurantInfo } from "@/lib/restaurant";
 function Heading({ children }: { children: React.ReactNode }) {
   return (
     <h2
-      className="text-[#58021f] text-[24px] md:text-[28px] leading-tight mt-10 mb-3 first:mt-0"
+      className="text-[#e0b265] text-[24px] md:text-[28px] leading-tight mt-10 mb-3 first:mt-0"
       style={{ fontFamily: "'Palmore-Light', serif" }}
     >
       {children}
@@ -13,12 +13,12 @@ function Heading({ children }: { children: React.ReactNode }) {
 }
 
 function Paragraph({ children }: { children: React.ReactNode }) {
-  return <p className="text-[#030302]/80 text-[15px] md:text-[16px] leading-[1.8] mb-4">{children}</p>;
+  return <p className="text-white/80 text-[15px] md:text-[16px] leading-[1.8] mb-4">{children}</p>;
 }
 
 function List({ items }: { items: React.ReactNode[] }) {
   return (
-    <ul className="list-disc pl-6 space-y-2 text-[#030302]/80 text-[15px] md:text-[16px] leading-[1.8] mb-4">
+    <ul className="list-disc pl-6 space-y-2 text-white/80 text-[15px] md:text-[16px] leading-[1.8] mb-4">
       {items.map((item, i) => (
         <li key={i}>{item}</li>
       ))}
@@ -32,21 +32,21 @@ export default async function PrivacyNotice() {
   return (
     <main>
       {/* HEADER */}
-      <section className="w-full pt-[140px] pb-[60px] px-4" style={{ backgroundColor: "#f5efdd" }}>
+      <section className="w-full pt-[140px] pb-[60px] px-4" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[820px] mx-auto text-center">
           <h1
-            className="text-[#58021f] text-[44px] md:text-[64px] leading-none tracking-[0.04em] uppercase"
+            className="text-[#e0b265] text-[44px] md:text-[64px] leading-none tracking-[0.04em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
           >
             Privacy Notice
           </h1>
-          <div className="w-10 h-[2px] bg-[#deae21] mx-auto mt-5" />
-          <p className="text-[#030302]/60 text-[14px] mt-5">Updated: August 2026</p>
+          <div className="w-10 h-[2px] bg-[#e0b265] mx-auto mt-5" />
+          <p className="text-white/60 text-[14px] mt-5">Updated: August 2026</p>
         </div>
       </section>
 
       {/* CONTENT */}
-      <section className="w-full px-4 pb-[100px]" style={{ backgroundColor: "#f5efdd" }}>
+      <section className="w-full px-4 pb-[100px]" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[820px] mx-auto">
           <Heading>About This Notice</Heading>
           <Paragraph>
@@ -146,17 +146,17 @@ export default async function PrivacyNotice() {
           </Paragraph>
 
           <Heading>9. Contact Us</Heading>
-          <div className="text-[#030302]/80 text-[15px] md:text-[16px] leading-[1.8] mb-4">
+          <div className="text-white/80 text-[15px] md:text-[16px] leading-[1.8] mb-4">
             <p>Siena Restaurant</p>
             <p>{info.address}</p>
             <p>
               Phone:{" "}
-              <a href={`tel:${info.phone.replace(/\D/g, "")}`} className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
+              <a href={`tel:${info.phone.replace(/\D/g, "")}`} className="text-[#e0b265] underline underline-offset-2 hover:text-white">
                 {info.phone}
               </a>
             </p>
             <p>
-              <Link href="/contact-us" className="text-[#58021f] underline underline-offset-2 hover:text-[#430118]">
+              <Link href="/contact-us" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
                 Contact Siena online
               </Link>
             </p>

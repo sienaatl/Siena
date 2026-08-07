@@ -5,7 +5,7 @@ export default function BlogCard({ blog }: any) {
   return (
     <Link
   href={`/blogs/${blog.slug}`}
-  className="group w-[370px] rounded-xl border border-gray-700 overflow-hidden bg-[#111] hover:border-[#f5efdd] transition-all duration-300"
+  className="group w-[370px] rounded-xl border border-gray-700 overflow-hidden bg-[#111] hover:border-[#e0b265] transition-all duration-300"
 >
       <Image
         src={blog.image}
@@ -17,7 +17,7 @@ export default function BlogCard({ blog }: any) {
 
       <div className="p-5">
 
-        <h2 className="font-semibold text-lg mb-3 line-clamp-2">
+        <h2 className="font-semibold text-lg mb-3 line-clamp-2 text-white">
 
           {blog.title}
 

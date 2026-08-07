@@ -62,13 +62,13 @@ export default function Home() {
           <div className="flex gap-4 hero-fadein">
             <a
               href="/reservations"
-              className="group bg-[#f5efdd] text-[#58021f] px-4 md:px-9 py-2 justify-center font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-[#58021f] hover:bg-[#58021f] hover:text-[#f5efdd] transition"
+              className="group bg-[#f5efdd] text-[#e0b265] px-4 md:px-9 py-2 justify-center font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-[#e0b265] hover:bg-[#1b312e] hover:text-white transition"
             >
               RESERVATIONS
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
                   d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-                  className="fill-[#58021f] group-hover:fill-[#f5efdd] transition-colors duration-300"
+                  className="fill-[#e0b265] group-hover:fill-white transition-colors duration-300"
                 />
               </svg>
             </a>
@@ -82,7 +82,7 @@ export default function Home() {
             href="https://maps.app.goo.gl/qAEv8rdegv8rYr1c8"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 text-white/80 text-[14px] md:text-[16px] tracking-wide hover:text-[#DEAE21] transition text-center"
+            className="group flex items-center gap-2 text-white/80 text-[14px] md:text-[16px] tracking-wide hover:text-[#E0B265] transition text-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,7 @@ export default function Home() {
           {/* Teléfono */}
           <a
             href={`tel:${info.phone.replace(/\D/g, '')}`}
-            className="group flex items-center gap-2 text-white/80 text-[14px] md:text-[16px] tracking-wide hover:text-[#DEAE21] transition"
+            className="group flex items-center gap-2 text-white/80 text-[14px] md:text-[16px] tracking-wide hover:text-[#E0B265] transition"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:opacity-100 flex-shrink-0">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.9 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.99 5.99l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -192,7 +192,7 @@ export default function Home() {
             <div className="relative inline-block">
               {/* Título */}
               <motion.h2
-                className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#1b312e] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -204,7 +204,7 @@ export default function Home() {
 
               {/* Reimagined superpuesto */}
               <motion.span
-                className="absolute left-1/2 top-[105%] md:top-[115%] -translate-x-1/2 -translate-y-1/2 text-[#deae21] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
+                className="absolute left-1/2 top-[105%] md:top-[115%] -translate-x-1/2 -translate-y-1/2 text-[#e0b265] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: `2px 2px 0 #f5efdd, -2px -2px 0 #f5efdd, 2px -2px 0 #f5efdd, -2px 2px 0 #f5efdd`
@@ -230,7 +230,7 @@ export default function Home() {
 
           <MotionLink
           href="/about-us"
-          className="relative z-10 group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
+          className="relative z-10 group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#1b312e] hover:text-[#e0b265] hover:border-[#1b312e] transition"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -247,7 +247,7 @@ export default function Home() {
           >
             <path
               d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-              className="fill-[#f5efdd] group-hover:fill-[#f5efdd] transition-colors duration-300"
+              className="fill-[#1b312e] group-hover:fill-[#e0b265] transition-colors duration-300"
             />
           </svg>
         </MotionLink>
@@ -270,7 +270,7 @@ export default function Home() {
 
       <section
         className="relative w-full overflow-hidden"
-        style={{ backgroundColor: "#f5efdd" }}
+        style={{ backgroundColor: "#1b312e" }}
       >
 
         <div className="w-full max-w-[1180px] mx-auto px-4 mt-[80px]">
@@ -289,7 +289,7 @@ export default function Home() {
 
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -300,14 +300,14 @@ export default function Home() {
               </motion.h2>
 
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: `
-            2px 2px 0 #f5efdd,
-            -2px -2px 0 #f5efdd,
-            2px -2px 0 #f5efdd,
-            -2px 2px 0 #f5efdd
+            2px 2px 0 #1b312e,
+            -2px -2px 0 #1b312e,
+            2px -2px 0 #1b312e,
+            -2px 2px 0 #1b312e
           `,
                 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -320,7 +320,7 @@ export default function Home() {
             </div>
 
             <motion.p
-              className="text-[#030302]/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
+              className="text-white/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -332,7 +332,7 @@ export default function Home() {
 
                   <MotionLink
           href="/menus"
-          className="relative z-10 group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
+          className="relative z-10 group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -349,7 +349,7 @@ export default function Home() {
           >
             <path
               d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-              className="fill-[#f5efdd] group-hover:fill-[#f5efdd] transition-colors duration-300"
+              className="fill-[#1b312e] transition-colors duration-300"
             />
           </svg>
         </MotionLink>
@@ -374,7 +374,7 @@ export default function Home() {
               <Image src="/assets/menu1.webp" alt="Dinner" fill sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
 
-              <div className="absolute inset-4 border border-[#deae21]">
+              <div className="absolute inset-4 border border-[#e0b265]">
                 <div className="flex flex-col justify-end h-full p-4 md:p-6">
                   <div className="flex items-end justify-between gap-3">
                     <div className="min-w-0 flex-1">
@@ -406,7 +406,7 @@ export default function Home() {
               <Image src="/assets/about1.webp" alt="Brunch" fill sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
 
-              <div className="absolute inset-4 border border-[#deae21]">
+              <div className="absolute inset-4 border border-[#e0b265]">
                 <div className="flex flex-col justify-end h-full p-4 md:p-6">
                   <div className="flex items-end justify-between gap-3">
                     <div className="min-w-0 flex-1">
@@ -436,7 +436,7 @@ export default function Home() {
               <Image src="/assets/about3.webp" alt="Happy Hour" fill sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
 
-              <div className="absolute inset-4 border border-[#deae21]">
+              <div className="absolute inset-4 border border-[#e0b265]">
                 <div className="flex flex-col justify-end h-full p-4 md:p-6">
                   <div className="flex items-end justify-between gap-3">
                     <div className="min-w-0 flex-1">
@@ -466,7 +466,7 @@ export default function Home() {
               <Image src="/assets/menu4.webp" alt="Beverages" fill sizes="(max-width: 767px) 100vw, 66vw" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
 
-              <div className="absolute inset-4 border border-[#deae21]">
+              <div className="absolute inset-4 border border-[#e0b265]">
                 <div className="flex flex-col justify-end h-full p-4 md:p-6">
                   <div className="flex items-end justify-between gap-3">
                     <div className="min-w-0 flex-1">
@@ -522,7 +522,7 @@ export default function Home() {
 
               {/* Título */}
               <motion.h2
-                className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#1b312e] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -534,7 +534,7 @@ export default function Home() {
 
               {/* "every day" superpuesto */}
               <motion.span
-                className="absolute left-1/2 top-[115%] -translate-x-1/2 -translate-y-1/2 w-full max-w-[900px] text-[#deae21] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
+                className="absolute left-1/2 top-[115%] -translate-x-1/2 -translate-y-1/2 w-full max-w-[900px] text-[#e0b265] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: `
@@ -566,7 +566,7 @@ export default function Home() {
 
             <motion.a
               href="/event-inquiry"
-              className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition"
+              className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#1b312e] hover:text-[#e0b265] hover:border-[#1b312e] transition"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -577,7 +577,7 @@ export default function Home() {
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
                   d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-                  className="fill-[#f5efdd] group-hover:fill-[#f5efdd] transition-colors duration-300"
+                  className="fill-[#1b312e] group-hover:fill-[#e0b265] transition-colors duration-300"
                 />
               </svg>
             </motion.a>
@@ -602,7 +602,7 @@ export default function Home() {
       </section>
 
       {/* SOCIAL MEDIA */}
-      <section className="w-full py-[80px] px-4 overflow-hidden" style={{ backgroundColor: "#f5efdd" }}>
+      <section className="w-full py-[80px] px-4 overflow-hidden" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[1180px] mx-auto">
           <div className="flex flex-col items-center text-center mb-[60px] md:mb-[80px]">
             <motion.img
@@ -616,7 +616,7 @@ export default function Home() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -626,10 +626,10 @@ export default function Home() {
                 Follow Us
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
-                  textShadow: "2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd",
+                  textShadow: "2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e",
                 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -640,7 +640,7 @@ export default function Home() {
               </motion.span>
             </div>
             <motion.p
-              className="text-[#030302]/70 text-lg md:text-xl leading-[140%] max-w-[560px] mt-12 md:mt-24"
+              className="text-white/70 text-lg md:text-xl leading-[140%] max-w-[560px] mt-12 md:mt-24"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -709,10 +709,10 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10" />
                 <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-                  <span className="text-[#deae21] mb-3 group-hover:scale-110 transition-transform duration-300 w-fit">{icon}</span>
-                  <span className="text-[#deae21] text-[10px] tracking-[0.4em] uppercase mb-1">{platform}</span>
-                  <span className="text-[#f5efdd] text-[26px] md:text-[30px] leading-none mb-4" style={{ fontFamily: "'Palmore-Light', serif" }}>{handle}</span>
-                  <div className="flex items-center gap-2 text-[#f5efdd]/60 group-hover:text-[#deae21] text-[12px] tracking-[0.25em] uppercase transition-colors duration-300">
+                  <span className="text-[#e0b265] mb-3 group-hover:scale-110 transition-transform duration-300 w-fit">{icon}</span>
+                  <span className="text-[#e0b265] text-[10px] tracking-[0.4em] uppercase mb-1">{platform}</span>
+                  <span className="text-white text-[26px] md:text-[30px] leading-none mb-4" style={{ fontFamily: "'Palmore-Light', serif" }}>{handle}</span>
+                  <div className="flex items-center gap-2 text-white/60 group-hover:text-[#e0b265] text-[12px] tracking-[0.25em] uppercase transition-colors duration-300">
                     <span>Follow</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20" fill="none">
                       <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="currentColor" />
@@ -749,7 +749,7 @@ export default function Home() {
 
               {/* Título */}
               <motion.h2
-                className="text-[#f5efdd] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase mb-[10px]"
+                className="text-[#e0b265] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase mb-[10px]"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -760,7 +760,7 @@ export default function Home() {
               </motion.h2>
 
               <motion.span
-                className="absolute left-1/2 md:top-[115%] -translate-x-1/2 -translate-y-1/2 w-full max-w-[900px] text-[#deae21] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
+                className="absolute left-1/2 md:top-[115%] -translate-x-1/2 -translate-y-1/2 w-full max-w-[900px] text-[#e0b265] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive"
                 }}
@@ -785,7 +785,7 @@ export default function Home() {
 
       </section>
 
-      <section className="relative w-full h-[28px] overflow-hidden bg-[#58021f]">
+      <section className="relative w-full h-[28px] overflow-hidden bg-[#1b312e]">
         <img
           src="/assets/divisor_estrella3.svg"
           alt="divider"
@@ -803,14 +803,14 @@ export default function Home() {
             className="relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-stretch gap-8 md:gap-12"
             style={{ backgroundImage: "url('/assets/fondo_findus.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
           >
-            <div className="absolute inset-3 border border-[#58021f]/20 pointer-events-none" />
+            <div className="absolute inset-3 border border-[#1b312e]/20 pointer-events-none" />
 
             {/* Columna izquierda */}
             <div className="flex-1 flex flex-col gap-4 md:gap-5 relative z-10 w-full">
               <img src="/assets/icono_findus.svg" alt="Find Us" className="w-[55px] md:w-[68px] h-auto" />
 
               <h2
-                className="text-[#58021f] text-[52px] md:text-[72px] font-bold tracking-wide leading-none"
+                className="text-[#1b312e] text-[52px] md:text-[72px] font-bold tracking-wide leading-none"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
               >
                 FIND US
@@ -824,7 +824,7 @@ export default function Home() {
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-0.5 flex-shrink-0">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                    className="fill-[#58021f] group-hover:fill-[#030302] transition-colors duration-300" />
+                    className="fill-[#1b312e] group-hover:fill-[#030302] transition-colors duration-300" />
                 </svg>
                 {info.address}
               </a>
@@ -835,19 +835,19 @@ export default function Home() {
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
-                    className="fill-[#58021f] group-hover:fill-[#030302] transition-colors duration-300" />
+                    className="fill-[#1b312e] group-hover:fill-[#030302] transition-colors duration-300" />
                 </svg>
                 {info.phone}
               </a>
 
               <div className="flex flex-col gap-2 mt-2">
                 <p
-                  className="text-[#58021f] text-[30px] md:text-[38px] tracking-wide uppercase leading-none"
+                  className="text-[#1b312e] text-[30px] md:text-[38px] tracking-wide uppercase leading-none"
                   style={{ fontFamily: "'Palmore-Light', serif" }}
                 >
                   Opening Hours
                 </p>
-                <div className="w-8 h-[2px] bg-[#58021f]/30 mb-1" />
+                <div className="w-8 h-[2px] bg-[#1b312e]/30 mb-1" />
                 {info.hours.map(({ label, value }) => (
                   <p key={label} className="text-[#2b0a0a] text-[16px] md:text-[18px]">
                     <span className="font-semibold">{label}</span>: {value}
@@ -859,13 +859,13 @@ export default function Home() {
                 href={info.maps_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-[#030302] hover:text-[#f5efdd] hover:border-[#030302] transition mt-1 md:mt-2"
+                className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-[#1b312e] hover:text-[#e0b265] hover:border-[#1b312e] transition mt-1 md:mt-2"
               >
                 OPEN IN MAP
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
                   <path
                     d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-                    className="fill-[#f5efdd] group-hover:fill-[#f5efdd] transition-colors duration-300"
+                    className="fill-[#1b312e] group-hover:fill-[#e0b265] transition-colors duration-300"
                   />
                 </svg>
               </a>
@@ -887,7 +887,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative w-full h-[28px] overflow-hidden bg-[#58021f]">
+      <section className="relative w-full h-[28px] overflow-hidden bg-[#1b312e]">
         <img
           src="/assets/divisor_estrella3.svg"
           alt="divider"

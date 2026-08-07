@@ -52,12 +52,12 @@ export default function Events() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[62px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[62px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -71,9 +71,9 @@ export default function Events() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
         </div>
       </section>
@@ -122,7 +122,7 @@ export default function Events() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#1b312e] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -132,7 +132,7 @@ export default function Events() {
                 Host Your Event
               </motion.h2>
               <motion.span
-                className="absolute left-1/2 top-[115%] -translate-x-1/2 -translate-y-1/2 w-full text-[#deae21] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
+                className="absolute left-1/2 top-[115%] -translate-x-1/2 -translate-y-1/2 w-full text-[#e0b265] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: `2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd`,
@@ -157,7 +157,7 @@ export default function Events() {
             </motion.p>
             <motion.a
               href="/event-inquiry"
-              className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#030302] transition"
+              className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[24px] flex items-center gap-2 border border-transparent hover:bg-[#1b312e] hover:text-[#e0b265] transition"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -165,7 +165,7 @@ export default function Events() {
             >
               BOOK AN EVENT
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#f5efdd" />
+                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#1b312e" />
               </svg>
             </motion.a>
           </div>
@@ -198,7 +198,7 @@ export default function Events() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#f5efdd] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -208,7 +208,7 @@ export default function Events() {
                 How It Works
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
                 style={{ fontFamily: "'AguafinaScript-Regular', cursive" }}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -224,7 +224,7 @@ export default function Events() {
             {steps.map((step, i) => (
               <motion.div
                 key={i}
-                className="flex flex-col items-center md:items-start text-center md:text-left p-6 md:p-8 border-t border-[#deae21]/20 md:border-t-0 md:border-l first:border-t-0 first:border-l-0"
+                className="flex flex-col items-center md:items-start text-center md:text-left p-6 md:p-8 border-t border-[#e0b265]/20 md:border-t-0 md:border-l first:border-t-0 first:border-l-0"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -232,19 +232,19 @@ export default function Events() {
                 whileHover={{ y: -5, transition: { duration: 0.22 } }}
               >
                 <span
-                  className="text-[#deae21] text-[48px] md:text-[64px] leading-none mb-3"
+                  className="text-[#e0b265] text-[48px] md:text-[64px] leading-none mb-3"
                   style={{ fontFamily: "'Palmore-Light', serif" }}
                 >
                   {step.num}
                 </span>
-                <div className="w-8 h-[2px] bg-[#deae21] mb-4" />
+                <div className="w-8 h-[2px] bg-[#e0b265] mb-4" />
                 <h3
-                  className="text-[#f5efdd] text-[28px] md:text-[32px] leading-tight mb-3"
+                  className="text-[#e0b265] text-[28px] md:text-[32px] leading-tight mb-3"
                   style={{ fontFamily: "'Palmore-Light', serif" }}
                 >
                   {step.title}
                 </h3>
-                <p className="text-[#f5efdd]/70 text-[15px] md:text-[16px] leading-[1.7]">{step.desc}</p>
+                <p className="text-white/70 text-[15px] md:text-[16px] leading-[1.7]">{step.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -259,7 +259,7 @@ export default function Events() {
       {/* WHAT WE OFFER */}
       <section
         className="relative w-full py-[80px] overflow-hidden"
-        style={{ backgroundColor: "#f5efdd" }}
+        style={{ backgroundColor: "#1b312e" }}
       >
         <div className="w-full max-w-[1180px] mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
@@ -279,7 +279,7 @@ export default function Events() {
                   loading="lazy"
                   decoding="async"
                 />
-                <div className="absolute inset-4 border border-[#deae21]/50 pointer-events-none" />
+                <div className="absolute inset-4 border border-[#e0b265]/50 pointer-events-none" />
               </div>
             </motion.div>
 
@@ -292,27 +292,27 @@ export default function Events() {
             >
               <img src="/assets/icon6.svg" alt="" className="w-[55px] md:w-[65px]" />
               <h2
-                className="text-[#58021f] text-[44px] md:text-[56px] leading-none tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[44px] md:text-[56px] leading-none tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
               >
                 What We Offer
               </h2>
-              <div className="w-10 h-[2px] bg-[#deae21]" />
+              <div className="w-10 h-[2px] bg-[#e0b265]" />
               <ul className="flex flex-col gap-3">
                 {amenities.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[#030302]/80 text-[15px] md:text-[16px] leading-[1.6]">
-                    <span className="w-[6px] h-[6px] rounded-full bg-[#deae21] flex-shrink-0 mt-[9px]" />
+                  <li key={i} className="flex items-start gap-3 text-white/80 text-[15px] md:text-[16px] leading-[1.6]">
+                    <span className="w-[6px] h-[6px] rounded-full bg-[#e0b265] flex-shrink-0 mt-[9px]" />
                     {item}
                   </li>
                 ))}
               </ul>
               <a
                 href="/event-inquiry"
-                className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 py-2 mt-2 font-normal text-[14px] md:text-[15px] leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-[#030302] transition"
+                className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 mt-2 font-normal text-[14px] md:text-[15px] leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-white hover:text-[#1b312e] transition"
               >
                 INQUIRE NOW
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#f5efdd" />
+                  <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#1b312e" />
                 </svg>
               </a>
             </motion.div>

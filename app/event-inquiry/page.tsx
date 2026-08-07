@@ -75,7 +75,7 @@ const schema = z
 type FormData = z.infer<typeof schema>;
 
 const inputClass =
-  "w-full border border-[#58021f]/20 px-4 py-[11px] text-[14px] text-[#333] placeholder-[#bbb] focus:outline-none focus:border-[#58021f] focus:ring-1 focus:ring-[#58021f]/20 bg-white/80 transition";
+  "w-full border border-[#1b312e]/20 px-4 py-[11px] text-[14px] text-[#333] placeholder-[#bbb] focus:outline-none focus:border-[#1b312e] focus:ring-1 focus:ring-[#1b312e]/20 bg-white/80 transition";
 
 const HOW_HEARD_OTHER = "Other (Please specify)";
 
@@ -126,18 +126,18 @@ function Field({
   return (
     <div className="flex flex-col gap-1">
       <label className="text-[12px] font-semibold text-[#222] tracking-wider uppercase">
-        {label} {required && <span className="text-[#58021f]">*</span>}
+        {label} {required && <span className="text-[#1b312e]">*</span>}
       </label>
       {children}
       {hint && !error && <p className="text-[11px] text-[#999] mt-0.5">{hint}</p>}
       {error && (
         <motion.p
-          className="text-[12px] text-[#58021f] mt-0.5 flex items-center gap-1"
+          className="text-[12px] text-[#1b312e] mt-0.5 flex items-center gap-1"
           initial={{ opacity: 0, y: -4 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <span className="w-3 h-3 flex items-center justify-center border border-[#58021f] text-[9px] flex-shrink-0">!</span>
+          <span className="w-3 h-3 flex items-center justify-center border border-[#1b312e] text-[9px] flex-shrink-0">!</span>
           {error}
         </motion.p>
       )}
@@ -249,12 +249,12 @@ export default function EventInquiry() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[46px] md:text-[64px] lg:text-[80px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[46px] md:text-[64px] lg:text-[80px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -288,7 +288,7 @@ export default function EventInquiry() {
       </section>
 
       {/* FORM */}
-      <section className="relative w-full py-[80px] md:py-[100px] overflow-hidden" style={{ backgroundColor: "#f5efdd" }}>
+      <section className="relative w-full py-[80px] md:py-[100px] overflow-hidden" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[720px] mx-auto px-4 flex flex-col items-center text-center">
           <motion.img
             src="/assets/icono_123.svg"
@@ -302,7 +302,7 @@ export default function EventInquiry() {
 
           <div className="relative inline-block mb-4">
             <motion.h2
-              className="text-[#58021f] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+              className="text-[#e0b265] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
               style={{ fontFamily: "'Palmore-Light', serif" }}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -312,10 +312,10 @@ export default function EventInquiry() {
               Plan Your Event
             </motion.h2>
             <motion.span
-              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
+              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
               style={{
                 fontFamily: "'AguafinaScript-Regular', cursive",
-                textShadow: `2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd`,
+                textShadow: `2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e`,
               }}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -327,7 +327,7 @@ export default function EventInquiry() {
           </div>
 
           <motion.p
-            className="text-[#030302]/70 text-[16px] md:text-[17px] leading-[1.75] max-w-[520px] mt-16 md:mt-20 mb-10"
+            className="text-white/70 text-[16px] md:text-[17px] leading-[1.75] max-w-[520px] mt-16 md:mt-20 mb-10"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -335,7 +335,7 @@ export default function EventInquiry() {
           >
             Tell us about your event and our team will be in touch to arrange the details.
             Prefer to talk it through? Call us on{" "}
-            <a href={`tel:${EVENTS_PHONE.replace(/\D/g, "")}`} className="text-[#58021f] underline underline-offset-4">
+            <a href={`tel:${EVENTS_PHONE.replace(/\D/g, "")}`} className="text-[#e0b265] underline underline-offset-4">
               {EVENTS_PHONE}
             </a>
             .
@@ -400,7 +400,7 @@ export default function EventInquiry() {
                   <input
                     {...register("dateFlexible")}
                     type="checkbox"
-                    className="w-4 h-4 accent-[#58021f] cursor-pointer"
+                    className="w-4 h-4 accent-[#1b312e] cursor-pointer"
                   />
                   <span className="text-[14px] text-[#333]">My date is flexible</span>
                 </label>
@@ -448,7 +448,7 @@ export default function EventInquiry() {
                 )}
 
                 {sendError && (
-                  <p className="text-[13px] text-[#58021f] border border-[#58021f]/30 bg-[#58021f]/5 px-4 py-3">
+                  <p className="text-[13px] text-[#1b312e] border border-[#1b312e]/30 bg-[#1b312e]/5 px-4 py-3">
                     {sendError}
                   </p>
                 )}
@@ -456,7 +456,7 @@ export default function EventInquiry() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="mt-2 w-full bg-[#58021f] text-[#f5efdd] text-[13px] tracking-[0.25em] uppercase py-4 transition hover:bg-[#430118] disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="mt-2 w-full bg-[#e0b265] text-[#1b312e] text-[13px] tracking-[0.25em] uppercase py-4 transition hover:bg-[#1b312e] hover:text-[#e0b265] disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? "Sending..." : "Submit Inquiry"}
                 </button>
@@ -468,7 +468,7 @@ export default function EventInquiry() {
             </div>
           </motion.div>
 
-          <p className="text-[14px] text-[#030302]/60 mt-10">
+          <p className="text-[14px] text-white/60 mt-10">
             {info.address}
           </p>
         </div>
