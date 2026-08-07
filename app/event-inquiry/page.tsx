@@ -75,7 +75,7 @@ const schema = z
 type FormData = z.infer<typeof schema>;
 
 const inputClass =
-  "w-full border border-[#1b312e]/20 px-4 py-[11px] text-[14px] text-[#333] placeholder-[#bbb] focus:outline-none focus:border-[#1b312e] focus:ring-1 focus:ring-[#1b312e]/20 bg-white/80 transition";
+  "w-full border border-white/15 px-4 py-[11px] text-[14px] text-white placeholder-white/40 focus:outline-none focus:border-[#e0b265] focus:ring-1 focus:ring-[#e0b265]/30 bg-white/5 transition [color-scheme:dark]";
 
 const HOW_HEARD_OTHER = "Other (Please specify)";
 
@@ -125,19 +125,19 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-[12px] font-semibold text-[#222] tracking-wider uppercase">
-        {label} {required && <span className="text-[#1b312e]">*</span>}
+      <label className="text-[12px] font-semibold text-white/80 tracking-wider uppercase">
+        {label} {required && <span className="text-[#e0b265]">*</span>}
       </label>
       {children}
-      {hint && !error && <p className="text-[11px] text-[#999] mt-0.5">{hint}</p>}
+      {hint && !error && <p className="text-[11px] text-white/50 mt-0.5">{hint}</p>}
       {error && (
         <motion.p
-          className="text-[12px] text-[#1b312e] mt-0.5 flex items-center gap-1"
+          className="text-[12px] text-[#e0b265] mt-0.5 flex items-center gap-1"
           initial={{ opacity: 0, y: -4 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <span className="w-3 h-3 flex items-center justify-center border border-[#1b312e] text-[9px] flex-shrink-0">!</span>
+          <span className="w-3 h-3 flex items-center justify-center border border-[#e0b265] text-[9px] flex-shrink-0">!</span>
           {error}
         </motion.p>
       )}
@@ -348,7 +348,10 @@ export default function EventInquiry() {
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
           >
-            <div className="bg-white shadow-2xl px-6 md:px-10 py-10 text-left">
+            <div
+              className="shadow-2xl border border-[#e0b265]/50 px-6 md:px-10 py-10 text-left"
+              style={{ backgroundColor: "#152C29", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
+            >
               <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <Field label="First Name" required error={errors.firstName?.message}>
@@ -400,9 +403,9 @@ export default function EventInquiry() {
                   <input
                     {...register("dateFlexible")}
                     type="checkbox"
-                    className="w-4 h-4 accent-[#1b312e] cursor-pointer"
+                    className="w-4 h-4 accent-[#e0b265] cursor-pointer"
                   />
-                  <span className="text-[14px] text-[#333]">My date is flexible</span>
+                  <span className="text-[14px] text-white/70">My date is flexible</span>
                 </label>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -425,7 +428,7 @@ export default function EventInquiry() {
                     placeholder="Anything else we should know?"
                     className={`${inputClass} resize-none`}
                   />
-                  <p className="text-[11px] text-[#999] text-right">{notesLength}/1000</p>
+                  <p className="text-[11px] text-white/50 text-right">{notesLength}/1000</p>
                 </Field>
 
                 <Field label="How did you hear about us?" error={errors.howHeard?.message}>
@@ -448,7 +451,7 @@ export default function EventInquiry() {
                 )}
 
                 {sendError && (
-                  <p className="text-[13px] text-[#1b312e] border border-[#1b312e]/30 bg-[#1b312e]/5 px-4 py-3">
+                  <p className="text-[13px] text-[#e0b265] border border-[#e0b265]/30 bg-[#e0b265]/10 px-4 py-3">
                     {sendError}
                   </p>
                 )}
@@ -461,7 +464,7 @@ export default function EventInquiry() {
                   {isSubmitting ? "Sending..." : "Submit Inquiry"}
                 </button>
 
-                <p className="text-[12px] text-[#999] text-center leading-relaxed">
+                <p className="text-[12px] text-white/50 text-center leading-relaxed">
                   We&apos;ll only use these details to reply about your event.
                 </p>
               </form>

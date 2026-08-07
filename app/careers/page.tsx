@@ -89,7 +89,7 @@ const schema = z
 type FormData = z.infer<typeof schema>;
 
 const inputClass =
-  "w-full border border-white/15 px-4 py-[11px] text-[14px] text-white placeholder-white/40 focus:outline-none focus:border-[#e0b265] focus:ring-1 focus:ring-[#e0b265]/30 bg-white/5 transition";
+  "w-full border border-white/15 px-4 py-[11px] text-[14px] text-white placeholder-white/40 focus:outline-none focus:border-[#e0b265] focus:ring-1 focus:ring-[#e0b265]/30 bg-white/5 transition [color-scheme:dark]";
 
 const positions = [
   "Server / Food Runner",
