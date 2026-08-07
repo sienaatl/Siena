@@ -3829,22 +3829,17 @@
       "image": null,
       "subsections": [
         {
-          "id": "signature-plates",
-          "title": "Signature Plates",
+          "id": "starters-dips",
+          "title": "Starters & Dips",
           "image": null,
           "items": [
             {
-              "id": "f943a349-d3b7-46f4-b2e1-30c7a4ec724a",
+              "id": "hh-starters-hummus",
               "image": "",
-              "name": "Shrimp & Grits Arancini",
-              "description": "",
-              "price": "12",
-              "rawPrice": {
-                "base_price": 12,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
+              "name": "Hummus",
+              "description": "Creamy chickpea dip, olive oil, and warm pita.",
+              "price": "8",
+              "rawPrice": { "base_price": 8, "base_price_max": null, "base_is_price_range": false, "price_variants": null },
               "tags": [],
               "allergens": [],
               "is_vegan": false,
@@ -3854,17 +3849,12 @@
               "currency": "ARS"
             },
             {
-              "id": "fc1fad18-9d65-4a18-b387-6b15234bd18a",
-              "image": "/assets/menu/fc1fad18-9d65-4a18-b387-6b15234bd18a.webp",
-              "name": "Beef Meatballs",
-              "description": "",
-              "price": "12",
-              "rawPrice": {
-                "base_price": 12,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
+              "id": "hh-starters-baba-ganoush",
+              "image": "",
+              "name": "Baba Ganoush",
+              "description": "Smoked eggplant dip served with warm pita.",
+              "price": "8",
+              "rawPrice": { "base_price": 8, "base_price_max": null, "base_is_price_range": false, "price_variants": null },
               "tags": [],
               "allergens": [],
               "is_vegan": false,
@@ -3874,17 +3864,169 @@
               "currency": "ARS"
             },
             {
-              "id": "92ec62db-52b0-42c1-991a-af386268861c",
-              "image": "/assets/menu/92ec62db-52b0-42c1-991a-af386268861c.webp",
-              "name": "Harissa Chicken Lollipops",
-              "description": "",
+              "id": "hh-starters-moussaka",
+              "image": "",
+              "name": "Moussaka",
+              "description": "Roasted eggplant, tomato, herbs, and warm pita.",
+              "price": "9",
+              "rawPrice": { "base_price": 9, "base_price_max": null, "base_is_price_range": false, "price_variants": null },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "hh-starters-whipped-feta",
+              "image": "",
+              "name": "Whipped Feta",
+              "description": "Creamy whipped feta served with warm pita.",
+              "price": "9",
+              "rawPrice": { "base_price": 9, "base_price_max": null, "base_is_price_range": false, "price_variants": null },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "hh-starters-crispy-cauliflower",
+              "image": "",
+              "name": "Crispy Cauliflower",
+              "description": "Crispy cauliflower served with tahini aioli.",
+              "price": "10",
+              "rawPrice": { "base_price": 10, "base_price_max": null, "base_is_price_range": false, "price_variants": null },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "hh-starters-siena-fries",
+              "image": "",
+              "name": "Siena Fries",
+              "description": "Crispy fries with Siena seasoning and dipping sauce.",
+              "price": "8",
+              "rawPrice": { "base_price": 8, "base_price_max": null, "base_is_price_range": false, "price_variants": null },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "hh-starters-calamari-fritti",
+              "image": "",
+              "name": "Calamari Fritti",
+              "description": "Crispy calamari, fresh lemon, herbs, and dipping sauce.",
               "price": "12",
-              "rawPrice": {
-                "base_price": 12,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
+              "rawPrice": { "base_price": 12, "base_price_max": null, "base_is_price_range": false, "price_variants": null },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            }
+          ]
+        },
+        {
+          "id": "salads-pasta-skewers",
+          "title": "Salads, Pasta & Skewers",
+          "image": null,
+          "items": [
+            {
+              "id": "hh-salads-classic-caesar",
+              "image": "",
+              "name": "Classic Caesar Salad",
+              "description": "Romaine, Parmesan, croutons, and Caesar dressing.",
+              "price": "9",
+              "rawPrice": { "base_price": 9, "base_price_max": null, "base_is_price_range": false, "price_variants": null },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "hh-salads-mediterranean",
+              "image": "",
+              "name": "Mediterranean Salad",
+              "description": "Tomatoes, cucumber, olives, red onion, herbs, and house vinaigrette.",
+              "price": "9",
+              "rawPrice": { "base_price": 9, "base_price_max": null, "base_is_price_range": false, "price_variants": null },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "hh-salads-watermelon-feta",
+              "image": "",
+              "name": "Watermelon & Feta Salad",
+              "description": "Watermelon, feta, fresh herbs, and balsamic vinaigrette.",
+              "price": "10",
+              "rawPrice": { "base_price": 10, "base_price_max": null, "base_is_price_range": false, "price_variants": null },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "hh-pasta-rigatoni-vodka",
+              "image": "",
+              "name": "Rigatoni alla Vodka",
+              "description": "Rigatoni, creamy vodka sauce, Parmesan, and basil.",
+              "price": "16",
+              "rawPrice": { "base_price": 16, "base_price_max": null, "base_is_price_range": false, "price_variants": null },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "hh-skewers-chicken-tawook",
+              "image": "",
+              "name": "Chicken Tawook Skewer",
+              "description": "Grilled marinated chicken skewer with tahini aioli.",
+              "price": "17",
+              "rawPrice": { "base_price": 17, "base_price_max": null, "base_is_price_range": false, "price_variants": null },
+              "tags": [],
+              "allergens": [],
+              "is_vegan": false,
+              "is_gluten_free": false,
+              "contains_alcohol": false,
+              "item_type": "food",
+              "currency": "ARS"
+            },
+            {
+              "id": "hh-skewers-shrimp-kabob",
+              "image": "",
+              "name": "Shrimp Kabob Skewer",
+              "description": "Grilled shrimp skewer with herbs, citrus, and dipping sauce.",
+              "price": "12",
+              "rawPrice": { "base_price": 12, "base_price_max": null, "base_is_price_range": false, "price_variants": null },
               "tags": [],
               "allergens": [],
               "is_vegan": false,
@@ -3921,169 +4063,9 @@
               "currency": "ARS"
             }
           ]
-        },
-        {
-          "id": "starters",
-          "title": "Starters",
-          "image": null,
-          "items": [
-            {
-              "id": "0ef6aef1-438b-40f1-a965-f184e6e4b42e",
-              "image": "",
-              "name": "Siena Hummus",
-              "description": "",
-              "price": "8",
-              "rawPrice": {
-                "base_price": 8,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "37d7e73f-0ace-4a57-8616-9545ea706454",
-              "image": "",
-              "name": "Siena Caesar (mini)",
-              "description": "",
-              "price": "8",
-              "rawPrice": {
-                "base_price": 8,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            }
-          ]
-        },
-        {
-          "id": "favorites",
-          "title": "Favorites",
-          "image": null,
-          "items": [
-            {
-              "id": "b5641533-5cd3-4a3a-afb4-34d8c0428837",
-              "image": "",
-              "name": "Sweet Potato Falafel Cake",
-              "description": "",
-              "price": "10",
-              "rawPrice": {
-                "base_price": 10,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "e4293bdc-24ed-475b-86d0-54cebc47b48a",
-              "image": "",
-              "name": "Truffle Manchego Fries",
-              "description": "",
-              "price": "10",
-              "rawPrice": {
-                "base_price": 10,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "788255e7-c32b-46aa-8521-ec8aabed0f37",
-              "image": "/assets/menu/788255e7-c32b-46aa-8521-ec8aabed0f37.webp",
-              "name": "Whipped Feta & Burnt Honey",
-              "description": "",
-              "price": "10",
-              "rawPrice": {
-                "base_price": 10,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            }
-          ]
-        },
-        {
-          "id": "entres",
-          "title": "Entrées",
-          "image": null,
-          "items": [
-            {
-              "id": "41c6d17e-6a32-47fb-b8c2-059f34dffb57",
-              "image": "/assets/menu/41c6d17e-6a32-47fb-b8c2-059f34dffb57.webp",
-              "name": "Flame Steak",
-              "description": "",
-              "price": "26",
-              "rawPrice": {
-                "base_price": 26,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            },
-            {
-              "id": "30532d3d-3755-4d3c-a6c0-f495ce3495f6",
-              "image": "/assets/menu/30532d3d-3755-4d3c-a6c0-f495ce3495f6.webp",
-              "name": "Lamb Chops",
-              "description": "",
-              "price": "26",
-              "rawPrice": {
-                "base_price": 26,
-                "base_price_max": null,
-                "base_is_price_range": false,
-                "price_variants": null
-              },
-              "tags": [],
-              "allergens": [],
-              "is_vegan": false,
-              "is_gluten_free": false,
-              "contains_alcohol": false,
-              "item_type": "food",
-              "currency": "ARS"
-            }
-          ]
         }
-      ]
+      ],
+      "footnote": "Ask your server about featured happy hour cocktails, wine, and beer.\nPrices do not include applicable taxes, gratuity, or administrative fees."
     }
   ],
   "events": [

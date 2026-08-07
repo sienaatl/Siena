@@ -24,6 +24,7 @@ interface TabData {
   id: string;
   label: string;
   subsections: SubSection[];
+  footnote?: string;
 }
 
 
@@ -358,6 +359,16 @@ function MenuContent() {
                 {tab.subsections.map((sub, i) => (
                   <SubSectionBlock key={i} {...sub} />
                 ))}
+
+                {tab.footnote && (
+                  <div className="px-4 pb-[50px] md:pb-[70px] text-center">
+                    {tab.footnote.split("\n").map((line, i) => (
+                      <p key={i} className="text-white/50 text-[13px] italic leading-relaxed">
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                )}
               </section>
             ))}
           </div>

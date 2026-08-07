@@ -7,7 +7,8 @@
       "Bash(grep -n \"f5efdd\\\\|030302\\\\]/\\\\|text-\\\\[#1b312e\\\\]\" e:/Siena/app/about-us/page.tsx)",
       "Bash(npx tsc *)",
       "Bash(npx next *)",
-      "Bash(python3 -)"
+      "Bash(python3 -)",
+      "Bash(node -e \"const d=require\\('./lib/site-data.json'\\); const hh=d.menuTabs.find\\(t=>t.id==='happy-hour'\\); console.log\\(JSON.stringify\\(hh.subsections.map\\(s=>\\({id:s.id,title:s.title,items:s.items.map\\(i=>i.name+' \\\\$'+i.price\\)}\\)\\), null, 2\\)\\);\")"
     ]
   }
 }
