@@ -8,7 +8,8 @@
       "Bash(npx tsc *)",
       "Bash(npx next *)",
       "Bash(python3 -)",
-      "Bash(node -e \"const d=require\\('./lib/site-data.json'\\); const hh=d.menuTabs.find\\(t=>t.id==='happy-hour'\\); console.log\\(JSON.stringify\\(hh.subsections.map\\(s=>\\({id:s.id,title:s.title,items:s.items.map\\(i=>i.name+' \\\\$'+i.price\\)}\\)\\), null, 2\\)\\);\")"
+      "Bash(node -e \"const d=require\\('./lib/site-data.json'\\); const hh=d.menuTabs.find\\(t=>t.id==='happy-hour'\\); console.log\\(JSON.stringify\\(hh.subsections.map\\(s=>\\({id:s.id,title:s.title,items:s.items.map\\(i=>i.name+' \\\\$'+i.price\\)}\\)\\), null, 2\\)\\);\")",
+      "Bash(grep -rohE '#[0-9a-fA-F]{3,8}' --include='*.tsx' --include='*.css' --include='*.ts' /e/Siena/app /e/Siena/components)"
     ]
   }
 }
