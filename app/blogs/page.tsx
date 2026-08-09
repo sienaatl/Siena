@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 
 export default function BlogPage() {
   return (
-    <main className="container mx-auto px-5 py-16 bg-[#1b312e]">
+    <main>
       {/* HERO */}
-      <section className="relative w-full h-[400px] md:h-[45vh] overflow-hidden -mt-16">
+      <section className="relative w-full h-[400px] md:h-[45vh] overflow-hidden">
         <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.08 }}
@@ -60,7 +60,7 @@ export default function BlogPage() {
       </section>
 
       {/* MARQUEE */}
-      <section className="w-full bg-[#030302] py-5 overflow-hidden -mx-5">
+      <section className="w-full bg-[#030302] py-5 overflow-hidden">
         <style>{`
           @keyframes mq-ev { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
           .mq-ev { display:flex; width:max-content; animation:mq-ev 22s linear infinite; }
@@ -81,18 +81,22 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* A section label, not the page title — the hero above already carries the h1. */}
-      <h2 className="text-3xl font-semi-bold mb-12 text-center mt-16 text-white">
-        Blog Items
-      </h2>
+      <section className="w-full py-16" style={{ backgroundColor: "#1b312e" }}>
+        <div className="container mx-auto px-5">
+          {/* A section label, not the page title — the hero above already carries the h1. */}
+          <h2 className="text-3xl font-semi-bold mb-12 text-center text-white">
+            Blog Items
+          </h2>
 
-      <div className="flex justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogs.map((blog) => (
-            <BlogCard key={blog.slug} blog={blog} />
-          ))}
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {blogs.map((blog) => (
+                <BlogCard key={blog.slug} blog={blog} />
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 }
