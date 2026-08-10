@@ -41,6 +41,8 @@ export async function POST(req: NextRequest) {
       notes,
       howHeard,
       howHeardOther,
+      serviceSmsConsent,
+      marketingOptIn,
       recaptchaToken,
     } = body;
 
@@ -81,6 +83,8 @@ export async function POST(req: NextRequest) {
       { label: "Occasion", value: occasion },
       // "Other (Please specify)" is only useful with what they typed next to it.
       { label: "Heard about us", value: howHeardOther ? `Other: ${howHeardOther}` : howHeard },
+      { label: "Service & Customer Care SMS Consent", value: serviceSmsConsent ? "Yes" : "No" },
+      { label: "Promotional SMS Consent", value: marketingOptIn ? "Yes" : "No" },
     ];
     const filled = rows.filter((r) => r.value);
 
