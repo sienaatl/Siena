@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
-    const { firstName, lastName, email, phone, subject, message, marketingOptIn, recaptchaToken } = body;
+    const { firstName, lastName, email, phone, subject, message, serviceSmsConsent, marketingOptIn, recaptchaToken } = body;
 
     if (!recaptchaToken || !(await verifyRecaptcha(recaptchaToken))) {
       return NextResponse.json({ error: "reCAPTCHA verification failed" }, { status: 400 });
@@ -41,6 +41,7 @@ export async function POST(req: NextRequest) {
       `Email:   ${email}`,
       phone ? `Phone:   ${phone}` : null,
       `Subject: ${subject}`,
+      `Service & Customer Care SMS Consent: ${serviceSmsConsent ? "Yes" : "No"}`,
       `Promotional SMS Consent: ${marketingOptIn ? "Yes" : "No"}`,
       ``,
       `Message:`,
@@ -68,6 +69,7 @@ export async function POST(req: NextRequest) {
               <tr><td style="padding:8px 0;font-size:13px;color:#999;vertical-align:top;">Email</td><td style="padding:8px 0;font-size:15px;"><a href="mailto:${email}" style="color:#1b312e;">${email}</a></td></tr>
               ${phone ? `<tr><td style="padding:8px 0;font-size:13px;color:#999;vertical-align:top;">Phone</td><td style="padding:8px 0;font-size:15px;">${phone}</td></tr>` : ""}
               <tr><td style="padding:8px 0;font-size:13px;color:#999;vertical-align:top;">Subject</td><td style="padding:8px 0;font-size:15px;">${subject}</td></tr>
+              <tr><td style="padding:8px 0;font-size:13px;color:#999;vertical-align:top;">Service &amp; Customer Care SMS Consent</td><td style="padding:8px 0;font-size:15px;">${serviceSmsConsent ? "Yes" : "No"}</td></tr>
               <tr><td style="padding:8px 0;font-size:13px;color:#999;vertical-align:top;">Promotional SMS Consent</td><td style="padding:8px 0;font-size:15px;">${marketingOptIn ? "Yes" : "No"}</td></tr>
             </table>
             <hr style="border:none;border-top:1px solid #eee;margin:20px 0;" />

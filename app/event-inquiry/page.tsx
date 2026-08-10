@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "motion/react";
+import Link from "next/link";
 import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
 
 declare global {
@@ -51,6 +52,8 @@ const schema = z
     notes: z.string().max(1000, "Notes cannot exceed 1000 characters").optional().or(z.literal("")),
     howHeard: z.string().max(60, "Please pick one of the options").optional().or(z.literal("")),
     howHeardOther: z.string().max(100, "Please keep this under 100 characters").optional().or(z.literal("")),
+    serviceSmsConsent: z.boolean().optional(),
+    marketingOptIn: z.boolean().optional(),
   })
   .superRefine((data, ctx) => {
     if (data.endDate && data.date && data.endDate < data.date) {
@@ -188,6 +191,8 @@ export default function EventInquiry() {
       notes: "",
       howHeard: "",
       howHeardOther: "",
+      serviceSmsConsent: false,
+      marketingOptIn: false,
     },
     mode: "onTouched",
   });
@@ -449,6 +454,58 @@ export default function EventInquiry() {
                     />
                   </Field>
                 )}
+
+                <div className="mt-1 border-t border-white/15 pt-5">
+                  <h4 className="text-[#e0b265] text-[22px] md:text-[24px] leading-tight mb-5">
+                    Event Inquiry Form Consent
+                  </h4>
+                  <div className="grid grid-cols-1 gap-5">
+                    <label className="flex items-start gap-3 cursor-pointer select-none">
+                      <input
+                        {...register("serviceSmsConsent")}
+                        type="checkbox"
+                        className="w-4 h-4 mt-1 accent-[#e0b265] cursor-pointer flex-shrink-0"
+                      />
+                      <span className="text-[13px] text-white/70 leading-[1.65]">
+                        <span className="block font-semibold text-white/85 mb-1">Service &amp; Customer Care SMS Consent</span>
+                        I agree to receive SMS messages from Siena Restaurant related to my inquiry, reservation,
+                        event or private dining request, customer service, and other service-related
+                        communications. Message frequency varies. Message and data rates may apply. Reply STOP to
+                        opt out or HELP for assistance. Consent is not a condition of purchase. See our{" "}
+                        <Link href="/privacy-policy" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                          Privacy Notice
+                        </Link>{" "}
+                        and{" "}
+                        <Link href="/terms-of-service" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                          Terms &amp; Conditions
+                        </Link>
+                        .
+                      </span>
+                    </label>
+                    <label className="flex items-start gap-3 cursor-pointer select-none">
+                      <input
+                        {...register("marketingOptIn")}
+                        type="checkbox"
+                        className="w-4 h-4 mt-1 accent-[#e0b265] cursor-pointer flex-shrink-0"
+                      />
+                      <span className="text-[13px] text-white/70 leading-[1.65]">
+                        <span className="block font-semibold text-white/85 mb-1">Promotional SMS Consent — Optional</span>
+                        I agree to receive recurring promotional SMS messages from Siena Restaurant about events,
+                        offers, dining specials, promotions, happy hour, live entertainment, and restaurant
+                        updates. Message frequency varies. Message and data rates may apply. Reply STOP to opt out
+                        or HELP for assistance. Consent is not a condition of purchase. See our{" "}
+                        <Link href="/privacy-policy" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                          Privacy Notice
+                        </Link>{" "}
+                        and{" "}
+                        <Link href="/terms-of-service" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                          Terms &amp; Conditions
+                        </Link>
+                        .
+                      </span>
+                    </label>
+                  </div>
+                </div>
 
                 {sendError && (
                   <p className="text-[13px] text-[#e0b265] border border-[#e0b265]/30 bg-[#e0b265]/10 px-4 py-3">

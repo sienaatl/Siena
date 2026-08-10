@@ -505,7 +505,7 @@ export default function Reservations() {
                     transition={{ duration: 0.4 }}
                   >
                     <motion.div
-                      className="w-16 h-16 rounded-full bg-[#e0b265]/15 flex items-center justify-center"
+                      className="w-16 h-16 rounded-full bg-[#e0b265] flex items-center justify-center"
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ type: "spring", stiffness: 300, delay: 0.1 }}
@@ -744,10 +744,11 @@ export default function Reservations() {
                               className="w-4 h-4 mt-1 accent-[#e0b265] cursor-pointer flex-shrink-0"
                             />
                             <span className="text-[13px] text-white/70 leading-[1.65]">
-                              I agree to receive SMS messages from Siena Restaurant regarding my reservation,
-                              including confirmations, modifications, cancellations, reminders, waitlist updates, and
-                              table-ready notifications. Message frequency varies. Message and data rates may apply.
-                              Reply STOP to opt out or HELP for help. Consent is not a condition of purchase. See our{" "}
+                              <span className="block font-semibold text-white/85 mb-1">Service &amp; Customer Care SMS Consent</span>
+                              I agree to receive SMS messages from Siena Restaurant related to my inquiry, reservation,
+                              event or private dining request, customer service, and other service-related
+                              communications. Message frequency varies. Message and data rates may apply. Reply STOP to
+                              opt out or HELP for assistance. Consent is not a condition of purchase. See our{" "}
                               <Link href="/privacy-policy" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
                                 Privacy Notice
                               </Link>{" "}
@@ -765,10 +766,12 @@ export default function Reservations() {
                               className="w-4 h-4 mt-1 accent-[#e0b265] cursor-pointer flex-shrink-0"
                             />
                             <span className="text-[13px] text-white/70 leading-[1.65]">
+                              <span className="block font-semibold text-white/85 mb-1">Promotional SMS Consent — Optional</span>
                               I agree to receive recurring promotional SMS messages from Siena Restaurant about
-                              events, offers, specials, and restaurant updates. Message frequency varies. Message and
-                              data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition
-                              of purchase. See our{" "}
+                              events, offers, dining specials, promotions, happy hour, live entertainment, and
+                              restaurant updates. Message frequency varies. Message and data rates may apply. Reply
+                              STOP to opt out or HELP for assistance. Consent is not a condition of purchase. See
+                              our{" "}
                               <Link href="/privacy-policy" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
                                 Privacy Notice
                               </Link>{" "}

@@ -45,6 +45,7 @@ const schema = z
       .string()
       .min(15, "Message must be at least 15 characters")
       .max(1000, "Message cannot exceed 1000 characters"),
+    serviceSmsConsent: z.boolean().optional(),
     marketingOptIn: z.boolean().optional(),
   })
   .superRefine((data, ctx) => {
@@ -142,6 +143,7 @@ export default function ContactUs() {
       phone: "",
       subject: "",
       message: "",
+      serviceSmsConsent: false,
       marketingOptIn: false,
     },
     mode: "onTouched",
@@ -387,26 +389,52 @@ export default function ContactUs() {
                     <h4 className="text-[#e0b265] text-[22px] md:text-[24px] leading-tight mb-5">
                       Contact Form Consent
                     </h4>
-                    <label className="flex items-start gap-3 cursor-pointer select-none">
-                      <input
-                        {...register("marketingOptIn")}
-                        type="checkbox"
-                        className="w-4 h-4 mt-1 accent-[#e0b265] cursor-pointer flex-shrink-0"
-                      />
-                      <span className="text-[13px] text-white/70 leading-[1.65]">
-                        I agree to receive recurring promotional SMS messages from Siena Restaurant about events,
-                        offers, specials, and restaurant updates. Message frequency varies. Message and data rates may
-                        apply. Reply STOP to opt out or HELP for help. Consent is not a condition of purchase. See our{" "}
-                        <Link href="/privacy-policy" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
-                          Privacy Notice
-                        </Link>{" "}
-                        and{" "}
-                        <Link href="/terms-of-service" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
-                          Terms &amp; Conditions
-                        </Link>
-                        .
-                      </span>
-                    </label>
+                    <div className="grid grid-cols-1 gap-5">
+                      <label className="flex items-start gap-3 cursor-pointer select-none">
+                        <input
+                          {...register("serviceSmsConsent")}
+                          type="checkbox"
+                          className="w-4 h-4 mt-1 accent-[#e0b265] cursor-pointer flex-shrink-0"
+                        />
+                        <span className="text-[13px] text-white/70 leading-[1.65]">
+                          <span className="block font-semibold text-white/85 mb-1">Service &amp; Customer Care SMS Consent</span>
+                          I agree to receive SMS messages from Siena Restaurant related to my inquiry, reservation,
+                          event or private dining request, customer service, and other service-related
+                          communications. Message frequency varies. Message and data rates may apply. Reply STOP to
+                          opt out or HELP for assistance. Consent is not a condition of purchase. See our{" "}
+                          <Link href="/privacy-policy" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                            Privacy Notice
+                          </Link>{" "}
+                          and{" "}
+                          <Link href="/terms-of-service" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                            Terms &amp; Conditions
+                          </Link>
+                          .
+                        </span>
+                      </label>
+                      <label className="flex items-start gap-3 cursor-pointer select-none">
+                        <input
+                          {...register("marketingOptIn")}
+                          type="checkbox"
+                          className="w-4 h-4 mt-1 accent-[#e0b265] cursor-pointer flex-shrink-0"
+                        />
+                        <span className="text-[13px] text-white/70 leading-[1.65]">
+                          <span className="block font-semibold text-white/85 mb-1">Promotional SMS Consent — Optional</span>
+                          I agree to receive recurring promotional SMS messages from Siena Restaurant about events,
+                          offers, dining specials, promotions, happy hour, live entertainment, and restaurant
+                          updates. Message frequency varies. Message and data rates may apply. Reply STOP to opt out
+                          or HELP for assistance. Consent is not a condition of purchase. See our{" "}
+                          <Link href="/privacy-policy" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                            Privacy Notice
+                          </Link>{" "}
+                          and{" "}
+                          <Link href="/terms-of-service" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                            Terms &amp; Conditions
+                          </Link>
+                          .
+                        </span>
+                      </label>
+                    </div>
                   </div>
 
                   <button
