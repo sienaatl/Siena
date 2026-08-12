@@ -2,8 +2,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "Siena Restaurant Blog",
-    template: "%s | Siena Restaurant",
+    default: "Blog | Restaurant News in Alpharetta | Siena",
+    template: "%s | Siena",
   },
   description:
     "Read the latest Italian food, dining tips, restaurant news, and event updates from Siena Restaurant.",

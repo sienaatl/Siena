@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Siena Gift Cards | Mediterranean Dining in Alpharetta",
+  title: "Gift Cards | Restaurant in Alpharetta",
   description:
     "Give an unforgettable Mediterranean dining experience with a Siena gift card. Choose an amount, personalize it, and send it instantly online today.",
   openGraph: {

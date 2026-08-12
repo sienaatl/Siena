@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Siena Gallery | Mediterranean Restaurant Photos Alpharetta",
+  title: "Photo Gallery | Restaurant in Alpharetta",
   description:
     "Explore Siena's gallery featuring chef-crafted dishes, elegant interiors, private events, and memorable Mediterranean dining in Alpharetta.",
   openGraph: {

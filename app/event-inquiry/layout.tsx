@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Event Inquiry | Private Events at Siena Restaurant Alpharetta",
+  title: "Private Event Inquiry | Alpharetta GA",
   description:
     "Plan a private event at Siena in Alpharetta. Tell us your date, guest count and occasion, and our team will get back to you to arrange the details.",
   openGraph: {
