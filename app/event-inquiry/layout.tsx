@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Private Event Inquiry | Alpharetta GA",
@@ -15,5 +16,10 @@ export const metadata: Metadata = {
 };
 
 export default function EventInquiryLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BreadcrumbSchema trail={[{ name: "Event Inquiry", path: "/event-inquiry" }]} />
+      {children}
+    </>
+  );
 }

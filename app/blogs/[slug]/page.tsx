@@ -2,6 +2,7 @@ import { blogs } from "@/lib/blog-data";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Metadata } from "next";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 // The canonical host. Every other page in the app resolves to the bare domain via
 // metadataBase in app/layout.tsx — these blog URLs were the only ones still on www,
@@ -125,6 +126,12 @@ export default async function BlogDetails({ params }: Props) {
 
   return (
     <>
+      <BreadcrumbSchema
+        trail={[
+          { name: "Blog", path: "/blogs" },
+          { name: blog.title, path: `/blogs/${blog.slug}` },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

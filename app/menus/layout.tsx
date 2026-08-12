@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Menus | Mediterranean & Italian, Alpharetta",
@@ -26,5 +27,10 @@ export const metadata: Metadata = {
 };
 
 export default function MenuLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BreadcrumbSchema trail={[{ name: "Menus", path: "/menus" }]} />
+      {children}
+    </>
+  );
 }

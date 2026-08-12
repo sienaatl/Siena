@@ -4,10 +4,12 @@ import BlogCard from "@/components/BlogCard";
 import { blogs } from "@/lib/blog-data";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export default function BlogPage() {
   return (
     <main className="container mx-auto px-5 py-16">
+      <BreadcrumbSchema trail={[{ name: "Blog", path: "/blogs" }]} />
       {/* HERO */}
       <section className="relative w-full h-[400px] md:h-[45vh] overflow-hidden -mt-16">
         <motion.div

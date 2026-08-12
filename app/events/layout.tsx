@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Private Events & Venue Hire in Alpharetta",
@@ -25,5 +26,10 @@ export const metadata: Metadata = {
 };
 
 export default function EventsLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BreadcrumbSchema trail={[{ name: "Private Events", path: "/events" }]} />
+      {children}
+    </>
+  );
 }

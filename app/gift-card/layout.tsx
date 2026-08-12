@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Gift Cards | Restaurant in Alpharetta",
@@ -15,5 +16,10 @@ export const metadata: Metadata = {
 };
 
 export default function GiftCardLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BreadcrumbSchema trail={[{ name: "Gift Cards", path: "/gift-card" }]} />
+      {children}
+    </>
+  );
 }
