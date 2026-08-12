@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Special Event Restaurant Alpharetta | Restaurant Event Venue",
+  title: "Private Events & Venue Hire in Alpharetta",
   description:
     "Looking for a Special Event Restaurant Alpharetta? Siena provides a stylish event venue with chef-driven cuisine & memorable dining experience",
   openGraph: {
@@ -25,5 +26,10 @@ export const metadata: Metadata = {
 };
 
 export default function EventsLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BreadcrumbSchema trail={[{ name: "Private Events", path: "/events" }]} />
+      {children}
+    </>
+  );
 }

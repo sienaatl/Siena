@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://sienaatl.com"),
 
   title: {
-    default: "Siena Restaurant | Best Mediterranean Italian Restaurant",
-    template: "%s | Siena Restaurant",
+    default: "Mediterranean & Italian Restaurant in Alpharetta | Siena",
+    template: "%s | Siena",
   },
 
   description:

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "About Siena Restaurant | Mediterranean Dining Alpharetta",
+  title: "About Us | Mediterranean Dining in Alpharetta",
   description:
     "Discover Siena’s story, chef-driven philosophy, seasonal ingredients, and warm Mediterranean dining experience in the heart of Alpharetta, Georgia.",
   openGraph: {
@@ -15,5 +16,10 @@ export const metadata: Metadata = {
 };
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BreadcrumbSchema trail={[{ name: "About Us", path: "/about-us" }]} />
+      {children}
+    </>
+  );
 }
