@@ -89,7 +89,7 @@ const schema = z
 type FormData = z.infer<typeof schema>;
 
 const inputClass =
-  "w-full border border-[#58021f]/20 px-4 py-[11px] text-[14px] text-[#333] placeholder-[#bbb] focus:outline-none focus:border-[#58021f] focus:ring-1 focus:ring-[#58021f]/20 bg-white transition";
+  "w-full border border-white/15 px-4 py-[11px] text-[14px] text-white placeholder-white/40 focus:outline-none focus:border-[#e0b265] focus:ring-1 focus:ring-[#e0b265]/30 bg-white/5 transition [color-scheme:dark]";
 
 const positions = [
   "Server / Food Runner",
@@ -132,19 +132,19 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-[12px] font-semibold text-[#222] tracking-wider uppercase">
-        {label} {required && <span className="text-[#58021f]">*</span>}
+      <label className="text-[12px] font-semibold text-white/80 tracking-wider uppercase">
+        {label} {required && <span className="text-[#e0b265]">*</span>}
       </label>
       {children}
-      {hint && !error && <p className="text-[11px] text-[#999] mt-0.5">{hint}</p>}
+      {hint && !error && <p className="text-[11px] text-white/50 mt-0.5">{hint}</p>}
       {error && (
         <motion.p
-          className="text-[12px] text-[#58021f] mt-0.5 flex items-center gap-1"
+          className="text-[12px] text-[#e0b265] mt-0.5 flex items-center gap-1"
           initial={{ opacity: 0, y: -4 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <span className="w-3 h-3 flex items-center justify-center border border-[#58021f] text-[9px] flex-shrink-0">!</span>
+          <span className="w-3 h-3 flex items-center justify-center border border-[#e0b265] text-[9px] flex-shrink-0">!</span>
           {error}
         </motion.p>
       )}
@@ -258,12 +258,12 @@ export default function Careers() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-12 md:w-24 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-12 md:w-24 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[62px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[62px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -277,9 +277,9 @@ export default function Careers() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="w-12 md:w-24 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-12 md:w-24 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
         </div>
       </section>
@@ -307,7 +307,7 @@ export default function Careers() {
       </section>
 
       {/* WHY JOIN US */}
-      <section className="relative w-full py-[80px] overflow-hidden" style={{ backgroundColor: "#f5efdd" }}>
+      <section className="relative w-full py-[80px] overflow-hidden" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[1180px] mx-auto px-4">
           <div className="flex flex-col items-center text-center mb-14">
             <motion.img
@@ -322,7 +322,7 @@ export default function Careers() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#58021f] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -332,10 +332,10 @@ export default function Careers() {
                 Be Part of the Story
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[26px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[26px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
-                  textShadow: `2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd`,
+                  textShadow: `2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e`,
                 }}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -346,7 +346,7 @@ export default function Careers() {
               </motion.span>
             </div>
             <motion.p
-              className="text-[#030302]/80 text-lg md:text-xl leading-[140%] max-w-[680px] mt-12 md:mt-24"
+              className="text-white/80 text-lg md:text-xl leading-[140%] max-w-[680px] mt-12 md:mt-24"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -361,19 +361,19 @@ export default function Careers() {
             {benefits.map((b, i) => (
               <motion.div
                 key={i}
-                className="bg-[#030302] p-8 flex flex-col gap-4 cursor-default"
+                className="bg-[#1e3833] border border-[#e0b265]/20 p-8 flex flex-col gap-4 cursor-default"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.7, delay: i * 0.15, ease: "easeOut" }}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
               >
-                <span className="text-[#deae21] text-[28px]">✦</span>
-                <div className="w-8 h-[2px] bg-[#deae21]" />
-                <h3 className="text-[#f5efdd] text-[28px] leading-tight" style={{ fontFamily: "'Palmore-Light', serif" }}>
+                <span className="text-[#e0b265] text-[28px]">✦</span>
+                <div className="w-8 h-[2px] bg-[#e0b265]" />
+                <h3 className="text-[#e0b265] text-[28px] leading-tight" style={{ fontFamily: "'Palmore-Light', serif" }}>
                   {b.title}
                 </h3>
-                <p className="text-[#f5efdd]/70 text-[15px] leading-[1.7]">{b.desc}</p>
+                <p className="text-white/70 text-[15px] leading-[1.7]">{b.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -388,7 +388,7 @@ export default function Careers() {
       {/* APPLICATION FORM */}
       <section
         className="relative w-full py-[80px] overflow-hidden"
-        style={{ backgroundImage: "url('/assets/fondo_findus.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
+        style={{ backgroundImage: "url('/assets/dark-green-wall-backdrop-grunge-background-texture.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="w-full max-w-[1180px] mx-auto px-4">
           <div className="flex flex-col items-center text-center mb-10">
@@ -403,7 +403,7 @@ export default function Careers() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#58021f] text-[55px] md:text-[75px] lg:text-[90px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-white text-[55px] md:text-[75px] lg:text-[90px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -413,10 +413,10 @@ export default function Careers() {
                 Apply Now
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[55px] lg:text-[78px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-[95%] md:top-[100%] -translate-x-1/2 -translate-y-[5%] text-[#e0b265] text-[28px] md:text-[55px] lg:text-[78px] leading-none whitespace-nowrap"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
-                  textShadow: `2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd`,
+                  textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e",
                 }}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -429,7 +429,8 @@ export default function Careers() {
           </div>
 
           <motion.div
-            className="bg-white/96 shadow-2xl w-full max-w-[740px] mx-auto px-6 md:px-10 py-10 mt-16 md:mt-20"
+            className="shadow-2xl border border-[#e0b265]/50 w-full max-w-[740px] mx-auto px-6 md:px-10 py-10 mt-16 md:mt-20"
+            style={{ backgroundColor: "#152C29", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.05 }}
@@ -446,19 +447,19 @@ export default function Careers() {
                   transition={{ duration: 0.4 }}
                 >
                   <motion.div
-                    className="w-14 h-14 bg-[#58021f] flex items-center justify-center"
+                    className="w-14 h-14 bg-[#e0b265] flex items-center justify-center"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 300, delay: 0.1 }}
                   >
                     <svg width="26" height="26" viewBox="0 0 48 48" fill="none">
-                      <path d="M12 24L21 33L36 16" stroke="#f4eedd" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M12 24L21 33L36 16" stroke="#1b312e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </motion.div>
-                  <h3 className="text-[28px] text-[#58021f]" style={{ fontFamily: "'Palmore-Light', serif" }}>
+                  <h3 className="text-[28px] text-white" style={{ fontFamily: "'Palmore-Light', serif" }}>
                     Application Sent!
                   </h3>
-                  <p className="text-[14px] text-[#666] leading-relaxed max-w-[380px]">
+                  <p className="text-[14px] text-white/70 leading-relaxed max-w-[380px]">
                     Thank you for your interest in joining the Siena team. We&apos;ll review your application and be in touch soon.
                   </p>
                 </motion.div>
@@ -495,9 +496,9 @@ export default function Careers() {
                   {/* Position */}
                   <Field label="Applying For" required error={errors.position?.message}>
                     <select {...register("position")} className={`${inputClass} appearance-none cursor-pointer`}>
-                      <option value="">Select a position</option>
+                      <option value="" style={{ backgroundColor: "#152C29", color: "#fff" }}>Select a position</option>
                       {positions.map((p) => (
-                        <option key={p} value={p}>{p}</option>
+                        <option key={p} value={p} style={{ backgroundColor: "#152C29", color: "#fff" }}>{p}</option>
                       ))}
                     </select>
                   </Field>
@@ -514,8 +515,8 @@ export default function Careers() {
                             onClick={() => toggleDay(day)}
                             className={`px-4 py-2 text-[13px] font-semibold tracking-wide border transition cursor-pointer ${
                               active
-                                ? "bg-[#58021f] text-[#f5efdd] border-[#58021f]"
-                                : "bg-white text-[#555] border-[#58021f]/20 hover:border-[#58021f]"
+                                ? "bg-[#e0b265] text-[#1b312e] border-[#e0b265]"
+                                : "bg-white/5 text-white/70 border-white/20 hover:border-[#e0b265]"
                             }`}
                           >
                             {day}
@@ -542,13 +543,13 @@ export default function Careers() {
                   {/* Previous Work — field array */}
                   <div className="flex flex-col gap-3">
                     <div className="flex items-center justify-between">
-                      <label className="text-[12px] font-semibold text-[#222] tracking-wider uppercase">
-                        Previous Experience <span className="text-[#999] normal-case font-normal">(optional)</span>
+                      <label className="text-[12px] font-semibold text-white/80 tracking-wider uppercase">
+                        Previous Experience <span className="text-white/50 normal-case font-normal">(optional)</span>
                       </label>
                       <button
                         type="button"
                         onClick={() => appendWork({ employer: "", role: "", duration: "" })}
-                        className="text-[12px] text-[#58021f] border border-[#58021f]/30 px-3 py-1 hover:bg-[#58021f] hover:text-[#f5efdd] transition flex items-center gap-1 cursor-pointer"
+                        className="text-[12px] text-[#e0b265] border border-[#e0b265]/30 px-3 py-1 hover:bg-[#e0b265] hover:text-[#1b312e] transition flex items-center gap-1 cursor-pointer"
                       >
                         <span className="text-[16px] leading-none">+</span> Add Entry
                       </button>
@@ -558,7 +559,7 @@ export default function Careers() {
                       {workFields.map((field, i) => (
                         <motion.div
                           key={field.id}
-                          className="border border-[#58021f]/15 p-4 bg-[#fdf9f2] flex flex-col gap-3 relative"
+                          className="border border-white/15 p-4 bg-white/5 flex flex-col gap-3 relative"
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
@@ -567,7 +568,7 @@ export default function Careers() {
                           <button
                             type="button"
                             onClick={() => removeWork(i)}
-                            className="absolute top-3 right-3 text-[#aaa] hover:text-[#58021f] transition text-[18px] leading-none cursor-pointer"
+                            className="absolute top-3 right-3 text-white/50 hover:text-[#e0b265] transition text-[18px] leading-none cursor-pointer"
                           >
                             ×
                           </button>
@@ -600,7 +601,7 @@ export default function Careers() {
                         rows={4}
                         className={`${inputClass} resize-none`}
                       />
-                      <span className={`absolute bottom-2 right-3 text-[11px] ${coverLetterLength > 950 ? "text-[#58021f]" : "text-[#ccc]"}`}>
+                      <span className={`absolute bottom-2 right-3 text-[11px] ${coverLetterLength > 950 ? "text-[#e0b265]" : "text-white/40"}`}>
                         {coverLetterLength}/1000
                       </span>
                     </div>
@@ -608,12 +609,12 @@ export default function Careers() {
 
                   {/* Resume Upload */}
                   <Field label="Resume" error={errors.resume?.message as string}>
-                    <label className="flex flex-col items-center justify-center gap-2 border border-dashed border-[#58021f]/30 px-4 py-6 cursor-pointer hover:border-[#58021f] transition text-center group">
+                    <label className="flex flex-col items-center justify-center gap-2 border border-dashed border-white/25 px-4 py-6 cursor-pointer hover:border-[#e0b265] transition text-center group">
                       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="group-hover:scale-110 transition-transform">
-                        <path d="M12 16V8M12 8L9 11M12 8L15 11" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M3 15V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V15" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" />
+                        <path d="M12 16V8M12 8L9 11M12 8L15 11" stroke="#e0b265" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M3 15V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V15" stroke="#e0b265" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
-                      <span className="text-[13px] text-[#aaa]">
+                      <span className="text-[13px] text-white/60">
                         {fileName ? fileName : "Click or drag your resume here (PDF or Word, max 5MB)"}
                       </span>
                       <input {...register("resume")} type="file" accept=".pdf,.doc,.docx" className="hidden" />
@@ -623,18 +624,18 @@ export default function Careers() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group bg-[#58021f] text-[#f5efdd] w-full px-4 py-3 font-normal text-[14px] md:text-[15px] flex items-center justify-center gap-2 hover:bg-[#030302] transition disabled:opacity-60 mt-2 cursor-pointer"
+                    className="group bg-[#e0b265] text-[#1b312e] w-full px-4 py-3 font-normal text-[14px] md:text-[15px] flex items-center justify-center gap-2 hover:bg-[#1b312e] hover:text-[#e0b265] transition disabled:opacity-60 mt-2 cursor-pointer"
                   >
                     {isSubmitting ? (
                       <>
-                        <span className="w-4 h-4 border-2 border-[#f5efdd]/40 border-t-[#f5efdd] rounded-full animate-spin" />
+                        <span className="w-4 h-4 border-2 border-[#1b312e]/40 border-t-[#1b312e] rounded-full animate-spin" />
                         Sending...
                       </>
                     ) : (
                       <>
                         SUBMIT APPLICATION
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
-                          <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#f5efdd" />
+                          <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#1b312e" />
                         </svg>
                       </>
                     )}

@@ -8,10 +8,10 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export default function BlogPage() {
   return (
-    <main className="container mx-auto px-5 py-16">
+    <main>
       <BreadcrumbSchema trail={[{ name: "Blog", path: "/blogs" }]} />
       {/* HERO */}
-      <section className="relative w-full h-[400px] md:h-[45vh] overflow-hidden -mt-16">
+      <section className="relative w-full h-[400px] md:h-[45vh] overflow-hidden">
         <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.08 }}
@@ -35,12 +35,12 @@ export default function BlogPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[62px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[62px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,15 +54,15 @@ export default function BlogPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
         </div>
       </section>
 
       {/* MARQUEE */}
-      <section className="w-full bg-[#030302] py-5 overflow-hidden -mx-5">
+      <section className="w-full bg-[#030302] py-5 overflow-hidden">
         <style>{`
           @keyframes mq-ev { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
           .mq-ev { display:flex; width:max-content; animation:mq-ev 22s linear infinite; }
@@ -83,18 +83,22 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* A section label, not the page title — the hero above already carries the h1. */}
-      <h2 className="text-3xl font-semi-bold mb-12 text-center mt-16">
-        Blog Items
-      </h2>
+      <section className="w-full py-16" style={{ backgroundColor: "#1b312e" }}>
+        <div className="container mx-auto px-5">
+          {/* A section label, not the page title — the hero above already carries the h1. */}
+          <h2 className="text-3xl font-semi-bold mb-12 text-center text-white">
+            Blog Items
+          </h2>
 
-      <div className="flex justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogs.map((blog) => (
-            <BlogCard key={blog.slug} blog={blog} />
-          ))}
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {blogs.map((blog) => (
+                <BlogCard key={blog.slug} blog={blog} />
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 }

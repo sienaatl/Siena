@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
-    const { firstName, lastName, email, phone, subject, message, recaptchaToken } = body;
+    const { firstName, lastName, email, phone, subject, message, serviceSmsConsent, marketingOptIn, recaptchaToken } = body;
 
     if (!recaptchaToken || !(await verifyRecaptcha(recaptchaToken))) {
       return NextResponse.json({ error: "reCAPTCHA verification failed" }, { status: 400 });
@@ -41,6 +41,8 @@ export async function POST(req: NextRequest) {
       `Email:   ${email}`,
       phone ? `Phone:   ${phone}` : null,
       `Subject: ${subject}`,
+      `Service & Customer Care SMS Consent: ${serviceSmsConsent ? "Yes" : "No"}`,
+      `Promotional SMS Consent: ${marketingOptIn ? "Yes" : "No"}`,
       ``,
       `Message:`,
       message,
@@ -57,16 +59,18 @@ export async function POST(req: NextRequest) {
       text: textBody,
       html: `
         <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#333;">
-          <div style="background:#58021f;padding:24px 32px;">
-            <h1 style="color:#f5efdd;margin:0;font-size:22px;font-weight:400;letter-spacing:2px;">SIENA RESTAURANT</h1>
-            <p style="color:#deae21;margin:4px 0 0;font-size:13px;letter-spacing:1px;">New Contact Form Submission</p>
+          <div style="background:#1b312e;padding:24px 32px;">
+            <h1 style="color:#e0b265;margin:0;font-size:22px;font-weight:400;letter-spacing:2px;">SIENA RESTAURANT</h1>
+            <p style="color:#e0b265;margin:4px 0 0;font-size:13px;letter-spacing:1px;">New Contact Form Submission</p>
           </div>
           <div style="padding:32px;background:#fff;border:1px solid #eee;">
             <table style="width:100%;border-collapse:collapse;">
               <tr><td style="padding:8px 0;font-size:13px;color:#999;width:140px;vertical-align:top;">Name</td><td style="padding:8px 0;font-size:15px;">${firstName} ${lastName}</td></tr>
-              <tr><td style="padding:8px 0;font-size:13px;color:#999;vertical-align:top;">Email</td><td style="padding:8px 0;font-size:15px;"><a href="mailto:${email}" style="color:#58021f;">${email}</a></td></tr>
+              <tr><td style="padding:8px 0;font-size:13px;color:#999;vertical-align:top;">Email</td><td style="padding:8px 0;font-size:15px;"><a href="mailto:${email}" style="color:#1b312e;">${email}</a></td></tr>
               ${phone ? `<tr><td style="padding:8px 0;font-size:13px;color:#999;vertical-align:top;">Phone</td><td style="padding:8px 0;font-size:15px;">${phone}</td></tr>` : ""}
               <tr><td style="padding:8px 0;font-size:13px;color:#999;vertical-align:top;">Subject</td><td style="padding:8px 0;font-size:15px;">${subject}</td></tr>
+              <tr><td style="padding:8px 0;font-size:13px;color:#999;vertical-align:top;">Service &amp; Customer Care SMS Consent</td><td style="padding:8px 0;font-size:15px;">${serviceSmsConsent ? "Yes" : "No"}</td></tr>
+              <tr><td style="padding:8px 0;font-size:13px;color:#999;vertical-align:top;">Promotional SMS Consent</td><td style="padding:8px 0;font-size:15px;">${marketingOptIn ? "Yes" : "No"}</td></tr>
             </table>
             <hr style="border:none;border-top:1px solid #eee;margin:20px 0;" />
             <p style="font-size:13px;color:#999;margin:0 0 8px;">Message</p>

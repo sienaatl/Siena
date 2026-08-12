@@ -7,7 +7,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { getRestaurantInfo } from "@/lib/restaurant";
 
 export const viewport: Viewport = {
-  themeColor: "#58021f",
+  themeColor: "#1B312E",
   width: "device-width",
   initialScale: 1,
 };
@@ -94,7 +94,7 @@ export default async function RootLayout({
     logo: "https://sienaatl.com/assets/logo_beige.png",
     "@id": "https://sienaatl.com/#restaurant",
     url: "https://sienaatl.com/",
-    telephone: info.phone || "+1 (404) 777-5124",
+    telephone: info.phone || "+1 (404) 999-0373",
     priceRange: "$$",
 
     menu: "https://sienaatl.com/menus",

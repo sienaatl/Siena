@@ -142,13 +142,13 @@ export default async function BlogDetails({ params }: Props) {
       <section className="max-w-5xl mx-auto px-5 py-14">
         {/* Blog Title */}
 
-        <h1 className="text-4xl md:text-4xl font-bold text-center leading-tight mt-15">
+        <h1 className="text-4xl md:text-4xl font-bold text-center leading-tight mt-15 text-[#e0b265]">
           {blog.title}
         </h1>
 
         {/* Publish Date */}
 
-        <p className="text-center text-gray-500 mt-4">
+        <p className="text-center text-white/50 mt-4">
           Published on {blog.publishedAt}
         </p>
 
@@ -167,14 +167,14 @@ export default async function BlogDetails({ params }: Props) {
 
         {/* Blog Description */}
 
-        <p className="text-lg mt-10 text-gray-400">
+        <p className="text-lg mt-10 text-white/70">
           {blog.description}
         </p>
 
         {/* Blog Content */}
 
         <article
-          className="prose prose-lg max-w-none mt-12 text-gray-400"
+          className="prose prose-lg max-w-none mt-12 text-white/70"
           dangerouslySetInnerHTML={{
             __html: blog.content,
           }}

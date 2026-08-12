@@ -67,12 +67,12 @@ export default function Gallery() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[62px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[62px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -86,9 +86,9 @@ export default function Gallery() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
         </div>
       </section>
@@ -116,7 +116,7 @@ export default function Gallery() {
       </section>
 
       {/* SECTION HEADER */}
-      <section className="w-full pt-[70px] pb-[40px] px-4 md:px-6" style={{ backgroundColor: "#f5efdd" }}>
+      <section className="w-full pt-[70px] pb-[40px] px-4 md:px-6" style={{ backgroundColor: "#1b312e" }}>
         <div className="flex flex-col items-center text-center">
           <motion.img
             src="/assets/icono_123.svg"
@@ -129,7 +129,7 @@ export default function Gallery() {
           />
           <div className="relative inline-block">
             <motion.h2
-              className="text-[#58021f] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+              className="text-[#e0b265] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
               style={{ fontFamily: "'Palmore-Light', serif" }}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -139,10 +139,10 @@ export default function Gallery() {
               A Visual Story
             </motion.h2>
             <motion.span
-              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
               style={{
                 fontFamily: "'AguafinaScript-Regular', cursive",
-                textShadow: `2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd`,
+                textShadow: `2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e`,
               }}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -153,7 +153,7 @@ export default function Gallery() {
             </motion.span>
           </div>
           <motion.p
-            className="text-[#030302]/80 text-lg md:text-xl leading-[140%] max-w-[600px] mt-12 md:mt-24"
+            className="text-white/80 text-lg md:text-xl leading-[140%] max-w-[600px] mt-12 md:mt-24"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -165,7 +165,7 @@ export default function Gallery() {
       </section>
 
       {/* MASONRY GRID */}
-      <section className="w-full pb-[80px] px-4 md:px-6" style={{ backgroundColor: "#f5efdd" }}>
+      <section className="w-full pb-[80px] px-4 md:px-6" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[1180px] mx-auto">
           <div className="columns-2 md:columns-3 lg:columns-4 gap-3 md:gap-4">
             {images.map((src, i) => (
@@ -184,7 +184,7 @@ export default function Gallery() {
                   loading="lazy"
                   className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-[#59021e]/0 group-hover:bg-[#59021e]/30 transition-colors duration-500 flex items-center justify-center">
+                <div className="absolute inset-0 bg-[#1b312e]/0 group-hover:bg-[#1b312e]/30 transition-colors duration-500 flex items-center justify-center">
                   <div className="w-9 h-9 border border-[#f4eedd] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#f4eedd" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0zm-6-3.5v7m-3.5-3.5h7" />
@@ -218,12 +218,12 @@ export default function Gallery() {
             </button>
 
             <button
-              className="absolute left-2 md:left-6 z-10 w-12 h-12 bg-[#59021e] flex items-center justify-center hover:bg-[#3d0115] transition"
+              className="absolute left-2 md:left-6 z-10 w-12 h-12 bg-[#e0b265] flex items-center justify-center hover:bg-[#1b312e] transition"
               onClick={(e) => { e.stopPropagation(); prev(); }}
               aria-label="Previous"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M4.69751 8.97146L18 8.97146L18 11.0285L4.69751 11.0285L8.87864 15.5456L7.51284 17L1 10L7.51284 3L8.87864 4.45436L4.69751 8.97146Z" fill="#f4eedd" />
+                <path d="M4.69751 8.97146L18 8.97146L18 11.0285L4.69751 11.0285L8.87864 15.5456L7.51284 17L1 10L7.51284 3L8.87864 4.45436L4.69751 8.97146Z" fill="#1b312e" />
               </svg>
             </button>
 
@@ -240,12 +240,12 @@ export default function Gallery() {
             />
 
             <button
-              className="absolute right-2 md:right-6 z-10 w-12 h-12 bg-[#59021e] flex items-center justify-center hover:bg-[#3d0115] transition"
+              className="absolute right-2 md:right-6 z-10 w-12 h-12 bg-[#e0b265] flex items-center justify-center hover:bg-[#1b312e] transition"
               onClick={(e) => { e.stopPropagation(); next(); }}
               aria-label="Next"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#f4eedd" />
+                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#1b312e" />
               </svg>
             </button>
 

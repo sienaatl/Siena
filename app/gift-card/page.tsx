@@ -52,12 +52,12 @@ export default function GiftCard() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[54px] md:text-[74px] lg:text-[92px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[54px] md:text-[74px] lg:text-[92px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -71,9 +71,9 @@ export default function GiftCard() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
         </div>
       </section>
@@ -101,7 +101,7 @@ export default function GiftCard() {
       </section>
 
       {/* INTRO */}
-      <section className="relative w-full py-[80px] md:py-[100px] overflow-hidden" style={{ backgroundColor: "#f5efdd" }}>
+      <section className="relative w-full py-[80px] md:py-[100px] overflow-hidden" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[1180px] mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-20">
 
@@ -120,20 +120,20 @@ export default function GiftCard() {
                 transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
               />
               <h2
-                className="text-[#58021f] text-[58px] md:text-[72px] lg:text-[88px] leading-none tracking-[0.06em] uppercase mb-2"
+                className="text-[#e0b265] text-[58px] md:text-[72px] lg:text-[88px] leading-none tracking-[0.06em] uppercase mb-2"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
               >
                 Share the
                 <br />Experience
               </h2>
               <span
-                className="text-[#deae21] text-[34px] md:text-[42px] leading-none block mb-8"
+                className="text-[#e0b265] text-[34px] md:text-[42px] leading-none block mb-8"
                 style={{ fontFamily: "'AguafinaScript-Regular', cursive" }}
               >
                 with someone you love
               </span>
 
-              <p className="text-[#030302]/70 text-[15px] md:text-[17px] leading-[1.8] mb-8 max-w-[520px]">
+              <p className="text-white/70 text-[15px] md:text-[17px] leading-[1.8] mb-8 max-w-[520px]">
                 A Siena Gift Card is more than a gift. It&apos;s an invitation to an unforgettable Mediterranean dining
                 experience. Perfect for the food lover in your life, for special celebrations, or simply to say thank you
                 in the most delicious way possible.
@@ -143,13 +143,13 @@ export default function GiftCard() {
                 href={GIFT_CARD_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 py-3 font-normal text-[14px] md:text-[15px] leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-[#030302] transition"
+                className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-3 font-normal text-[14px] md:text-[15px] leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-white hover:text-[#1b312e] transition"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 BUY A GIFT CARD
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#f5efdd" />
+                  <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#1b312e" />
                 </svg>
               </motion.a>
             </motion.div>
@@ -167,12 +167,12 @@ export default function GiftCard() {
                   alt="Siena dining experience"
                   className="w-full h-[360px] md:h-[480px] object-cover shadow-xl transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-4 border border-[#deae21]/50 pointer-events-none" />
-                <div className="absolute bottom-6 left-6 right-6 bg-[#58021f]/90 p-4 md:p-6 backdrop-blur-sm">
-                  <p className="text-[#f5efdd] text-[22px] md:text-[28px] leading-none" style={{ fontFamily: "'Palmore-Light', serif" }}>
+                <div className="absolute inset-4 border border-[#e0b265]/50 pointer-events-none" />
+                <div className="absolute bottom-6 left-6 right-6 bg-[#1b312e]/90 p-4 md:p-6 backdrop-blur-sm">
+                  <p className="text-white text-[22px] md:text-[28px] leading-none" style={{ fontFamily: "'Palmore-Light', serif" }}>
                     An Unforgettable Gift
                   </p>
-                  <span className="text-[#deae21] text-[18px] md:text-[24px]" style={{ fontFamily: "'AguafinaScript-Regular', cursive" }}>
+                  <span className="text-[#e0b265] text-[18px] md:text-[24px]" style={{ fontFamily: "'AguafinaScript-Regular', cursive" }}>
                     for anyone you care about
                   </span>
                 </div>
@@ -203,7 +203,7 @@ export default function GiftCard() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#f5efdd] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -213,7 +213,7 @@ export default function GiftCard() {
                 How It Works
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
                 style={{ fontFamily: "'AguafinaScript-Regular', cursive" }}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -229,21 +229,21 @@ export default function GiftCard() {
             {steps.map((step, i) => (
               <motion.div
                 key={i}
-                className="flex flex-col items-center md:items-start text-center md:text-left p-6 md:p-8 border-t border-[#deae21]/20 md:border-t-0 md:border-l first:border-t-0 first:border-l-0"
+                className="flex flex-col items-center md:items-start text-center md:text-left p-6 md:p-8 border-t border-[#e0b265]/20 md:border-t-0 md:border-l first:border-t-0 first:border-l-0"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.7, delay: i * 0.15, ease: "easeOut" }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
               >
-                <span className="text-[#deae21] text-[52px] md:text-[68px] leading-none mb-3" style={{ fontFamily: "'Palmore-Light', serif" }}>
+                <span className="text-[#e0b265] text-[52px] md:text-[68px] leading-none mb-3" style={{ fontFamily: "'Palmore-Light', serif" }}>
                   {step.num}
                 </span>
-                <div className="w-8 h-[2px] bg-[#deae21] mb-4" />
-                <h3 className="text-[#f5efdd] text-[26px] md:text-[30px] leading-tight mb-3" style={{ fontFamily: "'Palmore-Light', serif" }}>
+                <div className="w-8 h-[2px] bg-[#e0b265] mb-4" />
+                <h3 className="text-[#e0b265] text-[26px] md:text-[30px] leading-tight mb-3" style={{ fontFamily: "'Palmore-Light', serif" }}>
                   {step.title}
                 </h3>
-                <p className="text-[#f5efdd]/65 text-[15px] md:text-[16px] leading-[1.7]">{step.desc}</p>
+                <p className="text-white/65 text-[15px] md:text-[16px] leading-[1.7]">{step.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -256,12 +256,12 @@ export default function GiftCard() {
       </section>
 
       {/* PERFECT FOR */}
-      <section className="relative w-full py-[80px] overflow-hidden" style={{ backgroundColor: "#f5efdd" }}>
+      <section className="relative w-full py-[80px] overflow-hidden" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[1180px] mx-auto px-4">
           <div className="flex flex-col items-center text-center mb-14">
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#58021f] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -271,10 +271,10 @@ export default function GiftCard() {
                 Perfect For
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
-                  textShadow: `2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd`,
+                  textShadow: `2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e`,
                 }}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -285,7 +285,7 @@ export default function GiftCard() {
               </motion.span>
             </div>
             <motion.p
-              className="text-[#030302]/70 text-lg md:text-xl leading-[140%] max-w-[560px] mt-14 md:mt-20"
+              className="text-white/70 text-lg md:text-xl leading-[140%] max-w-[560px] mt-14 md:mt-20"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -315,8 +315,8 @@ export default function GiftCard() {
                 />
                 <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-500" />
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center gap-3 px-6 py-8">
-                  <span className="text-[#deae21] text-[22px]">✦</span>
-                  <h3 className="text-[#f5efdd] text-[24px] md:text-[34px] leading-tight" style={{ fontFamily: "'Palmore-Light', serif" }}>
+                  <span className="text-[#e0b265] text-[22px]">✦</span>
+                  <h3 className="text-white text-[24px] md:text-[34px] leading-tight" style={{ fontFamily: "'Palmore-Light', serif" }}>
                     {o.label}
                   </h3>
                 </div>
@@ -335,13 +335,13 @@ export default function GiftCard() {
               href={GIFT_CARD_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-[#58021f] text-[#f5efdd] px-10 py-4 font-normal text-[15px] flex items-center gap-3 border border-transparent hover:bg-[#030302] transition"
+              className="group bg-[#e0b265] text-[#1b312e] px-10 py-4 font-normal text-[15px] flex items-center gap-3 border border-transparent hover:bg-white hover:text-[#1b312e] transition"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
               PURCHASE A GIFT CARD
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#f5efdd" />
+                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#1b312e" />
               </svg>
             </motion.a>
           </motion.div>
@@ -349,7 +349,7 @@ export default function GiftCard() {
       </section>
 
       {/* CTA BAND */}
-      <section className="relative w-full h-[28px] overflow-hidden bg-[#58021f]">
+      <section className="relative w-full h-[28px] overflow-hidden bg-[#030302]">
         <img src="/assets/divisor_estrella3.svg" alt="" className="absolute inset-0 w-full h-full object-cover scale-y-125" />
       </section>
 

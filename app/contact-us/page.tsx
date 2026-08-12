@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "motion/react";
+import Link from "next/link";
 import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
 
 declare global {
@@ -44,6 +45,8 @@ const schema = z
       .string()
       .min(15, "Message must be at least 15 characters")
       .max(1000, "Message cannot exceed 1000 characters"),
+    serviceSmsConsent: z.boolean().optional(),
+    marketingOptIn: z.boolean().optional(),
   })
   .superRefine((data, ctx) => {
     if (data.subject === "Private Events" && data.message.length < 40) {
@@ -65,7 +68,7 @@ const schema = z
 type FormData = z.infer<typeof schema>;
 
 const inputClass =
-  "w-full border border-[#58021f]/20 px-4 py-[11px] text-[14px] text-[#333] placeholder-[#bbb] focus:outline-none focus:border-[#58021f] focus:ring-1 focus:ring-[#58021f]/20 bg-white/80 transition";
+  "w-full border border-white/15 px-4 py-[11px] text-[14px] text-white placeholder-white/40 focus:outline-none focus:border-[#e0b265] focus:ring-1 focus:ring-[#e0b265]/30 bg-white/5 transition [color-scheme:dark]";
 
 const subjects = [
   "General Inquiry",
@@ -92,19 +95,19 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-[12px] font-semibold text-[#222] tracking-wider uppercase">
-        {label} {required && <span className="text-[#58021f]">*</span>}
+      <label className="text-[12px] font-semibold text-white/80 tracking-wider uppercase">
+        {label} {required && <span className="text-[#e0b265]">*</span>}
       </label>
       {children}
-      {hint && !error && <p className="text-[11px] text-[#999] mt-0.5">{hint}</p>}
+      {hint && !error && <p className="text-[11px] text-white/50 mt-0.5">{hint}</p>}
       {error && (
         <motion.p
-          className="text-[12px] text-[#58021f] mt-0.5 flex items-center gap-1"
+          className="text-[12px] text-[#e0b265] mt-0.5 flex items-center gap-1"
           initial={{ opacity: 0, y: -4 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <span className="w-3 h-3 flex items-center justify-center border border-[#58021f] text-[9px] flex-shrink-0">!</span>
+          <span className="w-3 h-3 flex items-center justify-center border border-[#e0b265] text-[9px] flex-shrink-0">!</span>
           {error}
         </motion.p>
       )}
@@ -140,6 +143,8 @@ export default function ContactUs() {
       phone: "",
       subject: "",
       message: "",
+      serviceSmsConsent: false,
+      marketingOptIn: false,
     },
     mode: "onTouched",
   });
@@ -187,12 +192,12 @@ export default function ContactUs() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[54px] md:text-[72px] lg:text-[90px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[54px] md:text-[72px] lg:text-[90px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -206,9 +211,9 @@ export default function ContactUs() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
         </div>
       </section>
@@ -236,7 +241,7 @@ export default function ContactUs() {
       </section>
 
       {/* CENTERED FORM SECTION */}
-      <section className="relative w-full py-[80px] md:py-[100px] overflow-hidden" style={{ backgroundColor: "#f5efdd" }}>
+      <section className="relative w-full py-[80px] md:py-[100px] overflow-hidden" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[720px] mx-auto px-4 flex flex-col items-center text-center">
 
           <motion.img
@@ -252,7 +257,7 @@ export default function ContactUs() {
 
           <div className="relative inline-block mb-4">
             <motion.h2
-              className="text-[#58021f] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+              className="text-[#e0b265] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
               style={{ fontFamily: "'Palmore-Light', serif" }}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -262,10 +267,10 @@ export default function ContactUs() {
               Let&apos;s Talk
             </motion.h2>
             <motion.span
-              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
+              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
               style={{
                 fontFamily: "'AguafinaScript-Regular', cursive",
-                textShadow: `2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd`,
+                textShadow: `2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e`,
               }}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -277,7 +282,7 @@ export default function ContactUs() {
           </div>
 
           <motion.p
-            className="text-[#030302]/70 text-[16px] md:text-[17px] leading-[1.75] max-w-[520px] mt-16 md:mt-20 mb-10"
+            className="text-white/70 text-[16px] md:text-[17px] leading-[1.75] max-w-[520px] mt-16 md:mt-20 mb-10"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -294,7 +299,10 @@ export default function ContactUs() {
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
           >
-            <div className="bg-white shadow-2xl px-6 md:px-10 py-10 text-left">
+            <div
+              className="shadow-2xl border border-[#e0b265]/50 px-6 md:px-10 py-10 text-left"
+              style={{ backgroundColor: "#152C29", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
+            >
               {isSubmitSuccessful ? (
                 <motion.div
                   className="flex flex-col items-center text-center gap-5 py-14"
@@ -303,22 +311,22 @@ export default function ContactUs() {
                   transition={{ duration: 0.4 }}
                 >
                   <motion.div
-                    className="w-14 h-14 bg-[#58021f] flex items-center justify-center"
+                    className="w-14 h-14 bg-[#e0b265] flex items-center justify-center"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 300, delay: 0.1 }}
                   >
                     <svg width="26" height="26" viewBox="0 0 48 48" fill="none">
-                      <path d="M12 24L21 33L36 16" stroke="#f4eedd" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M12 24L21 33L36 16" stroke="#1b312e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </motion.div>
                   <h3
-                    className="text-[30px] text-[#58021f]"
+                    className="text-[30px] text-white"
                     style={{ fontFamily: "'Palmore-Light', serif" }}
                   >
                     Message Sent!
                   </h3>
-                  <p className="text-[14px] text-[#666] leading-relaxed max-w-[380px]">
+                  <p className="text-[14px] text-white/70 leading-relaxed max-w-[380px]">
                     Thank you for reaching out. Our team will get back to you within 24 hours.
                   </p>
                 </motion.div>
@@ -348,9 +356,9 @@ export default function ContactUs() {
 
                   <Field label="Subject" required error={errors.subject?.message}>
                     <select {...register("subject")} className={`${inputClass} appearance-none cursor-pointer`}>
-                      <option value="">Select a topic</option>
+                      <option value="" style={{ backgroundColor: "#152C29", color: "#fff" }}>Select a topic</option>
                       {subjects.map((s) => (
-                        <option key={s} value={s}>{s}</option>
+                        <option key={s} value={s} style={{ backgroundColor: "#152C29", color: "#fff" }}>{s}</option>
                       ))}
                     </select>
                   </Field>
@@ -369,7 +377,7 @@ export default function ContactUs() {
                       />
                       <span
                         className={`absolute bottom-2 right-3 text-[11px] ${
-                          messageLength > 950 ? "text-[#58021f]" : "text-[#ccc]"
+                          messageLength > 950 ? "text-[#e0b265]" : "text-white/40"
                         }`}
                       >
                         {messageLength}/1000
@@ -377,21 +385,73 @@ export default function ContactUs() {
                     </div>
                   </Field>
 
+                  <div className="mt-1 border-t border-white/15 pt-5">
+                    <h4 className="text-[#e0b265] text-[22px] md:text-[24px] leading-tight mb-5">
+                      Contact Form Consent
+                    </h4>
+                    <div className="grid grid-cols-1 gap-5">
+                      <label className="flex items-start gap-3 cursor-pointer select-none">
+                        <input
+                          {...register("serviceSmsConsent")}
+                          type="checkbox"
+                          className="w-4 h-4 mt-1 accent-[#e0b265] cursor-pointer flex-shrink-0"
+                        />
+                        <span className="text-[13px] text-white/70 leading-[1.65]">
+                          <span className="block font-semibold text-white/85 mb-1">Service &amp; Customer Care SMS Consent</span>
+                          I agree to receive SMS messages from Siena Restaurant related to my inquiry, reservation,
+                          event or private dining request, customer service, and other service-related
+                          communications. Message frequency varies. Message and data rates may apply. Reply STOP to
+                          opt out or HELP for assistance. Consent is not a condition of purchase. See our{" "}
+                          <Link href="/privacy-policy" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                            Privacy Notice
+                          </Link>{" "}
+                          and{" "}
+                          <Link href="/terms-of-service" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                            Terms &amp; Conditions
+                          </Link>
+                          .
+                        </span>
+                      </label>
+                      <label className="flex items-start gap-3 cursor-pointer select-none">
+                        <input
+                          {...register("marketingOptIn")}
+                          type="checkbox"
+                          className="w-4 h-4 mt-1 accent-[#e0b265] cursor-pointer flex-shrink-0"
+                        />
+                        <span className="text-[13px] text-white/70 leading-[1.65]">
+                          <span className="block font-semibold text-white/85 mb-1">Promotional SMS Consent — Optional</span>
+                          I agree to receive recurring promotional SMS messages from Siena Restaurant about events,
+                          offers, dining specials, promotions, happy hour, live entertainment, and restaurant
+                          updates. Message frequency varies. Message and data rates may apply. Reply STOP to opt out
+                          or HELP for assistance. Consent is not a condition of purchase. See our{" "}
+                          <Link href="/privacy-policy" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                            Privacy Notice
+                          </Link>{" "}
+                          and{" "}
+                          <Link href="/terms-of-service" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                            Terms &amp; Conditions
+                          </Link>
+                          .
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group bg-[#58021f] text-[#f5efdd] w-full px-4 py-3 font-normal text-[14px] md:text-[15px] flex items-center justify-center gap-2 hover:bg-[#030302] transition disabled:opacity-60 mt-2 cursor-pointer"
+                    className="group bg-[#e0b265] text-[#1b312e] w-full px-4 py-3 font-normal text-[14px] md:text-[15px] flex items-center justify-center gap-2 hover:bg-[#1b312e] hover:text-[#e0b265] transition disabled:opacity-60 mt-2 cursor-pointer"
                   >
                     {isSubmitting ? (
                       <>
-                        <span className="w-4 h-4 border-2 border-[#f5efdd]/40 border-t-[#f5efdd] rounded-full animate-spin" />
+                        <span className="w-4 h-4 border-2 border-[#1b312e]/40 border-t-[#1b312e] rounded-full animate-spin" />
                         Sending...
                       </>
                     ) : (
                       <>
                         SEND MESSAGE
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
-                          <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#f5efdd" />
+                          <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#1b312e" />
                         </svg>
                       </>
                     )}
@@ -412,7 +472,7 @@ export default function ContactUs() {
       <section
         className="relative w-full py-12 md:py-20 overflow-hidden"
         style={{
-          backgroundImage: "url('/assets/fondo_rojizo.webp')",
+          backgroundImage: "url('/assets/dark-green-wall-backdrop-grunge-background-texture.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -420,22 +480,18 @@ export default function ContactUs() {
         <div className="w-full max-w-[1180px] mx-auto px-4 md:px-0">
         <motion.div
           className="relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-stretch gap-8 md:gap-12"
-          style={{
-            backgroundImage: "url('/assets/fondo_findus.webp')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          style={{ backgroundColor: "#1e3833", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.38, ease: "easeOut" }}
         >
-          <div className="absolute inset-3 border border-[#58021f]/20 pointer-events-none" />
+          <div className="absolute inset-3 border border-[#e0b265]/20 pointer-events-none" />
 
           <div className="flex-1 flex flex-col gap-4 md:gap-5 relative z-10 w-full">
             <img src="/assets/icono_findus.svg" alt="" className="w-[55px] md:w-[68px] h-auto" />
             <h2
-              className="text-[#58021f] text-[52px] md:text-[72px] font-bold tracking-wide leading-none"
+              className="text-[#e0b265] text-[52px] md:text-[72px] font-bold tracking-wide leading-none"
               style={{ fontFamily: "'Palmore-Light', serif" }}
             >
               FIND US
@@ -445,36 +501,36 @@ export default function ContactUs() {
               href={info.maps_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-start gap-2 text-[#2b0a0a] text-[16px] md:text-[18px] leading-[1.5] hover:text-[#030302] transition"
+              className="group flex items-start gap-2 text-white/85 text-[16px] md:text-[18px] leading-[1.5] hover:text-[#e0b265] transition"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-0.5 flex-shrink-0">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                  className="fill-[#58021f] group-hover:fill-[#030302] transition-colors duration-300" />
+                  className="fill-[#e0b265] group-hover:fill-white transition-colors duration-300" />
               </svg>
               {info.address}
             </a>
 
             <a
               href={`tel:${info.phone.replace(/\D/g, '')}`}
-              className="group flex items-center gap-2 text-[#2b0a0a] text-[16px] md:text-[18px] hover:text-[#030302] transition"
+              className="group flex items-center gap-2 text-white/85 text-[16px] md:text-[18px] hover:text-[#e0b265] transition"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
-                  className="fill-[#58021f] group-hover:fill-[#030302] transition-colors duration-300" />
+                  className="fill-[#e0b265] group-hover:fill-white transition-colors duration-300" />
               </svg>
               {info.phone}
             </a>
 
             <div className="flex flex-col gap-2 mt-2">
               <p
-                className="text-[#58021f] text-[30px] md:text-[38px] tracking-wide uppercase leading-none"
+                className="text-white text-[30px] md:text-[38px] tracking-wide uppercase leading-none"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
               >
                 Opening Hours
               </p>
-              <div className="w-8 h-[2px] bg-[#58021f]/30 mb-1" />
+              <div className="w-8 h-[2px] bg-[#e0b265]/40 mb-1" />
               {info.hours.map(({ label, value }) => (
-                <p key={label} className="text-[#2b0a0a] text-[16px] md:text-[18px]">
+                <p key={label} className="text-white/80 text-[16px] md:text-[18px]">
                   <span className="font-semibold">{label}</span>: {value}
                 </p>
               ))}
@@ -484,11 +540,11 @@ export default function ContactUs() {
               href={info.maps_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-[#58021f] text-[#f5efdd] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-[#030302] transition mt-1 md:mt-2"
+              className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition mt-1 md:mt-2"
             >
               OPEN IN MAP
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
-                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#f5efdd" />
+                <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="#1b312e" />
               </svg>
             </a>
           </div>
@@ -508,7 +564,7 @@ export default function ContactUs() {
         </div>
       </section>
 
-      <section className="relative w-full h-[28px] overflow-hidden bg-[#58021f]">
+      <section className="relative w-full h-[28px] overflow-hidden bg-[#030302]">
         <img src="/assets/divisor_estrella3.svg" alt="" className="absolute inset-0 w-full h-full object-cover scale-y-125" />
       </section>
     </main>

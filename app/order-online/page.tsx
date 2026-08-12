@@ -43,11 +43,11 @@ const categories = [
   },
 ];
 
-const ArrowRight = () => (
+const ArrowRight = ({ color = "white" }: { color?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
     <path
       d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-      fill="#f5efdd"
+      fill={color}
     />
   </svg>
 );
@@ -74,12 +74,12 @@ export default function OrderOnline() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#f5efdd] text-[50px] md:text-[70px] lg:text-[88px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[50px] md:text-[70px] lg:text-[88px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -93,9 +93,9 @@ export default function OrderOnline() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#deae21]/80" />
-            <span className="text-[#deae21] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#deae21]/80" />
+            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
+            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
+            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
         </div>
       </section>
@@ -131,7 +131,7 @@ export default function OrderOnline() {
       </section>
 
       {/* ─── ORDER CTA ─── */}
-      <section className="w-full py-[80px] overflow-hidden" style={{ backgroundColor: "#f5efdd" }}>
+      <section className="w-full py-[80px] overflow-hidden" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[1180px] mx-auto px-4 flex flex-col items-center text-center">
           <motion.img
             src="/assets/icono_123.svg"
@@ -145,7 +145,7 @@ export default function OrderOnline() {
 
           <div className="relative inline-block mb-16 md:mb-20">
             <motion.h2
-              className="text-[#58021f] text-[58px] md:text-[78px] lg:text-[92px] leading-[0.9] tracking-[0.06em] uppercase"
+              className="text-[#e0b265] text-[58px] md:text-[78px] lg:text-[92px] leading-[0.9] tracking-[0.06em] uppercase"
               style={{ fontFamily: "'Palmore-Light', serif" }}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -155,11 +155,11 @@ export default function OrderOnline() {
               Order From Home
             </motion.h2>
             <motion.span
-              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
+              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
               style={{
                 fontFamily: "'AguafinaScript-Regular', cursive",
                 textShadow:
-                  "2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd",
+                  "2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e",
               }}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -171,7 +171,7 @@ export default function OrderOnline() {
           </div>
 
           <motion.p
-            className="text-[#030302]/70 text-[15px] md:text-[17px] leading-[1.8] max-w-[600px] mb-10"
+            className="text-white/70 text-[15px] md:text-[17px] leading-[1.8] max-w-[600px] mb-10"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -183,7 +183,7 @@ export default function OrderOnline() {
 
           <motion.a
             href={EVENT_INQUIRY_URL}
-            className="group bg-[#58021f] text-[#f5efdd] px-10 py-4 text-[15px] font-normal flex items-center gap-3 hover:bg-[#030302] transition"
+            className="group bg-[#e0b265] text-[#1b312e] px-10 py-4 text-[15px] font-normal flex items-center gap-3 hover:bg-white hover:text-[#1b312e] transition"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -192,7 +192,7 @@ export default function OrderOnline() {
             whileTap={{ scale: 0.98 }}
           >
             ORDER NOW
-            <ArrowRight />
+            <ArrowRight color="#1b312e" />
           </motion.a>
         </div>
       </section>
@@ -213,7 +213,7 @@ export default function OrderOnline() {
 
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#f5efdd] text-[58px] md:text-[78px] lg:text-[92px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[58px] md:text-[78px] lg:text-[92px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -223,7 +223,7 @@ export default function OrderOnline() {
                 How It Works
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
                 style={{ fontFamily: "'AguafinaScript-Regular', cursive" }}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -239,26 +239,26 @@ export default function OrderOnline() {
             {steps.map((step, i) => (
               <motion.div
                 key={i}
-                className="flex flex-col items-center md:items-start text-center md:text-left p-6 md:p-8 border-t border-[#deae21]/20 md:border-t-0 md:border-l first:border-t-0 first:border-l-0"
+                className="flex flex-col items-center md:items-start text-center md:text-left p-6 md:p-8 border-t border-[#e0b265]/20 md:border-t-0 md:border-l first:border-t-0 first:border-l-0"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.7, delay: i * 0.12, ease: "easeOut" }}
               >
                 <span
-                  className="text-[#deae21] text-[52px] md:text-[68px] leading-none mb-3"
+                  className="text-[#e0b265] text-[52px] md:text-[68px] leading-none mb-3"
                   style={{ fontFamily: "'Palmore-Light', serif" }}
                 >
                   {step.num}
                 </span>
-                <div className="w-8 h-[2px] bg-[#deae21] mb-4" />
+                <div className="w-8 h-[2px] bg-[#e0b265] mb-4" />
                 <h3
-                  className="text-[#f5efdd] text-[26px] md:text-[30px] leading-tight mb-3"
+                  className="text-[#e0b265] text-[26px] md:text-[30px] leading-tight mb-3"
                   style={{ fontFamily: "'Palmore-Light', serif" }}
                 >
                   {step.title}
                 </h3>
-                <p className="text-[#f5efdd]/65 text-[15px] md:text-[16px] leading-[1.7]">
+                <p className="text-white/65 text-[15px] md:text-[16px] leading-[1.7]">
                   {step.desc}
                 </p>
               </motion.div>
@@ -268,12 +268,12 @@ export default function OrderOnline() {
       </section>
 
       {/* ─── CATEGORY HIGHLIGHTS ─── */}
-      <section className="w-full py-[80px] overflow-hidden" style={{ backgroundColor: "#f5efdd" }}>
+      <section className="w-full py-[80px] overflow-hidden" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[1180px] mx-auto px-4">
           <div className="flex flex-col items-center text-center mb-16 md:mb-20">
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#58021f] text-[58px] md:text-[78px] lg:text-[92px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[58px] md:text-[78px] lg:text-[92px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -283,11 +283,11 @@ export default function OrderOnline() {
                 What We&apos;re Known For
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#deae21] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow:
-                    "2px 2px 0 #f5efdd,-2px -2px 0 #f5efdd,2px -2px 0 #f5efdd,-2px 2px 0 #f5efdd",
+                    "2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e",
                 }}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -321,18 +321,18 @@ export default function OrderOnline() {
                 {/* Default overlay */}
                 <div className="absolute inset-0 bg-black/25 transition-opacity duration-300 group-hover:opacity-0" />
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-[#58021f]/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-5">
+                <div className="absolute inset-0 bg-[#1b312e]/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-5">
                   <div className="flex items-end justify-between gap-3 w-full">
                     <div className="min-w-0 flex-1">
                       <h3
-                        className="text-[#f5efdd] text-[26px] md:text-[30px] leading-tight uppercase tracking-[0.06em]"
+                        className="text-white text-[26px] md:text-[30px] leading-tight uppercase tracking-[0.06em]"
                         style={{ fontFamily: "'Palmore-Light', serif" }}
                       >
                         {cat.label}
                       </h3>
-                      <p className="text-[#f5efdd]/80 text-[13px] md:text-[15px] mt-1">{cat.sub}</p>
+                      <p className="text-white/80 text-[13px] md:text-[15px] mt-1">{cat.sub}</p>
                     </div>
-                    <div className="w-9 h-9 border border-[#f5efdd]/60 flex items-center justify-center flex-shrink-0">
+                    <div className="w-9 h-9 border border-white/60 flex items-center justify-center flex-shrink-0">
                       <ArrowRight />
                     </div>
                   </div>
@@ -340,12 +340,12 @@ export default function OrderOnline() {
                 {/* Always-visible label at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 p-5 group-hover:opacity-0 transition-opacity duration-300">
                   <h3
-                    className="text-[#f5efdd] text-[24px] md:text-[28px] leading-tight uppercase tracking-[0.06em] drop-shadow-lg"
+                    className="text-white text-[24px] md:text-[28px] leading-tight uppercase tracking-[0.06em] drop-shadow-lg"
                     style={{ fontFamily: "'Palmore-Light', serif" }}
                   >
                     {cat.label}
                   </h3>
-                  <p className="text-[#f5efdd]/75 text-[13px] md:text-[14px] mt-0.5 drop-shadow-lg">{cat.sub}</p>
+                  <p className="text-white/75 text-[13px] md:text-[14px] mt-0.5 drop-shadow-lg">{cat.sub}</p>
                 </div>
               </motion.a>
             ))}
@@ -354,7 +354,7 @@ export default function OrderOnline() {
       </section>
 
       {/* ─── DIVIDER ─── */}
-      <section className="relative w-full h-[28px] overflow-hidden" style={{ backgroundColor: "#58021f" }}>
+      <section className="relative w-full h-[28px] overflow-hidden" style={{ backgroundColor: "#030302" }}>
         <img
           src="/assets/divisor_estrella3.svg"
           alt=""
