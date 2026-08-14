@@ -1,5 +1,24 @@
 const HOURS_API = "https://reservations.sienaatl.com/api/hours";
 
+// "YYYY-MM-DD" <-> local Date, deliberately not going through UTC/ISO
+// conversion (new Date().toISOString() rolls over a day early for anyone
+// west of UTC, e.g. showing tomorrow as "today" in the evening).
+export function dateToISO(d: Date): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+export function parseLocalDate(dateStr: string): Date {
+  const [y, m, d] = dateStr.split("-").map(Number);
+  return new Date(y, m - 1, d);
+}
+
+export function todayISO(): string {
+  return dateToISO(new Date());
+}
+
 export type ApiHourEntry = {
   day: string;
   day_of_week: number;
