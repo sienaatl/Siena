@@ -8,7 +8,15 @@
       "Bash(npx --yes playwright install chromium --with-deps)",
       "Bash(node .tmp-screenshot.mjs)",
       "Bash(node .tmp-screenshot2.mjs)",
-      "Bash(rm .tmp-screenshot2.mjs)"
+      "Bash(rm .tmp-screenshot2.mjs)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(timeout 30 bash -c 'until curl -sf http://localhost:3000 >/dev/null; do sleep 1; done')",
+      "Bash(timeout 30 bash -c 'until curl -sf http://localhost:3000 >/dev/null 2>&1; do sleep 1; done')",
+      "Bash(node .tmp-screenshot3.mjs)",
+      "Bash(rm .tmp-screenshot3.mjs)",
+      "Bash(node .tmp-screenshot4.mjs)",
+      "Bash(rm .tmp-screenshot4.mjs)"
     ]
   }
 }
