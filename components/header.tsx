@@ -30,6 +30,7 @@ export default function Header() {
         { href: "/", label: "Home" },
         { href: "/menus", label: "Menu" },
         { href: "/events", label: "Events" },
+        { href: "/live-music-fridays", label: "Live Music Fridays" },
         { href: "/reservations", label: "Reservations" },
         { href: "/gift-card", label: "Gift Card" },
         { href: "/about-us", label: "About Us" },
@@ -95,6 +96,9 @@ export default function Header() {
                                 </Link>
                                 <Link href="/gallery" className="flex items-center justify-center gap-4 p-3 hover:bg-[#E0B265] hover:text-[#1B312E] transition text-white">
                                     <span className="text-[15px] font-normal uppercase tracking-wide text-center">Gallery</span>
+                                </Link>
+                                <Link href="/live-music-fridays" className="flex items-center justify-center gap-4 p-3 hover:bg-[#E0B265] hover:text-[#1B312E] transition text-white">
+                                    <span className="text-[15px] font-normal uppercase tracking-wide text-center">Live Music Fridays</span>
                                 </Link>
                                 <Link href="/careers" className="flex items-center justify-center gap-4 p-3 hover:bg-[#E0B265] hover:text-[#1B312E] transition text-white">
                                     <span className="text-[15px] font-normal uppercase tracking-wide text-center">Careers</span>
