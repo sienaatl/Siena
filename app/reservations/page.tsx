@@ -1,8 +1,9 @@
 "use client";
-import { useState, useEffect, useRef, useMemo } from "react";
+import { Suspense, useState, useEffect, useRef, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -14,6 +15,9 @@ import {
   getTimeSlotsForDay,
   FALLBACK_CLOSED_WEEKDAYS,
   FALLBACK_WEEKDAY_SCHEDULE,
+  dateToISO,
+  parseLocalDate,
+  todayISO,
   type WeekdaySchedule,
 } from "@/lib/hours";
 
@@ -35,25 +39,6 @@ function formatClosedDaysHint(closedWeekdays: number[]): string {
 }
 
 const phoneRegex = /^\+?[\d\s\-(). ]{7,20}$/;
-
-// "YYYY-MM-DD" <-> local Date, deliberately not going through UTC/ISO
-// conversion (new Date().toISOString() rolls over a day early for anyone
-// west of UTC, e.g. showing tomorrow as "today" in the evening).
-function dateToISO(d: Date) {
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, "0");
-  const day = String(d.getDate()).padStart(2, "0");
-  return `${y}-${m}-${day}`;
-}
-
-function parseLocalDate(dateStr: string) {
-  const [y, m, d] = dateStr.split("-").map(Number);
-  return new Date(y, m - 1, d);
-}
-
-function todayISO() {
-  return dateToISO(new Date());
-}
 
 function startOfToday() {
   const d = new Date();
@@ -222,7 +207,21 @@ function Field({
   );
 }
 
-export default function Reservations() {
+function ReservationsForm() {
+  const searchParams = useSearchParams();
+
+  // Prefill from the homepage's inline booking widget (?date=&time=&partySize=),
+  // e.g. /reservations?date=2026-08-22&time=7:00%20PM&partySize=2. Anything
+  // missing or invalid just falls back to an empty/default field like normal.
+  const today = todayISO();
+  const rawDate = searchParams.get("date") ?? "";
+  const prefillDate = /^\d{4}-\d{2}-\d{2}$/.test(rawDate) && rawDate >= today ? rawDate : "";
+  const rawPartySize = searchParams.get("partySize") ?? "";
+  const prefillPartySize = /^(1[0-4]|[1-9])$/.test(rawPartySize) ? rawPartySize : "2";
+  // Only carry the time over if the date came through too — a time with no
+  // date attached isn't meaningful to prefill.
+  const prefillTime = prefillDate ? searchParams.get("time") ?? "" : "";
+
   const [confirmation, setConfirmation] = useState<BookingResponse | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [datePickerOpen, setDatePickerOpen] = useState(false);
@@ -269,9 +268,9 @@ export default function Reservations() {
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
-      partySize: "2",
-      date: "",
-      time: "",
+      partySize: prefillPartySize,
+      date: prefillDate,
+      time: prefillTime,
       fullName: "",
       email: "",
       phone: "",
@@ -813,5 +812,13 @@ export default function Reservations() {
       </section>
 
     </main>
+  );
+}
+
+export default function Reservations() {
+  return (
+    <Suspense>
+      <ReservationsForm />
+    </Suspense>
   );
 }

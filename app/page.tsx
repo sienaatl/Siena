@@ -2,10 +2,22 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useState, useEffect, useMemo } from "react";
 const MotionLink = motion(Link);
 import { motion } from "motion/react";
 import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
+import {
+  fetchHours,
+  getWeekdaySchedule,
+  getTimeSlotsForDay,
+  FALLBACK_WEEKDAY_SCHEDULE,
+  parseLocalDate,
+  todayISO,
+  type WeekdaySchedule,
+} from "@/lib/hours";
+
+const PARTY_SIZES = Array.from({ length: 14 }, (_, i) => i + 1);
 
 const EventsSlider = dynamic(() => import("@/components/EventsSlider"), { ssr: false });
 const TestimonialsSlider = dynamic(() => import("@/components/TestimonialsSlider"), { ssr: false });
@@ -17,8 +29,42 @@ const slides = [
 ];
 
 export default function Home() {
+  const router = useRouter();
   const [info, setInfo] = useState<RestaurantInfo>(RESTAURANT_FALLBACK);
   useEffect(() => { getRestaurantInfo().then(setInfo); }, []);
+
+  const [weekdaySchedule, setWeekdaySchedule] = useState<WeekdaySchedule>(FALLBACK_WEEKDAY_SCHEDULE);
+  useEffect(() => {
+    fetchHours()
+      .then((entries) => setWeekdaySchedule(getWeekdaySchedule(entries)))
+      .catch(() => setWeekdaySchedule(FALLBACK_WEEKDAY_SCHEDULE));
+  }, []);
+
+  const [bookDate, setBookDate] = useState("");
+  const [bookTime, setBookTime] = useState("");
+  const [bookPartySize, setBookPartySize] = useState("2");
+
+  // Same per-day slot logic the reservations page itself uses, so a time
+  // offered here is guaranteed to still be valid once the user lands there.
+  const bookTimeOptions = useMemo(() => {
+    if (!bookDate) return [];
+    const weekday = parseLocalDate(bookDate).getDay();
+    return getTimeSlotsForDay(weekdaySchedule[weekday]);
+  }, [bookDate, weekdaySchedule]);
+
+  // Derived rather than stored: if the chosen date turns out to be closed
+  // (or hours change under us), a stale time just stops being "current"
+  // instead of needing a separate effect to go correct the state for it.
+  const effectiveBookTime = bookTimeOptions.includes(bookTime) ? bookTime : "";
+
+  const handleBookNow = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!bookDate || !effectiveBookTime) return;
+    const params = new URLSearchParams({ date: bookDate, time: effectiveBookTime, partySize: bookPartySize });
+    // Handing the picks off via the URL — the reservations page reads
+    // these same params and prefills step 1 of the form with them.
+    router.push(`/reservations?${params.toString()}`);
+  };
 
   return (
     <main>
@@ -59,20 +105,84 @@ export default function Home() {
             className="w-[280px] md:w-[400px] mb-5 hero-fadein"
           />
 
-          <div className="flex gap-4 hero-fadein">
-            <a
-              href="/reservations"
-              className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 justify-center font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-[#e0b265] hover:bg-[#1b312e] hover:text-white transition"
+          <form
+            onSubmit={handleBookNow}
+            className="hero-fadein w-full max-w-[760px] flex flex-col sm:flex-row items-stretch bg-black/35 backdrop-blur-md border border-white/25 divide-y sm:divide-y-0 sm:divide-x divide-white/20 overflow-hidden"
+          >
+            <div className="flex-1 flex items-center gap-2.5 px-4 py-3 min-w-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#e0b265" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <path d="M16 2v4M8 2v4M3 10h18" />
+              </svg>
+              <input
+                type="date"
+                required
+                min={todayISO()}
+                value={bookDate}
+                onChange={(e) => setBookDate(e.target.value)}
+                className="w-full bg-transparent text-white text-[13px] md:text-[14px] tracking-wide outline-none [color-scheme:dark]"
+                aria-label="Reservation date"
+              />
+            </div>
+
+            <div className="flex-1 flex items-center gap-2.5 px-4 py-3 min-w-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#e0b265" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 3" />
+              </svg>
+              <select
+                required
+                disabled={!bookDate}
+                value={effectiveBookTime}
+                onChange={(e) => setBookTime(e.target.value)}
+                className="w-full bg-transparent text-white text-[13px] md:text-[14px] tracking-wide outline-none cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 appearance-none [color-scheme:dark]"
+                aria-label="Reservation time"
+              >
+                <option value="" style={{ backgroundColor: "#152C29", color: "#fff" }}>
+                  {!bookDate ? "Time" : bookTimeOptions.length ? "Time" : "Closed"}
+                </option>
+                {bookTimeOptions.map((t) => (
+                  <option key={t} value={t} style={{ backgroundColor: "#152C29", color: "#fff" }}>
+                    {t}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="flex-1 flex items-center gap-2.5 px-4 py-3 min-w-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#e0b265" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+              <select
+                value={bookPartySize}
+                onChange={(e) => setBookPartySize(e.target.value)}
+                className="w-full bg-transparent text-white text-[13px] md:text-[14px] tracking-wide outline-none cursor-pointer appearance-none [color-scheme:dark]"
+                aria-label="Party size"
+              >
+                {PARTY_SIZES.map((n) => (
+                  <option key={n} value={n} style={{ backgroundColor: "#152C29", color: "#fff" }}>
+                    {n} {n === 1 ? "Guest" : "Guests"}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <button
+              type="submit"
+              disabled={!bookDate || !effectiveBookTime}
+              className="group bg-[#e0b265] text-[#1b312e] px-6 md:px-9 py-3 font-normal text-[13px] md:text-[14px] tracking-[0.15em] uppercase flex items-center justify-center gap-2 hover:bg-[#1b312e] hover:text-white transition disabled:opacity-60 disabled:cursor-not-allowed flex-shrink-0"
             >
-              RESERVATIONS
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              Book Now
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
                 <path
                   d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
                   className="fill-[#1b312e] group-hover:fill-white transition-colors duration-300"
                 />
               </svg>
-            </a>
-          </div>
+            </button>
+          </form>
         </div>
 
         {/* Barra inferior — ubicación e Instagram */}
