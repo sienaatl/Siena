@@ -45,7 +45,7 @@ const jsonLd = {
   },
   offers: {
     "@type": "Offer",
-    url: "https://www.opentable.com/r/siena-restaurant-alpharetta",
+    url: "https://sienaatl.com/reservations",
     availability: "https://schema.org/InStock",
   },
   image: "https://sienaatl.com/assets/Siena_20.03.26-A-05.webp",

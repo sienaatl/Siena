@@ -4,37 +4,13 @@ import { motion } from "motion/react";
 import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
 import { useEffect, useState } from "react";
 
-const RESERVE_URL = "https://www.opentable.com/r/siena-restaurant-alpharetta";
-
-const performers = [
-  {
-    name: "Nicole Marie Quinn",
-    role: "Vocals & Piano",
-    blurb: "Soulful live music for an unforgettable Friday night.",
-  },
-  {
-    name: "Kandice Cherelle",
-    role: "Featured Vocalist",
-    blurb: "Powerful vocals, great energy and a night to remember.",
-  },
-];
-
 const marqueePhrases = [
   "LIVE MUSIC EVERY FRIDAY",
+  "NEW ARTIST EVERY WEEK",
   "MEDITERRANEAN-ITALIAN DINING",
   "HANDCRAFTED COCKTAILS",
   "7–10 PM · ALPHARETTA, GA",
 ];
-
-function MusicIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M9 18V5l12-2v13" />
-      <circle cx="6" cy="18" r="3" />
-      <circle cx="18" cy="16" r="3" />
-    </svg>
-  );
-}
 
 export default function LiveMusicFridays() {
   const [info, setInfo] = useState<RestaurantInfo>(RESTAURANT_FALLBACK);
@@ -121,14 +97,6 @@ export default function LiveMusicFridays() {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           >
             <a
-              href={RESERVE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-3 font-normal text-[13px] md:text-[14px] tracking-[0.1em] uppercase flex items-center gap-2 border border-[#e0b265] hover:bg-[#1b312e] hover:text-white transition"
-            >
-              Reserve Your Table
-            </a>
-            <a
               href={`tel:${info.phone.replace(/\D/g, "")}`}
               className="group bg-transparent text-white px-4 md:px-9 py-3 font-normal text-[13px] md:text-[14px] tracking-[0.1em] uppercase flex items-center gap-2 border border-white/50 hover:border-[#e0b265] hover:text-[#e0b265] transition"
             >
@@ -161,87 +129,70 @@ export default function LiveMusicFridays() {
       </section>
 
       {/* INTRO */}
-      <section
-        className="relative w-full overflow-hidden"
-        style={{
-          backgroundImage: "url('/assets/dark-green-wall-backdrop-grunge-background-texture.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="w-full max-w-[1100px] mx-auto px-4 py-[70px] md:py-[110px] grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-          <div>
-            <div className="text-[#e0b265] text-[11px] font-semibold tracking-[0.3em] uppercase mb-3">
-              Live Music in Alpharetta
-            </div>
-            <h2
-              className="text-white text-[38px] md:text-[52px] leading-[1.02] uppercase mb-5"
-              style={{ fontFamily: "'Palmore-Light', serif" }}
+      <section className="relative w-full py-[80px] md:py-[100px] overflow-hidden" style={{ backgroundColor: "#1b312e" }}>
+        <div className="w-full max-w-[1180px] mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-20">
+            <motion.div
+              className="flex-1 flex flex-col"
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: "easeOut" }}
             >
-              Dinner deserves a soundtrack.
-            </h2>
-            <p className="text-white/75 text-[15px] md:text-[17px] leading-[1.8]">
-              From date night to cocktails with friends, Friday evenings at Siena bring together soulful live
-              performances, memorable plates and warm hospitality — just minutes from downtown Alpharetta, Johns
-              Creek and Milton.
-            </p>
-          </div>
-          <div className="border-l border-[#e0b265] pl-6 md:pl-10">
-            <p
-              className="text-[#e0b265] text-[26px] md:text-[36px] leading-[1.25]"
-              style={{ fontFamily: "'Palmore-Light', serif" }}
-            >
-              &ldquo;The perfect way to kick off your weekend.&rdquo;
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURED PERFORMERS */}
-      <section className="w-full py-[70px] md:py-[110px] px-4" style={{ backgroundColor: "#0d1815" }}>
-        <div className="w-full max-w-[1180px] mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div>
-              <div className="text-[#e0b265] text-[11px] font-semibold tracking-[0.3em] uppercase mb-3">
-                The Siena Stage
-              </div>
+              <motion.img
+                src="/assets/icono_123.svg"
+                alt=""
+                className="w-[55px] md:w-[65px] mb-4"
+                animate={{ y: [0, -6, 0] }}
+                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+              />
               <h2
-                className="text-white text-[38px] md:text-[52px] leading-[1.02] uppercase"
+                className="text-[#e0b265] text-[34px] md:text-[46px] lg:text-[54px] leading-[1.1] tracking-[0.03em] uppercase mb-2"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
               >
-                Featured Performers
+                Dinner Deserves
+                <br />a Soundtrack
               </h2>
-            </div>
-            <p className="text-white/60 text-[15px] leading-[1.7] max-w-[420px]">
-              Enjoy a rotating lineup of talented local vocalists and musicians. Follow Siena for weekly artist
-              announcements and special performances.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {performers.map((p) => (
-              <motion.div
-                key={p.name}
-                className="border border-[#e0b265]/30 p-8 md:p-10"
-                style={{ backgroundColor: "#152C29", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
+              <span
+                className="text-[#e0b265] text-[30px] md:text-[38px] leading-none block mb-8"
+                style={{ fontFamily: "'AguafinaScript-Regular', cursive" }}
               >
-                <MusicIcon className="text-[#e0b265] mb-5" />
-                <div className="text-[#e0b265] text-[11px] font-semibold tracking-[0.25em] uppercase mb-1">
-                  {p.role}
+                every friday night
+              </span>
+
+              <p className="text-white/70 text-[15px] md:text-[17px] leading-[1.8] max-w-[520px]">
+                From date night to cocktails with friends, Friday evenings at Siena bring together soulful live
+                performances, memorable plates and warm hospitality — just minutes from downtown Alpharetta, Johns
+                Creek and Milton.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="flex-1 w-full"
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: "easeOut" }}
+            >
+              <div className="relative overflow-hidden group h-[360px] md:h-[480px]">
+                <Image
+                  src="/assets/hero3.webp"
+                  alt="Live music evenings at Siena Restaurant & Bar"
+                  fill
+                  sizes="(max-width: 1023px) 100vw, 50vw"
+                  className="object-cover shadow-xl transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-4 border border-[#e0b265]/50 pointer-events-none" />
+                <div className="absolute bottom-6 left-6 right-6 bg-[#1b312e]/90 p-4 md:p-6 backdrop-blur-sm">
+                  <p className="text-white text-[22px] md:text-[28px] leading-none" style={{ fontFamily: "'Palmore-Light', serif" }}>
+                    Live Every Friday
+                  </p>
+                  <span className="text-[#e0b265] text-[18px] md:text-[24px]" style={{ fontFamily: "'AguafinaScript-Regular', cursive" }}>
+                    an evening to remember
+                  </span>
                 </div>
-                <h3
-                  className="text-white text-[28px] md:text-[32px] leading-tight mb-2"
-                  style={{ fontFamily: "'Palmore-Light', serif" }}
-                >
-                  {p.name}
-                </h3>
-                <p className="text-white/70 text-[15px] leading-[1.7]">{p.blurb}</p>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -267,67 +218,48 @@ export default function LiveMusicFridays() {
                   Plan Your Evening
                 </div>
                 <h2
-                  className="text-white text-[38px] md:text-[52px] leading-[1.02] uppercase mb-7"
+                  className="text-white text-[38px] md:text-[52px] leading-[1.02] uppercase mb-2"
                   style={{ fontFamily: "'Palmore-Light', serif" }}
                 >
                   Friday, elevated.
                 </h2>
+                <span
+                  className="text-[#e0b265] text-[22px] md:text-[28px] leading-none block mb-7"
+                  style={{ fontFamily: "'AguafinaScript-Regular', cursive" }}
+                >
+                  book your night
+                </span>
                 <a
-                  href={RESERVE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/reservations"
                   className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-3 font-normal text-[13px] md:text-[14px] tracking-[0.1em] uppercase inline-flex items-center gap-2 border border-transparent hover:bg-white hover:text-[#1b312e] transition w-fit"
                 >
-                  Book on OpenTable
+                  Reserve a Table
                 </a>
               </div>
-              <div className="grid grid-cols-2 gap-6 md:gap-8">
+              <div className="grid grid-cols-2 gap-8 md:gap-10">
                 <div>
-                  <h4 className="text-[#e0b265] text-[11px] font-semibold tracking-[0.25em] uppercase mb-2">When</h4>
-                  <p className="text-white/85 text-[15px] leading-[1.7]">Every Friday<br />7:00 PM – 10:00 PM</p>
+                  <h4 className="text-[#e0b265] text-[12px] font-semibold tracking-[0.3em] uppercase mb-3">When</h4>
+                  <div className="w-8 h-[2px] bg-[#e0b265]/40 mb-3" />
+                  <p className="text-white text-[16px] leading-[1.7]" style={{ fontFamily: "'Palmore-Light', serif" }}>Every Friday<br />7:00 PM – 10:00 PM</p>
                 </div>
                 <div>
-                  <h4 className="text-[#e0b265] text-[11px] font-semibold tracking-[0.25em] uppercase mb-2">Where</h4>
-                  <p className="text-white/85 text-[15px] leading-[1.7]">{info.address}</p>
+                  <h4 className="text-[#e0b265] text-[12px] font-semibold tracking-[0.3em] uppercase mb-3">Where</h4>
+                  <div className="w-8 h-[2px] bg-[#e0b265]/40 mb-3" />
+                  <p className="text-white text-[16px] leading-[1.7]" style={{ fontFamily: "'Palmore-Light', serif" }}>{info.address}</p>
                 </div>
                 <div>
-                  <h4 className="text-[#e0b265] text-[11px] font-semibold tracking-[0.25em] uppercase mb-2">Dining</h4>
-                  <p className="text-white/85 text-[15px] leading-[1.7]">Mediterranean-Italian cuisine and handcrafted cocktails.</p>
+                  <h4 className="text-[#e0b265] text-[12px] font-semibold tracking-[0.3em] uppercase mb-3">Dining</h4>
+                  <div className="w-8 h-[2px] bg-[#e0b265]/40 mb-3" />
+                  <p className="text-white text-[16px] leading-[1.7]" style={{ fontFamily: "'Palmore-Light', serif" }}>Mediterranean-Italian cuisine and handcrafted cocktails.</p>
                 </div>
                 <div>
-                  <h4 className="text-[#e0b265] text-[11px] font-semibold tracking-[0.25em] uppercase mb-2">Reservations</h4>
-                  <p className="text-white/85 text-[15px] leading-[1.7]">Recommended. Walk-ins welcomed based on availability.</p>
+                  <h4 className="text-[#e0b265] text-[12px] font-semibold tracking-[0.3em] uppercase mb-3">Reservations</h4>
+                  <div className="w-8 h-[2px] bg-[#e0b265]/40 mb-3" />
+                  <p className="text-white text-[16px] leading-[1.7]" style={{ fontFamily: "'Palmore-Light', serif" }}>Recommended. Walk-ins welcomed based on availability.</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CLOSING CTA */}
-      <section
-        className="relative w-full overflow-hidden"
-        style={{ backgroundImage: "url('/assets/Siena_20.03.26-A-06.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
-      >
-        <div className="absolute inset-0 bg-black/70" />
-        <div className="relative z-10 w-full max-w-[900px] mx-auto px-4 py-[90px] md:py-[150px] text-center">
-          <div className="text-[#e0b265] text-[11px] font-semibold tracking-[0.35em] uppercase mb-5">
-            Your Table Is Waiting
-          </div>
-          <h2
-            className="text-white text-[40px] md:text-[68px] leading-[0.95] uppercase mb-9"
-            style={{ fontFamily: "'Palmore-Light', serif" }}
-          >
-            Make Siena your Friday night tradition.
-          </h2>
-          <a
-            href={RESERVE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-3 font-normal text-[13px] md:text-[14px] tracking-[0.1em] uppercase inline-flex items-center gap-2 border border-[#e0b265] hover:bg-[#1b312e] hover:text-white transition"
-          >
-            Reserve Now
-          </a>
         </div>
       </section>
     </main>

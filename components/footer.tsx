@@ -123,6 +123,7 @@ export default function Footer() {
                             { label: "Menu", href: "/menus" },
                             { label: "Events", href: "/events" },
                             { label: "Gift Card", href: "/gift-card" },
+                            { label: "Live Music Fridays", href: "/live-music-fridays" },
                         ].map(({ label, href }) => {
                             const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
                             return (

@@ -16,7 +16,8 @@
       "Bash(node .tmp-screenshot3.mjs)",
       "Bash(rm .tmp-screenshot3.mjs)",
       "Bash(node .tmp-screenshot4.mjs)",
-      "Bash(rm .tmp-screenshot4.mjs)"
+      "Bash(rm .tmp-screenshot4.mjs)",
+      "Bash(npx eslint *)"
     ]
   }
 }
