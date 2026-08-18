@@ -9,13 +9,15 @@ import { motion } from "motion/react";
 import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
 import {
   fetchHours,
+  getClosedWeekdays,
   getWeekdaySchedule,
   getTimeSlotsForDay,
+  FALLBACK_CLOSED_WEEKDAYS,
   FALLBACK_WEEKDAY_SCHEDULE,
   parseLocalDate,
-  todayISO,
   type WeekdaySchedule,
 } from "@/lib/hours";
+import { ReservationDatePicker } from "@/components/ReservationDatePicker";
 
 const PARTY_SIZES = Array.from({ length: 14 }, (_, i) => i + 1);
 
@@ -34,10 +36,17 @@ export default function Home() {
   useEffect(() => { getRestaurantInfo().then(setInfo); }, []);
 
   const [weekdaySchedule, setWeekdaySchedule] = useState<WeekdaySchedule>(FALLBACK_WEEKDAY_SCHEDULE);
+  const [closedWeekdays, setClosedWeekdays] = useState<number[]>(FALLBACK_CLOSED_WEEKDAYS);
   useEffect(() => {
     fetchHours()
-      .then((entries) => setWeekdaySchedule(getWeekdaySchedule(entries)))
-      .catch(() => setWeekdaySchedule(FALLBACK_WEEKDAY_SCHEDULE));
+      .then((entries) => {
+        setWeekdaySchedule(getWeekdaySchedule(entries));
+        setClosedWeekdays(getClosedWeekdays(entries));
+      })
+      .catch(() => {
+        setWeekdaySchedule(FALLBACK_WEEKDAY_SCHEDULE);
+        setClosedWeekdays(FALLBACK_CLOSED_WEEKDAYS);
+      });
   }, []);
 
   const [bookDate, setBookDate] = useState("");
@@ -96,7 +105,7 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-black/50" />
 
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+        <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
           <img
             src="/assets/logo_hero.webp"
             alt="Logo"
@@ -107,21 +116,15 @@ export default function Home() {
 
           <form
             onSubmit={handleBookNow}
-            className="hero-fadein w-full max-w-[760px] flex flex-col sm:flex-row items-stretch bg-black/35 backdrop-blur-md border border-white/25 divide-y sm:divide-y-0 sm:divide-x divide-white/20 overflow-hidden"
+            className="hero-fadein w-full max-w-[760px] flex flex-col sm:flex-row items-stretch bg-black/35 backdrop-blur-md border border-white/25 divide-y sm:divide-y-0 sm:divide-x divide-white/20"
           >
-            <div className="flex-1 flex items-center gap-2.5 px-4 py-3 min-w-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#e0b265" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
-                <rect x="3" y="4" width="18" height="18" rx="2" />
-                <path d="M16 2v4M8 2v4M3 10h18" />
-              </svg>
-              <input
-                type="date"
-                required
-                min={todayISO()}
+            <div className="flex-1 min-w-0">
+              <ReservationDatePicker
                 value={bookDate}
-                onChange={(e) => setBookDate(e.target.value)}
-                className="w-full bg-transparent text-white text-[13px] md:text-[14px] tracking-wide outline-none [color-scheme:dark]"
-                aria-label="Reservation date"
+                onChange={setBookDate}
+                closedWeekdays={closedWeekdays}
+                placeholder="Date"
+                buttonClassName="w-full flex items-center justify-between gap-2.5 px-4 py-3 bg-transparent text-white text-[13px] md:text-[14px] tracking-wide text-left cursor-pointer"
               />
             </div>
 
