@@ -2,7 +2,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "Blog | Restaurant News in Alpharetta | Siena",
+    // No brand here — the root layout template appends " | Siena".
+    default: "Blog | Restaurant News in Alpharetta",
     template: "%s | Siena",
   },
   description:
