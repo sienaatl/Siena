@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Discover Siena’s story, chef-driven philosophy, seasonal ingredients, and warm Mediterranean dining experience in the heart of Alpharetta, Georgia.",
   openGraph: {
-    title: "About Siena Restaurant | Mediterranean Dining Alpharettat",
+    title: "About Siena Restaurant | Mediterranean Dining Alpharetta",
     description:
       "Discover Siena’s story, chef-driven philosophy, seasonal ingredients, and warm Mediterranean dining experience in the heart of Alpharetta, Georgia.",
     url: "https://sienaatl.com/about-us",
