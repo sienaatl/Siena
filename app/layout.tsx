@@ -94,6 +94,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       "https://www.instagram.com/sienaatl/",
       "https://www.tiktok.com/@sienaatl",
       "https://www.threads.net/@sienaatl",
+      "https://www.opentable.com/r/siena-restaurant-alpharetta",
+      "https://www.tripadvisor.com/Restaurant_Review-g29196-d34075603-Reviews-Siena_Restaurant-Alpharetta_Georgia.html",
     ],
   };
 
