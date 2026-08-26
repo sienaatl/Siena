@@ -7,8 +7,11 @@ const SITE_URL = "https://sienaatl.com";
 // marked noindex, since a post-submission page has no business in search results.
 const PAGES: { path: string; priority: number }[] = [
   { path: "", priority: 1.0 },
+  { path: "/mediterranean-restaurant-alpharetta", priority: 0.95 },
   { path: "/menus", priority: 0.9 },
   { path: "/reservations", priority: 0.9 },
+  { path: "/date-night-alpharetta", priority: 0.8 },
+  { path: "/mediterranean-restaurant-near-roswell-ga", priority: 0.8 },
   { path: "/events", priority: 0.8 },
   { path: "/event-inquiry", priority: 0.8 },
   { path: "/live-music-fridays", priority: 0.7 },
@@ -22,15 +25,11 @@ const PAGES: { path: string; priority: number }[] = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Static pages carry no lastModified. Stamping them with the build time would
-  // tell Google every page changed on every deploy, which is worse than saying nothing.
   const pages = PAGES.map(({ path, priority }) => ({
     url: `${SITE_URL}${path}`,
     priority,
   }));
 
-  // Blog posts come from the post data, so new posts appear here automatically
-  // and removed ones drop out.
   const posts = blogs.map((blog) => ({
     url: `${SITE_URL}/blogs/${blog.slug}`,
     lastModified: new Date(blog.updatedAt || blog.publishedAt),
