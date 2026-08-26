@@ -62,7 +62,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
-    name: "Siena Restaurant & Bar",
+    name: "Siena Restaurant",
+    alternateName: "Siena ATL",
+    description:
+      "A chef-driven Mediterranean and Italian restaurant in Alpharetta, Georgia, serving handmade pasta, fresh seafood, shared plates and handcrafted cocktails for dinner, date nights and special occasions.",
     image: "https://sienaatl.com/assets/Siena_20.03.26-A-02.webp",
     logo: "https://sienaatl.com/assets/logo_beige.png",
     "@id": "https://sienaatl.com/#restaurant",
@@ -72,7 +75,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     menu: "https://sienaatl.com/menus",
     hasMenu: "https://sienaatl.com/menus",
     servesCuisine: ["Italian", "Mediterranean"],
-    acceptsReservations: true,
+    acceptsReservations: "https://sienaatl.com/reservations",
+    hasMap: "https://maps.app.goo.gl/qAEv8rdegv8rYr1c8",
+    areaServed: {
+      "@type": "City",
+      name: "Alpharetta",
+      containedInPlace: { "@type": "State", name: "Georgia" },
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: "124 Devore Rd",
@@ -94,9 +103,22 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       "https://www.instagram.com/sienaatl/",
       "https://www.tiktok.com/@sienaatl",
       "https://www.threads.net/@sienaatl",
+      "https://maps.app.goo.gl/qAEv8rdegv8rYr1c8",
       "https://www.opentable.com/r/siena-restaurant-alpharetta",
       "https://www.tripadvisor.com/Restaurant_Review-g29196-d34075603-Reviews-Siena_Restaurant-Alpharetta_Georgia.html",
     ],
+    potentialAction: {
+      "@type": "ReserveAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://sienaatl.com/reservations",
+        actionPlatform: [
+          "https://schema.org/DesktopWebPlatform",
+          "https://schema.org/MobileWebPlatform",
+        ],
+      },
+      result: { "@type": "FoodEstablishmentReservation", name: "Reserve a table at Siena" },
+    },
   };
 
   return (
