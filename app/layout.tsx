@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import ScrollToTop from "../components/ScrollToTop";
+import LocalSeoLinks from "../components/LocalSeoLinks";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { getRestaurantInfo } from "@/lib/restaurant";
 
@@ -14,96 +15,64 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sienaatl.com"),
-
   title: {
     default: "Mediterranean & Italian Restaurant in Alpharetta | Siena",
     template: "%s | Siena",
   },
-
   description:
-    "Visit Siena Restaurant, the Best Mediterranean Italian Restaurant offering authentic Mediterranean & Italian flavors, seasonal menus & warm dining.",
-
+    "Experience Siena, a Mediterranean and Italian restaurant in Alpharetta, GA, serving chef-driven dishes, cocktails, date nights, private dining and special occasions.",
   keywords: [
     "Siena Restaurant",
     "Italian Restaurant Alpharetta",
     "Mediterranean Restaurant Alpharetta",
     "Mediterranean Italian Restaurant",
-    "Best Italian Restaurant Alpharetta",
     "Restaurants in Alpharetta GA",
     "Mediterranean Food Alpharetta",
-    "Fine Dining Restaurant Alpharetta",
+    "Date Night Alpharetta",
+    "Private Dining Alpharetta",
   ],
-
   authors: [{ name: "Siena Restaurant" }],
   creator: "Siena Restaurant",
-
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://sienaatl.com",
     siteName: "Siena Restaurant",
-    title: "Siena Restaurant | Best Mediterranean Italian Restaurant",
+    title: "Mediterranean & Italian Restaurant in Alpharetta | Siena",
     description:
-      "Chef-driven Mediterranean plates, handcrafted cocktails, and an unforgettable dining experience in Alpharetta, Georgia.",
-    images: [
-      {
-        url: "/assets/Siena_20.03.26-A-02.webp",
-        width: 1200,
-        height: 630,
-        alt: "Siena Restaurant",
-      },
-    ],
+      "Chef-driven Mediterranean and Italian-inspired dishes, handcrafted cocktails and memorable dining in Alpharetta, Georgia.",
+    images: [{ url: "/assets/Siena_20.03.26-A-02.webp", width: 1200, height: 630, alt: "Siena Restaurant in Alpharetta, Georgia" }],
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "Siena Restaurant | Best Mediterranean Italian Restaurant",
-    description:
-      "Chef-driven Mediterranean plates, handcrafted cocktails, and an unforgettable dining experience in Alpharetta, Georgia.",
+    title: "Mediterranean & Italian Restaurant in Alpharetta | Siena",
+    description: "Chef-driven Mediterranean and Italian-inspired dining in Alpharetta, Georgia.",
     images: ["/assets/Siena_20.03.26-A-02.webp"],
   },
-
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-    },
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
-
-  alternates: {
-    canonical: "https://sienaatl.com",
-  },
+  alternates: { canonical: "https://sienaatl.com" },
 };
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const info = await getRestaurantInfo();
-
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     name: "Siena Restaurant & Bar",
-    // image should be a photo of the place, not the logo — the logo has its own field.
     image: "https://sienaatl.com/assets/Siena_20.03.26-A-02.webp",
     logo: "https://sienaatl.com/assets/logo_beige.png",
     "@id": "https://sienaatl.com/#restaurant",
     url: "https://sienaatl.com/",
     telephone: info.phone || "+1 (404) 999-0373",
     priceRange: "$$",
-
     menu: "https://sienaatl.com/menus",
     hasMenu: "https://sienaatl.com/menus",
-
     servesCuisine: ["Italian", "Mediterranean"],
-
     acceptsReservations: true,
-
     address: {
       "@type": "PostalAddress",
       streetAddress: "124 Devore Rd",
@@ -112,39 +81,14 @@ export default async function RootLayout({
       postalCode: "30009",
       addressCountry: "US",
     },
-
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 34.0681987,
-      longitude: -84.2991968,
-    },
-
+    geo: { "@type": "GeoCoordinates", latitude: 34.0681987, longitude: -84.2991968 },
     openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Tuesday", "Wednesday", "Thursday"],
-        opens: "16:00",
-        closes: "22:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Friday", "Saturday"],
-        opens: "16:00",
-        // 23:59 rather than 00:00 — midnight as a closing time is ambiguous and
-        // can be read as closing the moment the day starts.
-        closes: "23:59",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Sunday",
-        opens: "16:00",
-        closes: "22:00",
-      },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Tuesday", "Wednesday", "Thursday"], opens: "16:00", closes: "22:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Friday", "Saturday"], opens: "16:00", closes: "23:59" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "16:00", closes: "22:00" },
     ],
-
     currenciesAccepted: "USD",
     paymentAccepted: "Cash, Credit Card",
-
     sameAs: [
       "https://www.facebook.com/sienaatl/",
       "https://www.instagram.com/sienaatl/",
@@ -156,23 +100,14 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd),
-          }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
-
       <body>
         <GoogleTagManager gtmId="GTM-N593KQGJ" />
-
         <Header />
-
         {children}
-
+        <LocalSeoLinks />
         <Footer />
-
         <ScrollToTop />
       </body>
     </html>
