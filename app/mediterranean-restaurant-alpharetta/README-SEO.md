@@ -1,0 +1,1 @@
+This route targets legitimate local search intent for Mediterranean and Italian dining in Alpharetta. Keep content useful, accurate, distinct from other location pages, and connected to reservations, menus, date night, brunch, happy hour, private dining and nearby Roswell intent. Avoid claims that cannot be verified from current Siena offerings.
