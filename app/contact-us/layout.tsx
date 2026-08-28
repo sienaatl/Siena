@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Contact Siena | Mediterranean Restaurant Alpharetta GA",
+  title: "Contact | Mediterranean Restaurant, Alpharetta",
   description:
     "Contact Siena in Alpharetta to reserve a table, ask questions, or plan your next dining experience. We're here to help with your visit.",
   openGraph: {
@@ -15,5 +16,10 @@ export const metadata: Metadata = {
 };
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BreadcrumbSchema trail={[{ name: "Contact", path: "/contact-us" }]} />
+      {children}
+    </>
+  );
 }

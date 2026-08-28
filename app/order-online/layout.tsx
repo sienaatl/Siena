@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Order Online",
+  title: "Order Online | Alpharetta GA",
   description:
     "Order Siena Restaurant's Mediterranean dishes online for pickup or delivery. Chef-crafted mains, starters, desserts, and drinks — Alpharetta, GA.",
   openGraph: {
@@ -15,5 +16,10 @@ export const metadata: Metadata = {
 };
 
 export default function OrderOnlineLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BreadcrumbSchema trail={[{ name: "Order Online", path: "/order-online" }]} />
+      {children}
+    </>
+  );
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Careers at Siena | Restaurant Jobs in Alpharetta GA",
+  title: "Restaurant Jobs in Alpharetta GA",
   description:
     "Join the Siena team in Alpharetta. Explore restaurant career opportunities in hospitality, culinary, and guest services. Apply today.",
   openGraph: {
@@ -15,5 +16,10 @@ export const metadata: Metadata = {
 };
 
 export default function CareersLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BreadcrumbSchema trail={[{ name: "Careers", path: "/careers" }]} />
+      {children}
+    </>
+  );
 }

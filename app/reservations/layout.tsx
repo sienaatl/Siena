@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Italian Restaurant Reservations Alpharetta | Reserve Table now",
+  title: "Book a Table | Restaurant in Alpharetta",
   description:
     "Book your Italian Restaurant Reservations Alpharetta at Siena today. Reserve a table online & enjoy authentic Italian cuisine, handcrafted dishes",
   openGraph: {
@@ -26,5 +27,10 @@ export const metadata: Metadata = {
 };
 
 export default function ReservationsLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BreadcrumbSchema trail={[{ name: "Reservations", path: "/reservations" }]} />
+      {children}
+    </>
+  );
 }

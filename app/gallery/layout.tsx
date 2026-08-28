@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Siena Gallery | Mediterranean Restaurant Photos Alpharetta",
+  title: "Photo Gallery | Restaurant in Alpharetta",
   description:
     "Explore Siena's gallery featuring chef-crafted dishes, elegant interiors, private events, and memorable Mediterranean dining in Alpharetta.",
   openGraph: {
@@ -15,5 +16,10 @@ export const metadata: Metadata = {
 };
 
 export default function GalleryLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BreadcrumbSchema trail={[{ name: "Gallery", path: "/gallery" }]} />
+      {children}
+    </>
+  );
 }
