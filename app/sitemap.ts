@@ -9,6 +9,7 @@ const PAGES: { path: string; priority: number }[] = [
   { path: "/menus", priority: 0.9 },
   { path: "/reservations", priority: 0.9 },
   { path: "/private-dining-alpharetta", priority: 0.85 },
+  { path: "/alpharetta-restaurant-week", priority: 0.85 },
   { path: "/date-night-alpharetta", priority: 0.8 },
   { path: "/birthday-dinner-alpharetta", priority: 0.8 },
   { path: "/brunch-alpharetta", priority: 0.8 },
