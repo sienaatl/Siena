@@ -1,7 +1,7 @@
 import type { Block, Faq, Reviews } from "@/components/LandingPage";
 
 /**
- * Copy and layout for /private-events-alpharetta.
+ * Copy and layout for /private-dining-alpharetta.
  *
  * From the approved draft, with the standing corrections. The draft carried the dead
  * (404) 777-5124 three times; the number now renders from lib/site-data.json.
@@ -11,7 +11,7 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
  * speaking, and it matches the tone of /event-inquiry which this page feeds.
  */
 
-export const H1 = "Private Events Restaurant in Alpharetta";
+export const H1 = "Private Dining and Events in Alpharetta";
 export const H1_SCRIPT = "your table, your night";
 
 export const MARQUEE = [
@@ -138,7 +138,7 @@ export const BLOCKS: Block[] = [
     alt: "Guests at a celebration dinner at Siena Restaurant & Bar in Alpharetta",
     paras: [
       "Send us the date, a rough headcount and what the night is for. That is enough for us to come back with options.",
-      "<a href=\"/event-inquiry\">Fill in the event enquiry form</a> and the team will be in touch. If you would rather talk it through, call the restaurant and ask for the events team.",
+      "<a href=\"/events\">See the events page</a> or <a href=\"/event-inquiry\">fill in the enquiry form</a> and the team will be in touch. If you would rather talk it through, call the restaurant and ask for the events team.",
       "For a smaller table that does not need a full event setup, a normal <a href=\"/reservations\">reservation</a> is often all you need.",
     ],
   },

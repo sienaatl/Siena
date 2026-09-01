@@ -89,7 +89,7 @@ export const BLOCKS: Block[] = [
     paras: [
       "Food gets you in the door. The room keeps you there. Siena's space is warm and a little bold, with lighting that sets the mood the second you walk in. It makes a normal Tuesday feel like a night out.",
       "On Friday a saxophonist plays live. The music fills the room without drowning out your table, so you can still talk and hear each other. A lot of guests plan their visit around it. <a href=\"/live-music-fridays\">See what Friday nights look like</a>.",
-      "The room works for a lot of moods. Lively enough for a group, calm enough for a quiet <a href=\"/date-night-restaurant-alpharetta\">date night</a>. That flexibility is a big part of why Siena keeps coming up when people talk about where to eat in Alpharetta.",
+      "The room works for a lot of moods. Lively enough for a group, calm enough for a quiet <a href=\"/date-night-alpharetta\">date night</a>. That flexibility is a big part of why Siena keeps coming up when people talk about where to eat in Alpharetta.",
     ],
   },
   {
@@ -133,7 +133,7 @@ export const BLOCKS: Block[] = [
     cards: [
       {
         title: "Date Night",
-        desc: "The warm room, the Friday sax and the sharing plates make it easy to relax and talk. Order a few dishes and let the night stretch out. <a href=\"/date-night-restaurant-alpharetta\">More on date night</a>.",
+        desc: "The warm room, the Friday sax and the sharing plates make it easy to relax and talk. Order a few dishes and let the night stretch out. <a href=\"/date-night-alpharetta\">More on date night</a>.",
       },
       {
         title: "Groups",
@@ -141,7 +141,7 @@ export const BLOCKS: Block[] = [
       },
       {
         title: "Celebrations",
-        desc: "Birthdays, anniversaries, work wins. The team handles them with real care, and the dessert bites are a good way to close. Siena also hosts <a href=\"/private-events-alpharetta\">private events</a>.",
+        desc: "Birthdays, anniversaries, work wins. The team handles them with real care, and the dessert bites are a good way to close. Siena also hosts <a href=\"/private-dining-alpharetta\">private events</a>.",
       },
     ],
   },
@@ -166,7 +166,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Is Siena good for a special occasion?",
-    a: "Yes. It suits date nights, birthdays, anniversaries and celebrations of all kinds. The warm lighting, the Friday saxophonist and the shareable menu set the mood. Siena also hosts <a href=\"/private-events-alpharetta\">private events</a> for something bigger.",
+    a: "Yes. It suits date nights, birthdays, anniversaries and celebrations of all kinds. The warm lighting, the Friday saxophonist and the shareable menu set the mood. Siena also hosts <a href=\"/private-dining-alpharetta\">private events</a> for something bigger.",
   },
   {
     q: "Do they take reservations?",

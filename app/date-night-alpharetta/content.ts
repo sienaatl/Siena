@@ -1,7 +1,7 @@
 import type { Block, Faq, Reviews } from "@/components/LandingPage";
 
 /**
- * Copy and layout for /date-night-restaurant-alpharetta.
+ * Copy and layout for /date-night-alpharetta.
  *
  * From the approved draft, with the standing corrections. The draft spelled the
  * venue "Ameris Bank Amphitheater"; the venue's own spelling is "Amphitheatre" and
