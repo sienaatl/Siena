@@ -16,6 +16,15 @@ const PAGES: { path: string; priority: number }[] = [
   // were first published on; their content was rewritten rather than duplicated at a
   // second address.
   { path: "/italian-restaurant-alpharetta", priority: 0.9 },
+
+  // Second batch, chosen from Search Console rather than guessed. "new restaurants"
+  // and "downtown alpharetta" carry the most demand of anything the site does not
+  // already cover, so they lead.
+  { path: "/new-restaurants-alpharetta", priority: 0.9 },
+  { path: "/downtown-alpharetta-restaurants", priority: 0.9 },
+  { path: "/tapas-restaurant-alpharetta", priority: 0.8 },
+  { path: "/dinner-alpharetta", priority: 0.7 },
+  { path: "/vegetarian-restaurant-alpharetta", priority: 0.7 },
   { path: "/best-restaurants-alpharetta", priority: 0.8 },
   { path: "/private-dining-alpharetta", priority: 0.85 },
   { path: "/alpharetta-restaurant-week", priority: 0.85 },
