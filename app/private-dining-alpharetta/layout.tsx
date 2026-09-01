@@ -3,22 +3,22 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
 export const metadata: Metadata = {
-  title: "Date Night Restaurant in Alpharetta",
+  title: "Private Dining and Events in Alpharetta",
   description:
-    "Looking for a date night restaurant in Alpharetta? Siena has warm lighting, cocktails, Friday live sax and sharing plates for two. Reserve your table.",
-  alternates: { canonical: "/date-night-restaurant-alpharetta" },
+    "Siena is a private events restaurant in Alpharetta for birthdays, anniversaries and corporate dinners. Sharing plates, cocktails and live music. Book an event.",
+  alternates: { canonical: "/private-dining-alpharetta" },
   openGraph: {
-    title: "Date Night Restaurant in Alpharetta | Siena Restaurant & Bar",
+    title: "Private Dining and Events in Alpharetta | Siena Restaurant",
     description:
-      "Warm lighting, cocktails worth talking about, sharing plates for two and live saxophone on Friday nights.",
-    url: "https://sienaatl.com/date-night-restaurant-alpharetta",
+      "Birthdays, anniversaries and corporate dinners in a warm room near Avalon. Sharing plates built for groups.",
+    url: "https://sienaatl.com/private-dining-alpharetta",
     type: "website",
-    images: [{ url: "https://sienaatl.com/assets/hero8.webp" }],
+    images: [{ url: "https://sienaatl.com/assets/events/1779116274229_qew7cz.webp" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Date Night Restaurant in Alpharetta | Siena Restaurant & Bar",
-    description: "Warm lighting, cocktails worth talking about, sharing plates for two and live saxophone on Friday nights.",
+    title: "Private Dining and Events in Alpharetta | Siena Restaurant",
+    description: "Birthdays, anniversaries and corporate dinners in a warm room near Avalon. Sharing plates built for groups.",
   },
 };
 
@@ -49,7 +49,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <BreadcrumbSchema trail={[{ name: "Date Night Restaurant in Alpharetta", path: "/date-night-restaurant-alpharetta" }]} />
+      <BreadcrumbSchema trail={[{ name: "Private Dining and Events in Alpharetta", path: "/private-dining-alpharetta" }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {children}
     </>
