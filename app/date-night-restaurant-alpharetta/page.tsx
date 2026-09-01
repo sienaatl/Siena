@@ -1,14 +1,14 @@
 import LandingPage from "@/components/LandingPage";
 import { H1, H1_SCRIPT, MARQUEE, INTRO, BLOCKS, FAQS, REVIEWS, PRACTICAL, CLOSING } from "./content";
 
-export default function MediterraneanRestaurantAlpharetta() {
+export default function DateNightRestaurantAlpharetta() {
   return (
     <LandingPage
-      slug="mediterranean-restaurant-alpharetta"
+      slug="date-night-restaurant-alpharetta"
       h1={H1}
       h1Script={H1_SCRIPT}
-      heroImage="/assets/Siena_20.03.26-A-03.webp"
-      heroAlt="Mezze and sharing plates at Siena, a Mediterranean restaurant in Alpharetta, Georgia"
+      heroImage="/assets/hero8.webp"
+      heroAlt="Warm low lighting in the dining room at Siena, a date night restaurant in Alpharetta"
       marquee={MARQUEE}
       intro={INTRO}
       blocks={BLOCKS}
