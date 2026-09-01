@@ -22,7 +22,7 @@ export const MARQUEE = [
 ];
 
 export const INTRO = {
-  icon: "/assets/icon_happenings.svg",
+  icon: "/assets/icon_aboutus.svg",
   heading: "Special Without the Fuss",
   script: "we handle the rest",
   paras: [
