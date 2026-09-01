@@ -2,6 +2,8 @@ import Link from "next/link";
 
 const links = [
   ["Mediterranean Restaurant Alpharetta", "/mediterranean-restaurant-alpharetta"],
+  ["Italian Restaurant Alpharetta", "/italian-restaurant-alpharetta"],
+  ["Best Restaurants Alpharetta", "/best-restaurants-alpharetta"],
   ["Date Night Alpharetta", "/date-night-alpharetta"],
   ["Private Dining Alpharetta", "/private-dining-alpharetta"],
   ["Birthday Dinner Alpharetta", "/birthday-dinner-alpharetta"],

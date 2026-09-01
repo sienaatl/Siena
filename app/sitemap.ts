@@ -3,11 +3,21 @@ import { blogs } from "@/lib/blog-data";
 
 const SITE_URL = "https://sienaatl.com";
 
+// Every indexable page. /event-inquiry/thank-you is deliberately absent, since it is
+// marked noindex and a post-submission page has no business in search results.
 const PAGES: { path: string; priority: number }[] = [
   { path: "", priority: 1.0 },
   { path: "/mediterranean-restaurant-alpharetta", priority: 0.95 },
   { path: "/menus", priority: 0.9 },
   { path: "/reservations", priority: 0.9 },
+
+  // Landing pages built on the SEO branch. Only the two with no equivalent already
+  // live are listed. /date-night-restaurant-alpharetta and /private-events-alpharetta
+  // are built but held back, because /date-night-alpharetta and
+  // /private-dining-alpharetta already cover those searches and listing both would
+  // put two versions of the same page in front of Google.
+  { path: "/italian-restaurant-alpharetta", priority: 0.9 },
+  { path: "/best-restaurants-alpharetta", priority: 0.8 },
   { path: "/private-dining-alpharetta", priority: 0.85 },
   { path: "/alpharetta-restaurant-week", priority: 0.85 },
   { path: "/date-night-alpharetta", priority: 0.8 },

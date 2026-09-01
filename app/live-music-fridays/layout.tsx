@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Friday Live Music in Alpharetta | Siena Restaurant & Bar",
+  // The root layout appends " | Siena", so the brand is deliberately absent here.
+  title: "Friday Live Music in Alpharetta",
   description:
-    "Join Siena Restaurant & Bar every Friday from 7–10 PM for live music, Mediterranean-Italian dining and handcrafted cocktails in Alpharetta, near Johns Creek and Milton.",
+    "Live music every Friday from 7 to 10pm at Siena in Alpharetta. Mediterranean and Italian sharing plates, cocktails, and a different act each week.",
   openGraph: {
     title: "Live Music Fridays at Siena",
     description: "Great food, crafted cocktails and live music every Friday from 7–10 PM in Alpharetta.",
@@ -54,6 +56,7 @@ const jsonLd = {
 export default function LiveMusicFridaysLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
+      <BreadcrumbSchema trail={[{ name: "Live Music Fridays", path: "/live-music-fridays" }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {children}
     </>
