@@ -127,7 +127,7 @@ export const BLOCKS: Block[] = [
   {
     kind: "cards",
     bg: "green",
-    icon: "/assets/icon_happenings.svg",
+    icon: "/assets/icon6.svg",
     heading: "Who It Suits",
     script: "most nights, honestly",
     cards: [
