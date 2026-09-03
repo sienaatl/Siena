@@ -112,9 +112,48 @@ function SubSectionBlock({ id, title, subtitle, items }: SubSection) {
   );
 }
 
+/* ─── MenuDeepLink ───────────────────────────────────────────
+   Handles ?tab= deep links from the homepage. Kept in its own component with its
+   own Suspense boundary on purpose: useSearchParams makes the nearest boundary
+   render its fallback on the server, and when that boundary wrapped the whole
+   page, Google received an empty document. Confining it here lets the menu
+   itself server-render while the deep-link behaviour still works. */
+function MenuDeepLink({
+  tabs,
+  headerHeight,
+  onSelect,
+}: {
+  tabs: TabData[];
+  headerHeight: number;
+  onSelect: (id: string) => void;
+}) {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const tab = searchParams.get("tab");
+    if (!tab || !tabs.length) return;
+    const timer = setTimeout(() => {
+      const section = document.getElementById(tab);
+      if (section) {
+        const offset = headerHeight + 80;
+        window.scrollTo({ top: section.getBoundingClientRect().top + window.scrollY - offset, behavior: "smooth" });
+        const isTab = tabs.some((t) => t.id === tab);
+        if (isTab) {
+          onSelect(tab);
+        } else {
+          const parentTab = tabs.find((t) => t.subsections.some((s) => s.id === tab));
+          if (parentTab) onSelect(parentTab.id);
+        }
+      }
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [searchParams, tabs, headerHeight, onSelect]);
+
+  return null;
+}
+
 /* ─── MenuContent ────────────────────────────────────────── */
 function MenuContent() {
-  const searchParams = useSearchParams();
   const [tabs] = useState<TabData[]>(siteData.menuTabs as TabData[]);
   const [activeTab, setActiveTab] = useState<string>(tabs[0]?.id ?? "");
   const [headerHeight, setHeaderHeight] = useState(80);
@@ -160,26 +199,6 @@ function MenuContent() {
     }
   }, [activeTab]);
 
-  /* ── Deep-link via ?tab= ── */
-  useEffect(() => {
-    const tab = searchParams.get("tab");
-    if (!tab || !tabs.length) return;
-    const timer = setTimeout(() => {
-      const section = document.getElementById(tab);
-      if (section) {
-        const offset = headerHeight + 80;
-        window.scrollTo({ top: section.getBoundingClientRect().top + window.scrollY - offset, behavior: "smooth" });
-        const isTab = tabs.some((t) => t.id === tab);
-        if (isTab) {
-          setActiveTab(tab);
-        } else {
-          const parentTab = tabs.find((t) => t.subsections.some((s) => s.id === tab));
-          if (parentTab) setActiveTab(parentTab.id);
-        }
-      }
-    }, 300);
-    return () => clearTimeout(timer);
-  }, [searchParams, tabs, headerHeight]);
 
   const handleTabClick = (id: string) => {
     const section = document.getElementById(id);
@@ -191,6 +210,9 @@ function MenuContent() {
 
   return (
     <main className="bg-[#1b312e]">
+      <Suspense fallback={null}>
+        <MenuDeepLink tabs={tabs} headerHeight={headerHeight} onSelect={setActiveTab} />
+      </Suspense>
       {/* HERO */}
       <section className="relative w-full h-[400px] md:h-[45vh] overflow-hidden">
         <motion.div

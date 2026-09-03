@@ -1,6 +1,40 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/about",
+        destination: "/about-us",
+        permanent: true,
+      },
+      {
+        source: "/contact",
+        destination: "/contact-us",
+        permanent: true,
+      },
+      {
+        source: "/menu",
+        destination: "/menus",
+        permanent: true,
+      },
+      {
+        source: "/menus/:path+",
+        destination: "/menus",
+        permanent: true,
+      },
+      {
+        source: "/dishes/:path*",
+        destination: "/menus",
+        permanent: true,
+      },
+      {
+        source: "/news/:path*",
+        destination: "/blogs",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60 * 60 * 24 * 30,
