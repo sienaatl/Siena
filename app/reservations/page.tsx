@@ -305,7 +305,7 @@ function ReservationsForm() {
             src="/assets/gallery16.webp"
             alt="Reservations at Siena"
             fill
-            priority
+            preload
             sizes="100vw"
             className="object-cover object-[50%_30%]"
           />
@@ -427,7 +427,8 @@ function ReservationsForm() {
           >
             <div
               className="shadow-2xl border border-[#e0b265]/50 px-6 md:px-10 py-10 text-left"
-              style={{ backgroundColor: "#152C29", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
+              data-bg="/assets/pattern-dark.png"
+              style={{ backgroundColor: "#152C29", backgroundSize: "160px", backgroundRepeat: "repeat" }}
             >
               <AnimatePresence mode="wait">
                 {confirmation ? (

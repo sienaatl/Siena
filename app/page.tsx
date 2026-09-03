@@ -18,6 +18,8 @@ import {
   type WeekdaySchedule,
 } from "@/lib/hours";
 import { ReservationDatePicker } from "@/components/ReservationDatePicker";
+import LazyVideo from "@/components/LazyVideo";
+import { preload } from "react-dom";
 
 const PARTY_SIZES = Array.from({ length: 14 }, (_, i) => i + 1);
 
@@ -31,6 +33,10 @@ const slides = [
 ];
 
 export default function Home() {
+  // The hero poster is the LCP element. A <video poster> is found by the
+  // preload scanner but not prioritised, so ask for it explicitly.
+  preload("/assets/hero_poster.webp", { as: "image", fetchPriority: "high" });
+
   const router = useRouter();
   const [info, setInfo] = useState<RestaurantInfo>(RESTAURANT_FALLBACK);
   useEffect(() => { getRestaurantInfo().then(setInfo); }, []);
@@ -83,35 +89,31 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative w-full flex-1 md:h-screen overflow-hidden">
-        <Image
-          src="/assets/hero_home.webp"
-          alt=""
-          fill
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-          className="object-cover"
-        />
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="none"
+        {/* The poster is the hero still, so this one element covers both what
+            used to be a separate <Image> and the video, and it is what LCP
+            measures. See eagerPoster in LazyVideo for why that matters. */}
+        <LazyVideo
+          src="/assets/hero_video.mp4"
+          mobileSrc="/assets/hero_video_mobile.mp4"
+          poster="/assets/hero_poster.webp"
+          eagerPoster
           className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/assets/hero_video.mp4" type="video/mp4" />
-        </video>
+        />
 
         <div className="absolute inset-0 bg-black/50" />
 
         <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
-          <img
+          {/* Above the fold, so it competes with the LCP poster. next/image
+              serves AVIF at the size actually rendered instead of the full
+              746px original; eager because the default here would be lazy. */}
+          <Image
             src="/assets/logo_hero.webp"
             alt="Logo"
             width={746}
             height={440}
-            className="w-[280px] md:w-[400px] mb-5 hero-fadein"
+            sizes="(max-width: 767px) 280px, 400px"
+            loading="eager"
+            className="w-[280px] md:w-[400px] h-auto mb-5 hero-fadein"
           />
 
           <form
@@ -252,22 +254,22 @@ export default function Home() {
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">
                 MEDI-TALIAN CUISINE
               </span>
-              <img src="/assets/star.svg" alt="star" className="w-5 h-5 flex-shrink-0" />
+              <img width={29} height={29} src="/assets/star.svg" alt="star" className="w-5 h-5 flex-shrink-0" />
 
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">
                 CHEF-DRIVEN EXPERIENCE
               </span>
-              <img src="/assets/star.svg" alt="star" className="w-5 h-5 flex-shrink-0" />
+              <img width={29} height={29} src="/assets/star.svg" alt="star" className="w-5 h-5 flex-shrink-0" />
 
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">
                 ELEVATED SHARED PLATES
               </span>
-              <img src="/assets/star.svg" alt="star" className="w-5 h-5 flex-shrink-0" />
+              <img width={29} height={29} src="/assets/star.svg" alt="star" className="w-5 h-5 flex-shrink-0" />
 
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">
                 REFINED YET INVITING ATMOSPHERE
               </span>
-              <img src="/assets/star.svg" alt="star" className="w-5 h-5 flex-shrink-0" />
+              <img width={29} height={29} src="/assets/star.svg" alt="star" className="w-5 h-5 flex-shrink-0" />
 
             </div>
           ))}
@@ -281,8 +283,8 @@ export default function Home() {
       {/* ABOUT US */}
       <section
         className="relative w-full overflow-hidden"
+        data-bg="/assets/dark-green-wall-backdrop-grunge-background-texture.jpg"
         style={{
-          backgroundImage: "url('/assets/dark-green-wall-backdrop-grunge-background-texture.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}
@@ -291,7 +293,7 @@ export default function Home() {
           <div className="flex flex-col items-center text-center">
 
             {/* Icono arriba centrado */}
-            <motion.img
+            <motion.img width={132} height={98} loading="lazy"
               src="/assets/icono_123.svg"
               alt="icono1"
               className="w-[60px] md:w-[75px]"
@@ -373,7 +375,7 @@ export default function Home() {
 
 
       <section className="relative w-full h-[40px] md:h-[58px] overflow-hidden bg-[#e0b265]">
-        <img
+        <img width={1512} height={58} loading="lazy"
           src="/assets/divisor_beige.svg"
           alt="divider"
           className="absolute inset-0 w-full h-full object-cover"
@@ -390,7 +392,7 @@ export default function Home() {
         <div className="w-full max-w-[1180px] mx-auto px-4 mt-[80px]">
           <div className="flex flex-col items-center text-center">
 
-            <motion.img
+            <motion.img width={59} height={45} loading="lazy"
               src="/assets/icon_menu.svg"
               alt="Menu icon"
               className="w-[60px] md:w-[75px]"
@@ -485,7 +487,7 @@ export default function Home() {
               transition={{ duration: 0.38, delay: 0, ease: "easeOut" }}
               whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
-              <Image src="/assets/menu1.webp" alt="Dinner" fill sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
+              <Image src="/assets/menu1.webp" alt="Dinner" fill quality={65} sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
 
               <div className="absolute inset-4 border border-[#e0b265]">
@@ -517,7 +519,7 @@ export default function Home() {
               transition={{ duration: 0.38, delay: 0.08, ease: "easeOut" }}
               whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
-              <Image src="/assets/about1.webp" alt="Brunch" fill sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
+              <Image src="/assets/about1.webp" alt="Brunch" fill quality={65} sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
 
               <div className="absolute inset-4 border border-[#e0b265]">
@@ -604,7 +606,7 @@ export default function Home() {
       </section>
 
       <section className="relative w-full h-[40px] md:h-[58px] overflow-hidden bg-[#e0b265]">
-        <img
+        <img width={1512} height={58} loading="lazy"
           src="/assets/divisor_beige.svg"
           alt="divider"
           className="absolute inset-0 w-full h-full object-cover"
@@ -614,14 +616,15 @@ export default function Home() {
       {/* EVENTS */}
       <section
         className="relative w-full pt-[80px] pb-[80px] overflow-hidden mt-[-5px]"
-        style={{ backgroundImage: "url('/assets/update_homepage_something_esp.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
+        data-bg="/assets/update_homepage_something_esp.webp"
+        style={{ backgroundSize: "cover", backgroundPosition: "center" }}
       >
 
         <div className="w-full max-w-[1180px] mx-auto px-4">
           <div className="flex flex-col items-center text-center pb-[30px]">
 
             {/* Icono arriba centrado */}
-            <motion.img
+            <motion.img width={59} height={54} loading="lazy"
               src="/assets/icon6.svg"
               alt="icono1"
               className="w-[60px] md:w-[75px]"
@@ -703,7 +706,7 @@ export default function Home() {
       </section>
 
       <section className="relative w-full h-[58px]">
-        <img
+        <img width={1512} height={58} loading="lazy"
           src="/assets/divisor_negro.svg"
           alt="divider"
           className="absolute inset-0 w-full h-full object-cover"
@@ -714,7 +717,7 @@ export default function Home() {
       <section className="w-full py-[80px] px-4 overflow-hidden" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[1180px] mx-auto">
           <div className="flex flex-col items-center text-center mb-[60px] md:mb-[80px]">
-            <motion.img
+            <motion.img width={132} height={98} loading="lazy"
               src="/assets/icono_123.svg"
               alt=""
               className="w-[60px] md:w-[75px] mb-2"
@@ -837,14 +840,15 @@ export default function Home() {
       {/* TESTIMONIALS */}
       <section
         className="relative w-full py-20 overflow-hidden"
-        style={{ backgroundImage: "url('/assets/fondo_testimonials.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
+        data-bg="/assets/fondo_testimonials.webp"
+        style={{ backgroundSize: "cover", backgroundPosition: "center" }}
       >
 
         <div className="w-full max-w-[1180px] mx-auto px-4">
           <div className="flex flex-col items-center text-center pb-[30px]">
 
             {/* Icono arriba centrado */}
-            <motion.img
+            <motion.img width={323} height={103} loading="lazy"
               src="/assets/icono_testimonios.svg"
               alt="icono1"
               className="w-[130px] md:w-[172px]"
@@ -895,7 +899,7 @@ export default function Home() {
       </section>
 
       <section className="relative w-full h-[28px] overflow-hidden bg-[#030302]">
-        <img
+        <img width={1512} height={27} loading="lazy"
           src="/assets/divisor_estrella3.svg"
           alt="divider"
           className="absolute inset-0 w-full h-full object-cover scale-y-125"
@@ -905,18 +909,20 @@ export default function Home() {
       {/* FIND US */}
       <section
         className="relative w-full py-12 md:py-20 overflow-hidden"
-        style={{ backgroundImage: "url('/assets/dark-green-wall-backdrop-grunge-background-texture.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+        data-bg="/assets/dark-green-wall-backdrop-grunge-background-texture.jpg"
+        style={{ backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="w-full max-w-[1180px] mx-auto px-4 md:px-0">
           <div
             className="relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-stretch gap-8 md:gap-12"
-            style={{ backgroundColor: "#1e3833", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
+            data-bg="/assets/pattern-dark.png"
+            style={{ backgroundColor: "#1e3833", backgroundSize: "160px", backgroundRepeat: "repeat" }}
           >
             <div className="absolute inset-3 border border-[#e0b265]/20 pointer-events-none" />
 
             {/* Columna izquierda */}
             <div className="flex-1 flex flex-col gap-4 md:gap-5 relative z-10 w-full">
-              <img src="/assets/icono_findus.svg" alt="Find Us" className="w-[55px] md:w-[68px] h-auto" />
+              <img width={61} height={51} loading="lazy" src="/assets/icono_findus.svg" alt="Find Us" className="w-[55px] md:w-[68px] h-auto" />
 
               <h2
                 className="text-[#e0b265] text-[52px] md:text-[72px] font-bold tracking-wide leading-none"
@@ -997,7 +1003,7 @@ export default function Home() {
       </section>
 
       <section className="relative w-full h-[28px] overflow-hidden bg-[#030302]">
-        <img
+        <img width={1512} height={27} loading="lazy"
           src="/assets/divisor_estrella3.svg"
           alt="divider"
           className="absolute inset-0 w-full h-full object-cover scale-y-125"
@@ -1022,7 +1028,7 @@ export default function Home() {
             <div key={repeat} className="flex">
               {Array.from({ length: 10 }, (_, i) => (
                 <div key={i} className="flex-shrink-0 h-[320px] w-[320px]">
-                  <img
+                  <img loading="lazy"
                     src={`/assets/carrusel${i + 1}.webp`}
                     alt={`carrusel ${i + 1}`}
                     className="w-full h-full object-cover"

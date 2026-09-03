@@ -103,8 +103,8 @@ export default function Events() {
       {/* INTRO + EVENTS SLIDER */}
       <section
         className="relative w-full pt-[80px] pb-[80px] overflow-hidden"
+        data-bg="/assets/update_homepage_something_esp.webp"
         style={{
-          backgroundImage: "url('/assets/update_homepage_something_esp.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

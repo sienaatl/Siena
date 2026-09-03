@@ -4,9 +4,27 @@ import "./globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import ScrollToTop from "../components/ScrollToTop";
+import LazyBackgrounds from "../components/LazyBackgrounds";
 import LocalSeoLinks from "../components/LocalSeoLinks";
-import { GoogleTagManager } from "@next/third-parties/google";
 import { getRestaurantInfo } from "@/lib/restaurant";
+
+const GTM_ID = "GTM-N593KQGJ";
+// Hand-rolled instead of @next/third-parties' <GoogleTagManager>: that
+// component hardcodes strategy="afterInteractive", which fires GTM (and
+// everything it in turn loads — Facebook Pixel, Google Ads, Doubleclick)
+// immediately on hydration. lazyOnload pushes all of that off the critical
+// path, same as the TikTok pixel below.
+// Single script (init + injection) so two separate lazyOnload tags can't race
+// and load gtm.js before the dataLayer push registers the start time.
+const gtmScript = `
+(function(w,d,l){
+  w[l]=w[l]||[];
+  w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+  var f=d.getElementsByTagName('script')[0],j=d.createElement('script');
+  j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=${GTM_ID}';
+  f.parentNode.insertBefore(j,f);
+})(window,document,'dataLayer');
+`;
 
 // TikTok Pixel — loaded on every route via the root layout, same as GTM below.
 const TIKTOK_PIXEL_ID = "DA8D6C3C77UES9745N50";
@@ -138,22 +156,39 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en">
       <head>
+        {/* The @font-face rules live in globals.css, so these are only discovered
+            after the stylesheet parses. Preloading the two fonts used above the
+            fold pulls that forward and cuts the swap flash. */}
+        <link rel="preload" href="/fonts/Urbanist-Variable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/Fraunces-Variable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(jsonLd),
           }}
         />
-        <Script id="tiktok-pixel" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: tiktokPixelScript }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        {/* lazyOnload: the pixel only needs to fire eventually, so it waits for
+            idle after load rather than competing with hydration. */}
+        <Script id="tiktok-pixel" strategy="lazyOnload" dangerouslySetInnerHTML={{ __html: tiktokPixelScript }} />
       </head>
       <body>
-        <GoogleTagManager gtmId="GTM-N593KQGJ" />
+        <Script id="gtm-init" strategy="lazyOnload" dangerouslySetInnerHTML={{ __html: gtmScript }} />
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
         <Header />
         {children}
         <LocalSeoLinks />
         <Footer />
         <ScrollToTop />
+
+        <LazyBackgrounds />
       </body>
     </html>
   );

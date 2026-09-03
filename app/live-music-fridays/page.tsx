@@ -33,7 +33,7 @@ export default function LiveMusicFridays() {
             alt="Live music evenings at Siena Restaurant & Bar in Alpharetta"
             fill
             className="object-cover object-center"
-            priority
+            preload
             sizes="100vw"
           />
         </motion.div>
@@ -200,8 +200,8 @@ export default function LiveMusicFridays() {
       {/* PLAN YOUR EVENING */}
       <section
         className="relative w-full overflow-hidden"
+        data-bg="/assets/dark-green-wall-backdrop-grunge-background-texture.jpg"
         style={{
-          backgroundImage: "url('/assets/dark-green-wall-backdrop-grunge-background-texture.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -209,7 +209,8 @@ export default function LiveMusicFridays() {
         <div className="w-full max-w-[1180px] mx-auto px-4 py-[70px] md:py-[110px]">
           <div
             className="relative overflow-hidden p-8 md:p-14"
-            style={{ backgroundColor: "#1e3833", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
+            data-bg="/assets/pattern-dark.png"
+            style={{ backgroundColor: "#1e3833", backgroundSize: "160px", backgroundRepeat: "repeat" }}
           >
             <div className="absolute inset-3 border border-[#e0b265]/20 pointer-events-none" />
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">

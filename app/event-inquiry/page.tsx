@@ -242,7 +242,7 @@ export default function EventInquiry() {
             alt="Private events at Siena Restaurant & Bar in Alpharetta"
             fill
             className="object-cover object-center"
-            priority
+            preload
             sizes="100vw"
           />
         </motion.div>
@@ -355,7 +355,8 @@ export default function EventInquiry() {
           >
             <div
               className="shadow-2xl border border-[#e0b265]/50 px-6 md:px-10 py-10 text-left"
-              style={{ backgroundColor: "#152C29", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
+              data-bg="/assets/pattern-dark.png"
+              style={{ backgroundColor: "#152C29", backgroundSize: "160px", backgroundRepeat: "repeat" }}
             >
               <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

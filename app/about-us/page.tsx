@@ -8,7 +8,7 @@ export default function AboutUs() {
   return (
     <main>
 
-      {/* HERO */}
+      {/* HERO  section*/}
       <section className="relative w-full h-[400px] md:h-[45vh] overflow-hidden">
         <motion.div
           className="absolute inset-0"
@@ -21,7 +21,7 @@ export default function AboutUs() {
             alt="About Siena"
             fill
             className="object-cover object-center"
-            priority
+            preload
             sizes="100vw"
           />
         </motion.div>
