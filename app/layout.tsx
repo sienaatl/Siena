@@ -9,34 +9,50 @@ import LocalSeoLinks from "../components/LocalSeoLinks";
 import { getRestaurantInfo } from "@/lib/restaurant";
 
 const GTM_ID = "GTM-N593KQGJ";
-// Hand-rolled instead of @next/third-parties' <GoogleTagManager>: that
-// component hardcodes strategy="afterInteractive", which fires GTM (and
-// everything it in turn loads — Facebook Pixel, Google Ads, Doubleclick)
-// immediately on hydration. lazyOnload pushes all of that off the critical
-// path, same as the TikTok pixel below.
-// Single script (init + injection) so two separate lazyOnload tags can't race
-// and load gtm.js before the dataLayer push registers the start time.
-const gtmScript = `
-(function(w,d,l){
-  w[l]=w[l]||[];
-  w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-  var f=d.getElementsByTagName('script')[0],j=d.createElement('script');
-  j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=${GTM_ID}';
-  f.parentNode.insertBefore(j,f);
-})(window,document,'dataLayer');
-`;
-
-// TikTok Pixel — loaded on every route via the root layout, same as GTM below.
 const TIKTOK_PIXEL_ID = "DA8D6C3C77UES9745N50";
-const tiktokPixelScript = `
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-  var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-  ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+// GTM in turn loads Facebook Pixel, Google Ads, Doubleclick, etc. — none of
+// it is needed before the user does anything, and Lighthouse's TBT window
+// covers the trace all the way to network-quiet, so even a lazyOnload script
+// (fires on window 'load') was still landing inside the measured window and
+// tanking desktop TBT. Instead we only insert the real GTM/TikTok script
+// tags on the user's first interaction, with a 5s idle fallback so page-view
+// tracking still fires for visitors who never interact. Nothing else in the
+// app pushes to dataLayer/ttq before this runs, so deferring the whole
+// bootstrap (not just the network fetch) is safe.
+const deferredAnalyticsScript = `
+(function () {
+  function loadGTM() {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+    var f = document.getElementsByTagName('script')[0], j = document.createElement('script');
+    j.async = true;
+    j.src = 'https://www.googletagmanager.com/gtm.js?id=${GTM_ID}';
+    f.parentNode.insertBefore(j, f);
+  }
+  function loadTikTok() {
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
-  ttq.load('${TIKTOK_PIXEL_ID}');
-  ttq.page();
-}(window, document, 'ttq');
+      ttq.load('${TIKTOK_PIXEL_ID}');
+      ttq.page();
+    }(window, document, 'ttq');
+  }
+  var fired = false;
+  var events = ['pointerdown', 'mousemove', 'keydown', 'touchstart', 'scroll'];
+  var fallback;
+  function trigger() {
+    if (fired) return;
+    fired = true;
+    events.forEach(function (e) { document.removeEventListener(e, trigger); });
+    clearTimeout(fallback);
+    loadGTM();
+    loadTikTok();
+  }
+  events.forEach(function (e) { document.addEventListener(e, trigger, { passive: true }); });
+  fallback = setTimeout(trigger, 5000);
+})();
 `;
 
 export const viewport: Viewport = {
@@ -167,12 +183,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             __html: JSON.stringify(jsonLd),
           }}
         />
-        {/* lazyOnload: the pixel only needs to fire eventually, so it waits for
-            idle after load rather than competing with hydration. */}
-        <Script id="tiktok-pixel" strategy="lazyOnload" dangerouslySetInnerHTML={{ __html: tiktokPixelScript }} />
       </head>
       <body>
-        <Script id="gtm-init" strategy="lazyOnload" dangerouslySetInnerHTML={{ __html: gtmScript }} />
+        {/* Attaches interaction listeners (cheap) that don't themselves fetch
+            anything; the actual GTM/TikTok script tags load on first
+            interaction or a 5s fallback — see deferredAnalyticsScript above. */}
+        <Script id="deferred-analytics" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: deferredAnalyticsScript }} />
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
