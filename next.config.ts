@@ -40,6 +40,9 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 30,
     deviceSizes: [390, 640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    // 65 is used on the homepage grid thumbnails (decorative, cropped —
+    // imperceptible below full quality); 75 stays the default elsewhere.
+    qualities: [65, 75],
   },
   async headers() {
     return [

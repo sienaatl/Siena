@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
@@ -53,9 +54,11 @@ export default function Header() {
                             ? "w-[70px] h-[36px] md:w-[80px] md:h-[40px]"
                             : "w-[70px] h-[40px] md:w-[90px] md:h-[50px]"
                             }`}>
-                            <img width={270} height={151}
+                            <Image width={270} height={151}
                                 src="/assets/logo_beige.png"
                                 alt="logo"
+                                priority
+                                sizes="90px"
                                 className="w-full h-full object-contain cursor-pointer transition-all duration-300"
                             />
                         </div>
