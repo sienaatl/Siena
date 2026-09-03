@@ -182,7 +182,7 @@ export default function ContactUs() {
           animate={{ scale: 1 }}
           transition={{ duration: 1.4, ease: "easeOut" }}
         >
-          <Image src="/assets/Siena_20.03.26-A-04.webp" alt="Contact Siena" fill className="object-cover object-center" priority sizes="100vw" />
+          <Image src="/assets/Siena_20.03.26-A-04.webp" alt="Contact Siena" fill className="object-cover object-center" preload sizes="100vw" />
         </motion.div>
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-14 md:pt-16">
@@ -301,7 +301,8 @@ export default function ContactUs() {
           >
             <div
               className="shadow-2xl border border-[#e0b265]/50 px-6 md:px-10 py-10 text-left"
-              style={{ backgroundColor: "#152C29", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
+              data-bg="/assets/pattern-dark.png"
+              style={{ backgroundColor: "#152C29", backgroundSize: "160px", backgroundRepeat: "repeat" }}
             >
               {isSubmitSuccessful ? (
                 <motion.div
@@ -471,8 +472,8 @@ export default function ContactUs() {
       {/* FIND US */}
       <section
         className="relative w-full py-12 md:py-20 overflow-hidden"
+        data-bg="/assets/dark-green-wall-backdrop-grunge-background-texture.jpg"
         style={{
-          backgroundImage: "url('/assets/dark-green-wall-backdrop-grunge-background-texture.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -480,7 +481,8 @@ export default function ContactUs() {
         <div className="w-full max-w-[1180px] mx-auto px-4 md:px-0">
         <motion.div
           className="relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-stretch gap-8 md:gap-12"
-          style={{ backgroundColor: "#1e3833", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
+          data-bg="/assets/pattern-dark.png"
+          style={{ backgroundColor: "#1e3833", backgroundSize: "160px", backgroundRepeat: "repeat" }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}

@@ -203,7 +203,7 @@ function MenuContent() {
             src="/assets/Siena_20.03.26-PS-NarissaChickenLolipapas.webp"
             alt="Menu at Siena"
             fill
-            priority
+            preload
             sizes="100vw"
             className="object-cover object-center"
           />

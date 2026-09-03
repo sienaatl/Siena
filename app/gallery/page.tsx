@@ -54,7 +54,7 @@ export default function Gallery() {
             src="/assets/Siena_20.03.26-A-02.webp"
             alt="Gallery"
             fill
-            priority
+            preload
             sizes="100vw"
             className="object-cover object-center"
           />

@@ -27,6 +27,17 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        // Blog imagery is content-addressed by filename like /assets, so it gets
+        // the same immutable lifetime rather than being revalidated every visit.
+        source: "/blogs/(.*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
     ];
   },
 };

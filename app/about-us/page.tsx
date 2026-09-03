@@ -21,7 +21,7 @@ export default function AboutUs() {
             alt="About Siena"
             fill
             className="object-cover object-center"
-            priority
+            preload
             sizes="100vw"
           />
         </motion.div>

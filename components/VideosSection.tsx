@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import LazyVideo from "./LazyVideo";
 
 export default function VideosSection() {
     const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -13,9 +14,9 @@ export default function VideosSection() {
     const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
     const videos = [
-        { src: "/assets/video1.mp4", aspect: "aspect-[4/5]", marginTop: "mt-8" },
-        { src: "/assets/video_2.mp4", aspect: "aspect-[3.5/5]", marginTop: "" },
-        { src: "/assets/video_3.mp4", aspect: "aspect-[4/5]", marginTop: "mt-8" },
+        { src: "/assets/video1.mp4", poster: "/assets/video1_poster.webp", aspect: "aspect-[4/5]", marginTop: "mt-8" },
+        { src: "/assets/video_2.mp4", poster: "/assets/video_2_poster.webp", aspect: "aspect-[3.5/5]", marginTop: "" },
+        { src: "/assets/video_3.mp4", poster: "/assets/video_3_poster.webp", aspect: "aspect-[4/5]", marginTop: "mt-8" },
     ];
 
     const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
@@ -38,9 +39,7 @@ export default function VideosSection() {
             <div className="hidden md:grid grid-cols-3 gap-3 items-center">
                 {videos.map((video, i) => (
                     <div key={i} className={`overflow-hidden shadow-xl ${video.aspect} ${video.marginTop}`}>
-                        <video autoPlay loop muted playsInline preload="none" className="w-full h-full object-cover">
-                            <source src={video.src} type="video/mp4" />
-                        </video>
+                        <LazyVideo src={video.src} poster={video.poster} className="w-full h-full object-cover" />
                     </div>
                 ))}
             </div>
@@ -55,9 +54,7 @@ export default function VideosSection() {
                                 className="basis-full shrink-0 grow-0 min-w-0"
                             >
                                 <div className="overflow-hidden shadow-xl aspect-[4/5]">
-                                    <video autoPlay loop muted playsInline preload="none" className="w-full h-full object-cover">
-                                        <source src={video.src} type="video/mp4" />
-                                    </video>
+                                    <LazyVideo src={video.src} poster={video.poster} className="w-full h-full object-cover" />
                                 </div>
                             </div>
                         ))}

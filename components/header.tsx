@@ -53,7 +53,7 @@ export default function Header() {
                             ? "w-[70px] h-[36px] md:w-[80px] md:h-[40px]"
                             : "w-[70px] h-[40px] md:w-[90px] md:h-[50px]"
                             }`}>
-                            <img
+                            <img width={270} height={151}
                                 src="/assets/logo_beige.png"
                                 alt="logo"
                                 className="w-full h-full object-contain cursor-pointer transition-all duration-300"
@@ -83,7 +83,7 @@ export default function Header() {
                         <div className="relative group inline-block z-[50]">
                             <div className="px-3 flex items-center gap-1 justify-center relative cursor-pointer text-white after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full">
                                 More
-                                <img
+                                <img width={24} height={24} loading="lazy"
                                     src="/assets/Arrow_Down.svg"
                                     alt="arrow"
                                     className="w-[15px] h-[15px] transition-all duration-300 brightness-0 invert"
@@ -178,7 +178,7 @@ export default function Header() {
                 <div className="flex items-center justify-between px-4 h-[72px] border-b border-white/10">
                     <Link href="/" onClick={() => setMenuOpen(false)} className="block">
                         <div className="w-[70px] h-[40px]">
-                            <img
+                            <img width={746} height={414} loading="lazy"
                                 src="/assets/logo_siena.svg"
                                 alt="logo"
                                 className="w-full h-full object-contain"

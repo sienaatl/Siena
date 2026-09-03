@@ -21,7 +21,7 @@ export default function BlogPage() {
             alt="Events at Siena" 
             fill 
             className="object-cover object-[50%_40%]" 
-            priority 
+            preload 
             sizes="100vw" 
           />
         </motion.div>

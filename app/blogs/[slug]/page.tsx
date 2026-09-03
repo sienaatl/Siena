@@ -153,7 +153,7 @@ export default async function BlogDetails({ params }: Props) {
             alt={blog.title}
             width={1200}
             height={700}
-            priority
+            preload
             className="rounded-xl w-full object-cover"
           />
         </div>

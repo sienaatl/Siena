@@ -44,7 +44,7 @@ export default function Footer() {
 
     return (
 
-        <footer className="relative font-sans w-full bg-[url('/assets/book-table-bg.jpg')] bg-cover bg-center bg-no-repeat">
+        <footer data-bg="/assets/book-table-bg.jpg" className="relative font-sans w-full bg-cover bg-center bg-no-repeat">
             <div className="absolute inset-0 bg-[#1b312e]/85 pointer-events-none" />
 
             <div className="relative z-10">
@@ -52,7 +52,7 @@ export default function Footer() {
             </div>
 
             <div className="relative z-10 w-full h-[58px]">
-                <img
+                <img width={1512} height={58} loading="lazy"
                     src="/assets/divisor_negro.svg"
                     alt="divider"
                     className="absolute inset-0 w-full h-full object-cover"
@@ -65,7 +65,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-4 max-w-[580px] items-center lg:items-start text-center lg:text-left">
                     <div className="relative">
                         <div className="absolute inset-0 bg-[#e0b265]/20 blur-3xl rounded-full"></div>
-                        <img src="/assets/logofooter.webp" alt="Siena" className="relative w-[200px] lg:w-[261px] mb-[10px] lg:mb-[20px]" />
+                        <img width={730} height={422} loading="lazy" src="/assets/logofooter.webp" alt="Siena" className="relative w-[200px] lg:w-[261px] mb-[10px] lg:mb-[20px]" />
                     </div>
 
                     <p className="text-white text-[22px] lg:text-[28px] leading-[110%] lg:leading-[100%] font-semibold mt-2">

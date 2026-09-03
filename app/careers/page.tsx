@@ -248,7 +248,7 @@ export default function Careers() {
           animate={{ scale: 1 }}
           transition={{ duration: 1.4, ease: "easeOut" }}
         >
-          <Image src="/assets/hero_careers.jpg" alt="Careers at Siena" fill className="object-cover object-center" priority sizes="100vw" />
+          <Image src="/assets/hero_careers.jpg" alt="Careers at Siena" fill className="object-cover object-center" preload sizes="100vw" />
         </motion.div>
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(3,3,2,0.6)_0%,rgba(3,3,2,0.28)_45%,rgba(3,3,2,0.72)_100%)]" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-14 md:pt-16">
@@ -388,7 +388,8 @@ export default function Careers() {
       {/* APPLICATION FORM */}
       <section
         className="relative w-full py-[80px] overflow-hidden"
-        style={{ backgroundImage: "url('/assets/dark-green-wall-backdrop-grunge-background-texture.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+        data-bg="/assets/dark-green-wall-backdrop-grunge-background-texture.jpg"
+        style={{ backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="w-full max-w-[1180px] mx-auto px-4">
           <div className="flex flex-col items-center text-center mb-10">
@@ -430,7 +431,8 @@ export default function Careers() {
 
           <motion.div
             className="shadow-2xl border border-[#e0b265]/50 w-full max-w-[740px] mx-auto px-6 md:px-10 py-10 mt-16 md:mt-20"
-            style={{ backgroundColor: "#152C29", backgroundImage: "url('/assets/pattern-dark.png')", backgroundSize: "160px", backgroundRepeat: "repeat" }}
+            data-bg="/assets/pattern-dark.png"
+            style={{ backgroundColor: "#152C29", backgroundSize: "160px", backgroundRepeat: "repeat" }}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.05 }}

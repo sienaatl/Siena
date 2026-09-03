@@ -63,7 +63,7 @@ export default function OrderOnline() {
           alt="Order Online at Siena"
           fill
           className="object-cover object-center"
-          priority
+          preload
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/55" />
