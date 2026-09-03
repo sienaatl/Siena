@@ -42,7 +42,7 @@ export default function GiftCard() {
           animate={{ scale: 1 }}
           transition={{ duration: 1.4, ease: "easeOut" }}
         >
-          <Image src="/assets/Siena_20.03.26-PS-05.webp" alt="Siena Gift Card" fill className="object-cover object-center" preload sizes="100vw" />
+          <Image src="/assets/Siena_20.03.26-PS-05.webp" alt="Siena Gift Card" fill className="object-cover object-center" priority sizes="100vw" />
         </motion.div>
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-14 md:pt-16">

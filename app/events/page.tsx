@@ -42,7 +42,7 @@ export default function Events() {
           animate={{ scale: 1 }}
           transition={{ duration: 1.4, ease: "easeOut" }}
         >
-          <Image src="/assets/hero5.webp" alt="Events at Siena" fill className="object-cover object-[50%_40%]" preload sizes="100vw" />
+          <Image src="/assets/hero5.webp" alt="Events at Siena" fill className="object-cover object-[50%_40%]" priority sizes="100vw" />
         </motion.div>
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-14 md:pt-16">

@@ -248,7 +248,7 @@ export default function Careers() {
           animate={{ scale: 1 }}
           transition={{ duration: 1.4, ease: "easeOut" }}
         >
-          <Image src="/assets/hero_careers.jpg" alt="Careers at Siena" fill className="object-cover object-center" preload sizes="100vw" />
+          <Image src="/assets/hero_careers.jpg" alt="Careers at Siena" fill className="object-cover object-center" priority sizes="100vw" />
         </motion.div>
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(3,3,2,0.6)_0%,rgba(3,3,2,0.28)_45%,rgba(3,3,2,0.72)_100%)]" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-14 md:pt-16">
