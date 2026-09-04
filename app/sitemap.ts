@@ -23,6 +23,7 @@ const PAGES: { path: string; priority: number }[] = [
   { path: "/new-restaurants-alpharetta", priority: 0.9 },
   { path: "/downtown-alpharetta-restaurants", priority: 0.9 },
   { path: "/tapas-restaurant-alpharetta", priority: 0.8 },
+  { path: "/fine-dining-restaurant-alpharetta", priority: 0.8 },
   { path: "/dinner-alpharetta", priority: 0.7 },
   { path: "/vegetarian-restaurant-alpharetta", priority: 0.7 },
   { path: "/best-restaurants-alpharetta", priority: 0.8 },
