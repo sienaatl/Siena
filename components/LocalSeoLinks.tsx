@@ -7,6 +7,7 @@ const links = [
   ["New Restaurants Alpharetta", "/new-restaurants-alpharetta"],
   ["Downtown Alpharetta Restaurants", "/downtown-alpharetta-restaurants"],
   ["Tapas Restaurant Alpharetta", "/tapas-restaurant-alpharetta"],
+  ["Fine Dining Alpharetta", "/fine-dining-restaurant-alpharetta"],
   ["Dinner in Alpharetta", "/dinner-alpharetta"],
   ["Vegetarian Alpharetta", "/vegetarian-restaurant-alpharetta"],
   ["Date Night Alpharetta", "/date-night-alpharetta"],

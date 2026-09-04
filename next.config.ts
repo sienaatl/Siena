@@ -90,6 +90,14 @@ const nextConfig: NextConfig = {
         destination: "/menus",
         permanent: true,
       },
+
+      // Added when the fine dining landing page was built. This post was kept in the
+      // first round because no page competed with it; now one does.
+      {
+        source: "/blogs/fine-dining-restaurant-alpharetta",
+        destination: "/fine-dining-restaurant-alpharetta",
+        permanent: true,
+      },
     ];
   },
   images: {
