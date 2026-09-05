@@ -27,6 +27,7 @@ const PAGES: { path: string; priority: number }[] = [
   { path: "/holiday-parties-alpharetta", priority: 0.9 },
   { path: "/cocktail-bar-alpharetta", priority: 0.8 },
   { path: "/restaurants-near-ameris-bank-amphitheatre", priority: 0.7 },
+  { path: "/restaurants-near-avalon-alpharetta", priority: 0.7 },
   { path: "/dinner-alpharetta", priority: 0.7 },
   { path: "/vegetarian-restaurant-alpharetta", priority: 0.7 },
   { path: "/best-restaurants-alpharetta", priority: 0.8 },
