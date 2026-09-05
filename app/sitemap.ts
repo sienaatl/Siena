@@ -25,6 +25,7 @@ const PAGES: { path: string; priority: number }[] = [
   { path: "/tapas-restaurant-alpharetta", priority: 0.8 },
   { path: "/fine-dining-restaurant-alpharetta", priority: 0.8 },
   { path: "/holiday-parties-alpharetta", priority: 0.9 },
+  { path: "/cocktail-bar-alpharetta", priority: 0.8 },
   { path: "/dinner-alpharetta", priority: 0.7 },
   { path: "/vegetarian-restaurant-alpharetta", priority: 0.7 },
   { path: "/best-restaurants-alpharetta", priority: 0.8 },
