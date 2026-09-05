@@ -10,6 +10,8 @@ const links = [
   ["Fine Dining Alpharetta", "/fine-dining-restaurant-alpharetta"],
   ["Holiday Parties Alpharetta", "/holiday-parties-alpharetta"],
   ["Cocktail Bar Alpharetta", "/cocktail-bar-alpharetta"],
+  ["Near Ameris Bank Amphitheatre", "/restaurants-near-ameris-bank-amphitheatre"],
+  ["Near Avalon Alpharetta", "/restaurants-near-avalon-alpharetta"],
   ["Dinner in Alpharetta", "/dinner-alpharetta"],
   ["Vegetarian Alpharetta", "/vegetarian-restaurant-alpharetta"],
   ["Date Night Alpharetta", "/date-night-alpharetta"],
