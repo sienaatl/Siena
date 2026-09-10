@@ -14,9 +14,9 @@ export default function VideosSection() {
     const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
     const videos = [
-        { src: "/assets/video1.mp4", poster: "/assets/video1_poster.webp", aspect: "aspect-[4/5]", marginTop: "mt-8" },
-        { src: "/assets/video_2.mp4", poster: "/assets/video_2_poster.webp", aspect: "aspect-[3.5/5]", marginTop: "" },
-        { src: "/assets/video_3.mp4", poster: "/assets/video_3_poster.webp", aspect: "aspect-[4/5]", marginTop: "mt-8" },
+        { src: "/assets/pages/Home/video-1.mp4", poster: "/assets/pages/Home/video1_poster.webp", aspect: "aspect-[4/5]", marginTop: "mt-8" },
+        { src: "/assets/pages/Home/video-2.mp4", poster: "/assets/pages/Home/video2_poster.webp", aspect: "aspect-[3.5/5]", marginTop: "" },
+        { src: "/assets/pages/Home/video-3.mp4", poster: "/assets/pages/Home/video3_poster.webp", aspect: "aspect-[4/5]", marginTop: "mt-8" },
     ];
 
     const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
