@@ -454,7 +454,7 @@
             {
               "id": "6e05a690-1892-4c68-b26c-8bfd6476a17b",
               "image": "",
-              "name": "Seasonal Roasted Potatoes",
+              "name": "Seasoned Roasted Potatoes",
               "price": "8",
               "rawPrice": {
                 "base_price": 8,
@@ -1008,7 +1008,7 @@
             },
             {
               "id": "hh-skewers-chicken-tawook",
-              "image": "/assets/menu/chicken-tawook-skewer-happy-hour.webp",
+              "image": "",
               "name": "Chicken Tawook Skewer",
               "description": "Grilled marinated chicken skewer with tahini aioli.",
               "price": "17",
@@ -1028,7 +1028,7 @@
             },
             {
               "id": "hh-skewers-shrimp-kabob",
-              "image": "/assets/menu/shrimp-kabob-skewer-happy-hour.webp",
+              "image": "",
               "name": "Shrimp Kabob Skewer",
               "description": "Grilled shrimp skewer with herbs, citrus, and dipping sauce.",
               "price": "12",
