@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "Restaurant Blog",
     "Alpharetta Restaurant",
   ],
+  // Without this the page inherits the root layout's canonical, which points at the
+  // home page and tells Google to index that instead of the blog index.
+  alternates: { canonical: "/blogs" },
 };
 
 export default function BlogsLayout({
