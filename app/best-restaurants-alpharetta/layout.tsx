@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Best Restaurants in Alpharetta GA | Siena Restaurant & Bar",
     description:
-      "Medi-talian sharing plates, house-made pasta, proper cocktails and live saxophone on Fridays, minutes from Avalon.",
+      "Medi-talian sharing plates, house-made pasta, proper cocktails and live music on Fridays, minutes from Avalon.",
     url: "https://sienaatl.com/best-restaurants-alpharetta",
     type: "website",
     images: [{ url: "https://sienaatl.com/assets/Siena_20.03.26-A-02.webp" }],
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Best Restaurants in Alpharetta GA | Siena Restaurant & Bar",
-    description: "Medi-talian sharing plates, house-made pasta, proper cocktails and live saxophone on Fridays, minutes from Avalon.",
+    description: "Medi-talian sharing plates, house-made pasta, proper cocktails and live music on Fridays, minutes from Avalon.",
   },
 };
 

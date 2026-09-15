@@ -3,13 +3,8 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
 /**
  * Copy and layout for /downtown-alpharetta-restaurants.
  *
- * Second strongest opening in the Search Console data: 51 query variations and 717
- * impressions in three months, but ranking positions 26 to 31, so almost nobody
- * clicks. Plenty of people are being shown Siena for this and not seeing it.
- *
- * Siena is genuinely on Devore Rd in downtown Alpharetta, so the page is honest.
- * It leans on location detail rather than repeating the food pitch, to keep it
- * distinct from the other landing pages.
+ * Leans on location detail rather than the food pitch, to stay distinct from the
+ * cuisine pages. Hours follow lib/site-data.json.
  */
 
 export const H1 = "A Downtown Alpharetta Restaurant";
@@ -39,8 +34,8 @@ export const BLOCKS: Block[] = [
     bg: "green",
     heading: "Getting Here",
     script: "and parking",
-    image: "/assets/hero11.webp",
-    alt: "Siena Restaurant & Bar on Devore Road in downtown Alpharetta, Georgia",
+    image: "/assets/Siena_20.03.26-A-05.webp",
+    alt: "The entrance and host stand at Siena Restaurant & Bar on Devore Road in downtown Alpharetta",
     paras: [
       "124 Devore Rd, Alpharetta, GA 30009. The address drops you at the door, and parking is straightforward rather than the usual downtown hunt.",
       "Avalon is minutes away, and so is the Ameris Bank Amphitheatre, which makes Siena a natural stop before a show or after an afternoon of shopping. Plenty of tables on a concert night are people doing exactly that.",
@@ -53,11 +48,11 @@ export const BLOCKS: Block[] = [
     flip: true,
     heading: "What Kind of Evening",
     script: "it depends on the night",
-    image: "/assets/hero6.webp",
-    alt: "The warm dining room at a downtown Alpharetta restaurant on a Friday evening",
+    image: "/assets/Siena_20.03.26-A-06.webp",
+    alt: "The dining room and bar at Siena, a downtown Alpharetta restaurant",
     paras: [
       "The room is warm and a little dramatic, with bold lighting that makes a Tuesday feel like an occasion. Upscale, but nobody is being formal about it.",
-      "Midweek is calmer and easier to get into. Friday and Saturday run later, to midnight, and Friday has a live saxophonist, which changes the room completely. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
+      "Midweek is calmer and easier to get into. Friday and Saturday run later, to midnight, and Friday has live music from 7 to 10pm, which changes the room completely. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
       "Saturday morning is different again, with its own <a href=\"/brunch-alpharetta\">brunch menu</a> from 10am.",
     ],
   },
@@ -72,23 +67,23 @@ export const BLOCKS: Block[] = [
     items: [
       {
         image: "/assets/Siena_20.03.26-D-Feta.webp",
-        alt: "Mezze and sharing plates at a downtown Alpharetta restaurant",
+        alt: "Whipped feta with char-grilled bread at a downtown Alpharetta restaurant",
         title: "MEZZE",
         sub: "Hummus, whipped feta, cauliflower",
         href: "/mediterranean-restaurant-alpharetta",
       },
       {
-        image: "/assets/Siena_20.03.26-D-MeatBalls-02.webp",
-        alt: "House-made pasta served in downtown Alpharetta",
+        image: "/assets/menu/bucatini-al-pepe-nero.webp",
+        alt: "Bucatini al pepe nero with burrata, house-made pasta in downtown Alpharetta",
         title: "PASTA",
         sub: "House-made, rigatoni and bucatini",
         href: "/italian-restaurant-alpharetta",
       },
       {
         image: "/assets/Siena_20.03.26-LS-SienaMargarita-01.webp",
-        alt: "Cocktails at a bar in downtown Alpharetta",
+        alt: "A bartender finishing a cocktail at the bar at Siena in downtown Alpharetta",
         title: "THE BAR",
-        sub: "Twenty cocktails, thirty wines",
+        sub: "Twelve cocktails, thirty wines",
         href: "/happy-hour-alpharetta",
       },
     ],
@@ -110,7 +105,7 @@ export const BLOCKS: Block[] = [
       },
       {
         title: "A Night Out",
-        desc: "Low lighting, a proper cocktail list and live sax on Fridays. <a href=\"/date-night-alpharetta\">More on date night</a>.",
+        desc: "Low lighting, a proper cocktail list and live music on Fridays. <a href=\"/date-night-alpharetta\">More on date night</a>.",
       },
     ],
   },
@@ -119,8 +114,8 @@ export const BLOCKS: Block[] = [
     bg: "green",
     heading: "Who Runs It",
     script: "women-led",
-    image: "/assets/about3.webp",
-    alt: "The women-led team behind a downtown Alpharetta restaurant",
+    image: "/assets/events/1779117470689_4tnk9t.webp",
+    alt: "Two members of the Siena team in chef coats at the restaurant in downtown Alpharetta",
     paras: [
       "Siena opened in December 2025 and is women-led. Co-owner and manager Aida Lemma runs the floor, executive chef Baba Estavillo runs the kitchen.",
       "You notice it in the details, from the welcome at the door to how plates arrive. <a href=\"/about-us\">More about how Siena started</a>, or see why it is one of the <a href=\"/new-restaurants-alpharetta\">newer rooms downtown</a>.",
@@ -155,10 +150,7 @@ export const FAQS: Faq[] = [
   },
 ];
 
-/**
- * Quotes are real, taken verbatim from public Yelp reviews, names as the reviewers
- * display them. Confirm with the client before this goes live.
- */
+/** Quotes taken verbatim from public Yelp reviews, names as the reviewers display them. */
 export const REVIEWS: Reviews = {
   quotes: [
     {
@@ -183,7 +175,7 @@ export const CLOSING = {
   heading: "Find Us Downtown",
   script: "devore road",
   paras: [
-    "If you are standing in downtown Alpharetta deciding where to eat, this is the one with two kitchens on one menu and a saxophone on Fridays.",
+    "If you are standing in downtown Alpharetta deciding where to eat, this is the one with two kitchens on one menu and live music on Fridays.",
     "<a href=\"/reservations\">Book your table</a>, or come and take a seat at the bar.",
   ],
 };

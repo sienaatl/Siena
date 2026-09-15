@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "Company parties, client dinners and family gatherings in a warm room near Avalon. Sharing plates built for a long table.",
     url: "https://sienaatl.com/holiday-parties-alpharetta",
     type: "website",
-    images: [{ url: "https://sienaatl.com/assets/events/1779116412260_ckub4v.webp" }],
+    images: [{ url: "https://sienaatl.com/assets/events/1779116274229_qew7cz.webp" }],
   },
   twitter: {
     card: "summary_large_image",

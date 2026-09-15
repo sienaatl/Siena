@@ -7,8 +7,8 @@ export default function BrunchAlpharetta() {
       slug="brunch-alpharetta"
       h1={H1}
       h1Script={H1_SCRIPT}
-      heroImage="/assets/about1.webp"
-      heroAlt="Weekend brunch at Siena Restaurant & Bar in Alpharetta, Georgia"
+      heroImage="/assets/hero5.webp"
+      heroAlt="A table of Saturday brunch plates to share at Siena Restaurant & Bar in Alpharetta, Georgia"
       marquee={MARQUEE}
       intro={INTRO}
       blocks={BLOCKS}

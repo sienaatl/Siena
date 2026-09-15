@@ -8,7 +8,7 @@ export default function MediterraneanRestaurantAlpharetta() {
       h1={H1}
       h1Script={H1_SCRIPT}
       heroImage="/assets/Siena_20.03.26-A-03.webp"
-      heroAlt="Mezze and sharing plates at Siena, a Mediterranean restaurant in Alpharetta, Georgia"
+      heroAlt="The dining room at Siena, a Mediterranean restaurant in Alpharetta, Georgia"
       marquee={MARQUEE}
       intro={INTRO}
       blocks={BLOCKS}

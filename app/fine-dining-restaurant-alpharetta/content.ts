@@ -3,18 +3,9 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
 /**
  * Copy and layout for /fine-dining-restaurant-alpharetta.
  *
- * Page 6 in the original plan. Search Console shows the term at position 15.5 with
- * only 6 impressions, so the volume is modest, but it is a distinct positioning term
- * and the only one of the remaining plan items with no page and no duplicate.
- *
- * The honest angle matters here. Siena is not white-tablecloth, tasting-menu fine
- * dining, and claiming that would set the wrong expectation and produce bad reviews.
- * What it genuinely is: chef-driven cooking and premium ingredients in an upscale
- * room, served as sharing plates, without the formality. The page leans on that
- * difference rather than pretending to be something it is not.
- *
- * Building this page also means /blogs/fine-dining-restaurant-alpharetta now competes
- * with it, so that post is redirected here in next.config.ts.
+ * Positions Siena as chef-driven cooking in an upscale room, served as sharing plates,
+ * rather than white-tablecloth fine dining. /blogs/fine-dining-restaurant-alpharetta
+ * redirects here in next.config.ts. Dishes and drinks follow lib/site-data.json.
  */
 
 export const H1 = "Fine Dining in Alpharetta";
@@ -23,7 +14,7 @@ export const H1_SCRIPT = "without the formality";
 export const MARQUEE = [
   "Chef-Driven Kitchen",
   "Thirty-Bottle Wine List",
-  "Live Sax Fridays",
+  "Live Music Fridays",
   "Alpharetta, Georgia",
 ];
 
@@ -44,11 +35,11 @@ export const BLOCKS: Block[] = [
     bg: "green",
     heading: "Who Cooks It",
     script: "chef-driven",
-    image: "/assets/about3.webp",
-    alt: "The chef-driven kitchen team at a fine dining restaurant in Alpharetta",
+    image: "/assets/events/1779117470689_4tnk9t.webp",
+    alt: "Two members of the kitchen team in chef coats at Siena, a fine dining restaurant in Alpharetta",
     paras: [
-      "Executive chef Baba Estavillo runs the kitchen and co-owner Aida Lemma runs the floor. It is a women-led restaurant, which is still rare at this end of the market.",
-      "The cooking is Italian technique with Mediterranean brightness. Pasta is made in house rather than bought in. Fish arrives whole. The lamb is cooked to order rather than held.",
+      "Executive chef Baba Estavillo runs the kitchen and co-owner Aida Lemma runs the floor. It is a women-led restaurant.",
+      "The cooking is Italian technique with Mediterranean brightness. Pasta is made in house rather than bought in. The chicken, filet and lamb chops marinate for 48 hours before they go over an open flame, and the lamb shank braises for four hours.",
       "That is where the money goes here: into the kitchen rather than into the tablecloths. <a href=\"/about-us\">More about how Siena started</a>.",
     ],
   },
@@ -62,24 +53,24 @@ export const BLOCKS: Block[] = [
       "If you are marking something, these are the plates people order. All of them share, which is unusual at this level and rather better for a table of four. <a href=\"/menus\">See the full menu</a>.",
     items: [
       {
-        image: "/assets/Siena_20.03.26-PS-TheFlameSteak.webp",
-        alt: "The Flame steak and filet mignon kabob at a fine dining restaurant in Alpharetta",
+        image: "/assets/menu/filet-mignon-kabo.webp",
+        alt: "Filet mignon kabob with basmati rice pilaf at a fine dining restaurant in Alpharetta",
         title: "THE GRILL",
-        sub: "Filet mignon kabob, the Flame steak",
+        sub: "Filet mignon kabob, chicken tawook",
         href: "/menus?tab=main-menu",
       },
       {
         image: "/assets/Siena_20.03.26-D-LambChop-01.webp",
         alt: "Grilled lamb chops served at an upscale restaurant in Alpharetta",
         title: "LAMB CHOPS",
-        sub: "Cooked to order, the house signature",
+        sub: "Grass-fed, 48-hour marinade",
         href: "/menus?tab=main-menu",
       },
       {
-        image: "/assets/Siena_20.03.26-PS-GoldenOxtail.webp",
-        alt: "Slow braised oxtail and Mediterranean branzino at a fine dining restaurant in Alpharetta",
+        image: "/assets/menu/braised-lamb-shank.webp",
+        alt: "Braised lamb shank with crispy onions at a fine dining restaurant in Alpharetta",
         title: "SLOW COOKED",
-        sub: "Braised oxtail, Mediterranean branzino",
+        sub: "Braised lamb shank, Mediterranean branzino",
         href: "/menus?tab=main-menu",
       },
     ],
@@ -91,23 +82,23 @@ export const BLOCKS: Block[] = [
     heading: "The Cellar and the Bar",
     script: "thirty bottles deep",
     image: "/assets/Siena_20.03.26-LS-TiramisuEspressoMartini.webp",
-    alt: "Wine and cocktails at a fine dining restaurant in Alpharetta, Georgia",
+    alt: "A cocktail being poured into a coupe at the bar at a fine dining restaurant in Alpharetta",
     paras: [
-      "A thirty-bottle wine list running from Provence rosé and Burgundy chardonnay to Napa cabernet, with Moët &amp; Chandon and a handful of other champagnes for the nights that call for it.",
-      "The spirits shelf runs deep too: Macallan 12, Woodford Reserve, a proper mezcal selection and twenty house cocktails. Ask the team what suits what you have ordered rather than guessing from the list.",
-      "There is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> earlier in the evening if you want to start at the bar.",
+      "A thirty-bottle wine list running from Provence rosé and Burgundy chardonnay to California cabernet, with Moët &amp; Chandon Brut Imperial by the glass or the bottle for the nights that call for it.",
+      "The spirits shelf runs deep too: Macallan 12, Woodford Reserve, a proper mezcal selection and twelve house cocktails. Ask the team what suits what you have ordered rather than guessing from the list.",
+      "There is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> from 4 to 7pm if you want to start at the bar.",
     ],
   },
   {
     kind: "split",
     bg: "black",
     heading: "The Room After Dark",
-    script: "and friday sax",
-    image: "/assets/hero5.webp",
-    alt: "The low-lit dining room at an upscale restaurant in Alpharetta on an evening",
+    script: "and friday music",
+    image: "/assets/Siena_20.03.26-A-02.webp",
+    alt: "Teal booths and sconce lighting in the dining room at an upscale restaurant in Alpharetta",
     paras: [
       "Bold, low lighting. Space between tables. The kind of room that makes an ordinary Tuesday feel like it counts, and a real occasion feel properly marked.",
-      "On Friday a saxophonist plays live, which is the closest Siena gets to formality and still nobody is being quiet about it. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
+      "On Friday live music plays from 7 to 10pm, with a different act each week, and nobody is being quiet about it. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
       "Friday and Saturday run to midnight, so there is no sense of being moved along after the dessert plates go.",
     ],
   },
@@ -140,8 +131,8 @@ export const BLOCKS: Block[] = [
     flip: true,
     heading: "For the Occasions",
     script: "that need a room",
-    image: "/assets/hero6.webp",
-    alt: "A celebration dinner at an upscale restaurant in Alpharetta",
+    image: "/assets/events/1779117506791_jvttbu.webp",
+    alt: "Guests raising glasses at a celebration at an upscale restaurant in Alpharetta",
     paras: [
       "Anniversaries, milestone birthdays, a promotion worth marking. Mention it when you book and the team will handle the timing rather than improvise on the night.",
       "For something larger there is <a href=\"/private-dining-alpharetta\">private dining</a>, and for two there is <a href=\"/date-night-alpharetta\">date night</a>. Both use the same room and the same kitchen.",
@@ -161,11 +152,11 @@ export const FAQS: Faq[] = [
   },
   {
     q: "What should we order for a special occasion?",
-    a: "The lamb chops, the filet mignon kabob and the Flame steak are the plates people order when they are marking something. Add mezze to start and the saffron crème brûlée or the baklava cheesecake to finish.",
+    a: "The lamb chops, the filet mignon kabob and the braised lamb shank are the plates people order when they are marking something. Add mezze to start and the pistachio crème brûlée or the pistachio baklava cheesecake to finish.",
   },
   {
     q: "Do you have a wine list?",
-    a: "Thirty bottles, from Provence rosé and Burgundy chardonnay to Napa cabernet, plus champagne including Moët &amp; Chandon. The spirits list runs to Macallan 12 and a full mezcal selection.",
+    a: "Thirty bottles, from Provence rosé and Burgundy chardonnay to California cabernet, plus Moët &amp; Chandon champagne. The spirits list runs to Macallan 12 and a full mezcal selection.",
   },
   {
     q: "How long does dinner take?",
@@ -177,10 +168,7 @@ export const FAQS: Faq[] = [
   },
 ];
 
-/**
- * Quotes are real, taken verbatim from public Yelp reviews, names as the reviewers
- * display them. Confirm with the client before this goes live.
- */
+/** Quotes taken verbatim from public Yelp reviews, names as the reviewers display them. */
 export const REVIEWS: Reviews = {
   quotes: [
     {
@@ -189,8 +177,8 @@ export const REVIEWS: Reviews = {
     },
     { text: "The lamb chops is very flavorful as well as humus n pita bread.", author: "Big O." },
     {
-      text: "My favorite was the lollipop chicken with a yogurt sauce. Their Mac and cheese with brisket was also really good.",
-      author: "Grace M.",
+      text: "Food was great I had the Chicken tawook and rice it tasted very fresh and lite",
+      author: "Eline P.",
     },
   ],
 };

@@ -3,16 +3,9 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
 /**
  * Copy and layout for /holiday-parties-alpharetta.
  *
- * Built 5 September because the booking window for December parties runs roughly
- * September to November. The site had no holiday content at all.
- *
- * IMPORTANT, do not change without asking the client first. This page sells the
- * service Siena demonstrably has: private dining and group bookings through the
- * festive season. It deliberately makes NO claim about being open on Christmas Day
- * or New Year's Eve, no special holiday menu, no packages and no pricing, because
- * none of that has been confirmed. Every unknown is framed as something the guest
- * asks about rather than something we promise. If the client confirms holiday
- * opening or a festive menu, this page gets much stronger and should be revisited.
+ * Covers group bookings and private dining through the festive season. Makes no claim
+ * about Christmas Day or New Year's Eve opening, a holiday menu, packages or pricing;
+ * those are framed as questions for the team. Hours follow lib/site-data.json.
  */
 
 export const H1 = "Holiday Parties in Alpharetta";
@@ -42,8 +35,8 @@ export const BLOCKS: Block[] = [
     bg: "green",
     heading: "Book Before November",
     script: "seriously",
-    image: "/assets/events/1779116412260_ckub4v.webp",
-    alt: "A group holiday party in the dining room at Siena Restaurant & Bar in Alpharetta",
+    image: "/assets/Siena_20.03.26-A-02.webp",
+    alt: "Teal booths and tables set in the dining room at Siena Restaurant & Bar in Alpharetta",
     paras: [
       "December fills from September. By the time most people start ringing round, the good Friday and Saturday slots have gone and everyone is settling for a Tuesday in a room they did not want.",
       "If you have a rough date and a rough number, that is enough to hold something. Details can follow.",
@@ -79,8 +72,8 @@ export const BLOCKS: Block[] = [
     flip: true,
     heading: "How the Room Works",
     script: "tell us the headcount",
-    image: "/assets/events/1779117470689_4tnk9t.webp",
-    alt: "Tables set up for a company holiday party in Alpharetta, Georgia",
+    image: "/assets/Siena_20.03.26-A-03.webp",
+    alt: "Tables set along the windows in the dining room at Siena in Alpharetta, Georgia",
     paras: [
       "One long table if you want everyone in one conversation. A cluster of tables if the group is bigger and people will move around. We set it up around your numbers rather than making you fit ours.",
       "The room is warm and low-lit, which does a lot of work on a December evening. Upscale, but nobody has to be on their best behaviour.",
@@ -98,23 +91,23 @@ export const BLOCKS: Block[] = [
     items: [
       {
         image: "/assets/Siena_20.03.26-D-Feta.webp",
-        alt: "Mezze sharing platters for a holiday party in Alpharetta",
+        alt: "Whipped feta with char-grilled bread to start a holiday party in Alpharetta",
         title: "TO START",
         sub: "Hummus, whipped feta, warm pita",
         href: "/mediterranean-restaurant-alpharetta",
       },
       {
-        image: "/assets/Siena_20.03.26-D-MeatBalls-02.webp",
-        alt: "House-made pasta served family style at a group dinner in Alpharetta",
+        image: "/assets/menu/rigatoni-alla-vodka.webp",
+        alt: "Rigatoni alla vodka with burrata served family style at a group dinner in Alpharetta",
         title: "THE MIDDLE",
-        sub: "House-made pasta, arancini, cauliflower",
+        sub: "House-made pasta, calamari, cauliflower",
         href: "/italian-restaurant-alpharetta",
       },
       {
         image: "/assets/Siena_20.03.26-D-LambChop-01.webp",
-        alt: "Lamb chops and grilled dishes for a company party in Alpharetta",
+        alt: "Grilled lamb chops for a company party in Alpharetta",
         title: "THE GRILL",
-        sub: "Lamb chops, skewers, the Flame steak",
+        sub: "Lamb chops, skewers, lamb shank",
         href: "/menus?tab=main-menu",
       },
     ],
@@ -123,13 +116,13 @@ export const BLOCKS: Block[] = [
     kind: "split",
     bg: "green",
     heading: "The Bar, and Fridays",
-    script: "a saxophone helps",
+    script: "live music helps",
     image: "/assets/Siena_20.03.26-LS-SienaMargarita-01.webp",
-    alt: "Cocktails and drinks at a holiday party in Alpharetta",
+    alt: "A bartender finishing a cocktail at the bar at Siena in Alpharetta",
     paras: [
-      "Twenty house cocktails, a thirty-bottle wine list and a deep spirits shelf. A few bottles for the table works better with sharing plates than everyone queuing at the bar.",
-      "There is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> earlier in the evening if the group is arriving from work in stages.",
-      "On Friday a saxophonist plays live. If your date is flexible, booking a Friday gets you music without organising any. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
+      "Twelve house cocktails, a thirty-bottle wine list and a deep spirits shelf. A few bottles for the table works better with sharing plates than everyone queuing at the bar.",
+      "There is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> from 4 to 7pm if the group is arriving from work in stages.",
+      "On Friday live music plays from 7 to 10pm. If your date is flexible, booking a Friday gets you music without organising any. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
     ],
   },
   {
@@ -139,7 +132,7 @@ export const BLOCKS: Block[] = [
     heading: "How to Book",
     script: "three things",
     image: "/assets/events/1779117506791_jvttbu.webp",
-    alt: "Guests at a December celebration dinner at Siena Restaurant & Bar in Alpharetta",
+    alt: "Guests raising glasses at a celebration at Siena Restaurant & Bar in Alpharetta",
     paras: [
       "Send the date, a rough headcount and what the evening is for. That is enough for us to come back with options, and everything else can be settled later.",
       "<a href=\"/event-inquiry\">Fill in the enquiry form</a> and the team will be in touch. If it is easier to talk it through, call the restaurant and ask for the events team.",
@@ -175,10 +168,7 @@ export const FAQS: Faq[] = [
   },
 ];
 
-/**
- * Quotes are real, taken verbatim from public Yelp reviews, names as the reviewers
- * display them. Confirm with the client before this goes live.
- */
+/** Quotes taken verbatim from public Yelp reviews, names as the reviewers display them. */
 export const REVIEWS: Reviews = {
   quotes: [
     {
@@ -186,8 +176,8 @@ export const REVIEWS: Reviews = {
       author: "Chelsea G.",
     },
     {
-      text: "My favorite was the lollipop chicken with a yogurt sauce. Their Mac and cheese with brisket was also really good.",
-      author: "Grace M.",
+      text: "Food was great I had the Chicken tawook and rice it tasted very fresh and lite",
+      author: "Eline P.",
     },
     { text: "The lamb chops is very flavorful as well as humus n pita bread.", author: "Big O." },
   ],

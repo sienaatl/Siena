@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "On Devore Rd in downtown Alpharetta, minutes from Avalon and the Ameris Bank Amphitheatre.",
     url: "https://sienaatl.com/downtown-alpharetta-restaurants",
     type: "website",
-    images: [{ url: "https://sienaatl.com/assets/hero11.webp" }],
+    images: [{ url: "https://sienaatl.com/assets/Siena_20.03.26-A-01.webp" }],
   },
   twitter: { card: "summary_large_image", title: "Downtown Alpharetta Restaurants | Siena Restaurant & Bar", description: "On Devore Rd in downtown Alpharetta, minutes from Avalon and the Ameris Bank Amphitheatre." },
 };

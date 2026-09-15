@@ -7,8 +7,8 @@ export default function DateNightRestaurantAlpharetta() {
       slug="date-night-alpharetta"
       h1={H1}
       h1Script={H1_SCRIPT}
-      heroImage="/assets/hero8.webp"
-      heroAlt="Warm low lighting in the dining room at Siena, a date night restaurant in Alpharetta"
+      heroImage="/assets/Siena_20.03.26-A-06.webp"
+      heroAlt="The dining room and bar at Siena, a date night restaurant in Alpharetta"
       marquee={MARQUEE}
       intro={INTRO}
       blocks={BLOCKS}

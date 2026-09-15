@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "Opened December 2025 on Devore Rd. Italian and Mediterranean on one menu, built for sharing.",
     url: "https://sienaatl.com/new-restaurants-alpharetta",
     type: "website",
-    images: [{ url: "https://sienaatl.com/assets/hero1.webp" }],
+    images: [{ url: "https://sienaatl.com/assets/Siena_20.03.26-A-01.webp" }],
   },
   twitter: { card: "summary_large_image", title: "New Restaurants in Alpharetta | Siena Restaurant & Bar", description: "Opened December 2025 on Devore Rd. Italian and Mediterranean on one menu, built for sharing." },
 };

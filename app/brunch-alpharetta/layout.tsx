@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "A separate Saturday brunch menu from 10am, fifteen plates built for sharing, minutes from Avalon.",
     url: "https://sienaatl.com/brunch-alpharetta",
     type: "website",
-    images: [{ url: "https://sienaatl.com/assets/about1.webp" }],
+    images: [{ url: "https://sienaatl.com/assets/hero5.webp" }],
   },
   twitter: {
     card: "summary_large_image",

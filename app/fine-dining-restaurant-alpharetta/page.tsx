@@ -7,8 +7,8 @@ export default function FineDiningRestaurantAlpharetta() {
       slug="fine-dining-restaurant-alpharetta"
       h1={H1}
       h1Script={H1_SCRIPT}
-      heroImage="/assets/hero4.webp"
-      heroAlt="The upscale dining room at Siena, a fine dining restaurant in Alpharetta, Georgia"
+      heroImage="/assets/Siena_20.03.26-A-06.webp"
+      heroAlt="The dining room and bar at Siena, an upscale restaurant in Alpharetta, Georgia"
       marquee={MARQUEE}
       intro={INTRO}
       blocks={BLOCKS}
