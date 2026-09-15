@@ -128,8 +128,8 @@ export const BLOCKS: Block[] = [
     flip: true,
     heading: "Brunch, Then Avalon",
     script: "or the other way round",
-    image: "/assets/hero11.webp",
-    alt: "Siena Restaurant & Bar on Devore Road in downtown Alpharetta",
+    image: "/assets/Siena_20.03.26-A-01.webp",
+    alt: "The front of Siena Restaurant & Bar on Devore Road in downtown Alpharetta",
     paras: [
       "Siena is at 124 Devore Rd in downtown Alpharetta, a few minutes from Avalon. Brunch first and shopping after works better than the other way round, since nobody wants to carry bags into the dining room.",
       "Parking is straightforward, the entrance is step-free, and there is accessible parking near the door.",

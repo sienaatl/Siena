@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "Dinner and bar service from 4pm, to midnight on Friday and Saturday. Sharing plates in downtown Alpharetta.",
     url: "https://sienaatl.com/dinner-alpharetta",
     type: "website",
-    images: [{ url: "https://sienaatl.com/assets/hero12.webp" }],
+    images: [{ url: "https://sienaatl.com/assets/Siena_20.03.26-A-03.webp" }],
   },
   twitter: { card: "summary_large_image", title: "Dinner in Alpharetta | Siena Restaurant & Bar", description: "Dinner and bar service from 4pm, to midnight on Friday and Saturday. Sharing plates in downtown Alpharetta." },
 };

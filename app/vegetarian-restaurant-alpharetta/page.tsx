@@ -7,8 +7,8 @@ export default function VegetarianRestaurantAlpharetta() {
       slug="vegetarian-restaurant-alpharetta"
       h1={H1}
       h1Script={H1_SCRIPT}
-      heroImage="/assets/Siena_20.03.26-A-05.webp"
-      heroAlt="Vegetarian mezze and vegetable plates at Siena Restaurant & Bar in Alpharetta"
+      heroImage="/assets/hero7.webp"
+      heroAlt="Hummus with crispy chickpeas and grilled pita, a vegetarian plate at Siena Restaurant & Bar in Alpharetta"
       marquee={MARQUEE}
       intro={INTRO}
       blocks={BLOCKS}

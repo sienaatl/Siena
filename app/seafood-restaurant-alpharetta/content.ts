@@ -113,7 +113,7 @@ export const BLOCKS: Block[] = [
     alt: "Octopus carpaccio and a glass of white wine on a marble table at Siena in Alpharetta",
     paras: [
       "Fish is worth eating somewhere quiet enough to taste it. The dining room is low-lit and built for staying a while, with a bar at the front and booths down the side, and it does not push tables out the door.",
-      "The kitchen opens at 4pm Tuesday through Sunday and closes on Monday. Friday and Saturday it runs to midnight, which is later than most of Alpharetta.",
+      "The kitchen opens at 4pm Tuesday through Sunday and closes on Monday. Friday and Saturday it runs to midnight.",
       "There is a full bar if you want something to drink with the fish. <a href=\"/cocktail-bar-alpharetta\">More on the bar</a>.",
     ],
   },
@@ -143,8 +143,8 @@ export const BLOCKS: Block[] = [
     bg: "green",
     heading: "Five Minutes From Avalon",
     script: "downtown alpharetta",
-    image: "/assets/hero11.webp",
-    alt: "Siena Restaurant & Bar on Devore Road in downtown Alpharetta, Georgia",
+    image: "/assets/Siena_20.03.26-A-01.webp",
+    alt: "The front of Siena Restaurant & Bar on Devore Road in downtown Alpharetta, Georgia",
     paras: [
       "Siena is at 124 Devore Rd, in downtown Alpharetta and a short drive from Avalon. Parking is straightforward, the entrance is step-free, and there is accessible parking near the door.",
       "If you are deciding where to eat rather than what, the wider pages may help: <a href=\"/restaurants-near-avalon-alpharetta\">restaurants near Avalon</a>, <a href=\"/downtown-alpharetta-restaurants\">downtown Alpharetta</a>, and the <a href=\"/mediterranean-restaurant-alpharetta\">Mediterranean menu</a> the seafood belongs to.",

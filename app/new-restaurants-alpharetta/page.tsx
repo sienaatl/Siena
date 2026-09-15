@@ -7,8 +7,8 @@ export default function NewRestaurantsAlpharetta() {
       slug="new-restaurants-alpharetta"
       h1={H1}
       h1Script={H1_SCRIPT}
-      heroImage="/assets/hero1.webp"
-      heroAlt="The dining room at Siena, one of the new restaurants in Alpharetta, Georgia"
+      heroImage="/assets/Siena_20.03.26-A-01.webp"
+      heroAlt="The front of Siena Restaurant & Bar, one of the new restaurants in Alpharetta, Georgia"
       marquee={MARQUEE}
       intro={INTRO}
       blocks={BLOCKS}

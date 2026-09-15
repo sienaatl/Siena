@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "Chef-driven cooking and premium ingredients in an upscale room, served as sharing plates. Minutes from Avalon.",
     url: "https://sienaatl.com/fine-dining-restaurant-alpharetta",
     type: "website",
-    images: [{ url: "https://sienaatl.com/assets/hero4.webp" }],
+    images: [{ url: "https://sienaatl.com/assets/Siena_20.03.26-A-06.webp" }],
   },
   twitter: {
     card: "summary_large_image",

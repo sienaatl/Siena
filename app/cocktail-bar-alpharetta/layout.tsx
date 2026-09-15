@@ -5,12 +5,12 @@ import { FAQS } from "./content";
 export const metadata: Metadata = {
   title: "Cocktail Bar in Alpharetta",
   description:
-    "Siena is a cocktail bar in Alpharetta with twenty house cocktails, thirty wines and sixty-three spirits. Small plates, live music on Fridays. Walk-ins welcome.",
+    "Siena is a cocktail bar in Alpharetta with twelve house cocktails, thirty wines and sixty-three spirits. Small plates, live music on Fridays. Walk-ins welcome.",
   alternates: { canonical: "/cocktail-bar-alpharetta" },
   openGraph: {
     title: "Cocktail Bar in Alpharetta | Siena Restaurant & Bar",
     description:
-      "Twenty house cocktails, a thirty-bottle wine list and a deep agave shelf, in downtown Alpharetta.",
+      "Twelve house cocktails, a thirty-bottle wine list and a deep agave shelf, in downtown Alpharetta.",
     url: "https://sienaatl.com/cocktail-bar-alpharetta",
     type: "website",
     images: [{ url: "https://sienaatl.com/assets/Siena_20.03.26-A-06.webp" }],
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cocktail Bar in Alpharetta | Siena Restaurant & Bar",
-    description: "Twenty house cocktails, thirty wines and sixty-three spirits in downtown Alpharetta.",
+    description: "Twelve house cocktails, thirty wines and sixty-three spirits in downtown Alpharetta.",
   },
 };
 

@@ -3,12 +3,8 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
 /**
  * Copy and layout for /tapas-restaurant-alpharetta.
  *
- * 70 impressions across 7 query variations, ranking 14 to 26 with zero clicks. Small
- * numbers, but the best fit of the five: sharing plates are Siena's whole format, it
- * is mentioned on every other page, and no page targets it. Low competition too.
- *
- * This page explains the format rather than re-listing dishes, which keeps it
- * distinct from the Italian and Mediterranean pages.
+ * Explains the sharing format rather than re-listing dishes, to stay distinct from
+ * the Italian and Mediterranean pages. Dishes named follow lib/site-data.json.
  */
 
 export const H1 = "A Tapas Restaurant in Alpharetta";
@@ -27,7 +23,7 @@ export const INTRO = {
   script: "and that is the point",
   paras: [
     "Siena Restaurant &amp; Bar serves tapas-style, which means plates land in the middle of the table and everyone reaches in. No main course, no one person guarding their own dinner.",
-    "The menu runs Italian and Mediterranean at the same time, so a single table can have house-made pasta, warm hummus, grilled skewers and charred cauliflower going at once. It is at 124 Devore Rd in downtown Alpharetta.",
+    "The menu runs Italian and Mediterranean at the same time, so a single table can have house-made pasta, hummus, grilled skewers and crispy cauliflower going at once. It is at 124 Devore Rd in downtown Alpharetta.",
   ],
   cta: { label: "SEE THE MENU", href: "/menus" },
 };
@@ -39,7 +35,7 @@ export const BLOCKS: Block[] = [
     heading: "How to Order",
     script: "more than feels sensible",
     image: "/assets/Siena_20.03.26-D-Feta.webp",
-    alt: "Tapas-style sharing plates on a table at a restaurant in Alpharetta",
+    alt: "Whipped feta with char-grilled bread, a plate to share at a restaurant in Alpharetta",
     paras: [
       "The usual mistake is ordering like it is a normal restaurant. One plate each, then wondering why the table looks empty.",
       "A better approach: four or five plates between two people, six to eight between four. Start with two or three mezze, add a pasta for the table, then one or two of the grilled dishes. Order again if you are still going, which most people are.",
@@ -56,17 +52,17 @@ export const BLOCKS: Block[] = [
       "If you want a running order rather than a menu, this is the one that rarely disappoints. Add or swap as you go. <a href=\"/menus\">See the full menu</a>.",
     items: [
       {
-        image: "/assets/Siena_20.03.26-PS-Feta-01.webp",
-        alt: "Mezze starters to share at a tapas restaurant in Alpharetta",
+        image: "/assets/menu/hummus-della-casa.webp",
+        alt: "Hummus della Casa with grilled pita, a starter to share at a tapas restaurant in Alpharetta",
         title: "START",
         sub: "Hummus, whipped feta, watermelon and feta",
         href: "/mediterranean-restaurant-alpharetta",
       },
       {
-        image: "/assets/Siena_20.03.26-D-ShirimpFranceseArancini.webp",
-        alt: "Shrimp francese arancini, a shared plate at a tapas restaurant in Alpharetta",
+        image: "/assets/menu/cavolfiore-croccante.webp",
+        alt: "Crispy cauliflower with sweet chili aioli, a shared plate at a tapas restaurant in Alpharetta",
         title: "MIDDLE",
-        sub: "Arancini, crispy cauliflower, a pasta",
+        sub: "Calamari, crispy cauliflower, a pasta",
         href: "/italian-restaurant-alpharetta",
       },
       {
@@ -84,8 +80,8 @@ export const BLOCKS: Block[] = [
     flip: true,
     heading: "Why Sharing Suits Groups",
     script: "nobody loses",
-    image: "/assets/hero7.webp",
-    alt: "A group sharing tapas plates at a restaurant in Alpharetta",
+    image: "/assets/hero5.webp",
+    alt: "A table covered in shared plates from the Saturday brunch menu at Siena in Alpharetta",
     paras: [
       "The argument about where to eat is usually an argument about cuisine. One person wants pasta, another wants something lighter, someone else does not eat meat.",
       "Sharing plates end that. The menu covers Italian and Mediterranean at once, there is plenty without meat, and nobody is stuck watching someone else eat the better dish.",
@@ -109,7 +105,7 @@ export const BLOCKS: Block[] = [
       },
       {
         title: "Leave Room",
-        desc: "Baklava cheesecake and the saffron crème brûlée are both worth it, and both easier to share than to finish alone.",
+        desc: "The pistachio baklava cheesecake and the tiramisu are both worth it, and both easier to share than to finish alone.",
       },
     ],
   },
@@ -117,12 +113,12 @@ export const BLOCKS: Block[] = [
     kind: "split",
     bg: "green",
     heading: "The Bar Shares Too",
-    script: "twenty cocktails",
+    script: "twelve cocktails",
     image: "/assets/Siena_20.03.26-LS-MatchaMartini-01.webp",
-    alt: "Cocktails alongside tapas plates at a restaurant in Alpharetta",
+    alt: "A matcha martini held up at the bar at Siena in Alpharetta",
     paras: [
-      "Twenty house cocktails, a thirty-bottle wine list and a deep spirits shelf. A bottle for the table works better with this style of eating than everyone ordering separately.",
-      "There is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> earlier in the evening if you want a few small plates and a drink without a full sit-down. On Friday a saxophonist plays, and the room lifts. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
+      "Twelve house cocktails, a thirty-bottle wine list and a deep spirits shelf. A bottle for the table works better with this style of eating than everyone ordering separately.",
+      "There is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> from 4 to 7pm if you want a few small plates and a drink without a full sit-down. On Friday live music plays from 7 to 10pm, and the room lifts. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
     ],
   },
 ];
@@ -138,7 +134,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Is it Spanish tapas?",
-    a: "No. The format is tapas-style sharing, but the food is Italian and Mediterranean. House-made pasta, mezze, grilled skewers and charred vegetables rather than patatas bravas and jamón.",
+    a: "No. The format is tapas-style sharing, but the food is Italian and Mediterranean. House-made pasta, mezze, grilled skewers and crispy cauliflower rather than patatas bravas and jamón.",
   },
   {
     q: "Is it good for a big group?",
@@ -146,7 +142,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Is there enough for someone who does not eat meat?",
-    a: "Yes. Hummus, whipped feta, charred cauliflower, the salads, the pasta and the sides make a full meal on their own. <a href=\"/vegetarian-restaurant-alpharetta\">More on the vegetarian side</a>.",
+    a: "Yes. Hummus, whipped feta, crispy cauliflower, the salads, the pasta and the sides make a full meal on their own. <a href=\"/vegetarian-restaurant-alpharetta\">More on the vegetarian side</a>.",
   },
   {
     q: "Where is it and what are the hours?",
@@ -154,16 +150,13 @@ export const FAQS: Faq[] = [
   },
 ];
 
-/**
- * Quotes are real, taken verbatim from public Yelp reviews, names as the reviewers
- * display them. Confirm with the client before this goes live.
- */
+/** Quotes taken verbatim from public Yelp reviews, names as the reviewers display them. */
 export const REVIEWS: Reviews = {
   quotes: [
     { text: "The lamb chops is very flavorful as well as humus n pita bread.", author: "Big O." },
     {
-      text: "My favorite was the lollipop chicken with a yogurt sauce. Their Mac and cheese with brisket was also really good.",
-      author: "Grace M.",
+      text: "Food was great I had the Chicken tawook and rice it tasted very fresh and lite",
+      author: "Eline P.",
     },
     {
       text: "The combination of incredible Mediterranean cuisine, attentive service, and live music creates a unique atmosphere",

@@ -7,8 +7,8 @@ export default function HolidayPartiesAlpharetta() {
       slug="holiday-parties-alpharetta"
       h1={H1}
       h1Script={H1_SCRIPT}
-      heroImage="/assets/events/1779116412260_ckub4v.webp"
-      heroAlt="A holiday party in the dining room at Siena Restaurant & Bar in Alpharetta, Georgia"
+      heroImage="/assets/events/1779116274229_qew7cz.webp"
+      heroAlt="Cocktails on a tiered stand beneath the lit Siena sign in the dining room at Siena, Alpharetta"
       marquee={MARQUEE}
       intro={INTRO}
       blocks={BLOCKS}
