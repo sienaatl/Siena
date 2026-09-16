@@ -39,6 +39,13 @@ const deferredAnalyticsScript = `
       ttq.page();
     }(window, document, 'ttq');
   }
+  // Registered outside loadGTM so a tap before GTM loads is still queued.
+  document.addEventListener('click', function (e) {
+    var link = e.target && e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (!link) return;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'phone_click', phone_number: link.getAttribute('href').slice(4) });
+  });
   var fired = false;
   var events = ['pointerdown', 'mousemove', 'keydown', 'touchstart', 'scroll'];
   var fallback;
