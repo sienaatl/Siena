@@ -1,26 +1,8 @@
-import type { Metadata } from "next";
+import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
-export const metadata: Metadata = {
-  title: "Brunch in Alpharetta",
-  description:
-    "Saturday brunch in Alpharetta at Siena from 10am. Limoncello ricotta pancakes, truffle frittata, steak and eggs, all built for sharing. Book a table.",
-  alternates: { canonical: "/brunch-alpharetta" },
-  openGraph: {
-    title: "Brunch in Alpharetta | Siena Restaurant & Bar",
-    description:
-      "A separate Saturday brunch menu from 10am, fifteen plates built for sharing, minutes from Avalon.",
-    url: "https://sienaatl.com/brunch-alpharetta",
-    type: "website",
-    images: [{ url: "https://sienaatl.com/assets/hero5.webp" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Brunch in Alpharetta | Siena Restaurant & Bar",
-    description: "A separate Saturday brunch menu from 10am, fifteen plates built for sharing.",
-  },
-};
+export const metadata = diningMetadata("brunch-alpharetta", "Brunch in Alpharetta", "Explore Siena’s Mediterranean and Italian-inspired brunch menu in Alpharetta. Call to confirm current brunch service and arrange your visit.");
 
 /**
  * The root layout appends " | Siena" through its title template, so the title here

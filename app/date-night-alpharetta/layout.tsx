@@ -1,26 +1,8 @@
-import type { Metadata } from "next";
+import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
-export const metadata: Metadata = {
-  title: "Date Night Restaurant in Alpharetta",
-  description:
-    "Looking for a date night restaurant in Alpharetta? Siena has warm lighting, cocktails, Friday live music and sharing plates for two. Reserve your table.",
-  alternates: { canonical: "/date-night-alpharetta" },
-  openGraph: {
-    title: "Date Night Restaurant in Alpharetta | Siena Restaurant & Bar",
-    description:
-      "Warm lighting, cocktails worth talking about, sharing plates for two and live music on Friday nights.",
-    url: "https://sienaatl.com/date-night-alpharetta",
-    type: "website",
-    images: [{ url: "https://sienaatl.com/assets/Siena_20.03.26-A-02.webp" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Date Night Restaurant in Alpharetta | Siena Restaurant & Bar",
-    description: "Warm lighting, cocktails worth talking about, sharing plates for two and live music on Friday nights.",
-  },
-};
+export const metadata = diningMetadata("date-night-alpharetta", "Date Night Dinner in Alpharetta", "Plan a date night at Siena in Alpharetta with Mediterranean and Italian sharing plates, cocktails and a warm dining room. View menus and reserve.");
 
 /**
  * The title is deliberately short. The root layout appends " | Siena" through its

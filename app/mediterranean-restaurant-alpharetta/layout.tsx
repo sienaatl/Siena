@@ -1,26 +1,8 @@
-import type { Metadata } from "next";
+import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
-export const metadata: Metadata = {
-  title: "Mediterranean Restaurant in Alpharetta",
-  description:
-    "Siena is a Mediterranean restaurant in Alpharetta with fresh mezze, hummus, grilled skewers and salads, all made for sharing. Book your table today.",
-  alternates: { canonical: "/mediterranean-restaurant-alpharetta" },
-  openGraph: {
-    title: "Mediterranean Restaurant in Alpharetta | Siena Restaurant",
-    description:
-      "Mezze, hummus, grilled skewers and fresh salads, all built for sharing. Minutes from Avalon in downtown Alpharetta.",
-    url: "https://sienaatl.com/mediterranean-restaurant-alpharetta",
-    type: "website",
-    images: [{ url: "https://sienaatl.com/assets/Siena_20.03.26-A-03.webp" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Mediterranean Restaurant in Alpharetta | Siena Restaurant",
-    description: "Mezze, hummus, grilled skewers and fresh salads, all built for sharing. Minutes from Avalon in downtown Alpharetta.",
-  },
-};
+export const metadata = diningMetadata("mediterranean-restaurant-alpharetta", "Mediterranean Restaurant in Alpharetta", "Share Mediterranean mezze, grilled skewers and Italian favorites at Siena on Devore Road in Alpharetta. Explore the menu and reserve your table.");
 
 /**
  * The title is deliberately short. The root layout appends " | Siena" through its

@@ -4,13 +4,13 @@
   "restaurant": {
     "name": "Siena Restaurant",
     "address": "124 Devore Rd, Alpharetta, GA 30009",
-    "city": "Atlanta",
+    "city": "Alpharetta",
     "country": "United States",
     "phone": "+1 (404) 999-0373",
     "email": "info@sienaatl.com",
     "website_url": "https://sienaatl.com/",
     "maps_url": "https://maps.app.goo.gl/9rkP14kjw5Dhmrsy5",
-    "timezone": "GMT-4",
+    "timezone": "America/New_York",
     "hours": [
       {
         "label": "Monday",
@@ -4219,7 +4219,7 @@
         "restaurant_id": "551c9a2a-b559-41a7-9eac-62d6e8cbab16",
         "name": "Alpharetta",
         "address": "124 Devore Rd, Alpharetta, GA 30009",
-        "city": "Atlanta",
+        "city": "Alpharetta",
         "country": "United States",
         "phone": "+1 (404) 999-0373",
         "email": "info@sienaatl.com",
@@ -4232,7 +4232,7 @@
         "google_maps_url": "https://maps.app.goo.gl/9rkP14kjw5Dhmrsy5",
         "latitude": null,
         "longitude": null,
-        "timezone": "GMT-4",
+        "timezone": "America/New_York",
         "sort_order": 0,
         "social_links": null,
         "services": null,

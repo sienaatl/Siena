@@ -16,7 +16,7 @@ export default function Footer() {
     const [info, setInfo] = useState<RestaurantInfo>(RESTAURANT_FALLBACK);
     useEffect(() => { getRestaurantInfo().then(setInfo); }, []);
 
-    const [hours, setHours] = useState<GroupedHourEntry[] | null>(null);
+    const [hours, setHours] = useState<GroupedHourEntry[] | null>(FALLBACK_HOURS);
 
     useEffect(() => {
         let cancelled = false;
@@ -78,7 +78,7 @@ export default function Footer() {
 
                     {/* Dirección con icono */}
                     <a
-                        href="https://maps.google.com"
+                        href={info.maps_url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 text-[#979797] leading-[20px] text-[15px] lg:text-[16px] uppercase hover:text-[#e0b265] transition group"

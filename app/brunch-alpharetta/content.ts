@@ -145,7 +145,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Do I need a reservation for brunch?",
-    a: "It is sensible. Saturday is popular, and booking ahead guarantees a table. <a href=\"/reservations\">Book here</a>.",
+    a: "Please call <a href=\"tel:+14049990373\">(404) 999-0373</a> to confirm current brunch service and reservation arrangements. The online calendar currently lists dinner service.",
   },
   {
     q: "What is on the brunch menu?",

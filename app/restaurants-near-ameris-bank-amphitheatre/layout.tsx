@@ -1,22 +1,8 @@
-import type { Metadata } from "next";
+import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
-export const metadata: Metadata = {
-  title: "Restaurants Near Ameris Bank Amphitheatre",
-  description:
-    "Looking for restaurants near Ameris Bank Amphitheatre? Siena is minutes away in downtown Alpharetta, open from 4pm and until midnight Friday and Saturday.",
-  alternates: { canonical: "/restaurants-near-ameris-bank-amphitheatre" },
-  openGraph: {
-    title: "Restaurants Near Ameris Bank Amphitheatre | Siena Restaurant & Bar",
-    description:
-      "Minutes from the venue, kitchen open from 4pm and until midnight on Friday and Saturday. Book before the show.",
-    url: "https://sienaatl.com/restaurants-near-ameris-bank-amphitheatre",
-    type: "website",
-    images: [{ url: "https://sienaatl.com/assets/Siena_20.03.26-A-02.webp" }],
-  },
-  twitter: { card: "summary_large_image", title: "Restaurants Near Ameris Bank Amphitheatre | Siena Restaurant & Bar", description: "Minutes from the venue, kitchen open from 4pm and until midnight on Friday and Saturday. Book before the show." },
-};
+export const metadata = diningMetadata("restaurants-near-ameris-bank-amphitheatre", "Dinner Near Ameris Bank Amphitheatre", "Plan dinner at Siena near Ameris Bank Amphitheatre in Alpharetta. View the Mediterranean and Italian menu and reserve ahead of your concert.");
 
 /**
  * Short title on purpose. The root layout appends " | Siena" through its title

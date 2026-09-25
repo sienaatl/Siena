@@ -1,26 +1,8 @@
-import type { Metadata } from "next";
+import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
-export const metadata: Metadata = {
-  title: "Private Dining and Events in Alpharetta",
-  description:
-    "Siena is a private events restaurant in Alpharetta for birthdays, anniversaries and corporate dinners. Sharing plates, cocktails and live music. Book an event.",
-  alternates: { canonical: "/private-dining-alpharetta" },
-  openGraph: {
-    title: "Private Dining and Events in Alpharetta | Siena Restaurant",
-    description:
-      "Birthdays, anniversaries and corporate dinners in a warm room near Avalon. Sharing plates built for groups.",
-    url: "https://sienaatl.com/private-dining-alpharetta",
-    type: "website",
-    images: [{ url: "https://sienaatl.com/assets/events/1779116274229_qew7cz.webp" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Private Dining and Events in Alpharetta | Siena Restaurant",
-    description: "Birthdays, anniversaries and corporate dinners in a warm room near Avalon. Sharing plates built for groups.",
-  },
-};
+export const metadata = diningMetadata("private-dining-alpharetta", "Private Dining & Celebrations in Alpharetta", "Plan private dining at Siena in Alpharetta for birthdays, anniversaries and corporate dinners. Explore the space and send your date and guest count.");
 
 /**
  * The title is deliberately short. The root layout appends " | Siena" through its

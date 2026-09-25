@@ -1,22 +1,8 @@
-import type { Metadata } from "next";
+import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
-export const metadata: Metadata = {
-  title: "Restaurants Near Avalon in Alpharetta",
-  description:
-    "Looking for restaurants near Avalon? Siena is a short drive away in downtown Alpharetta, open from 4pm with sharing plates, cocktails and Friday live music.",
-  alternates: { canonical: "/restaurants-near-avalon-alpharetta" },
-  openGraph: {
-    title: "Restaurants Near Avalon in Alpharetta | Siena Restaurant & Bar",
-    description:
-      "A short drive from Avalon and quieter than the strip. Dinner from 4pm, Saturday brunch from 10am.",
-    url: "https://sienaatl.com/restaurants-near-avalon-alpharetta",
-    type: "website",
-    images: [{ url: "https://sienaatl.com/assets/Siena_20.03.26-A-03.webp" }],
-  },
-  twitter: { card: "summary_large_image", title: "Restaurants Near Avalon in Alpharetta | Siena Restaurant & Bar", description: "A short drive from Avalon and quieter than the strip. Dinner from 4pm, Saturday brunch from 10am." },
-};
+export const metadata = diningMetadata("restaurants-near-avalon-alpharetta", "Restaurant Near Avalon in Alpharetta", "Planning dinner before or after Avalon? Discover Siena at 124 Devore Road in Alpharetta for Mediterranean plates, pasta and cocktails. Reserve a table.");
 
 /**
  * Short title on purpose. The root layout appends " | Siena" through its title

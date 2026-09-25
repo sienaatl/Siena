@@ -38,38 +38,38 @@ export const BLOCKS: Block[] = [
     image: "/assets/Siena_20.03.26-A-01.webp",
     alt: "The front of Siena Restaurant & Bar on Devore Road, minutes from Ameris Bank Amphitheatre",
     paras: [
-      "Book for 5pm or 5.30pm for a 7.30 or 8pm show. That gives you a comfortable ninety minutes without anyone glancing at their phone.",
-      "Say you are going to the show when you book and again when you arrive. Food here arrives in waves rather than as courses, so the kitchen paces your table differently once it knows you have somewhere to be. That one sentence is the difference between relaxed and rushed.",
-      "If you do not tell us, allow two hours. It is not a quick dinner by design.",
+      "Check the show and gate times on your ticket before choosing a reservation. Allow time for dinner, the drive, concert traffic, parking and venue entry.",
+      "Mention the concert when you book and tell your server when you need to leave. The team can help you choose dishes that fit your plans; service times vary.",
+      "Allow a relaxed window for dinner, and call the restaurant if your schedule is tight.",
     ],
   },
   {
     kind: "gallery",
     bg: "black",
     icon: "/assets/icon_menu.svg",
-    heading: "What to Order When You Are Short on Time",
-    script: "these come out first",
+    heading: "Explore the Menu Before You Arrive",
+    script: "plates for sharing",
     intro:
-      "Everything is tapas-style and shared, which works in your favour on a show night because the first plates land quickly. Start with these and add more only if the clock allows. <a href=\"/menus\">See the full menu</a>.",
+      "Explore sharing plates and pasta before your visit, and ask your server what suits your timing. <a href=\"/menus\">See the full menu</a>.",
     items: [
       {
         image: "/assets/Siena_20.03.26-D-Feta.webp",
         alt: "Whipped feta with char-grilled bread, a quick starter before a concert in Alpharetta",
-        title: "FASTEST",
+        title: "MEZZE",
         sub: "Hummus, whipped feta, warm pita",
         href: "/mediterranean-restaurant-alpharetta",
       },
       {
         image: "/assets/menu/calamari-fritti-siena.webp",
         alt: "Calamari fritti with sweet chili aioli before a show at Ameris Bank Amphitheatre",
-        title: "NEXT",
+        title: "SMALL PLATES",
         sub: "Calamari, crispy cauliflower",
         href: "/menus?tab=main-menu",
       },
       {
         image: "/assets/menu/rigatoni-alla-vodka.webp",
         alt: "Rigatoni alla vodka for an early dinner near Ameris Bank Amphitheatre",
-        title: "IF THERE IS TIME",
+        title: "PASTA",
         sub: "House-made pasta for the table",
         href: "/italian-restaurant-alpharetta",
       },
@@ -84,9 +84,9 @@ export const BLOCKS: Block[] = [
     image: "/assets/Siena_20.03.26-A-04.webp",
     alt: "The bar at Siena, open until midnight on Friday and Saturday in Alpharetta",
     paras: [
-      "Friday and Saturday the kitchen and bar run to midnight, so coming after the encore is genuinely an option rather than a hopeful one.",
+      "Siena’s published closing time is midnight on Friday and Saturday. Call before coming after a concert to confirm kitchen service and seating availability.",
       "Twelve house cocktails, a thirty-bottle wine list and small plates that suit a late table. Walk-ins are welcome at the bar when there is room. <a href=\"/cocktail-bar-alpharetta\">More on the bar</a>.",
-      "Midweek and Sunday the kitchen closes at 10pm, so an after-show visit only works on a Friday or Saturday.",
+      "The published closing time is 10pm Tuesday through Thursday and Sunday. Plan an earlier dinner when your concert ends late.",
     ],
   },
   {
@@ -132,15 +132,15 @@ export const FAQS: Faq[] = [
   },
   {
     q: "What time should we book before a show?",
-    a: "5pm or 5.30pm for a 7.30 or 8pm start. Tell us you are going to the show when you book and again when you arrive, and the kitchen will pace your table for it.",
+    a: "Work back from your ticket’s gate and show times, allowing for dinner, traffic, parking and entry. Mention your timing when you book and when you arrive.",
   },
   {
     q: "How long does dinner take?",
-    a: "Allow two hours normally. Less if you tell us you have a show, because plates arrive in waves and the kitchen can bring them faster.",
+    a: "Service time depends on your party, dishes and how busy the restaurant is. Allow a relaxed window and call ahead if you need help planning around a show.",
   },
   {
     q: "Can we come after the concert instead?",
-    a: "On Friday and Saturday, yes. The kitchen and bar run to midnight. Midweek and Sunday everything closes at 10pm, so after a show is too late.",
+    a: "Call to confirm kitchen service and seating before coming after a concert. Published restaurant closing times are midnight Friday and Saturday, and 10pm Tuesday through Thursday and Sunday.",
   },
   {
     q: "Do you take walk-ins on a show night?",

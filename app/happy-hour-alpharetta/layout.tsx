@@ -1,26 +1,8 @@
-import type { Metadata } from "next";
+import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
-export const metadata: Metadata = {
-  title: "Happy Hour in Alpharetta",
-  description:
-    "Happy hour in Alpharetta at Siena, 4 to 7pm. Classic cocktails nine dollars, hummus and fries from eight, calamari twelve. Five minutes from Avalon.",
-  alternates: { canonical: "/happy-hour-alpharetta" },
-  openGraph: {
-    title: "Happy Hour in Alpharetta | Siena Restaurant & Bar",
-    description:
-      "Four to seven, its own menu. Classic cocktails nine dollars, small plates from eight, in downtown Alpharetta.",
-    url: "https://sienaatl.com/happy-hour-alpharetta",
-    type: "website",
-    images: [{ url: "https://sienaatl.com/assets/Siena_20.03.26-PS-05.webp" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Happy Hour in Alpharetta | Siena Restaurant & Bar",
-    description: "Four to seven. Classic cocktails nine dollars, small plates from eight.",
-  },
-};
+export const metadata = diningMetadata("happy-hour-alpharetta", "Happy Hour in Alpharetta", "Explore happy hour at Siena in Alpharetta with cocktails and Mediterranean small plates. View the happy-hour menu and contact us for current specials.");
 
 /**
  * The root layout appends " | Siena" through its title template, so the title here

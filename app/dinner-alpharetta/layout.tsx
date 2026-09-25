@@ -1,22 +1,8 @@
-import type { Metadata } from "next";
+import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
-export const metadata: Metadata = {
-  title: "Dinner in Alpharetta",
-  description:
-    "Dinner in Alpharetta from 4pm, later on Friday and Saturday. Italian and Mediterranean sharing plates at Siena on Devore Rd. Book your table.",
-  alternates: { canonical: "/dinner-alpharetta" },
-  openGraph: {
-    title: "Dinner in Alpharetta | Siena Restaurant & Bar",
-    description:
-      "Dinner and bar service from 4pm, to midnight on Friday and Saturday. Sharing plates in downtown Alpharetta.",
-    url: "https://sienaatl.com/dinner-alpharetta",
-    type: "website",
-    images: [{ url: "https://sienaatl.com/assets/Siena_20.03.26-A-03.webp" }],
-  },
-  twitter: { card: "summary_large_image", title: "Dinner in Alpharetta | Siena Restaurant & Bar", description: "Dinner and bar service from 4pm, to midnight on Friday and Saturday. Sharing plates in downtown Alpharetta." },
-};
+export const metadata = diningMetadata("dinner-alpharetta", "Dinner in Alpharetta", "Reserve dinner at Siena in Alpharetta for Mediterranean and Italian sharing plates, pasta and cocktails. Explore the menu and choose your evening.");
 
 /**
  * Short title on purpose. The root layout appends " | Siena" through its title

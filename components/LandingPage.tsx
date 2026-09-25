@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { RESTAURANT_FALLBACK as info } from "@/lib/restaurant";
 import { REVIEW_STATS } from "@/lib/reviews";
+import { VISIT_PLANS } from "@/lib/visit-planning";
 
 /**
  * Shared layout for the commercial landing pages.
@@ -103,6 +104,7 @@ function GoldButton({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
+      data-booking-cta={href === "/reservations" || href === "/event-inquiry" || href.startsWith("tel:") ? "true" : undefined}
       className="group bg-[#e0b265] text-[#1b312e] px-6 md:px-9 py-2.5 text-[14px] md:text-[15px] leading-[24px] inline-flex items-center gap-2 border border-transparent hover:bg-white hover:border-white transition"
     >
       <span>{label}</span>
@@ -213,6 +215,11 @@ export default function LandingPage({
   h1, h1Script, heroImage, heroAlt, marquee, intro, blocks, faqs, closing, slug, reviews, practical,
 }: LandingPageProps) {
   const mq = `mq-${slug}`;
+  const plan = VISIT_PLANS[slug];
+  const isGroup = ["private-dining-alpharetta", "holiday-parties-alpharetta"].includes(slug);
+  const isBrunch = slug === "brunch-alpharetta";
+  const primaryHref = isGroup ? "/event-inquiry" : isBrunch ? `tel:${info.phone.replace(/[^\d+]/g, "")}` : "/reservations";
+  const primaryLabel = isGroup ? "PLAN YOUR EVENT" : isBrunch ? "CALL ABOUT BRUNCH" : "RESERVE A TABLE";
 
   return (
     <main>
@@ -271,7 +278,7 @@ export default function LandingPage({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
           >
-            <GoldButton href="/reservations" label="BOOK A TABLE" />
+            <GoldButton href={primaryHref} label={primaryLabel} />
             <a
               href={`tel:${info.phone.replace(/[^\d+]/g, "")}`}
               className="group border border-white/70 text-white px-6 md:px-9 py-2.5 text-[14px] md:text-[15px] leading-[24px] inline-flex items-center gap-2 hover:bg-white hover:text-[#1b312e] transition"
@@ -321,6 +328,19 @@ export default function LandingPage({
           ))}
         </div>
       </section>
+
+      {plan && (
+        <section aria-labelledby="visit-planning" className="bg-[#152c29] border-y border-[#e0b265]/20 px-5 py-10">
+          <div className="max-w-[900px] mx-auto text-center">
+            <h2 id="visit-planning" className="text-[#e0b265] text-2xl md:text-3xl mb-4">{plan.heading}</h2>
+            <p className="text-white/80 leading-relaxed max-w-[760px] mx-auto">{plan.text}</p>
+            <div className="mt-6"><GoldButton href={primaryHref} label={primaryLabel} /></div>
+            <nav aria-label="Plan your visit" className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-3">
+              {plan.links.map(link => <Link key={link.href} href={link.href} className="text-[#e0b265] underline underline-offset-4 hover:text-white">{link.label}</Link>)}
+            </nav>
+          </div>
+        </section>
+      )}
 
       {/* ── INTRO ────────────────────────────────────────────── */}
       <section className="relative w-full overflow-hidden" style={bgStyle("texture")}>
@@ -668,7 +688,7 @@ export default function LandingPage({
                 </p>
               ))}
               <div className="flex flex-col sm:flex-row gap-3 mt-7">
-                <GoldButton href="/reservations" label="BOOK A TABLE" />
+                <GoldButton href={primaryHref} label={primaryLabel} />
                 <Link
                   href="/menus"
                   className="border border-[#e0b265] text-[#e0b265] px-6 py-2.5 text-[14px] leading-[24px] inline-flex items-center gap-2 hover:bg-[#e0b265] hover:text-[#1b312e] transition"

@@ -21,6 +21,7 @@ const links = [
   ["Birthday Dinner Alpharetta", "/birthday-dinner-alpharetta"],
   ["Brunch Alpharetta", "/brunch-alpharetta"],
   ["Happy Hour Alpharetta", "/happy-hour-alpharetta"],
+  ["Live Music in Alpharetta", "/live-music-fridays"],
   ["Mediterranean Restaurant Near Roswell", "/mediterranean-restaurant-near-roswell-ga"],
 ] as const;
 

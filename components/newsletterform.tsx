@@ -63,7 +63,7 @@ export default function NewsletterForm() {
             <div className="relative z-10 flex flex-col items-center gap-4 md:gap-5 w-full max-w-[600px]">
 
                 <h2
-                    className="text-[#e0b265] text-[62px] md:text-[85px] leading-[1.1] whitespace-nowrap"
+                    className="text-[#e0b265] text-[38px] sm:text-[62px] md:text-[85px] leading-[1.1]"
                     style={{ fontFamily: "'Palmore-Light', serif" }}
                 >
                     Join our newsletter
