@@ -3,16 +3,9 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
 /**
  * Copy and layout for /vegetarian-restaurant-alpharetta.
  *
- * 39 impressions across 16 query variations, ranking 21 to 25. Small, but it is the
- * same work as filling the empty is_vegan and is_gluten_free fields on all 175
- * dishes, which also unlocks two Google Business Profile attributes we cannot
- * currently tick honestly.
- *
- * IMPORTANT: every dish named here was checked against lib/site-data.json and has no
- * meat or fish in its name or description. The copy says VEGETARIAN and never VEGAN,
- * and never claims gluten free, because those fields are empty on every dish and
- * nobody has confirmed preparation. Do not upgrade those claims without asking the
- * kitchen. A wrong claim here ends in a one-star review.
+ * Every dish named here has no meat or fish in its name or description in
+ * lib/site-data.json. The copy says vegetarian, never vegan or gluten free, because
+ * those menu fields are not filled in and preparation has not been confirmed.
  */
 
 export const H1 = "Vegetarian Options in Alpharetta";
@@ -43,7 +36,7 @@ export const BLOCKS: Block[] = [
     heading: "Where to Start",
     script: "the mezze",
     image: "/assets/Siena_20.03.26-D-Feta.webp",
-    alt: "Hummus and whipped feta, vegetarian mezze at a restaurant in Alpharetta",
+    alt: "Whipped feta with char-grilled bread, a vegetarian starter at a restaurant in Alpharetta",
     paras: [
       "Hummus della Casa is chickpea purée with tahini and lemon, and it is what most tables open with. Lavender Whipped Feta is whipped feta, cream cheese and yogurt, sweet and salty at once.",
       "Cavolfiore Croccante is house-battered crispy cauliflower, and it converts people who claim not to like cauliflower. Add warm pita and you already have a table worth sitting at.",
@@ -60,22 +53,22 @@ export const BLOCKS: Block[] = [
       "Every dish here is meat-free. Order across the three and you have a full evening rather than a compromise. <a href=\"/menus\">See the full menu</a>.",
     items: [
       {
-        image: "/assets/Siena_20.03.26-PS-Feta-01.webp",
-        alt: "Watermelon and feta salad, a vegetarian plate at a restaurant in Alpharetta",
+        image: "/assets/menu/watermelon-feta-salad.webp",
+        alt: "Watermelon and feta salad with arugula and pistachios, a vegetarian plate in Alpharetta",
         title: "SALADS",
         sub: "Watermelon and feta, Mediterranean garden",
         href: "/menus?tab=main-menu",
       },
       {
-        image: "/assets/Siena_20.03.26-D-MeatBalls-02.webp",
-        alt: "House-made rigatoni and bucatini, vegetarian pasta in Alpharetta",
+        image: "/assets/menu/bucatini-al-pepe-nero.webp",
+        alt: "Bucatini al pepe nero with burrata, a meat-free pasta in Alpharetta",
         title: "PASTA",
         sub: "Rigatoni alla vodka, bucatini al pepe nero",
         href: "/italian-restaurant-alpharetta",
       },
       {
-        image: "/assets/Siena_20.03.26-D-SweetPotatoFalafelCakes.webp",
-        alt: "Falafel and vegetable plates at a Mediterranean restaurant in Alpharetta",
+        image: "/assets/menu/cavolfiore-croccante.webp",
+        alt: "Crispy battered cauliflower with sweet chili aioli, a meat-free plate in Alpharetta",
         title: "MORE",
         sub: "Crispy cauliflower, broccolini, pita",
         href: "/mediterranean-restaurant-alpharetta",
@@ -89,7 +82,7 @@ export const BLOCKS: Block[] = [
     heading: "Brunch Works Too",
     script: "saturday morning",
     image: "/assets/Siena_20.03.26-LS-LimoncelloRicottaPancakes-02.webp",
-    alt: "Vegetarian brunch dishes at a restaurant in Alpharetta",
+    alt: "Limoncello ricotta pancakes with berries, a meat-free brunch dish in Alpharetta",
     paras: [
       "Saturday runs a separate brunch menu, and a good part of it is meat-free. The Truffle and Pecorino Frittata with caramelised onion. The Mediterranean Omelette with tomato, red onion, spinach, olives and feta. Wild Mushroom and Pecorino Toast.",
       "On the sweeter side there are Limoncello Ricotta Pancakes and the Spiced Date Waffle, and a Roasted Cauliflower and Olive Salad if you want something lighter.",
@@ -124,11 +117,11 @@ export const BLOCKS: Block[] = [
     bg: "green",
     heading: "The Room",
     script: "worth the evening",
-    image: "/assets/hero5.webp",
-    alt: "The dining room at Siena, a restaurant with vegetarian options in Alpharetta",
+    image: "/assets/hero3.webp",
+    alt: "Teal booths and the lit Siena sign in the dining room at Siena in Alpharetta",
     paras: [
-      "Siena opened in December 2025 and is women-led. Warm room, bold lighting, upscale without being stiff. A saxophonist plays on Friday nights.",
-      "It is dinner and bar service from 4pm, with a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> earlier in the evening where several of the small plates are meat-free.",
+      "Siena opened in December 2025 and is women-led. Warm room, bold lighting, upscale without being stiff. Live music plays on Friday nights from 7 to 10pm.",
+      "It is dinner and bar service from 4pm, with a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> from 4 to 7pm where several of the small plates are meat-free.",
     ],
   },
 ];
@@ -160,10 +153,7 @@ export const FAQS: Faq[] = [
   },
 ];
 
-/**
- * Quotes are real, taken verbatim from public Yelp reviews, names as the reviewers
- * display them. Confirm with the client before this goes live.
- */
+/** Quotes taken verbatim from public Yelp reviews, names as the reviewers display them. */
 export const REVIEWS: Reviews = {
   quotes: [
     { text: "The lamb chops is very flavorful as well as humus n pita bread.", author: "Big O." },

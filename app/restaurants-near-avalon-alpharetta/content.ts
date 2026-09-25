@@ -3,16 +3,9 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
 /**
  * Copy and layout for /restaurants-near-avalon-alpharetta.
  *
- * Page 19 in the original plan, and the last of the twenty.
- *
- * Deliberately built on a different axis from the Amphitheatre page so the two are
- * not twins. That one is about timing around a show. This one is about the fact that
- * Siena does not open until 4pm, which is the single most useful thing an Avalon
- * shopper needs to know, and about being a short drive off the Avalon strip rather
- * than in it.
- *
- * No precise distance or walking time is claimed. Both are Alpharetta 30009, so
- * "a short drive" is safe; anything more exact would be invented.
+ * Built on a different angle from the Amphitheatre page: Siena opens at 4pm and sits
+ * a short drive from Avalon rather than inside it. No distance or walking time is
+ * stated beyond "a short drive"; both are Alpharetta 30009.
  */
 
 export const H1 = "Restaurants Near Avalon in Alpharetta";
@@ -30,7 +23,7 @@ export const INTRO = {
   heading: "Off the Strip, Worth the Drive",
   script: "five minutes away",
   paras: [
-    "Avalon has plenty to eat, and on a Saturday evening all of it has a wait. Siena Restaurant &amp; Bar is a short drive away at 124 Devore Rd in downtown Alpharetta, which is far enough to be calmer and close enough to be easy.",
+    "Avalon has plenty to eat, and weekend evenings there get busy. Siena Restaurant &amp; Bar is a short drive away at 124 Devore Rd in downtown Alpharetta, which is far enough to be calmer and close enough to be easy.",
     "One thing to know before you set off: the kitchen opens at 4pm. There is no lunch service, so this is an evening plan rather than a mid-shopping one.",
   ],
   cta: { label: "BOOK A TABLE", href: "/reservations" },
@@ -42,8 +35,8 @@ export const BLOCKS: Block[] = [
     bg: "green",
     heading: "Evenings Only, and Why",
     script: "no lunch here",
-    image: "/assets/hero11.webp",
-    alt: "Siena Restaurant & Bar on Devore Road, a short drive from Avalon in Alpharetta",
+    image: "/assets/Siena_20.03.26-A-01.webp",
+    alt: "The front of Siena Restaurant & Bar on Devore Road, a short drive from Avalon in Alpharetta",
     paras: [
       "Siena is a dinner and bar room. The kitchen opens at 4pm Tuesday to Sunday and closes Monday. The only daytime service is Saturday brunch from 10am.",
       "That is worth knowing before you drive over after an afternoon at Avalon. If it is 2pm and you are hungry, this is not the answer. If it is 4pm and you have finished shopping, it is a good one.",
@@ -56,10 +49,10 @@ export const BLOCKS: Block[] = [
     flip: true,
     heading: "Quieter Than the Strip",
     script: "on purpose",
-    image: "/assets/hero6.webp",
-    alt: "The warm dining room at a restaurant near Avalon in Alpharetta",
+    image: "/assets/Siena_20.03.26-A-02.webp",
+    alt: "Teal booths and warm lighting in the dining room at a restaurant near Avalon in Alpharetta",
     paras: [
-      "Avalon on a weekend evening is busy, loud and full of people who did not book. Downtown Alpharetta a few minutes away is a different pace.",
+      "Avalon on a weekend evening is busy. Downtown Alpharetta, a few minutes away, runs at a different pace.",
       "The room here is warm and low-lit with space between tables, so you can hear the person opposite you. Parking is straightforward rather than circling a deck, and the entrance is step-free with accessible parking near the door.",
       "Friday and Saturday run to midnight, so there is no rush once you are in.",
     ],
@@ -75,23 +68,23 @@ export const BLOCKS: Block[] = [
     items: [
       {
         image: "/assets/Siena_20.03.26-D-Feta.webp",
-        alt: "Mezze sharing plates at a restaurant near Avalon, Alpharetta",
+        alt: "Whipped feta with char-grilled bread at a restaurant near Avalon, Alpharetta",
         title: "MEZZE",
         sub: "Hummus, whipped feta, cauliflower",
         href: "/mediterranean-restaurant-alpharetta",
       },
       {
-        image: "/assets/Siena_20.03.26-D-MeatBalls-02.webp",
-        alt: "House-made pasta at a restaurant near Avalon in Alpharetta",
+        image: "/assets/menu/bucatini-al-pepe-nero.webp",
+        alt: "Bucatini al pepe nero with burrata at a restaurant near Avalon in Alpharetta",
         title: "PASTA",
         sub: "Made in house, rigatoni and bucatini",
         href: "/italian-restaurant-alpharetta",
       },
       {
         image: "/assets/Siena_20.03.26-PS-SienaMargarita-01.webp",
-        alt: "Cocktails at a bar near Avalon in Alpharetta",
+        alt: "A Siena Margarita with a dried citrus wheel at a bar near Avalon in Alpharetta",
         title: "THE BAR",
-        sub: "Twenty cocktails, thirty wines",
+        sub: "Twelve cocktails, thirty wines",
         href: "/cocktail-bar-alpharetta",
       },
     ],
@@ -113,7 +106,7 @@ export const BLOCKS: Block[] = [
       },
       {
         title: "Friday for Music",
-        desc: "A saxophonist plays live on Friday nights and the room lifts. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
+        desc: "Live music plays on Friday nights from 7 to 10pm and the room lifts. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
       },
     ],
   },
@@ -123,7 +116,7 @@ export const BLOCKS: Block[] = [
     heading: "Saturday Mornings Are Different",
     script: "brunch, from 10am",
     image: "/assets/Siena_20.03.26-LS-LimoncelloRicottaPancakes-01.webp",
-    alt: "Saturday brunch near Avalon in Alpharetta, Georgia",
+    alt: "Limoncello ricotta pancakes from the Saturday brunch menu near Avalon in Alpharetta",
     paras: [
       "The one time Siena is open during the day is Saturday morning, on a separate brunch menu from 10am. Limoncello ricotta pancakes, a truffle and pecorino frittata, baked eggs in San Marzano.",
       "If you are heading to Avalon for the day, brunch first and shop after works rather better than the other way around. <a href=\"/brunch-alpharetta\">More on brunch</a>.",
@@ -158,10 +151,7 @@ export const FAQS: Faq[] = [
   },
 ];
 
-/**
- * Quotes are real, taken verbatim from public Yelp reviews, names as the reviewers
- * display them. Confirm with the client before this goes live.
- */
+/** Quotes taken verbatim from public Yelp reviews, names as the reviewers display them. */
 export const REVIEWS: Reviews = {
   quotes: [
     {
@@ -169,8 +159,8 @@ export const REVIEWS: Reviews = {
       author: "Chelsea G.",
     },
     {
-      text: "My favorite was the lollipop chicken with a yogurt sauce. Their Mac and cheese with brisket was also really good.",
-      author: "Grace M.",
+      text: "Food was great I had the Chicken tawook and rice it tasted very fresh and lite",
+      author: "Eline P.",
     },
     { text: "The lamb chops is very flavorful as well as humus n pita bread.", author: "Big O." },
   ],

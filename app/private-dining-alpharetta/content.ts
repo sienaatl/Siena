@@ -3,12 +3,8 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
 /**
  * Copy and layout for /private-dining-alpharetta.
  *
- * From the approved draft, with the standing corrections. The draft carried the dead
- * (404) 777-5124 three times; the number now renders from lib/site-data.json.
- *
- * This page keeps the draft's first-person voice ("we host", "tell us"). The other
- * four landing pages are third person, but an enquiry page reads better as the team
- * speaking, and it matches the tone of /event-inquiry which this page feeds.
+ * Dishes, drinks and hours follow lib/site-data.json. Written in the first person
+ * ("we host", "tell us") to match /event-inquiry, which this page feeds.
  */
 
 export const H1 = "Private Dining and Events in Alpharetta";
@@ -38,8 +34,8 @@ export const BLOCKS: Block[] = [
     bg: "green",
     heading: "Not Too Stiff, Not Too Loud",
     script: "right in the middle",
-    image: "/assets/events/1779116274229_qew7cz.webp",
-    alt: "A group celebration underway in the private event room at Siena, Alpharetta",
+    image: "/assets/Siena_20.03.26-A-02.webp",
+    alt: "Teal booths and tables set for dinner in the dining room at Siena, Alpharetta",
     paras: [
       "Some restaurants feel too formal for a celebration. Others are too loud to hear your own table. We sit in the middle. The room is warm and a little dramatic, with bold lighting that makes any group feel like the main event.",
       "We opened in December 2025 with a simple idea: bring Mediterranean and Italian food together, serve it in a way that gets people talking, and treat every table like it matters.",
@@ -57,7 +53,7 @@ export const BLOCKS: Block[] = [
     cards: [
       {
         title: "Birthdays",
-        desc: "Bring the whole crew. We will help with a toast, a round of dessert bites and a table that feels festive from the first drink.",
+        desc: "Bring the whole crew. We will help with a toast, a dessert to share and a table that feels festive from the first drink.",
       },
       {
         title: "Corporate Dinners",
@@ -75,8 +71,8 @@ export const BLOCKS: Block[] = [
     flip: true,
     heading: "How We Set the Room",
     script: "tell us the headcount",
-    image: "/assets/events/1779117470689_4tnk9t.webp",
-    alt: "Tables arranged for a group booking at Siena Restaurant & Bar, Alpharetta",
+    image: "/assets/Siena_20.03.26-A-03.webp",
+    alt: "Tables set along the windows in the dining room at Siena Restaurant & Bar, Alpharetta",
     paras: [
       "The room is the first thing people notice. Warm and upscale but still easy to relax in. Bold lighting, inviting tables, and a bit of energy to the space.",
       "We can set it up a few ways depending on your numbers and the mood you want. One long table so everyone can talk, or a cluster of tables for a bigger party. Tell us how many people you are expecting and what the night is about, and we will shape the setup around it.",
@@ -94,21 +90,21 @@ export const BLOCKS: Block[] = [
     items: [
       {
         image: "/assets/Siena_20.03.26-D-Feta.webp",
-        alt: "Sharing platters and Siena hummus for a group booking in Alpharetta",
+        alt: "Whipped feta with char-grilled bread for a group booking in Alpharetta",
         title: "TO START",
-        sub: "Platters, hummus, whipped feta",
+        sub: "Hummus, whipped feta, baba ghanoush",
         href: "/mediterranean-restaurant-alpharetta",
       },
       {
-        image: "/assets/Siena_20.03.26-D-ShirimpFranceseArancini.webp",
-        alt: "Shrimp francese arancini for the table at a private event at Siena, Alpharetta",
+        image: "/assets/menu/cavolfiore-croccante.webp",
+        alt: "Crispy cauliflower with sweet chili aioli for the table at a private event at Siena, Alpharetta",
         title: "FOR THE TABLE",
-        sub: "Arancini and charred cauliflower",
+        sub: "Crispy cauliflower and calamari",
         href: "/menus?tab=main-menu",
       },
       {
-        image: "/assets/Siena_20.03.26-D-MeatBalls-02.webp",
-        alt: "House-made pasta served family style at a group dinner in Alpharetta",
+        image: "/assets/menu/bucatini-al-pepe-nero.webp",
+        alt: "Bucatini al pepe nero with burrata, served for a group dinner in Alpharetta",
         title: "THE PASTA",
         sub: "House-made, a favourite for a reason",
         href: "/italian-restaurant-alpharetta",
@@ -120,12 +116,12 @@ export const BLOCKS: Block[] = [
     bg: "green",
     heading: "Cocktails, Happy Hour, Live Music",
     script: "the evening, sorted",
-    image: "/assets/events/1779116455576_rbt3oe.webp",
-    alt: "Cocktails and drinks at a private event at Siena Restaurant & Bar in Alpharetta",
+    image: "/assets/Siena_20.03.26-LS-SienaMargarita-01.webp",
+    alt: "A bartender finishing a cocktail at the bar at Siena Restaurant & Bar in Alpharetta",
     paras: [
-      "The bar is a real part of the night. Twenty house cocktails, a thirty-bottle wine list and a deep spirits shelf. The Italian Job and the espresso martini are the usual openers.",
-      "There is a happy hour menu if your group wants to start early and keep it casual, which works well for after-work bookings.",
-      "On Friday a saxophonist plays live, and the whole room lifts. If your date is flexible, a Friday booking gives you music without arranging anything yourself. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
+      "The bar is a real part of the night. Twelve house cocktails, a thirty-bottle wine list and a deep spirits shelf. The Italian Job and the espresso martini are the usual openers.",
+      "There is a happy hour menu from 4 to 7pm if your group wants to start early and keep it casual, which works well for after-work bookings.",
+      "On Friday live music plays from 7 to 10pm, and the whole room lifts. If your date is flexible, a Friday booking gives you music without arranging anything yourself. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
     ],
   },
   {
@@ -135,7 +131,7 @@ export const BLOCKS: Block[] = [
     heading: "How to Book",
     script: "start here",
     image: "/assets/events/1779117506791_jvttbu.webp",
-    alt: "Guests at a celebration dinner at Siena Restaurant & Bar in Alpharetta",
+    alt: "Guests raising glasses at a celebration at Siena Restaurant & Bar in Alpharetta",
     paras: [
       "Send us the date, a rough headcount and what the night is for. That is enough for us to come back with options.",
       "<a href=\"/events\">See the events page</a> or <a href=\"/event-inquiry\">fill in the enquiry form</a> and the team will be in touch. If you would rather talk it through, call the restaurant and ask for the events team.",
@@ -163,7 +159,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Can we have live music?",
-    a: "A saxophonist plays on <a href=\"/live-music-fridays\">Friday nights</a> as part of the normal evening. If your date is flexible, booking a Friday gets you music without arranging anything.",
+    a: "Live music plays on <a href=\"/live-music-fridays\">Friday nights</a> from 7 to 10pm as part of the normal evening. If your date is flexible, booking a Friday gets you music without arranging anything.",
   },
   {
     q: "Where are you and what are the hours?",
@@ -171,20 +167,14 @@ export const FAQS: Faq[] = [
   },
 ];
 
-/**
- * Quotes are real, taken verbatim from public Yelp reviews, names as the reviewers
- * display them. Confirm with the client before this goes live.
- */
+/** Quotes taken verbatim from public Yelp reviews, names as the reviewers display them. */
 export const REVIEWS: Reviews = {
   quotes: [
     {
       text: "The combination of incredible Mediterranean cuisine, attentive service, and live music creates a unique atmosphere",
       author: "Chelsea G.",
     },
-    {
-      text: "My favorite was the lollipop chicken with a yogurt sauce. Their Mac and cheese with brisket was also really good.",
-      author: "Grace M.",
-    },
+    { text: "The lamb chops is very flavorful as well as humus n pita bread.", author: "Big O." },
     {
       text: "Food was great I had the Chicken tawook and rice it tasted very fresh and lite",
       author: "Eline P.",

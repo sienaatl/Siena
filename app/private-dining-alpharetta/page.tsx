@@ -8,7 +8,7 @@ export default function PrivateEventsAlpharetta() {
       h1={H1}
       h1Script={H1_SCRIPT}
       heroImage="/assets/events/1779116274229_qew7cz.webp"
-      heroAlt="A private event set up in the dining room at Siena Restaurant & Bar in Alpharetta"
+      heroAlt="Cocktails on a tiered stand beneath the lit Siena sign in the dining room at Siena Restaurant & Bar, Alpharetta"
       marquee={MARQUEE}
       intro={INTRO}
       blocks={BLOCKS}

@@ -279,7 +279,7 @@ export default function ReservationsFormClient({
       }
 
       setConfirmation(json);
-      trackConfirmedReservation();
+      trackConfirmedReservation(Number(data.partySize));
     } catch {
       setSubmitError("Something went wrong sending your reservation. Please try again, or call us.");
     }

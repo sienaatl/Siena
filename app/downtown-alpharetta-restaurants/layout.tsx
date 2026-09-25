@@ -1,22 +1,8 @@
-import type { Metadata } from "next";
+import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
-export const metadata: Metadata = {
-  title: "Downtown Alpharetta Restaurants",
-  description:
-    "Siena is a downtown Alpharetta restaurant at 124 Devore Rd, minutes from Avalon. Sharing plates, cocktails and Friday live music. Book your table.",
-  alternates: { canonical: "/downtown-alpharetta-restaurants" },
-  openGraph: {
-    title: "Downtown Alpharetta Restaurants | Siena Restaurant & Bar",
-    description:
-      "On Devore Rd in downtown Alpharetta, minutes from Avalon and the Ameris Bank Amphitheatre.",
-    url: "https://sienaatl.com/downtown-alpharetta-restaurants",
-    type: "website",
-    images: [{ url: "https://sienaatl.com/assets/hero11.webp" }],
-  },
-  twitter: { card: "summary_large_image", title: "Downtown Alpharetta Restaurants | Siena Restaurant & Bar", description: "On Devore Rd in downtown Alpharetta, minutes from Avalon and the Ameris Bank Amphitheatre." },
-};
+export const metadata = diningMetadata("downtown-alpharetta-restaurants", "Dining Near Downtown Alpharetta", "Plan dinner near downtown Alpharetta at Siena, 124 Devore Road. Mediterranean and Italian plates, cocktails and celebrations. Reserve a table.");
 
 /**
  * Short title on purpose. The root layout appends " | Siena" through its title

@@ -8,6 +8,7 @@ import { z } from "zod";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
+import { trackEventEnquiry } from "@/lib/reservation-analytics";
 
 declare global {
   interface Window {
@@ -221,6 +222,7 @@ export default function EventInquiry() {
         body: JSON.stringify({ ...data, recaptchaToken }),
       });
       if (!res.ok) throw new Error("Failed to send");
+      trackEventEnquiry(data.guestCount, data.date);
       router.push("/event-inquiry/thank-you");
     } catch {
       setSendError("Something went wrong sending your inquiry. Please try again, or call us on " + EVENTS_PHONE + ".");

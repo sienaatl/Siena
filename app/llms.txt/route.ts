@@ -23,7 +23,7 @@ export async function GET() {
 
 > An upscale Mediterranean and Italian restaurant in Alpharetta, Georgia. The kitchen
 > calls its food "Medi-talian" — Mediterranean and Italian cooking on one menu, served
-> as tapas-style sharing plates. Dinner and bar only. Women-led team.
+> as tapas-style sharing plates. Dinner, drinks and group celebrations. Women-led team.
 
 ## Location
 
@@ -43,10 +43,10 @@ ${hours}
 
 - Opened December 2025
 - Cuisine: Mediterranean and Italian
-- Service: tapas-style sharing plates, dinner and bar only
+- Service: tapas-style sharing plates, dinner and bar; contact the restaurant for current brunch service
 - Price range: $$
 - Reservations accepted
-- Live saxophonist on Friday nights
+- Friday live music; check the live-music page and contact the restaurant for performer details
 - Happy hour menu available
 - Co-owner and manager: Aida Lemma
 - Executive chef: Baba Estavillo
@@ -56,6 +56,17 @@ ${hours}
 - [Home](${SITE_URL}/): overview of the restaurant
 - [Menus](${SITE_URL}/menus): full food and drink menus
 - [Reservations](${SITE_URL}/reservations): book a table
+- [Mediterranean Dining](${SITE_URL}/mediterranean-restaurant-alpharetta): mezze and sharing plates
+- [Downtown Alpharetta](${SITE_URL}/downtown-alpharetta-restaurants): planning a visit
+- [Date Night](${SITE_URL}/date-night-alpharetta): dinner for two
+- [Dinner](${SITE_URL}/dinner-alpharetta): evening dining
+- [Happy Hour](${SITE_URL}/happy-hour-alpharetta): menu and specials
+- [Live Music](${SITE_URL}/live-music-fridays): Friday music series
+- [Brunch](${SITE_URL}/brunch-alpharetta): brunch menu; call to confirm service
+- [Private Dining](${SITE_URL}/private-dining-alpharetta): groups and celebrations
+- [Birthdays](${SITE_URL}/birthday-dinner-alpharetta): birthday dinners
+- [Near Avalon](${SITE_URL}/restaurants-near-avalon-alpharetta): dinner around a visit to Avalon
+- [Near Ameris Bank Amphitheatre](${SITE_URL}/restaurants-near-ameris-bank-amphitheatre): concert-night planning
 - [Private Events](${SITE_URL}/events): private dining and venue hire
 - [Event Inquiry](${SITE_URL}/event-inquiry): enquiry form for private events
 - [About Us](${SITE_URL}/about-us): the team and the story

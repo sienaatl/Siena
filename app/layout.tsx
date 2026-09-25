@@ -7,7 +7,7 @@ import ScrollToTop from "../components/ScrollToTop";
 import LazyBackgrounds from "../components/LazyBackgrounds";
 import LocalSeoLinks from "../components/LocalSeoLinks";
 import { getRestaurantInfo } from "@/lib/restaurant";
-import { REVIEW_STATS } from "@/lib/reviews";
+import { FALLBACK_WEEKDAY_SCHEDULE } from "@/lib/hours";
 
 const GTM_ID = "GTM-N593KQGJ";
 const TIKTOK_PIXEL_ID = "DA8D6C3C77UES9745N50";
@@ -39,6 +39,19 @@ const deferredAnalyticsScript = `
       ttq.page();
     }(window, document, 'ttq');
   }
+  // Registered outside loadGTM so a tap before GTM loads is still queued.
+  document.addEventListener('click', function (e) {
+    var cta = e.target && e.target.closest && e.target.closest('a[data-booking-cta]');
+    if (cta) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'booking_cta_click', page_path: window.location.pathname,
+        booking_destination: cta.getAttribute('href'), cta_label: cta.textContent.trim() });
+    }
+    var link = e.target && e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (!link) return;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'phone_click', phone_number: link.getAttribute('href').slice(4) });
+  });
   var fired = false;
   var events = ['pointerdown', 'mousemove', 'keydown', 'touchstart', 'scroll'];
   var fallback;
@@ -110,15 +123,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
-    name: "Siena Restaurant",
-    alternateName: "Siena ATL",
+    name: "Siena Restaurant & Bar",
+    alternateName: ["Siena Restaurant", "Siena ATL"],
     description:
       "A chef-driven Mediterranean and Italian restaurant in Alpharetta, Georgia, serving handmade pasta, fresh seafood, shared plates and handcrafted cocktails for dinner, date nights and special occasions.",
     image: "https://sienaatl.com/assets/Siena_20.03.26-A-02.webp",
     logo: "https://sienaatl.com/assets/logo_beige.png",
     "@id": "https://sienaatl.com/#restaurant",
     url: "https://sienaatl.com/",
-    telephone: info.phone || "+1 (404) 999-0373",
+    telephone: info.phone.replace(/[^\d+]/g, ""),
+    email: info.email,
     priceRange: "$$",
     menu: "https://sienaatl.com/menus",
     hasMenu: "https://sienaatl.com/menus",
@@ -139,11 +153,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       addressCountry: "US",
     },
     geo: { "@type": "GeoCoordinates", latitude: 34.0681987, longitude: -84.2991968 },
-    openingHoursSpecification: [
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Tuesday", "Wednesday", "Thursday"], opens: "16:00", closes: "22:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Friday", "Saturday"], opens: "16:00", closes: "23:59" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "16:00", closes: "22:00" },
-    ],
+    openingHoursSpecification: Object.entries(FALLBACK_WEEKDAY_SCHEDULE)
+      .filter(([, hours]) => !hours.closed)
+      .map(([day, hours]) => ({
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][Number(day)],
+        opens: hours.openTime,
+        closes: hours.closeTime,
+      })),
     currenciesAccepted: "USD",
     paymentAccepted: "Cash, Credit Card",
     sameAs: [
@@ -155,15 +172,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       "https://www.opentable.com/r/siena-restaurant-alpharetta",
       "https://www.tripadvisor.com/Restaurant_Review-g29196-d34075603-Reviews-Siena_Restaurant-Alpharetta_Georgia.html",
     ],
-    // Sourced from the same Google Business Profile figures used for the
-    // on-page star rating (lib/reviews.ts) — real numbers, checked quarterly,
-    // never fabricated. reviewCount is a floor ("240+"), so it understates
-    // rather than risks overstating.
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: REVIEW_STATS.rating,
-      reviewCount: REVIEW_STATS.countFloor,
-    },
+    // Restaurant is the most specific LocalBusiness type. Reviews remain visible
+    // on the site, but self-serving aggregate ratings do not belong in this node.
     potentialAction: {
       "@type": "ReserveAction",
       target: {

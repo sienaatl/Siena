@@ -3,15 +3,9 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
 /**
  * Copy and layout for /restaurants-near-ameris-bank-amphitheatre.
  *
- * Page 18 in the original plan. Landmark pages are the easiest kind to make thin, so
- * this one is built around the thing a concert-goer actually needs: timing. Siena
- * opens at 4pm, plates arrive in waves rather than courses, and Friday and Saturday
- * run to midnight. Those facts decide whether someone makes their show, and they are
- * more useful than a mileage figure.
- *
- * No precise drive time or distance is claimed. Siena is at 34.0681987, -84.2991968
- * and the venue is at 2200 Encore Pkwy, both Alpharetta 30009, so "a few minutes"
- * is safe. Anything more exact would be invented.
+ * Built around timing for a show: Siena opens at 4pm, plates arrive in waves, and
+ * Friday and Saturday run to midnight. No drive time or distance is stated beyond
+ * "a few minutes"; Siena and the venue (2200 Encore Pkwy) are both Alpharetta 30009.
  */
 
 export const H1 = "Restaurants Near Ameris Bank Amphitheatre";
@@ -29,8 +23,8 @@ export const INTRO = {
   heading: "Dinner, Then the Show",
   script: "or drinks after",
   paras: [
-    "The Ameris Bank Amphitheatre holds twelve thousand people, and most of them are looking for dinner within the same two-hour window. Siena Restaurant &amp; Bar is a few minutes away at 124 Devore Rd in downtown Alpharetta.",
-    "The kitchen opens at 4pm, which is the part that matters. Plenty of places nearby do not, and an 8pm show does not wait.",
+    "The Ameris Bank Amphitheatre holds around twelve thousand people, and on a show night plenty of them want dinner first. Siena Restaurant &amp; Bar is a few minutes away at 124 Devore Rd in downtown Alpharetta.",
+    "The kitchen opens at 4pm, which is the part that matters, because an 8pm show does not wait.",
   ],
   cta: { label: "BOOK A TABLE", href: "/reservations" },
 };
@@ -41,41 +35,41 @@ export const BLOCKS: Block[] = [
     bg: "green",
     heading: "Getting the Timing Right",
     script: "read this bit",
-    image: "/assets/hero11.webp",
-    alt: "Siena Restaurant & Bar on Devore Road, minutes from Ameris Bank Amphitheatre",
+    image: "/assets/Siena_20.03.26-A-01.webp",
+    alt: "The front of Siena Restaurant & Bar on Devore Road, minutes from Ameris Bank Amphitheatre",
     paras: [
-      "Book for 5pm or 5.30pm for a 7.30 or 8pm show. That gives you a comfortable ninety minutes without anyone glancing at their phone.",
-      "Say you are going to the show when you book and again when you arrive. Food here arrives in waves rather than as courses, so the kitchen paces your table differently once it knows you have somewhere to be. That one sentence is the difference between relaxed and rushed.",
-      "If you do not tell us, allow two hours. It is not a quick dinner by design.",
+      "Check the show and gate times on your ticket before choosing a reservation. Allow time for dinner, the drive, concert traffic, parking and venue entry.",
+      "Mention the concert when you book and tell your server when you need to leave. The team can help you choose dishes that fit your plans; service times vary.",
+      "Allow a relaxed window for dinner, and call the restaurant if your schedule is tight.",
     ],
   },
   {
     kind: "gallery",
     bg: "black",
     icon: "/assets/icon_menu.svg",
-    heading: "What to Order When You Are Short on Time",
-    script: "these come out first",
+    heading: "Explore the Menu Before You Arrive",
+    script: "plates for sharing",
     intro:
-      "Everything is tapas-style and shared, which works in your favour on a show night because the first plates land quickly. Start with these and add more only if the clock allows. <a href=\"/menus\">See the full menu</a>.",
+      "Explore sharing plates and pasta before your visit, and ask your server what suits your timing. <a href=\"/menus\">See the full menu</a>.",
     items: [
       {
         image: "/assets/Siena_20.03.26-D-Feta.webp",
-        alt: "Hummus and mezze, quick starters before a concert in Alpharetta",
-        title: "FASTEST",
+        alt: "Whipped feta with char-grilled bread, a quick starter before a concert in Alpharetta",
+        title: "MEZZE",
         sub: "Hummus, whipped feta, warm pita",
         href: "/mediterranean-restaurant-alpharetta",
       },
       {
-        image: "/assets/Siena_20.03.26-D-ShirimpFranceseArancini.webp",
-        alt: "Shrimp francese arancini before a show at Ameris Bank Amphitheatre",
-        title: "NEXT",
-        sub: "Arancini, crispy cauliflower, calamari",
+        image: "/assets/menu/calamari-fritti-siena.webp",
+        alt: "Calamari fritti with sweet chili aioli before a show at Ameris Bank Amphitheatre",
+        title: "SMALL PLATES",
+        sub: "Calamari, crispy cauliflower",
         href: "/menus?tab=main-menu",
       },
       {
-        image: "/assets/Siena_20.03.26-D-MeatBalls-01.webp",
-        alt: "House-made pasta for an early dinner near Ameris Bank Amphitheatre",
-        title: "IF THERE IS TIME",
+        image: "/assets/menu/rigatoni-alla-vodka.webp",
+        alt: "Rigatoni alla vodka for an early dinner near Ameris Bank Amphitheatre",
+        title: "PASTA",
         sub: "House-made pasta for the table",
         href: "/italian-restaurant-alpharetta",
       },
@@ -87,12 +81,12 @@ export const BLOCKS: Block[] = [
     flip: true,
     heading: "Or Come Afterwards",
     script: "the better option",
-    image: "/assets/hero6.webp",
-    alt: "The bar at Siena, open late after a concert in Alpharetta",
+    image: "/assets/Siena_20.03.26-A-04.webp",
+    alt: "The bar at Siena, open until midnight on Friday and Saturday in Alpharetta",
     paras: [
-      "Friday and Saturday the kitchen and bar run to midnight, so coming after the encore is genuinely an option rather than a hopeful one.",
-      "Twenty house cocktails, a thirty-bottle wine list and small plates that suit a late table. Walk-ins are welcome at the bar when there is room, which after a show there usually is. <a href=\"/cocktail-bar-alpharetta\">More on the bar</a>.",
-      "Midweek and Sunday the kitchen closes at 10pm, so an after-show visit only works on a Friday or Saturday.",
+      "Siena’s published closing time is midnight on Friday and Saturday. Call before coming after a concert to confirm kitchen service and seating availability.",
+      "Twelve house cocktails, a thirty-bottle wine list and small plates that suit a late table. Walk-ins are welcome at the bar when there is room. <a href=\"/cocktail-bar-alpharetta\">More on the bar</a>.",
+      "The published closing time is 10pm Tuesday through Thursday and Sunday. Plan an earlier dinner when your concert ends late.",
     ],
   },
   {
@@ -104,7 +98,7 @@ export const BLOCKS: Block[] = [
     cards: [
       {
         title: "Book Ahead",
-        desc: "Concert nights fill the whole of downtown Alpharetta. A table at 5pm on a show night goes days in advance. <a href=\"/reservations\">Book here</a>.",
+        desc: "Concert nights are busy downtown, so a 5pm table on a show night is worth booking well ahead. <a href=\"/reservations\">Book here</a>.",
       },
       {
         title: "Parking",
@@ -122,7 +116,7 @@ export const BLOCKS: Block[] = [
     heading: "What the Food Is",
     script: "in one paragraph",
     image: "/assets/Siena_20.03.26-D-LambChop-01.webp",
-    alt: "Lamb chops and Mediterranean plates near Ameris Bank Amphitheatre",
+    alt: "Grilled lamb chops, a Mediterranean plate near Ameris Bank Amphitheatre",
     paras: [
       "Italian and Mediterranean on one menu, which the kitchen calls Medi-talian. House-made pasta, mezze, grilled skewers and lamb chops, all built to share.",
       "It suits a group heading to a show, because nobody has to agree on one cuisine and the plates land in the middle rather than in front of one person.",
@@ -138,19 +132,19 @@ export const FAQS: Faq[] = [
   },
   {
     q: "What time should we book before a show?",
-    a: "5pm or 5.30pm for a 7.30 or 8pm start. Tell us you are going to the show when you book and again when you arrive, and the kitchen will pace your table for it.",
+    a: "Work back from your ticket’s gate and show times, allowing for dinner, traffic, parking and entry. Mention your timing when you book and when you arrive.",
   },
   {
     q: "How long does dinner take?",
-    a: "Allow two hours normally. Less if you tell us you have a show, because plates arrive in waves and the kitchen can bring them faster.",
+    a: "Service time depends on your party, dishes and how busy the restaurant is. Allow a relaxed window and call ahead if you need help planning around a show.",
   },
   {
     q: "Can we come after the concert instead?",
-    a: "On Friday and Saturday, yes. The kitchen and bar run to midnight. Midweek and Sunday everything closes at 10pm, so after a show is too late.",
+    a: "Call to confirm kitchen service and seating before coming after a concert. Published restaurant closing times are midnight Friday and Saturday, and 10pm Tuesday through Thursday and Sunday.",
   },
   {
     q: "Do you take walk-ins on a show night?",
-    a: "At the bar when there is room, but concert nights fill downtown Alpharetta and tables go days ahead. <a href=\"/reservations\">Booking is the safer plan</a>.",
+    a: "At the bar when there is room, but concert nights are busy downtown. <a href=\"/reservations\">Booking is the safer plan</a>.",
   },
   {
     q: "What are the hours?",
@@ -158,10 +152,7 @@ export const FAQS: Faq[] = [
   },
 ];
 
-/**
- * Quotes are real, taken verbatim from public Yelp reviews, names as the reviewers
- * display them. Confirm with the client before this goes live.
- */
+/** Quotes taken verbatim from public Yelp reviews, names as the reviewers display them. */
 export const REVIEWS: Reviews = {
   quotes: [
     {
@@ -186,7 +177,7 @@ export const CLOSING = {
   heading: "Book Before the Show",
   script: "concert nights fill up",
   paras: [
-    "Twelve thousand people are looking for the same table on a show night. Getting in early is the whole trick.",
+    "A big show means a busy evening downtown. Getting in early is the whole trick.",
     "<a href=\"/reservations\">Book yours</a>, and mention the show so we can time it properly.",
   ],
 };

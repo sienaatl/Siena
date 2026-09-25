@@ -1,27 +1,8 @@
-import type { Metadata } from "next";
+import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
-export const metadata: Metadata = {
-  title: "Holiday Parties in Alpharetta",
-  description:
-    "Book a holiday party in Alpharetta at Siena. Company dinners, client nights and family gatherings with sharing plates, cocktails and live music. Enquire today.",
-  alternates: { canonical: "/holiday-parties-alpharetta" },
-  openGraph: {
-    title: "Holiday Parties in Alpharetta | Siena Restaurant & Bar",
-    description:
-      "Company parties, client dinners and family gatherings in a warm room near Avalon. Sharing plates built for a long table.",
-    url: "https://sienaatl.com/holiday-parties-alpharetta",
-    type: "website",
-    images: [{ url: "https://sienaatl.com/assets/events/1779116412260_ckub4v.webp" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Holiday Parties in Alpharetta | Siena Restaurant & Bar",
-    description:
-      "Company parties, client dinners and family gatherings in a warm room near Avalon.",
-  },
-};
+export const metadata = diningMetadata("holiday-parties-alpharetta", "Holiday Parties & Group Dining in Alpharetta", "Host a holiday gathering at Siena in Alpharetta with Mediterranean and Italian sharing plates. Send an inquiry for your date, guest count and plans.");
 
 /**
  * Short title on purpose. The root layout appends " | Siena" through its title

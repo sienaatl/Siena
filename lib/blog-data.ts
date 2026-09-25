@@ -673,6 +673,7 @@ export const blogs: Blog[] = [
 
     {
     slug: "fine-dining-restaurant-alpharetta",
+    live: false, // 308s to /fine-dining-restaurant-alpharetta
 
     // Blog Page
     title: "How Fine Dining Restaurant Alpharetta Experiences Are Redefining Luxury Dining",

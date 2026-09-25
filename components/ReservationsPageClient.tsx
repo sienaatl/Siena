@@ -7,11 +7,11 @@ import { RESTAURANT_FALLBACK } from "@/lib/restaurant";
 
 function ReservationDetails() {
   const { phone } = RESTAURANT_FALLBACK;
-  const telHref = `tel:${phone.replace(/\D/g, "")}`;
+  const telHref = `tel:${phone.replace(/[^\d+]/g, "")}`;
 
   return (
     <p className="w-full max-w-[600px] mx-auto mb-10 text-white/60 text-[14px] leading-[1.7] text-center">
-      Open Tuesday–Sunday, closed Mondays, with weekend hours until midnight. Book online below
+      Open Tuesday–Sunday, closed Mondays, with Friday and Saturday hours until midnight. Book online below
       for parties up to thirteen, or call{" "}
       <a href={telHref} className="text-[#e0b265] underline underline-offset-2 hover:text-white">
         {phone}

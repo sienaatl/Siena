@@ -141,9 +141,9 @@ export const FALLBACK_WEEKDAY_SCHEDULE: WeekdaySchedule = {
   1: { closed: true, openTime: null, closeTime: null, closesNextDay: false },
   2: { closed: false, openTime: "16:00", closeTime: "22:00", closesNextDay: false },
   3: { closed: false, openTime: "16:00", closeTime: "22:00", closesNextDay: false },
-  4: { closed: false, openTime: "16:00", closeTime: "00:00", closesNextDay: true },
+  4: { closed: false, openTime: "16:00", closeTime: "22:00", closesNextDay: false },
   5: { closed: false, openTime: "16:00", closeTime: "00:00", closesNextDay: true },
-  6: { closed: false, openTime: "16:00", closeTime: "22:00", closesNextDay: false },
+  6: { closed: false, openTime: "16:00", closeTime: "00:00", closesNextDay: true },
 };
 
 // Groups consecutive days (in day_of_week order) that share the exact same
