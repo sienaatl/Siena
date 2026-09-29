@@ -375,6 +375,11 @@ function MenuContent() {
                       at Siena
                     </motion.span>
                   </div>
+                  {tab.id === "happy-hour" && (
+                    <p className="mt-14 text-[#e0b265] text-sm md:text-base tracking-[0.16em] uppercase">
+                      Tuesday–Thursday · 4–6 PM
+                    </p>
+                  )}
                 </div>
 
                 {/* Subsections */}

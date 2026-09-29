@@ -95,7 +95,7 @@ export const BLOCKS: Block[] = [
     heading: "The Bar Is Not an Afterthought",
     script: "twelve house cocktails",
     intro:
-      "The cocktail list is short, sharp and worth your time. There is a happy hour menu from 4 to 7pm if you want a drink and a few small plates without a full sit-down, and the bar is a good place to land before or after a show at the Ameris Bank Amphitheatre.",
+      "The cocktail list is short, sharp and worth your time. There is a happy hour menu Tuesday through Thursday from 4 to 6pm if you want a drink and a few small plates without a full sit-down, and the bar is a good place to land before or after a show at the Ameris Bank Amphitheatre.",
     items: [
       {
         image: "/assets/Siena_20.03.26-LS-SienaMargarita-01.webp",

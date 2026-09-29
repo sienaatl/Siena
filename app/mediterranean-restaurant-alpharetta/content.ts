@@ -110,7 +110,7 @@ export const BLOCKS: Block[] = [
     alt: "The bar at Siena Restaurant & Bar in Alpharetta, with orange leather stools and a stocked back bar",
     paras: [
       "Siena is upscale but comfortable. The room is warm, with bold lighting that makes it feel special without being stiff. Nice shirt or date-night outfit, you fit either way.",
-      "The bar is a real draw. Try the Italian Job or the espresso martini. There is a happy hour menu from 4 to 7pm for starting the evening. On Friday live music plays from 7 to 10pm, so dinner comes with a soundtrack. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
+      "The bar is a real draw. Try the Italian Job or the espresso martini. There is a happy hour menu Tuesday through Thursday from 4 to 6pm for starting the evening. On Friday live music plays from 7 to 10pm, so dinner comes with a soundtrack. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
       "The kitchen opens at 4pm through the week and runs to midnight on Friday and Saturday, which makes it work for both an early dinner and a late one. Saturday morning has its own <a href=\"/brunch-alpharetta\">brunch menu</a>, and there is <a href=\"/happy-hour-alpharetta\">happy hour</a> earlier in the evening.",
       "Coming from further out? Siena is also the nearest <a href=\"/mediterranean-restaurant-near-roswell-ga\">Mediterranean restaurant near Roswell</a>, a short drive down the road.",
     ],

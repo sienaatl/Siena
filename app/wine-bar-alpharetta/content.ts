@@ -125,7 +125,7 @@ export const BLOCKS: Block[] = [
     cards: [
       {
         title: "Happy Hour",
-        desc: "Four to seven. The menu says to ask your server about featured happy hour wine, which changes. <a href=\"/happy-hour-alpharetta\">Happy hour details</a>.",
+        desc: "Tuesday through Thursday, four to six. The menu says to ask your server about featured happy hour wine, which changes. <a href=\"/happy-hour-alpharetta\">Happy hour details</a>.",
       },
       {
         title: "Not Drinking",
@@ -189,7 +189,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Where is Siena and when is the bar open?",
-    a: "124 Devore Rd, Alpharetta, GA 30009. Tuesday to Thursday and Sunday 4pm to 10pm, Friday and Saturday 4pm to midnight, closed Monday. Happy hour runs 4 to 7pm.",
+    a: "124 Devore Rd, Alpharetta, GA 30009. Tuesday to Thursday and Sunday 4pm to 10pm, Friday and Saturday 4pm to midnight, closed Monday. Happy hour runs Tuesday through Thursday from 4 to 6pm.",
   },
 ];
 

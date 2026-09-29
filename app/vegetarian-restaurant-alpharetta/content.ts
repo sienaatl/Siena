@@ -121,7 +121,7 @@ export const BLOCKS: Block[] = [
     alt: "Teal booths and the lit Siena sign in the dining room at Siena in Alpharetta",
     paras: [
       "Siena opened in December 2025 and is women-led. Warm room, bold lighting, upscale without being stiff. Live music plays on Friday nights from 7 to 10pm.",
-      "It is dinner and bar service from 4pm, with a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> from 4 to 7pm where several of the small plates are meat-free.",
+      "It is dinner and bar service from 4pm, with a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> Tuesday through Thursday from 4 to 6pm where several of the small plates are meat-free.",
     ],
   },
 ];

@@ -121,7 +121,7 @@ export const BLOCKS: Block[] = [
     alt: "A bartender finishing a cocktail at the bar at Siena in Alpharetta",
     paras: [
       "Twelve house cocktails, a thirty-bottle wine list and a deep spirits shelf. A few bottles for the table works better with sharing plates than everyone queuing at the bar.",
-      "There is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> from 4 to 7pm if the group is arriving from work in stages.",
+      "There is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> Tuesday through Thursday from 4 to 6pm if the group is arriving from work in stages.",
       "On Friday live music plays from 7 to 10pm. If your date is flexible, booking a Friday gets you music without organising any. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
     ],
   },
