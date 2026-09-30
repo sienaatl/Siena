@@ -52,3 +52,9 @@ public/assets/Video.mp4
 /app/checkout/
 /components/order/
 /lib/cart.ts
+
+# Local SEO/marketing audit output — analysis artifacts, not site code.
+/seo-audit/
+/ACTION-PLAN.md
+/FULL-AUDIT-REPORT.md
+/LOCAL-SEO-ANALYSIS-*.md
