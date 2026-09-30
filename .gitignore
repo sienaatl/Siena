@@ -43,3 +43,18 @@ next-env.d.ts
 # Raw video sources — exceed GitHub's 100MB file limit. Transcode to a web-
 # sized version under public/assets/ (e.g. hero_video*.mp4) before committing.
 public/assets/Video.mp4
+
+# In-house online ordering / checkout flow — parked in favor of Toast
+# (see lib/order-menu.ts's ORDER_ONLINE_URL, which stays tracked since the
+# live header/footer/homepage still import it for the Toast link). These
+# stay on disk locally but are no longer part of the deployed build.
+/app/order-online/
+/app/checkout/
+/components/order/
+/lib/cart.ts
+
+# Local SEO/marketing audit output — analysis artifacts, not site code.
+/seo-audit/
+/ACTION-PLAN.md
+/FULL-AUDIT-REPORT.md
+/LOCAL-SEO-ANALYSIS-*.md
