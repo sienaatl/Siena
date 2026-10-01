@@ -121,7 +121,7 @@ export const BLOCKS: Block[] = [
     image: "/assets/hero3.webp",
     alt: "Cocktails on a table beneath the lit Siena sign at a cocktail bar in Alpharetta",
     paras: [
-      "Doors open at 4pm. Early evening is quiet and easy, and there is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> Tuesday through Thursday from 4 to 6pm if you want a drink and a few small plates without a full sit-down.",
+      "Doors open at 4pm. Early evening is quiet and easy, and there is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> Tuesday through Friday from 4 to 6pm if you want a drink and a few small plates without a full sit-down.",
       "Friday and Saturday run to midnight and the room fills. On Friday live music plays from 7 to 10pm, which is the night to come if you want the bar at its best. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
       "Walk-ins are welcome at the bar when there is room. If you want a table as well, <a href=\"/reservations\">book ahead</a>.",
     ],
@@ -156,7 +156,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Is there a happy hour?",
-    a: "Yes, Tuesday through Thursday from 4 to 6pm, with small plates alongside. <a href=\"/happy-hour-alpharetta\">More on happy hour</a>.",
+    a: "Yes, Tuesday through Friday from 4 to 6pm, with small plates alongside. <a href=\"/happy-hour-alpharetta\">More on happy hour</a>.",
   },
   {
     q: "When is it busiest?",
