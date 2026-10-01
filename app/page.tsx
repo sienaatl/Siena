@@ -575,7 +575,7 @@ export default function Home() {
                   <div className="flex items-end justify-between gap-3">
                     <div className="min-w-0 flex-1">
                       <h3 className="text-white text-[28px] md:text-[32px] font-semibold leading-tight md:whitespace-nowrap">HAPPY HOUR</h3>
-                      <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Tuesday–Thursday, 4–6pm · Drinks and small plates</p>
+                      <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Tuesday–Friday, 4–6pm · Drinks and small plates</p>
                     </div>
                     <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none">
