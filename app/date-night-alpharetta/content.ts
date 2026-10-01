@@ -63,7 +63,7 @@ export const BLOCKS: Block[] = [
     heading: "Start at the Bar",
     script: "then move to the table",
     intro:
-      "The cocktail list has real personality. Start with a drink at the bar and move to your table when you are ready. There is a happy hour menu Tuesday through Thursday from 4 to 6pm too if you want to come early and stretch the evening out.",
+      "The cocktail list has real personality. Start with a drink at the bar and move to your table when you are ready. There is a happy hour menu Tuesday through Friday from 4 to 6pm too if you want to come early and stretch the evening out.",
     items: [
       {
         image: "/assets/Siena_20.03.26-PS-SienaMargarita-01.webp",
