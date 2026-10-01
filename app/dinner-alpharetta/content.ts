@@ -86,7 +86,7 @@ export const BLOCKS: Block[] = [
     paras: [
       "Two hours is a comfortable dinner here. Three is common, especially on a Friday when the music is on and nobody is in a hurry to leave.",
       "If you are heading to a show at the Ameris Bank Amphitheatre, book early in the evening and say so when you arrive, and the kitchen will pace it accordingly.",
-      "If you only want a drink and a couple of small plates, the bar takes walk-ins when there is room, and there is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> Tuesday through Thursday from 4 to 6pm.",
+      "If you only want a drink and a couple of small plates, the bar takes walk-ins when there is room, and there is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> Tuesday through Friday from 4 to 6pm.",
     ],
   },
   {

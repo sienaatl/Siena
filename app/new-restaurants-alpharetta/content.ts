@@ -143,7 +143,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Is it expensive?",
-    a: "It is upscale but built for sharing, so a table of four ordering a spread usually works out better value than four separate mains. There is also a happy hour menu Tuesday through Thursday from 4 to 6pm.",
+    a: "It is upscale but built for sharing, so a table of four ordering a spread usually works out better value than four separate mains. There is also a happy hour menu Tuesday through Friday from 4 to 6pm.",
   },
   {
     q: "What is there to do nearby?",

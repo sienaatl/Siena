@@ -4,14 +4,14 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
  * Copy and layout for /happy-hour-alpharetta.
  *
  * Dishes, drinks and prices come from the Happy Hour and Libations tabs in
- * lib/site-data.json. Happy hour runs Tuesday through Thursday, 4 to 6pm.
+ * lib/site-data.json. Happy hour runs Tuesday through Friday, 4 to 6pm.
  */
 
 export const H1 = "Happy Hour in Alpharetta";
-export const H1_SCRIPT = "tuesday through thursday, four to six";
+export const H1_SCRIPT = "tuesday through friday, four to six";
 
 export const MARQUEE = [
-  "Tuesday–Thursday, Four to Six",
+  "Tuesday–Friday, Four to Six",
   "Plates From Eight Dollars",
   "Classic Cocktails Nine",
   "Alpharetta, Georgia",
@@ -22,7 +22,7 @@ export const INTRO = {
   heading: "Drinks and Small Plates From Four",
   script: "before the evening turns",
   paras: [
-    "Happy hour at Siena Restaurant &amp; Bar runs Tuesday through Thursday from 4 to 6pm at 124 Devore Rd in downtown Alpharetta, five minutes from Avalon. It has its own menu: seven starters, three salads, a pasta, two skewers and classic cocktails.",
+    "Happy hour at Siena Restaurant &amp; Bar runs Tuesday through Friday from 4 to 6pm at 124 Devore Rd in downtown Alpharetta, five minutes from Avalon. It has its own menu: seven starters, three salads, a pasta, two skewers and classic cocktails.",
     "The pricing is the point. Dips start at eight dollars, calamari is twelve, and a classic cocktail is nine when the same drink is sixteen or seventeen on the regular list. For anyone leaving an office park at five, that is the cheapest way into a proper kitchen in this town.",
   ],
   cta: { label: "SEE THE HAPPY HOUR MENU", href: "/menus?tab=happy-hour" },
@@ -42,7 +42,7 @@ export const BLOCKS: Block[] = [
         image: "/assets/Siena_20.03.26-LS-SienaMargarita-01.webp",
         alt: "A bartender finishing a cocktail at the bar at Siena in Alpharetta",
         title: "CLASSIC COCKTAILS",
-        sub: "Nine dollars, Tuesday–Thursday, four to six",
+        sub: "Nine dollars, Tuesday–Friday, four to six",
         href: "/menus?tab=happy-hour",
       },
       {
@@ -98,7 +98,7 @@ export const BLOCKS: Block[] = [
     alt: "Whipped feta with grilled bread on a wooden board at Siena in Alpharetta",
     paras: [
       "Four dips run the cheap end of the menu. Hummus and baba ganoush at eight dollars, moussaka and whipped feta at nine. Each comes with warm pita, and two of them between four people is plenty to start.",
-      "Then the fried end: Siena fries at eight, crispy cauliflower with tahini aioli at ten, and calamari fritti at twelve. The calamari is seventeen on the main menu, so this is the version to order before six on Tuesday through Thursday.",
+      "Then the fried end: Siena fries at eight, crispy cauliflower with tahini aioli at ten, and calamari fritti at twelve. The calamari is seventeen on the main menu, so this is the version to order before six on Tuesday through Friday.",
       "Everything here is meant for the middle of the table. Nothing arrives as one person's dinner.",
     ],
   },
@@ -123,8 +123,8 @@ export const BLOCKS: Block[] = [
     script: "before you turn up",
     cards: [
       {
-        title: "Tuesday to Thursday, Four to Six",
-        desc: "Doors open at 4pm and happy hour runs until 6pm on Tuesday, Wednesday and Thursday.",
+        title: "Tuesday to Friday, Four to Six",
+        desc: "Doors open at 4pm and happy hour runs until 6pm on Tuesday, Wednesday, Thursday and Friday.",
       },
       {
         title: "Bar or Table",
@@ -167,7 +167,7 @@ export const BLOCKS: Block[] = [
 export const FAQS: Faq[] = [
   {
     q: "What time is happy hour at Siena?",
-    a: "Tuesday through Thursday from 4 to 6pm. The doors open at 4pm and the happy hour menu runs for two hours on those days.",
+    a: "Tuesday through Friday from 4 to 6pm. The doors open at 4pm and the happy hour menu runs for two hours on those days.",
   },
   {
     q: "What is on the happy hour menu?",
@@ -210,7 +210,7 @@ export const REVIEWS: Reviews = {
 };
 
 export const PRACTICAL = [
-  "Happy hour Tuesday–Thursday, 4 to 6pm",
+  "Happy hour Tuesday–Friday, 4 to 6pm",
   "Plates from eight dollars, classic cocktails nine",
   "Downtown Alpharetta, five minutes from Avalon",
 ];
@@ -219,7 +219,7 @@ export const CLOSING = {
   heading: "Come at Four",
   script: "stay for dinner",
   paras: [
-    "Two hours of smaller plates and nine dollar classics, in a room that does a proper dinner after. Tuesday through Thursday, doors open at 4pm and happy hour runs until 6pm.",
+    "Two hours of smaller plates and nine dollar classics, in a room that does a proper dinner after. Tuesday through Friday, doors open at 4pm and happy hour runs until 6pm.",
     "<a href=\"/reservations\">Book a table</a>, or take your chances at the bar.",
   ],
 };

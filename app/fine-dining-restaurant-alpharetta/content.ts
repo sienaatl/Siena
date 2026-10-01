@@ -86,7 +86,7 @@ export const BLOCKS: Block[] = [
     paras: [
       "A thirty-bottle wine list running from Provence rosé and Burgundy chardonnay to California cabernet, with Moët &amp; Chandon Brut Imperial by the glass or the bottle for the nights that call for it.",
       "The spirits shelf runs deep too: Macallan 12, Woodford Reserve, a proper mezcal selection and twelve house cocktails. Ask the team what suits what you have ordered rather than guessing from the list.",
-      "There is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> Tuesday through Thursday from 4 to 6pm if you want to start at the bar.",
+      "There is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> Tuesday through Friday from 4 to 6pm if you want to start at the bar.",
     ],
   },
   {

@@ -98,7 +98,7 @@ export const BLOCKS: Block[] = [
     alt: "The dining room and bar at Siena Restaurant & Bar in Alpharetta, with teal booths and a stocked back bar",
     paras: [
       "Siena is warm and upscale without ever feeling stiff. The lighting is bold and a little moody, the kind that makes everyone at the table look good and every plate look better. Relaxed enough for a Tuesday, dressy enough for a big one.",
-      "The bar pulls its weight: twelve house cocktails, a thirty-bottle wine list and a deep spirits shelf. The Italian Job is a house favourite and a good place to start. There is a happy hour menu Tuesday through Thursday from 4 to 6pm when you want to keep it casual after work.",
+      "The bar pulls its weight: twelve house cocktails, a thirty-bottle wine list and a deep spirits shelf. The Italian Job is a house favourite and a good place to start. There is a happy hour menu Tuesday through Friday from 4 to 6pm when you want to keep it casual after work.",
       "Then there is Friday. Live music plays from 7 to 10pm, with a different act each week, and the whole room shifts up a gear. Music, low lighting, a cocktail in your hand. <a href=\"/live-music-fridays\">If you want a Friday that actually feels like a night out, this is the room for it</a>.",
     ],
   },
