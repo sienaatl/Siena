@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
 
 // Events are handled on a separate line from the main restaurant number in site-data.json.
-const EVENTS_PHONE = "(404) 488-3399";
+const EVENTS_PHONE = "+1 (404) 999-0373";
 
 export default function ThankYou() {
   const [info, setInfo] = useState<RestaurantInfo>(RESTAURANT_FALLBACK);
