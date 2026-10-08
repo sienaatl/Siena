@@ -326,7 +326,7 @@ export default function Home() {
               {/* Título — the page's h1. Names the cuisine and the city, and still
                   reads as a phrase with the "reimagined" script sitting under it. */}
               <motion.h1
-                className="text-white text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-white text-[36px] sm:text-[48px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -338,7 +338,7 @@ export default function Home() {
 
               {/* Reimagined superpuesto */}
               <motion.span
-                className="absolute left-1/2 top-[100%] md:top-[105%] -translate-x-1/2 -translate-y-[12%] text-[#e0b265] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
+                className="absolute left-1/2 top-[100%] md:top-[105%] -translate-x-1/2 -translate-y-[12%] text-[#e0b265] text-[26px] sm:text-[34px] md:text-[60px] lg:text-[85px] leading-none"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e"
@@ -353,7 +353,7 @@ export default function Home() {
             </div>
 
             <motion.p
-              className="text-white/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
+              className="text-white/80 text-[16px] md:text-[18px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -423,7 +423,7 @@ export default function Home() {
 
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#e0b265] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[36px] sm:text-[48px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -434,7 +434,7 @@ export default function Home() {
               </motion.h2>
 
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[22px] sm:text-[30px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: `
@@ -454,7 +454,7 @@ export default function Home() {
             </div>
 
             <motion.p
-              className="text-white/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
+              className="text-white/80 text-[16px] md:text-[18px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -657,7 +657,7 @@ export default function Home() {
 
               {/* Título */}
               <motion.h2
-                className="text-white text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-white text-[36px] sm:text-[48px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -669,7 +669,7 @@ export default function Home() {
 
               {/* "every day" superpuesto */}
               <motion.span
-                className="absolute left-1/2 top-[105%] -translate-x-1/2 -translate-y-[12%] w-full max-w-[900px] text-[#e0b265] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
+                className="absolute left-1/2 top-[105%] -translate-x-1/2 -translate-y-[12%] w-full max-w-[900px] text-[#e0b265] text-[26px] sm:text-[34px] md:text-[60px] lg:text-[85px] leading-none"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e",
@@ -685,7 +685,7 @@ export default function Home() {
             </div>
 
             <motion.p
-              className="text-white/80 text-lg md:text-[34px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
+              className="text-white/80 text-[16px] md:text-[18px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -746,7 +746,7 @@ export default function Home() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#e0b265] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[36px] sm:text-[48px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -756,7 +756,7 @@ export default function Home() {
                 Follow Us
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[22px] sm:text-[30px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: "2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e",
@@ -880,7 +880,7 @@ export default function Home() {
 
               {/* Título */}
               <motion.h2
-                className="text-[#e0b265] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase mb-[10px]"
+                className="text-[#e0b265] text-[28px] sm:text-[38px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase mb-[10px]"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -891,7 +891,7 @@ export default function Home() {
               </motion.h2>
 
               <motion.span
-                className="absolute left-1/2 md:top-[115%] -translate-x-1/2 -translate-y-1/2 w-full max-w-[900px] text-[#e0b265] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
+                className="absolute left-1/2 md:top-[115%] -translate-x-1/2 -translate-y-1/2 w-full max-w-[900px] text-[#e0b265] text-[24px] sm:text-[32px] md:text-[60px] lg:text-[85px] leading-none"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive"
                 }}
@@ -943,7 +943,7 @@ export default function Home() {
               <img width={61} height={51} loading="lazy" src="/assets/icono_findus.svg" alt="Find Us" className="w-[55px] md:w-[68px] h-auto" />
 
               <h2
-                className="text-[#e0b265] text-[52px] md:text-[72px] font-bold tracking-wide leading-none"
+                className="text-[#e0b265] text-[38px] sm:text-[48px] md:text-[72px] font-bold tracking-wide leading-none"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
               >
                 FIND US

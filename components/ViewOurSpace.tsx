@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 // Real interior/exterior shots of the space (no food, no people as the main
@@ -42,23 +42,8 @@ const ChevronIcon = ({ flip }: { flip?: boolean }) => (
 );
 
 export default function ViewOurSpace() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [distance, setDistance] = useState(0);
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [zoomed, setZoomed] = useState(false);
-
-  useEffect(() => {
-    const measure = () => {
-      if (containerRef.current && trackRef.current) {
-        const d = trackRef.current.scrollWidth - containerRef.current.clientWidth;
-        setDistance(d > 0 ? d : 0);
-      }
-    };
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, []);
 
   const openAt = (i: number) => {
     setZoomed(false);
@@ -97,7 +82,7 @@ export default function ViewOurSpace() {
           />
           <div className="relative inline-block">
             <motion.h2
-              className="text-[#e0b265] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+              className="text-[#e0b265] text-[34px] sm:text-[46px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
               style={{ fontFamily: "'Palmore-Light', serif" }}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -107,7 +92,7 @@ export default function ViewOurSpace() {
               View Our Space
             </motion.h2>
             <motion.span
-              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[22px] sm:text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
               style={{ fontFamily: "'AguafinaScript-Regular', cursive" }}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -120,23 +105,29 @@ export default function ViewOurSpace() {
         </div>
       </div>
 
-      {/* Full-bleed auto-scrolling filmstrip */}
-      <div ref={containerRef} className="w-full overflow-hidden mt-16 md:mt-20">
-        <motion.div
-          ref={trackRef}
-          className="flex gap-4 md:gap-5 w-max px-4"
-          animate={distance > 0 ? { x: [0, -distance] } : undefined}
-          transition={{
-            duration: Math.max(distance / 55, 18),
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "linear",
-          }}
-        >
-          {spaceImages.map((img, i) => (
+      {/* Full-bleed auto-scrolling filmstrip — CSS animation, no JS per frame */}
+      <div className="w-full overflow-hidden mt-16 md:mt-20">
+        <style>{`
+          @keyframes vos-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .vos-track {
+            display: flex;
+            width: max-content;
+            animation: vos-scroll 55s linear infinite;
+          }
+          .vos-track:hover { animation-play-state: paused; }
+          @media (prefers-reduced-motion: reduce) {
+            .vos-track { animation-play-state: paused; }
+          }
+        `}</style>
+        <div className="vos-track gap-4 md:gap-5 px-4">
+          {/* Duplicate images once so the seamless loop works */}
+          {[...spaceImages, ...spaceImages].map((img, i) => (
             <button
               key={i}
-              onClick={() => openAt(i)}
+              onClick={() => openAt(i % spaceImages.length)}
               aria-label="Open photo"
               className="relative flex-shrink-0 w-[300px] md:w-[420px] lg:w-[480px] h-[260px] md:h-[380px] lg:h-[440px] overflow-hidden rounded-2xl group cursor-zoom-in border border-[#e0b265]/15"
             >
@@ -155,7 +146,7 @@ export default function ViewOurSpace() {
               </div>
             </button>
           ))}
-        </motion.div>
+        </div>
       </div>
 
       {/* LIGHTBOX */}

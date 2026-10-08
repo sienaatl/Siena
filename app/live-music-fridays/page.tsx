@@ -60,7 +60,7 @@ export default function LiveMusicFridays() {
           </motion.div>
 
           <motion.h1
-            className="text-[#e0b265] text-[54px] md:text-[80px] lg:text-[104px] leading-none tracking-[0.04em] uppercase"
+            className="text-[#e0b265] text-[34px] sm:text-[46px] md:text-[80px] lg:text-[104px] leading-none tracking-[0.04em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}

@@ -43,7 +43,7 @@ export default function ThankYou() {
           </motion.div>
 
           <motion.h1
-            className="text-[#e0b265] text-[52px] md:text-[72px] leading-[0.9] tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[34px] sm:text-[44px] md:text-[72px] leading-[0.9] tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}

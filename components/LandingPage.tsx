@@ -126,12 +126,12 @@ function SectionTitle({
   // absolutely positioned and must not wrap, runs outside the column.
   const headClass =
     size === "lg"
-      ? "text-[38px] sm:text-[46px] md:text-[62px] lg:text-[76px]"
-      : "text-[30px] sm:text-[36px] md:text-[40px] lg:text-[50px]";
+      ? "text-[30px] sm:text-[42px] md:text-[62px] lg:text-[76px]"
+      : "text-[24px] sm:text-[32px] md:text-[40px] lg:text-[50px]";
   const scriptClass =
     size === "lg"
-      ? "text-[24px] sm:text-[28px] md:text-[48px] lg:text-[62px]"
-      : "text-[20px] sm:text-[24px] md:text-[28px] lg:text-[36px]";
+      ? "text-[20px] sm:text-[26px] md:text-[48px] lg:text-[62px]"
+      : "text-[16px] sm:text-[20px] md:text-[28px] lg:text-[36px]";
   const gap = script
     ? size === "lg"
       ? "mb-[46px] md:mb-[66px]"

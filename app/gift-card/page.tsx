@@ -57,7 +57,7 @@ export default function GiftCard() {
             <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[54px] md:text-[74px] lg:text-[92px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[36px] sm:text-[48px] md:text-[74px] lg:text-[92px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -120,7 +120,7 @@ export default function GiftCard() {
                 transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
               />
               <h2
-                className="text-[#e0b265] text-[58px] md:text-[72px] lg:text-[88px] leading-none tracking-[0.06em] uppercase mb-2"
+                className="text-[#e0b265] text-[34px] sm:text-[46px] md:text-[72px] lg:text-[88px] leading-none tracking-[0.06em] uppercase mb-2"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
               >
                 Share the
@@ -203,7 +203,7 @@ export default function GiftCard() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#e0b265] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[34px] sm:text-[46px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -213,7 +213,7 @@ export default function GiftCard() {
                 How It Works
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[22px] sm:text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
                 style={{ fontFamily: "'AguafinaScript-Regular', cursive" }}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -236,7 +236,7 @@ export default function GiftCard() {
                 transition={{ duration: 0.7, delay: i * 0.15, ease: "easeOut" }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
               >
-                <span className="text-[#e0b265] text-[52px] md:text-[68px] leading-none mb-3" style={{ fontFamily: "'Palmore-Light', serif" }}>
+                <span className="text-[#e0b265] text-[36px] md:text-[68px] leading-none mb-3" style={{ fontFamily: "'Palmore-Light', serif" }}>
                   {step.num}
                 </span>
                 <div className="w-8 h-[2px] bg-[#e0b265] mb-4" />
@@ -261,7 +261,7 @@ export default function GiftCard() {
           <div className="flex flex-col items-center text-center mb-14">
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#e0b265] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[34px] sm:text-[46px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -271,7 +271,7 @@ export default function GiftCard() {
                 Perfect For
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[22px] sm:text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: `2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e`,

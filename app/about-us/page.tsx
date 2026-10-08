@@ -38,7 +38,7 @@ export default function AboutUs() {
             <div className="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[58px] md:text-[78px] lg:text-[98px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[38px] sm:text-[50px] md:text-[78px] lg:text-[98px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -105,7 +105,7 @@ export default function AboutUs() {
           {/* Section title */}
           <div className="relative inline-block mb-[60px] md:mb-[80px]">
             <motion.h2
-              className="text-[#e0b265] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+              className="text-[#e0b265] text-[34px] sm:text-[46px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
               style={{ fontFamily: "'Palmore-Light', serif" }}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -115,7 +115,7 @@ export default function AboutUs() {
               Our Story
             </motion.h2>
             <motion.span
-              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[22px] sm:text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
               style={{
                 fontFamily: "'AguafinaScript-Regular', cursive",
                 textShadow: "2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e",
@@ -186,7 +186,7 @@ export default function AboutUs() {
           <div className="flex flex-col items-center text-center mb-[70px] md:mb-[90px]">
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#e0b265] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[34px] sm:text-[46px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -196,7 +196,7 @@ export default function AboutUs() {
                 Our Philosophy
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[22px] sm:text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow:
@@ -294,7 +294,7 @@ export default function AboutUs() {
               {/* Section title */}
               <div className="relative inline-block mb-[60px] md:mb-[72px]">
                 <motion.h2
-                  className="text-[#e0b265] text-[60px] md:text-[75px] lg:text-[90px] leading-[0.9] tracking-[0.06em] uppercase"
+                  className="text-[#e0b265] text-[34px] sm:text-[46px] md:text-[75px] lg:text-[90px] leading-[0.9] tracking-[0.06em] uppercase"
                   style={{ fontFamily: "'Palmore-Light', serif" }}
                   initial={{ opacity: 0, y: 60 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -304,7 +304,7 @@ export default function AboutUs() {
                   The Space
                 </motion.h2>
                 <motion.span
-                  className="pointer-events-none absolute left-0 top-full -translate-y-[15%] md:-translate-y-[30%] text-[#e0b265] text-[28px] md:text-[50px] lg:text-[68px] leading-none whitespace-nowrap"
+                  className="pointer-events-none absolute left-0 top-full -translate-y-[15%] md:-translate-y-[30%] text-[#e0b265] text-[22px] sm:text-[28px] md:text-[50px] lg:text-[68px] leading-none whitespace-nowrap"
                   style={{
                     fontFamily: "'AguafinaScript-Regular', cursive",
                     textShadow: "2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e",
