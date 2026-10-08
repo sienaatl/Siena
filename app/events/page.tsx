@@ -58,7 +58,7 @@ export default function Events() {
             <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[62px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[38px] sm:text-[50px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -123,7 +123,7 @@ export default function Events() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-white text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-white text-[34px] sm:text-[46px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ export default function Events() {
                 Host Your Event
               </motion.h2>
               <motion.span
-                className="absolute left-1/2 top-[105%] -translate-x-1/2 -translate-y-[12%] w-full text-[#e0b265] text-[40px] md:text-[60px] lg:text-[85px] leading-none"
+                className="absolute left-1/2 top-[105%] -translate-x-1/2 -translate-y-[12%] w-full text-[#e0b265] text-[26px] sm:text-[34px] md:text-[60px] lg:text-[85px] leading-none"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e",
@@ -208,7 +208,7 @@ export default function Events() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#e0b265] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[34px] sm:text-[46px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -218,7 +218,7 @@ export default function Events() {
                 How It Works
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[22px] sm:text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
                 style={{ fontFamily: "'AguafinaScript-Regular', cursive" }}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -242,7 +242,7 @@ export default function Events() {
                 whileHover={{ y: -5, transition: { duration: 0.22 } }}
               >
                 <span
-                  className="text-[#e0b265] text-[48px] md:text-[64px] leading-none mb-3"
+                  className="text-[#e0b265] text-[36px] md:text-[64px] leading-none mb-3"
                   style={{ fontFamily: "'Palmore-Light', serif" }}
                 >
                   {step.num}
@@ -302,7 +302,7 @@ export default function Events() {
             >
               <img src="/assets/icon6.svg" alt="" className="w-[55px] md:w-[65px]" />
               <h2
-                className="text-[#e0b265] text-[44px] md:text-[56px] leading-none tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[30px] sm:text-[38px] md:text-[56px] leading-none tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
               >
                 What We Offer

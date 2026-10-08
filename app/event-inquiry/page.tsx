@@ -261,7 +261,7 @@ export default function EventInquiry() {
             <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[46px] md:text-[64px] lg:text-[80px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[32px] sm:text-[40px] md:text-[64px] lg:text-[80px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -309,7 +309,7 @@ export default function EventInquiry() {
 
           <div className="relative inline-block mb-4">
             <motion.h2
-              className="text-[#e0b265] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+              className="text-[#e0b265] text-[34px] sm:text-[46px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
               style={{ fontFamily: "'Palmore-Light', serif" }}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -319,7 +319,7 @@ export default function EventInquiry() {
               Plan Your Event
             </motion.h2>
             <motion.span
-              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
+              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[22px] sm:text-[28px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
               style={{
                 fontFamily: "'AguafinaScript-Regular', cursive",
                 textShadow: `2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e`,

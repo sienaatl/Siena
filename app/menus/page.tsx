@@ -77,7 +77,7 @@ function SubSectionBlock({ id, title, subtitle, items }: SubSection) {
             className="w-[80px] h-auto pointer-events-none opacity-40 mb-4"
           />
           <h3
-            className="text-[42px] md:text-[57px] leading-tight uppercase text-[#e0b265]"
+            className="text-[28px] sm:text-[36px] md:text-[57px] leading-tight uppercase text-[#e0b265]"
             style={{ fontFamily: "'Palmore-Light', serif" }}
           >
             {title}
@@ -243,7 +243,7 @@ function MenuContent() {
             <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[52px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[38px] sm:text-[52px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -352,7 +352,7 @@ function MenuContent() {
                   />
                   <div className="relative inline-block">
                     <motion.h2
-                      className="text-[#e0b265] text-[52px] md:text-[72px] lg:text-[88px] leading-[0.9] tracking-[0.06em] uppercase"
+                      className="text-[#e0b265] text-[34px] sm:text-[44px] md:text-[72px] lg:text-[88px] leading-[0.9] tracking-[0.06em] uppercase"
                       style={{ fontFamily: "'Palmore-Light', serif" }}
                       initial={{ opacity: 0, y: 40 }}
                       whileInView={{ opacity: 1, y: 0 }}

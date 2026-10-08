@@ -263,7 +263,7 @@ export default function Careers() {
             <div className="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[62px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[38px] sm:text-[50px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -322,7 +322,7 @@ export default function Careers() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#e0b265] text-[58px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-[#e0b265] text-[34px] sm:text-[46px] md:text-[78px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -332,7 +332,7 @@ export default function Careers() {
                 Be Part of the Story
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[26px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[20px] sm:text-[26px] md:text-[58px] lg:text-[82px] leading-none whitespace-nowrap"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: `2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e`,
@@ -404,7 +404,7 @@ export default function Careers() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-white text-[55px] md:text-[75px] lg:text-[90px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-white text-[34px] sm:text-[46px] md:text-[75px] lg:text-[90px] leading-[0.9] tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -414,7 +414,7 @@ export default function Careers() {
                 Apply Now
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-[95%] md:top-[100%] -translate-x-1/2 -translate-y-[5%] text-[#e0b265] text-[28px] md:text-[55px] lg:text-[78px] leading-none whitespace-nowrap"
+                className="pointer-events-none absolute left-1/2 top-[95%] md:top-[100%] -translate-x-1/2 -translate-y-[5%] text-[#e0b265] text-[22px] sm:text-[28px] md:text-[55px] lg:text-[78px] leading-none whitespace-nowrap"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e",

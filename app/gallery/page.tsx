@@ -16,8 +16,12 @@ for (let i = 45; i <= 186; i++) {
 }
 
 const TOTAL = images.length;
+// Show this many images on first render; user loads more on demand.
+const INITIAL_BATCH = 48;
+const LOAD_MORE_BATCH = 48;
 
 export default function Gallery() {
+  const [visible, setVisible] = useState(INITIAL_BATCH);
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   const prev = useCallback(
@@ -44,6 +48,9 @@ export default function Gallery() {
     };
   }, [lightbox, prev, next]);
 
+  const displayedImages = images.slice(0, visible);
+  const hasMore = visible < TOTAL;
+
   return (
     <main>
       {/* HERO */}
@@ -58,7 +65,7 @@ export default function Gallery() {
             src="/assets/Siena_20.03.26-A-02.webp"
             alt="Gallery"
             fill
-            preload
+            priority
             sizes="100vw"
             className="object-cover object-center"
           />
@@ -76,7 +83,7 @@ export default function Gallery() {
             <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[62px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[38px] sm:text-[50px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -102,6 +109,8 @@ export default function Gallery() {
         <style>{`
           @keyframes mq-gal { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
           .mq-gal { display:flex; width:max-content; animation:mq-gal 22s linear infinite; }
+          @keyframes gal-fade { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+          .gal-item { animation: gal-fade 0.5s ease both; }
         `}</style>
         <div className="mq-gal">
           {[0, 1, 2, 3].map((r) => (
@@ -133,7 +142,7 @@ export default function Gallery() {
           />
           <div className="relative inline-block">
             <motion.h2
-              className="text-[#e0b265] text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+              className="text-[#e0b265] text-[34px] sm:text-[46px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
               style={{ fontFamily: "'Palmore-Light', serif" }}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -143,7 +152,7 @@ export default function Gallery() {
               A Visual Story
             </motion.h2>
             <motion.span
-              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[22px] sm:text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
               style={{
                 fontFamily: "'AguafinaScript-Regular', cursive",
                 textShadow: `2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e`,
@@ -157,7 +166,7 @@ export default function Gallery() {
             </motion.span>
           </div>
           <motion.p
-            className="text-white/80 text-lg md:text-xl leading-[140%] max-w-[600px] mt-12 md:mt-24"
+            className="text-white/80 text-[16px] md:text-[18px] lg:text-xl leading-[140%] max-w-[600px] mt-12 md:mt-24"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -169,35 +178,51 @@ export default function Gallery() {
       </section>
 
       {/* MASONRY GRID */}
-      <section className="w-full pb-[80px] px-4 md:px-6" style={{ backgroundColor: "#1b312e" }}>
+      <section className="w-full pb-[60px] px-3 md:px-6" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[1180px] mx-auto">
-          <div className="columns-2 md:columns-3 lg:columns-4 gap-3 md:gap-4">
-            {images.map((src, i) => (
-              <motion.div
-                key={i}
-                className="break-inside-avoid mb-3 md:mb-4 group relative overflow-hidden cursor-pointer"
+          {/* CSS column masonry — no per-item JS animation observers */}
+          <div className="columns-2 md:columns-3 lg:columns-4 gap-2 md:gap-3 lg:gap-4">
+            {displayedImages.map((src, i) => (
+              <div
+                key={src}
+                className="gal-item break-inside-avoid mb-2 md:mb-3 lg:mb-4 group relative overflow-hidden cursor-pointer"
+                style={{ animationDelay: `${Math.min(i % 8, 7) * 0.04}s` }}
                 onClick={() => setLightbox(i)}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.05 }}
-                transition={{ duration: 0.6, delay: (i % 4) * 0.06, ease: "easeOut" }}
               >
                 <img
                   src={src}
                   alt={`Siena ${i + 1}`}
-                  loading="lazy"
-                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading={i < 12 ? "eager" : "lazy"}
+                  decoding="async"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-[#1b312e]/0 group-hover:bg-[#1b312e]/30 transition-colors duration-500 flex items-center justify-center">
-                  <div className="w-9 h-9 border border-[#f4eedd] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#f4eedd" strokeWidth="2">
+                <div className="absolute inset-0 bg-[#1b312e]/0 group-hover:bg-[#1b312e]/30 transition-colors duration-400 flex items-center justify-center">
+                  <div className="w-9 h-9 border border-[#f4eedd] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#f4eedd" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0zm-6-3.5v7m-3.5-3.5h7" />
                     </svg>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
+
+          {/* Load more button */}
+          {hasMore && (
+            <div className="flex justify-center mt-10">
+              <button
+                onClick={() => setVisible((v) => Math.min(v + LOAD_MORE_BATCH, TOTAL))}
+                className="group bg-[#e0b265] text-[#1b312e] px-8 py-3 text-[13px] tracking-[0.15em] uppercase flex items-center gap-2 hover:bg-white transition"
+              >
+                Load More Photos
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 2v16M2 10l8 8 8-8" stroke="#1b312e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -215,6 +240,7 @@ export default function Gallery() {
             <button
               className="absolute top-4 right-4 md:top-6 md:right-6 text-white/70 hover:text-[#f4eedd] z-10 w-10 h-10 flex items-center justify-center transition"
               onClick={() => setLightbox(null)}
+              aria-label="Close"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M18 6L6 18M6 6l12 12" />
@@ -260,7 +286,6 @@ export default function Gallery() {
         )}
       </AnimatePresence>
 
-     
     </main>
   );
 }

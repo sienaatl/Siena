@@ -40,10 +40,22 @@ export default function LazyBackgrounds() {
                     apply(e.target as HTMLElement);
                 }
             },
-            { rootMargin: "400px" }
+            { rootMargin: "600px" }
         );
 
         targets.forEach((t) => io.observe(t));
+
+        // Elements already in (or very near) the viewport at mount time don't
+        // always trigger the callback synchronously — force-apply them now so
+        // the background is ready on the first paint rather than after a reload.
+        targets.forEach((t) => {
+            const rect = t.getBoundingClientRect();
+            if (rect.top < window.innerHeight + 600) {
+                io.unobserve(t);
+                apply(t);
+            }
+        });
+
         return () => io.disconnect();
     }, []);
 
