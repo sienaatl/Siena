@@ -66,7 +66,7 @@ export default function ReservationsPageClient({
             <div className="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[52px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[38px] sm:text-[50px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase px-4"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
