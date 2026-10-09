@@ -120,7 +120,7 @@ export default function LiveMusicFridays() {
                   <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">
                     {phrase}
                   </span>
-                  <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+                  <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
                 </div>
               ))}
             </div>

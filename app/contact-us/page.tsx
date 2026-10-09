@@ -228,13 +228,13 @@ export default function ContactUs() {
           {[0, 1, 2, 3].map((r) => (
             <div key={r} className="flex items-center">
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">WE&apos;D LOVE TO HEAR FROM YOU</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">RESERVATIONS &amp; EVENTS</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">ALPHARETTA, GEORGIA</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">124 DEVORE RD</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
             </div>
           ))}
         </div>
@@ -466,7 +466,7 @@ export default function ContactUs() {
 
       {/* DIVIDER */}
       <section className="relative w-full h-[40px] md:h-[58px] overflow-hidden bg-[#f4eedd]">
-        <img src="/assets/divisor_beige.svg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/assets/divisor_beige.svg" alt="decorative divider" className="absolute inset-0 w-full h-full object-cover" />
       </section>
 
       {/* FIND US */}
@@ -491,7 +491,7 @@ export default function ContactUs() {
           <div className="absolute inset-3 border border-[#e0b265]/20 pointer-events-none" />
 
           <div className="flex-1 flex flex-col gap-4 md:gap-5 relative z-10 w-full">
-            <img src="/assets/icono_findus.svg" alt="" className="w-[55px] md:w-[68px] h-auto" />
+            <img src="/assets/icono_findus.svg" alt="location pin icon" className="w-[55px] md:w-[68px] h-auto" />
             <h2
               className="text-[#e0b265] text-[36px] sm:text-[46px] md:text-[72px] font-bold tracking-wide leading-none"
               style={{ fontFamily: "'Palmore-Light', serif" }}
@@ -567,7 +567,7 @@ export default function ContactUs() {
       </section>
 
       <section className="relative w-full h-[28px] overflow-hidden bg-[#030302]">
-        <img src="/assets/divisor_estrella3.svg" alt="" className="absolute inset-0 w-full h-full object-cover scale-y-125" />
+        <img src="/assets/divisor_estrella3.svg" alt="decorative divider" className="absolute inset-0 w-full h-full object-cover scale-y-125" />
       </section>
     </main>
   );

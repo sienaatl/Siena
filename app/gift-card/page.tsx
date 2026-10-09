@@ -88,13 +88,13 @@ export default function GiftCard() {
           {[0, 1, 2, 3].map((r) => (
             <div key={r} className="flex items-center">
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">GIVE THE GIFT OF SIENA</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">PERFECT FOR ANY OCCASION</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">MEDITERRANEAN DINING EXPERIENCE</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">EASY TO PURCHASE &amp; SEND</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
             </div>
           ))}
         </div>
@@ -185,7 +185,7 @@ export default function GiftCard() {
 
       {/* DIVIDER */}
       <section className="relative w-full h-[58px]">
-        <img src="/assets/divisor_negro.svg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/assets/divisor_negro.svg" alt="decorative divider" className="absolute inset-0 w-full h-full object-cover" />
       </section>
 
       {/* HOW IT WORKS */}
@@ -252,7 +252,7 @@ export default function GiftCard() {
 
       {/* DIVIDER */}
       <section className="relative w-full h-[40px] md:h-[58px] overflow-hidden bg-[#f4eedd]">
-        <img src="/assets/divisor_beige.svg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/assets/divisor_beige.svg" alt="decorative divider" className="absolute inset-0 w-full h-full object-cover" />
       </section>
 
       {/* PERFECT FOR */}
@@ -350,7 +350,7 @@ export default function GiftCard() {
 
       {/* CTA BAND */}
       <section className="relative w-full h-[28px] overflow-hidden bg-[#030302]">
-        <img src="/assets/divisor_estrella3.svg" alt="" className="absolute inset-0 w-full h-full object-cover scale-y-125" />
+        <img src="/assets/divisor_estrella3.svg" alt="decorative divider" className="absolute inset-0 w-full h-full object-cover scale-y-125" />
       </section>
 
      

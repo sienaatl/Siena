@@ -206,7 +206,7 @@ function ImageFrame({ src, alt, className = "" }: { src: string; alt: string; cl
 function Divider({ src = "/assets/divisor_beige.svg", bg = GOLD }: { src?: string; bg?: string }) {
   return (
     <section className="relative w-full h-[40px] md:h-[58px] overflow-hidden" style={{ backgroundColor: bg }}>
-      <img src={src} alt="" className="absolute inset-0 w-full h-full object-cover" />
+      <img src={src} alt="decorative divider" className="absolute inset-0 w-full h-full object-cover" />
     </section>
   );
 }
@@ -321,7 +321,7 @@ export default function LandingPage({
               {marquee.map((m, i) => (
                 <span key={i} className="flex items-center">
                   <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">{m}</span>
-                  <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+                  <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
                 </span>
               ))}
             </div>
@@ -547,7 +547,7 @@ export default function LandingPage({
                     const fill = Math.max(0, Math.min(1, REVIEW_STATS.rating - i));
                     return (
                       <span key={i} className="relative block w-8 h-8 md:w-9 md:h-9">
-                        <img src="/assets/star.svg" alt="" className="w-full h-full opacity-20" />
+                        <img src="/assets/star.svg" alt="decorative star" className="w-full h-full opacity-20" />
                         <span className="absolute inset-0 overflow-hidden" style={{ width: `${fill * 100}%` }}>
                           <img
                             src="/assets/star.svg"
