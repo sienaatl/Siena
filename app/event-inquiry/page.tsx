@@ -282,13 +282,13 @@ export default function EventInquiry() {
           {[0, 1, 2, 3].map((r) => (
             <div key={r} className="flex items-center">
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">BIRTHDAYS &amp; ANNIVERSARIES</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">CORPORATE DINNERS</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">SHOWERS &amp; CELEBRATIONS</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">124 DEVORE RD</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
             </div>
           ))}
         </div>

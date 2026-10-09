@@ -89,13 +89,13 @@ export default function Events() {
           {[0, 1, 2, 3].map((r) => (
             <div key={r} className="flex items-center">
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">PRIVATE DINNERS</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">CORPORATE GATHERINGS</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">COCKTAIL RECEPTIONS</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
               <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">MILESTONE CELEBRATIONS</span>
-              <img src="/assets/star.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+              <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
             </div>
           ))}
         </div>
@@ -187,7 +187,7 @@ export default function Events() {
 
       {/* DIVIDER */}
       <section className="relative w-full h-[58px]">
-        <img src="/assets/divisor_negro.svg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/assets/divisor_negro.svg" alt="decorative divider" className="absolute inset-0 w-full h-full object-cover" />
       </section>
 
       {/* HOW IT WORKS */}
@@ -263,7 +263,7 @@ export default function Events() {
 
       {/* DIVIDER */}
       <section className="relative w-full h-[40px] md:h-[58px] overflow-hidden bg-[#f4eedd]">
-        <img src="/assets/divisor_beige.svg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/assets/divisor_beige.svg" alt="decorative divider" className="absolute inset-0 w-full h-full object-cover" />
       </section>
 
       {/* WHAT WE OFFER */}
@@ -300,7 +300,7 @@ export default function Events() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <img src="/assets/icon6.svg" alt="" className="w-[55px] md:w-[65px]" />
+              <img src="/assets/icon6.svg" alt="event planning icon" className="w-[55px] md:w-[65px]" />
               <h2
                 className="text-[#e0b265] text-[30px] sm:text-[38px] md:text-[56px] leading-none tracking-[0.06em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
