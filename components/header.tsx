@@ -58,7 +58,7 @@ export default function Header() {
                             }`}>
                             <Image width={270} height={151}
                                 src="/assets/logo_beige.png"
-                                alt="logo"
+                                alt="Siena Restaurant Logo"
                                 priority
                                 sizes="90px"
                                 className="w-full h-full object-contain cursor-pointer transition-all duration-300"

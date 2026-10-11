@@ -77,11 +77,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://sienaatl.com"),
   title: {
-    default: "Mediterranean & Italian Restaurant in Alpharetta | Siena",
+    default: "Siena Restaurant | Italian Mediterranean Dining Alpharetta",
     template: "%s | Siena",
   },
   description:
-    "Experience Siena, a Mediterranean and Italian restaurant in Alpharetta, GA, serving chef-driven dishes, cocktails, date nights, private dining and special occasions.",
+    "Italian Mediterranean dining in Alpharetta. Handmade pasta, fresh seafood, cocktails & live music. Near Avalon. Reserve your table at Siena Restaurant.",
   keywords: [
     "Siena Restaurant",
     "Italian Restaurant Alpharetta",
@@ -99,15 +99,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://sienaatl.com",
     siteName: "Siena Restaurant",
-    title: "Mediterranean & Italian Restaurant in Alpharetta | Siena",
+    title: "Siena Restaurant | Italian Mediterranean Dining Alpharetta",
     description:
-      "Chef-driven Mediterranean and Italian-inspired dishes, handcrafted cocktails and memorable dining in Alpharetta, Georgia.",
+      "Italian Mediterranean dining in Alpharetta. Handmade pasta, fresh seafood, cocktails & live music. Near Avalon. Reserve your table at Siena Restaurant.",
     images: [{ url: "/assets/Siena_20.03.26-A-02.webp", width: 1200, height: 630, alt: "Siena Restaurant in Alpharetta, Georgia" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mediterranean & Italian Restaurant in Alpharetta | Siena",
-    description: "Chef-driven Mediterranean and Italian-inspired dining in Alpharetta, Georgia.",
+    title: "Siena Restaurant | Italian Mediterranean Dining Alpharetta",
+    description: "Italian Mediterranean dining in Alpharetta. Handmade pasta, fresh seafood, cocktails & live music. Near Avalon. Reserve your table at Siena Restaurant.",
     images: ["/assets/Siena_20.03.26-A-02.webp"],
   },
   robots: {
