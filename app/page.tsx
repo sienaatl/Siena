@@ -87,6 +87,8 @@ export default function Home() {
 
   return (
     <main>
+      {/* SEO H1 - visually hidden but accessible to screen readers and search engines */}
+      <h1 className="sr-only">Siena Restaurant - Italian Mediterranean Dining in Alpharetta, GA</h1>
 
       {/* HERO + BANNER wrapper = 100vh en mobile */}
       <div className="flex flex-col h-screen md:h-auto md:block">

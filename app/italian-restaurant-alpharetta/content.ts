@@ -7,8 +7,8 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
  * the same file rather than being written into the copy.
  */
 
-export const H1 = "The Italian Restaurant in Alpharetta";
-export const H1_SCRIPT = "with a Mediterranean soul";
+export const H1 = "Italian Restaurant in Alpharetta";
+export const H1_SCRIPT = "house-made pasta & classics";
 
 export const MARQUEE = [
   "House-Made Pasta",
@@ -22,7 +22,7 @@ export const INTRO = {
   heading: "Not Your Usual Red Sauce",
   script: "medi-talian",
   paras: [
-    "Looking for an Italian restaurant in Alpharetta that feels a little different? Siena Restaurant &amp; Bar sits at 124 Devore Rd, a few minutes from Avalon and the Ameris Bank Amphitheatre. It is an Italian kitchen with a Mediterranean heart. The team calls it <em>Medi-talian</em>.",
+    "Looking for an Italian restaurant in Alpharetta that feels a little different? Siena Restaurant &amp; Bar sits at 124 Devore Rd, a few minutes from Avalon and the Ameris Bank Amphitheatre, <a href=\"/downtown-alpharetta-restaurants\">in the heart of downtown Alpharetta's dining scene</a>. It is an Italian kitchen with a Mediterranean heart. The team calls it <em>Medi-talian</em>.",
     "House-made pastas and Italian classics sit happily next to hummus, lamb chops and bright Mediterranean plates. Come hungry, bring people you like, and plan to share a lot of food.",
   ],
   cta: { label: "SEE THE MENU", href: "/menus" },
@@ -143,7 +143,7 @@ export const BLOCKS: Block[] = [
     cards: [
       {
         title: "Date Night",
-        desc: "The lighting, the sharing plates and Friday live music set the mood without you having to try. <a href=\"/reservations\">Book a table for two</a>.",
+        desc: "The lighting, the sharing plates and Friday live music set the mood without you having to try. <a href=\"/date-night-alpharetta\">See why Siena works for date nights</a>, then <a href=\"/reservations\">book a table for two</a>.",
       },
       {
         title: "Groups",
