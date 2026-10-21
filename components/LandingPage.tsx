@@ -141,10 +141,10 @@ function SectionTitle({
   return (
     <div className={`flex flex-col ${align === "center" ? "items-center text-center" : "items-start text-left"}`}>
       {icon && (
-        <motion.img
-          src={icon}
-          alt=""
-          className="w-[52px] md:w-[75px] mb-5"
+        <motion.span
+          aria-hidden="true"
+          data-decoration={icon}
+          className="siena-decoration w-[52px] md:w-[75px] mb-5"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -206,7 +206,7 @@ function ImageFrame({ src, alt, className = "" }: { src: string; alt: string; cl
 function Divider({ src = "/assets/divisor_beige.svg", bg = GOLD }: { src?: string; bg?: string }) {
   return (
     <section className="relative w-full h-[40px] md:h-[58px] overflow-hidden" style={{ backgroundColor: bg }}>
-      <img src={src} alt="decorative divider" className="absolute inset-0 w-full h-full object-cover" />
+      <span aria-hidden="true" data-decoration={src} className="siena-decoration siena-divider absolute inset-0 w-full h-full" />
     </section>
   );
 }
@@ -238,10 +238,10 @@ export default function LandingPage({
 
         {/* Padded for the fixed header (72px, 80px from md) so the h1 never sits under it. */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-5 pt-[72px] md:pt-[80px] pb-16 md:pb-20">
-          <motion.img
-            src="/assets/icono_123.svg"
-            alt=""
-            className="w-[54px] md:w-[68px] mb-6"
+          <motion.span
+            aria-hidden="true"
+            data-decoration="/assets/icono_123.svg"
+            className="siena-decoration w-[54px] md:w-[68px] mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -321,7 +321,7 @@ export default function LandingPage({
               {marquee.map((m, i) => (
                 <span key={i} className="flex items-center">
                   <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">{m}</span>
-                  <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
+                  <span aria-hidden="true" data-decoration="/assets/star.svg" className="siena-decoration w-5 h-5 flex-shrink-0" />
                 </span>
               ))}
             </div>
@@ -547,13 +547,9 @@ export default function LandingPage({
                     const fill = Math.max(0, Math.min(1, REVIEW_STATS.rating - i));
                     return (
                       <span key={i} className="relative block w-8 h-8 md:w-9 md:h-9">
-                        <img src="/assets/star.svg" alt="decorative star" className="w-full h-full opacity-20" />
+                        <span aria-hidden="true" data-decoration="/assets/star.svg" className="siena-decoration w-full h-full opacity-20" />
                         <span className="absolute inset-0 overflow-hidden" style={{ width: `${fill * 100}%` }}>
-                          <img
-                            src="/assets/star.svg"
-                            alt=""
-                            className="h-full max-w-none w-8 md:w-9"
-                          />
+                          <span aria-hidden="true" data-decoration="/assets/star.svg" className="siena-decoration h-full max-w-none w-8 md:w-9" />
                         </span>
                       </span>
                     );
