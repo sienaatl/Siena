@@ -3,7 +3,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
 export const metadata: Metadata = {
-  title: "Wine Bar in Alpharetta",
+  title: "Wine Bar in Alpharetta | Mediterranean Dining",
   description:
     "Wine in Alpharetta at Siena: thirty bottles, twenty-four by the glass, from Provence rosé to Moët. Bar open from 4pm in downtown Alpharetta.",
   alternates: { canonical: "/wine-bar-alpharetta" },
