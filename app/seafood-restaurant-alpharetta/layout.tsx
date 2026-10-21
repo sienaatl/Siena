@@ -3,7 +3,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
 export const metadata: Metadata = {
-  title: "Seafood in Alpharetta",
+  title: "Seafood Restaurant in Alpharetta | Fresh Fish",
   description:
     "Seafood in Alpharetta at Siena: Mediterranean branzino, salmon limone, flame-grilled octopus and calamari fritti. Dinner from 4pm, five minutes from Avalon.",
   alternates: { canonical: "/seafood-restaurant-alpharetta" },
