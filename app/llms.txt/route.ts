@@ -45,9 +45,10 @@ ${hours}
 - Cuisine: Mediterranean and Italian
 - Service: tapas-style sharing plates, dinner and bar; contact the restaurant for current brunch service
 - Price range: $$
-- Reservations accepted
-- Friday live music; check the live-music page and contact the restaurant for performer details
-- Happy hour menu available
+- Reservations accepted at https://sienaatl.com/reservations; walk-ins welcome
+- Free parking
+- Friday live music, 7–10 PM; check the live-music page for performer details
+- Happy hour Tuesday–Thursday, 4–6 PM
 - Co-owner and manager: Aida Lemma
 - Executive chef: Baba Estavillo
 
@@ -73,7 +74,7 @@ ${hours}
 - [Gallery](${SITE_URL}/gallery): photographs of the restaurant and food
 - [Contact](${SITE_URL}/contact-us): contact details and enquiry form
 - [Gift Cards](${SITE_URL}/gift-card): buy a gift card
-- [Order Online](${SITE_URL}/order-online): online ordering
+- [Order Online](https://order.toasttab.com/online/sienaatl): Siena's Toast ordering page; availability is shown by Toast
 - [Blog](${SITE_URL}/blogs): articles about the restaurant and dining in Alpharetta
 - [Careers](${SITE_URL}/careers): current openings
 
