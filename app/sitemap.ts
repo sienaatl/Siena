@@ -47,7 +47,6 @@ const PAGES: { path: string; priority: number; lastModified?: string }[] = [
   { path: "/contact-us", priority: 0.7 },
   { path: "/gallery", priority: 0.6 },
   { path: "/blogs", priority: 0.6 },
-  { path: "/order-online", priority: 0.6 },
   { path: "/gift-card", priority: 0.5 },
   { path: "/careers", priority: 0.4 },
   { path: "/privacy-policy", priority: 0.3 },
