@@ -2,7 +2,7 @@ import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
-export const metadata = diningMetadata("happy-hour-alpharetta", "Happy Hour in Alpharetta", "Explore happy hour at Siena in Alpharetta with cocktails and Mediterranean small plates. View the happy-hour menu and contact us for current specials.");
+export const metadata = diningMetadata("happy-hour-alpharetta", "Happy Hour in Alpharetta | Tuesday–Thursday 4–6 PM", "Join Siena for happy hour in Alpharetta, Tuesday–Thursday from 4–6 PM. Explore Mediterranean small plates and cocktails. Walk-ins welcome; free parking.");
 
 /**
  * The root layout appends " | Siena" through its title template, so the title here
