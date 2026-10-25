@@ -4,6 +4,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/order-online",
+        destination: "https://order.toasttab.com/online/sienaatl",
+        permanent: true,
+      },
+      {
         source: "/about",
         destination: "/about-us",
         permanent: true,
