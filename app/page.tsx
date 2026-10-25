@@ -87,9 +87,6 @@ export default function Home() {
 
   return (
     <main>
-      {/* SEO H1 - visually hidden but accessible to screen readers and search engines */}
-      <h1 className="sr-only">Siena Restaurant - Italian Mediterranean Dining in Alpharetta, GA</h1>
-
       {/* HERO + BANNER wrapper = 100vh en mobile */}
       <div className="flex flex-col h-screen md:h-auto md:block">
 
@@ -335,7 +332,7 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.38, delay: 0.08, ease: "easeOut" }}
               >
-                A Taste of the Mediterranean in Alpharetta
+                Italian &amp; Mediterranean Dining in Alpharetta
               </motion.h1>
 
               {/* Reimagined superpuesto */}
@@ -577,7 +574,7 @@ export default function Home() {
                   <div className="flex items-end justify-between gap-3">
                     <div className="min-w-0 flex-1">
                       <h3 className="text-white text-[28px] md:text-[32px] font-semibold leading-tight md:whitespace-nowrap">HAPPY HOUR</h3>
-                      <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Tuesday–Friday, 4–6pm · Drinks and small plates</p>
+                      <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Tuesday–Thursday, 4–6pm · Drinks and small plates</p>
                     </div>
                     <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none">
