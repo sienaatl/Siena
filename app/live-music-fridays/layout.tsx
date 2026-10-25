@@ -1,7 +1,7 @@
 import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
-export const metadata = diningMetadata("live-music-fridays", "Friday Live Music & Dinner in Alpharetta", "Plan Friday dinner and live music at Siena in Alpharetta. Explore Mediterranean and Italian dishes, check performance details and reserve a table.");
+export const metadata = diningMetadata("live-music-fridays", "Friday Live Music in Downtown Alpharetta", "Live music Fridays, 7–10 PM, at Siena in downtown Alpharetta. Mediterranean-Italian dinner, Monaco and Lady Godiva cocktails, free parking. Reserve a table.");
 
 // This is an evergreen series, not confirmation of any individual performance.
 // Add MusicEvent markup only to a dated page with confirmed, visible event details.
@@ -13,7 +13,8 @@ export default function LiveMusicFridaysLayout({ children }: { children: React.R
     url: "https://sienaatl.com/live-music-fridays",
     name: "Live Music Fridays at Siena",
     description:
-      "Make Siena your Friday night destination for a rotating lineup of talented live musicians, Mediterranean-Italian dining and handcrafted cocktails. Join us every Friday from 7 to 10 PM in Alpharetta, minutes from Johns Creek and Milton. The performer changes weekly, giving every Friday a fresh soundtrack. Reservations are recommended.",
+      "Friday live music from 7 to 10 PM at Siena Restaurant & Bar, 124 Devore Rd in downtown Alpharetta. Enjoy Mediterranean-Italian dinner and signature cocktails such as the Monaco and Lady Godiva. Reservations recommended; walk-ins welcome.",
+    mainEntityOfPage: "https://sienaatl.com/live-music-fridays",
     eventSchedule: {
       "@type": "Schedule",
       repeatFrequency: "P1W",

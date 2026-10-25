@@ -5,11 +5,11 @@ import siteData from "@/lib/site-data.json";
 export const metadata: Metadata = {
   title: "Menus | Mediterranean & Italian, Alpharetta",
   description:
-    "View the Siena Restaurant Alpharetta Menu offering Mediterranean-inspired tapas, chef-driven entrées & curated flavors for a memorable dinner.",
+    "Explore Siena's Mediterranean and Italian dinner menu in downtown Alpharetta: pasta, seafood, shareable plates and signature Monaco and Lady Godiva cocktails.",
   openGraph: {
     title: "Siena Restaurant Alpharetta Menu | Mediterranean Dinner Menu",
     description:
-      "View the Siena Restaurant Alpharetta Menu offering Mediterranean-inspired tapas, chef-driven entrées & curated flavors for a memorable dinner.",
+      "Explore Siena's Mediterranean and Italian dinner menu in downtown Alpharetta: pasta, seafood, shareable plates and signature Monaco and Lady Godiva cocktails.",
     url: "https://sienaatl.com/menus",
     images: [{ url: "/assets/Siena_20.03.26-PS-NarissaChickenLolipapas.webp", alt: "Siena menu dishes" }],
   },

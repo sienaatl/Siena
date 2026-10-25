@@ -358,8 +358,14 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.38, delay: 0.24, ease: "easeOut" }}
             >
-              At Siena, every detail is guided by a creative vision rooted in Mediterranean warmth and Italian soul. A place where flavors, atmosphere, and hospitality come together to create a truly memorable experience.
+              Siena Restaurant &amp; Bar brings Mediterranean and Italian dining to 124 Devore Rd in downtown Alpharetta. Come for handmade pasta, seafood and shareable plates, then stay for signature cocktails such as the Monaco and Lady Godiva. Join us for live music on Fridays from 7 to 10 PM, or happy hour Tuesday through Thursday from 4 to 6 PM. Free parking and walk-ins welcome.
             </motion.p>
+
+            <nav aria-label="Plan dinner at Siena" className="flex flex-wrap justify-center gap-x-6 gap-y-3 mt-6 text-[#e0b265] text-sm underline underline-offset-4">
+              <Link href="/reservations">Reserve a table</Link>
+              <Link href="/live-music-fridays">Friday live music</Link>
+              <Link href="/cocktail-bar-alpharetta">Signature cocktails</Link>
+            </nav>
 
           <MotionLink
           href="/about-us"

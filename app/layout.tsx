@@ -126,7 +126,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     name: "Siena Restaurant & Bar",
     alternateName: ["Siena Restaurant", "Siena ATL"],
     description:
-      "A chef-driven Mediterranean and Italian restaurant in Alpharetta, Georgia, serving handmade pasta, fresh seafood, shared plates and handcrafted cocktails for dinner, date nights and special occasions.",
+      "A chef-driven Mediterranean and Italian restaurant at 124 Devore Rd in downtown Alpharetta, serving handmade pasta, seafood, shareable plates and signature cocktails. Friday live music runs 7–10 PM; happy hour is Tuesday–Thursday, 4–6 PM. Reservations and walk-ins welcome.",
     image: "https://sienaatl.com/assets/Siena_20.03.26-A-02.webp",
     logo: "https://sienaatl.com/assets/logo_beige.png",
     "@id": "https://sienaatl.com/#restaurant",
@@ -135,7 +135,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     email: info.email,
     priceRange: "$$",
     menu: "https://sienaatl.com/menus",
-    hasMenu: "https://sienaatl.com/menus",
+    hasMenu: { "@type": "Menu", "@id": "https://sienaatl.com/menus#menu", url: "https://sienaatl.com/menus" },
     servesCuisine: ["Italian", "Mediterranean"],
     acceptsReservations: "https://sienaatl.com/reservations",
     hasMap: info.maps_url,
