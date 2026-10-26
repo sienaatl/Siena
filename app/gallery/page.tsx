@@ -184,7 +184,8 @@ export default function Gallery() {
             124 Devore Road. For Friday music, check our <Link className="text-[#e0b265] underline" href="/live-music-fridays">live music page</Link>.
             Planning a birthday, celebration or business dinner? <Link className="text-[#e0b265] underline" href="/event-inquiry">Ask our event team</Link> about
             your date and group before choosing a space. Free parking is available,
-            and walk-ins are welcome when there is room.
+            and walk-ins are welcome when there is room. For more dining inspiration,
+            read our <Link className="text-[#e0b265] underline" href="/blogs/hidden-gems-among-alpharetta">Alpharetta dining story</Link>.
           </p>
         </div>
       </section>
