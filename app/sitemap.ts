@@ -54,7 +54,7 @@ const PAGES: { path: string; priority: number; lastModified?: string }[] = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = PAGES.map(({ path, priority, lastModified }) => ({ url: `${SITE_URL}${path}`, priority, ...(lastModified ? { lastModified } : {}) }));
+  const pages = PAGES.map(({ path, priority, lastModified }) => ({ url: `${SITE_URL}${path || "/"}`, priority, ...(lastModified ? { lastModified } : {}) }));
   const posts = blogs.filter((blog) => blog.live !== false).map((blog) => ({
     url: `${SITE_URL}/blogs/${blog.slug}`,
     lastModified: new Date(blog.updatedAt || blog.publishedAt),
