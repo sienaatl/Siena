@@ -26,7 +26,7 @@ export const INTRO = {
   heading: "Not the Afterthought",
   script: "the bar at siena",
   paras: [
-    "Plenty of restaurants have a bar. Fewer have one worth going to on its own. Siena Restaurant &amp; Bar runs twelve house cocktails, a thirty-bottle wine list and sixty-three spirits at 124 Devore Rd in downtown Alpharetta.",
+    "Looking for a cocktail bar in Alpharetta? Siena Restaurant &amp; Bar serves craft cocktails at 124 Devore Rd. Choose from twelve house cocktails, thirty wines and sixty-three spirits.",
     "Come for a drink and a couple of small plates, or sit at the bar and stay for the evening. Both work, and neither needs a reservation if there is room.",
   ],
   cta: { label: "SEE THE DRINKS", href: "/menus?tab=libations" },
