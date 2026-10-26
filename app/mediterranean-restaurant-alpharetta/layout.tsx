@@ -2,7 +2,7 @@ import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
-export const metadata = diningMetadata("mediterranean-restaurant-alpharetta", "Mediterranean Restaurant in Alpharetta", "Share Mediterranean mezze, grilled skewers and Italian favorites at Siena on Devore Road in Alpharetta. Explore the menu and reserve your table.");
+export const metadata = diningMetadata("mediterranean-restaurant-alpharetta", "Mediterranean Restaurant in Alpharetta", "Mediterranean dinner at Siena in Alpharetta: hummus, whipped feta, lamb chops and handmade pasta. Friday live music, free parking and reservations.");
 
 /**
  * The title is deliberately short. The root layout appends " | Siena" through its
