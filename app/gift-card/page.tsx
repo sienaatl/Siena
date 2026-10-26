@@ -2,13 +2,13 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 
-const GIFT_CARD_URL = "https://order.toasttab.com/egiftcards/siena-restaurant-bar-124-devore-road";
+const GIFT_CARD_URL = "https://order.toasttab.com/egiftcards/sienaatl";
 
 const steps = [
   {
     num: "01",
     title: "Choose Your Amount",
-    desc: "Select any denomination that fits the occasion, from a small treat to a full lavish dining experience.",
+    desc: "Choose a gift amount from $25 to $500 to suit the occasion.",
   },
   {
     num: "02",
