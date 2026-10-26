@@ -4,7 +4,8 @@ import { getRestaurantInfo } from "@/lib/restaurant";
 function Heading({ children }: { children: React.ReactNode }) {
   return (
     <h2
-      className="text-[#e0b265] text-[24px] md:text-[28px] leading-tight mt-10 mb-3 first:mt-0"
+      id={typeof children === "string" ? children.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-$/, "") : undefined}
+      className="text-[#e0b265] text-[24px] md:text-[28px] leading-tight scroll-mt-24 mt-10 mb-3 first:mt-0"
       style={{ fontFamily: "'Palmore-Light', serif" }}
     >
       {children}
@@ -48,6 +49,24 @@ export default async function PrivacyNotice() {
       {/* CONTENT */}
       <section className="w-full px-4 pb-[100px]" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[820px] mx-auto">
+          <nav aria-label="Privacy notice topics" className="border border-[#e0b265]/30 p-5 mb-8">
+            <h2 className="text-[#e0b265] text-xl mb-3">Find a topic</h2>
+            <p className="text-white/80 leading-relaxed mb-4">
+              Use these links to find the part of this notice you need. Learn what information we collect,
+              how we use it, and how to manage messages from Siena. For a question about your information
+              or our text messages, go to the contact section below.
+            </p>
+            <ul className="grid sm:grid-cols-2 gap-3 text-[#e0b265] underline underline-offset-4">
+              <li><a href="#1-information-we-collect">Information we collect</a></li>
+              <li><a href="#2-how-we-use-your-information">How we use information</a></li>
+              <li><a href="#4-how-sms-consent-is-obtained">Text message choices</a></li>
+              <li><a href="#6-sms-opt-out-and-help">Stop texts or get help</a></li>
+              <li><a href="#12-cookies-and-analytics">Cookies and site tools</a></li>
+              <li><a href="#16-communication-preferences">Email and message preferences</a></li>
+              <li><a href="#18-your-privacy-rights">Privacy rights</a></li>
+              <li><a href="#20-contact-siena-restaurant">Contact Siena</a></li>
+            </ul>
+          </nav>
           <Heading>About This Notice</Heading>
           <Paragraph>
             Siena Restaurant (&ldquo;Siena,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) respects

@@ -146,3 +146,14 @@ html {
   .siena-ui-56 { @apply text-white/60 text-[15px] leading-[2] flex justify-between gap-6 border-b border-white/5 last:border-0; }
   .siena-ui-57 { @apply border border-[#e0b265] text-[#e0b265] px-6 py-2.5 text-[14px] leading-[24px] inline-flex items-center gap-2 hover:bg-[#e0b265] hover:text-[#1b312e] transition; }
 }
+
+
+/* One repeating background replaces sixty decorative DOM elements. */
+.siena-diamond-strip {
+  width: 100%;
+  height: 28px;
+  background-color: #e0b265;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='28'%3E%3Cpath d='M21 7L28 14L21 21L14 14Z' fill='%231b312e'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center;
+}

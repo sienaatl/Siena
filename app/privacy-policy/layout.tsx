@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Notice | Siena Restaurant",
+  title: "Privacy Notice",
   description:
     "Learn how Siena Restaurant collects, uses, and protects personal information across reservations, events, guest communications, SMS messaging, and newsletter sign-ups.",
   openGraph: {
