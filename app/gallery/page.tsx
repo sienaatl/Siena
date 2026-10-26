@@ -105,13 +105,13 @@ export default function Gallery() {
             <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[30px] sm:text-[42px] md:text-[62px] lg:text-[80px] max-w-[1000px] leading-[0.95] tracking-[0.04em] uppercase"
+            className="text-[#e0b265] text-[28px] sm:text-[38px] md:text-[52px] lg:text-[68px] max-w-[1000px] leading-[0.95] tracking-[0.04em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            SIENA RESTAURANT GALLERY
+            SIENA RESTAURANT PHOTOS IN ALPHARETTA
           </motion.h1>
           <motion.div
             className="flex items-center gap-3 mt-2"
@@ -265,6 +265,32 @@ export default function Gallery() {
               </button>
             </div>
           )}
+        </div>
+      </section>
+
+      <section className="bg-[#030302] px-6 py-14">
+        <div className="max-w-4xl mx-auto text-white/80 text-base leading-relaxed">
+          <h2 className="text-[#e0b265] text-3xl mb-8">From photos to dinner plans</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-[#e0b265] text-xl mb-3">Food to share</h3>
+              <p>Our Mediterranean and Italian menu includes small plates, pasta and grilled dishes.
+                Start with hummus or whipped feta, then choose lamb chops, seafood or pasta.
+                <Link href="/menus" className="text-[#e0b265] underline"> Check the current menu</Link> for dishes and prices.</p>
+            </div>
+            <div>
+              <h3 className="text-[#e0b265] text-xl mb-3">A night at Siena</h3>
+              <p>Visit us at 124 Devore Road in Alpharetta. Come for dinner, cocktails or
+                <Link href="/live-music-fridays" className="text-[#e0b265] underline"> Friday live music, 7–10 PM</Link>.
+                Free parking is available. Reserve ahead, or walk in when there is room.</p>
+            </div>
+            <div>
+              <h3 className="text-[#e0b265] text-xl mb-3">Your group and date</h3>
+              <p>Use the photos to explore the dining room, then tell our team about your
+                guest count and preferred date. Photos show past dishes and gatherings;
+                they do not confirm space or menu availability. <Link href="/event-inquiry" className="text-[#e0b265] underline">Ask about a group visit</Link>.</p>
+            </div>
+          </div>
         </div>
       </section>
 
