@@ -23,6 +23,7 @@ export const INTRO = {
   paras: [
     "Siena Restaurant &amp; Bar serves Mediterranean and Italian dinner at 124 Devore Rd in Alpharetta. Start with hummus or whipped feta, share lamb chops or seafood, and add handmade pasta and signature cocktails to the table.",
     "Explore our <a href=\"/menus\">dinner and drinks menu</a>, plan a <a href=\"/date-night-alpharetta\">date night</a> or book dinner with friends. Friday live music runs 7–10 PM; happy hour is Tuesday–Thursday, 4–6 PM. Free parking and walk-ins welcome.",
+    "See the <a href=\"/gallery\">dining room and food photos</a> before you visit. Our gallery shows the room, dishes and cocktails; check the current menu for what is available on your date.",
   ],
   cta: { label: "SEE THE MENU", href: "/menus" },
 };
