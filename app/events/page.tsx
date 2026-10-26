@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import EventsSlider from "@/components/EventsSlider";
 import TestimonialsSlider from "@/components/TestimonialsSlider";
@@ -174,14 +175,18 @@ export default function Events() {
         <div className="w-full max-w-[1180px] mx-auto mt-6">
           <EventsSlider />
         </div>
+        <p className="text-white/70 text-sm leading-relaxed text-center max-w-[780px] mx-auto mt-8 px-4">
+          Looking for a past seasonal event? Read our{" "}
+          <Link href="/alpharetta-restaurant-week" className="text-[#e0b265] underline underline-offset-4 hover:text-white">
+            October 2026 Restaurant Week archive
+          </Link>. The October 10–17 event has ended; visit our{" "}
+          <Link href="/menus" className="text-[#e0b265] underline underline-offset-4 hover:text-white">current menu</Link>{" "}
+          to plan your next dinner.
+        </p>
       </section>
 
       {/* DIVIDER — gold strip of diamonds */}
-      <section className="relative w-full h-[28px] overflow-hidden bg-[#e0b265] flex items-center justify-center gap-8">
-        {Array.from({ length: 60 }).map((_, i) => (
-          <span key={i} className="w-[10px] h-[10px] flex-shrink-0 rotate-45 bg-[#1b312e]" />
-        ))}
-      </section>
+      <div aria-hidden="true" className="siena-diamond-strip" />
 
       <ViewOurSpace />
 
