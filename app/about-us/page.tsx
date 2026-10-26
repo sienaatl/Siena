@@ -141,7 +141,7 @@ export default function AboutUs() {
             <p className="text-white/80 text-[16px] md:text-[18px] leading-[1.8]">
               Siena Restaurant &amp; Bar brings Mediterranean and Italian dining to
               124 Devore Road in Alpharetta, Georgia. Our menu brings together mezze,
-              handmade pasta, seafood and plates to share. Come for dinner with friends,
+              handmade pasta, seafood and small plates to share. Come for dinner with friends,
               a date night or a celebration around the table.
             </p>
             <p className="text-white/70 text-[16px] md:text-[18px] leading-[1.8]">
@@ -157,6 +157,28 @@ export default function AboutUs() {
               <Link href="/reservations" className="text-[#e0b265] underline">reserve a table</Link> before you visit.
             </p>
           </motion.div>
+
+          <div className="w-full mt-10 text-left text-white/80 text-base leading-relaxed space-y-5">
+            <h2 className="text-[#e0b265] text-2xl">Plan your visit to Siena</h2>
+            <div>
+              <h3 className="text-[#e0b265] text-lg mb-2">What can we order?</h3>
+              <p>Start with small plates such as hummus or whipped feta. Choose handmade pasta,
+                lamb chops or seafood for dinner. Our Mediterranean and Italian menu works for
+                a meal to share or a main dish of your own. <Link href="/menus" className="text-[#e0b265] underline">Browse current dishes and prices</Link>.</p>
+            </div>
+            <div>
+              <h3 className="text-[#e0b265] text-lg mb-2">When should we come?</h3>
+              <p>Siena serves dinner Tuesday through Sunday and is closed on Mondays.
+                Happy hour is Tuesday–Thursday, 4–6 PM. Friday live music runs 7–10 PM.
+                Check our <Link href="/contact-us" className="text-[#e0b265] underline">hours and directions</Link> before traveling.</p>
+            </div>
+            <div>
+              <h3 className="text-[#e0b265] text-lg mb-2">Can we plan a group dinner?</h3>
+              <p>Yes. Send your date and guest count through our <Link href="/event-inquiry" className="text-[#e0b265] underline">event inquiry form</Link>.
+                The team can discuss space and availability for your gathering.
+                Browse <Link href="/gallery" className="text-[#e0b265] underline">Siena restaurant photos</Link> to see the dining room before you ask.</p>
+            </div>
+          </div>
 
           {/* Image */}
           <motion.div
