@@ -77,11 +77,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://sienaatl.com"),
   title: {
-    default: "Siena Restaurant | Italian Mediterranean Dining Alpharetta",
+    default: "Mediterranean & Italian Restaurant in Alpharetta | Siena",
     template: "%s | Siena",
   },
   description:
-    "Italian Mediterranean dining in Alpharetta. Handmade pasta, fresh seafood, cocktails & live music. Near Avalon. Reserve your table at Siena Restaurant.",
+    "Mediterranean and Italian dinner at Siena in Alpharetta: mezze, handmade pasta, seafood and signature cocktails. Friday live music. Free parking. Reserve a table.",
   keywords: [
     "Siena Restaurant",
     "Italian Restaurant Alpharetta",
@@ -99,15 +99,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://sienaatl.com",
     siteName: "Siena Restaurant",
-    title: "Siena Restaurant | Italian Mediterranean Dining Alpharetta",
+    title: "Mediterranean & Italian Restaurant in Alpharetta | Siena",
     description:
-      "Italian Mediterranean dining in Alpharetta. Handmade pasta, fresh seafood, cocktails & live music. Near Avalon. Reserve your table at Siena Restaurant.",
+      "Mediterranean and Italian dinner at Siena in Alpharetta: mezze, handmade pasta, seafood and signature cocktails. Friday live music. Free parking. Reserve a table.",
     images: [{ url: "/assets/Siena_20.03.26-A-02.webp", width: 1200, height: 630, alt: "Siena Restaurant in Alpharetta, Georgia" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Siena Restaurant | Italian Mediterranean Dining Alpharetta",
-    description: "Italian Mediterranean dining in Alpharetta. Handmade pasta, fresh seafood, cocktails & live music. Near Avalon. Reserve your table at Siena Restaurant.",
+    title: "Mediterranean & Italian Restaurant in Alpharetta | Siena",
+    description: "Mediterranean and Italian dinner at Siena in Alpharetta: mezze, handmade pasta, seafood and signature cocktails. Friday live music. Free parking. Reserve a table.",
     images: ["/assets/Siena_20.03.26-A-02.webp"],
   },
   robots: {
