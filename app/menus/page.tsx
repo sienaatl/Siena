@@ -320,6 +320,18 @@ function MenuContent() {
 
       {/* MENU SECTIONS */}
       <div className="max-w-[1180px] mx-auto pb-16 pt-8">
+        <div className="max-w-3xl mx-auto px-6 mb-10 text-white/80 text-base leading-relaxed space-y-3">
+          <p>
+            Browse the Siena Restaurant menu for Mediterranean and Italian dining in
+            Alpharetta. Use the tabs above to view dinner, happy hour and drinks.
+            Start with hummus or crispy cauliflower with sweet chili aioli, then
+            explore pasta, seafood and grilled dishes below.
+          </p>
+          <p>
+            Each dish lists its ingredients and price. Happy hour runs Tuesday
+            through Thursday, 4–6 PM. Ask our team about dietary needs before ordering.
+          </p>
+        </div>
         {loading && (
           <div className="flex items-center justify-center py-24">
             <div className="flex flex-col items-center gap-4">
