@@ -135,13 +135,14 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Blog imagery is content-addressed by filename like /assets, so it gets
-        // the same immutable lifetime rather than being revalidated every visit.
-        source: "/blogs/(.*)",
+        // Cache blog images only. Article HTML must retain Next.js page caching
+        // so content corrections can refresh instead of being held for a year.
+        // These public filenames are reusable, so clients must eventually revalidate.
+        source: "/blogs/:image([^/]+\\.(?:avif|webp|png|jpe?g|gif|svg))",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
+            value: "public, max-age=86400, must-revalidate",
           },
         ],
       },
