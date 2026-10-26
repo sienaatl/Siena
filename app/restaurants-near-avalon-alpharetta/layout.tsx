@@ -2,7 +2,7 @@ import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
-export const metadata = diningMetadata("restaurants-near-avalon-alpharetta", "Restaurant Near Avalon in Alpharetta", "Planning dinner before or after Avalon? Discover Siena at 124 Devore Road in Alpharetta for Mediterranean plates, pasta and cocktails. Reserve a table.");
+export const metadata = diningMetadata("restaurants-near-avalon-alpharetta", "Restaurant Near Avalon in Alpharetta", "Exploring restaurants near Avalon in Alpharetta? Visit Siena on Devore Road for Mediterranean and Italian dinner. Free parking. Reserve a table.");
 
 /**
  * Short title on purpose. The root layout appends " | Siena" through its title
