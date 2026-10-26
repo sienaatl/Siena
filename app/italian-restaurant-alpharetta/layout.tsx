@@ -5,12 +5,12 @@ import { FAQS } from "./content";
 export const metadata: Metadata = {
   title: "Italian Restaurant in Alpharetta | House-Made Pasta",
   description:
-    "House-made rigatoni, bucatini & Italian classics in Alpharetta. Fresh pasta, Italian dishes & Friday live music. Reserve your table at Siena.",
+    "Siena is an Italian restaurant in Alpharetta serving handmade pasta and Mediterranean plates. Friday live music, free parking and online reservations.",
   alternates: { canonical: "/italian-restaurant-alpharetta" },
   openGraph: {
     title: "Italian Restaurant in Alpharetta | House-Made Pasta | Siena",
     description:
-      "House-made rigatoni, bucatini & Italian classics in Alpharetta. Fresh pasta, Italian dishes & Friday live music. Reserve your table at Siena.",
+      "Siena is an Italian restaurant in Alpharetta serving handmade pasta and Mediterranean plates. Friday live music, free parking and online reservations.",
     url: "https://sienaatl.com/italian-restaurant-alpharetta",
     type: "website",
     images: [{ url: "https://sienaatl.com/assets/Siena_20.03.26-A-01.webp" }],
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Italian Restaurant in Alpharetta | House-Made Pasta | Siena",
-    description: "House-made rigatoni, bucatini & Italian classics in Alpharetta. Fresh pasta, Italian dishes & Friday live music. Reserve your table at Siena.",
+    description: "Siena is an Italian restaurant in Alpharetta serving handmade pasta and Mediterranean plates. Friday live music, free parking and online reservations.",
   },
 };
 

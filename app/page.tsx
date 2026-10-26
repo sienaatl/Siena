@@ -364,6 +364,7 @@ export default function Home() {
               <Link href="/cocktail-bar-alpharetta">Signature cocktails</Link>
               <Link href="/menus">Dinner and drinks menu</Link>
               <Link href="/happy-hour-alpharetta">Happy hour</Link>
+              <Link href="/gallery">Siena restaurant photos</Link>
             </nav>
 
           <MotionLink
