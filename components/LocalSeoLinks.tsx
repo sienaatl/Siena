@@ -32,7 +32,7 @@ export default function LocalSeoLinks() {
         <p className="text-[#e0b265] text-sm uppercase tracking-[0.24em] text-center mb-5">Explore Siena</p>
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
           {links.map(([label, href]) => (
-            <Link key={href} href={href} className="text-white/80 hover:text-[#e0b265] transition text-sm md:text-[15px] underline-offset-4 hover:underline">
+            <Link key={href} href={href} className="siena-ui-34">
               {label}
             </Link>
           ))}
