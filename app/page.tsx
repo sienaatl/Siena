@@ -338,20 +338,32 @@ export default function Home() {
               </motion.span>
             </div>
 
-            <motion.p
-              className="text-white/80 text-[16px] md:text-[18px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
+            <motion.div
+              className="text-white/80 text-[16px] md:text-[18px] lg:text-xl leading-[1.6] max-w-[1180px] mt-12 md:mt-25 space-y-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.38, delay: 0.24, ease: "easeOut" }}
             >
-              Siena Restaurant &amp; Bar brings Mediterranean and Italian dining to 124 Devore Rd in downtown Alpharetta. Come for handmade pasta, seafood and shareable plates, then stay for signature cocktails such as the Monaco and Lady Godiva. Join us for live music on Fridays from 7 to 10 PM, or happy hour Tuesday through Thursday from 4 to 6 PM. Free parking and walk-ins welcome.
-            </motion.p>
+              <p>
+                Looking for restaurants in Alpharetta? Visit Siena Restaurant &amp; Bar
+                at 124 Devore Rd for Mediterranean and Italian dinner. Choose handmade
+                pasta, seafood or small plates to share. Pair your meal with a signature
+                cocktail such as the Monaco or Lady Godiva.
+              </p>
+              <p>
+                Join us for Friday live music from 7 to 10 PM. Happy hour runs Tuesday
+                through Thursday from 4 to 6 PM. Free parking is available, and walk-ins
+                are welcome when space allows.
+              </p>
+            </motion.div>
 
             <nav aria-label="Plan dinner at Siena" className="flex flex-wrap justify-center gap-x-6 gap-y-3 mt-6 text-[#e0b265] text-sm underline underline-offset-4">
               <Link href="/reservations">Reserve a table</Link>
               <Link href="/live-music-fridays">Friday live music</Link>
               <Link href="/cocktail-bar-alpharetta">Signature cocktails</Link>
+              <Link href="/menus">Dinner and drinks menu</Link>
+              <Link href="/happy-hour-alpharetta">Happy hour</Link>
             </nav>
 
           <MotionLink
