@@ -243,13 +243,13 @@ function MenuContent() {
             <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[38px] sm:text-[52px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[30px] sm:text-[42px] md:text-[62px] lg:text-[80px] max-w-[1000px] leading-[0.95] tracking-[0.04em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            MENU
+            SIENA RESTAURANT MENU
           </motion.h1>
           <motion.div
             className="flex items-center gap-3 mt-4"

@@ -3,13 +3,13 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import siteData from "@/lib/site-data.json";
 
 export const metadata: Metadata = {
-  title: "Menus | Mediterranean & Italian, Alpharetta",
+  title: { absolute: "Siena Restaurant Menu | Mediterranean & Italian, Alpharetta" },
   description:
-    "Explore Siena's Mediterranean and Italian dinner menu in downtown Alpharetta: pasta, seafood, shareable plates and signature Monaco and Lady Godiva cocktails.",
+    "Browse the Siena Restaurant menu in Alpharetta: Mediterranean and Italian dinner, pasta, seafood, sharing plates and cocktails. Happy hour Tuesday–Thursday, 4–6 PM.",
   openGraph: {
     title: "Siena Restaurant Alpharetta Menu | Mediterranean Dinner Menu",
     description:
-      "Explore Siena's Mediterranean and Italian dinner menu in downtown Alpharetta: pasta, seafood, shareable plates and signature Monaco and Lady Godiva cocktails.",
+      "Browse the Siena Restaurant menu in Alpharetta: Mediterranean and Italian dinner, pasta, seafood, sharing plates and cocktails. Happy hour Tuesday–Thursday, 4–6 PM.",
     url: "https://sienaatl.com/menus",
     images: [{ url: "/assets/Siena_20.03.26-PS-NarissaChickenLolipapas.webp", alt: "Siena menu dishes" }],
   },
