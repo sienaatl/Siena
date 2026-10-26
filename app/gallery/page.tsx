@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 
 const images: string[] = [];
 
@@ -172,8 +173,19 @@ export default function Gallery() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
           >
-            Explore the ambiance, flavors, and moments that make Siena a place worth returning to.
+            Take a look inside Siena Restaurant &amp; Bar in Alpharetta. Explore
+            photographs of our dining room, dishes, cocktails and gatherings, then
+            picture your own evening here. Select a photograph for a closer look,
+            or load more images to continue browsing. For current dishes and prices,
+            use our menu; photographs may show items from earlier menus or events.
           </motion.p>
+          <p className="text-white/80 text-base leading-relaxed max-w-[650px] mt-6">
+            Ready to visit? <Link className="text-[#e0b265] underline" href="/menus">Explore dinner and drinks</Link>, browse the <Link className="text-[#e0b265] underline" href="/menus?tab=wines">wine list</Link> or <Link className="text-[#e0b265] underline" href="/reservations">reserve a table</Link> at
+            124 Devore Road. For Friday music, check our <Link className="text-[#e0b265] underline" href="/live-music-fridays">live music page</Link>.
+            Planning a birthday, celebration or business dinner? <Link className="text-[#e0b265] underline" href="/event-inquiry">Ask our event team</Link> about
+            your date and group before choosing a space. Free parking is available,
+            and walk-ins are welcome when there is room.
+          </p>
         </div>
       </section>
 
