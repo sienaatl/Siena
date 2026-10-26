@@ -49,7 +49,7 @@ export default function Header() {
                 ? "h-[60px] md:h-[60px] bg-[#1B312E] shadow-sm"
                 : "h-[72px] md:h-[80px] backdrop-blur-md border-white/10"
                 }`}>
-                <div className="max-w-[1180px] mx-auto h-full flex items-center justify-between px-4 md:px-0 relative">
+                <div className="siena-ui-1">
 
                     <Link href="/" className="block">
                         <div className={`transition-all duration-300 ${scrolled
@@ -61,13 +61,13 @@ export default function Header() {
                                 alt="Siena Restaurant Logo"
                                 priority
                                 sizes="90px"
-                                className="w-full h-full object-contain cursor-pointer transition-all duration-300"
+                                className="siena-ui-2"
                             />
                         </div>
                     </Link>
 
                     {/* Nav Desktop */}
-                    <nav className="hidden md:flex items-center gap-0 lg:gap-1 text-[15px] font-normal uppercase tracking-wide absolute left-1/2 -translate-x-1/2">
+                    <nav className="siena-ui-3">
                         <Link href="/" className={`px-3 flex justify-center relative text-white ${scrolled && pathname === "/" ? "text-[#E0B265] after:w-full" : ""
                             } after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full`}>
                             Home
@@ -76,7 +76,7 @@ export default function Header() {
                             } after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full`}>
                             Menu
                         </Link>
-                        <Link href="/events" className="px-3 whitespace-nowrap flex justify-center relative text-white after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full">
+                        <Link href="/events" className="siena-ui-4">
                             Events
                         </Link>
                         <Link href="/gift-card" className={`px-3 whitespace-nowrap flex justify-center relative text-white ${scrolled && pathname === "/gift-card" ? "text-[#E0B265] after:w-full" : ""
@@ -86,7 +86,7 @@ export default function Header() {
 
 
                         <div className="relative group inline-block z-[50]">
-                            <div className="px-3 flex items-center gap-1 justify-center relative cursor-pointer text-white after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full">
+                            <div className="siena-ui-5">
                                 More
                                 <img width={24} height={24} loading="lazy"
                                     src="/assets/Arrow_Down.svg"
@@ -95,23 +95,23 @@ export default function Header() {
                                 />
                             </div>
 
-                            <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-[280px] bg-[#1B312E] shadow-xl p-4 flex flex-col gap-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                                <Link href="/about-us" className="flex items-center justify-center gap-4 p-3 hover:bg-[#E0B265] hover:text-[#1B312E] transition text-white">
+                            <div className="siena-ui-6">
+                                <Link href="/about-us" className="siena-ui-7">
                                     <span className="text-[15px] font-normal uppercase tracking-wide text-center">About Us</span>
                                 </Link>
-                                <Link href="/gallery" className="flex items-center justify-center gap-4 p-3 hover:bg-[#E0B265] hover:text-[#1B312E] transition text-white">
+                                <Link href="/gallery" className="siena-ui-7">
                                     <span className="text-[15px] font-normal uppercase tracking-wide text-center">Gallery</span>
                                 </Link>
-                                <Link href="/live-music-fridays" className="flex items-center justify-center gap-4 p-3 hover:bg-[#E0B265] hover:text-[#1B312E] transition text-white">
+                                <Link href="/live-music-fridays" className="siena-ui-7">
                                     <span className="text-[15px] font-normal uppercase tracking-wide text-center">Live Music Fridays</span>
                                 </Link>
-                                <Link href="/careers" className="flex items-center justify-center gap-4 p-3 hover:bg-[#E0B265] hover:text-[#1B312E] transition text-white">
+                                <Link href="/careers" className="siena-ui-7">
                                     <span className="text-[15px] font-normal uppercase tracking-wide text-center">Careers</span>
                                 </Link>
-                                <Link href="/blogs" className="flex items-center justify-center gap-4 p-3 hover:bg-[#E0B265] hover:text-[#1B312E] transition text-white">
+                                <Link href="/blogs" className="siena-ui-7">
                                     <span className="text-[15px] font-normal uppercase tracking-wide text-center">Blogs</span>
                                 </Link>
-                                <Link href="/contact-us" className="flex items-center justify-center gap-4 p-3 hover:bg-[#E0B265] hover:text-[#1B312E] transition text-white">
+                                <Link href="/contact-us" className="siena-ui-7">
                                     <span className="text-[15px] font-normal uppercase tracking-wide text-center">Contact Us</span>
                                 </Link>
                             </div>
@@ -121,13 +121,13 @@ export default function Header() {
                     {/* Right side */}
                     <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-4">
                         <Link href={ORDER_ONLINE_URL} target="_blank" rel="noopener noreferrer">
-                            <button className="cursor-pointer px-2 py-2 sm:px-3 sm:py-[11px] font-normal text-[10px] sm:text-[12px] leading-[16px] sm:leading-[18px] tracking-wide border border-[#E0B265] bg-[#1B312E]/50 backdrop-blur-sm text-[#E0B265] transition hover:bg-[#E0B265] hover:text-[#1B312E] whitespace-nowrap">
+                            <button className="siena-ui-8">
                                 ORDER ONLINE
                             </button>
                         </Link>
 
                         <Link href="/reservations">
-                            <button className="cursor-pointer px-2.5 py-2 sm:px-4 lg:px-6 sm:py-[11px] font-normal text-[10px] sm:text-[12px] lg:text-[13px] leading-[16px] sm:leading-[18px] tracking-wide border transition bg-[#E0B265] text-[#1B312E] border-transparent hover:bg-white hover:text-[#1B312E] hover:border-white">
+                            <button className="siena-ui-9">
                                 RESERVATIONS
                             </button>
                         </Link>
@@ -186,7 +186,7 @@ export default function Header() {
                     }`}
             >
                 {/* Header interno del menú */}
-                <div className="flex items-center justify-between px-4 h-[72px] border-b border-white/10">
+                <div className="siena-ui-10">
                     <Link href="/" onClick={() => setMenuOpen(false)} className="block">
                         <div className="w-[70px] h-[40px]">
                             <img width={746} height={414} loading="lazy"
@@ -200,7 +200,7 @@ export default function Header() {
                     <button
                         onClick={() => setMenuOpen(false)}
                         aria-label="Close menu"
-                        className="flex items-center justify-center w-[42px] h-[42px] bg-[#E0B265] cursor-pointer transition-colors duration-300 hover:bg-[#F5EFDD] hover:border hover:border-[#1B312E] group"
+                        className="siena-ui-11 group"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

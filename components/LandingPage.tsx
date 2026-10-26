@@ -105,7 +105,7 @@ function GoldButton({ href, label }: { href: string; label: string }) {
     <Link
       href={href}
       data-booking-cta={href === "/reservations" || href === "/event-inquiry" || href.startsWith("tel:") ? "true" : undefined}
-      className="group bg-[#e0b265] text-[#1b312e] px-6 md:px-9 py-2.5 text-[14px] md:text-[15px] leading-[24px] inline-flex items-center gap-2 border border-transparent hover:bg-white hover:border-white transition"
+      className="siena-ui-35 group"
     >
       <span>{label}</span>
       <Arrow />
@@ -197,7 +197,7 @@ function ImageFrame({ src, alt, className = "" }: { src: string; alt: string; cl
         loading="lazy"
         className="object-cover transition-transform duration-700 group-hover:scale-110"
       />
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500 pointer-events-none" />
+      <div className="siena-ui-36" />
       <div className="absolute inset-4 border border-[#e0b265] pointer-events-none" />
     </div>
   );
@@ -234,10 +234,10 @@ export default function LandingPage({
         >
           <Image src={heroImage} alt={heroAlt} fill priority sizes="100vw" className="object-cover object-center" />
         </motion.div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(3,3,2,0.65)_0%,rgba(3,3,2,0.25)_45%,rgba(3,3,2,0.85)_100%)]" />
+        <div className="siena-ui-37" />
 
         {/* Padded for the fixed header (72px, 80px from md) so the h1 never sits under it. */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-5 pt-[72px] md:pt-[80px] pb-16 md:pb-20">
+        <div className="siena-ui-38">
           <motion.img
             src="/assets/icono_123.svg"
             alt=""
@@ -248,7 +248,7 @@ export default function LandingPage({
           />
           <div className={`relative inline-block ${h1Script ? "mb-[60px] md:mb-[80px]" : "mb-8"}`}>
             <motion.h1
-              className="text-white text-[32px] sm:text-[42px] md:text-[62px] lg:text-[80px] leading-[0.95] tracking-[0.04em] uppercase max-w-[1100px] break-words"
+              className="siena-ui-39"
               style={{ fontFamily: "'Palmore-Light', serif" }}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -258,7 +258,7 @@ export default function LandingPage({
             </motion.h1>
             {h1Script && (
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[22%] text-[#e0b265] text-[21px] sm:text-[30px] md:text-[52px] lg:text-[70px] leading-none whitespace-nowrap"
+                className="siena-ui-40"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: "3px 3px 0 #030302,-3px -3px 0 #030302,3px -3px 0 #030302,-3px 3px 0 #030302",
@@ -281,7 +281,7 @@ export default function LandingPage({
             <GoldButton href={primaryHref} label={primaryLabel} />
             <a
               href={`tel:${info.phone.replace(/[^\d+]/g, "")}`}
-              className="group border border-white/70 text-white px-6 md:px-9 py-2.5 text-[14px] md:text-[15px] leading-[24px] inline-flex items-center gap-2 hover:bg-white hover:text-[#1b312e] transition"
+              className="siena-ui-41 group"
             >
               <span>{info.phone}</span>
             </a>
@@ -289,12 +289,12 @@ export default function LandingPage({
         </div>
 
         {/* Address + phone bar, same as the homepage hero */}
-        <div className="w-full max-w-[1180px] absolute bottom-0 left-1/2 -translate-x-1/2 z-10 py-4 hidden md:flex items-center justify-between px-4">
+        <div className="siena-ui-42">
           <a
             href={info.maps_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 text-white/80 text-[15px] tracking-wide hover:text-[#E0B265] transition"
+            className="siena-ui-43 group"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:opacity-100 flex-shrink-0">
               <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
@@ -302,7 +302,7 @@ export default function LandingPage({
             </svg>
             <span>{info.address}</span>
           </a>
-          <Link href="/menus" className="flex items-center gap-2 text-white/80 text-[15px] tracking-wide hover:text-[#E0B265] transition">
+          <Link href="/menus" className="siena-ui-43">
             <span>VIEW THE MENUS</span>
             <Arrow fill="currentColor" />
           </Link>
@@ -320,7 +320,7 @@ export default function LandingPage({
             <div key={r} className="flex items-center">
               {marquee.map((m, i) => (
                 <span key={i} className="flex items-center">
-                  <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">{m}</span>
+                  <span className="siena-ui-44">{m}</span>
                   <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
                 </span>
               ))}
@@ -403,7 +403,7 @@ export default function LandingPage({
                       {b.paras.map((p, j) => (
                         <p
                           key={j}
-                          className="text-white/75 text-[16px] md:text-[17px] leading-[1.8] [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-white"
+                          className="siena-ui-45"
                           dangerouslySetInnerHTML={{ __html: p }}
                         />
                       ))}
@@ -429,7 +429,7 @@ export default function LandingPage({
                 <SectionTitle heading={b.heading} script={b.script} icon={b.icon} bg={b.bg} />
                 {b.intro && (
                   <p
-                    className="text-white/75 text-[16px] md:text-[18px] leading-[1.8] max-w-[820px] mx-auto text-center mb-12 [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4"
+                    className="siena-ui-46"
                     dangerouslySetInnerHTML={{ __html: b.intro }}
                   />
                 )}
@@ -457,7 +457,7 @@ export default function LandingPage({
                         loading="lazy"
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
+                      <div className="siena-ui-47" />
                       <div className="absolute inset-4 border border-[#e0b265]">
                         <div className="flex flex-col justify-end h-full p-4 md:p-6">
                           <div className="flex items-end justify-between gap-3">
@@ -465,7 +465,7 @@ export default function LandingPage({
                               <h3 className="text-white text-[24px] md:text-[30px] font-semibold leading-tight">{it.title}</h3>
                               <p className="text-white/80 text-[14px] md:text-[17px] mt-1">{it.sub}</p>
                             </div>
-                            <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
+                            <div className="siena-ui-48">
                               <Arrow fill="white" />
                             </div>
                           </div>
@@ -486,7 +486,7 @@ export default function LandingPage({
               <SectionTitle heading={b.heading} script={b.script} icon={b.icon} bg={b.bg} />
               {b.intro && (
                 <p
-                  className="text-white/75 text-[16px] md:text-[18px] leading-[1.8] max-w-[820px] mx-auto text-center mb-12 [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4"
+                  className="siena-ui-46"
                   dangerouslySetInnerHTML={{ __html: b.intro }}
                 />
               )}
@@ -503,13 +503,13 @@ export default function LandingPage({
                   >
                     <span className="text-[#e0b265] text-[32px] leading-none select-none">✦</span>
                     <h3
-                      className="text-[#e0b265] text-[22px] md:text-[24px] leading-tight tracking-wide uppercase"
+                      className="siena-ui-49"
                       style={{ fontFamily: "'Palmore-Light', serif" }}
                     >
                       {c.title}
                     </h3>
                     <p
-                      className="text-white/60 text-[15px] md:text-[16px] leading-[1.75] [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4"
+                      className="siena-ui-50"
                       dangerouslySetInnerHTML={{ __html: c.desc }}
                     />
                   </motion.div>
@@ -563,7 +563,7 @@ export default function LandingPage({
                   href={REVIEW_STATS.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/70 text-[14px] tracking-[0.15em] uppercase border-b border-white/30 pb-0.5 hover:text-[#e0b265] hover:border-[#e0b265] transition"
+                  className="siena-ui-51"
                 >
                   Read our {REVIEW_STATS.countFloor}+ Google reviews
                 </a>
@@ -607,7 +607,7 @@ export default function LandingPage({
               >
                 <h3 className="text-white text-[18px] md:text-[19px] font-semibold mb-2">{f.q}</h3>
                 <p
-                  className="text-white/70 text-[16px] leading-[1.8] [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4"
+                  className="siena-ui-52"
                   dangerouslySetInnerHTML={{ __html: f.a }}
                 />
               </motion.div>
@@ -627,7 +627,7 @@ export default function LandingPage({
             {closing.paras.map((p, i) => (
               <p
                 key={i}
-                className="text-white/75 text-[16px] md:text-[17px] leading-[1.8] [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4"
+                className="siena-ui-53"
                 dangerouslySetInnerHTML={{ __html: p }}
               />
             ))}
@@ -648,7 +648,7 @@ export default function LandingPage({
                 <span className="text-white/85 text-[16px] leading-[1.7]">{info.address}</span>
                 <a
                   href={`tel:${info.phone.replace(/[^\d+]/g, "")}`}
-                  className="text-white/85 text-[16px] leading-[1.7] hover:text-[#e0b265] transition w-fit"
+                  className="siena-ui-54"
                 >
                   {info.phone}
                 </a>
@@ -657,7 +657,7 @@ export default function LandingPage({
                 href={info.maps_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-5 text-[#e0b265] text-[13px] tracking-[0.15em] uppercase border-b border-[#e0b265]/50 pb-0.5 hover:text-white hover:border-white transition"
+                className="siena-ui-55"
               >
                 Get Directions <Arrow fill="currentColor" />
               </a>
@@ -682,7 +682,7 @@ export default function LandingPage({
             >
               <p className="text-[#e0b265] text-[13px] tracking-[0.2em] uppercase mb-4">Opening Hours</p>
               {info.hours.map((h) => (
-                <p key={h.label} className="text-white/60 text-[15px] leading-[2] flex justify-between gap-6 border-b border-white/5 last:border-0">
+                <p key={h.label} className="siena-ui-56">
                   <span>{h.label}</span>
                   <span className="text-white/85 whitespace-nowrap">{h.value}</span>
                 </p>
@@ -691,7 +691,7 @@ export default function LandingPage({
                 <GoldButton href={primaryHref} label={primaryLabel} />
                 <Link
                   href="/menus"
-                  className="border border-[#e0b265] text-[#e0b265] px-6 py-2.5 text-[14px] leading-[24px] inline-flex items-center gap-2 hover:bg-[#e0b265] hover:text-[#1b312e] transition"
+                  className="siena-ui-57"
                 >
                   <span>MENUS</span>
                 </Link>
