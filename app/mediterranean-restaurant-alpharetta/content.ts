@@ -6,7 +6,7 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
  * Dishes, drinks and hours follow lib/site-data.json.
  */
 
-export const H1 = "A Mediterranean Restaurant in Alpharetta";
+export const H1 = "Mediterranean Restaurant in Alpharetta";
 export const H1_SCRIPT = "built for sharing";
 
 export const MARQUEE = [
@@ -18,11 +18,11 @@ export const MARQUEE = [
 
 export const INTRO = {
   icon: "/assets/icono_about1.svg",
-  heading: "Fresh, Warm, Passed Around",
+  heading: "Mediterranean Dinner, Made for Sharing",
   script: "medi-talian",
   paras: [
-    "Looking for a Mediterranean restaurant in Alpharetta that feels fresh and a little special? Siena Restaurant &amp; Bar sits at 124 Devore Rd in downtown Alpharetta, minutes from Avalon and the Ameris Bank Amphitheatre.",
-    "Siena blends Mediterranean and <a href=\"/italian-restaurant-alpharetta\">Italian</a> cooking into one menu the team calls Medi-talian. Mezze, hummus, grilled skewers, fresh salads and house-made pasta, all meant to be passed around the table.",
+    "Siena Restaurant &amp; Bar serves Mediterranean and Italian dinner at 124 Devore Rd in Alpharetta. Start with hummus or whipped feta, share lamb chops or seafood, and add handmade pasta and signature cocktails to the table.",
+    "Explore our <a href=\"/menus\">dinner and drinks menu</a>, plan a <a href=\"/date-night-alpharetta\">date night</a> or book dinner with friends. Friday live music runs 7–10 PM; happy hour is Tuesday–Thursday, 4–6 PM. Free parking and walk-ins welcome.",
   ],
   cta: { label: "SEE THE MENU", href: "/menus" },
 };
@@ -110,9 +110,9 @@ export const BLOCKS: Block[] = [
     alt: "The bar at Siena Restaurant & Bar in Alpharetta, with orange leather stools and a stocked back bar",
     paras: [
       "Siena is upscale but comfortable. The room is warm, with bold lighting that makes it feel special without being stiff. Nice shirt or date-night outfit, you fit either way.",
-      "The bar is a real draw. Try the Italian Job or the espresso martini. There is a happy hour menu Tuesday through Thursday from 4 to 6pm for starting the evening. On Friday live music plays from 7 to 10pm, so dinner comes with a soundtrack. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
-      "The kitchen opens at 4pm through the week and runs to midnight on Friday and Saturday, which makes it work for both an early dinner and a late one. Saturday morning has its own <a href=\"/brunch-alpharetta\">brunch menu</a>, and there is <a href=\"/happy-hour-alpharetta\">happy hour</a> earlier in the evening.",
-      "Coming from further out? Siena is also the nearest <a href=\"/mediterranean-restaurant-near-roswell-ga\">Mediterranean restaurant near Roswell</a>, a short drive down the road.",
+      "Pair dinner with a Monaco or Lady Godiva from our <a href=\"/cocktail-bar-alpharetta\">signature cocktail list</a>. There is a happy hour menu Tuesday through Thursday from 4 to 6pm for starting the evening. On Friday live music plays from 7 to 10pm, so dinner comes with a soundtrack. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
+      "Siena opens at 4 PM Tuesday–Sunday and closes on Mondays. Hours are 4–10 PM Tuesday–Thursday and Sunday, and 4 PM–midnight Friday and Saturday. <a href=\"/reservations\">Check the reservation calendar</a> for your evening.",
+      "Coming from further out? Visit Siena for <a href=\"/mediterranean-restaurant-near-roswell-ga\">Mediterranean dining near Roswell</a>, a short drive away.",
     ],
   },
   {
@@ -140,6 +140,10 @@ export const BLOCKS: Block[] = [
 
 export const FAQS: Faq[] = [
   {
+    q: "Is parking available at Siena?",
+    a: "Yes. Free parking is available at Siena, 124 Devore Rd, Alpharetta, GA 30009. <a href=\"/contact-us\">Find directions and contact details</a> before your visit.",
+  },
+  {
     q: "What kind of Mediterranean food does Siena serve?",
     a: "Mezze and sharing plates alongside grilled skewers. Hummus della Casa, baba ghanoush, lavender whipped feta, crispy cauliflower, chicken tawook, lamb chops, braised lamb shank and the watermelon and feta salad. Italian dishes and house-made pasta sit on the same menu.",
   },
@@ -149,7 +153,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Do I need to book?",
-    a: "Booking ahead is sensible, especially Friday and Saturday evenings and for Saturday brunch. Walk-ins are welcome at the bar when there is room. <a href=\"/reservations\">Book a table here</a>.",
+    a: "Reservations are recommended for Friday and Saturday dinner. Walk-ins are welcome subject to availability. <a href=\"/reservations\">Book a table here</a>.",
   },
   {
     q: "Where is Siena located in Alpharetta?",
@@ -157,7 +161,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "What are the opening hours?",
-    a: "Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm, plus a separate brunch menu on Saturday morning from 10am.",
+    a: "Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm.",
   },
   {
     q: "Is there live music?",
@@ -183,7 +187,7 @@ export const REVIEWS: Reviews = {
 export const PRACTICAL = [
   "Step-free entrance and accessible parking near the door",
   "Minutes from Avalon and the Ameris Bank Amphitheatre",
-  "Dinner and bar service, plus Saturday brunch",
+  "Free parking and walk-ins welcome",
 ];
 
 export const CLOSING = {
