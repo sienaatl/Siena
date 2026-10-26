@@ -158,11 +158,7 @@ export default function Home() {
             </div>
 
             <div className="flex-1 flex items-center gap-2.5 px-4 py-3 min-w-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#e0b265" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#e0b265" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0"><use href="/assets/siena-ui-icons.svg#siena-icon-10" /></svg>
               <select
                 value={bookPartySize}
                 onChange={(e) => setBookPartySize(e.target.value)}
@@ -183,12 +179,7 @@ export default function Home() {
               className="group bg-[#e0b265] text-[#1b312e] px-6 md:px-9 py-3 font-normal text-[13px] md:text-[14px] tracking-[0.15em] uppercase flex items-center justify-center gap-2 hover:bg-[#1b312e] hover:text-white transition disabled:opacity-60 disabled:cursor-not-allowed flex-shrink-0"
             >
               Book Now
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
-                <path
-                  d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-                  className="fill-[#1b312e] group-hover:fill-white transition-colors duration-300"
-                />
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="fill-[#1b312e] group-hover:fill-white transition-colors duration-300" /></svg>
             </button>
           </form>
 
@@ -201,9 +192,7 @@ export default function Home() {
             <span className="border-b border-white/40 group-hover:border-[#e0b265] transition-colors">
               Or order online for pickup
             </span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20" fill="none" className="group-hover:translate-x-1 transition-transform duration-300">
-              <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" className="fill-white/85 group-hover:fill-[#e0b265] transition-colors" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20" fill="none" className="group-hover:translate-x-1 transition-transform duration-300"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="fill-white/85 group-hover:fill-[#e0b265] transition-colors" /></svg>
           </Link>
         </div>
 
@@ -240,9 +229,7 @@ export default function Home() {
             href={`tel:${info.phone.replace(/\D/g, '')}`}
             className="group flex items-center gap-2 text-white/80 text-[14px] md:text-[16px] tracking-wide hover:text-[#E0B265] transition"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:opacity-100 flex-shrink-0">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.9 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.99 5.99l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:opacity-100 flex-shrink-0"><use href="/assets/siena-ui-icons.svg#siena-icon-11" /></svg>
             <span>{info.phone}</span>
           </a>
 
@@ -383,12 +370,7 @@ export default function Home() {
             height="20"
             viewBox="0 0 20 20"
             fill="none"
-          >
-            <path
-              d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-              className="fill-[#1b312e] transition-colors duration-300"
-            />
-          </svg>
+          ><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="fill-[#1b312e] transition-colors duration-300" /></svg>
         </MotionLink>
           </div>
         </div>
@@ -485,12 +467,7 @@ export default function Home() {
             height="20"
             viewBox="0 0 20 20"
             fill="none"
-          >
-            <path
-              d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-              className="fill-[#1b312e] transition-colors duration-300"
-            />
-          </svg>
+          ><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="fill-[#1b312e] transition-colors duration-300" /></svg>
         </MotionLink>
 
           </div>
@@ -523,9 +500,7 @@ export default function Home() {
                       </p>
                     </div>
                     <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none">
-                        <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="white" />
-                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-12" /></svg>
                     </div>
                   </div>
                 </div>
@@ -553,9 +528,7 @@ export default function Home() {
                       <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Weekend mornings done right</p>
                     </div>
                     <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none">
-                        <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="white" />
-                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-12" /></svg>
                     </div>
                   </div>
                 </div>
@@ -583,9 +556,7 @@ export default function Home() {
                       <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Tuesday–Thursday, 4–6pm · Drinks and small plates</p>
                     </div>
                     <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none">
-                        <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="white" />
-                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-12" /></svg>
                     </div>
                   </div>
                 </div>
@@ -613,9 +584,7 @@ export default function Home() {
                       <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Cocktails, wines and craft drinks</p>
                     </div>
                     <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none">
-                        <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="white" />
-                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-12" /></svg>
                     </div>
                   </div>
                 </div>
@@ -709,12 +678,7 @@ export default function Home() {
             >
               BOOK AN EVENT
 
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path
-                  d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-                  className="fill-[#1b312e] transition-colors duration-300"
-                />
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="fill-[#1b312e] transition-colors duration-300" /></svg>
             </motion.a>
           </div>
 
@@ -793,9 +757,7 @@ export default function Home() {
                 href: "https://www.instagram.com/sienaatl/",
                 img: "/assets/gallery11_original.webp",
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                    <path d="M7.6 2H16.4C19.4 2 22 4.6 22 7.6V16.4C22 17.9 21.4 19.3 20.3 20.3C19.2 21.4 17.8 22 16.4 22H7.6C4.6 22 2 19.4 2 16.4V7.6C2 6.2 2.6 4.8 3.7 3.7C4.8 2.6 6.2 2 7.6 2ZM7.4 4C6.5 4 5.7 4.4 5.1 5.1C4.4 5.7 4 6.5 4 7.4V16.6C4 18.5 5.5 20 7.4 20H16.6C17.5 20 18.3 19.6 18.9 18.9C19.6 18.3 20 17.5 20 16.6V7.4C20 5.5 18.5 4 16.6 4H7.4ZM17.3 5.5C17.6 5.5 17.9 5.6 18.1 5.9C18.4 6.1 18.5 6.4 18.5 6.8C18.5 7.1 18.4 7.4 18.1 7.6C17.9 7.9 17.6 8 17.3 8C16.9 8 16.6 7.9 16.4 7.6C16.1 7.4 16 7.1 16 6.8C16 6.4 16.1 6.1 16.4 5.9C16.6 5.6 16.9 5.5 17.3 5.5ZM12 7C13.3 7 14.5 7.5 15.5 8.5C16.5 9.4 17 10.7 17 12C17 13.3 16.5 14.6 15.5 15.5C14.6 16.5 13.3 17 12 17C10.7 17 9.4 16.5 8.5 15.5C7.5 14.6 7 13.3 7 12C7 10.7 7.5 9.4 8.5 8.5C9.4 7.5 10.7 7 12 7ZM12 9C11.2 9 10.4 9.3 9.9 9.9C9.3 10.4 9 11.2 9 12C9 12.8 9.3 13.6 9.9 14.1C10.4 14.7 11.2 15 12 15C12.8 15 13.6 14.7 14.1 14.1C14.7 13.6 15 12.8 15 12C15 11.2 14.7 10.4 14.1 9.9C13.6 9.3 12.8 9 12 9Z" fill="currentColor" />
-                  </svg>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-13" /></svg>
                 ),
               },
               {
@@ -804,9 +766,7 @@ export default function Home() {
                 href: "https://www.facebook.com/sienaatl/",
                 img: "/assets/gallery16_original.webp",
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                    <path d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 16.84 5.44 20.87 10 21.8V15H8V12H10V9.5C10 7.57 11.57 6 13.5 6H16V9H14C13.45 9 13 9.45 13 10V12H16V15H13V21.95C18.05 21.45 22 17.19 22 12Z" fill="currentColor" />
-                  </svg>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-14" /></svg>
                 ),
               },
               {
@@ -815,9 +775,7 @@ export default function Home() {
                 href: "https://www.tiktok.com/@sienaatl",
                 img: "/assets/gallery21_original.webp",
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                    <path d="M16.5 2C16.8 4.1 18.4 5.7 20.5 6V9C18.9 8.95 17.4 8.45 16 7.6V14.5C16 18.1 13.1 21 9.5 21C5.9 21 3 18.1 3 14.5C3 10.9 5.9 8 9.5 8C10 8 10.5 8.05 11 8.15V11.2C10.5 11.05 10 11 9.5 11C7.6 11 6 12.6 6 14.5C6 16.4 7.6 18 9.5 18C11.4 18 13 16.4 13 14.5V2H16.5Z" fill="currentColor" />
-                  </svg>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-15" /></svg>
                 ),
               },
             ].map(({ platform, handle, href, img, icon }, i) => (
@@ -849,9 +807,7 @@ export default function Home() {
                   <span className="text-white text-[26px] md:text-[30px] leading-none mb-4" style={{ fontFamily: "'Palmore-Light', serif" }}>{handle}</span>
                   <div className="flex items-center gap-2 text-white/60 group-hover:text-[#e0b265] text-[12px] tracking-[0.25em] uppercase transition-colors duration-300">
                     <span>Follow</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20" fill="none">
-                      <path d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z" fill="currentColor" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-16" /></svg>
                   </div>
                 </div>
               </motion.a>
@@ -960,10 +916,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="group flex items-start gap-2 text-white/85 text-[16px] md:text-[18px] leading-[1.5] hover:text-[#e0b265] transition"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-0.5 flex-shrink-0">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                    className="fill-[#e0b265] group-hover:fill-white transition-colors duration-300" />
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-0.5 flex-shrink-0"><use href="/assets/siena-ui-icons.svg#siena-icon-17" className="fill-[#e0b265] group-hover:fill-white transition-colors duration-300" /></svg>
                 {info.address}
               </a>
 
@@ -971,10 +924,7 @@ export default function Home() {
                 href={`tel:${info.phone.replace(/\D/g, '')}`}
                 className="group flex items-center gap-2 text-white/85 text-[16px] md:text-[18px] hover:text-[#e0b265] transition"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
-                    className="fill-[#e0b265] group-hover:fill-white transition-colors duration-300" />
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-18" className="fill-[#e0b265] group-hover:fill-white transition-colors duration-300" /></svg>
                 {info.phone}
               </a>
 
@@ -1001,12 +951,7 @@ export default function Home() {
                   className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition"
                 >
                   OPEN IN MAP
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
-                    <path
-                      d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-                      className="fill-[#1b312e] transition-colors duration-300"
-                    />
-                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="fill-[#1b312e] transition-colors duration-300" /></svg>
                 </a>
 
                 <Link
@@ -1016,12 +961,7 @@ export default function Home() {
                   className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition"
                 >
                   ORDER ONLINE
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
-                    <path
-                      d="M15.3025 11.0285L2 11.0285L2 8.97146L15.3025 8.97146L11.1214 4.45436L12.4872 3L19 10L12.4872 17L11.1214 15.5456L15.3025 11.0285Z"
-                      className="fill-[#1b312e] transition-colors duration-300"
-                    />
-                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="fill-[#1b312e] transition-colors duration-300" /></svg>
                 </Link>
               </div>
             </div>
