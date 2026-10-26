@@ -211,10 +211,7 @@ export default function Header() {
                             strokeWidth="2.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                        >
-                            <line x1="18" y1="6" x2="6" y2="18" className="stroke-[#1B312E]" />
-                            <line x1="6" y1="6" x2="18" y2="18" className="stroke-[#1B312E]" />
-                        </svg>
+                        ><use href="/assets/siena-ui-icons.svg#siena-icon-1" className="stroke-[#1B312E]" /></svg>
                     </button>
                 </div>
 
