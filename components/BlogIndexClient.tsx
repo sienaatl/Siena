@@ -43,13 +43,13 @@ export default function BlogIndexClient({ blogs }: { blogs: BlogSummary[] }) {
             <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[38px] sm:text-[50px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[30px] sm:text-[42px] md:text-[62px] lg:text-[80px] max-w-[1000px] leading-[0.95] tracking-[0.04em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            Blogs
+            Siena Restaurant News
           </motion.h1>
           <motion.div
             className="flex items-center gap-3 mt-2"
@@ -95,13 +95,12 @@ export default function BlogIndexClient({ blogs }: { blogs: BlogSummary[] }) {
 
           <div className="max-w-3xl mx-auto mb-12 text-white/80 text-base leading-relaxed space-y-4">
             <p>
-              Explore Mediterranean and Italian dining at Siena Restaurant &amp; Bar in
-              Alpharetta. Our stories introduce the food and ideas behind an evening
-              around the table, from sharing plates to planning a dinner with friends.
-              Start with an article below, then use the current menu to choose what
-              you would like to try on your next visit. Our <Link className="text-[#e0b265] underline" href="/blogs/hidden-gems-among-alpharetta">Alpharetta dining story</Link> is
-              a starting point for exploring Siena, and the <Link className="text-[#e0b265] underline" href="/alpharetta-restaurant-week">2026 Restaurant Week archive</Link> records
-              a past seasonal event.
+              Read Siena Restaurant news and dining stories from Alpharetta.
+              Explore Mediterranean and Italian food, small plates and dinner ideas.
+              Start with our <Link className="text-[#e0b265] underline" href="/blogs/hidden-gems-among-alpharetta">Alpharetta dining story</Link>,
+              then browse the current menu to plan your visit.
+              The <Link className="text-[#e0b265] underline" href="/alpharetta-restaurant-week">2026 Restaurant Week archive</Link> covers
+              a past event.
             </p>
             <p>
               Planning your evening? Browse <Link className="text-[#e0b265] underline" href="/menus">dinner and drinks</Link>,
