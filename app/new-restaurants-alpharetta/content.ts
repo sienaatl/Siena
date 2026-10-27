@@ -101,7 +101,7 @@ export const BLOCKS: Block[] = [
       },
       {
         title: "It Is Evenings",
-        desc: "The kitchen opens at 4pm and runs to midnight on Friday and Saturday. Closed Monday. Saturday morning has a separate <a href=\"/brunch-alpharetta\">brunch menu</a>.",
+        desc: "The kitchen opens at 4pm and runs to midnight on Friday and Saturday. Closed Monday. A separate <a href=\"/brunch-alpharetta\">brunch menu</a> is listed online; call to confirm current availability.",
       },
       {
         title: "Come Hungry",
@@ -139,7 +139,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "What are the opening hours?",
-    a: "Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm. Saturday morning runs a separate brunch menu from 10am.",
+    a: "Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm. Call to confirm current brunch days and hours before visiting.",
   },
   {
     q: "Is it expensive?",
