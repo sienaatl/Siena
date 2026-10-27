@@ -309,10 +309,9 @@ export default function Home() {
             />
 
             <div className="relative inline-block">
-              {/* Título — the page's h1. Names the cuisine and the city, and still
-                  reads as a phrase with the "reimagined" script sitting under it. */}
+              {/* The homepage heading identifies Siena and its location. */}
               <motion.h1
-                className="text-white text-[36px] sm:text-[48px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="text-white text-[32px] sm:text-[42px] md:text-[56px] lg:text-[64px] leading-[0.95] tracking-[0.04em] uppercase"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -322,9 +321,9 @@ export default function Home() {
                 Siena Restaurant, Alpharetta
               </motion.h1>
 
-              {/* Reimagined superpuesto */}
+              {/* Cuisine subtitle stays in normal flow so it cannot overlap the copy. */}
               <motion.span
-                className="absolute left-1/2 top-[100%] md:top-[105%] -translate-x-1/2 -translate-y-[12%] text-[#e0b265] text-[26px] sm:text-[34px] md:text-[60px] lg:text-[85px] leading-none"
+                className="block mt-3 text-[#e0b265] text-[26px] sm:text-[34px] md:text-[42px] lg:text-[52px] leading-tight"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e"
@@ -339,7 +338,7 @@ export default function Home() {
             </div>
 
             <motion.div
-              className="text-white/80 text-[16px] md:text-[18px] lg:text-xl leading-[1.6] max-w-[1180px] mt-12 md:mt-25 space-y-4"
+              className="text-white/80 text-[16px] md:text-[18px] lg:text-xl leading-[1.6] max-w-[1180px] mt-8 md:mt-10 space-y-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -539,7 +538,7 @@ export default function Home() {
                   <div className="flex items-end justify-between gap-3">
                     <div className="min-w-0 flex-1">
                       <h3 className="text-white text-[28px] md:text-[32px] font-semibold leading-tight">BRUNCH</h3>
-                      <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Weekend mornings done right</p>
+                      <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Call to confirm availability</p>
                     </div>
                     <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-12" /></svg>
