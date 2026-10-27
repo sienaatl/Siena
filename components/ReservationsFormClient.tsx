@@ -108,7 +108,7 @@ function SelectChevron() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2"
+      className="siena-view-111"
     >
       <path d="M6 9l6 6 6-6" />
     </svg>
@@ -118,11 +118,11 @@ function SelectChevron() {
 function StepHeader({ num, title, desc }: { num: string; title: string; desc: string }) {
   return (
     <div className="flex items-start gap-4 mb-6">
-      <span className="w-8 h-8 rounded-full bg-[#e0b265] text-[#1b312e] flex items-center justify-center text-[14px] font-semibold flex-shrink-0">
+      <span className="siena-view-112">
         {num}
       </span>
       <div>
-        <h3 className="text-[19px] md:text-[20px] font-semibold text-white leading-tight">{title}</h3>
+        <h3 className="siena-view-113">{title}</h3>
         <p className="text-[13px] text-white/60 mt-0.5">{desc}</p>
       </div>
     </div>
@@ -144,19 +144,19 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-[12px] font-semibold text-white/80 tracking-wider uppercase">
+      <label className="siena-view-114">
         {label} {required && <span className="text-[#e0b265]">*</span>}
       </label>
       {children}
       {hint && !error && <p className="text-[11px] text-white/50 mt-0.5">{hint}</p>}
       {error && (
         <motion.p
-          className="text-[12px] text-[#e0b265] mt-0.5 flex items-center gap-1"
+          className="siena-view-115"
           initial={{ opacity: 0, y: -4 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <span className="w-3 h-3 flex items-center justify-center border border-[#e0b265] text-[9px] flex-shrink-0">!</span>
+          <span className="siena-view-116">!</span>
           {error}
         </motion.p>
       )}
@@ -294,7 +294,7 @@ export default function ReservationsFormClient({
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
       <div
-        className="shadow-2xl border border-[#e0b265]/50 px-6 md:px-10 py-10 text-left"
+        className="siena-view-117"
         data-bg="/assets/pattern-dark.png"
         style={{ backgroundColor: "#152C29", backgroundSize: "160px", backgroundRepeat: "repeat" }}
       >
@@ -302,14 +302,14 @@ export default function ReservationsFormClient({
           {confirmation ? (
             <motion.div
               key="success"
-              className="flex flex-col items-center text-center gap-6 py-4"
+              className="siena-view-118"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
             >
               <motion.div
-                className="w-16 h-16 rounded-full bg-[#e0b265] flex items-center justify-center"
+                className="siena-view-119"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 300, delay: 0.1 }}
@@ -320,11 +320,11 @@ export default function ReservationsFormClient({
               </motion.div>
 
               <div className="flex flex-col items-center gap-2">
-                <span className="text-[12px] font-semibold tracking-[0.2em] uppercase text-[#e0b265]">
+                <span className="siena-view-120">
                   Reservation Confirmed
                 </span>
                 <h3
-                  className="text-[26px] md:text-[30px] text-white leading-tight"
+                  className="siena-view-121"
                   style={{ fontFamily: "'Palmore-Light', serif" }}
                 >
                   We look forward to serving you.
@@ -334,33 +334,33 @@ export default function ReservationsFormClient({
               <div className="w-full border border-white/15 text-left">
                 <div className="grid grid-cols-2">
                   <div className="p-4 border-r border-b border-white/15">
-                    <p className="text-[11px] uppercase tracking-wide text-white/50">Name</p>
-                    <p className="text-[15px] font-semibold text-white mt-1">
+                    <p className="siena-view-122">Name</p>
+                    <p className="siena-view-123">
                       {confirmation.reservation.guest_name}
                     </p>
                   </div>
                   <div className="p-4 border-b border-white/15">
-                    <p className="text-[11px] uppercase tracking-wide text-white/50">Date &amp; Time</p>
-                    <p className="text-[15px] font-semibold text-white mt-1">
+                    <p className="siena-view-122">Date &amp; Time</p>
+                    <p className="siena-view-123">
                       {confirmation.reservation.reservation_at.replace("T", " ")}
                     </p>
                   </div>
                   <div className="p-4 border-r border-white/15">
-                    <p className="text-[11px] uppercase tracking-wide text-white/50">Party</p>
-                    <p className="text-[15px] font-semibold text-white mt-1">
+                    <p className="siena-view-122">Party</p>
+                    <p className="siena-view-123">
                       {confirmation.reservation.party_size}{" "}
                       {confirmation.reservation.party_size === 1 ? "guest" : "guests"}
                     </p>
                   </div>
                   <div className="p-4">
-                    <p className="text-[11px] uppercase tracking-wide text-white/50">Confirmation</p>
-                    <p className="text-[15px] font-semibold text-white mt-1">{confirmation.reservation.id}</p>
+                    <p className="siena-view-122">Confirmation</p>
+                    <p className="siena-view-123">{confirmation.reservation.id}</p>
                   </div>
                 </div>
               </div>
 
               {confirmation.email_sent && (
-                <div className="w-full bg-white/5 border border-[#e0b265]/30 px-5 py-4 text-[13px] text-white/80 leading-relaxed">
+                <div className="siena-view-124">
                   A confirmation email with your private modification link has been sent to{" "}
                   <span className="font-semibold">{confirmation.reservation.email}</span>.
                 </div>
@@ -370,7 +370,7 @@ export default function ReservationsFormClient({
                 href={confirmation.manage_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full bg-[#e0b265] text-[#1b312e] text-[14px] font-semibold py-4 hover:bg-[#1b312e] hover:text-[#e0b265] transition"
+                className="siena-view-125"
               >
                 Manage Reservation
               </a>
@@ -432,10 +432,10 @@ export default function ReservationsFormClient({
                     </div>
                   </Field>
                 </div>
-                <p className="text-[11.67px] text-white/50 mt-2 leading-relaxed">
+                <p className="siena-view-126">
                   <span className="block font-semibold text-white/70">Party of 14 or more?</span>
                   Please call us directly to arrange your reservation, or complete our{" "}
-                  <Link href="/event-inquiry" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                  <Link href="/event-inquiry" className="siena-view-85">
                     Private &amp; Group Dining Inquiry Form
                   </Link>
                   , and a member of our team will be happy to assist you.
@@ -483,50 +483,50 @@ export default function ReservationsFormClient({
                 </div>
 
                 <div className="mt-7 border-t border-white/15 pt-6">
-                  <h4 className="text-[#e0b265] text-[22px] md:text-[24px] leading-tight mb-5">
+                  <h4 className="siena-view-127">
                     Reservation Form Consent
                   </h4>
                   <div className="grid grid-cols-1 gap-5">
-                    <label className="flex items-start gap-3 cursor-pointer select-none">
+                    <label className="siena-view-128">
                       <input
                         {...register("smsOptIn")}
                         type="checkbox"
-                        className="w-4 h-4 mt-1 accent-[#e0b265] cursor-pointer flex-shrink-0"
+                        className="siena-view-129"
                       />
-                      <span className="text-[13px] text-white/70 leading-[1.65]">
+                      <span className="siena-view-130">
                         <span className="block font-semibold text-white/85 mb-1">Service &amp; Customer Care SMS Consent</span>
                         I agree to receive SMS messages from Siena Restaurant related to my inquiry, reservation,
                         event or private dining request, customer service, and other service-related
                         communications. Message frequency varies. Message and data rates may apply. Reply STOP to
                         opt out or HELP for assistance. Consent is not a condition of purchase. See our{" "}
-                        <Link href="/privacy-policy" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                        <Link href="/privacy-policy" className="siena-view-85">
                           Privacy Notice
                         </Link>{" "}
                         and{" "}
-                        <Link href="/terms-of-service" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                        <Link href="/terms-of-service" className="siena-view-85">
                           Terms &amp; Conditions
                         </Link>
                         .
                       </span>
                     </label>
-                    <label className="flex items-start gap-3 cursor-pointer select-none">
+                    <label className="siena-view-128">
                       <input
                         {...register("marketingOptIn")}
                         type="checkbox"
-                        className="w-4 h-4 mt-1 accent-[#e0b265] cursor-pointer flex-shrink-0"
+                        className="siena-view-129"
                       />
-                      <span className="text-[13px] text-white/70 leading-[1.65]">
+                      <span className="siena-view-130">
                         <span className="block font-semibold text-white/85 mb-1">Promotional SMS Consent — Optional</span>
                         I agree to receive recurring promotional SMS messages from Siena Restaurant about
                         events, offers, dining specials, promotions, happy hour, live entertainment, and
                         restaurant updates. Message frequency varies. Message and data rates may apply. Reply
                         STOP to opt out or HELP for assistance. Consent is not a condition of purchase. See
                         our{" "}
-                        <Link href="/privacy-policy" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                        <Link href="/privacy-policy" className="siena-view-85">
                           Privacy Notice
                         </Link>{" "}
                         and{" "}
-                        <Link href="/terms-of-service" className="text-[#e0b265] underline underline-offset-2 hover:text-white">
+                        <Link href="/terms-of-service" className="siena-view-85">
                           Terms &amp; Conditions
                         </Link>
                         .
@@ -537,7 +537,7 @@ export default function ReservationsFormClient({
               </div>
 
               {submitError && (
-                <p className="text-[13px] text-[#e0b265] border border-[#e0b265]/30 bg-[#e0b265]/10 px-4 py-3">
+                <p className="siena-view-131">
                   {submitError}
                 </p>
               )}
@@ -545,12 +545,12 @@ export default function ReservationsFormClient({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#e0b265] text-[#1b312e] text-[13px] tracking-[0.25em] uppercase py-4 transition hover:bg-[#1b312e] hover:text-[#e0b265] disabled:opacity-60 disabled:cursor-not-allowed"
+                className="siena-view-132"
               >
                 {isSubmitting ? "Sending..." : "Complete Reservation"}
               </button>
 
-              <p className="text-[12px] text-white/50 text-center leading-relaxed">
+              <p className="siena-view-133">
                 Reservations are held for 15 minutes. Seating requests are not guaranteed.
               </p>
             </motion.form>

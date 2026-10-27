@@ -5,19 +5,19 @@ export default function BlogCard({ blog }: any) {
   return (
     <Link
   href={`/blogs/${blog.slug}`}
-  className="group w-[370px] rounded-xl border border-gray-700 overflow-hidden bg-[#111] hover:border-[#e0b265] transition-all duration-300"
+  className="siena-view-18 group"
 >
       <Image
         src={blog.image}
         alt={blog.title}
         width={500}
         height={300}
-        className="w-full h-56 object-cover group-hover:scale-105 duration-500"
+        className="siena-view-19"
       />
 
       <div className="p-5">
 
-        <h2 className="font-semibold text-lg mb-3 line-clamp-2 text-white">
+        <h2 className="siena-view-20">
 
           {blog.title}
 

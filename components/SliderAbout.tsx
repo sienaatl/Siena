@@ -13,10 +13,10 @@ export default function SliderAbout() {
   const next = () => setCurrent((c) => (c === slides.length - 1 ? 0 : c + 1));
 
   return (
-    <div className="flex flex-col items-center gap-4 w-full max-w-[480px]">
+    <div className="siena-view-2">
 
       {/* Imagen */}
-      <div className="relative w-full aspect-[4/3] overflow-hidden shadow-2xl">
+      <div className="siena-view-3">
         {slides.map((src, i) => (
           <img
             key={i}
@@ -33,7 +33,7 @@ export default function SliderAbout() {
       <div className="flex items-center gap-4">
         <button
           onClick={prev}
-          className="cursor-pointer bg-[#e0b265] text-[#1b312e] w-9 h-9 flex items-center justify-center text-xl hover:bg-[#1b312e] hover:text-[#e0b265] transition"
+          className="siena-view-4"
         >
           ‹
         </button>
@@ -44,7 +44,7 @@ export default function SliderAbout() {
               key={i}
               onClick={() => setCurrent(i)}
               aria-label={`Go to slide ${i + 1}`}
-              className="flex items-center justify-center w-[44px] h-[44px] cursor-pointer"
+              className="siena-view-5"
             >
               <span className={`w-2.5 h-2.5 transition-all ${i === current ? "bg-[#e0b265] scale-125" : "bg-[#e0b265]/30"}`} />
             </button>
@@ -53,7 +53,7 @@ export default function SliderAbout() {
 
         <button
           onClick={next}
-          className="cursor-pointer bg-[#e0b265] text-[#1b312e] w-9 h-9 flex items-center justify-center text-xl hover:bg-[#1b312e] hover:text-[#e0b265] transition"
+          className="siena-view-4"
         >
           ›
         </button>

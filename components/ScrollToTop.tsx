@@ -27,8 +27,8 @@ export default function ScrollToTop() {
         viewBox="0 0 24 24"
         fill="none"
       >
-        <path d="M12 20V4" stroke="#1b312e" className="group-hover:stroke-[#e0b265] transition-colors duration-300" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M6 10L12 4L18 10" stroke="#1b312e" className="group-hover:stroke-[#e0b265] transition-colors duration-300" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 20V4" stroke="#1b312e" className="siena-view-1" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M6 10L12 4L18 10" stroke="#1b312e" className="siena-view-1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </button>
   );

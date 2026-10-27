@@ -88,10 +88,10 @@ export default function Home() {
   return (
     <main>
       {/* HERO + BANNER wrapper = 100vh en mobile */}
-      <div className="flex flex-col h-screen md:h-auto md:block">
+      <div className="siena-view-140">
 
       {/* HERO */}
-      <section className="relative w-full flex-1 md:h-screen overflow-hidden">
+      <section className="siena-view-141">
         {/* The poster is the hero still, so this one element covers both what
             used to be a separate <Image> and the video, and it is what LCP
             measures. See eagerPoster in LazyVideo for why that matters. */}
@@ -100,12 +100,12 @@ export default function Home() {
           mobileSrc="/assets/hero_video_mobile_v2.mp4"
           poster="/assets/hero_poster.webp"
           eagerPoster
-          className="absolute inset-0 w-full h-full object-cover"
+          className="siena-view-28"
         />
 
         <div className="absolute inset-0 bg-black/50" />
 
-        <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
+        <div className="siena-view-142">
           {/* Above the fold, so it competes with the LCP poster. next/image
               serves AVIF at the size actually rendered instead of the full
               746px original; eager because the default here would be lazy. */}
@@ -133,7 +133,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="flex-1 flex items-center gap-2.5 px-4 py-3 min-w-0">
+            <div className="siena-view-143">
               <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#e0b265" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
                 <circle cx="12" cy="12" r="9" />
                 <path d="M12 7v5l3 3" />
@@ -143,7 +143,7 @@ export default function Home() {
                 disabled={!bookDate}
                 value={effectiveBookTime}
                 onChange={(e) => setBookTime(e.target.value)}
-                className="w-full bg-transparent text-white text-[13px] md:text-[14px] tracking-wide outline-none cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 appearance-none [color-scheme:dark]"
+                className="siena-view-144"
                 aria-label="Reservation time"
               >
                 <option value="" style={{ backgroundColor: "#152C29", color: "#fff" }}>
@@ -157,12 +157,12 @@ export default function Home() {
               </select>
             </div>
 
-            <div className="flex-1 flex items-center gap-2.5 px-4 py-3 min-w-0">
+            <div className="siena-view-143">
               <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#e0b265" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0"><use href="/assets/siena-ui-icons.svg#siena-icon-10" /></svg>
               <select
                 value={bookPartySize}
                 onChange={(e) => setBookPartySize(e.target.value)}
-                className="w-full bg-transparent text-white text-[13px] md:text-[14px] tracking-wide outline-none cursor-pointer appearance-none [color-scheme:dark]"
+                className="siena-view-145"
                 aria-label="Party size"
               >
                 {PARTY_SIZES.map((n) => (
@@ -176,10 +176,10 @@ export default function Home() {
             <button
               type="submit"
               disabled={!bookDate || !effectiveBookTime}
-              className="group bg-[#e0b265] text-[#1b312e] px-6 md:px-9 py-3 font-normal text-[13px] md:text-[14px] tracking-[0.15em] uppercase flex items-center justify-center gap-2 hover:bg-[#1b312e] hover:text-white transition disabled:opacity-60 disabled:cursor-not-allowed flex-shrink-0"
+              className="siena-view-146 group"
             >
               Book Now
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="fill-[#1b312e] group-hover:fill-white transition-colors duration-300" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="siena-view-147" /></svg>
             </button>
           </form>
 
@@ -189,21 +189,21 @@ export default function Home() {
             rel="noopener noreferrer"
             className="hero-fadein group mt-4 inline-flex items-center gap-2 text-white/85 text-[13px] md:text-[14px] tracking-wide hover:text-[#e0b265] transition-colors"
           >
-            <span className="border-b border-white/40 group-hover:border-[#e0b265] transition-colors">
+            <span className="siena-view-148">
               Or order online for pickup
             </span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20" fill="none" className="group-hover:translate-x-1 transition-transform duration-300"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="fill-white/85 group-hover:fill-[#e0b265] transition-colors" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20" fill="none" className="siena-view-64"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="siena-view-149" /></svg>
           </Link>
         </div>
 
         {/* Barra inferior — ubicación e Instagram */}
-        <div className="w-full max-w-[1180px] absolute bottom-0 left-1/2 -translate-x-1/2 z-10 py-4 hidden md:flex items-center justify-between">
+        <div className="siena-view-150">
           {/* Ubicación */}
           <a
             href={info.maps_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 text-white/80 text-[14px] md:text-[16px] tracking-wide hover:text-[#E0B265] transition text-center"
+            className="siena-view-151 group"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -215,7 +215,7 @@ export default function Home() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="opacity-70 group-hover:opacity-100 flex-shrink-0"
+              className="siena-view-31"
             >
               <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
               <circle cx="12" cy="10" r="3" />
@@ -227,9 +227,9 @@ export default function Home() {
           {/* Teléfono */}
           <a
             href={`tel:${info.phone.replace(/\D/g, '')}`}
-            className="group flex items-center gap-2 text-white/80 text-[14px] md:text-[16px] tracking-wide hover:text-[#E0B265] transition"
+            className="siena-view-152 group"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:opacity-100 flex-shrink-0"><use href="/assets/siena-ui-icons.svg#siena-icon-11" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="siena-view-31"><use href="/assets/siena-ui-icons.svg#siena-icon-11" /></svg>
             <span>{info.phone}</span>
           </a>
 
@@ -238,7 +238,7 @@ export default function Home() {
       </section>
 
       {/* CARRUSEL INFINITO */}
-      <section className="w-full bg-[#030302] py-5 overflow-hidden">
+      <section className="siena-view-32">
         <style>{`
     @keyframes marquee {
       0% { transform: translateX(0); }
@@ -255,22 +255,22 @@ export default function Home() {
           {[...Array(4)].map((_, repeat) => (
             <div key={repeat} className="flex items-center">
 
-              <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">
+              <span className="siena-view-93">
                 MEDI-TALIAN CUISINE
               </span>
               <img width={29} height={29} src="/assets/star.svg" alt="star" className="w-5 h-5 flex-shrink-0" />
 
-              <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">
+              <span className="siena-view-93">
                 CHEF-DRIVEN EXPERIENCE
               </span>
               <img width={29} height={29} src="/assets/star.svg" alt="star" className="w-5 h-5 flex-shrink-0" />
 
-              <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">
+              <span className="siena-view-93">
                 ELEVATED SHARED PLATES
               </span>
               <img width={29} height={29} src="/assets/star.svg" alt="star" className="w-5 h-5 flex-shrink-0" />
 
-              <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">
+              <span className="siena-view-93">
                 REFINED YET INVITING ATMOSPHERE
               </span>
               <img width={29} height={29} src="/assets/star.svg" alt="star" className="w-5 h-5 flex-shrink-0" />
@@ -293,7 +293,7 @@ export default function Home() {
           backgroundPosition: "center"
         }}
       >
-        <div className="w-full max-w-[900px] mx-auto py-12 md:py-20 px-4">
+        <div className="siena-view-153">
           <div className="flex flex-col items-center text-center">
 
             {/* Icono arriba centrado */}
@@ -311,7 +311,7 @@ export default function Home() {
             <div className="relative inline-block">
               {/* The homepage heading identifies Siena and its location. */}
               <motion.h1
-                className="text-white text-[32px] sm:text-[42px] md:text-[56px] lg:text-[64px] leading-[0.95] tracking-[0.04em] uppercase"
+                className="siena-view-154"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -323,7 +323,7 @@ export default function Home() {
 
               {/* Cuisine subtitle stays in normal flow so it cannot overlap the copy. */}
               <motion.span
-                className="block mt-3 text-[#e0b265] text-[26px] sm:text-[34px] md:text-[42px] lg:text-[52px] leading-tight"
+                className="siena-view-155"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e"
@@ -338,7 +338,7 @@ export default function Home() {
             </div>
 
             <motion.div
-              className="text-white/80 text-[16px] md:text-[18px] lg:text-xl leading-[1.6] max-w-[1180px] mt-8 md:mt-10 space-y-4"
+              className="siena-view-156"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -358,7 +358,7 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <nav aria-label="Plan dinner at Siena" className="flex flex-wrap justify-center gap-x-6 gap-y-3 mt-6 text-[#e0b265] text-sm underline underline-offset-4">
+            <nav aria-label="Plan dinner at Siena" className="siena-view-157">
               <Link href="/reservations">Reserve a table</Link>
               <Link href="/live-music-fridays">Friday live music</Link>
               <Link href="/cocktail-bar-alpharetta">Signature cocktails</Link>
@@ -369,7 +369,7 @@ export default function Home() {
 
           <MotionLink
           href="/about-us"
-          className="relative z-10 group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition"
+          className="siena-view-158 group"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -383,7 +383,7 @@ export default function Home() {
             height="20"
             viewBox="0 0 20 20"
             fill="none"
-          ><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="fill-[#1b312e] transition-colors duration-300" /></svg>
+          ><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="siena-view-159" /></svg>
         </MotionLink>
           </div>
         </div>
@@ -392,11 +392,11 @@ export default function Home() {
       </section>
 
 
-      <section className="relative w-full h-[40px] md:h-[58px] overflow-hidden bg-[#e0b265]">
+      <section className="siena-view-160">
         <img width={1512} height={58} loading="lazy"
           src="/assets/divisor_beige.svg"
           alt="divider"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="siena-view-28"
         />
       </section>
 
@@ -407,7 +407,7 @@ export default function Home() {
         style={{ backgroundColor: "#1b312e" }}
       >
 
-        <div className="w-full max-w-[1180px] mx-auto px-4 mt-[80px]">
+        <div className="siena-view-161">
           <div className="flex flex-col items-center text-center">
 
             <motion.img width={59} height={45} loading="lazy"
@@ -423,7 +423,7 @@ export default function Home() {
 
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#e0b265] text-[36px] sm:text-[48px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="siena-view-162"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -434,7 +434,7 @@ export default function Home() {
               </motion.h2>
 
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[22px] sm:text-[30px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+                className="siena-view-163"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: `
@@ -454,7 +454,7 @@ export default function Home() {
             </div>
 
             <motion.p
-              className="text-white/80 text-[16px] md:text-[18px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
+              className="siena-view-164"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -466,7 +466,7 @@ export default function Home() {
 
                   <MotionLink
           href="/menus"
-          className="relative z-10 group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition"
+          className="siena-view-158 group"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -480,39 +480,39 @@ export default function Home() {
             height="20"
             viewBox="0 0 20 20"
             fill="none"
-          ><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="fill-[#1b312e] transition-colors duration-300" /></svg>
+          ><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="siena-view-159" /></svg>
         </MotionLink>
 
           </div>
         </div>
 
         <div className="absolute inset-0 " />
-        <div className="w-full max-w-[1180px] mx-auto mt-10 mb-[80px] px-4 md:px-0">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:[grid-template-rows:280px_280px]">
+        <div className="siena-view-165">
+          <div className="siena-view-166">
 
             {/* Card grande izquierda - Dinner */}
             <motion.a
               href="/menus?tab=main-menu"
-              className="group relative overflow-hidden shadow-lg md:row-span-2 h-[220px] md:h-auto"
+              className="siena-view-167 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.38, delay: 0, ease: "easeOut" }}
               whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
-              <Image src="/assets/pages/Home/ETF-Dinner.jpg" alt="Dinner" fill quality={65} sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
+              <Image src="/assets/pages/Home/ETF-Dinner.jpg" alt="Dinner" fill quality={65} sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="siena-view-41" />
+              <div className="siena-view-168" />
 
-              <div className="absolute inset-4 border border-[#e0b265]">
-                <div className="flex flex-col justify-end h-full p-4 md:p-6">
+              <div className="siena-view-42">
+                <div className="siena-view-43">
                   <div className="flex items-end justify-between gap-3">
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-white text-[28px] md:text-[32px] font-semibold leading-tight">DINNER</h3>
-                      <p className="text-white/80 text-[14px] md:text-[18px] mt-1">
+                      <h3 className="siena-view-169">DINNER</h3>
+                      <p className="siena-view-170">
                         Chef-crafted Mediterranean plates
                       </p>
                     </div>
-                    <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
+                    <div className="siena-view-171">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-12" /></svg>
                     </div>
                   </div>
@@ -523,24 +523,24 @@ export default function Home() {
             {/* Card top centro - Brunch */}
             <motion.a
               href="/menus?tab=weekend-brunch"
-              className="group relative overflow-hidden shadow-lg h-[220px] md:h-auto"
+              className="siena-view-172 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.38, delay: 0.08, ease: "easeOut" }}
               whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
-              <Image src="/assets/pages/Home/ETF-Brunch.jpg" alt="Brunch" fill quality={65} sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
+              <Image src="/assets/pages/Home/ETF-Brunch.jpg" alt="Brunch" fill quality={65} sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="siena-view-41" />
+              <div className="siena-view-168" />
 
-              <div className="absolute inset-4 border border-[#e0b265]">
-                <div className="flex flex-col justify-end h-full p-4 md:p-6">
+              <div className="siena-view-42">
+                <div className="siena-view-43">
                   <div className="flex items-end justify-between gap-3">
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-white text-[28px] md:text-[32px] font-semibold leading-tight">BRUNCH</h3>
-                      <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Call to confirm availability</p>
+                      <h3 className="siena-view-169">BRUNCH</h3>
+                      <p className="siena-view-170">Call to confirm availability</p>
                     </div>
-                    <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
+                    <div className="siena-view-171">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-12" /></svg>
                     </div>
                   </div>
@@ -551,24 +551,24 @@ export default function Home() {
             {/* Card top derecha - Happy Hour */}
             <motion.a
               href="/menus?tab=happy-hour"
-              className="group relative overflow-hidden shadow-lg h-[220px] md:h-auto"
+              className="siena-view-172 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.38, delay: 0.12, ease: "easeOut" }}
               whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
-              <Image src="/assets/pages/Home/ETF-HappyHour.jpg" alt="Happy Hour" fill sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
+              <Image src="/assets/pages/Home/ETF-HappyHour.jpg" alt="Happy Hour" fill sizes="(max-width: 767px) 100vw, 390px" loading="lazy" className="siena-view-41" />
+              <div className="siena-view-168" />
 
-              <div className="absolute inset-4 border border-[#e0b265]">
-                <div className="flex flex-col justify-end h-full p-4 md:p-6">
+              <div className="siena-view-42">
+                <div className="siena-view-43">
                   <div className="flex items-end justify-between gap-3">
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-white text-[28px] md:text-[32px] font-semibold leading-tight md:whitespace-nowrap">HAPPY HOUR</h3>
-                      <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Tuesday–Thursday, 4–6pm · Drinks and small plates</p>
+                      <h3 className="siena-view-173">HAPPY HOUR</h3>
+                      <p className="siena-view-170">Tuesday–Thursday, 4–6pm · Drinks and small plates</p>
                     </div>
-                    <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
+                    <div className="siena-view-171">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-12" /></svg>
                     </div>
                   </div>
@@ -579,24 +579,24 @@ export default function Home() {
             {/* Card ancha abajo - Beverages */}
             <motion.a
               href="/menus?tab=libations"
-              className="group relative overflow-hidden shadow-lg md:col-span-2 h-[220px] md:h-auto"
+              className="siena-view-174 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.38, delay: 0.18, ease: "easeOut" }}
               whileHover={{ y: -6, transition: { duration: 0.22 } }}
             >
-              <Image src="/assets/pages/Home/ETF-Beverages-2-landscape.jpg" alt="Beverages" fill sizes="(max-width: 767px) 100vw, 66vw" loading="lazy" className="object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
+              <Image src="/assets/pages/Home/ETF-Beverages-2-landscape.jpg" alt="Beverages" fill sizes="(max-width: 767px) 100vw, 66vw" loading="lazy" className="siena-view-41" />
+              <div className="siena-view-168" />
 
-              <div className="absolute inset-4 border border-[#e0b265]">
-                <div className="flex flex-col justify-end h-full p-4 md:p-6">
+              <div className="siena-view-42">
+                <div className="siena-view-43">
                   <div className="flex items-end justify-between gap-3">
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-white text-[28px] md:text-[32px] font-semibold leading-tight">BEVERAGES</h3>
-                      <p className="text-white/80 text-[14px] md:text-[18px] mt-1">Cocktails, wines and craft drinks</p>
+                      <h3 className="siena-view-169">BEVERAGES</h3>
+                      <p className="siena-view-170">Cocktails, wines and craft drinks</p>
                     </div>
-                    <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
+                    <div className="siena-view-171">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-12" /></svg>
                     </div>
                   </div>
@@ -610,23 +610,23 @@ export default function Home() {
 
       </section>
 
-      <section className="relative w-full h-[40px] md:h-[58px] overflow-hidden bg-[#e0b265]">
+      <section className="siena-view-160">
         <img width={1512} height={58} loading="lazy"
           src="/assets/divisor_beige.svg"
           alt="divider"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="siena-view-28"
         />
       </section>
 
       {/* EVENTS */}
       <section
-        className="relative w-full pt-[80px] pb-[80px] overflow-hidden mt-[-5px]"
+        className="siena-view-175"
         data-bg="/assets/update_homepage_something_esp.webp"
         style={{ backgroundSize: "cover", backgroundPosition: "center" }}
       >
 
         <div className="w-full max-w-[1180px] mx-auto px-4">
-          <div className="flex flex-col items-center text-center pb-[30px]">
+          <div className="siena-view-176">
 
             {/* Icono arriba centrado */}
             <motion.img width={59} height={54} loading="lazy"
@@ -644,7 +644,7 @@ export default function Home() {
 
               {/* Título */}
               <motion.h2
-                className="text-white text-[36px] sm:text-[48px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="siena-view-177"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -656,7 +656,7 @@ export default function Home() {
 
               {/* "every day" superpuesto */}
               <motion.span
-                className="absolute left-1/2 top-[105%] -translate-x-1/2 -translate-y-[12%] w-full max-w-[900px] text-[#e0b265] text-[26px] sm:text-[34px] md:text-[60px] lg:text-[85px] leading-none"
+                className="siena-view-178"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e",
@@ -672,7 +672,7 @@ export default function Home() {
             </div>
 
             <motion.p
-              className="text-white/80 text-[16px] md:text-[18px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25"
+              className="siena-view-164"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -683,7 +683,7 @@ export default function Home() {
 
             <motion.a
               href="/event-inquiry"
-              className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition"
+              className="siena-view-179 group"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -691,7 +691,7 @@ export default function Home() {
             >
               BOOK AN EVENT
 
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="fill-[#1b312e] transition-colors duration-300" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="siena-view-159" /></svg>
             </motion.a>
           </div>
 
@@ -709,14 +709,14 @@ export default function Home() {
         <img width={1512} height={58} loading="lazy"
           src="/assets/divisor_negro.svg"
           alt="divider"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="siena-view-28"
         />
       </section>
 
       {/* SOCIAL MEDIA */}
       <section className="w-full py-[80px] px-4 overflow-hidden" style={{ backgroundColor: "#1b312e" }}>
         <div className="w-full max-w-[1180px] mx-auto">
-          <div className="flex flex-col items-center text-center mb-[60px] md:mb-[80px]">
+          <div className="siena-view-94">
             <motion.img width={132} height={98} loading="lazy"
               src="/assets/icono_123.svg"
               alt=""
@@ -728,7 +728,7 @@ export default function Home() {
             />
             <div className="relative inline-block">
               <motion.h2
-                className="text-[#e0b265] text-[36px] sm:text-[48px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+                className="siena-view-162"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -738,7 +738,7 @@ export default function Home() {
                 Follow Us
               </motion.h2>
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[22px] sm:text-[30px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+                className="siena-view-163"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: "2px 2px 0 #1b312e,-2px -2px 0 #1b312e,2px -2px 0 #1b312e,-2px 2px 0 #1b312e",
@@ -752,7 +752,7 @@ export default function Home() {
               </motion.span>
             </div>
             <motion.p
-              className="text-white/70 text-lg md:text-xl leading-[140%] max-w-[560px] mt-12 md:mt-24"
+              className="siena-view-180"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -762,7 +762,7 @@ export default function Home() {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+          <div className="siena-view-181">
             {[
               {
                 platform: "Instagram",
@@ -811,14 +811,14 @@ export default function Home() {
                   fill
                   loading="lazy"
                   sizes="(max-width: 767px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="siena-view-25"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10" />
-                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-                  <span className="text-[#e0b265] mb-3 group-hover:scale-110 transition-transform duration-300 w-fit">{icon}</span>
-                  <span className="text-[#e0b265] text-[10px] tracking-[0.4em] uppercase mb-1">{platform}</span>
-                  <span className="text-white text-[26px] md:text-[30px] leading-none mb-4" style={{ fontFamily: "'Palmore-Light', serif" }}>{handle}</span>
-                  <div className="flex items-center gap-2 text-white/60 group-hover:text-[#e0b265] text-[12px] tracking-[0.25em] uppercase transition-colors duration-300">
+                <div className="siena-view-182" />
+                <div className="siena-view-183">
+                  <span className="siena-view-184">{icon}</span>
+                  <span className="siena-view-185">{platform}</span>
+                  <span className="siena-view-186" style={{ fontFamily: "'Palmore-Light', serif" }}>{handle}</span>
+                  <div className="siena-view-187">
                     <span>Follow</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-16" /></svg>
                   </div>
@@ -837,7 +837,7 @@ export default function Home() {
       >
 
         <div className="w-full max-w-[1180px] mx-auto px-4">
-          <div className="flex flex-col items-center text-center pb-[30px]">
+          <div className="siena-view-176">
 
             {/* Icono arriba centrado */}
             <motion.img width={323} height={103} loading="lazy"
@@ -854,7 +854,7 @@ export default function Home() {
 
               {/* Título */}
               <motion.h2
-                className="text-[#e0b265] text-[28px] sm:text-[38px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase mb-[10px]"
+                className="siena-view-188"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -865,7 +865,7 @@ export default function Home() {
               </motion.h2>
 
               <motion.span
-                className="absolute left-1/2 md:top-[115%] -translate-x-1/2 -translate-y-1/2 w-full max-w-[900px] text-[#e0b265] text-[24px] sm:text-[32px] md:text-[60px] lg:text-[85px] leading-none"
+                className="siena-view-189"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive"
                 }}
@@ -890,34 +890,34 @@ export default function Home() {
 
       </section>
 
-      <section className="relative w-full h-[28px] overflow-hidden bg-[#030302]">
+      <section className="siena-view-190">
         <img width={1512} height={27} loading="lazy"
           src="/assets/divisor_estrella3.svg"
           alt="divider"
-          className="absolute inset-0 w-full h-full object-cover scale-y-125"
+          className="siena-view-191"
         />
       </section>
 
       {/* FIND US */}
       <section
-        className="relative w-full py-12 md:py-20 overflow-hidden"
+        className="siena-view-192"
         data-bg="/assets/dark-green-wall-backdrop-grunge-background-texture.jpg"
         style={{ backgroundSize: "cover", backgroundPosition: "center" }}
       >
-        <div className="w-full max-w-[1180px] mx-auto px-4 md:px-0">
+        <div className="siena-view-193">
           <div
-            className="relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-stretch gap-8 md:gap-12"
+            className="siena-view-194"
             data-bg="/assets/pattern-dark.png"
             style={{ backgroundColor: "#1e3833", backgroundSize: "160px", backgroundRepeat: "repeat" }}
           >
-            <div className="absolute inset-3 border border-[#e0b265]/20 pointer-events-none" />
+            <div className="siena-view-195" />
 
             {/* Columna izquierda */}
-            <div className="flex-1 flex flex-col gap-4 md:gap-5 relative z-10 w-full">
+            <div className="siena-view-196">
               <img width={61} height={51} loading="lazy" src="/assets/icono_findus.svg" alt="Find Us" className="w-[55px] md:w-[68px] h-auto" />
 
               <h2
-                className="text-[#e0b265] text-[38px] sm:text-[48px] md:text-[72px] font-bold tracking-wide leading-none"
+                className="siena-view-197"
                 style={{ fontFamily: "'Palmore-Light', serif" }}
               >
                 FIND US
@@ -927,60 +927,60 @@ export default function Home() {
                 href={info.maps_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-start gap-2 text-white/85 text-[16px] md:text-[18px] leading-[1.5] hover:text-[#e0b265] transition"
+                className="siena-view-198 group"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-0.5 flex-shrink-0"><use href="/assets/siena-ui-icons.svg#siena-icon-17" className="fill-[#e0b265] group-hover:fill-white transition-colors duration-300" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-0.5 flex-shrink-0"><use href="/assets/siena-ui-icons.svg#siena-icon-17" className="siena-view-199" /></svg>
                 {info.address}
               </a>
 
               <a
                 href={`tel:${info.phone.replace(/\D/g, '')}`}
-                className="group flex items-center gap-2 text-white/85 text-[16px] md:text-[18px] hover:text-[#e0b265] transition"
+                className="siena-view-200 group"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-18" className="fill-[#e0b265] group-hover:fill-white transition-colors duration-300" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-18" className="siena-view-199" /></svg>
                 {info.phone}
               </a>
 
               <div className="flex flex-col gap-2 mt-2">
                 <p
-                  className="text-white text-[30px] md:text-[38px] tracking-wide uppercase leading-none"
+                  className="siena-view-201"
                   style={{ fontFamily: "'Palmore-Light', serif" }}
                 >
                   Opening Hours
                 </p>
                 <div className="w-8 h-[2px] bg-[#e0b265]/40 mb-1" />
                 {info.hours.map(({ label, value }) => (
-                  <p key={label} className="text-white/80 text-[16px] md:text-[18px]">
+                  <p key={label} className="siena-view-202">
                     <span className="font-semibold">{label}</span>: {value}
                   </p>
                 ))}
               </div>
 
-              <div className="flex flex-wrap items-center gap-3 mt-1 md:mt-2">
+              <div className="siena-view-203">
                 <a
                   href={info.maps_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition"
+                  className="siena-view-204 group"
                 >
                   OPEN IN MAP
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="fill-[#1b312e] transition-colors duration-300" /></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="siena-view-159" /></svg>
                 </a>
 
                 <Link
                   href={ORDER_ONLINE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition"
+                  className="siena-view-204 group"
                 >
                   ORDER ONLINE
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="fill-[#1b312e] transition-colors duration-300" /></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="siena-view-159" /></svg>
                 </Link>
               </div>
             </div>
 
             {/* Mapa */}
-            <div className="flex-1 overflow-hidden shadow-lg relative z-10 w-full min-h-[260px] md:min-h-0 md:h-auto self-stretch">
+            <div className="siena-view-205">
               <iframe
                 title="Siena Restaurant location on Google Maps"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.051868613463!2d-84.2991249!3d34.06818459999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f575f4dbde006b%3A0x8a505a045593f782!2sSiena%20Restaurant!5e0!3m2!1ses-419!2scr!4v1777903381535!5m2!1ses-419!2scr"
@@ -995,11 +995,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative w-full h-[28px] overflow-hidden bg-[#030302]">
+      <section className="siena-view-190">
         <img width={1512} height={27} loading="lazy"
           src="/assets/divisor_estrella3.svg"
           alt="divider"
-          className="absolute inset-0 w-full h-full object-cover scale-y-125"
+          className="siena-view-191"
         />
       </section>
 

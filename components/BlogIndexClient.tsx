@@ -14,7 +14,7 @@ export default function BlogIndexClient({ blogs }: { blogs: BlogSummary[] }) {
     <main>
       <BreadcrumbSchema trail={[{ name: "Blog", path: "/blogs" }]} />
       {/* HERO */}
-      <section className="relative w-full h-[400px] md:h-[45vh] overflow-hidden">
+      <section className="siena-view-86">
         <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.08 }}
@@ -31,19 +31,19 @@ export default function BlogIndexClient({ blogs }: { blogs: BlogSummary[] }) {
           />
         </motion.div>
         <div className="absolute inset-0 bg-black/55" />
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-14 md:pt-16">
+        <div className="siena-view-88">
           <motion.div
             className="flex items-center gap-3 mb-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
-            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
+            <div className="siena-view-134" />
+            <span className="siena-view-90">✦</span>
+            <div className="siena-view-135" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[30px] sm:text-[42px] md:text-[62px] lg:text-[80px] max-w-[1000px] leading-[0.95] tracking-[0.04em] uppercase"
+            className="siena-view-136"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -57,15 +57,15 @@ export default function BlogIndexClient({ blogs }: { blogs: BlogSummary[] }) {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
-            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
+            <div className="siena-view-134" />
+            <span className="siena-view-90">✦</span>
+            <div className="siena-view-135" />
           </motion.div>
         </div>
       </section>
 
       {/* MARQUEE */}
-      <section className="w-full bg-[#030302] py-5 overflow-hidden">
+      <section className="siena-view-32">
         <style>{`
           @keyframes mq-ev { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
           .mq-ev { display:flex; width:max-content; animation:mq-ev 22s linear infinite; }
@@ -73,13 +73,13 @@ export default function BlogIndexClient({ blogs }: { blogs: BlogSummary[] }) {
         <div className="mq-ev">
           {[0, 1, 2, 3].map((r) => (
             <div key={r} className="flex items-center">
-              <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">PRIVATE DINNERS</span>
+              <span className="siena-view-93">PRIVATE DINNERS</span>
               <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
-              <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">CORPORATE GATHERINGS</span>
+              <span className="siena-view-93">CORPORATE GATHERINGS</span>
               <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
-              <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">COCKTAIL RECEPTIONS</span>
+              <span className="siena-view-93">COCKTAIL RECEPTIONS</span>
               <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
-              <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">MILESTONE CELEBRATIONS</span>
+              <span className="siena-view-93">MILESTONE CELEBRATIONS</span>
               <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
             </div>
           ))}
@@ -89,11 +89,11 @@ export default function BlogIndexClient({ blogs }: { blogs: BlogSummary[] }) {
       <section className="w-full py-16" style={{ backgroundColor: "#1b312e" }}>
         <div className="container mx-auto px-5">
           {/* A section label, not the page title — the hero above already carries the h1. */}
-          <h2 className="text-3xl font-semi-bold mb-6 text-center text-white">
+          <h2 className="siena-view-137 font-semi-bold">
             Stories from Siena
           </h2>
 
-          <div className="max-w-3xl mx-auto mb-12 text-white/80 text-base leading-relaxed space-y-4">
+          <div className="siena-view-138">
             <p>
               Read Siena Restaurant news and dining stories from Alpharetta.
               Explore Mediterranean and Italian food, small plates and dinner ideas.
@@ -112,7 +112,7 @@ export default function BlogIndexClient({ blogs }: { blogs: BlogSummary[] }) {
             </p>
           </div>
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="siena-view-139">
               {blogs
                 .map((blog) => (
                   <BlogCard key={blog.slug} blog={blog} />

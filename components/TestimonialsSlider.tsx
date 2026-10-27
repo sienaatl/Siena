@@ -81,7 +81,7 @@ export default function TestimonialsSlider() {
             href={t.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex-shrink-0 w-[280px] mx-3 bg-white p-8 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+            className="siena-view-22"
           >
             <div className="flex items-center justify-between">
               <img width={80} height={16} src="/assets/iconoestrellas.svg" alt="5 stars" className="w-[120px] h-auto" />
@@ -92,10 +92,10 @@ export default function TestimonialsSlider() {
                 <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
               </svg>
             </div>
-            <p className="text-[#2b0a0a] text-[16px] leading-[1.8] flex-1">
+            <p className="siena-view-23">
               {t.text}
             </p>
-            <span className="text-[#1b312e] text-[15px] font-semibold">{t.name}</span>
+            <span className="siena-view-24">{t.name}</span>
           </a>
         ))}
       </div>
