@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     template: "%s | Siena",
   },
   description:
-    "Mediterranean and Italian dinner at Siena in Alpharetta: mezze, handmade pasta, seafood and signature cocktails. Friday live music. Free parking. Reserve a table.",
+    "Looking for restaurants in Alpharetta? Siena serves Mediterranean and Italian dinner, handmade pasta, seafood and cocktails. Free parking. Reserve a table.",
   keywords: [
     "Siena Restaurant",
     "Italian Restaurant Alpharetta",
@@ -101,13 +101,13 @@ export const metadata: Metadata = {
     siteName: "Siena Restaurant",
     title: "Mediterranean & Italian Restaurant in Alpharetta | Siena",
     description:
-      "Mediterranean and Italian dinner at Siena in Alpharetta: mezze, handmade pasta, seafood and signature cocktails. Friday live music. Free parking. Reserve a table.",
+      "Looking for restaurants in Alpharetta? Siena serves Mediterranean and Italian dinner, handmade pasta, seafood and cocktails. Free parking. Reserve a table.",
     images: [{ url: "/assets/Siena_20.03.26-A-02.webp", width: 1200, height: 630, alt: "Siena Restaurant in Alpharetta, Georgia" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Mediterranean & Italian Restaurant in Alpharetta | Siena",
-    description: "Mediterranean and Italian dinner at Siena in Alpharetta: mezze, handmade pasta, seafood and signature cocktails. Friday live music. Free parking. Reserve a table.",
+    description: "Looking for restaurants in Alpharetta? Siena serves Mediterranean and Italian dinner, handmade pasta, seafood and cocktails. Free parking. Reserve a table.",
     images: ["/assets/Siena_20.03.26-A-02.webp"],
   },
   robots: {
