@@ -148,7 +148,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "What are the hours?",
-    a: "Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm, plus Saturday brunch from 10am.",
+    a: "Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm. Call to confirm current brunch availability.",
   },
 ];
 
