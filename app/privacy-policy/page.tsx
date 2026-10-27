@@ -73,21 +73,25 @@ export default async function PrivacyNotice() {
             your privacy and is committed to protecting the personal information you provide to us.
           </Paragraph>
           <Paragraph>
-            This Privacy Notice explains how Siena Restaurant collects, uses, stores, and shares information when you
-            visit our website, make or modify a reservation, join a waitlist, submit an event or private dining
-            inquiry, contact us, opt in to receive text messages or marketing communications, or otherwise interact
+            This notice explains how Siena Restaurant collects, uses, stores, and shares information.
+            It covers website visits, making or changing reservations, joining a waitlist, event or private dining
+            inquiries, contacting us, opting in to text messages or marketing communications, and other interactions
             with Siena Restaurant.
           </Paragraph>
 
           <Heading>1. Information We Collect</Heading>
           <Paragraph>
-            Depending on how you interact with Siena Restaurant, we may collect information you voluntarily provide,
-            including your name, email address, mobile or telephone number, reservation information, reservation date
-            and time, party size, special requests, birthday or special occasion information you choose to provide,
-            event or private dining inquiry information, communication preferences, SMS/text messaging consent
-            preferences, marketing communication preferences, customer service communications, feedback, and other
-            information you voluntarily provide.
+            Depending on how you interact with Siena Restaurant, we may collect information you voluntarily provide.
+            This includes:
           </Paragraph>
+          <List items={[
+            "Your name, email address, and mobile or telephone number.",
+            "Reservation information, including the date and time, party size, and special requests.",
+            "Birthday or special occasion information you choose to provide.",
+            "Event or private dining inquiry information.",
+            "Communication preferences, including SMS/text messaging consent and marketing communication preferences.",
+            "Customer service communications, feedback, and other information you voluntarily provide.",
+          ]} />
           <Paragraph>
             When you use our website, certain technical information may also be collected automatically, including IP
             address, browser type, device type, operating system, pages visited, referring website, date and time of
@@ -95,14 +99,18 @@ export default async function PrivacyNotice() {
           </Paragraph>
 
           <Heading>2. How We Use Your Information</Heading>
-          <Paragraph>
-            We may use your information to create, confirm, manage, modify, or cancel reservations; send reservation
-            confirmations and reminders; provide waitlist and table-ready notifications; respond to inquiries;
-            provide customer service; process event and private dining inquiries; communicate regarding restaurant
-            services; send transactional SMS messages when you have consented; send promotional SMS messages when you
-            have separately consented; maintain records of communication and consent; improve our website and guest
-            experience; prevent fraud and security incidents; and comply with applicable legal requirements.
-          </Paragraph>
+          <Paragraph>We may use your information to:</Paragraph>
+          <List items={[
+            "Create, confirm, manage, modify, or cancel reservations.",
+            "Send reservation confirmations and reminders, and provide waitlist and table-ready notifications.",
+            "Respond to inquiries and provide customer service.",
+            "Process event and private dining inquiries, and communicate regarding restaurant services.",
+            "Send transactional SMS messages when you have consented.",
+            "Send promotional SMS messages when you have separately consented.",
+            "Maintain records of communication and consent.",
+            "Improve our website and guest experience.",
+            "Prevent fraud and security incidents, and comply with applicable legal requirements.",
+          ]} />
 
           <Heading>3. SMS/Text Messaging Program</Heading>
           <Paragraph>

@@ -149,9 +149,9 @@ export const BLOCKS: Block[] = [
     heading: "A Daytime Date Works Too",
     script: "saturday morning",
     image: "/assets/Siena_20.03.26-LS-LimoncelloRicottaPancakes-02.webp",
-    alt: "Limoncello ricotta pancakes from the Saturday brunch menu at Siena, Alpharetta",
+    alt: "Limoncello ricotta pancakes from the brunch menu at Siena, Alpharetta",
     paras: [
-      "Not every date has to be dinner. Saturday morning runs on a separate brunch menu, with limoncello ricotta pancakes, a truffle and pecorino frittata, baked eggs in San Marzano and steak and eggs Mediterraneo.",
+      "A separate brunch menu is listed online, with limoncello ricotta pancakes, a truffle and pecorino frittata, baked eggs in San Marzano and steak and eggs Mediterraneo.",
       "The same sharing idea, earlier in the day and in much better light.",
     ],
   },
@@ -176,7 +176,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Where is Siena and how late is it open?",
-    a: "124 Devore Rd, Alpharetta, GA 30009, near Avalon and the Ameris Bank Amphitheatre. Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm, plus Saturday brunch from 10am.",
+    a: "124 Devore Rd, Alpharetta, GA 30009, near Avalon and the Ameris Bank Amphitheatre. Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm. Call to confirm current brunch availability.",
   },
   {
     q: "What should we order?",

@@ -53,7 +53,7 @@ export const BLOCKS: Block[] = [
     paras: [
       "The room is warm and a little dramatic, with bold lighting that makes a Tuesday feel like an occasion. Upscale, but nobody is being formal about it.",
       "Midweek is calmer and easier to get into. Friday and Saturday run later, to midnight, and Friday has live music from 7 to 10pm, which changes the room completely. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
-      "Saturday morning is different again, with its own <a href=\"/brunch-alpharetta\">brunch menu</a> from 10am.",
+      "A separate <a href=\"/brunch-alpharetta\">brunch menu</a> is listed online. Call to confirm current service days and hours.",
     ],
   },
   {
@@ -138,7 +138,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "What are the hours?",
-    a: "Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm, plus a Saturday brunch menu from 10am.",
+    a: "Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm. Call to confirm current brunch availability.",
   },
   {
     q: "Do I need a reservation?",

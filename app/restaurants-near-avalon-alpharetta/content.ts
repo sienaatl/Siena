@@ -38,7 +38,7 @@ export const BLOCKS: Block[] = [
     image: "/assets/Siena_20.03.26-A-01.webp",
     alt: "The front of Siena Restaurant & Bar on Devore Road, a short drive from Avalon in Alpharetta",
     paras: [
-      "Siena is a dinner and bar room. The kitchen opens at 4pm Tuesday to Sunday and closes Monday. The only daytime service is Saturday brunch from 10am.",
+      "Siena is a dinner and bar room. The kitchen opens at 4pm Tuesday to Sunday and closes Monday. Call to confirm any current daytime or brunch service.",
       "That is worth knowing before you drive over after an afternoon at Avalon. If it is 2pm and you are hungry, this is not the answer. If it is 4pm and you have finished shopping, it is a good one.",
       "One service done properly rather than two rushed ones is also why the evening room feels the way it does.",
     ],
@@ -113,13 +113,13 @@ export const BLOCKS: Block[] = [
   {
     kind: "split",
     bg: "green",
-    heading: "Saturday Mornings Are Different",
-    script: "brunch, from 10am",
+    heading: "Ask About Brunch",
+    script: "confirm before visiting",
     image: "/assets/Siena_20.03.26-LS-LimoncelloRicottaPancakes-01.webp",
-    alt: "Limoncello ricotta pancakes from the Saturday brunch menu near Avalon in Alpharetta",
+    alt: "Limoncello ricotta pancakes from the brunch menu near Avalon in Alpharetta",
     paras: [
-      "The one time Siena is open during the day is Saturday morning, on a separate brunch menu from 10am. Limoncello ricotta pancakes, a truffle and pecorino frittata, baked eggs in San Marzano.",
-      "If you are heading to Avalon for the day, brunch first and shop after works rather better than the other way around. <a href=\"/brunch-alpharetta\">More on brunch</a>.",
+      "Call to confirm current brunch days and hours. The online menu lists Limoncello ricotta pancakes, a truffle and pecorino frittata, baked eggs in San Marzano.",
+      "Confirm service with Siena before planning a daytime visit around a shopping trip. <a href=\"/brunch-alpharetta\">More on brunch</a>.",
     ],
   },
 ];
@@ -131,7 +131,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Can we come for lunch after shopping?",
-    a: "No. The kitchen opens at 4pm Tuesday to Sunday and there is no lunch service. The only daytime service is Saturday brunch from 10am.",
+    a: "No. The kitchen opens at 4pm Tuesday to Sunday and there is no lunch service. Call to confirm any current daytime or brunch service.",
   },
   {
     q: "Is it easier to park than Avalon?",
@@ -147,7 +147,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "What are the hours?",
-    a: "Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm, plus Saturday brunch from 10am.",
+    a: "Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm. Call to confirm current brunch availability.",
   },
 ];
 

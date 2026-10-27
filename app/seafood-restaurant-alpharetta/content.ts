@@ -38,7 +38,7 @@ export const BLOCKS: Block[] = [
     heading: "What Comes From the Sea",
     script: "three at dinner",
     intro:
-      "These three sit on the dinner menu every night the kitchen is open. Two more turn up at Saturday brunch and at happy hour. <a href=\"/menus\">See the full menu</a>.",
+      "These three sit on the dinner menu every night the kitchen is open. The online brunch and happy-hour menus list other seafood dishes. Confirm current availability with the team. <a href=\"/menus\">See the full menu</a>.",
     items: [
       {
         image: "/assets/menu/salmon-limone.webp",
@@ -86,8 +86,8 @@ export const BLOCKS: Block[] = [
     alt: "Octopus carpaccio sliced thin with olives and herbs on a plate at Siena, Alpharetta",
     paras: [
       "Polpo alla Griglia is slow-braised octopus finished over an open flame, served over potato puree with romesco, charred lemon and seasonal greens. The braise is what makes octopus tender and the flame at the end is what makes it worth ordering.",
-      "At Saturday brunch the same ingredient turns up cold. Octopus Carpaccio is sliced thin with fennel slaw, citrus oil, fresh herbs and Castelvetrano olives, and it is the one raw-looking plate on any Siena menu.",
-      "Between them they cover most of what anyone wants from octopus. <a href=\"/brunch-alpharetta\">More on Saturday brunch</a>.",
+      "The online brunch menu also lists a cold preparation; call to confirm current brunch service. Octopus Carpaccio is sliced thin with fennel slaw, citrus oil, fresh herbs and Castelvetrano olives, and it is the one raw-looking plate on any Siena menu.",
+      "Between them they cover most of what anyone wants from octopus. <a href=\"/brunch-alpharetta\">Brunch menu and availability</a>.",
     ],
   },
   {
@@ -100,7 +100,7 @@ export const BLOCKS: Block[] = [
     paras: [
       "Calamari Fritti Siena is rings and tentacles in a house batter, fried, then finished in roasted garlic butter with mixed pickled peppers and served with sweet chili aioli and charred lemon. Most tables order it before they have decided on anything else.",
       "Happy hour carries a shorter calamari with lemon, herbs and a dipping sauce, and a grilled shrimp kabob skewer next to it. <a href=\"/happy-hour-alpharetta\">See what happy hour covers</a>.",
-      "Shrimp shows up at Saturday brunch too: a shrimp al ajillo skillet with garlic, white wine and chili flakes served with grilled bread, and Spanish shrimp bruschetta with romesco spread, lemon zest and chili oil.",
+      "The online brunch menu also lists shrimp dishes; confirm current availability before visiting: a shrimp al ajillo skillet with garlic, white wine and chili flakes served with grilled bread, and Spanish shrimp bruschetta with romesco spread, lemon zest and chili oil.",
     ],
   },
   {
@@ -130,7 +130,7 @@ export const BLOCKS: Block[] = [
       },
       {
         title: "No Raw Bar",
-        desc: "No oysters, no sushi, no shellfish tower. Every seafood plate is cooked, apart from the octopus carpaccio at Saturday brunch.",
+        desc: "No oysters, no sushi, no shellfish tower. The online brunch menu lists octopus carpaccio; call to confirm current brunch service.",
       },
       {
         title: "Not Only Fish",
@@ -155,7 +155,7 @@ export const BLOCKS: Block[] = [
 export const FAQS: Faq[] = [
   {
     q: "Does Siena serve seafood?",
-    a: "Yes. Mediterranean branzino, salmon limone, flame-grilled octopus and calamari fritti sit on the dinner menu. Saturday brunch adds octopus carpaccio, a shrimp al ajillo skillet and Spanish shrimp bruschetta, and happy hour carries calamari and a shrimp kabob skewer.",
+    a: "Yes. Mediterranean branzino, salmon limone, flame-grilled octopus and calamari fritti sit on the dinner menu. The online brunch menu lists octopus carpaccio, a shrimp al ajillo skillet and Spanish shrimp bruschetta, and happy hour carries calamari and a shrimp kabob skewer.",
   },
   {
     q: "Is Siena a seafood restaurant?",
@@ -163,7 +163,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Do you have oysters or a raw bar?",
-    a: "No. There are no oysters, no sushi and no shellfish platters. The only cold seafood plate is the octopus carpaccio at Saturday brunch.",
+    a: "No. There are no oysters, no sushi and no shellfish platters. The online brunch menu lists octopus carpaccio. Call to confirm current brunch service.",
   },
   {
     q: "What is the best seafood dish to order?",
@@ -171,7 +171,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "When is the kitchen open?",
-    a: "Dinner from 4pm Tuesday to Sunday, until 10pm most nights and until midnight on Friday and Saturday. Closed Monday. Brunch runs Saturday from 10am.",
+    a: "Dinner from 4pm Tuesday to Sunday, until 10pm most nights and until midnight on Friday and Saturday. Closed Monday. Call to confirm current brunch availability.",
   },
   {
     q: "Where is Siena?",

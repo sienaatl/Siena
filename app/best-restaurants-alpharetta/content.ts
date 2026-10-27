@@ -178,7 +178,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "What are the opening hours?",
-    a: "Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm. Dinner and bar service, plus Saturday brunch from 10am.",
+    a: "Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm. Dinner and bar service. Call to confirm current brunch availability.",
   },
 ];
 
@@ -200,7 +200,7 @@ export const REVIEWS: Reviews = {
 export const PRACTICAL = [
   "Step-free entrance and accessible parking near the door",
   "Minutes from Avalon and the Ameris Bank Amphitheatre",
-  "Dinner and bar service, plus Saturday brunch",
+  "Dinner and bar service; call about brunch availability",
 ];
 
 export const CLOSING = {

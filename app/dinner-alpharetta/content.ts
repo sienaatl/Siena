@@ -40,7 +40,7 @@ export const BLOCKS: Block[] = [
     paras: [
       "Tuesday to Thursday is the calm version. Easier to get a table, quieter room, better if you actually want to talk. The kitchen runs 4pm to 10pm.",
       "Friday and Saturday go to midnight and the room is fuller. Friday also has live music from 7 to 10pm, which makes it the busiest night and the one worth booking ahead for. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
-      "Sunday is 4pm to 10pm again. Monday is closed. Saturday morning runs a separate <a href=\"/brunch-alpharetta\">brunch menu</a> from 10am, which is a different thing entirely.",
+      "Sunday is 4pm to 10pm again. Monday is closed. For brunch, <a href=\"/brunch-alpharetta\">check the menu and confirm current availability</a> with the team.",
     ],
   },
   {
@@ -118,7 +118,7 @@ export const BLOCKS: Block[] = [
     image: "/assets/Siena_20.03.26-A-01.webp",
     alt: "The front of Siena Restaurant & Bar on Devore Road, open for dinner in Alpharetta",
     paras: [
-      "Siena does not serve lunch. The kitchen opens at 4pm through the week, and the only daytime service is Saturday brunch from 10am.",
+      "Siena does not serve lunch. The published dinner hours start at 4pm Tuesday to Sunday. Call to confirm any current daytime or brunch service.",
       "That is worth knowing before you drive over, and it is also why the evening room feels the way it does. One service, done properly, rather than two rushed ones.",
       "It is one of the <a href=\"/new-restaurants-alpharetta\">newer rooms in town</a>, open since December 2025.",
     ],
@@ -136,7 +136,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Do you serve lunch?",
-    a: "No. Dinner and bar service only, plus a separate brunch menu on Saturday morning from 10am.",
+    a: "The published hours cover dinner and bar service. Call to confirm any current daytime or brunch service.",
   },
   {
     q: "How long should we allow?",
