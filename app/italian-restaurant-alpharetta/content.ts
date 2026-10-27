@@ -107,9 +107,9 @@ export const BLOCKS: Block[] = [
     bg: "green",
     icon: "/assets/icon_menus.svg",
     heading: "Weekend Brunch",
-    script: "saturday mornings",
+    script: "confirm availability",
     intro:
-      "Saturday runs on its own brunch menu, and it is worth planning around. Same idea as dinner. Italian technique, Mediterranean brightness, plates built for sharing, just earlier and in better light.",
+      "The online brunch menu includes Italian and Mediterranean-inspired dishes. Call Siena to confirm current brunch days, hours and availability before planning a visit.",
     items: [
       {
         image: "/assets/Siena_20.03.26-LS-LimoncelloRicottaPancakes-01.webp",
@@ -164,7 +164,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Do I need a reservation?",
-    a: "Booking ahead is a smart move, especially on Friday and Saturday evenings and for weekend brunch. Walk-ins are welcome at the bar when there is room. <a href=\"/reservations\">Book a table here</a>.",
+    a: "Booking ahead is a smart move, especially on Friday and Saturday evenings. Walk-ins are welcome at the bar when there is room. <a href=\"/reservations\">Book a table here</a>.",
   },
   {
     q: "Where is Siena located in Alpharetta?",
@@ -172,7 +172,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Does Siena serve brunch?",
-    a: "Yes. Weekend brunch runs on Saturday mornings, with dishes like limoncello ricotta pancakes, truffle and pecorino frittata, baked eggs in San Marzano and steak and eggs Mediterraneo.",
+    a: "A brunch menu is listed online, with limoncello ricotta pancakes, truffle and pecorino frittata, baked eggs in San Marzano and steak and eggs Mediterraneo. Call (404) 999-0373 to confirm current brunch availability and hours.",
   },
   {
     q: "Is Siena good for groups?",
@@ -202,7 +202,7 @@ export const REVIEWS: Reviews = {
 export const PRACTICAL = [
   "Step-free entrance and accessible parking near the door",
   "Minutes from Avalon and the Ameris Bank Amphitheatre",
-  "Dinner and bar service, plus Saturday brunch",
+  "Dinner and bar service; call about brunch availability",
 ];
 
 export const CLOSING = {
