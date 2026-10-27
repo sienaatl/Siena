@@ -3,19 +3,19 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
 export const metadata: Metadata = {
-  title: "Tapas Restaurant in Alpharetta",
+  title: "Tapas in Alpharetta",
   description:
-    "Siena is a tapas-style restaurant in Alpharetta where every plate is shared. Italian and Mediterranean on one menu. Book a table for the whole group.",
+    "Explore tapas in Alpharetta at Siena: Mediterranean and Italian small plates to share, plus pasta and entrées. View the menu and reserve a table.",
   alternates: { canonical: "/tapas-restaurant-alpharetta" },
   openGraph: {
-    title: "Tapas Restaurant in Alpharetta | Siena Restaurant & Bar",
+    title: "Tapas in Alpharetta | Siena Restaurant & Bar",
     description:
       "Tapas-style sharing plates, Italian and Mediterranean on one menu, in downtown Alpharetta.",
     url: "https://sienaatl.com/tapas-restaurant-alpharetta",
     type: "website",
     images: [{ url: "https://sienaatl.com/assets/Siena_20.03.26-A-04.webp" }],
   },
-  twitter: { card: "summary_large_image", title: "Tapas Restaurant in Alpharetta | Siena Restaurant & Bar", description: "Tapas-style sharing plates, Italian and Mediterranean on one menu, in downtown Alpharetta." },
+  twitter: { card: "summary_large_image", title: "Tapas in Alpharetta | Siena Restaurant & Bar", description: "Tapas-style sharing plates, Italian and Mediterranean on one menu, in downtown Alpharetta." },
 };
 
 /**
@@ -41,7 +41,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   };
   return (
     <>
-      <BreadcrumbSchema trail={[{ name: "Tapas Restaurant in Alpharetta", path: "/tapas-restaurant-alpharetta" }]} />
+      <BreadcrumbSchema trail={[{ name: "Tapas in Alpharetta", path: "/tapas-restaurant-alpharetta" }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {children}
     </>
