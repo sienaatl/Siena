@@ -84,9 +84,9 @@ export const BLOCKS: Block[] = [
     image: "/assets/Siena_20.03.26-LS-LimoncelloRicottaPancakes-02.webp",
     alt: "Limoncello ricotta pancakes with berries, a meat-free brunch dish in Alpharetta",
     paras: [
-      "Saturday runs a separate brunch menu, and a good part of it is meat-free. The Truffle and Pecorino Frittata with caramelised onion. The Mediterranean Omelette with tomato, red onion, spinach, olives and feta. Wild Mushroom and Pecorino Toast.",
+      "The online brunch menu also lists dishes without meat. Call to confirm current brunch availability. The Truffle and Pecorino Frittata with caramelised onion. The Mediterranean Omelette with tomato, red onion, spinach, olives and feta. Wild Mushroom and Pecorino Toast.",
       "On the sweeter side there are Limoncello Ricotta Pancakes and the Spiced Date Waffle, and a Roasted Cauliflower and Olive Salad if you want something lighter.",
-      "<a href=\"/brunch-alpharetta\">More on brunch</a>, which runs from 10am on Saturday.",
+      "<a href=\"/brunch-alpharetta\">Explore the brunch menu</a> and confirm current service days and hours with Siena.",
     ],
   },
   {
@@ -149,7 +149,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Where are you and what are the hours?",
-    a: "124 Devore Rd, Alpharetta, GA 30009. Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm, plus Saturday brunch from 10am.",
+    a: "124 Devore Rd, Alpharetta, GA 30009. Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm. Call to confirm current brunch availability.",
   },
 ];
 
