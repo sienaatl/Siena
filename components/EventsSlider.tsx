@@ -62,7 +62,7 @@ export default function EventsSlider() {
         <button
           onClick={scrollPrev}
           aria-label="Previous"
-          className="hidden md:flex absolute cursor-pointer -left-16 top-1/2 -translate-y-1/2 z-10 bg-[#e0b265] text-[#1b312e] w-11 h-11 items-center justify-center text-2xl hover:bg-white hover:text-[#1b312e] hover:scale-110 transition-all duration-300 shadow-md"
+          className="siena-view-98"
         >
           ‹
         </button>
@@ -80,7 +80,7 @@ export default function EventsSlider() {
                   delay: i * 0.08,
                   ease: "easeOut",
                 }}
-                className="bg-[#1e3833] border border-white/10 overflow-hidden flex flex-col hover:border-[#e0b265]/50 hover:shadow-2xl transition-all duration-500 basis-full md:basis-[calc((100%-24px)/3)] shrink-0 grow-0 min-w-0"
+                className="siena-view-99"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
@@ -88,29 +88,29 @@ export default function EventsSlider() {
                     alt={event.title}
                     fill
                     sizes="(max-width: 767px) 100vw, 390px"
-                    className="object-cover hover:scale-105 transition-transform duration-700"
+                    className="siena-view-100"
                   />
                 </div>
                 <div className="p-5 md:p-6 flex flex-col gap-3 flex-1">
                   <div className="flex items-center gap-3">
-                    <span className="text-[#e0b265] text-[13px] tracking-widest">/ {String(i + 1).padStart(2, "0")}</span>
+                    <span className="siena-view-101">/ {String(i + 1).padStart(2, "0")}</span>
                     <div className="h-[1px] flex-1 bg-[#e0b265]/30" />
                   </div>
                   <h3
-                    className="text-[#e0b265] text-[32px] md:text-[42px] leading-tight"
+                    className="siena-view-102"
                     style={{ fontFamily: "'Palmore-Light', serif", fontWeight: 300 }}
                   >
                     {event.title}
                   </h3>
                   <div className="w-8 h-[2px] bg-[#e0b265]" />
-                  <p className="text-white/75 text-[15px] md:text-[16px] leading-[1.7]">
+                  <p className="siena-view-103">
                     {event.description}
                   </p>
                   {event.ideal.length > 0 && (
                     <div className="mt-auto pt-3 flex flex-col gap-1">
                       {event.ideal.map((item, j) => (
-                        <span key={j} className="text-white/70 text-[14px] flex items-center gap-2">
-                          <span className="w-1 h-1 rounded-full bg-[#e0b265] flex-shrink-0 inline-block" />
+                        <span key={j} className="siena-view-104">
+                          <span className="siena-view-105" />
                           {item}
                         </span>
                       ))}
@@ -125,7 +125,7 @@ export default function EventsSlider() {
         <button
           onClick={scrollNext}
           aria-label="Next"
-          className="hidden md:flex absolute cursor-pointer -right-16 top-1/2 -translate-y-1/2 z-10 bg-[#e0b265] text-[#1b312e] w-11 h-11 items-center justify-center text-2xl hover:bg-white hover:text-[#1b312e] hover:scale-110 transition-all duration-300 shadow-md"
+          className="siena-view-106"
         >
           ›
         </button>
@@ -138,7 +138,7 @@ export default function EventsSlider() {
             key={i}
             onClick={() => scrollTo(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className="flex items-center justify-center w-[44px] h-[44px] cursor-pointer"
+            className="siena-view-5"
           >
             <span className={`h-2.5 transition-all duration-300 border border-[#e0b265] ${i === selectedIndex ? "bg-[#e0b265] w-6" : "bg-[#e0b265]/30 w-2.5 hover:bg-[#e0b265]/60"}`} />
           </button>

@@ -91,35 +91,35 @@ export default function Header() {
                                 <img width={24} height={24} loading="lazy"
                                     src="/assets/Arrow_Down.svg"
                                     alt="arrow"
-                                    className="w-[15px] h-[15px] transition-all duration-300 brightness-0 invert"
+                                    className="siena-view-107"
                                 />
                             </div>
 
                             <div className="siena-ui-6">
                                 <Link href="/about-us" className="siena-ui-7">
-                                    <span className="text-[15px] font-normal uppercase tracking-wide text-center">About Us</span>
+                                    <span className="siena-view-108">About Us</span>
                                 </Link>
                                 <Link href="/gallery" className="siena-ui-7">
-                                    <span className="text-[15px] font-normal uppercase tracking-wide text-center">Gallery</span>
+                                    <span className="siena-view-108">Gallery</span>
                                 </Link>
                                 <Link href="/live-music-fridays" className="siena-ui-7">
-                                    <span className="text-[15px] font-normal uppercase tracking-wide text-center">Live Music Fridays</span>
+                                    <span className="siena-view-108">Live Music Fridays</span>
                                 </Link>
                                 <Link href="/careers" className="siena-ui-7">
-                                    <span className="text-[15px] font-normal uppercase tracking-wide text-center">Careers</span>
+                                    <span className="siena-view-108">Careers</span>
                                 </Link>
                                 <Link href="/blogs" className="siena-ui-7">
-                                    <span className="text-[15px] font-normal uppercase tracking-wide text-center">Blogs</span>
+                                    <span className="siena-view-108">Blogs</span>
                                 </Link>
                                 <Link href="/contact-us" className="siena-ui-7">
-                                    <span className="text-[15px] font-normal uppercase tracking-wide text-center">Contact Us</span>
+                                    <span className="siena-view-108">Contact Us</span>
                                 </Link>
                             </div>
                         </div>
                     </nav>
 
                     {/* Right side */}
-                    <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-4">
+                    <div className="siena-view-109">
                         <Link href={ORDER_ONLINE_URL} target="_blank" rel="noopener noreferrer">
                             <button className="siena-ui-8">
                                 ORDER ONLINE
@@ -162,7 +162,7 @@ export default function Header() {
                                 scrolled ? "border-[#E0B265]" : "border-[#f4eedd]"
                             }`}
                         >
-                            <div className="relative w-[20px] h-[16px] flex flex-col justify-between">
+                            <div className="siena-view-110">
                                 <span className={`block h-[2px] w-full transition-colors duration-300 ${scrolled ? "bg-[#E0B265]" : "bg-[#f4eedd]"}`}></span>
                                 <span className={`block h-[2px] w-full transition-colors duration-300 ${scrolled ? "bg-[#E0B265]" : "bg-[#f4eedd]"}`}></span>
                                 <span className={`block h-[2px] w-full transition-colors duration-300 ${scrolled ? "bg-[#E0B265]" : "bg-[#f4eedd]"}`}></span>

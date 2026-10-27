@@ -68,9 +68,9 @@ export default function ViewOurSpace() {
   }, [lightbox]);
 
   return (
-    <section className="relative w-full py-[80px] overflow-hidden" style={{ backgroundColor: "#1b312e" }}>
+    <section className="siena-view-70" style={{ backgroundColor: "#1b312e" }}>
       <div className="w-full max-w-[1180px] mx-auto px-4">
-        <div className="flex flex-col items-center text-center mb-14">
+        <div className="siena-view-71">
           <motion.img
             src="/assets/icono_123.svg"
             alt=""
@@ -82,7 +82,7 @@ export default function ViewOurSpace() {
           />
           <div className="relative inline-block">
             <motion.h2
-              className="text-[#e0b265] text-[34px] sm:text-[46px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase"
+              className="siena-view-72"
               style={{ fontFamily: "'Palmore-Light', serif" }}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -92,7 +92,7 @@ export default function ViewOurSpace() {
               View Our Space
             </motion.h2>
             <motion.span
-              className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[22px] sm:text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap"
+              className="siena-view-73"
               style={{ fontFamily: "'AguafinaScript-Regular', cursive" }}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -129,16 +129,16 @@ export default function ViewOurSpace() {
               key={i}
               onClick={() => openAt(i % spaceImages.length)}
               aria-label="Open photo"
-              className="relative flex-shrink-0 w-[300px] md:w-[420px] lg:w-[480px] h-[260px] md:h-[380px] lg:h-[440px] overflow-hidden rounded-2xl group cursor-zoom-in border border-[#e0b265]/15"
+              className="siena-view-74 group"
             >
               <img
                 src={img.src}
                 alt="Inside Siena Restaurant"
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="siena-view-75"
               />
-              <div className="absolute inset-0 bg-[#1b312e]/0 group-hover:bg-[#1b312e]/25 transition-colors duration-500 flex items-center justify-center">
-                <div className="w-10 h-10 border border-[#f4eedd] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="siena-view-76">
+                <div className="siena-view-77">
                   <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="#f4eedd" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0zm-6-3.5v7m-3.5-3.5h7" />
                   </svg>
@@ -153,7 +153,7 @@ export default function ViewOurSpace() {
       <AnimatePresence>
         {lightbox !== null && (
           <motion.div
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center"
+            className="siena-view-78"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -161,7 +161,7 @@ export default function ViewOurSpace() {
             onClick={() => setLightbox(null)}
           >
             <button
-              className="absolute top-4 right-4 md:top-6 md:right-6 text-white/70 hover:text-[#f4eedd] z-10 w-10 h-10 flex items-center justify-center transition"
+              className="siena-view-79"
               onClick={() => setLightbox(null)}
               aria-label="Close"
             >
@@ -169,14 +169,14 @@ export default function ViewOurSpace() {
             </button>
 
             <button
-              className="absolute left-2 md:left-6 z-10 w-12 h-12 bg-[#e0b265] flex items-center justify-center hover:bg-[#1b312e] transition"
+              className="siena-view-80"
               onClick={(e) => { e.stopPropagation(); setZoomed(false); prev(); }}
               aria-label="Previous"
             >
               <ChevronIcon flip />
             </button>
 
-            <div className="max-w-[92vw] max-h-[85vh] overflow-hidden flex items-center justify-center">
+            <div className="siena-view-81">
               <motion.img
                 key={lightbox}
                 src={spaceImages[lightbox].src}
@@ -193,14 +193,14 @@ export default function ViewOurSpace() {
             </div>
 
             <button
-              className="absolute right-2 md:right-6 z-10 w-12 h-12 bg-[#e0b265] flex items-center justify-center hover:bg-[#1b312e] transition"
+              className="siena-view-82"
               onClick={(e) => { e.stopPropagation(); setZoomed(false); next(); }}
               aria-label="Next"
             >
               <ChevronIcon />
             </button>
 
-            <span className="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/40 text-[13px] tracking-widest">
+            <span className="siena-view-83">
               {lightbox + 1} / {spaceImages.length} · click photo to {zoomed ? "zoom out" : "zoom in"}
             </span>
           </motion.div>

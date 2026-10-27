@@ -35,8 +35,8 @@ export default function VideosSection() {
     }, [emblaApi, onSelect]);
 
     return (
-        <div className="relative z-10 w-full max-w-[1180px] mx-auto pt-5 pb-20">
-            <div className="hidden md:grid grid-cols-3 gap-3 items-center">
+        <div className="siena-view-9">
+            <div className="siena-view-10">
                 {videos.map((video, i) => (
                     <div key={i} className={`overflow-hidden shadow-xl ${video.aspect} ${video.marginTop}`}>
                         <LazyVideo src={video.src} poster={video.poster} className="w-full h-full object-cover" />
@@ -68,7 +68,7 @@ export default function VideosSection() {
                             key={i}
                             onClick={() => scrollTo(i)}
                             aria-label={`Go to video ${i + 1}`}
-                            className="flex items-center justify-center w-[44px] h-[44px] cursor-pointer"
+                            className="siena-view-5"
                         >
                             <span className={`h-2.5 transition-all duration-300 border border-[#030302] ${i === selectedIndex ? "bg-[#030302] w-6" : "bg-[#030302]/30 w-2.5 hover:bg-[#030302]/60"}`} />
                         </button>

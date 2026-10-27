@@ -98,7 +98,7 @@ export function ReservationDatePicker({
       </button>
 
       {open && (
-        <div className="absolute z-30 mt-2 bg-white border border-[#1b312e]/15 shadow-xl p-3">
+        <div className="siena-view-21">
           <DayPicker
             mode="single"
             selected={value ? parseLocalDate(value) : undefined}

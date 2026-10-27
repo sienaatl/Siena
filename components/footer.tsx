@@ -43,18 +43,18 @@ export default function Footer() {
 
     return (
 
-        <footer data-bg="/assets/footer-bg-siena.webp" className="relative font-sans w-full bg-cover bg-center bg-no-repeat">
-            <div className="absolute inset-0 bg-black/80 pointer-events-none" />
+        <footer data-bg="/assets/footer-bg-siena.webp" className="siena-view-59">
+            <div className="siena-view-60" />
 
             <div className="relative z-10">
                 <NewsletterForm />
             </div>
 
-            <div className="relative z-10 w-full h-[40px] md:h-[58px]">
+            <div className="siena-view-61">
                 <img width={1512} height={58} loading="lazy"
                     src="/assets/divisor_negro.svg"
                     alt="divider"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="siena-view-28"
                 />
             </div>
 
@@ -64,13 +64,13 @@ export default function Footer() {
                 {/* Left — Logo + info */}
                 <div className="siena-ui-13">
                     <div className="relative">
-                        <div className="absolute inset-0 bg-[#e0b265]/20 blur-3xl rounded-full" />
+                        <div className="siena-view-62" />
                         <img
                             width={730} height={422}
                             loading="lazy"
                             src="/assets/logofooter.webp"
                             alt="Siena"
-                            className="relative w-[160px] md:w-[200px] lg:w-[261px] mb-2 lg:mb-[20px]"
+                            className="siena-view-63"
                         />
                     </div>
 
@@ -112,7 +112,7 @@ export default function Footer() {
                             className="siena-ui-23 group"
                         >
                             <span>Order Online</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" className="group-hover:translate-x-1 transition-transform duration-300"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="siena-ui-24" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" className="siena-view-64"><use href="/assets/siena-ui-icons.svg#siena-icon-3" className="siena-ui-24" /></svg>
                         </a>
                     </div>
                 </div>
@@ -121,7 +121,7 @@ export default function Footer() {
                 <div className="siena-ui-25">
 
                     {/* Restaurant column */}
-                    <div className="flex flex-col gap-2.5 items-start lg:relative lg:pl-8">
+                    <div className="siena-view-65">
                         <div className="siena-ui-26" />
                         <div className="flex flex-col mb-1">
                             <p className="siena-ui-27" style={{ fontFamily: "'Palmore-Light', serif" }}>
@@ -150,7 +150,7 @@ export default function Footer() {
                     </div>
 
                     {/* More column */}
-                    <div className="flex flex-col gap-2.5 items-start lg:relative lg:pl-8">
+                    <div className="siena-view-65">
                         <div className="siena-ui-26" />
                         <div className="flex flex-col mb-1">
                             <p className="siena-ui-27" style={{ fontFamily: "'Palmore-Light', serif" }}>
@@ -183,33 +183,33 @@ export default function Footer() {
                     <div className="siena-ui-26" />
 
                     {/* Social */}
-                    <div className="flex flex-col items-center lg:items-start">
+                    <div className="siena-view-66">
                         <div className="flex flex-col mb-2">
                             <p className="siena-ui-27" style={{ fontFamily: "'Palmore-Light', serif" }}>
                                 Social Media
                             </p>
-                            <div className="w-8 h-[2px] bg-[#e0b265] mt-2 mx-auto lg:mx-0" />
+                            <div className="siena-view-67" />
                         </div>
                         <div className="flex items-center gap-3">
                             <a href="https://www.instagram.com/sienaatl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="siena-ui-29 group">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-4" className="fill-white group-hover:fill-[#1b312e] transition-colors duration-300" /></svg>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-4" className="siena-view-68" /></svg>
                             </a>
                             <a href="https://www.facebook.com/sienaatl/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="siena-ui-29 group">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-5" className="fill-white group-hover:fill-[#1b312e] transition-colors duration-300" /></svg>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-5" className="siena-view-68" /></svg>
                             </a>
                             <a href="https://www.tiktok.com/@sienaatl" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="siena-ui-29 group">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-6" className="fill-white group-hover:fill-[#1b312e] transition-colors duration-300" /></svg>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><use href="/assets/siena-ui-icons.svg#siena-icon-6" className="siena-view-68" /></svg>
                             </a>
                         </div>
                     </div>
 
                     {/* Phone */}
-                    <div className="flex flex-col items-center lg:items-start">
+                    <div className="siena-view-66">
                         <div className="flex flex-col mb-2">
                             <p className="siena-ui-27" style={{ fontFamily: "'Palmore-Light', serif" }}>
                                 Phone
                             </p>
-                            <div className="w-8 h-[2px] bg-[#e0b265] mt-2 mx-auto lg:mx-0" />
+                            <div className="siena-view-67" />
                         </div>
                         <a href={`tel:${info.phone.replace(/\D/g, '')}`} className="siena-ui-30 group">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="flex-shrink-0"><use href="/assets/siena-ui-icons.svg#siena-icon-7" className="fill-current" /></svg>
@@ -218,12 +218,12 @@ export default function Footer() {
                     </div>
 
                     {/* Hours */}
-                    <div className="flex flex-col items-center lg:items-start">
+                    <div className="siena-view-66">
                         <div className="flex flex-col mb-2">
                             <p className="siena-ui-27" style={{ fontFamily: "'Palmore-Light', serif" }}>
                                 Hours
                             </p>
-                            <div className="w-8 h-[2px] bg-[#e0b265] mt-2 mx-auto lg:mx-0" />
+                            <div className="siena-view-67" />
                         </div>
                         <div className="siena-ui-31">
                             {hours === null && (
@@ -241,7 +241,7 @@ export default function Footer() {
             </div>
 
             {/* Legal */}
-            <div className="relative z-10 w-full max-w-[1180px] mx-auto px-6 lg:px-0">
+            <div className="siena-view-69">
                 <div className="siena-ui-32" />
             </div>
             <div className="relative z-10 w-full py-5 px-6">
