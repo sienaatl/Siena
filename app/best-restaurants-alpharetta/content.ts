@@ -22,7 +22,7 @@ export const INTRO = {
   heading: "More Than a Good Plate",
   script: "what people come back for",
   paras: [
-    "When people go looking for the best restaurants in Alpharetta GA, they usually want more than good food. They want a room that feels like an occasion, a drink worth ordering, and a team that looks after them.",
+    "When people go looking for the best restaurants in Alpharetta GA, they usually want more than good food. They want a dining experience with a welcoming room, a good drink and attentive service.",
     "Siena Restaurant &amp; Bar sits at 124 Devore Rd, close to Avalon and the Ameris Bank Amphitheatre, and an easy drive from Roswell, Johns Creek, Milton and Cumming. It opened in December 2025, and it is built for coming back to.",
   ],
   cta: { label: "SEE THE MENU", href: "/menus" },
