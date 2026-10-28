@@ -33,9 +33,9 @@ function MenuItemCard({ item }: { item: MenuItem }) {
   const hasImage = !!item.image;
 
   return (
-    <div className="bg-white/8 backdrop-blur-md shadow-sm border border-[#e0b265]/25 hover:border-[#e0b265]/60 hover:bg-white/12 transition-colors duration-300 py-6 px-5 flex flex-col items-center justify-center text-center gap-3">
+    <div className="siena-menu-1">
       {hasImage && (
-        <div className="w-full aspect-square overflow-hidden">
+        <div className="siena-menu-2">
           <img
             src={item.image}
             alt={item.name}
@@ -45,18 +45,17 @@ function MenuItemCard({ item }: { item: MenuItem }) {
         </div>
       )}
       <h4
-        className="text-[19px] md:text-[22px] leading-tight uppercase text-[#e0b265]"
-        style={{ fontFamily: "'Palmore-Light', serif", fontOpticalSizing: "none", fontVariationSettings: "'opsz' 28" }}
+        className="siena-menu-3 siena-menu-item-title"
       >
         {item.name}
       </h4>
       {item.description && (
-        <p className="text-[13px] md:text-[14px] leading-[1.6] text-white/70 whitespace-pre-line">
+        <p className="siena-menu-4">
           {item.description}
         </p>
       )}
       {item.price && (
-        <p className="text-[14px] md:text-[15px] font-semibold text-[#e0b265] whitespace-pre-line mt-auto pt-1">
+        <p className="siena-menu-5">
           {item.price}
         </p>
       )}
@@ -68,43 +67,42 @@ function MenuItemCard({ item }: { item: MenuItem }) {
 function SubSectionBlock({ id, title, subtitle, items }: SubSection) {
   return (
     <div id={id} className="w-full py-[40px] md:py-[60px]">
-      <div className="flex flex-col items-center text-center mb-[30px] md:mb-[40px] px-4">
-        <div className="inline-flex flex-col items-center">
+      <div className="siena-menu-6">
+        <div className="siena-menu-7">
           <img
             src="/assets/icono_123.svg"
             alt=""
             aria-hidden="true"
-            className="w-[80px] h-auto pointer-events-none opacity-40 mb-4"
+            className="siena-menu-8"
           />
           <h3
-            className="text-[28px] sm:text-[36px] md:text-[57px] leading-tight uppercase text-[#e0b265]"
-            style={{ fontFamily: "'Palmore-Light', serif" }}
+            className="siena-menu-9 siena-menu-heading"
           >
             {title}
           </h3>
         </div>
         {subtitle && (
-          <p className="text-[14px] md:text-[16px] text-white/60 mt-2 uppercase tracking-widest">
+          <p className="siena-menu-10">
             {subtitle}
           </p>
         )}
         <div className="flex items-center gap-3 mt-3">
-          <div className="w-12 md:w-20 h-px bg-gradient-to-r from-transparent to-[#e0b265]/60" />
-          <span className="text-[#e0b265] text-[10px] tracking-[0.4em]">✦</span>
-          <div className="w-12 md:w-20 h-px bg-gradient-to-l from-transparent to-[#e0b265]/60" />
+          <div className="siena-menu-11" />
+          <span className="siena-menu-12">✦</span>
+          <div className="siena-menu-13" />
         </div>
       </div>
 
       {items.length > 0 ? (
         <div className="px-4 md:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="siena-menu-14">
             {items.map((item, i) => (
               <MenuItemCard key={i} item={item} />
             ))}
           </div>
         </div>
       ) : (
-        <div className="text-center text-white/40 italic px-4 text-sm">
+        <div className="siena-menu-15">
           Coming soon…
         </div>
       )}
@@ -214,7 +212,7 @@ function MenuContent() {
         <MenuDeepLink tabs={tabs} headerHeight={headerHeight} onSelect={setActiveTab} />
       </Suspense>
       {/* HERO */}
-      <section className="relative w-full h-[400px] md:h-[45vh] overflow-hidden">
+      <section className="siena-menu-16">
         <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.08 }}
@@ -231,25 +229,24 @@ function MenuContent() {
           />
         </motion.div>
         <div className="absolute inset-0 bg-black/55" />
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-10 md:pt-12">
+        <div className="siena-menu-17">
           <motion.div
             className="flex items-center gap-3 mb-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
-            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
+            <div className="siena-menu-18" />
+            <span className="siena-menu-19">✦</span>
+            <div className="siena-menu-20" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[38px] sm:text-[52px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
-            style={{ fontFamily: "'Palmore-Light', serif" }}
+            className="siena-menu-21 siena-menu-heading"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            MENU
+            SIENA RESTAURANT MENU
           </motion.h1>
           <motion.div
             className="flex items-center gap-3 mt-4"
@@ -257,15 +254,15 @@ function MenuContent() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80" />
-            <span className="text-[#e0b265] text-[11px] tracking-[0.4em]">✦</span>
-            <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
+            <div className="siena-menu-18" />
+            <span className="siena-menu-19">✦</span>
+            <div className="siena-menu-20" />
           </motion.div>
         </div>
       </section>
 
       {/* MARQUEE */}
-      <section className="w-full bg-[#030302] py-5 overflow-hidden">
+      <section className="siena-menu-22">
         <style>{`
           @keyframes mq-menu { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
           .mq-menu { display:flex; width:max-content; animation:mq-menu 24s linear infinite; }
@@ -273,13 +270,13 @@ function MenuContent() {
         <div className="mq-menu">
           {[0, 1, 2, 3].map((r) => (
             <div key={r} className="flex items-center">
-              <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">MEDITERRANEAN CUISINE</span>
+              <span className="siena-menu-23">MEDITERRANEAN CUISINE</span>
               <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
-              <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">SIENA RESTAURANT</span>
+              <span className="siena-menu-23">SIENA RESTAURANT</span>
               <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
-              <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">ALPHARETTA, GEORGIA</span>
+              <span className="siena-menu-23">ALPHARETTA, GEORGIA</span>
               <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
-              <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">CRAFTED WITH PASSION</span>
+              <span className="siena-menu-23">CRAFTED WITH PASSION</span>
               <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
             </div>
           ))}
@@ -289,12 +286,12 @@ function MenuContent() {
       {/* STICKY TABS */}
       {tabs.length > 0 && (
         <div
-          className="sticky z-40 transition-all duration-300 bg-[#1b312e] border-b border-white/10 shadow-sm"
+          className="siena-menu-24"
           style={{ top: `${headerHeight}px` }}
         >
-          <div className="max-w-[1180px] mx-auto px-6 md:px-10">
+          <div className="siena-menu-25">
             <div ref={tabsContainerRef} className="overflow-x-auto scrollbar-hide">
-              <div className="flex items-center gap-2 md:gap-3 py-3 whitespace-nowrap justify-start md:justify-center">
+              <div className="siena-menu-26">
                 {tabs.map((tab) => {
                   const isActive = activeTab === tab.id;
                   return (
@@ -319,17 +316,29 @@ function MenuContent() {
       )}
 
       {/* MENU SECTIONS */}
-      <div className="max-w-[1180px] mx-auto pb-16 pt-8">
+      <div className="siena-menu-27">
+        <div className="siena-menu-28">
+          <p>
+            Browse the Siena Restaurant menu for Mediterranean and Italian dining in
+            Alpharetta. Use the tabs above to view dinner, happy hour and drinks.
+            Start with hummus or crispy cauliflower with sweet chili aioli, then
+            explore pasta, seafood and grilled dishes below.
+          </p>
+          <p>
+            Each dish lists its ingredients and price. Happy hour runs Tuesday
+            through Thursday, 4–6 PM. Ask our team about dietary needs before ordering.
+          </p>
+        </div>
         {loading && (
-          <div className="flex items-center justify-center py-24">
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-8 h-8 border-2 border-[#e0b265] border-t-transparent rounded-full animate-spin" />
-              <p className="text-white/50 text-sm tracking-widest uppercase">Loading menu…</p>
+          <div className="siena-menu-29">
+            <div className="siena-menu-30">
+              <div className="siena-menu-31" />
+              <p className="siena-menu-32">Loading menu…</p>
             </div>
           </div>
         )}
         {menuError && (
-          <div className="text-center py-16 text-white/50 italic text-sm">{menuError}</div>
+          <div className="siena-menu-33">{menuError}</div>
         )}
         {!loading && !menuError && (
           <div className="bg-transparent overflow-hidden">
@@ -337,14 +346,14 @@ function MenuContent() {
               <section
                 key={tab.id}
                 id={tab.id}
-                className="w-full scroll-mt-[180px] md:scroll-mt-[200px] border-b border-white/10 last:border-b-0"
+                className="siena-menu-34"
               >
                 {/* Tab section header */}
-                <div className="w-full py-[50px] md:py-[70px] flex flex-col items-center text-center px-4 bg-transparent">
+                <div className="siena-menu-35">
                   <motion.img
                     src="/assets/icon_menus.svg"
                     alt=""
-                    className="w-[55px] md:w-[70px] mb-2 opacity-80"
+                    className="siena-menu-36"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 0.8, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
@@ -352,8 +361,7 @@ function MenuContent() {
                   />
                   <div className="relative inline-block">
                     <motion.h2
-                      className="text-[#e0b265] text-[34px] sm:text-[44px] md:text-[72px] lg:text-[88px] leading-[0.9] tracking-[0.06em] uppercase"
-                      style={{ fontFamily: "'Palmore-Light', serif" }}
+                      className="siena-menu-37 siena-menu-heading"
                       initial={{ opacity: 0, y: 40 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.3 }}
@@ -362,7 +370,7 @@ function MenuContent() {
                       {tab.label}
                     </motion.h2>
                     <motion.span
-                      className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[5%] md:-translate-y-[10%] text-[#e0b265] text-[24px] md:text-[50px] lg:text-[68px] leading-none whitespace-nowrap"
+                      className="siena-menu-38"
                       style={{
                         fontFamily: "'AguafinaScript-Regular', cursive",
                         textShadow: "3px 3px 0 #1b312e,-3px -3px 0 #1b312e,3px -3px 0 #1b312e,-3px 3px 0 #1b312e,0 3px 0 #1b312e,0 -3px 0 #1b312e,3px 0 0 #1b312e,-3px 0 0 #1b312e",
@@ -376,7 +384,7 @@ function MenuContent() {
                     </motion.span>
                   </div>
                   {tab.id === "happy-hour" && (
-                    <p className="mt-14 text-[#e0b265] text-sm md:text-base tracking-[0.16em] uppercase">
+                    <p className="siena-menu-39">
                       Tuesday–Thursday · 4–6 PM
                     </p>
                   )}
@@ -388,9 +396,9 @@ function MenuContent() {
                 ))}
 
                 {tab.footnote && (
-                  <div className="px-4 pb-[50px] md:pb-[70px] text-center">
+                  <div className="siena-menu-40">
                     {tab.footnote.split("\n").map((line, i) => (
-                      <p key={i} className="text-white/50 text-[13px] italic leading-relaxed">
+                      <p key={i} className="siena-menu-41">
                         {line}
                       </p>
                     ))}

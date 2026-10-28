@@ -50,7 +50,7 @@ export default function NewsletterForm() {
 
     return (
         <div
-            className="relative w-full py-12 md:py-16 px-6 flex flex-col items-center text-center gap-5"
+            className="siena-view-11"
             data-bg="/assets/fondo_negro.webp"
             style={{
                 backgroundSize: "cover",
@@ -58,23 +58,23 @@ export default function NewsletterForm() {
             }}
         >
             {/* Overlay oscuro */}
-            <div className="absolute inset-0 bg-[black]/80 pointer-events-none" />
+            <div className="siena-view-12" />
 
-            <div className="relative z-10 flex flex-col items-center gap-4 md:gap-5 w-full max-w-[600px]">
+            <div className="siena-view-13">
 
                 <h2
-                    className="text-[#e0b265] text-[38px] sm:text-[62px] md:text-[85px] leading-[1.1]"
+                    className="siena-view-14"
                     style={{ fontFamily: "'Palmore-Light', serif" }}
                 >
                     Join our newsletter
                 </h2>
 
-                <p className="text-white/80 text-lg md:text-lg leading-[1.6]">
+                <p className="siena-view-15">
                     Be the first to know about events, menus, and specials
                 </p>
 
                 {submitted ? (
-                    <div className="bg-white/10 border border-[#e0b265] px-8 py-5 text-white text-[16px]">
+                    <div className="siena-view-16">
                         ✓ You&apos;re on the list! We&apos;ll be in touch soon.
                     </div>
                 ) : (
@@ -107,7 +107,7 @@ export default function NewsletterForm() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] border border-transparent hover:bg-[#1b312e] hover:text-[#e0b265] hover:border-[#e0b265] transition disabled:opacity-60 whitespace-nowrap w-full md:w-auto"
+                                className="siena-view-17"
                             >
                                 {isSubmitting ? "Subscribing..." : "SUBSCRIBE"}
                             </button>

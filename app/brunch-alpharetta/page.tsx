@@ -8,7 +8,7 @@ export default function BrunchAlpharetta() {
       h1={H1}
       h1Script={H1_SCRIPT}
       heroImage="/assets/hero5.webp"
-      heroAlt="A table of Saturday brunch plates to share at Siena Restaurant & Bar in Alpharetta, Georgia"
+      heroAlt="A table of brunch plates to share at Siena Restaurant & Bar in Alpharetta, Georgia"
       marquee={MARQUEE}
       intro={INTRO}
       blocks={BLOCKS}

@@ -4,14 +4,14 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
  * Copy and layout for /brunch-alpharetta.
  *
  * Dish names and descriptions match the Weekend Brunch tab in lib/site-data.json.
- * Brunch is listed as Saturday from 10am, matching the other landing pages.
+ * Current brunch service days and hours must be confirmed with the restaurant.
  */
 
 export const H1 = "Brunch in Alpharetta";
-export const H1_SCRIPT = "saturday from ten";
+export const H1_SCRIPT = "confirm your visit";
 
 export const MARQUEE = [
-  "Saturday From 10am",
+  "Call About Availability",
   "Fifteen Brunch Plates",
   "Built for Sharing",
   "Alpharetta, Georgia",
@@ -19,10 +19,10 @@ export const MARQUEE = [
 
 export const INTRO = {
   icon: "/assets/icon_menus.svg",
-  heading: "Saturday Starts Later Here",
-  script: "and runs long",
+  heading: "Planning Brunch in Alpharetta",
+  script: "check with Siena",
   paras: [
-    "Brunch at Siena Restaurant &amp; Bar runs on Saturday from 10am, on its own menu, at 124 Devore Rd in downtown Alpharetta. It is a few minutes from Avalon, and far enough off the strip that you can hear the person across the table.",
+    "Exploring brunch in Alpharetta? Siena Restaurant &amp; Bar lists a separate brunch menu online. Call <a href=\"tel:+14049990373\">(404) 999-0373</a> to confirm current service days and hours before visiting 124 Devore Rd.",
     "The idea is the same as dinner. Italian technique, Mediterranean brightness and plates built for sharing, so a table orders a spread and works through it together rather than everyone guarding their own omelette.",
   ],
   cta: { label: "SEE THE BRUNCH MENU", href: "/menus?tab=weekend-brunch" },
@@ -40,7 +40,7 @@ export const BLOCKS: Block[] = [
     items: [
       {
         image: "/assets/Siena_20.03.26-LS-LimoncelloRicottaPancakes-01.webp",
-        alt: "Limoncello ricotta pancakes from the Saturday brunch menu at Siena in Alpharetta",
+        alt: "Limoncello ricotta pancakes from the brunch menu at Siena in Alpharetta",
         title: "PANCAKES",
         sub: "Limoncello ricotta, macerated berries",
         href: "/menus?tab=weekend-brunch",
@@ -67,7 +67,7 @@ export const BLOCKS: Block[] = [
     heading: "Something Sweet",
     script: "for the middle of the table",
     image: "/assets/Siena_20.03.26-LS-LimoncelloRicottaPancakes-02.webp",
-    alt: "Limoncello ricotta pancakes with berries at a Saturday brunch in Alpharetta",
+    alt: "Limoncello ricotta pancakes with berries on the brunch menu in Alpharetta",
     paras: [
       "Limoncello ricotta pancakes come with macerated berries, citrus mousse and a limoncello honey syrup. They are the dish people photograph, and then argue over.",
       "The French tiramisu brioche is espresso-soaked brioche with mascarpone and coffee cream, which is tiramisu for people who want it before noon. The spiced date waffle has a citrus glaze and mixed nuts.",
@@ -106,11 +106,11 @@ export const BLOCKS: Block[] = [
     bg: "green",
     icon: "/assets/iconoestrellas.svg",
     heading: "Worth Knowing",
-    script: "before saturday",
+    script: "before your visit",
     cards: [
       {
-        title: "Book Ahead",
-        desc: "Saturday brunch fills, and walk-ins depend on the day. <a href=\"/reservations\">Book a table</a> if you have a time in mind.",
+        title: "Confirm Service",
+        desc: "Please call <a href=\"tel:+14049990373\">(404) 999-0373</a> to confirm brunch service and reservation arrangements. The online calendar currently lists dinner service.",
       },
       {
         title: "Plenty Without Meat",
@@ -133,7 +133,7 @@ export const BLOCKS: Block[] = [
     paras: [
       "Siena is at 124 Devore Rd in downtown Alpharetta, a few minutes from Avalon. Brunch first and shopping after works better than the other way round, since nobody wants to carry bags into the dining room.",
       "Parking is straightforward, the entrance is step-free, and there is accessible parking near the door.",
-      "Brunch is the only daytime service. The kitchen opens again at 4pm for <a href=\"/dinner-alpharetta\">dinner</a>, when the room turns into somewhere for a <a href=\"/date-night-alpharetta\">date night</a>. <a href=\"/downtown-alpharetta-restaurants\">More on downtown Alpharetta</a>.",
+      "Published hours cover dinner service from 4pm Tuesday to Sunday. Confirm brunch availability separately. Explore <a href=\"/dinner-alpharetta\">dinner</a>, when the room turns into somewhere for a <a href=\"/date-night-alpharetta\">date night</a>. <a href=\"/downtown-alpharetta-restaurants\">More on downtown Alpharetta</a>.",
     ],
   },
 ];
@@ -141,7 +141,7 @@ export const BLOCKS: Block[] = [
 export const FAQS: Faq[] = [
   {
     q: "When is brunch?",
-    a: "Saturday from 10am, on a separate brunch menu. The rest of the week Siena opens at 4pm for dinner, and it is closed on Monday.",
+    a: "Please call (404) 999-0373 to confirm current brunch days and hours. The published hours show dinner from 4pm Tuesday to Sunday, with Monday closed.",
   },
   {
     q: "Do I need a reservation for brunch?",
@@ -184,16 +184,16 @@ export const REVIEWS: Reviews = {
 };
 
 export const PRACTICAL = [
-  "Brunch on Saturday from 10am",
+  "Call to confirm current brunch days and hours",
   "Step-free entrance and accessible parking near the door",
   "Minutes from Avalon, in downtown Alpharetta",
 ];
 
 export const CLOSING = {
-  heading: "Book Saturday",
-  script: "see you at ten",
+  heading: "Ask About Brunch",
+  script: "plan with the team",
   paras: [
-    "A separate menu, fifteen plates built for sharing, and a room a few minutes from Avalon. Saturday from 10am.",
-    "<a href=\"/reservations\">Book your table</a> and order the pancakes for the middle.",
+    "Browse the separate brunch menu, then call Siena to confirm current service days, hours and table availability.",
+    "<a href=\"tel:+14049990373\">Call (404) 999-0373</a> to discuss your visit.",
   ],
 };

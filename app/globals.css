@@ -100,3 +100,338 @@ html {
 .siena-decoration[data-decoration="/assets/icono_testimonios.svg"] { background-image: url("/assets/icono_testimonios.svg"); aspect-ratio: 323 / 103; }
 .siena-decoration[data-decoration="/assets/iconoestrellas.svg"] { background-image: url("/assets/iconoestrellas.svg"); aspect-ratio: 80 / 16; }
 .siena-decoration[data-decoration="/assets/star.svg"] { background-image: url("/assets/star.svg"); aspect-ratio: 29 / 29; }
+
+/* Shared presentation belongs in the cached stylesheet rather than repeated HTML.
+   Keep group markers on elements for existing hover interactions. */
+@layer components {
+  .siena-ui-1 { @apply max-w-[1180px] mx-auto h-full flex items-center justify-between px-4 md:px-0 relative; }
+  .siena-ui-2 { @apply w-full h-full object-contain cursor-pointer transition-all duration-300; }
+  .siena-ui-3 { @apply hidden md:flex items-center gap-0 lg:gap-1 text-[15px] font-normal uppercase tracking-wide absolute left-1/2 -translate-x-1/2; }
+  .siena-ui-4 { @apply px-3 whitespace-nowrap flex justify-center relative text-white after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full; }
+  .siena-ui-5 { @apply px-3 flex items-center gap-1 justify-center relative cursor-pointer text-white after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:bg-current after:w-0 after:transition-all after:duration-300 hover:after:w-full; }
+  .siena-ui-6 { @apply absolute left-1/2 -translate-x-1/2 mt-4 w-[280px] bg-[#1B312E] shadow-xl p-4 flex flex-col gap-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200; }
+  .siena-ui-7 { @apply flex items-center justify-center gap-4 p-3 hover:bg-[#E0B265] hover:text-[#1B312E] transition text-white; }
+  .siena-ui-8 { @apply cursor-pointer px-2 py-2 sm:px-3 sm:py-[11px] font-normal text-[10px] sm:text-[12px] leading-[16px] sm:leading-[18px] tracking-wide border border-[#E0B265] bg-[#1B312E]/50 backdrop-blur-sm text-[#E0B265] transition hover:bg-[#E0B265] hover:text-[#1B312E] whitespace-nowrap; }
+  .siena-ui-9 { @apply cursor-pointer px-2.5 py-2 sm:px-4 lg:px-6 sm:py-[11px] font-normal text-[10px] sm:text-[12px] lg:text-[13px] leading-[16px] sm:leading-[18px] tracking-wide border transition bg-[#E0B265] text-[#1B312E] border-transparent hover:bg-white hover:text-[#1B312E] hover:border-white; }
+  .siena-ui-10 { @apply flex items-center justify-between px-4 h-[72px] border-b border-white/10; }
+  .siena-ui-11 { @apply flex items-center justify-center w-[42px] h-[42px] bg-[#E0B265] cursor-pointer transition-colors duration-300 hover:bg-[#F5EFDD] hover:border hover:border-[#1B312E]; }
+  .siena-ui-12 { @apply relative z-10 w-full max-w-[1180px] mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 lg:gap-[60px] py-8 lg:py-[80px] px-6 lg:px-0; }
+  .siena-ui-13 { @apply flex flex-col gap-3 max-w-[580px] items-center lg:items-start text-center lg:text-left; }
+  .siena-ui-14 { @apply text-white text-[18px] md:text-[22px] lg:text-[28px] leading-[120%] font-semibold; }
+  .siena-ui-15 { @apply text-white/80 text-[14px] md:text-[15px] lg:text-[16px] leading-[22px] lg:leading-[24px] max-w-[540px]; }
+  .siena-ui-16 { @apply flex items-center gap-2 text-[#979797] leading-[20px] text-[13px] md:text-[15px] lg:text-[16px] uppercase hover:text-[#e0b265] transition; }
+  .siena-ui-17 { @apply border-b border-transparent group-hover:border-[#e0b265] transition-colors; }
+  .siena-ui-18 { @apply relative bg-[#e0b265] text-[#1b312e] px-5 md:px-[24px] py-[10px] md:py-[12px] font-normal text-[13px] md:text-[15px] leading-[20px] flex items-center gap-2 w-fit overflow-hidden uppercase; }
+  .siena-ui-19 { @apply absolute inset-0 bg-[#1b312e] translate-y-full group-hover:translate-y-0 transition-transform duration-300; }
+  .siena-ui-20 { @apply relative z-10 group-hover:text-[#e0b265] transition-colors duration-300; }
+  .siena-ui-21 { @apply relative z-10 group-hover:translate-x-1 transition-transform duration-300; }
+  .siena-ui-22 { @apply fill-[#1b312e] group-hover:fill-[#e0b265] transition-colors duration-300; }
+  .siena-ui-23 { @apply relative border border-[#e0b265] text-[#e0b265] px-5 md:px-[24px] py-[10px] md:py-[12px] font-normal text-[13px] md:text-[15px] leading-[20px] flex items-center gap-2 w-fit overflow-hidden uppercase hover:bg-[#e0b265] hover:text-[#1b312e] transition-colors duration-300; }
+  .siena-ui-24 { @apply fill-[#e0b265] group-hover:fill-[#1b312e] transition-colors duration-300; }
+  .siena-ui-25 { @apply flex flex-row gap-10 sm:gap-16 w-full justify-center lg:contents lg:w-auto lg:justify-start; }
+  .siena-ui-26 { @apply hidden lg:block absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-transparent via-[#e0b265]/30 to-transparent; }
+  .siena-ui-27 { @apply text-[#e0b265] text-[18px] md:text-[22px] lg:text-[28px] leading-[100%] tracking-wide uppercase; }
+  .siena-ui-28 { @apply flex flex-col gap-5 w-full lg:w-auto bg-black/25 lg:bg-transparent p-5 md:p-6 lg:p-0 items-center lg:items-start text-center lg:text-left lg:relative lg:pl-8; }
+  .siena-ui-29 { @apply w-9 h-9 md:w-10 md:h-10 flex items-center justify-center border border-white/30 hover:border-[#e0b265] hover:bg-[#e0b265] transition-all duration-300; }
+  .siena-ui-30 { @apply flex items-center gap-2 text-white text-[13px] md:text-[15px] uppercase hover:text-[#e0b265] transition; }
+  .siena-ui-31 { @apply text-white text-[13px] md:text-[15px] leading-[22px] space-y-0.5 uppercase; }
+  .siena-ui-32 { @apply h-px bg-gradient-to-r from-transparent via-[#e0b265]/40 to-transparent; }
+  .siena-ui-33 { @apply w-full max-w-[1180px] mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-[12px] md:text-[13px] text-white/70 uppercase tracking-wide; }
+  .siena-ui-34 { @apply text-white/80 hover:text-[#e0b265] transition text-sm md:text-[15px] underline-offset-4 hover:underline; }
+  .siena-ui-35 { @apply bg-[#e0b265] text-[#1b312e] px-6 md:px-9 py-2.5 text-[14px] md:text-[15px] leading-[24px] inline-flex items-center gap-2 border border-transparent hover:bg-white hover:border-white transition; }
+  .siena-ui-36 { @apply absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500 pointer-events-none; }
+  .siena-ui-37 { @apply absolute inset-0 bg-[linear-gradient(to_bottom,rgba(3,3,2,0.65)_0%,rgba(3,3,2,0.25)_45%,rgba(3,3,2,0.85)_100%)]; }
+  .siena-ui-38 { @apply relative z-10 flex flex-col items-center justify-center h-full text-center px-5 pt-[72px] md:pt-[80px] pb-16 md:pb-20; }
+  .siena-ui-39 { @apply text-white text-[32px] sm:text-[42px] md:text-[62px] lg:text-[80px] leading-[0.95] tracking-[0.04em] uppercase max-w-[1100px] break-words; }
+  .siena-ui-40 { @apply pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[22%] text-[#e0b265] text-[21px] sm:text-[30px] md:text-[52px] lg:text-[70px] leading-none whitespace-nowrap; }
+  .siena-ui-41 { @apply border border-white/70 text-white px-6 md:px-9 py-2.5 text-[14px] md:text-[15px] leading-[24px] inline-flex items-center gap-2 hover:bg-white hover:text-[#1b312e] transition; }
+  .siena-ui-42 { @apply w-full max-w-[1180px] absolute bottom-0 left-1/2 -translate-x-1/2 z-10 py-4 hidden md:flex items-center justify-between px-4; }
+  .siena-ui-43 { @apply flex items-center gap-2 text-white/80 text-[15px] tracking-wide hover:text-[#E0B265] transition; }
+  .siena-ui-44 { @apply text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap; }
+  .siena-ui-45 { @apply text-white/75 text-[16px] md:text-[17px] leading-[1.8] [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-white; }
+  .siena-ui-46 { @apply text-white/75 text-[16px] md:text-[18px] leading-[1.8] max-w-[820px] mx-auto text-center mb-12 [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4; }
+  .siena-ui-47 { @apply absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500; }
+  .siena-ui-48 { @apply w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0; }
+  .siena-ui-49 { @apply text-[#e0b265] text-[22px] md:text-[24px] leading-tight tracking-wide uppercase; }
+  .siena-ui-50 { @apply text-white/60 text-[15px] md:text-[16px] leading-[1.75] [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4; }
+  .siena-ui-51 { @apply text-white/70 text-[14px] tracking-[0.15em] uppercase border-b border-white/30 pb-0.5 hover:text-[#e0b265] hover:border-[#e0b265] transition; }
+  .siena-ui-52 { @apply text-white/70 text-[16px] leading-[1.8] [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4; }
+  .siena-ui-53 { @apply text-white/75 text-[16px] md:text-[17px] leading-[1.8] [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4; }
+  .siena-ui-54 { @apply text-white/85 text-[16px] leading-[1.7] hover:text-[#e0b265] transition w-fit; }
+  .siena-ui-55 { @apply inline-flex items-center gap-2 mt-5 text-[#e0b265] text-[13px] tracking-[0.15em] uppercase border-b border-[#e0b265]/50 pb-0.5 hover:text-white hover:border-white transition; }
+  .siena-ui-56 { @apply text-white/60 text-[15px] leading-[2] flex justify-between gap-6 border-b border-white/5 last:border-0; }
+  .siena-ui-57 { @apply border border-[#e0b265] text-[#e0b265] px-6 py-2.5 text-[14px] leading-[24px] inline-flex items-center gap-2 hover:bg-[#e0b265] hover:text-[#1b312e] transition; }
+}
+
+
+/* One repeating background replaces sixty decorative DOM elements. */
+.siena-diamond-strip {
+  width: 100%;
+  height: 28px;
+  background-color: #e0b265;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='28'%3E%3Cpath d='M21 7L28 14L21 21L14 14Z' fill='%231b312e'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+/* Compact whole utility lists shared by rendered pages. Group/peer markers stay in JSX. */
+@layer components {
+  .siena-view-1 { @apply group-hover:stroke-[#e0b265] transition-colors duration-300; }
+  .siena-view-2 { @apply flex flex-col items-center gap-4 w-full max-w-[480px]; }
+  .siena-view-3 { @apply relative w-full aspect-[4/3] overflow-hidden shadow-2xl; }
+  .siena-view-4 { @apply cursor-pointer bg-[#e0b265] text-[#1b312e] w-9 h-9 flex items-center justify-center text-xl hover:bg-[#1b312e] hover:text-[#e0b265] transition; }
+  .siena-view-5 { @apply flex items-center justify-center w-[44px] h-[44px] cursor-pointer; }
+  .siena-view-6 { @apply bg-[#152c29] border-t border-[#e0b265]/20 px-5 py-10; }
+  .siena-view-7 { @apply text-[#e0b265] text-sm uppercase tracking-[0.24em] text-center mb-5; }
+  .siena-view-8 { @apply flex flex-wrap justify-center gap-x-6 gap-y-3; }
+  .siena-view-9 { @apply relative z-10 w-full max-w-[1180px] mx-auto pt-5 pb-20; }
+  .siena-view-10 { @apply hidden md:grid grid-cols-3 gap-3 items-center; }
+  .siena-view-11 { @apply relative w-full py-12 md:py-16 px-6 flex flex-col items-center text-center gap-5; }
+  .siena-view-12 { @apply absolute inset-0 bg-[black]/80 pointer-events-none; }
+  .siena-view-13 { @apply relative z-10 flex flex-col items-center gap-4 md:gap-5 w-full max-w-[600px]; }
+  .siena-view-14 { @apply text-[#e0b265] text-[38px] sm:text-[62px] md:text-[85px] leading-[1.1]; }
+  .siena-view-15 { @apply text-white/80 text-lg md:text-lg leading-[1.6]; }
+  .siena-view-16 { @apply bg-white/10 border border-[#e0b265] px-8 py-5 text-white text-[16px]; }
+  .siena-view-17 { @apply bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] border border-transparent hover:bg-[#1b312e] hover:text-[#e0b265] hover:border-[#e0b265] transition disabled:opacity-60 whitespace-nowrap w-full md:w-auto; }
+  .siena-view-18 { @apply w-[370px] rounded-xl border border-gray-700 overflow-hidden bg-[#111] hover:border-[#e0b265] transition-all duration-300; }
+  .siena-view-19 { @apply w-full h-56 object-cover group-hover:scale-105 duration-500; }
+  .siena-view-20 { @apply font-semibold text-lg mb-3 line-clamp-2 text-white; }
+  .siena-view-21 { @apply absolute z-30 mt-2 bg-white border border-[#1b312e]/15 shadow-xl p-3; }
+  .siena-view-22 { @apply relative flex-shrink-0 w-[280px] mx-3 bg-white p-8 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer; }
+  .siena-view-23 { @apply text-[#2b0a0a] text-[16px] leading-[1.8] flex-1; }
+  .siena-view-24 { @apply text-[#1b312e] text-[15px] font-semibold; }
+  .siena-view-25 { @apply object-cover transition-transform duration-700 group-hover:scale-110; }
+  .siena-view-26 { @apply absolute inset-4 border border-[#e0b265] pointer-events-none; }
+  .siena-view-27 { @apply relative w-full h-[40px] md:h-[58px] overflow-hidden; }
+  .siena-view-28 { @apply absolute inset-0 w-full h-full object-cover; }
+  .siena-view-29 { @apply relative w-full h-[86vh] min-h-[560px] max-h-[900px] overflow-hidden; }
+  .siena-view-30 { @apply flex flex-col sm:flex-row items-center gap-4; }
+  .siena-view-31 { @apply opacity-70 group-hover:opacity-100 flex-shrink-0; }
+  .siena-view-32 { @apply w-full bg-[#030302] py-5 overflow-hidden; }
+  .siena-view-33 { @apply bg-[#152c29] border-y border-[#e0b265]/20 px-5 py-10; }
+  .siena-view-34 { @apply text-[#e0b265] text-2xl md:text-3xl mb-4; }
+  .siena-view-35 { @apply text-white/80 leading-relaxed max-w-[760px] mx-auto; }
+  .siena-view-36 { @apply mt-6 flex flex-wrap justify-center gap-x-6 gap-y-3; }
+  .siena-view-37 { @apply text-[#e0b265] underline underline-offset-4 hover:text-white; }
+  .siena-view-38 { @apply w-full max-w-[1000px] mx-auto px-4 py-[70px] md:py-[100px]; }
+  .siena-view-39 { @apply text-white/85 text-[17px] md:text-[19px] leading-[1.8]; }
+  .siena-view-40 { @apply w-full max-w-[1180px] mx-auto px-4 py-[70px] md:py-[100px]; }
+  .siena-view-41 { @apply object-cover transition-transform duration-500 group-hover:scale-110; }
+  .siena-view-42 { @apply absolute inset-4 border border-[#e0b265]; }
+  .siena-view-43 { @apply flex flex-col justify-end h-full p-4 md:p-6; }
+  .siena-view-44 { @apply text-white text-[24px] md:text-[30px] font-semibold leading-tight; }
+  .siena-view-45 { @apply text-white/80 text-[14px] md:text-[17px] mt-1; }
+  .siena-view-46 { @apply grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8; }
+  .siena-view-47 { @apply border border-white/10 bg-white/5 p-8 flex flex-col gap-4; }
+  .siena-view-48 { @apply text-[#e0b265] text-[32px] leading-none select-none; }
+  .siena-view-49 { @apply text-white/75 text-[15px] md:text-[16px] leading-[1.8]; }
+  .siena-view-50 { @apply text-[#e0b265] text-[13px] tracking-[0.18em] uppercase mt-auto; }
+  .siena-view-51 { @apply w-full max-w-[900px] mx-auto px-4 py-[70px] md:py-[100px]; }
+  .siena-view-52 { @apply border-l-2 border-[#e0b265]/50 pl-6 py-1 mb-8 last:mb-0; }
+  .siena-view-53 { @apply text-white text-[18px] md:text-[19px] font-semibold mb-2; }
+  .siena-view-54 { @apply max-w-[820px] mx-auto text-center flex flex-col gap-4 mb-14; }
+  .siena-view-55 { @apply grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-[900px] mx-auto; }
+  .siena-view-56 { @apply text-[#e0b265] text-[13px] tracking-[0.2em] uppercase mb-4; }
+  .siena-view-57 { @apply mt-6 pt-5 border-t border-white/10 flex flex-col gap-2; }
+  .siena-view-58 { @apply text-white/55 text-[15px] leading-[1.6] flex gap-2; }
+  .siena-view-59 { @apply relative font-sans w-full bg-cover bg-center bg-no-repeat; }
+  .siena-view-60 { @apply absolute inset-0 bg-black/80 pointer-events-none; }
+  .siena-view-61 { @apply relative z-10 w-full h-[40px] md:h-[58px]; }
+  .siena-view-62 { @apply absolute inset-0 bg-[#e0b265]/20 blur-3xl rounded-full; }
+  .siena-view-63 { @apply relative w-[160px] md:w-[200px] lg:w-[261px] mb-2 lg:mb-[20px]; }
+  .siena-view-64 { @apply group-hover:translate-x-1 transition-transform duration-300; }
+  .siena-view-65 { @apply flex flex-col gap-2.5 items-start lg:relative lg:pl-8; }
+  .siena-view-66 { @apply flex flex-col items-center lg:items-start; }
+  .siena-view-67 { @apply w-8 h-[2px] bg-[#e0b265] mt-2 mx-auto lg:mx-0; }
+  .siena-view-68 { @apply fill-white group-hover:fill-[#1b312e] transition-colors duration-300; }
+  .siena-view-69 { @apply relative z-10 w-full max-w-[1180px] mx-auto px-6 lg:px-0; }
+  .siena-view-70 { @apply relative w-full py-[80px] overflow-hidden; }
+  .siena-view-71 { @apply flex flex-col items-center text-center mb-14; }
+  .siena-view-72 { @apply text-[#e0b265] text-[34px] sm:text-[46px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase; }
+  .siena-view-73 { @apply pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[22px] sm:text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap; }
+  .siena-view-74 { @apply relative flex-shrink-0 w-[300px] md:w-[420px] lg:w-[480px] h-[260px] md:h-[380px] lg:h-[440px] overflow-hidden rounded-2xl cursor-zoom-in border border-[#e0b265]/15; }
+  .siena-view-75 { @apply w-full h-full object-cover transition-transform duration-700 group-hover:scale-105; }
+  .siena-view-76 { @apply absolute inset-0 bg-[#1b312e]/0 group-hover:bg-[#1b312e]/25 transition-colors duration-500 flex items-center justify-center; }
+  .siena-view-77 { @apply w-10 h-10 border border-[#f4eedd] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500; }
+  .siena-view-78 { @apply fixed inset-0 z-[100] bg-black/95 flex items-center justify-center; }
+  .siena-view-79 { @apply absolute top-4 right-4 md:top-6 md:right-6 text-white/70 hover:text-[#f4eedd] z-10 w-10 h-10 flex items-center justify-center transition; }
+  .siena-view-80 { @apply absolute left-2 md:left-6 z-10 w-12 h-12 bg-[#e0b265] flex items-center justify-center hover:bg-[#1b312e] transition; }
+  .siena-view-81 { @apply max-w-[92vw] max-h-[85vh] overflow-hidden flex items-center justify-center; }
+  .siena-view-82 { @apply absolute right-2 md:right-6 z-10 w-12 h-12 bg-[#e0b265] flex items-center justify-center hover:bg-[#1b312e] transition; }
+  .siena-view-83 { @apply absolute bottom-5 left-1/2 -translate-x-1/2 text-white/40 text-[13px] tracking-widest; }
+  .siena-view-84 { @apply w-full max-w-[600px] mx-auto mb-10 text-white/60 text-[14px] leading-[1.7] text-center; }
+  .siena-view-85 { @apply text-[#e0b265] underline underline-offset-2 hover:text-white; }
+  .siena-view-86 { @apply relative w-full h-[400px] md:h-[45vh] overflow-hidden; }
+  .siena-view-87 { @apply absolute inset-0 bg-[linear-gradient(to_bottom,rgba(3,3,2,0.6)_0%,rgba(3,3,2,0.28)_45%,rgba(3,3,2,0.72)_100%)]; }
+  .siena-view-88 { @apply relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-14 md:pt-16; }
+  .siena-view-89 { @apply w-12 md:w-24 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80; }
+  .siena-view-90 { @apply text-[#e0b265] text-[11px] tracking-[0.4em]; }
+  .siena-view-91 { @apply w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80; }
+  .siena-view-92 { @apply text-[#e0b265] text-[38px] sm:text-[50px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase px-4; }
+  .siena-view-93 { @apply text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap; }
+  .siena-view-94 { @apply flex flex-col items-center text-center mb-[60px] md:mb-[80px]; }
+  .siena-view-95 { @apply text-white text-[60px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase; }
+  .siena-view-96 { @apply pointer-events-none absolute left-1/2 top-[95%] md:top-[100%] -translate-x-1/2 -translate-y-[5%] text-[#e0b265] text-[28px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap; }
+  .siena-view-97 { @apply text-white/80 text-lg md:text-xl leading-[140%] max-w-[600px] mt-12 md:mt-24; }
+  .siena-view-98 { @apply hidden md:flex absolute cursor-pointer -left-16 top-1/2 -translate-y-1/2 z-10 bg-[#e0b265] text-[#1b312e] w-11 h-11 items-center justify-center text-2xl hover:bg-white hover:text-[#1b312e] hover:scale-110 transition-all duration-300 shadow-md; }
+  .siena-view-99 { @apply bg-[#1e3833] border border-white/10 overflow-hidden flex flex-col hover:border-[#e0b265]/50 hover:shadow-2xl transition-all duration-500 basis-full md:basis-[calc((100%-24px)/3)] shrink-0 grow-0 min-w-0; }
+  .siena-view-100 { @apply object-cover hover:scale-105 transition-transform duration-700; }
+  .siena-view-101 { @apply text-[#e0b265] text-[13px] tracking-widest; }
+  .siena-view-102 { @apply text-[#e0b265] text-[32px] md:text-[42px] leading-tight; }
+  .siena-view-103 { @apply text-white/75 text-[15px] md:text-[16px] leading-[1.7]; }
+  .siena-view-104 { @apply text-white/70 text-[14px] flex items-center gap-2; }
+  .siena-view-105 { @apply w-1 h-1 rounded-full bg-[#e0b265] flex-shrink-0 inline-block; }
+  .siena-view-106 { @apply hidden md:flex absolute cursor-pointer -right-16 top-1/2 -translate-y-1/2 z-10 bg-[#e0b265] text-[#1b312e] w-11 h-11 items-center justify-center text-2xl hover:bg-white hover:text-[#1b312e] hover:scale-110 transition-all duration-300 shadow-md; }
+  .siena-view-107 { @apply w-[15px] h-[15px] transition-all duration-300 brightness-0 invert; }
+  .siena-view-108 { @apply text-[15px] font-normal uppercase tracking-wide text-center; }
+  .siena-view-109 { @apply flex items-center gap-1.5 sm:gap-2 lg:gap-4; }
+  .siena-view-110 { @apply relative w-[20px] h-[16px] flex flex-col justify-between; }
+  .siena-view-111 { @apply pointer-events-none absolute right-4 top-1/2 -translate-y-1/2; }
+  .siena-view-112 { @apply w-8 h-8 rounded-full bg-[#e0b265] text-[#1b312e] flex items-center justify-center text-[14px] font-semibold flex-shrink-0; }
+  .siena-view-113 { @apply text-[19px] md:text-[20px] font-semibold text-white leading-tight; }
+  .siena-view-114 { @apply text-[12px] font-semibold text-white/80 tracking-wider uppercase; }
+  .siena-view-115 { @apply text-[12px] text-[#e0b265] mt-0.5 flex items-center gap-1; }
+  .siena-view-116 { @apply w-3 h-3 flex items-center justify-center border border-[#e0b265] text-[9px] flex-shrink-0; }
+  .siena-view-117 { @apply shadow-2xl border border-[#e0b265]/50 px-6 md:px-10 py-10 text-left; }
+  .siena-view-118 { @apply flex flex-col items-center text-center gap-6 py-4; }
+  .siena-view-119 { @apply w-16 h-16 rounded-full bg-[#e0b265] flex items-center justify-center; }
+  .siena-view-120 { @apply text-[12px] font-semibold tracking-[0.2em] uppercase text-[#e0b265]; }
+  .siena-view-121 { @apply text-[26px] md:text-[30px] text-white leading-tight; }
+  .siena-view-122 { @apply text-[11px] uppercase tracking-wide text-white/50; }
+  .siena-view-123 { @apply text-[15px] font-semibold text-white mt-1; }
+  .siena-view-124 { @apply w-full bg-white/5 border border-[#e0b265]/30 px-5 py-4 text-[13px] text-white/80 leading-relaxed; }
+  .siena-view-125 { @apply w-full bg-[#e0b265] text-[#1b312e] text-[14px] font-semibold py-4 hover:bg-[#1b312e] hover:text-[#e0b265] transition; }
+  .siena-view-126 { @apply text-[11.67px] text-white/50 mt-2 leading-relaxed; }
+  .siena-view-127 { @apply text-[#e0b265] text-[22px] md:text-[24px] leading-tight mb-5; }
+  .siena-view-128 { @apply flex items-start gap-3 cursor-pointer select-none; }
+  .siena-view-129 { @apply w-4 h-4 mt-1 accent-[#e0b265] cursor-pointer flex-shrink-0; }
+  .siena-view-130 { @apply text-[13px] text-white/70 leading-[1.65]; }
+  .siena-view-131 { @apply text-[13px] text-[#e0b265] border border-[#e0b265]/30 bg-[#e0b265]/10 px-4 py-3; }
+  .siena-view-132 { @apply w-full bg-[#e0b265] text-[#1b312e] text-[13px] tracking-[0.25em] uppercase py-4 transition hover:bg-[#1b312e] hover:text-[#e0b265] disabled:opacity-60 disabled:cursor-not-allowed; }
+  .siena-view-133 { @apply text-[12px] text-white/50 text-center leading-relaxed; }
+  .siena-view-134 { @apply w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80; }
+  .siena-view-135 { @apply w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80; }
+  .siena-view-136 { @apply text-[#e0b265] text-[30px] sm:text-[42px] md:text-[62px] lg:text-[80px] max-w-[1000px] leading-[0.95] tracking-[0.04em] uppercase; }
+  .siena-view-137 { @apply text-3xl mb-6 text-center text-white; }
+  .siena-view-138 { @apply max-w-3xl mx-auto mb-12 text-white/80 text-base leading-relaxed space-y-4; }
+  .siena-view-139 { @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8; }
+  .siena-view-140 { @apply flex flex-col h-screen md:h-auto md:block; }
+  .siena-view-141 { @apply relative w-full flex-1 md:h-screen overflow-hidden; }
+  .siena-view-142 { @apply relative z-20 flex flex-col items-center justify-center h-full text-center px-4; }
+  .siena-view-143 { @apply flex-1 flex items-center gap-2.5 px-4 py-3 min-w-0; }
+  .siena-view-144 { @apply w-full bg-transparent text-white text-[13px] md:text-[14px] tracking-wide outline-none cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 appearance-none [color-scheme:dark]; }
+  .siena-view-145 { @apply w-full bg-transparent text-white text-[13px] md:text-[14px] tracking-wide outline-none cursor-pointer appearance-none [color-scheme:dark]; }
+  .siena-view-146 { @apply bg-[#e0b265] text-[#1b312e] px-6 md:px-9 py-3 font-normal text-[13px] md:text-[14px] tracking-[0.15em] uppercase flex items-center justify-center gap-2 hover:bg-[#1b312e] hover:text-white transition disabled:opacity-60 disabled:cursor-not-allowed flex-shrink-0; }
+  .siena-view-147 { @apply fill-[#1b312e] group-hover:fill-white transition-colors duration-300; }
+  .siena-view-148 { @apply border-b border-white/40 group-hover:border-[#e0b265] transition-colors; }
+  .siena-view-149 { @apply fill-white/85 group-hover:fill-[#e0b265] transition-colors; }
+  .siena-view-150 { @apply w-full max-w-[1180px] absolute bottom-0 left-1/2 -translate-x-1/2 z-10 py-4 hidden md:flex items-center justify-between; }
+  .siena-view-151 { @apply flex items-center gap-2 text-white/80 text-[14px] md:text-[16px] tracking-wide hover:text-[#E0B265] transition text-center; }
+  .siena-view-152 { @apply flex items-center gap-2 text-white/80 text-[14px] md:text-[16px] tracking-wide hover:text-[#E0B265] transition; }
+  .siena-view-153 { @apply w-full max-w-[900px] mx-auto py-12 md:py-20 px-4; }
+  .siena-view-154 { @apply text-white text-[32px] sm:text-[42px] md:text-[56px] lg:text-[64px] leading-[0.95] tracking-[0.04em] uppercase; }
+  .siena-view-155 { @apply block mt-3 text-[#e0b265] text-[26px] sm:text-[34px] md:text-[42px] lg:text-[52px] leading-tight; }
+  .siena-view-156 { @apply text-white/80 text-[16px] md:text-[18px] lg:text-xl leading-[1.6] max-w-[1180px] mt-8 md:mt-10 space-y-4; }
+  .siena-view-157 { @apply flex flex-wrap justify-center gap-x-6 gap-y-3 mt-6 text-[#e0b265] text-sm underline underline-offset-4; }
+  .siena-view-158 { @apply relative z-10 bg-[#e0b265] text-[#1b312e] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition; }
+  .siena-view-159 { @apply fill-[#1b312e] transition-colors duration-300; }
+  .siena-view-160 { @apply relative w-full h-[40px] md:h-[58px] overflow-hidden bg-[#e0b265]; }
+  .siena-view-161 { @apply w-full max-w-[1180px] mx-auto px-4 mt-[80px]; }
+  .siena-view-162 { @apply text-[#e0b265] text-[36px] sm:text-[48px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase; }
+  .siena-view-163 { @apply pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[20%] md:-translate-y-[35%] text-[#e0b265] text-[22px] sm:text-[30px] md:text-[60px] lg:text-[85px] leading-none whitespace-nowrap; }
+  .siena-view-164 { @apply text-white/80 text-[16px] md:text-[18px] lg:text-xl leading-[140%] max-w-[1180px] mt-12 md:mt-25; }
+  .siena-view-165 { @apply w-full max-w-[1180px] mx-auto mt-10 mb-[80px] px-4 md:px-0; }
+  .siena-view-166 { @apply grid grid-cols-1 md:grid-cols-3 gap-4 md:[grid-template-rows:280px_280px]; }
+  .siena-view-167 { @apply relative overflow-hidden shadow-lg md:row-span-2 h-[220px] md:h-auto; }
+  .siena-view-168 { @apply absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500; }
+  .siena-view-169 { @apply text-white text-[28px] md:text-[32px] font-semibold leading-tight; }
+  .siena-view-170 { @apply text-white/80 text-[14px] md:text-[18px] mt-1; }
+  .siena-view-171 { @apply w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0; }
+  .siena-view-172 { @apply relative overflow-hidden shadow-lg h-[220px] md:h-auto; }
+  .siena-view-173 { @apply text-white text-[28px] md:text-[32px] font-semibold leading-tight md:whitespace-nowrap; }
+  .siena-view-174 { @apply relative overflow-hidden shadow-lg md:col-span-2 h-[220px] md:h-auto; }
+  .siena-view-175 { @apply relative w-full pt-[80px] pb-[80px] overflow-hidden mt-[-5px]; }
+  .siena-view-176 { @apply flex flex-col items-center text-center pb-[30px]; }
+  .siena-view-177 { @apply text-white text-[36px] sm:text-[48px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase; }
+  .siena-view-178 { @apply absolute left-1/2 top-[105%] -translate-x-1/2 -translate-y-[12%] w-full max-w-[900px] text-[#e0b265] text-[26px] sm:text-[34px] md:text-[60px] lg:text-[85px] leading-none; }
+  .siena-view-179 { @apply bg-[#e0b265] text-[#1b312e] px-4 md:px-9 mt-[30px] py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition; }
+  .siena-view-180 { @apply text-white/70 text-lg md:text-xl leading-[140%] max-w-[560px] mt-12 md:mt-24; }
+  .siena-view-181 { @apply grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6; }
+  .siena-view-182 { @apply absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10; }
+  .siena-view-183 { @apply absolute inset-0 flex flex-col justify-end p-6 md:p-8; }
+  .siena-view-184 { @apply text-[#e0b265] mb-3 group-hover:scale-110 transition-transform duration-300 w-fit; }
+  .siena-view-185 { @apply text-[#e0b265] text-[10px] tracking-[0.4em] uppercase mb-1; }
+  .siena-view-186 { @apply text-white text-[26px] md:text-[30px] leading-none mb-4; }
+  .siena-view-187 { @apply flex items-center gap-2 text-white/60 group-hover:text-[#e0b265] text-[12px] tracking-[0.25em] uppercase transition-colors duration-300; }
+  .siena-view-188 { @apply text-[#e0b265] text-[28px] sm:text-[38px] md:text-[80px] lg:text-[95px] leading-[0.9] tracking-[0.06em] uppercase mb-[10px]; }
+  .siena-view-189 { @apply absolute left-1/2 md:top-[115%] -translate-x-1/2 -translate-y-1/2 w-full max-w-[900px] text-[#e0b265] text-[24px] sm:text-[32px] md:text-[60px] lg:text-[85px] leading-none; }
+  .siena-view-190 { @apply relative w-full h-[28px] overflow-hidden bg-[#030302]; }
+  .siena-view-191 { @apply absolute inset-0 w-full h-full object-cover scale-y-125; }
+  .siena-view-192 { @apply relative w-full py-12 md:py-20 overflow-hidden; }
+  .siena-view-193 { @apply w-full max-w-[1180px] mx-auto px-4 md:px-0; }
+  .siena-view-194 { @apply relative overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-stretch gap-8 md:gap-12; }
+  .siena-view-195 { @apply absolute inset-3 border border-[#e0b265]/20 pointer-events-none; }
+  .siena-view-196 { @apply flex-1 flex flex-col gap-4 md:gap-5 relative z-10 w-full; }
+  .siena-view-197 { @apply text-[#e0b265] text-[38px] sm:text-[48px] md:text-[72px] font-bold tracking-wide leading-none; }
+  .siena-view-198 { @apply flex items-start gap-2 text-white/85 text-[16px] md:text-[18px] leading-[1.5] hover:text-[#e0b265] transition; }
+  .siena-view-199 { @apply fill-[#e0b265] group-hover:fill-white transition-colors duration-300; }
+  .siena-view-200 { @apply flex items-center gap-2 text-white/85 text-[16px] md:text-[18px] hover:text-[#e0b265] transition; }
+  .siena-view-201 { @apply text-white text-[30px] md:text-[38px] tracking-wide uppercase leading-none; }
+  .siena-view-202 { @apply text-white/80 text-[16px] md:text-[18px]; }
+  .siena-view-203 { @apply flex flex-wrap items-center gap-3 mt-1 md:mt-2; }
+  .siena-view-204 { @apply bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] flex items-center gap-2 w-fit border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition; }
+  .siena-view-205 { @apply flex-1 overflow-hidden shadow-lg relative z-10 w-full min-h-[260px] md:min-h-0 md:h-auto self-stretch; }
+  .siena-view-206 { @apply text-[#e0b265] text-[24px] md:text-[28px] leading-tight scroll-mt-24 mt-10 mb-3 first:mt-0; }
+  .siena-view-207 { @apply text-white/80 text-[15px] md:text-[16px] leading-[1.8] mb-4; }
+  .siena-view-208 { @apply list-disc pl-6 space-y-2 text-white/80 text-[15px] md:text-[16px] leading-[1.8] mb-4; }
+  .siena-view-209 { @apply w-full max-w-[820px] mx-auto text-center; }
+  .siena-view-210 { @apply text-[#e0b265] text-[44px] md:text-[64px] leading-none tracking-[0.04em] uppercase; }
+  .siena-view-211 { @apply grid sm:grid-cols-2 gap-3 text-[#e0b265] underline underline-offset-4; }
+}
+
+/* Menu cards repeat across every menu tab; keep their presentation in CSS. */
+@layer components {
+  .siena-menu-1 { @apply bg-white/8 backdrop-blur-md shadow-sm border border-[#e0b265]/25 hover:border-[#e0b265]/60 hover:bg-white/12 transition-colors duration-300 py-6 px-5 flex flex-col items-center justify-center text-center gap-3; }
+  .siena-menu-2 { @apply w-full aspect-square overflow-hidden; }
+  .siena-menu-3 { @apply text-[19px] md:text-[22px] leading-tight uppercase text-[#e0b265]; }
+  .siena-menu-4 { @apply text-[13px] md:text-[14px] leading-[1.6] text-white/70 whitespace-pre-line; }
+  .siena-menu-5 { @apply text-[14px] md:text-[15px] font-semibold text-[#e0b265] whitespace-pre-line mt-auto pt-1; }
+  .siena-menu-6 { @apply flex flex-col items-center text-center mb-[30px] md:mb-[40px] px-4; }
+  .siena-menu-7 { @apply inline-flex flex-col items-center; }
+  .siena-menu-8 { @apply w-[80px] h-auto pointer-events-none opacity-40 mb-4; }
+  .siena-menu-9 { @apply text-[28px] sm:text-[36px] md:text-[57px] leading-tight uppercase text-[#e0b265]; }
+  .siena-menu-10 { @apply text-[14px] md:text-[16px] text-white/60 mt-2 uppercase tracking-widest; }
+  .siena-menu-11 { @apply w-12 md:w-20 h-px bg-gradient-to-r from-transparent to-[#e0b265]/60; }
+  .siena-menu-12 { @apply text-[#e0b265] text-[10px] tracking-[0.4em]; }
+  .siena-menu-13 { @apply w-12 md:w-20 h-px bg-gradient-to-l from-transparent to-[#e0b265]/60; }
+  .siena-menu-14 { @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6; }
+  .siena-menu-15 { @apply text-center text-white/40 italic px-4 text-sm; }
+  .siena-menu-16 { @apply relative w-full h-[400px] md:h-[45vh] overflow-hidden; }
+  .siena-menu-17 { @apply relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-10 md:pt-12; }
+  .siena-menu-18 { @apply w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-[#e0b265]/80; }
+  .siena-menu-19 { @apply text-[#e0b265] text-[11px] tracking-[0.4em]; }
+  .siena-menu-20 { @apply w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80; }
+  .siena-menu-21 { @apply text-[#e0b265] text-[30px] sm:text-[42px] md:text-[62px] lg:text-[80px] max-w-[1000px] leading-[0.95] tracking-[0.04em] uppercase; }
+  .siena-menu-22 { @apply w-full bg-[#030302] py-5 overflow-hidden; }
+  .siena-menu-23 { @apply text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap; }
+  .siena-menu-24 { @apply sticky z-40 transition-all duration-300 bg-[#1b312e] border-b border-white/10 shadow-sm; }
+  .siena-menu-25 { @apply max-w-[1180px] mx-auto px-6 md:px-10; }
+  .siena-menu-26 { @apply flex items-center gap-2 md:gap-3 py-3 whitespace-nowrap justify-start md:justify-center; }
+  .siena-menu-27 { @apply max-w-[1180px] mx-auto pb-16 pt-8; }
+  .siena-menu-28 { @apply max-w-3xl mx-auto px-6 mb-10 text-white/80 text-base leading-relaxed space-y-3; }
+  .siena-menu-29 { @apply flex items-center justify-center py-24; }
+  .siena-menu-30 { @apply flex flex-col items-center gap-4; }
+  .siena-menu-31 { @apply w-8 h-8 border-2 border-[#e0b265] border-t-transparent rounded-full animate-spin; }
+  .siena-menu-32 { @apply text-white/50 text-sm tracking-widest uppercase; }
+  .siena-menu-33 { @apply text-center py-16 text-white/50 italic text-sm; }
+  .siena-menu-34 { @apply w-full scroll-mt-[180px] md:scroll-mt-[200px] border-b border-white/10 last:border-b-0; }
+  .siena-menu-35 { @apply w-full py-[50px] md:py-[70px] flex flex-col items-center text-center px-4 bg-transparent; }
+  .siena-menu-36 { @apply w-[55px] md:w-[70px] mb-2 opacity-80; }
+  .siena-menu-37 { @apply text-[#e0b265] text-[34px] sm:text-[44px] md:text-[72px] lg:text-[88px] leading-[0.9] tracking-[0.06em] uppercase; }
+  .siena-menu-38 { @apply pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[5%] md:-translate-y-[10%] text-[#e0b265] text-[24px] md:text-[50px] lg:text-[68px] leading-none whitespace-nowrap; }
+  .siena-menu-39 { @apply mt-14 text-[#e0b265] text-sm md:text-base tracking-[0.16em] uppercase; }
+  .siena-menu-40 { @apply px-4 pb-[50px] md:pb-[70px] text-center; }
+  .siena-menu-41 { @apply text-white/50 text-[13px] italic leading-relaxed; }
+}
+.siena-menu-heading, .siena-menu-item-title { font-family: 'Palmore-Light', serif; }
+.siena-menu-item-title { font-optical-sizing: none; font-variation-settings: 'opsz' 28; }

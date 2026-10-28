@@ -98,7 +98,7 @@ export const BLOCKS: Block[] = [
     alt: "The dining room and bar at Siena Restaurant & Bar in Alpharetta, with teal booths and a stocked back bar",
     paras: [
       "Siena is warm and upscale without ever feeling stiff. The lighting is bold and a little moody, the kind that makes everyone at the table look good and every plate look better. Relaxed enough for a Tuesday, dressy enough for a big one.",
-      "The bar pulls its weight: twelve house cocktails, a thirty-bottle wine list and a deep spirits shelf. The Italian Job is a house favourite and a good place to start. There is a happy hour menu Tuesday through Friday from 4 to 6pm when you want to keep it casual after work.",
+      "The bar pulls its weight: twelve house cocktails, a thirty-bottle wine list and a deep spirits shelf. The Italian Job is a house favourite and a good place to start. There is a happy hour menu Tuesday through Thursday from 4 to 6pm when you want to keep it casual after work.",
       "Then there is Friday. Live music plays from 7 to 10pm, with a different act each week, and the whole room shifts up a gear. Music, low lighting, a cocktail in your hand. <a href=\"/live-music-fridays\">If you want a Friday that actually feels like a night out, this is the room for it</a>.",
     ],
   },
@@ -107,9 +107,9 @@ export const BLOCKS: Block[] = [
     bg: "green",
     icon: "/assets/icon_menus.svg",
     heading: "Weekend Brunch",
-    script: "saturday mornings",
+    script: "confirm availability",
     intro:
-      "Saturday runs on its own brunch menu, and it is worth planning around. Same idea as dinner. Italian technique, Mediterranean brightness, plates built for sharing, just earlier and in better light.",
+      "The online brunch menu includes Italian and Mediterranean-inspired dishes. Call Siena to confirm current brunch days, hours and availability before planning a visit.",
     items: [
       {
         image: "/assets/Siena_20.03.26-LS-LimoncelloRicottaPancakes-01.webp",
@@ -164,7 +164,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Do I need a reservation?",
-    a: "Booking ahead is a smart move, especially on Friday and Saturday evenings and for weekend brunch. Walk-ins are welcome at the bar when there is room. <a href=\"/reservations\">Book a table here</a>.",
+    a: "Booking ahead is a smart move, especially on Friday and Saturday evenings. Walk-ins are welcome at the bar when there is room. <a href=\"/reservations\">Book a table here</a>.",
   },
   {
     q: "Where is Siena located in Alpharetta?",
@@ -172,7 +172,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Does Siena serve brunch?",
-    a: "Yes. Weekend brunch runs on Saturday mornings, with dishes like limoncello ricotta pancakes, truffle and pecorino frittata, baked eggs in San Marzano and steak and eggs Mediterraneo.",
+    a: "A brunch menu is listed online, with limoncello ricotta pancakes, truffle and pecorino frittata, baked eggs in San Marzano and steak and eggs Mediterraneo. Call (404) 999-0373 to confirm current brunch availability and hours.",
   },
   {
     q: "Is Siena good for groups?",
@@ -202,7 +202,7 @@ export const REVIEWS: Reviews = {
 export const PRACTICAL = [
   "Step-free entrance and accessible parking near the door",
   "Minutes from Avalon and the Ameris Bank Amphitheatre",
-  "Dinner and bar service, plus Saturday brunch",
+  "Dinner and bar service; call about brunch availability",
 ];
 
 export const CLOSING = {

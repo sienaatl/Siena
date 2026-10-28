@@ -7,22 +7,22 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
  * the Italian and Mediterranean pages. Dishes named follow lib/site-data.json.
  */
 
-export const H1 = "A Tapas Restaurant in Alpharetta";
-export const H1_SCRIPT = "everything gets shared";
+export const H1 = "Tapas in Alpharetta";
+export const H1_SCRIPT = "small plates at Siena";
 
 export const MARQUEE = [
   "Tapas-Style Sharing Plates",
-  "Order Four, Then Four More",
+  "Small Plates and Entrées",
   "Italian and Mediterranean",
   "Alpharetta, Georgia",
 ];
 
 export const INTRO = {
   icon: "/assets/icon_menus.svg",
-  heading: "Nothing Arrives Just for You",
-  script: "and that is the point",
+  heading: "Small Plates for the Table",
+  script: "share what you like",
   paras: [
-    "Siena Restaurant &amp; Bar serves tapas-style, which means plates land in the middle of the table and everyone reaches in. No main course, no one person guarding their own dinner.",
+    "Looking for tapas in Alpharetta? Siena Restaurant &amp; Bar offers Italian and Mediterranean small plates to share. Guests can also choose pasta and entrées from the main menu.",
     "The menu runs Italian and Mediterranean at the same time, so a single table can have house-made pasta, hummus, grilled skewers and crispy cauliflower going at once. It is at 124 Devore Rd in downtown Alpharetta.",
   ],
   cta: { label: "SEE THE MENU", href: "/menus" },
@@ -33,13 +33,13 @@ export const BLOCKS: Block[] = [
     kind: "split",
     bg: "green",
     heading: "How to Order",
-    script: "more than feels sensible",
+    script: "start with a few plates",
     image: "/assets/Siena_20.03.26-D-Feta.webp",
     alt: "Whipped feta with char-grilled bread, a plate to share at a restaurant in Alpharetta",
     paras: [
-      "The usual mistake is ordering like it is a normal restaurant. One plate each, then wondering why the table looks empty.",
-      "A better approach: four or five plates between two people, six to eight between four. Start with two or three mezze, add a pasta for the table, then one or two of the grilled dishes. Order again if you are still going, which most people are.",
-      "It costs less than it sounds, because you are not paying for four separate main courses.",
+      "Start with a few small plates for the table. Ask your server about portions and the dishes available that evening.",
+      "Hummus, whipped feta and crispy cauliflower are options to share. Add pasta or a grilled dish if the group wants a larger meal.",
+      "Choose the number of dishes to suit your appetite and budget. Current prices are on the menu.",
     ],
   },
   {
@@ -81,7 +81,7 @@ export const BLOCKS: Block[] = [
     heading: "Why Sharing Suits Groups",
     script: "nobody loses",
     image: "/assets/hero5.webp",
-    alt: "A table covered in shared plates from the Saturday brunch menu at Siena in Alpharetta",
+    alt: "A table covered in shared plates from the brunch menu at Siena in Alpharetta",
     paras: [
       "The argument about where to eat is usually an argument about cuisine. One person wants pasta, another wants something lighter, someone else does not eat meat.",
       "Sharing plates end that. The menu covers Italian and Mediterranean at once, there is plenty without meat, and nobody is stuck watching someone else eat the better dish.",
@@ -118,7 +118,7 @@ export const BLOCKS: Block[] = [
     alt: "A matcha martini held up at the bar at Siena in Alpharetta",
     paras: [
       "Twelve house cocktails, a thirty-bottle wine list and a deep spirits shelf. A bottle for the table works better with this style of eating than everyone ordering separately.",
-      "There is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> Tuesday through Friday from 4 to 6pm if you want a few small plates and a drink without a full sit-down. On Friday live music plays from 7 to 10pm, and the room lifts. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
+      "There is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> Tuesday through Thursday from 4 to 6pm if you want a few small plates and a drink without a full sit-down. On Friday live music plays from 7 to 10pm, and the room lifts. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
     ],
   },
 ];
@@ -126,11 +126,11 @@ export const BLOCKS: Block[] = [
 export const FAQS: Faq[] = [
   {
     q: "What does tapas-style mean here?",
-    a: "Plates are smaller than a main course and arrive as they are ready, so the table shares everything rather than each person having their own dish.",
+    a: "Tapas-style here means choosing small plates to share. Siena also serves pasta and entrées, so guests can share starters and order individual mains if they prefer.",
   },
   {
     q: "How many plates should we order?",
-    a: "Roughly four or five between two people, six to eight between four. Order in two rounds rather than all at once, so the food does not arrive together and go cold.",
+    a: "Start with a few small plates and ask your server about portion sizes. Add more dishes or individual mains to suit the group.",
   },
   {
     q: "Is it Spanish tapas?",
@@ -146,7 +146,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Where is it and what are the hours?",
-    a: "124 Devore Rd, Alpharetta, GA 30009. Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm, plus Saturday brunch from 10am.",
+    a: "124 Devore Rd, Alpharetta, GA 30009. Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm. Call to confirm current brunch availability.",
   },
 ];
 
@@ -175,7 +175,7 @@ export const CLOSING = {
   heading: "Bring People",
   script: "and order widely",
   paras: [
-    "Tapas works best with more of you. Four people and eight plates in the middle of the table is the way Siena is meant to be eaten.",
+    "Tapas works best with more of you. Share a few starters, choose your mains and enjoy dinner at your own pace.",
     "<a href=\"/reservations\">Book your table</a> and start with the hummus.",
   ],
 };

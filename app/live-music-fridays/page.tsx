@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
 import { useEffect, useState } from "react";
@@ -76,7 +77,7 @@ export default function LiveMusicFridays() {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           >
             Set the tone for your weekend with an elevated night of live music, Mediterranean-Italian flavors and
-            handcrafted cocktails at Siena.
+            signature cocktails at Siena, 124 Devore Rd in downtown Alpharetta.
           </motion.p>
 
           <motion.div
@@ -87,7 +88,7 @@ export default function LiveMusicFridays() {
           >
             <span className="border-l-2 border-[#e0b265] pl-3">Every Friday</span>
             <span className="border-l-2 border-[#e0b265] pl-3">7 PM – 10 PM</span>
-            <span className="border-l-2 border-[#e0b265] pl-3">Alpharetta, Georgia</span>
+            <span className="border-l-2 border-[#e0b265] pl-3">Downtown Alpharetta</span>
           </motion.div>
 
           <motion.div
@@ -96,6 +97,12 @@ export default function LiveMusicFridays() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           >
+            <Link
+              href="/reservations"
+              className="bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-3 text-[13px] md:text-[14px] tracking-[0.1em] uppercase border border-[#e0b265] hover:bg-white transition"
+            >
+              Reserve a table
+            </Link>
             <a
               href={`tel:${info.phone.replace(/\D/g, "")}`}
               className="group bg-transparent text-white px-4 md:px-9 py-3 font-normal text-[13px] md:text-[14px] tracking-[0.1em] uppercase flex items-center gap-2 border border-white/50 hover:border-[#e0b265] hover:text-[#e0b265] transition"
@@ -162,8 +169,9 @@ export default function LiveMusicFridays() {
 
               <p className="text-white/70 text-[15px] md:text-[17px] leading-[1.8] max-w-[520px]">
                 From date night to cocktails with friends, Friday evenings at Siena bring together soulful live
-                performances, memorable plates and warm hospitality — just minutes from downtown Alpharetta, Johns
-                Creek and Milton.
+                performances, Mediterranean-Italian plates and warm hospitality in downtown Alpharetta. Pair dinner
+                with a Monaco or Lady Godiva from our <Link href="/cocktail-bar-alpharetta" className="text-[#e0b265] underline underline-offset-4">signature cocktail list</Link>.
+                Music runs 7–10 PM; free parking and walk-ins welcome. Visiting from Johns Creek or Milton? Reserve a table before you arrive.
               </p>
             </motion.div>
 

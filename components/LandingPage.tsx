@@ -105,7 +105,7 @@ function GoldButton({ href, label }: { href: string; label: string }) {
     <Link
       href={href}
       data-booking-cta={href === "/reservations" || href === "/event-inquiry" || href.startsWith("tel:") ? "true" : undefined}
-      className="group bg-[#e0b265] text-[#1b312e] px-6 md:px-9 py-2.5 text-[14px] md:text-[15px] leading-[24px] inline-flex items-center gap-2 border border-transparent hover:bg-white hover:border-white transition"
+      className="siena-ui-35 group"
     >
       <span>{label}</span>
       <Arrow />
@@ -195,17 +195,17 @@ function ImageFrame({ src, alt, className = "" }: { src: string; alt: string; cl
         fill
         sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 560px"
         loading="lazy"
-        className="object-cover transition-transform duration-700 group-hover:scale-110"
+        className="siena-view-25"
       />
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500 pointer-events-none" />
-      <div className="absolute inset-4 border border-[#e0b265] pointer-events-none" />
+      <div className="siena-ui-36" />
+      <div className="siena-view-26" />
     </div>
   );
 }
 
 function Divider({ src = "/assets/divisor_beige.svg", bg = GOLD }: { src?: string; bg?: string }) {
   return (
-    <section className="relative w-full h-[40px] md:h-[58px] overflow-hidden" style={{ backgroundColor: bg }}>
+    <section className="siena-view-27" style={{ backgroundColor: bg }}>
       <span aria-hidden="true" data-decoration={src} className="siena-decoration siena-divider absolute inset-0 w-full h-full" />
     </section>
   );
@@ -225,7 +225,7 @@ export default function LandingPage({
     <main>
       {/* ── HERO ─────────────────────────────────────────────── */}
       {/* min-h keeps the hero usable on short landscape phones, where 86vh collapses. */}
-      <section className="relative w-full h-[86vh] min-h-[560px] max-h-[900px] overflow-hidden">
+      <section className="siena-view-29">
         <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.08 }}
@@ -234,10 +234,10 @@ export default function LandingPage({
         >
           <Image src={heroImage} alt={heroAlt} fill priority sizes="100vw" className="object-cover object-center" />
         </motion.div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(3,3,2,0.65)_0%,rgba(3,3,2,0.25)_45%,rgba(3,3,2,0.85)_100%)]" />
+        <div className="siena-ui-37" />
 
         {/* Padded for the fixed header (72px, 80px from md) so the h1 never sits under it. */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-5 pt-[72px] md:pt-[80px] pb-16 md:pb-20">
+        <div className="siena-ui-38">
           <motion.span
             aria-hidden="true"
             data-decoration="/assets/icono_123.svg"
@@ -248,7 +248,7 @@ export default function LandingPage({
           />
           <div className={`relative inline-block ${h1Script ? "mb-[60px] md:mb-[80px]" : "mb-8"}`}>
             <motion.h1
-              className="text-white text-[32px] sm:text-[42px] md:text-[62px] lg:text-[80px] leading-[0.95] tracking-[0.04em] uppercase max-w-[1100px] break-words"
+              className="siena-ui-39"
               style={{ fontFamily: "'Palmore-Light', serif" }}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -258,7 +258,7 @@ export default function LandingPage({
             </motion.h1>
             {h1Script && (
               <motion.span
-                className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 -translate-y-[22%] text-[#e0b265] text-[21px] sm:text-[30px] md:text-[52px] lg:text-[70px] leading-none whitespace-nowrap"
+                className="siena-ui-40"
                 style={{
                   fontFamily: "'AguafinaScript-Regular', cursive",
                   textShadow: "3px 3px 0 #030302,-3px -3px 0 #030302,3px -3px 0 #030302,-3px 3px 0 #030302",
@@ -273,7 +273,7 @@ export default function LandingPage({
           </div>
 
           <motion.div
-            className="flex flex-col sm:flex-row items-center gap-4"
+            className="siena-view-30"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
@@ -281,7 +281,7 @@ export default function LandingPage({
             <GoldButton href={primaryHref} label={primaryLabel} />
             <a
               href={`tel:${info.phone.replace(/[^\d+]/g, "")}`}
-              className="group border border-white/70 text-white px-6 md:px-9 py-2.5 text-[14px] md:text-[15px] leading-[24px] inline-flex items-center gap-2 hover:bg-white hover:text-[#1b312e] transition"
+              className="siena-ui-41 group"
             >
               <span>{info.phone}</span>
             </a>
@@ -289,20 +289,20 @@ export default function LandingPage({
         </div>
 
         {/* Address + phone bar, same as the homepage hero */}
-        <div className="w-full max-w-[1180px] absolute bottom-0 left-1/2 -translate-x-1/2 z-10 py-4 hidden md:flex items-center justify-between px-4">
+        <div className="siena-ui-42">
           <a
             href={info.maps_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 text-white/80 text-[15px] tracking-wide hover:text-[#E0B265] transition"
+            className="siena-ui-43 group"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:opacity-100 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="siena-view-31">
               <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
             <span>{info.address}</span>
           </a>
-          <Link href="/menus" className="flex items-center gap-2 text-white/80 text-[15px] tracking-wide hover:text-[#E0B265] transition">
+          <Link href="/menus" className="siena-ui-43">
             <span>VIEW THE MENUS</span>
             <Arrow fill="currentColor" />
           </Link>
@@ -310,7 +310,7 @@ export default function LandingPage({
       </section>
 
       {/* ── MARQUEE ──────────────────────────────────────────── */}
-      <section className="w-full bg-[#030302] py-5 overflow-hidden">
+      <section className="siena-view-32">
         <style>{`
           @keyframes ${mq}-kf { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
           .${mq} { display:flex; width:max-content; animation:${mq}-kf 22s linear infinite; }
@@ -320,7 +320,7 @@ export default function LandingPage({
             <div key={r} className="flex items-center">
               {marquee.map((m, i) => (
                 <span key={i} className="flex items-center">
-                  <span className="text-white text-[15px] font-semibold tracking-[0.2em] uppercase px-8 whitespace-nowrap">{m}</span>
+                  <span className="siena-ui-44">{m}</span>
                   <span aria-hidden="true" data-decoration="/assets/star.svg" className="siena-decoration w-5 h-5 flex-shrink-0" />
                 </span>
               ))}
@@ -330,13 +330,13 @@ export default function LandingPage({
       </section>
 
       {plan && (
-        <section aria-labelledby="visit-planning" className="bg-[#152c29] border-y border-[#e0b265]/20 px-5 py-10">
+        <section aria-labelledby="visit-planning" className="siena-view-33">
           <div className="max-w-[900px] mx-auto text-center">
-            <h2 id="visit-planning" className="text-[#e0b265] text-2xl md:text-3xl mb-4">{plan.heading}</h2>
-            <p className="text-white/80 leading-relaxed max-w-[760px] mx-auto">{plan.text}</p>
+            <h2 id="visit-planning" className="siena-view-34">{plan.heading}</h2>
+            <p className="siena-view-35">{plan.text}</p>
             <div className="mt-6"><GoldButton href={primaryHref} label={primaryLabel} /></div>
-            <nav aria-label="Plan your visit" className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-3">
-              {plan.links.map(link => <Link key={link.href} href={link.href} className="text-[#e0b265] underline underline-offset-4 hover:text-white">{link.label}</Link>)}
+            <nav aria-label="Plan your visit" className="siena-view-36">
+              {plan.links.map(link => <Link key={link.href} href={link.href} className="siena-view-37">{link.label}</Link>)}
             </nav>
           </div>
         </section>
@@ -344,13 +344,13 @@ export default function LandingPage({
 
       {/* ── INTRO ────────────────────────────────────────────── */}
       <section className="relative w-full overflow-hidden" style={bgStyle("texture")}>
-        <div className="w-full max-w-[1000px] mx-auto px-4 py-[70px] md:py-[100px]">
+        <div className="siena-view-38">
           <SectionTitle heading={intro.heading} script={intro.script} icon={intro.icon} bg="green" color="#ffffff" />
           <div className="flex flex-col gap-5 text-center">
             {intro.paras.map((p, i) => (
               <motion.p
                 key={i}
-                className="text-white/85 text-[17px] md:text-[19px] leading-[1.8]"
+                className="siena-view-39"
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -380,7 +380,7 @@ export default function LandingPage({
         if (b.kind === "split") {
           return (
             <section key={i} className="relative w-full overflow-hidden" style={bgStyle(b.bg)}>
-              <div className="w-full max-w-[1180px] mx-auto px-4 py-[70px] md:py-[100px]">
+              <div className="siena-view-40">
                 <div className={`flex flex-col ${b.flip ? "md:flex-row-reverse" : "md:flex-row"} gap-10 md:gap-16 items-center`}>
                   <motion.div
                     className="flex-1 w-full"
@@ -403,7 +403,7 @@ export default function LandingPage({
                       {b.paras.map((p, j) => (
                         <p
                           key={j}
-                          className="text-white/75 text-[16px] md:text-[17px] leading-[1.8] [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-white"
+                          className="siena-ui-45"
                           dangerouslySetInnerHTML={{ __html: p }}
                         />
                       ))}
@@ -425,11 +425,11 @@ export default function LandingPage({
             : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4";
           return (
             <section key={i} className="relative w-full overflow-hidden" style={bgStyle(b.bg)}>
-              <div className="w-full max-w-[1180px] mx-auto px-4 py-[70px] md:py-[100px]">
+              <div className="siena-view-40">
                 <SectionTitle heading={b.heading} script={b.script} icon={b.icon} bg={b.bg} />
                 {b.intro && (
                   <p
-                    className="text-white/75 text-[16px] md:text-[18px] leading-[1.8] max-w-[820px] mx-auto text-center mb-12 [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4"
+                    className="siena-ui-46"
                     dangerouslySetInnerHTML={{ __html: b.intro }}
                   />
                 )}
@@ -455,17 +455,17 @@ export default function LandingPage({
                         fill
                         sizes="(max-width: 767px) 100vw, 390px"
                         loading="lazy"
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="siena-view-41"
                       />
-                      <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
-                      <div className="absolute inset-4 border border-[#e0b265]">
-                        <div className="flex flex-col justify-end h-full p-4 md:p-6">
+                      <div className="siena-ui-47" />
+                      <div className="siena-view-42">
+                        <div className="siena-view-43">
                           <div className="flex items-end justify-between gap-3">
                             <div className="min-w-0 flex-1">
-                              <h3 className="text-white text-[24px] md:text-[30px] font-semibold leading-tight">{it.title}</h3>
-                              <p className="text-white/80 text-[14px] md:text-[17px] mt-1">{it.sub}</p>
+                              <h3 className="siena-view-44">{it.title}</h3>
+                              <p className="siena-view-45">{it.sub}</p>
                             </div>
-                            <div className="w-9 h-9 border border-white flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 flex-shrink-0">
+                            <div className="siena-ui-48">
                               <Arrow fill="white" />
                             </div>
                           </div>
@@ -482,34 +482,34 @@ export default function LandingPage({
         // cards
         return (
           <section key={i} className="relative w-full overflow-hidden" style={bgStyle(b.bg)}>
-            <div className="w-full max-w-[1180px] mx-auto px-4 py-[70px] md:py-[100px]">
+            <div className="siena-view-40">
               <SectionTitle heading={b.heading} script={b.script} icon={b.icon} bg={b.bg} />
               {b.intro && (
                 <p
-                  className="text-white/75 text-[16px] md:text-[18px] leading-[1.8] max-w-[820px] mx-auto text-center mb-12 [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4"
+                  className="siena-ui-46"
                   dangerouslySetInnerHTML={{ __html: b.intro }}
                 />
               )}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+              <div className="siena-view-46">
                 {b.cards.map((c, j) => (
                   <motion.div
                     key={j}
-                    className="border border-white/10 bg-white/5 p-8 flex flex-col gap-4"
+                    className="siena-view-47"
                     initial={{ opacity: 0, y: 45 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.7, delay: j * 0.15, ease: "easeOut" }}
                     whileHover={{ y: -6, transition: { duration: 0.25 } }}
                   >
-                    <span className="text-[#e0b265] text-[32px] leading-none select-none">✦</span>
+                    <span className="siena-view-48">✦</span>
                     <h3
-                      className="text-[#e0b265] text-[22px] md:text-[24px] leading-tight tracking-wide uppercase"
+                      className="siena-ui-49"
                       style={{ fontFamily: "'Palmore-Light', serif" }}
                     >
                       {c.title}
                     </h3>
                     <p
-                      className="text-white/60 text-[15px] md:text-[16px] leading-[1.75] [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4"
+                      className="siena-ui-50"
                       dangerouslySetInnerHTML={{ __html: c.desc }}
                     />
                   </motion.div>
@@ -525,7 +525,7 @@ export default function LandingPage({
         <>
           <Divider src="/assets/divisor_negro.svg" bg={BLACK} />
           <section className="relative w-full overflow-hidden" style={{ backgroundColor: BLACK }}>
-            <div className="w-full max-w-[1180px] mx-auto px-4 py-[70px] md:py-[100px]">
+            <div className="siena-view-40">
               <SectionTitle heading="What Guests Say" script="in their words" icon="/assets/icono_testimonios.svg" bg="black" />
               <motion.div
                 className="flex flex-col items-center -mt-4 mb-12"
@@ -559,26 +559,26 @@ export default function LandingPage({
                   href={REVIEW_STATS.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/70 text-[14px] tracking-[0.15em] uppercase border-b border-white/30 pb-0.5 hover:text-[#e0b265] hover:border-[#e0b265] transition"
+                  className="siena-ui-51"
                 >
                   Read our {REVIEW_STATS.countFloor}+ Google reviews
                 </a>
               </motion.div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+              <div className="siena-view-46">
                 {reviews.quotes.map((q, i) => (
                   <motion.figure
                     key={i}
-                    className="border border-white/10 bg-white/5 p-8 flex flex-col gap-4"
+                    className="siena-view-47"
                     initial={{ opacity: 0, y: 45 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.7, delay: i * 0.15, ease: "easeOut" }}
                     whileHover={{ y: -6, transition: { duration: 0.25 } }}
                   >
-                    <span className="text-[#e0b265] text-[32px] leading-none select-none">✦</span>
-                    <blockquote className="text-white/75 text-[15px] md:text-[16px] leading-[1.8]">“{q.text}”</blockquote>
-                    <figcaption className="text-[#e0b265] text-[13px] tracking-[0.18em] uppercase mt-auto">{q.author}</figcaption>
+                    <span className="siena-view-48">✦</span>
+                    <blockquote className="siena-view-49">“{q.text}”</blockquote>
+                    <figcaption className="siena-view-50">{q.author}</figcaption>
                   </motion.figure>
                 ))}
               </div>
@@ -589,21 +589,21 @@ export default function LandingPage({
 
       {/* ── FAQ ──────────────────────────────────────────────── */}
       <section className="relative w-full overflow-hidden" style={bgStyle("texture")}>
-        <div className="w-full max-w-[900px] mx-auto px-4 py-[70px] md:py-[100px]">
+        <div className="siena-view-51">
           <SectionTitle heading="Good to Know" script="before you come" bg="green" />
           <div className="flex flex-col">
             {faqs.map((f, i) => (
               <motion.div
                 key={i}
-                className="border-l-2 border-[#e0b265]/50 pl-6 py-1 mb-8 last:mb-0"
+                className="siena-view-52"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.55, delay: i * 0.05, ease: "easeOut" }}
               >
-                <h3 className="text-white text-[18px] md:text-[19px] font-semibold mb-2">{f.q}</h3>
+                <h3 className="siena-view-53">{f.q}</h3>
                 <p
-                  className="text-white/70 text-[16px] leading-[1.8] [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4"
+                  className="siena-ui-52"
                   dangerouslySetInnerHTML={{ __html: f.a }}
                 />
               </motion.div>
@@ -616,20 +616,20 @@ export default function LandingPage({
 
       {/* ── FIND US ──────────────────────────────────────────── */}
       <section className="relative w-full overflow-hidden" style={{ backgroundColor: BLACK }}>
-        <div className="w-full max-w-[1180px] mx-auto px-4 py-[70px] md:py-[100px]">
+        <div className="siena-view-40">
           <SectionTitle heading={closing.heading} script={closing.script} icon="/assets/icono_findus.svg" bg="black" />
 
-          <div className="max-w-[820px] mx-auto text-center flex flex-col gap-4 mb-14">
+          <div className="siena-view-54">
             {closing.paras.map((p, i) => (
               <p
                 key={i}
-                className="text-white/75 text-[16px] md:text-[17px] leading-[1.8] [&_a]:text-[#e0b265] [&_a]:underline [&_a]:underline-offset-4"
+                className="siena-ui-53"
                 dangerouslySetInnerHTML={{ __html: p }}
               />
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-[900px] mx-auto">
+          <div className="siena-view-55">
             {/* NAP, matching the Google Business Profile character for character */}
             <motion.div
               className="border border-white/10 bg-white/5 p-8"
@@ -638,13 +638,13 @@ export default function LandingPage({
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <p className="text-[#e0b265] text-[13px] tracking-[0.2em] uppercase mb-4">Find Us</p>
+              <p className="siena-view-56">Find Us</p>
               <address className="not-italic flex flex-col gap-1">
                 <span className="text-white/85 text-[16px] leading-[1.7]">Siena Restaurant &amp; Bar</span>
                 <span className="text-white/85 text-[16px] leading-[1.7]">{info.address}</span>
                 <a
                   href={`tel:${info.phone.replace(/[^\d+]/g, "")}`}
-                  className="text-white/85 text-[16px] leading-[1.7] hover:text-[#e0b265] transition w-fit"
+                  className="siena-ui-54"
                 >
                   {info.phone}
                 </a>
@@ -653,14 +653,14 @@ export default function LandingPage({
                 href={info.maps_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-5 text-[#e0b265] text-[13px] tracking-[0.15em] uppercase border-b border-[#e0b265]/50 pb-0.5 hover:text-white hover:border-white transition"
+                className="siena-ui-55"
               >
                 Get Directions <Arrow fill="currentColor" />
               </a>
               {practical && practical.length > 0 && (
-                <ul className="mt-6 pt-5 border-t border-white/10 flex flex-col gap-2">
+                <ul className="siena-view-57">
                   {practical.map((p, i) => (
-                    <li key={i} className="text-white/55 text-[15px] leading-[1.6] flex gap-2">
+                    <li key={i} className="siena-view-58">
                       <span className="text-[#e0b265]">✦</span>
                       <span>{p}</span>
                     </li>
@@ -676,9 +676,9 @@ export default function LandingPage({
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
             >
-              <p className="text-[#e0b265] text-[13px] tracking-[0.2em] uppercase mb-4">Opening Hours</p>
+              <p className="siena-view-56">Opening Hours</p>
               {info.hours.map((h) => (
-                <p key={h.label} className="text-white/60 text-[15px] leading-[2] flex justify-between gap-6 border-b border-white/5 last:border-0">
+                <p key={h.label} className="siena-ui-56">
                   <span>{h.label}</span>
                   <span className="text-white/85 whitespace-nowrap">{h.value}</span>
                 </p>
@@ -687,7 +687,7 @@ export default function LandingPage({
                 <GoldButton href={primaryHref} label={primaryLabel} />
                 <Link
                   href="/menus"
-                  className="border border-[#e0b265] text-[#e0b265] px-6 py-2.5 text-[14px] leading-[24px] inline-flex items-center gap-2 hover:bg-[#e0b265] hover:text-[#1b312e] transition"
+                  className="siena-ui-57"
                 >
                   <span>MENUS</span>
                 </Link>

@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Photo Gallery | Restaurant in Alpharetta",
+  title: { absolute: "Siena Restaurant Photos | Alpharetta Gallery" },
   description:
-    "Explore Siena's gallery featuring chef-crafted dishes, elegant interiors, private events, and memorable Mediterranean dining in Alpharetta.",
+    "Explore Siena Restaurant & Bar photos in Alpharetta: dining room, Mediterranean and Italian dishes, cocktails and private gatherings. Plan your visit.",
   openGraph: {
     title: "Siena Gallery | Mediterranean Restaurant Photos Alpharetta",
     description:
-      "Explore Siena's gallery featuring chef-crafted dishes, elegant interiors, private events, and memorable Mediterranean dining in Alpharetta.",
+      "Explore Siena Restaurant & Bar photos in Alpharetta: dining room, Mediterranean and Italian dishes, cocktails and private gatherings. Plan your visit.",
     url: "https://sienaatl.com/gallery",
     images: [{ url: "/assets/Siena_20.03.26-A-02.webp", alt: "Siena Restaurant gallery" }],
   },

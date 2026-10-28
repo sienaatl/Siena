@@ -2,7 +2,7 @@ import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
-export const metadata = diningMetadata("downtown-alpharetta-restaurants", "Dining Near Downtown Alpharetta", "Plan dinner near downtown Alpharetta at Siena, 124 Devore Road. Mediterranean and Italian plates, cocktails and celebrations. Reserve a table.");
+export const metadata = diningMetadata("downtown-alpharetta-restaurants", "Downtown Alpharetta Restaurants: Dinner Nearby", "Plan dinner near downtown Alpharetta at Siena, 124 Devore Road. Mediterranean and Italian plates, cocktails and celebrations. Reserve a table.");
 
 /**
  * Short title on purpose. The root layout appends " | Siena" through its title

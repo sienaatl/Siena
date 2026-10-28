@@ -1,7 +1,8 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 
 const images: string[] = [];
 
@@ -23,6 +24,9 @@ const LOAD_MORE_BATCH = 48;
 export default function Gallery() {
   const [visible, setVisible] = useState(INITIAL_BATCH);
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const isLightboxOpen = lightbox !== null;
 
   const prev = useCallback(
     () => setLightbox((l) => (l !== null ? (l - 1 + TOTAL) % TOTAL : null)),
@@ -34,19 +38,37 @@ export default function Gallery() {
   );
 
   useEffect(() => {
-    if (lightbox === null) return;
+    if (!isLightboxOpen) return;
+    const trigger = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    closeRef.current?.focus();
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setLightbox(null);
+      if (e.key === "Tab") {
+        const buttons = dialogRef.current?.querySelectorAll<HTMLButtonElement>("button");
+        if (buttons?.length) {
+          const first = buttons[0];
+          const last = buttons[buttons.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
       if (e.key === "ArrowLeft") prev();
       if (e.key === "ArrowRight") next();
     };
     window.addEventListener("keydown", onKey);
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", onKey);
+      trigger?.focus();
     };
-  }, [lightbox, prev, next]);
+  }, [isLightboxOpen, prev, next]);
 
   const displayedImages = images.slice(0, visible);
   const hasMore = visible < TOTAL;
@@ -83,13 +105,13 @@ export default function Gallery() {
             <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[38px] sm:text-[50px] md:text-[82px] lg:text-[104px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[28px] sm:text-[38px] md:text-[52px] lg:text-[68px] max-w-[1000px] leading-[0.95] tracking-[0.04em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            GALLERY
+            SIENA RESTAURANT PHOTOS IN ALPHARETTA
           </motion.h1>
           <motion.div
             className="flex items-center gap-3 mt-2"
@@ -172,8 +194,26 @@ export default function Gallery() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
           >
-            Explore the ambiance, flavors, and moments that make Siena a place worth returning to.
+            Take a look inside Siena Restaurant &amp; Bar in Alpharetta. Explore
+            photographs of our dining room, dishes, cocktails and gatherings, then
+            picture your own evening here. Select a photograph for a closer look,
+            or load more images to continue browsing. For current dishes and prices,
+            use our menu; photographs may show items from earlier menus or events.
           </motion.p>
+          <p className="text-white/80 text-base leading-relaxed max-w-[650px] mt-6">
+            Ready to visit? <Link className="text-[#e0b265] underline" href="/menus">Explore dinner and drinks</Link>, browse the <Link className="text-[#e0b265] underline" href="/menus?tab=wines">wine list</Link> or <Link className="text-[#e0b265] underline" href="/reservations">reserve a table</Link> at
+            124 Devore Road. For Friday music, check our <Link className="text-[#e0b265] underline" href="/live-music-fridays">live music page</Link>.
+            Planning a birthday, celebration or business dinner? <Link className="text-[#e0b265] underline" href="/event-inquiry">Ask our event team</Link> about
+            your date and group before choosing a space. Free parking is available,
+            and walk-ins are welcome when there is room. For more dining inspiration,
+            read our <Link className="text-[#e0b265] underline" href="/blogs/hidden-gems-among-alpharetta">Alpharetta dining story</Link>.
+          </p>
+          <p className="text-white/80 text-base leading-relaxed max-w-[650px] mt-6">
+            Come for <Link className="text-[#e0b265] underline" href="/happy-hour-alpharetta">happy hour Tuesday–Thursday, 4–6 PM</Link>,
+            then stay for dinner. The gallery gives you a feel for the room and the food.
+            Check the menu for current dishes and drinks, and share your preferred date
+            with us when planning a group visit.
+          </p>
         </div>
       </section>
 
@@ -183,9 +223,11 @@ export default function Gallery() {
           {/* CSS column masonry — no per-item JS animation observers */}
           <div className="columns-2 md:columns-3 lg:columns-4 gap-2 md:gap-3 lg:gap-4">
             {displayedImages.map((src, i) => (
-              <div
+              <button
+                type="button"
                 key={src}
-                className="gal-item break-inside-avoid mb-2 md:mb-3 lg:mb-4 group relative overflow-hidden cursor-pointer"
+                aria-label={`View Siena Restaurant photo ${i + 1}`}
+                className="gal-item block w-full text-left break-inside-avoid mb-2 md:mb-3 lg:mb-4 group relative overflow-hidden cursor-pointer focus-visible:outline-2 focus-visible:outline-[#e0b265] focus-visible:outline-offset-2"
                 style={{ animationDelay: `${Math.min(i % 8, 7) * 0.04}s` }}
                 onClick={() => setLightbox(i)}
               >
@@ -205,7 +247,7 @@ export default function Gallery() {
                     </svg>
                   </div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
 
@@ -226,10 +268,40 @@ export default function Gallery() {
         </div>
       </section>
 
+      <section className="bg-[#030302] px-6 py-14">
+        <div className="max-w-4xl mx-auto text-white/80 text-base leading-relaxed">
+          <h2 className="text-[#e0b265] text-3xl mb-8">From photos to dinner plans</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-[#e0b265] text-xl mb-3">Food to share</h3>
+              <p>Our Mediterranean and Italian menu includes small plates, pasta and grilled dishes.
+                Start with hummus or whipped feta, then choose lamb chops, seafood or pasta.
+                <Link href="/menus" className="text-[#e0b265] underline"> Check the current menu</Link> for dishes and prices.</p>
+            </div>
+            <div>
+              <h3 className="text-[#e0b265] text-xl mb-3">A night at Siena</h3>
+              <p>Visit us at 124 Devore Road in Alpharetta. Come for dinner, cocktails or
+                <Link href="/live-music-fridays" className="text-[#e0b265] underline"> Friday live music, 7–10 PM</Link>.
+                Free parking is available. Reserve ahead, or walk in when there is room.</p>
+            </div>
+            <div>
+              <h3 className="text-[#e0b265] text-xl mb-3">Your group and date</h3>
+              <p>Use the photos to explore the dining room, then tell our team about your
+                guest count and preferred date. Photos show past dishes and gatherings;
+                they do not confirm space or menu availability. <Link href="/event-inquiry" className="text-[#e0b265] underline">Ask about a group visit</Link>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* LIGHTBOX */}
       <AnimatePresence>
         {lightbox !== null && (
           <motion.div
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Siena Restaurant photo gallery"
             className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -238,6 +310,7 @@ export default function Gallery() {
             onClick={() => setLightbox(null)}
           >
             <button
+              ref={closeRef}
               className="absolute top-4 right-4 md:top-6 md:right-6 text-white/70 hover:text-[#f4eedd] z-10 w-10 h-10 flex items-center justify-center transition"
               onClick={() => setLightbox(null)}
               aria-label="Close"

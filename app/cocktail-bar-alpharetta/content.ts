@@ -26,7 +26,7 @@ export const INTRO = {
   heading: "Not the Afterthought",
   script: "the bar at siena",
   paras: [
-    "Plenty of restaurants have a bar. Fewer have one worth going to on its own. Siena Restaurant &amp; Bar runs twelve house cocktails, a thirty-bottle wine list and sixty-three spirits at 124 Devore Rd in downtown Alpharetta.",
+    "Looking for a cocktail bar in Alpharetta? Siena Restaurant &amp; Bar serves craft cocktails at 124 Devore Rd. Choose from twelve house cocktails, thirty wines and sixty-three spirits.",
     "Come for a drink and a couple of small plates, or sit at the bar and stay for the evening. Both work, and neither needs a reservation if there is room.",
   ],
   cta: { label: "SEE THE DRINKS", href: "/menus?tab=libations" },
@@ -121,7 +121,7 @@ export const BLOCKS: Block[] = [
     image: "/assets/hero3.webp",
     alt: "Cocktails on a table beneath the lit Siena sign at a cocktail bar in Alpharetta",
     paras: [
-      "Doors open at 4pm. Early evening is quiet and easy, and there is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> Tuesday through Friday from 4 to 6pm if you want a drink and a few small plates without a full sit-down.",
+      "Doors open at 4pm. Early evening is quiet and easy, and there is a <a href=\"/happy-hour-alpharetta\">happy hour menu</a> Tuesday through Thursday from 4 to 6pm if you want a drink and a few small plates without a full sit-down.",
       "Friday and Saturday run to midnight and the room fills. On Friday live music plays from 7 to 10pm, which is the night to come if you want the bar at its best. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
       "Walk-ins are welcome at the bar when there is room. If you want a table as well, <a href=\"/reservations\">book ahead</a>.",
     ],
@@ -156,7 +156,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Is there a happy hour?",
-    a: "Yes, Tuesday through Friday from 4 to 6pm, with small plates alongside. <a href=\"/happy-hour-alpharetta\">More on happy hour</a>.",
+    a: "Yes, Tuesday through Thursday from 4 to 6pm, with small plates alongside. <a href=\"/happy-hour-alpharetta\">More on happy hour</a>.",
   },
   {
     q: "When is it busiest?",

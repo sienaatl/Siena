@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Alpharetta Restaurant Week at Siena | Oct. 10–17, 2026",
+  title: "2026 Restaurant Week Archive",
   description:
-    "Discover Siena Restaurant & Bar during Alpharetta Restaurant Week, October 10–17, 2026. Mediterranean and Italian dining, cocktails and a refined Alpharetta setting.",
+    "Archive of Siena’s October 10–17, 2026 Restaurant Week page. The event has ended; see our current menu and dinner reservations.",
   alternates: { canonical: "https://sienaatl.com/alpharetta-restaurant-week" },
   openGraph: {
-    title: "Alpharetta Restaurant Week at Siena | Oct. 10–17, 2026",
+    title: "2026 Restaurant Week Archive",
     description:
       "Visit Siena Restaurant & Bar during Alpharetta Restaurant Week, October 10–17, 2026, in Alpharetta, Georgia.",
     url: "https://sienaatl.com/alpharetta-restaurant-week",
@@ -42,7 +42,7 @@ const eventSchema = {
   },
   url: "https://sienaatl.com/alpharetta-restaurant-week",
   description:
-    "Siena Restaurant & Bar welcomes guests during Alpharetta Restaurant Week, October 10–17, 2026. Restaurant Week menu details will be published when finalized.",
+    "Siena Restaurant & Bar welcomes guests during Alpharetta Restaurant Week, October 10–17, 2026. The event dates have passed; visit the current menu for dishes and prices.",
 };
 
 export default function AlpharettaRestaurantWeekPage() {
@@ -56,7 +56,7 @@ export default function AlpharettaRestaurantWeekPage() {
           Alpharetta Restaurant Week at Siena
         </h1>
         <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-white/85">
-          Experience Siena Restaurant &amp; Bar during Alpharetta Restaurant Week in the heart of Alpharetta. Join us for Mediterranean and Italian flavors, cocktails, warm hospitality and a refined setting made for dinner, date night and celebrations.
+          This page records Restaurant Week, October 10–17, 2026. Those dates have passed and this is not a current offer. For your next visit, explore Siena’s current Mediterranean and Italian menu, cocktails and dinner reservations.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-4">
           <Link href="/reservations" className="bg-[#e0b265] px-7 py-3 font-semibold uppercase tracking-wider text-[#1b312e]">
@@ -74,7 +74,7 @@ export default function AlpharettaRestaurantWeekPage() {
             <p className="text-sm uppercase tracking-[0.25em] text-[#9a7410]">Dine Local</p>
             <h2 className="mt-3 text-4xl leading-tight md:text-5xl">Mediterranean dining in Alpharetta</h2>
             <p className="mt-6 text-lg leading-8">
-              Siena brings together Mediterranean inspiration and Italian favorites in an upscale-casual restaurant experience at 124 Devore Rd in Alpharetta. Restaurant Week is an ideal time to discover Siena or return for another evening around the table.
+              Siena brings together Mediterranean inspiration and Italian favorites at 124 Devore Rd in Alpharetta. Restaurant Week has ended, but you can still plan dinner, a date night or a celebration using the current menu and reservation calendar.
             </p>
           </div>
           <div className="border border-[#1b312e]/20 p-7">
@@ -83,7 +83,7 @@ export default function AlpharettaRestaurantWeekPage() {
             <p className="mt-2 leading-7"><strong>Location:</strong> Siena Restaurant &amp; Bar, 124 Devore Rd, Alpharetta, GA 30009</p>
             <p className="mt-2 leading-7"><strong>Reservations:</strong> Recommended</p>
             <p className="mt-5 leading-7 text-[#1b312e]/75">
-              Siena&apos;s Restaurant Week menu and offer details will be added here once finalized with the event organizers.
+              The October 2026 Restaurant Week dates have ended. No future Restaurant Week offer is announced on this page. Please use the current menu for dishes and prices.
             </p>
           </div>
         </div>

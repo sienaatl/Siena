@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 
 const EVENT_INQUIRY_URL = "/event-inquiry";
@@ -38,13 +39,13 @@ export default function AboutUs() {
             <div className="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[38px] sm:text-[50px] md:text-[78px] lg:text-[98px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[30px] sm:text-[42px] md:text-[62px] lg:text-[80px] max-w-[1000px] leading-[0.95] tracking-[0.04em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            ABOUT US
+            ABOUT SIENA RESTAURANT
           </motion.h1>
           <motion.div
             className="flex items-center gap-4 mt-2"
@@ -138,23 +139,46 @@ export default function AboutUs() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <p className="text-white/80 text-[16px] md:text-[18px] leading-[1.8]">
-              Siena was born from a passion for the sun-drenched flavors of the Mediterranean, a cuisine
-              built on honest ingredients, bold character, and the timeless tradition of gathering around
-              a beautiful table. Located in the heart of Alpharetta, Georgia, we bring the essence of
-              coastal Mediterranean dining to the American South.
+              Siena Restaurant &amp; Bar brings Mediterranean and Italian dining to
+              124 Devore Road in Alpharetta, Georgia. Our menu brings together mezze,
+              handmade pasta, seafood and small plates to share. Come for dinner with friends,
+              a date night or a celebration around the table.
             </p>
             <p className="text-white/70 text-[16px] md:text-[18px] leading-[1.8]">
-              Our name, Siena, draws inspiration from the warmth of the Tuscan city, with its rich terracotta
-              tones, the golden afternoon light, and a culture that has always treated food as an art form
-              and a reason to gather. We carry that spirit into every plate we craft, every glass we pour,
-              and every table we set.
+              Our name takes inspiration from the Tuscan city of Siena. We carry that
+              warmth into the dining room, with food made for sharing and time to enjoy
+              the people at your table. Explore our <Link href="/menus" className="text-[#e0b265] underline">current menu</Link>{" "}
+              to choose your dishes and drinks.
             </p>
             <p className="text-white/70 text-[16px] md:text-[18px] leading-[1.8]">
-              From wood-fired flavors to hand-selected wines and seasonal ingredients sourced with care,
-              every detail at Siena is a love letter to the Mediterranean way of life: vibrant, generous,
-              and deeply alive.
+              Join us for <Link href="/happy-hour-alpharetta" className="text-[#e0b265] underline">happy hour Tuesday–Thursday, 4–6 PM</Link>,
+              or <Link href="/live-music-fridays" className="text-[#e0b265] underline">Friday live music from 7–10 PM</Link>.
+              Free parking is available. Walk-ins are welcome when there is room, and you can{" "}
+              <Link href="/reservations" className="text-[#e0b265] underline">reserve a table</Link> before you visit.
             </p>
           </motion.div>
+
+          <div className="w-full mt-10 text-left text-white/80 text-base leading-relaxed space-y-5">
+            <h2 className="text-[#e0b265] text-2xl">Plan your visit to Siena</h2>
+            <div>
+              <h3 className="text-[#e0b265] text-lg mb-2">What can we order?</h3>
+              <p>Start with small plates such as hummus or whipped feta. Choose handmade pasta,
+                lamb chops or seafood for dinner. Our Mediterranean and Italian menu works for
+                a meal to share or a main dish of your own. <Link href="/menus" className="text-[#e0b265] underline">Browse current dishes and prices</Link>.</p>
+            </div>
+            <div>
+              <h3 className="text-[#e0b265] text-lg mb-2">When should we come?</h3>
+              <p>Siena serves dinner Tuesday through Sunday and is closed on Mondays.
+                Happy hour is Tuesday–Thursday, 4–6 PM. Friday live music runs 7–10 PM.
+                Check our <Link href="/contact-us" className="text-[#e0b265] underline">hours and directions</Link> before traveling.</p>
+            </div>
+            <div>
+              <h3 className="text-[#e0b265] text-lg mb-2">Can we plan a group dinner?</h3>
+              <p>Yes. Send your date and guest count through our <Link href="/event-inquiry" className="text-[#e0b265] underline">event inquiry form</Link>.
+                The team can discuss space and availability for your gathering.
+                Browse <Link href="/gallery" className="text-[#e0b265] underline">Siena restaurant photos</Link> to see the dining room before you ask.</p>
+            </div>
+          </div>
 
           {/* Image */}
           <motion.div

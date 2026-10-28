@@ -120,7 +120,7 @@ export const BLOCKS: Block[] = [
     alt: "A bartender finishing a cocktail at the bar at Siena Restaurant & Bar in Alpharetta",
     paras: [
       "The bar is a real part of the night. Twelve house cocktails, a thirty-bottle wine list and a deep spirits shelf. The Italian Job and the espresso martini are the usual openers.",
-      "There is a happy hour menu Tuesday through Friday from 4 to 6pm if your group wants to start early and keep it casual, which works well for after-work bookings.",
+      "There is a happy hour menu Tuesday through Thursday from 4 to 6pm if your group wants to start early and keep it casual, which works well for after-work bookings.",
       "On Friday live music plays from 7 to 10pm, and the whole room lifts. If your date is flexible, a Friday booking gives you music without arranging anything yourself. <a href=\"/live-music-fridays\">See what Friday looks like</a>.",
     ],
   },
@@ -163,7 +163,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Where are you and what are the hours?",
-    a: "124 Devore Rd, Alpharetta, GA 30009, near Avalon and the Ameris Bank Amphitheatre. Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm, plus Saturday brunch from 10am.",
+    a: "124 Devore Rd, Alpharetta, GA 30009, near Avalon and the Ameris Bank Amphitheatre. Closed Monday. Tuesday to Thursday 4pm to 10pm, Friday and Saturday 4pm to midnight, Sunday 4pm to 10pm. Call to confirm current brunch availability.",
   },
 ];
 
