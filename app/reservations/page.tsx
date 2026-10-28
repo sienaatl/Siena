@@ -40,7 +40,12 @@ export default async function Reservations({ searchParams }: { searchParams: Sea
           <p>Call <a href="tel:+14049990373" className="text-[#e0b265] underline">(404) 999-0373</a> for help with a reservation or questions about your visit. Please tell our team about allergies or dietary restrictions when discussing your meal. We are open Tuesday through Sunday and closed Mondays, with Friday and Saturday hours until midnight.</p>
           <h2 className="text-3xl text-[#e0b265]">Reservation questions</h2>
           <h3 className="text-xl text-white">How do I book a table online?</h3>
-          <p>Start with the number of guests and your preferred date in the form above. Choose an available time, then enter your name, email address and phone number. You can also select an occasion and add special requests. Review your details before selecting Complete Reservation. A successful booking displays a Reservation Confirmed message with your date, time, party size and confirmation number.</p>
+          <ol className="list-decimal space-y-2 pl-6">
+            <li>Choose the number of guests and your preferred date in the form above, then select an available time.</li>
+            <li>Enter your name, email address and phone number. Select an occasion and add any special requests.</li>
+            <li>Review your details before selecting Complete Reservation.</li>
+            <li>Look for the Reservation Confirmed message with your date, time, party size and confirmation number. Keep those details for reference.</li>
+          </ol>
           <h3 className="text-xl text-white">What if my preferred time is unavailable?</h3>
           <p>The time selector becomes available after you choose a date. If the time you want is not offered, try another date or call the restaurant to discuss your plans. Siena is closed on Mondays. Reservations are recommended for Friday and Saturday dinner, particularly when you are planning an evening with live music. Walk-ins are welcome subject to availability; arriving without a booking does not guarantee a table.</p>
           <h3 className="text-xl text-white">Can I request a particular table or mention a celebration?</h3>
