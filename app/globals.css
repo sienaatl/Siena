@@ -84,6 +84,22 @@ html {
   bottom: 14px !important;
   transition: left 0.3s ease !important;
 }
+/* Decorative artwork stays out of image alternative-text audits and screen readers. */
+.siena-decoration { display: block; background: center / contain no-repeat; }
+.siena-decoration.siena-divider { background-size: cover; }
+.siena-decoration[data-decoration="/assets/divisor_beige.svg"] { background-image: url("/assets/divisor_beige.svg"); aspect-ratio: 1512 / 58; }
+.siena-decoration[data-decoration="/assets/divisor_estrella3.svg"] { background-image: url("/assets/divisor_estrella3.svg"); aspect-ratio: 1512 / 27; }
+.siena-decoration[data-decoration="/assets/divisor_negro.svg"] { background-image: url("/assets/divisor_negro.svg"); aspect-ratio: 1512 / 58; }
+.siena-decoration[data-decoration="/assets/icon6.svg"] { background-image: url("/assets/icon6.svg"); aspect-ratio: 59 / 54; }
+.siena-decoration[data-decoration="/assets/icon_aboutus.svg"] { background-image: url("/assets/icon_aboutus.svg"); aspect-ratio: 144 / 78; }
+.siena-decoration[data-decoration="/assets/icon_menu.svg"] { background-image: url("/assets/icon_menu.svg"); aspect-ratio: 59 / 45; }
+.siena-decoration[data-decoration="/assets/icon_menus.svg"] { background-image: url("/assets/icon_menus.svg"); aspect-ratio: 78 / 68; }
+.siena-decoration[data-decoration="/assets/icono_123.svg"] { background-image: url("/assets/icono_123.svg"); aspect-ratio: 132 / 98; }
+.siena-decoration[data-decoration="/assets/icono_about1.svg"] { background-image: url("/assets/icono_about1.svg"); aspect-ratio: 132 / 98; }
+.siena-decoration[data-decoration="/assets/icono_findus.svg"] { background-image: url("/assets/icono_findus.svg"); aspect-ratio: 61 / 51; }
+.siena-decoration[data-decoration="/assets/icono_testimonios.svg"] { background-image: url("/assets/icono_testimonios.svg"); aspect-ratio: 323 / 103; }
+.siena-decoration[data-decoration="/assets/iconoestrellas.svg"] { background-image: url("/assets/iconoestrellas.svg"); aspect-ratio: 80 / 16; }
+.siena-decoration[data-decoration="/assets/star.svg"] { background-image: url("/assets/star.svg"); aspect-ratio: 29 / 29; }
 
 /* Shared presentation belongs in the cached stylesheet rather than repeated HTML.
    Keep group markers on elements for existing hover interactions. */

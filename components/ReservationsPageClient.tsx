@@ -29,10 +29,12 @@ export default function ReservationsPageClient({
   prefillDate,
   prefillTime,
   prefillPartySize,
+  children,
 }: {
   prefillDate: string;
   prefillTime: string;
   prefillPartySize: string;
+  children?: React.ReactNode;
 }) {
   return (
     <main>
@@ -171,6 +173,7 @@ export default function ReservationsPageClient({
         </div>
       </section>
 
+      {children}
     </main>
   );
 }

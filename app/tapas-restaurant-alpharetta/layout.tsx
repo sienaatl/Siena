@@ -3,7 +3,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
 export const metadata: Metadata = {
-  title: "Tapas in Alpharetta",
+  title: "Tapas in Alpharetta | Mediterranean Small Plates",
   description:
     "Explore tapas in Alpharetta at Siena: Mediterranean and Italian small plates to share, plus pasta and entrées. View the menu and reserve a table.",
   alternates: { canonical: "/tapas-restaurant-alpharetta" },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * Short title on purpose. The root layout appends " | Siena" through its title
+ * The root layout appends " | Siena" through its title
  * template, so writing the brand here would double it up.
  *
  * Structured data: BreadcrumbList and FAQPage only. The Restaurant entity stays in
