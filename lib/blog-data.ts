@@ -120,133 +120,39 @@ export const blogs: Blog[] = [
   
 {
     slug: "hidden-gems-among-alpharetta",
-
-    // Blog Page
-    title: "Hidden Gems among Alpharetta Restaurants You Must Try In 2026",
-
-    description: "Visitors are served nutritious food, excellent hospitality, and outstanding service. Alpharetta Restaurants bring comfort, taste, and style, whether you are a local or a visitor. Discovering unexpected favorites can make every meal experience thrilling and entertaining.",
-
-    // SEO
+    title: "Alpharetta Restaurant Hidden Gems: A Dinner Guide to Siena",
+    description: "Looking for a new dinner spot in Alpharetta? Explore Siena's Mediterranean and Italian dishes, shared plates, cocktails and Friday live music, with practical tips for your visit.",
     seo: {
-      title: "Hidden Gems: Best Alpharetta Restaurants You Must Try In 2026",
-
-      description:
-        "Discover the Best Alpharetta Restaurants in 2026. Explore hidden gems, must-try dishes, and local favorites that food lovers should not miss.",
-
-      keywords: ["Alpharetta Restaurants in 2026", "Explore hidden gems"],
+      title: "Alpharetta Restaurant Hidden Gems | Discover Siena",
+      description: "Discover Siena on Devore Road: Mediterranean and Italian dinner, shared plates, cocktails and Friday live music. Get menu, parking and reservation tips.",
+      keywords: ["Alpharetta restaurant hidden gems", "Siena Restaurant Alpharetta"],
     },
-
     image: "/blogs/blog2.jpeg",
-
     author: "Siena Restaurant",
-
     publishedAt: "2026-07-18",
-
-    updatedAt: "2026-07-18",
-
-    category: "Pizza",
-
+    updatedAt: "2026-10-28",
+    category: "Dining Guides",
     content: `
-
-
-    <h2 class="text-white font-semi-bold text-xl">Experience Unique Flavors in Alpharetta Dining</h2>
-
-    <p class="my-5">
-    The food in Alpharetta restaurants is creative and authentic. The culinarians are concerned with fresh foods and ancient methods. The guests are offered tastes that they do not have in any other place. Every dish is unique and carefully cooked. Eating at this place is a blend of flavor, food presentation, and a friendly environment.
-    </p>
-
-    <img class="rounded-xl mb-5" src="/blogs/blog1.webp" alt="Italian Restaurant Alpharetta"/>
-
-    <h2 class="text-white font-semi-bold text-xl">Cozy Ambiance Enhances Every Dining Experience</h2>
-
-    <p class="my-5">
-    Numerous missed treasures provide a comfortable and welcoming environment. The meals are made enjoyable by soft lighting, style, and the best seating. During family dinners or casual outings, guests are able to relax. The atmosphere goes hand in hand with the taste and the quality of the dishes. It leaves a mark of memorable experiences for all visitors.
-    </p>
-
-    <h2 class="text-white font-semi-bold text-xl">Variety of Cuisines to Satisfy Every Taste</h2>
-
-    <p class="my-5">
-    Alpharetta restaurants have a variety in terms of Italian, American, and Asian inspired dishes. Each restaurant has its own flavor of food. Visitors are able to indulge in classic delicacies or to sample the unheard of. The variety of choices helps to locate a restaurant when in need of any kind of craving. Eating in the city is like a gastronomic experience.
-    </p>
-
-    <img class="rounded-xl mb-5" src="/blogs/blog1.webp" alt="Italian Restaurant Alpharetta"/>
-
-    <h2 class="text-white font-semi-bold text-xl">Popular Spots Among Local Food Enthusiasts</h2>
-
-    <p class="my-5">
-    These are some of the hidden beauties that many locals believe are among the best restaurants in Alpharetta GA. Freshness, service, and quality make the guests come back. Recommendations made by words would assist in introducing new diners to these special places. Tourists can savor well-made meals made with attention and innovation. Food lovers will always find places to visit when hungry, and the place is a local favorite.
-    </p>
-
-    <h2 class="text-white font-semi-bold text-xl">Specialty Dishes That Keep Guests Returning</h2>
-
-    <p class="my-5">
-    Hidden gems in Alpharetta are characterized by signature dishes and menu items. Homemade pasta, pizzas with wood fires, and dishes of the season amaze all the guests. Precision and quality ingredients in every dish make it memorable. Customers tend to revisit to have specialties they enjoyed previously.
-    </p>
-
-    <h2 class="text-white font-semi-bold text-xl">Perfect For Casual and Family Dining</h2>
-
-    <p class="my-5">
-    The experience of being served and enjoying the comfortable sitting is without stress. Visitors can have a peaceful experience when having tasty food. These locations strike a balance between convenience, quality, and a friendly environment, making them an ideal Special Event Restaurant Alpharetta for memorable gatherings and celebrations.
-    </p>
-
-    <h2 class="text-white font-semi-bold text-xl">Why These Restaurants Stand Out Locally</h2>
-
-    <p class="my-5">
-    Numerous hidden treasures are identified among Top rated restaurants in Alpharetta due to its regular quality. Their differentiation is fresh ingredients, considerate preparation, and quality service. The customers come back to enjoy the cordial ambience and well-planned dishes. The visits are unique, and so these restaurants are local favorites.
-    </p>
-
-    <h2 class="text-white font-semi-bold text-xl">Ideal Spots for Romantic Evenings</h2>
-
-    <p class="my-5">
-    Secret places would offer couples a romantic place of dining. Darkness, silent restaurants, and responsive waiters make ideal dates. Visitors are able to have their meals accompanied by well-chosen drinks. Eating out makes evenings in this place more special and elegant. Each bit adds to the total experience.
-    </p>
-
-    <img class="rounded-xl mb-5" src="/blogs/blog1.webp" alt="Italian Restaurant Alpharetta"/>
-
-    <h2 class="text-white font-semi-bold text-xl">How to Discover Hidden Dining Gems</h2>
-
-    <p class="my-5">
-    Begin with local reviews and posts on social media. Friends and locals also give recommendations on places to visit. Look into specials of the seasons, special meals, and warm environments. By going to various restaurants, one gets the entire flavor of the city. A careful investigation makes each of the meals something to remember.
-    </p>
-
-    <h2 class="text-white font-semi-bold text-xl">Final Words</h2>
-
-    <p class="my-5">
-    Albaretta Restaurants provides special tastes, a warm ambience, and tasting dishes. The existence of these restaurants will make it interesting and pleasant to dine in Alpharetta in 2026.
-    </p>
-
-    <h2 class="text-white font-semi-bold text-xl">Visit Us to Enjoy Hidden Culinary Gems</h2>
-
-    <p class="my-5">
-    Ready to experience the best hidden gems in Alpharetta? Visit us https://sienaatl.com/ today to enjoy unique dishes, cozy dining, and a memorable culinary experience in 2026.
-    Stay connected on Instagram for fresh menu updates, chef specials, and behind-the-scenes moments from one of the best restaurants in Alpharetta GA.
-    </p>
-
-    <h4 class="text-white font-semi-bold text-2xl mb-10 text-center">FAQs</h4>
-
-    <h2 class="text-white font-semi-bold text-xl">Do they make these restaurants family-friendly?</h2>
-    <p class="mt-2">
-    Yes, most of the secret treasures have kid-friendly menus and friendly seats. Families will be in a position to eat together.
-    </p>
-
-    <h2 class="text-white font-semi-bold text-xl mt-3">Can I make a reservation in bulk?</h2>
-    <p class="mt-2">
-    Yes, we can hold parties and special events. The accommodations are so comfortable.
-    </p>
-
-    <h2 class="text-white font-semi-bold text-xl mt-3">Do they offer vegetarian food in these restaurants?</h2>
-    <p class="mt-2">
-    Yes, in the menu, there are vegetarian foods that consist of fresh products. The guests have a lot of alternatives.
-    </p>
-
-    <h2 class="text-white font-semi-bold text-xl mt-3">Is it open to seasonal discounts throughout the year?</h2>
-    <p class="mt-2">
-    Yes, the chefs prepare meals using fresh food in season. Customers are trying new food frequently.
-    </p>
-
-
-`,
-
+    <h2 class="text-white font-semi-bold text-xl">A new dinner plan on Devore Road</h2>
+    <p class="my-5">Searching for Alpharetta restaurant hidden gems often starts with a simple question: where can we try something different tonight? At Siena Restaurant &amp; Bar, our answer is a table of Mediterranean and Italian food at 124 Devore Road. This guide comes from our team and explains what to expect at Siena, so you can decide whether it fits your evening.</p>
+    <p class="my-5">You can come for a quiet dinner, a gathering with friends or Friday live music. Start with our <a href="/menus">current menu</a> and <a href="/gallery">restaurant photos</a>. The menu shows dishes and prices; the gallery gives you a feel for the room before you reserve.</p>
+    <h2 class="text-white font-semi-bold text-xl">Build a meal around the table</h2>
+    <p class="my-5">Small plates make it easy to try a few flavors together. Hummus, whipped feta and crispy cauliflower are starting points. Pass a plate around, then choose handmade pasta, seafood or a grilled main. You can share some dishes and order others for yourself. Ask your server for help with portions and the pace of your meal.</p>
+    <p class="my-5">The menu brings Mediterranean and Italian cooking together. That gives a group more than one direction to choose from without changing restaurants. Explore our <a href="/mediterranean-restaurant-alpharetta">Mediterranean dining guide</a> and <a href="/italian-restaurant-alpharetta">Italian menu guide</a> for more ideas. Always check the current menu before choosing a dish from an older photo or article.</p>
+    <h2 class="text-white font-semi-bold text-xl">Choose the evening that suits you</h2>
+    <p class="my-5">For an early visit, <a href="/happy-hour-alpharetta">happy hour runs Tuesday through Thursday from 4 to 6 PM</a>. For a livelier night, <a href="/live-music-fridays">Friday live music runs from 7 to 10 PM</a>. Music changes the feel of the room, so keep that in mind if conversation is the main purpose of your dinner.</p>
+    <p class="my-5">Our <a href="/cocktail-bar-alpharetta">cocktail guide</a> introduces drinks such as the Monaco and Lady Godiva. Browse the drinks menu for the current selection. If you are planning a birthday or another special occasion, mention it when booking and ask the team about any arrangements you need.</p>
+    <h2 class="text-white font-semi-bold text-xl">Plan the practical details</h2>
+    <p class="my-5">Siena is at 124 Devore Rd, Alpharetta, GA 30009. Free parking is available. Our entrance is step-free, with accessible parking nearby. Check <a href="/contact-us">hours and directions</a> before setting off. Dinner service runs Tuesday through Sunday; Siena is closed on Mondays.</p>
+    <p class="my-5">You can <a href="/reservations">reserve a table online</a> or walk in when space allows. Choose a date, time and guest count to see availability. For parties of 14 or more, send an <a href="/event-inquiry">event inquiry</a> so our team can discuss the right arrangements. A gallery photo does not confirm that a particular space is available on your date.</p>
+    <h2 class="text-white font-semi-bold text-xl">Questions before your first visit</h2>
+    <h3 class="text-white font-semi-bold text-lg">Can I visit for brunch?</h3>
+    <p class="my-5">A separate brunch menu is listed online. Call <a href="tel:+14049990373">(404) 999-0373</a> to confirm service dates and hours before making brunch plans. The regular dinner schedule does not confirm brunch availability.</p>
+    <h3 class="text-white font-semi-bold text-lg">What if someone has a food allergy?</h3>
+    <p class="my-5">Tell the team about allergies or dietary restrictions before ordering. Ask about ingredients and preparation for the dishes you are considering; do not rely on a photo or a general cuisine description to decide whether a dish is suitable.</p>
+    <h3 class="text-white font-semi-bold text-lg">How do I plan a group dinner?</h3>
+    <p class="my-5">Have your preferred date, guest count and occasion ready. Read our <a href="/private-dining-alpharetta">private dining guide</a>, then send an event inquiry. Our team can discuss availability and menu options for your gathering.</p>
+    `,
 },
 
 
