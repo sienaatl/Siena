@@ -23,7 +23,7 @@ export const INTRO = {
   script: "check with Siena",
   paras: [
     "Exploring brunch in Alpharetta? Siena Restaurant &amp; Bar lists a separate brunch menu online. Call <a href=\"tel:+14049990373\">(404) 999-0373</a> to confirm current service days and hours before visiting 124 Devore Rd.",
-    "The idea is the same as dinner. Italian technique, Mediterranean brightness and plates built for sharing, so a table orders a spread and works through it together rather than everyone guarding their own omelette.",
+    "The brunch menu pairs Italian and Mediterranean flavors. Choose sweet dishes, eggs or seafood, with plates to share around the table.",
   ],
   cta: { label: "SEE THE BRUNCH MENU", href: "/menus?tab=weekend-brunch" },
 };
