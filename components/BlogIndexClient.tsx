@@ -111,6 +111,11 @@ export default function BlogIndexClient({ blogs }: { blogs: BlogSummary[] }) {
               free parking is available and walk-ins are welcome, subject to availability.
             </p>
           </div>
+          <nav aria-label="Find your dining guide" className="siena-view-138">
+            <h3 className="text-[#e0b265] text-xl">Find the right guide for your visit</h3>
+            <p>For your first visit, read <Link className="text-[#e0b265] underline" href="/about-us">about Siena</Link> and browse our <Link className="text-[#e0b265] underline" href="/gallery">restaurant photos</Link>. If you are choosing a cuisine, explore our <Link className="text-[#e0b265] underline" href="/mediterranean-restaurant-alpharetta">Mediterranean dining guide</Link> or <Link className="text-[#e0b265] underline" href="/italian-restaurant-alpharetta">Italian dinner ideas</Link>.</p>
+            <p>For a night out, start with <Link className="text-[#e0b265] underline" href="/cocktail-bar-alpharetta">cocktails</Link> and check the music schedule. For a group, read about <Link className="text-[#e0b265] underline" href="/private-dining-alpharetta">private dining</Link> before sending your date and guest count. Articles offer ideas; our current menu, hours and reservation availability are the best places to confirm your plans.</p>
+          </nav>
           <div className="flex justify-center">
             <div className="siena-view-139">
               {blogs
