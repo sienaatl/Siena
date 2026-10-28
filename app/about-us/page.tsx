@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 
-const EVENT_INQUIRY_URL = "/event-inquiry";
 
 export default function AboutUs() {
   return (
@@ -45,7 +44,7 @@ export default function AboutUs() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            ABOUT SIENA RESTAURANT
+            ABOUT SIENA RESTAURANT ALPHARETTA
           </motion.h1>
           <motion.div
             className="flex items-center gap-4 mt-2"
@@ -243,17 +242,17 @@ export default function AboutUs() {
               {
                 title: "Sourced with Intention",
                 desc:
-                  "We partner with local farms and trusted purveyors to bring the freshest seasonal ingredients to your plate. Sustainability and quality are never an afterthought; they are our foundation.",
+                  "Our menu brings vegetables, herbs, seafood and pasta to the table. Explore the current menu to see the ingredients in each dish.",
               },
               {
                 title: "Crafted with Precision",
                 desc:
-                  "Our chef-driven menus are a dialogue between tradition and innovation. Each dish is a careful composition that respects time-honored techniques while embracing creative vision.",
+                  "We bring Mediterranean and Italian cooking together. Start with small plates to share, then choose pasta, seafood or a grilled main.",
               },
               {
                 title: "Served with Heart",
                 desc:
-                  "Hospitality at Siena goes beyond service. We want every guest to feel the warmth of a family table: welcomed, seen, and well taken care of from the first moment to the last.",
+                  "We want you to feel welcome at the table. Tell our team about dietary needs or your occasion so we can help you plan your meal.",
               },
             ].map((card, i) => (
               <motion.div
@@ -352,7 +351,7 @@ export default function AboutUs() {
               </p>
 
               <a
-                href={EVENT_INQUIRY_URL}
+                href="/reservations"
                 className="group bg-[#e0b265] text-[#1b312e] px-4 md:px-9 py-2 font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] inline-flex items-center gap-2 border border-transparent hover:bg-white hover:text-[#1b312e] hover:border-white transition"
               >
                 RESERVE A TABLE
