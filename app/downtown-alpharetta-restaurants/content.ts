@@ -22,7 +22,7 @@ export const INTRO = {
   heading: "In the Middle of It",
   script: "downtown alpharetta",
   paras: [
-    "Downtown Alpharetta has filled up with places to eat, which is good news until you are standing on the pavement deciding. Siena Restaurant &amp; Bar sits at 124 Devore Rd, in the thick of it and a few minutes from Avalon and the Ameris Bank Amphitheatre.",
+    "Comparing downtown Alpharetta restaurants for dinner? Siena Restaurant &amp; Bar sits at 124 Devore Rd, in the thick of it and a few minutes from Avalon and the Ameris Bank Amphitheatre.",
     "The kitchen runs Italian and Mediterranean at once and everything comes as tapas-style sharing plates, which makes it a straightforward answer when a group cannot agree on one cuisine.",
   ],
   cta: { label: "BOOK A TABLE", href: "/reservations" },

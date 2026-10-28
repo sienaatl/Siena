@@ -274,7 +274,7 @@ export default function Gallery() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-[#e0b265] text-xl mb-3">Food to share</h3>
-              <p>Our Mediterranean and Italian menu includes small plates, pasta and grilled dishes.
+              <p>Our Mediterranean and Italian menu includes tapas-style small plates, pasta and grilled dishes.
                 Start with hummus or whipped feta, then choose lamb chops, seafood or pasta.
                 <Link href="/menus" className="text-[#e0b265] underline"> Check the current menu</Link> for dishes and prices.</p>
             </div>

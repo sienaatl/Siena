@@ -346,15 +346,16 @@ export default function Home() {
             >
               <p>
                 Looking for restaurants in Alpharetta? Siena Restaurant &amp; Bar serves
-                Mediterranean and Italian dinner at 124 Devore Rd. Choose handmade
+                Mediterranean and Italian food at 124 Devore Rd in Alpharetta. Choose handmade
                 pasta, seafood or small plates to share. Pair your meal with a signature
-                cocktail such as the Monaco or Lady Godiva. Plan your dining experience
+                crafted cocktail such as the Monaco or Lady Godiva. Plan your dining experience
                 with the current menu and online reservations.
               </p>
               <p>
                 Join us for Friday live music from 7 to 10 PM. Happy hour runs Tuesday
                 through Thursday from 4 to 6 PM. Free parking is available, and walk-ins
-                are welcome when space allows.
+                are welcome when space allows. For special occasions, ask our team about
+                group dining and your preferred date.
               </p>
             </motion.div>
 

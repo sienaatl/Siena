@@ -29,11 +29,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://sienaatl.com"),
   title: {
-    default: "Mediterranean & Italian Restaurant in Alpharetta | Siena",
+    default: "Siena Restaurant Alpharetta | Mediterranean & Italian",
     template: "%s | Siena",
   },
   description:
-    "Looking for restaurants in Alpharetta? Siena serves Mediterranean and Italian dinner, handmade pasta, seafood and cocktails. Free parking. Reserve a table.",
+    "Siena Restaurant in Alpharetta serves Mediterranean and Italian food, handmade pasta, seafood and crafted cocktails. Free parking. Reserve a table.",
   keywords: [
     "Siena Restaurant",
     "Italian Restaurant Alpharetta",
@@ -51,15 +51,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://sienaatl.com",
     siteName: "Siena Restaurant",
-    title: "Mediterranean & Italian Restaurant in Alpharetta | Siena",
+    title: "Siena Restaurant Alpharetta | Mediterranean & Italian",
     description:
-      "Looking for restaurants in Alpharetta? Siena serves Mediterranean and Italian dinner, handmade pasta, seafood and cocktails. Free parking. Reserve a table.",
+      "Siena Restaurant in Alpharetta serves Mediterranean and Italian food, handmade pasta, seafood and crafted cocktails. Free parking. Reserve a table.",
     images: [{ url: "/assets/Siena_20.03.26-A-02.webp", width: 1200, height: 630, alt: "Siena Restaurant in Alpharetta, Georgia" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mediterranean & Italian Restaurant in Alpharetta | Siena",
-    description: "Looking for restaurants in Alpharetta? Siena serves Mediterranean and Italian dinner, handmade pasta, seafood and cocktails. Free parking. Reserve a table.",
+    title: "Siena Restaurant Alpharetta | Mediterranean & Italian",
+    description: "Siena Restaurant in Alpharetta serves Mediterranean and Italian food, handmade pasta, seafood and crafted cocktails. Free parking. Reserve a table.",
     images: ["/assets/Siena_20.03.26-A-02.webp"],
   },
   robots: {

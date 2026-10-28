@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: { absolute: "About Siena Restaurant & Bar | Alpharetta, GA" },
+  title: { absolute: "About Siena Restaurant Alpharetta | Our Story" },
   description:
     "Meet Siena Restaurant & Bar in Alpharetta. Explore Mediterranean and Italian dining, sharing plates, Friday live music and happy hour Tuesday–Thursday, 4–6 PM.",
   openGraph: {
-    title: "About Siena Restaurant | Mediterranean Dining Alpharetta",
+    title: "About Siena Restaurant Alpharetta | Our Story",
     description:
       "Meet Siena Restaurant & Bar in Alpharetta. Explore Mediterranean and Italian dining, sharing plates, Friday live music and happy hour Tuesday–Thursday, 4–6 PM.",
     url: "https://sienaatl.com/about-us",
