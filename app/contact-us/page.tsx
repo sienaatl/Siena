@@ -197,13 +197,13 @@ export default function ContactUs() {
             <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-[#e0b265]/80" />
           </motion.div>
           <motion.h1
-            className="text-[#e0b265] text-[36px] sm:text-[48px] md:text-[72px] lg:text-[90px] leading-none tracking-[0.06em] uppercase"
+            className="text-[#e0b265] text-[30px] sm:text-[42px] md:text-[60px] lg:text-[72px] leading-none tracking-[0.06em] uppercase"
             style={{ fontFamily: "'Palmore-Light', serif" }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            CONTACT US
+            Contact Siena Restaurant
           </motion.h1>
           <motion.div
             className="flex items-center gap-3 mt-2"
@@ -237,6 +237,23 @@ export default function ContactUs() {
               <img src="/assets/star.svg" alt="decorative star" className="w-5 h-5 flex-shrink-0" />
             </div>
           ))}
+        </div>
+      </section>
+
+      <section aria-label="Contact Siena Restaurant" className="bg-[#152C29] px-5 py-10 text-white">
+        <div className="mx-auto grid max-w-5xl gap-7 md:grid-cols-3">
+          <div><h2 className="text-xl text-[#e0b265]">Call or visit</h2>
+            <p className="mt-3 leading-7">124 Devore Rd<br />Alpharetta, GA 30009</p>
+            <a className="mt-2 inline-block underline underline-offset-4" href={`tel:${info.phone.replace(/\D/g, '')}`}>{info.phone}</a>
+          </div>
+          <div><h2 className="text-xl text-[#e0b265]">Book a table</h2>
+            <p className="mt-3 leading-7">Choose your date, time and party size online. Add any occasion or seating requests when you book.</p>
+            <Link className="mt-2 inline-block underline underline-offset-4" href="/reservations">Make a reservation</Link>
+          </div>
+          <div><h2 className="text-xl text-[#e0b265]">Private dining and events</h2>
+            <p className="mt-3 leading-7">Share your date, guest count and occasion. Our team will follow up about space, menus and availability.</p>
+            <Link className="mt-2 inline-block underline underline-offset-4" href="/event-inquiry">Ask about an event</Link>
+          </div>
         </div>
       </section>
 
@@ -288,8 +305,11 @@ export default function ContactUs() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            Have a question, a special request, or want to plan a private event?
-            Send us a message and our team will respond within 24 hours.
+            Need help with your visit to Siena Restaurant? Call us for dining questions,
+            directions or a special request. Use the form below for general questions
+            and private event plans. For a special evening, explore our{" "}
+            <Link href="/fine-dining-restaurant-alpharetta" className="underline underline-offset-4">fine dining</Link>{" "}
+            menu and setting.
           </motion.p>
 
           <motion.div

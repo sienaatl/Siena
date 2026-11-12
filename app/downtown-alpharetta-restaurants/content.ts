@@ -7,13 +7,13 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
  * cuisine pages. Hours follow lib/site-data.json.
  */
 
-export const H1 = "A Downtown Alpharetta Restaurant";
+export const H1 = "Downtown Alpharetta Restaurants: Siena";
 export const H1_SCRIPT = "on devore road";
 
 export const MARQUEE = [
   "124 Devore Road",
   "Minutes From Avalon",
-  "Walk From Downtown",
+  "Dinner on Devore Road",
   "Alpharetta, Georgia",
 ];
 
@@ -22,8 +22,8 @@ export const INTRO = {
   heading: "In the Middle of It",
   script: "downtown alpharetta",
   paras: [
-    "Comparing downtown Alpharetta restaurants for dinner? Siena Restaurant &amp; Bar sits at 124 Devore Rd, in the thick of it and a few minutes from Avalon and the Ameris Bank Amphitheatre.",
-    "The kitchen runs Italian and Mediterranean at once and everything comes as tapas-style sharing plates, which makes it a straightforward answer when a group cannot agree on one cuisine.",
+    "Comparing downtown Alpharetta restaurants for dinner? Siena Restaurant &amp; Bar is at 124 Devore Rd, Alpharetta, GA 30009. Plan your route from downtown, Avalon or the Ameris Bank Amphitheatre before you visit.",
+    "Our chef-driven dining experience brings Italian and Mediterranean dishes to one table. Choose pasta, seafood or small plates to share. Join us for <a href=\"/happy-hour-alpharetta\">happy hour</a> Tuesday through Thursday, 4–6 PM.",
   ],
   cta: { label: "BOOK A TABLE", href: "/reservations" },
 };
@@ -97,7 +97,7 @@ export const BLOCKS: Block[] = [
     cards: [
       {
         title: "Before a Show",
-        desc: "The Ameris Bank Amphitheatre is minutes away. Book early, eat properly, walk over. The bar works well for after, too.",
+        desc: "The Ameris Bank Amphitheatre is minutes away. Book dinner early and allow time to drive, park and enter the venue. Call to confirm kitchen service before a late meal.",
       },
       {
         title: "Groups Who Disagree",

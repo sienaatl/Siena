@@ -119,6 +119,14 @@ export default function Home() {
             className="w-[280px] md:w-[400px] h-auto mb-5 hero-fadein"
           />
 
+          <p className="hero-fadein mb-5 max-w-xl text-base leading-6 text-white md:text-lg">
+            Mediterranean &amp; Italian dining in Alpharetta
+          </p>
+          <nav aria-label="Explore Siena" className="hero-fadein mb-5 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-white">
+            <Link href="/menus" className="underline underline-offset-4">View the menu</Link>
+            <Link href="/reservations" className="underline underline-offset-4">Reserve a table</Link>
+            <Link href="/live-music-fridays" className="underline underline-offset-4">Friday live music</Link>
+          </nav>
           <form
             onSubmit={handleBookNow}
             className="hero-fadein w-full max-w-[760px] flex flex-col sm:flex-row items-stretch bg-black/35 backdrop-blur-md border border-white/25 divide-y sm:divide-y-0 sm:divide-x divide-white/20"
@@ -345,11 +353,10 @@ export default function Home() {
               transition={{ duration: 0.38, delay: 0.24, ease: "easeOut" }}
             >
               <p>
-                Looking for restaurants in Alpharetta? Siena Restaurant &amp; Bar serves
-                Mediterranean and Italian food at 124 Devore Rd in Alpharetta. Choose handmade
-                pasta, seafood or small plates to share. Pair your meal with a signature
-                crafted cocktail such as the Monaco or Lady Godiva. Plan your dining experience
-                with the current menu and online reservations.
+                Exploring Alpharetta restaurants for dinner? Siena Restaurant &amp; Bar serves
+                Mediterranean and Italian food at 124 Devore Rd. Choose handmade pasta,
+                seafood or small plates to share. Browse the current menu and book a table
+                for your next night out.
               </p>
               <p>
                 Join us for Friday live music from 7 to 10 PM. Happy hour runs Tuesday
@@ -388,6 +395,35 @@ export default function Home() {
         </MotionLink>
           </div>
         </div>
+
+        <section aria-labelledby="plan-your-evening" className="mx-auto max-w-6xl px-5 py-12 text-white">
+          <h2 id="plan-your-evening" className="mb-7 text-center text-3xl text-[#e0b265]">Plan your evening at Siena</h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            <article className="border border-white/20 p-6">
+              <h3 className="text-xl text-[#e0b265]">Happy hour</h3>
+              <p className="my-4 leading-7">Meet after work Tuesday through Thursday, 4–6 PM. Check the current food and drinks menu before you visit, then stay for dinner.</p>
+              <Link href="/happy-hour-alpharetta" className="underline underline-offset-4">Explore happy hour</Link>
+            </article>
+            <article className="border border-white/20 p-6">
+              <h3 className="text-xl text-[#e0b265]">Music and date nights</h3>
+              <p className="my-4 leading-7">Friday live music runs 7–10 PM. Join us for Saturday date night, 4–11 PM, with dinner, drinks and time together. Reserve your preferred time online.</p>
+              <Link href="/date-night-alpharetta" className="underline underline-offset-4">Plan a date night</Link>
+            </article>
+            <article className="border border-white/20 p-6">
+              <h3 className="text-xl text-[#e0b265]">Groups and private dining</h3>
+              <p className="my-4 leading-7">Planning a birthday, business dinner or social gathering? Send your date and guest count. Our team will discuss the menu, space and availability.</p>
+              <Link href="/private-dining-alpharetta" className="underline underline-offset-4">Explore private dining</Link>
+            </article>
+          </div>
+          <div className="mt-8 border-t border-white/20 pt-6 text-center leading-7">
+            <h3 className="text-xl text-[#e0b265]">Getting here and ordering ahead</h3>
+            <p className="mx-auto my-3 max-w-3xl">Find Siena at 124 Devore Rd, Alpharetta, GA 30009. Free parking is available. Check directions and allow travel time from downtown or Avalon. Prefer dinner at home? Order pickup online.</p>
+            <div className="flex flex-wrap justify-center gap-6">
+              <Link href="/contact-us" className="underline underline-offset-4">Directions and opening hours</Link>
+              <a href={ORDER_ONLINE_URL} className="underline underline-offset-4">Order online for pickup</a>
+            </div>
+          </div>
+        </section>
 
         <VideosSection />
       </section>

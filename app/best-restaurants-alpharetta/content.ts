@@ -38,7 +38,7 @@ export const BLOCKS: Block[] = [
     alt: "The dining room at Siena Restaurant & Bar in Alpharetta, with tables set along the windows",
     paras: [
       "Alpharetta has plenty of good places to eat, so what pushes one to the top? The food has to be fresh and made with care. The room has to feel warm without feeling stiff. The drinks need to be worth ordering. The service has to make you feel looked after. And there has to be a reason to come back that goes past one good dish.",
-      "Siena is a Mediterranean and <a href=\"/italian-restaurant-alpharetta\">Italian</a> mash-up the team calls Medi-talian. Tapas-style sharing plates, house-made pasta, proper cocktails and live music on Friday nights.",
+      "Siena serves chef-driven Mediterranean and <a href=\"/italian-restaurant-alpharetta\">Italian</a> mash-up the team calls Medi-talian. Tapas-style sharing plates, house-made pasta, proper cocktails and live music on Friday nights.",
       "It is upscale but comfortable. You can arrive in a nice shirt or your best dress and feel right either way. That balance is hard to pull off, and Siena makes it look easy.",
     ],
   },

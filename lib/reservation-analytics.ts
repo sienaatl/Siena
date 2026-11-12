@@ -24,6 +24,13 @@ export function trackConfirmedReservation(partySize: number) {
     currency: "USD",
     party_size: hasPartySize ? partySize : undefined,
   });
+  if (typeof document !== "undefined") {
+    try {
+      document.dispatchEvent(new Event("siena:reservation-confirmed"));
+    } catch {
+      // A blocked analytics script must not affect the booking confirmation.
+    }
+  }
 }
 
 /** Queue an enquiry event only after /api/event-inquiry accepts the form. */

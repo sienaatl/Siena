@@ -1,4 +1,38 @@
 (function () {
+  var metaLoaded = false;
+  var SIENA_META_PIXEL = '1401197251913891';
+  function loadSienaMeta() {
+    if (metaLoaded) return;
+    metaLoaded = true;
+    // This is the dataset available to Siena's active ad account. The
+    // separate legacy pixel in GTM remains untouched.
+    if (!window.fbq) {
+      var fbq = window.fbq = function () {
+        fbq.callMethod ? fbq.callMethod.apply(fbq, arguments) : fbq.queue.push(arguments);
+      };
+      if (!window._fbq) window._fbq = fbq;
+      fbq.push = fbq;
+      fbq.loaded = true;
+      fbq.version = '2.0';
+      fbq.queue = [];
+      var sdk = document.createElement('script');
+      sdk.async = true;
+      sdk.src = 'https://connect.facebook.net/en_US/fbevents.js';
+      document.head.appendChild(sdk);
+    }
+    // Do not collect automatic form fields or send guest contact details.
+    window.fbq('set', 'autoConfig', false, SIENA_META_PIXEL);
+    window.fbq('init', SIENA_META_PIXEL);
+    window.fbq('trackSingle', SIENA_META_PIXEL, 'PageView');
+  }
+  // Emitted only after the booking API accepts the reservation. A click on
+  // Book Now or a failed form submission must never count as a booking.
+  document.addEventListener('siena:reservation-confirmed', function () {
+    loadSienaMeta();
+    window.fbq('trackSingle', SIENA_META_PIXEL, 'CompleteRegistration', {
+      content_name: 'Confirmed Siena reservation'
+    });
+  });
   function loadGTM() {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -38,6 +72,7 @@
     fired = true;
     events.forEach(function (e) { document.removeEventListener(e, trigger); });
     clearTimeout(fallback);
+    loadSienaMeta();
     loadGTM();
     loadTikTok();
   }
