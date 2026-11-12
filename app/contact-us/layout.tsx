@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Contact | Mediterranean Restaurant, Alpharetta",
+  title: "Contact Siena Restaurant | Alpharetta GA",
   description:
-    "Contact Siena in Alpharetta to reserve a table, ask questions, or plan your next dining experience. We're here to help with your visit.",
+    "Contact Siena Restaurant at 124 Devore Rd, Alpharetta, GA. Call (404) 999-0373 for dining questions, directions or private events. Book a table online.",
   openGraph: {
-    title: "Contact Siena | Mediterranean Restaurant Alpharetta GA",
+    title: "Contact Siena Restaurant | Alpharetta GA",
     description:
-      "Contact Siena in Alpharetta to reserve a table, ask questions, or plan your next dining experience. We're here to help with your visit.",
+      "Contact Siena Restaurant at 124 Devore Rd, Alpharetta, GA. Call (404) 999-0373 for dining questions, directions or private events. Book a table online.",
     url: "https://sienaatl.com/contact-us",
     images: [{ url: "/assets/Siena_20.03.26-A-01.webp", alt: "Siena Restaurant exterior" }],
   },

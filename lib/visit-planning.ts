@@ -5,6 +5,11 @@ const celebration = link("Birthdays and celebrations", "/birthday-dinner-alphare
 const music = link("Friday live music", "/live-music-fridays");
 const groups = link("Private dining and groups", "/private-dining-alpharetta");
 export const VISIT_PLANS: Record<string, VisitPlan> = {
+  "best-restaurants-alpharetta": {
+    heading: "Choose the evening that suits you",
+    text: "Compare the dinner menu, Friday live music and happy-hour options before you book. Planning a group meal? Tell us your date and guest count so the team can discuss space and menus.",
+    links: [menu, music, link("Happy hour Tuesday–Thursday", "/happy-hour-alpharetta"), groups],
+  },
   "mediterranean-restaurant-alpharetta": {
     heading: "Make an evening of it",
     text: "Find us at 124 Devore Road in Alpharetta. Choose dinner for two, a Friday evening with music, or a group celebration, then check the reservation calendar for your date.",
