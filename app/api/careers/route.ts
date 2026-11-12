@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+// Job applications always go here. Hardcoded on purpose: this route does not
+// read the SMTP_TO environment variable.
+const SMTP_TO = "admin@sienaatl.com";
+
 async function verifyRecaptcha(token: string): Promise<boolean> {
   const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
     method: "POST",
@@ -95,7 +99,7 @@ export async function POST(req: NextRequest) {
 
     await transporter.sendMail({
       from: `"Siena Restaurant" <${process.env.SMTP_USER}>`,
-      to: process.env.SMTP_TO,
+      to: SMTP_TO,
       replyTo: email,
       subject: `Job Application: ${position} — ${firstName} ${lastName}`,
       text: textBody,
