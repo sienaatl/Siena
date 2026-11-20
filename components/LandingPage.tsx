@@ -214,6 +214,12 @@ function Divider({ src = "/assets/divisor_beige.svg", bg = GOLD }: { src?: strin
 export default function LandingPage({
   h1, h1Script, heroImage, heroAlt, marquee, intro, blocks, faqs, closing, slug, reviews, practical,
 }: LandingPageProps) {
+  // Contextual links help readers discover the full guides beyond the blog index.
+  const relatedGuide = slug === "mediterranean-restaurant-alpharetta"
+    ? { href: "/blogs/best-mediterranean-restaurant-alpharetta-dining-guide", title: "Alpharetta Mediterranean dining guide", description: "Compare food styles, service hours and practical tips for choosing a Mediterranean dinner in Alpharetta." }
+    : slug === "happy-hour-alpharetta"
+      ? { href: "/blogs/creative-ways-to-celebrate-happy-hour", title: "Creative ways to celebrate happy hour", description: "Plan a relaxed gathering with shared tastings, simple themes and easy conversation ideas." }
+      : null;
   const mq = `mq-${slug}`;
   const plan = VISIT_PLANS[slug];
   const isGroup = ["private-dining-alpharetta", "holiday-parties-alpharetta"].includes(slug);
@@ -628,6 +634,18 @@ export default function LandingPage({
               />
             ))}
           </div>
+
+          {relatedGuide && (
+            <aside aria-label="Related dining guide" className="siena-view-54">
+              <h2 className="text-[#e0b265] text-xl">More ideas for your visit</h2>
+              <p className="siena-ui-53">
+                {relatedGuide.description}{" "}
+                <Link href={relatedGuide.href} className="underline underline-offset-4">
+                  Read our {relatedGuide.title}.
+                </Link>
+              </p>
+            </aside>
+          )}
 
           <div className="siena-view-55">
             {/* NAP, matching the Google Business Profile character for character */}
