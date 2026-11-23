@@ -221,11 +221,20 @@ export default function LandingPage({
       ? { href: "/blogs/creative-ways-to-celebrate-happy-hour", title: "Creative ways to celebrate happy hour", description: "Plan a relaxed gathering with shared tastings, simple themes and easy conversation ideas." }
       : null;
   const mq = `mq-${slug}`;
-  const plan = VISIT_PLANS[slug];
+  const plan = slug === "brunch-alpharetta" ? {
+    heading: "Join us for dinner",
+    text: "Lunch and brunch are not currently available. Siena serves Mediterranean and Italian dinner from 4 PM Tuesday through Sunday at 124 Devore Rd, Alpharetta, GA 30009.",
+    links: [{ label: "Current menu", href: "/menus" }, { label: "Reserve dinner", href: "/reservations" }],
+  } : VISIT_PLANS[slug];
+  const quickAnswer = ({
+    "mediterranean-restaurant-alpharetta": "Siena Restaurant & Bar serves Mediterranean and Italian dinner in Alpharetta, with hummus, shared starters, seafood, lamb and pasta. Find us at 124 Devore Rd, Alpharetta, GA 30009. Dinner starts at 4 PM Tuesday through Sunday; lunch and brunch are not currently available.",
+    "date-night-alpharetta": "Book a date-night dinner at Siena Restaurant & Bar, 124 Devore Rd, Alpharetta, GA 30009. Share Mediterranean starters, choose Italian and Mediterranean mains, and enjoy cocktails. Friday live music runs from 7 to 10 PM; reserve online for your preferred evening.",
+    "private-dining-alpharetta": "Siena Restaurant & Bar offers private and group dining in Alpharetta for celebrations and business gatherings. Contact info@sienaatl.com or (404) 999-0373 with your date, guest count and occasion to discuss menus and availability. An inquiry does not confirm a reservation.",
+  } as Record<string, string>)[slug];
   const isGroup = ["private-dining-alpharetta", "holiday-parties-alpharetta"].includes(slug);
   const isBrunch = slug === "brunch-alpharetta";
-  const primaryHref = isGroup ? "/event-inquiry" : isBrunch ? `tel:${info.phone.replace(/[^\d+]/g, "")}` : "/reservations";
-  const primaryLabel = isGroup ? "PLAN YOUR EVENT" : isBrunch ? "CALL ABOUT BRUNCH" : "RESERVE A TABLE";
+  const primaryHref = isGroup ? "/event-inquiry" : "/reservations";
+  const primaryLabel = isGroup ? "PLAN YOUR EVENT" : isBrunch ? "RESERVE DINNER" : "RESERVE A TABLE";
 
   return (
     <main>
@@ -344,6 +353,16 @@ export default function LandingPage({
             <nav aria-label="Plan your visit" className="siena-view-36">
               {plan.links.map(link => <Link key={link.href} href={link.href} className="siena-view-37">{link.label}</Link>)}
             </nav>
+          </div>
+        </section>
+      )}
+
+      {quickAnswer && (
+        <section aria-label="Siena dining at a glance" className="px-6 py-8" style={{ backgroundColor: GREEN }}>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-xl text-white mb-3">Siena Restaurant &amp; Bar at a glance</h2>
+            <p className="text-white/85 leading-relaxed">{quickAnswer}</p>
+            <p className="mt-4 text-white"><Link href="/menus" className="underline">Current menu</Link>{" · "}<Link href="/reservations" className="underline">Dinner reservations</Link>{" · "}<Link href="/contact-us" className="underline">Hours and directions</Link></p>
           </div>
         </section>
       )}
