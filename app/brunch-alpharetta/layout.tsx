@@ -2,7 +2,7 @@ import { diningMetadata } from "@/lib/page-metadata";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FAQS } from "./content";
 
-export const metadata = diningMetadata("brunch-alpharetta", "Brunch in Alpharetta", "Explore Siena’s Mediterranean and Italian-inspired brunch menu in Alpharetta. Call to confirm current brunch service and arrange your visit.");
+export const metadata = diningMetadata("brunch-alpharetta", "Brunch Availability & Dinner Hours", "Siena does not currently serve lunch or brunch. Join us for Mediterranean and Italian dinner from 4 PM Tuesday through Sunday in Alpharetta.");
 
 /**
  * The root layout appends " | Siena" through its title template, so the title here
