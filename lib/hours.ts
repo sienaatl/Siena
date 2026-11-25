@@ -77,6 +77,31 @@ export async function fetchClosedWeekdays(): Promise<number[]> {
   return getClosedWeekdays(entries);
 }
 
+// One-off closure dates (holidays, private buyouts, ...) on top of the weekly
+// schedule. The upstream closures API needs the admin PIN, so the browser
+// never calls it directly: /api/closures does that server-side and returns
+// just the dates, as "YYYY-MM-DD" strings.
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+
+/** Pulls the closure dates out of the upstream payload: { items: [{ closure_date, area, reason }] }. */
+export function parseClosureDates(payload: unknown): string[] {
+  const items = (payload as { items?: unknown })?.items;
+  if (!Array.isArray(items)) return [];
+  const dates = new Set<string>();
+  for (const item of items) {
+    const date = (item as { closure_date?: unknown })?.closure_date;
+    if (typeof date === "string" && ISO_DATE.test(date.slice(0, 10))) dates.add(date.slice(0, 10));
+  }
+  return [...dates].sort();
+}
+
+export async function fetchClosureDates(): Promise<string[]> {
+  const res = await fetch("/api/closures", { cache: "no-store" });
+  if (!res.ok) throw new Error(`Failed to fetch closures (${res.status})`);
+  const data = await res.json();
+  return Array.isArray(data.dates) ? data.dates.filter((d: unknown) => typeof d === "string" && ISO_DATE.test(d)) : [];
+}
+
 // Matches FALLBACK_HOURS below (Monday only) — used if the live API is
 // unreachable, so the date picker still knows to close out Mondays.
 export const FALLBACK_CLOSED_WEEKDAYS: number[] = [1];

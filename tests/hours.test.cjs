@@ -34,3 +34,19 @@ test('API Monday-first numbering maps to JavaScript weekdays by name', () => {
   assert.equal(mapped[4].closeTime, '22:00');
   assert.equal(mapped[6].closeTime, '00:00');
 });
+
+test('closure dates are read from the closures API payload', () => {
+  const { parseClosureDates } = context.exports;
+  const dates = parseClosureDates({
+    items: [
+      { closure_date: '2026-12-25', area: 'All', reason: 'Christmas' },
+      { closure_date: '2026-11-26', area: 'All', reason: 'Thanksgiving' },
+      { closure_date: '2026-11-26', area: 'All', reason: 'duplicate' },
+      { closure_date: 'not-a-date', area: 'All' },
+      { area: 'All' },
+    ],
+  });
+  assert.deepEqual([...dates], ['2026-11-26', '2026-12-25']);
+  assert.deepEqual([...parseClosureDates(null)], []);
+  assert.deepEqual([...parseClosureDates({ items: 'nope' })], []);
+});

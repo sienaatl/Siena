@@ -9,6 +9,7 @@ import { motion } from "motion/react";
 import { getRestaurantInfo, RESTAURANT_FALLBACK, type RestaurantInfo } from "@/lib/restaurant";
 import {
   fetchHours,
+  fetchClosureDates,
   getClosedWeekdays,
   getWeekdaySchedule,
   getTimeSlotsForDay,
@@ -59,7 +60,16 @@ export default function Home() {
       });
   }, []);
 
-  const [bookDate, setBookDate] = useState("");
+  // Holiday / one-off closures on top of the weekly schedule.
+  const [closedDates, setClosedDates] = useState<string[]>([]);
+  useEffect(() => {
+    fetchClosureDates().then(setClosedDates).catch(() => {});
+  }, []);
+
+  const [rawBookDate, setBookDate] = useState("");
+  // A date picked before the closures loaded stops counting once it turns
+  // out to be a closure, instead of being carried over to /reservations.
+  const bookDate = closedDates.includes(rawBookDate) ? "" : rawBookDate;
   const [bookTime, setBookTime] = useState("");
   const [bookPartySize, setBookPartySize] = useState("2");
 
@@ -136,6 +146,7 @@ export default function Home() {
                 value={bookDate}
                 onChange={setBookDate}
                 closedWeekdays={closedWeekdays}
+                closedDates={closedDates}
                 placeholder="Date"
                 buttonClassName="w-full flex items-center justify-between gap-2.5 px-4 py-3 bg-transparent text-white text-[13px] md:text-[14px] tracking-wide text-left cursor-pointer"
               />

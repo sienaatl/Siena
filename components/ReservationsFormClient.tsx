@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import {
   fetchHours,
+  fetchClosureDates,
   getClosedWeekdays,
   getWeekdaySchedule,
   getTimeSlotsForDay,
@@ -26,7 +27,9 @@ const BOOKING_API = "https://reservations.sienaatl.com/api/book";
 // backend without needing a page reload.
 const HOURS_POLL_INTERVAL_MS = 5 * 60 * 1000;
 
-const WEEKDAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const CLOSED_DATE_MESSAGE = "Siena is closed on that date. Please choose another day.";
+
+const WEEKDAY_NAMES =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 function formatClosedDaysHint(closedWeekdays: number[]): string {
   if (closedWeekdays.length === 0) return "";
@@ -177,6 +180,8 @@ export default function ReservationsFormClient({
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [closedWeekdays, setClosedWeekdays] = useState<number[]>(FALLBACK_CLOSED_WEEKDAYS);
   const [weekdaySchedule, setWeekdaySchedule] = useState<WeekdaySchedule>(FALLBACK_WEEKDAY_SCHEDULE);
+  // Holiday / one-off closures on top of the weekly schedule, from /api/closures.
+  const [closedDates, setClosedDates] = useState<string[]>([]);
 
   useEffect(() => {
     let cancelled = false;
@@ -197,6 +202,13 @@ export default function ReservationsFormClient({
           setClosedWeekdays(FALLBACK_CLOSED_WEEKDAYS);
           setWeekdaySchedule(FALLBACK_WEEKDAY_SCHEDULE);
         });
+      // On failure keep the closures we already know about rather than
+      // forgetting them.
+      fetchClosureDates()
+        .then((dates) => {
+          if (!cancelled) setClosedDates(dates);
+        })
+        .catch(() => {});
     };
 
     loadHours();
@@ -211,6 +223,7 @@ export default function ReservationsFormClient({
     register,
     handleSubmit,
     setValue,
+    setError,
     watch,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
@@ -252,8 +265,32 @@ export default function ReservationsFormClient({
     }
   }, [timeOptions, selectedTime, setValue]);
 
+  // A date that is (or becomes) a closure — e.g. prefilled from the homepage,
+  // or picked before the closures finished loading — is cleared, with a note.
+  useEffect(() => {
+    if (selectedDate && closedDates.includes(selectedDate)) {
+      setValue("date", "", { shouldDirty: true });
+      setError("date", { type: "closure", message: CLOSED_DATE_MESSAGE });
+    }
+  }, [selectedDate, closedDates, setValue, setError]);
+
   const onSubmit = async (data: FormData) => {
     setSubmitError(null);
+
+    // Re-check right before booking so a closure added while the page was
+    // open still blocks the date. If the check itself fails, carry on — the
+    // dates we already loaded were enforced by the calendar.
+    let latestClosures = closedDates;
+    try {
+      latestClosures = await fetchClosureDates();
+      setClosedDates(latestClosures);
+    } catch {}
+    if (latestClosures.includes(data.date)) {
+      setValue("date", "", { shouldDirty: true });
+      setError("date", { type: "closure", message: CLOSED_DATE_MESSAGE });
+      return;
+    }
+
     try {
       const res = await fetch(BOOKING_API, {
         method: "POST",
@@ -411,6 +448,7 @@ export default function ReservationsFormClient({
                       value={selectedDate}
                       onChange={(iso) => setValue("date", iso, { shouldValidate: true, shouldDirty: true, shouldTouch: true })}
                       closedWeekdays={closedWeekdays}
+                      closedDates={closedDates}
                       buttonClassName={`${inputClass} flex items-center justify-between text-left cursor-pointer`}
                     />
                   </Field>

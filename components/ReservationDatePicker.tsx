@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { DayPicker, type DayButtonProps } from "react-day-picker";
 import { dateToISO, parseLocalDate } from "@/lib/hours";
 
@@ -52,6 +52,7 @@ export function ReservationDatePicker({
   value,
   onChange,
   closedWeekdays,
+  closedDates = [],
   buttonClassName,
   placeholder = "Select a date",
   ariaLabel = "Reservation date",
@@ -59,11 +60,14 @@ export function ReservationDatePicker({
   value: string;
   onChange: (isoDate: string) => void;
   closedWeekdays: number[];
+  /** One-off closures ("YYYY-MM-DD") from /api/closures, disabled like closed weekdays. */
+  closedDates?: string[];
   buttonClassName: string;
   placeholder?: string;
   ariaLabel?: string;
 }) {
   const [open, setOpen] = useState(false);
+  const closedDateList = useMemo(() => closedDates.map(parseLocalDate), [closedDates]);
   const fieldRef = useRef<HTMLDivElement | null>(null);
 
   // Close the calendar popover on an outside click or Escape.
@@ -103,9 +107,10 @@ export function ReservationDatePicker({
             mode="single"
             selected={value ? parseLocalDate(value) : undefined}
             defaultMonth={value ? parseLocalDate(value) : new Date()}
-            disabled={[{ before: startOfToday() }, { dayOfWeek: closedWeekdays }]}
+            disabled={[{ before: startOfToday() }, { dayOfWeek: closedWeekdays }, closedDateList]}
             onSelect={(d) => {
               if (!d) return;
+              if (closedDates.includes(dateToISO(d))) return;
               onChange(dateToISO(d));
               setOpen(false);
             }}
