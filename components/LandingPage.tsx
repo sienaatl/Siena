@@ -229,7 +229,7 @@ export default function LandingPage({
   const quickAnswer = ({
     "mediterranean-restaurant-alpharetta": "Siena Restaurant & Bar serves Mediterranean and Italian dinner in Alpharetta, with hummus, shared starters, seafood, lamb and pasta. Find us at 124 Devore Rd, Alpharetta, GA 30009. Dinner starts at 4 PM Tuesday through Sunday; lunch and brunch are not currently available.",
     "date-night-alpharetta": "Book a date-night dinner at Siena Restaurant & Bar, 124 Devore Rd, Alpharetta, GA 30009. Share Mediterranean starters, choose Italian and Mediterranean mains, and enjoy cocktails. Friday live music runs from 7 to 10 PM; reserve online for your preferred evening.",
-    "private-dining-alpharetta": "Siena Restaurant & Bar offers private and group dining in Alpharetta for celebrations and business gatherings. Contact info@sienaatl.com or (404) 999-0373 with your date, guest count and occasion to discuss menus and availability. An inquiry does not confirm a reservation.",
+    "private-dining-alpharetta": "Siena Restaurant & Bar offers private and group dining in Alpharetta for celebrations and business gatherings. Call (404) 999-0373 or use our online inquiry form with your date, guest count and occasion to discuss menus and availability. An inquiry does not confirm a reservation.",
   } as Record<string, string>)[slug];
   const isGroup = ["private-dining-alpharetta", "holiday-parties-alpharetta"].includes(slug);
   const isBrunch = slug === "brunch-alpharetta";

@@ -29,7 +29,6 @@ export async function GET() {
 
 - Address: ${info.address}
 - Phone: ${info.phone}
-- Email: ${info.email}
 - Map: ${info.maps_url}
 
 Close to Avalon and the Ameris Bank Amphitheatre, and a short drive from Roswell,
