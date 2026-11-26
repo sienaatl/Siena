@@ -147,6 +147,10 @@ export const FAQS: Faq[] = [
     a: "Yes, it is minutes away. Book earlier in the evening and mention it when you arrive so the kitchen can pace your table.",
   },
   {
+    q: "Is gratuity added to the bill?",
+    a: "An automatic 20% gratuity is added for parties of more than 5. It is printed on the menu. Smaller parties tip at their discretion.",
+  },
+  {
     q: "Do we need a reservation?",
     a: "For Friday and Saturday, yes. Midweek is easier and the bar takes walk-ins when there is room. <a href=\"/reservations\">Book a table here</a>.",
   },
