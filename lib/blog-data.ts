@@ -119,7 +119,7 @@ export const blogs: Blog[] = [
 <h2 class="text-white font-semi-bold text-xl mt-8">Keep the next gathering easy</h2>
 <p class="my-5">A creative happy hour does not need to outdo the last one. Keep the elements people enjoyed, drop anything that felt forced, and change only one detail next time. Rotate the location, let someone else choose the tasting theme, or simply meet again without an activity.</p>
 <p class="my-5">The takeaway is straightforward: make people comfortable, give them something enjoyable to share, and protect time for conversation. That is enough to turn an ordinary stop into a gathering worth repeating.</p>
-<p class="my-5">For questions or group dining inquiries, email <a href="mailto:info@sienaatl.com">info@sienaatl.com</a> or call (404) 999-0373. Visit Siena Restaurant &amp; Bar at 124 Devore Rd, Alpharetta, GA 30009. Reserve your table at <a href="/reservations">Reserve your table</a>.</p>`},
+<p class="my-5">For questions or group dining inquiries, call (404) 999-0373. Visit Siena Restaurant &amp; Bar at 124 Devore Rd, Alpharetta, GA 30009. Reserve your table at <a href="/reservations">Reserve your table</a>.</p>`},
 
   {
     slug: "italian-restaurant-alpharetta",
