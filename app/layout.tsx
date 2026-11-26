@@ -84,7 +84,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     "@id": "https://sienaatl.com/#restaurant",
     url: "https://sienaatl.com/",
     telephone: info.phone.replace(/[^\d+]/g, ""),
-    email: info.email,
     priceRange: "$$",
     menu: "https://sienaatl.com/menus",
     hasMenu: { "@type": "Menu", "@id": "https://sienaatl.com/menus#menu", url: "https://sienaatl.com/menus" },
