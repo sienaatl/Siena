@@ -148,7 +148,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Is gratuity added to the bill?",
-    a: "An automatic 20% gratuity is added to parties of more than 5 and to any bill over $250. It is printed on the menu. Smaller parties and bills tip at their discretion.",
+    a: "An automatic 20% gratuity is added to parties of more than 5 and to any bill over $250. Smaller parties and bills tip at their discretion.",
   },
   {
     q: "Do we need a reservation?",
