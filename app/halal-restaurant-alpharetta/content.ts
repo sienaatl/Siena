@@ -3,28 +3,29 @@ import type { Block, Faq, Reviews } from "@/components/LandingPage";
 /**
  * Copy and layout for /halal-restaurant-alpharetta.
  *
- * The owner confirmed Siena serves halal options. Nothing here claims certification,
- * that every dish is halal, or that the menu is pork-free (some dishes contain pork),
- * so guests are pointed to their server for specifics. Dishes follow lib/site-data.json.
+ * The owner confirmed that Siena's beef and lamb are halal. Nothing here claims
+ * certification, that chicken, seafood or every dish is halal, or that the menu is
+ * pork-free (some dishes contain pork), so guests are pointed to their server for
+ * specifics. Dishes follow lib/site-data.json.
  */
 
 export const H1 = "Halal Food in Alpharetta";
 export const H1_SCRIPT = "at Siena";
 
 export const MARQUEE = [
-  "Halal Options",
+  "Halal Beef and Lamb",
   "Mediterranean and Italian",
-  "Grilled Lamb and Chicken",
+  "Lamb Chops and Filet Mignon",
   "Downtown Alpharetta",
 ];
 
 export const INTRO = {
   icon: "/assets/icon_menus.svg",
-  heading: "Halal Options on the Menu",
+  heading: "Halal Beef and Lamb",
   script: "ask and we will guide you",
   paras: [
-    "Looking for halal food in Alpharetta? Siena Restaurant &amp; Bar serves halal options alongside its Mediterranean and Italian menu at 124 Devore Rd in downtown Alpharetta.",
-    "Not every dish on the menu is halal, so tell your server when you book or sit down. They will point you to the right dishes for your table.",
+    "Looking for halal food in Alpharetta? At Siena Restaurant &amp; Bar the beef and lamb are halal. They sit on a Mediterranean and Italian menu at 124 Devore Rd in downtown Alpharetta.",
+    "Other proteins and some dishes may not be halal, so tell your server when you book or sit down. They will point you to the right dishes for your table.",
   ],
   cta: { label: "SEE THE MENU", href: "/menus" },
 };
@@ -38,8 +39,8 @@ export const BLOCKS: Block[] = [
     image: "/assets/Siena_20.03.26-D-LambChop-02.webp",
     alt: "Grilled lamb chops, a popular main at a Mediterranean restaurant in Alpharetta",
     paras: [
-      "Grilled lamb chops and chicken tawook are two of the mains guests mention most. Hummus with warm pita, whipped feta and crispy cauliflower make easy starters to share.",
-      "Always confirm with your server which dishes are halal on the night. <a href=\"/menus\">See the full menu</a>.",
+      "The lamb chops, braised lamb shank and filet mignon kabob are all made with halal beef or lamb. Hummus with warm pita, whipped feta and crispy cauliflower make easy starters to share.",
+      "Confirm any other dish with your server. <a href=\"/menus\">See the full menu</a>.",
     ],
   },
   {
@@ -55,7 +56,7 @@ export const BLOCKS: Block[] = [
       },
       {
         title: "Ask About Each Dish",
-        desc: "Some dishes contain pork or are not halal. Your server can confirm what is suitable before you order.",
+        desc: "Beef and lamb are halal. Some other dishes contain pork or are not halal, and your server can confirm what is suitable before you order.",
       },
       {
         title: "Plenty Without Meat",
@@ -81,15 +82,15 @@ export const BLOCKS: Block[] = [
 export const FAQS: Faq[] = [
   {
     q: "Does Siena serve halal food?",
-    a: "Yes, Siena serves halal options. Not every dish is halal, so please ask your server which dishes are suitable.",
+    a: "Yes. Siena's beef and lamb are halal. Other dishes may not be, so please ask your server which are suitable.",
   },
   {
     q: "Is everything on the menu halal?",
-    a: "No. Some dishes are not halal. Tell your server you are eating halal and they will guide you to suitable dishes.",
+    a: "No. The beef and lamb are halal, but other dishes may not be. Tell your server you are eating halal and they will guide you to suitable dishes.",
   },
   {
     q: "Which dishes do halal guests usually order?",
-    a: "Grilled lamb chops, chicken tawook, hummus, whipped feta and crispy cauliflower are popular choices. Confirm each dish with your server. <a href=\"/menus\">View the menu</a>.",
+    a: "Lamb chops, braised lamb shank and filet mignon kabob are the halal beef and lamb mains. Hummus, whipped feta and crispy cauliflower are popular starters. Confirm any other dish with your server. <a href=\"/menus\">View the menu</a>.",
   },
   {
     q: "Can I mention halal when I make a reservation?",
@@ -109,15 +110,11 @@ export const FAQS: Faq[] = [
 export const REVIEWS: Reviews = {
   quotes: [
     { text: "The lamb chops is very flavorful as well as humus n pita bread.", author: "Big O." },
-    {
-      text: "Food was great I had the Chicken tawook and rice it tasted very fresh and lite",
-      author: "Eline P.",
-    },
   ],
 };
 
 export const PRACTICAL = [
-  "Tell us about halal when you book, and confirm dishes with your server",
+  "Beef and lamb are halal; confirm other dishes with your server",
   "Step-free entrance and accessible parking near the door",
   "Minutes from Avalon and the Ameris Bank Amphitheatre",
 ];
