@@ -51,6 +51,13 @@ ${hours}
 - Co-owner and manager: Aida Lemma
 - Executive chef: Baba Estavillo
 
+## Known for
+
+- Dishes guests mention most: whipped feta with burnt honey, golden oxtail, lamb chops, crispy cauliflower and pistachio baklava cheesecake
+- Signature cocktails include the Monaco and the Lady Godiva
+- Best for: date night, group dinners, birthdays, private celebrations and Friday live music
+- Setting: a neon-lit dining room with outdoor seating and a private dining room
+
 ## Pages
 
 - [Home](${SITE_URL}/): overview of the restaurant
