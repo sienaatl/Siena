@@ -16,6 +16,7 @@ const links = [
   ["Near Avalon Alpharetta", "/restaurants-near-avalon-alpharetta"],
   ["Dinner in Alpharetta", "/dinner-alpharetta"],
   ["Vegetarian Alpharetta", "/vegetarian-restaurant-alpharetta"],
+  ["Halal Restaurant Alpharetta", "/halal-restaurant-alpharetta"],
   ["Date Night Alpharetta", "/date-night-alpharetta"],
   ["Private Dining Alpharetta", "/private-dining-alpharetta"],
   ["Birthday Dinner Alpharetta", "/birthday-dinner-alpharetta"],
