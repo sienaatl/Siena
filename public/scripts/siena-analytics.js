@@ -1,6 +1,7 @@
 (function () {
   var metaLoaded = false;
   var SIENA_META_PIXEL = '1401197251913891';
+  var SIENA_RESERVATION_PIXEL = '779021075185308';
   function loadSienaMeta() {
     if (metaLoaded) return;
     metaLoaded = true;
@@ -24,6 +25,11 @@
     window.fbq('set', 'autoConfig', false, SIENA_META_PIXEL);
     window.fbq('init', SIENA_META_PIXEL);
     window.fbq('trackSingle', SIENA_META_PIXEL, 'PageView');
+    // The Dinner Reservations ad account uses this dataset. Keep its
+    // booking signal separate from generic registrations and creator leads.
+    window.fbq('set', 'autoConfig', false, SIENA_RESERVATION_PIXEL);
+    window.fbq('init', SIENA_RESERVATION_PIXEL);
+    window.fbq('trackSingle', SIENA_RESERVATION_PIXEL, 'PageView');
   }
   // Emitted only after the booking API accepts the reservation. A click on
   // Book Now or a failed form submission must never count as a booking.
@@ -31,6 +37,10 @@
     loadSienaMeta();
     window.fbq('trackSingle', SIENA_META_PIXEL, 'CompleteRegistration', {
       content_name: 'Confirmed Siena reservation'
+    });
+    window.fbq('trackSingle', SIENA_RESERVATION_PIXEL, 'Schedule', {
+      content_name: 'Confirmed Siena reservation',
+      booking_method: 'siena_website'
     });
   });
   function loadGTM() {
