@@ -23,6 +23,7 @@ const PAGES: { path: string; priority: number; lastModified?: string }[] = [
   { path: "/new-restaurants-alpharetta", priority: 0.9, lastModified: "2026-10-25" },
   { path: "/downtown-alpharetta-restaurants", priority: 0.9, lastModified: "2026-09-24" },
   { path: "/tapas-restaurant-alpharetta", priority: 0.8, lastModified: "2026-10-25" },
+  { path: "/halal-restaurant-alpharetta", priority: 0.8, lastModified: "2026-11-26" },
   { path: "/fine-dining-restaurant-alpharetta", priority: 0.8, lastModified: "2026-10-25" },
   { path: "/seafood-restaurant-alpharetta", priority: 0.8 },
   { path: "/wine-bar-alpharetta", priority: 0.8, lastModified: "2026-10-25" },
